@@ -1,0 +1,17 @@
+# Mexico Invest
+
+> Independent research on Mexico property investment for US and Canadian buyers.
+
+- Site: https://mexico-invest.com
+- Contact: info@mexico-invest.com
+- Markets: Riviera Maya, Los Cabos, Puerto Vallarta / Riviera Nayarit
+- Focus: fideicomiso, net rental yields, due diligence, foreign buyer process
+- Not a developer, not a listing portal
+
+## Key guides (publishing)
+- /guides/mexico-property-investment-guide/
+- /guides/buy-property-mexico-foreigner/
+- /guides/fideicomiso-mexico-explained/
+
+## Full corpus
+https://mexico-invest.com/llms-full.txt

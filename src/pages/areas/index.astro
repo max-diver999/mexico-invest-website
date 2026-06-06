@@ -1,0 +1,35 @@
+---
+export const prerender = true;
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const areas = (await getCollection('areas'))
+  .filter((a) => !a.data.noindex)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<BaseLayout
+  title="Mexico Investment Areas"
+  description="Area guides for Riviera Maya, Los Cabos, and Puerto Vallarta — yields, buyer profile, and micro-market risks."
+>
+  <section class="site-container py-14 md:py-20">
+    <header class="max-w-2xl mb-12">
+      <h1 class="text-3xl">Investment areas</h1>
+      <p class="text-lg text-[var(--color-muted)] mt-3">
+        Micro-market research for foreign buyers — not generic beach marketing.
+      </p>
+    </header>
+    <div class="grid md:grid-cols-2 gap-6">
+      {areas.map((area) => (
+        <article class="surface-card p-7">
+          <h2 class="text-lg mb-2 font-semibold">
+            <a href={`/areas/${area.id}/`} class="no-underline text-[var(--color-ink)] hover:text-[var(--color-teal)]">{area.data.title}</a>
+          </h2>
+          <p class="text-sm text-[var(--color-muted)]">{area.data.description}</p>
+        </article>
+      ))}
+      {areas.length === 0 && (
+        <p class="text-[var(--color-muted)]">Area guides publishing with Wave 1.</p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

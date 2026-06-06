@@ -1,0 +1,107 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import { SITE } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  author?: string;
+  readingTime?: number;
+  heroImage?: string;
+  faq?: { question: string; answer: string }[];
+  canonical?: string;
+  noindex?: boolean;
+  hasInlineFaqBlock?: boolean;
+  contextLabel?: string;
+}
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  author = SITE.editorial,
+  readingTime = 8,
+  heroImage,
+  faq = [],
+  canonical,
+  noindex = false,
+  hasInlineFaqBlock = false,
+  contextLabel = title,
+} = Astro.props;
+
+const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const pageUrl = canonical || Astro.url.href;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate || pubDate).toISOString(),
+  author: { '@type': 'Organization', name: author },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` },
+  },
+  mainEntityOfPage: pageUrl,
+  ...(heroImage ? { image: heroImage } : {}),
+};
+---
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={pageUrl}
+  ogImage={heroImage}
+  type="article"
+  {noindex}
+  schema={articleSchema}
+>
+  <article class="site-container py-10 md:py-14">
+    <header class="max-w-3xl mb-8">
+      <span class="badge-pill mb-4">Research guide</span>
+      <h1 class="mb-4 text-3xl md:text-4xl">{title}</h1>
+      <p class="text-lg text-[var(--color-muted)] mb-4">{description}</p>
+      <p class="text-sm text-[var(--color-muted)]">
+        By {author} · Updated {dateStr} · {readingTime} min read
+      </p>
+    </header>
+
+    {heroImage && (
+      <img src={heroImage} alt="" class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" />
+    )}
+
+    <div class="prose mx-auto">
+      <slot />
+    </div>
+
+    {!hasInlineFaqBlock && faq.length > 0 && (
+      <div class="max-w-3xl mx-auto mt-10">
+        <FaqBlock items={faq} />
+      </div>
+    )}
+
+    <div class="max-w-3xl mx-auto mt-12">
+      <LeadForm
+        title="Get a Mexico property shortlist"
+        subtitle="Tell us your budget and market (Riviera Maya, Los Cabos, RAK). We reply within one business day with options matched to your goals."
+        context={contextLabel}
+      />
+    </div>
+
+    <aside class="max-w-3xl mx-auto mt-10 surface-card p-5 text-sm text-[var(--color-muted)]">
+      <strong>Disclaimer:</strong> Mexico Invest is an independent editorial resource. We are not a developer or licensed broker.
+      Enquiries may be referred to AMPI-licensed partners. Prices, yields, and visa rules change — verify before any transaction.
+    </aside>
+  </article>
+</BaseLayout>

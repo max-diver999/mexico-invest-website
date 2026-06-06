@@ -1,0 +1,28 @@
+{
+  "name": "mexico-invest-website",
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "healthcheck": "node scripts/post-deploy-smoke.mjs --http-only",
+    "validate:content": "node scripts/qa-audit.mjs",
+    "validate:content:changed": "node scripts/qa-audit.mjs --changed",
+    "corpus:cleanup": "node scripts/corpus-cleanup.mjs",
+    "prepush:gate": "node scripts/pre-push-gate.mjs",
+    "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks → .githooks (pre-push runs validate:content + build on MDX changes)'"
+  },
+  "dependencies": {
+    "google-auth-library": "^10.6.2",
+    "@astrojs/mdx": "5.0.2",
+    "@astrojs/sitemap": "3.7.1",
+    "@astrojs/vercel": "10.0.2",
+    "@tailwindcss/vite": "4.2.2",
+    "astro": "6.0.8",
+    "tailwindcss": "4.2.2"
+  }
+}

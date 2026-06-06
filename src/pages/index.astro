@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../data/site';
+
+const guides = (await getCollection('guides'))
+  .filter((g) => !g.data.noindex)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 4);
+
+const featuredSlugs = [
+  'mexico-property-investment-guide',
+  'buy-property-mexico-foreigner',
+  'fideicomiso-mexico-explained',
+];
+const featured = guides.filter((g) => featuredSlugs.includes(g.id));
+---
+<BaseLayout
+  title="Mexico Invest — Independent Mexico Property Research"
+  description={SITE.description}
+>
+  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-surface)]">
+    <div class="site-container py-16 md:py-24 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <span class="badge-pill mb-5">Independent research</span>
+        <h1 class="text-3xl md:text-[2.35rem] mb-5 leading-tight">
+          Understand Mexico property before you buy
+        </h1>
+        <p class="text-base md:text-lg text-[var(--color-muted)] mb-8 max-w-xl">
+          Riviera Maya, Los Cabos, Puerto Vallarta — fideicomiso, net yields, due diligence. Request a shortlist when you're ready.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/guides/" class="btn-primary px-6 py-3">Browse guides</a>
+          <a href="/get-shortlist/" class="btn-secondary px-6 py-3">Free shortlist →</a>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="surface-card p-5 flex gap-4 items-center">
+          <div class="card-icon">3</div>
+          <div>
+            <p class="font-semibold text-[var(--color-ink)] text-sm">Markets covered</p>
+            <p class="text-sm text-[var(--color-muted)]">Riviera Maya · Los Cabos · Puerto Vallarta</p>
+          </div>
+        </div>
+        <div class="surface-card p-5 flex gap-4 items-center">
+          <div class="card-icon">%</div>
+          <div>
+            <p class="font-semibold text-[var(--color-ink)] text-sm">Net yield focus</p>
+            <p class="text-sm text-[var(--color-muted)]">Gross STR quotes vs realistic net after HOA and management</p>
+          </div>
+        </div>
+        <div class="surface-card p-5 flex gap-4 items-center">
+          <div class="card-icon">✓</div>
+          <div>
+            <p class="font-semibold text-[var(--color-ink)] text-sm">Licensed partners</p>
+            <p class="text-sm text-[var(--color-muted)]">AMPI-regulated referrals only · <a href="/methodology/" class="link-arrow">Methodology</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="site-container">
+      <div class="flex items-end justify-between gap-4 mb-10">
+        <div>
+          <h2 class="text-2xl mb-2">Start here</h2>
+          <p class="text-[var(--color-muted)]">High-intent guides for US and Canadian buyers.</p>
+        </div>
+        <a href="/guides/" class="link-arrow shrink-0 hidden sm:inline">All guides →</a>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {(featured.length ? featured : guides).map((guide) => (
+          <a href={`/guides/${guide.id}/`} class="surface-card is-link p-7 no-underline block">
+            <span class="badge-pill mb-3">Guide</span>
+            <h3 class="text-lg mb-2 text-[var(--color-ink)] font-semibold">{guide.data.title}</h3>
+            <p class="text-sm text-[var(--color-muted)]">{guide.data.description}</p>
+          </a>
+        ))}
+        {guides.length === 0 && (
+          <p class="text-[var(--color-muted)] col-span-2">Guides publishing soon — Wave 1 in progress.</p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-[var(--color-surface)] border-t border-[var(--color-border-soft)]">
+    <div class="site-container max-w-xl">
+      <h2 class="text-2xl mb-3">Get a shortlist</h2>
+      <p class="text-[var(--color-muted)] mb-8">Tell us budget and market — we match you with vetted local partners. No obligation.</p>
+      <LeadForm context="Homepage shortlist" />
+    </div>
+  </section>
+</BaseLayout>

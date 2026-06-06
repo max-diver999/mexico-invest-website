@@ -1,0 +1,59 @@
+---
+export const prerender = true;
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const guides = (await getCollection('guides'))
+  .filter((g) => !g.data.noindex)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const prioritySlugs = [
+  'mexico-property-investment-guide',
+  'buy-property-mexico-foreigner',
+  'fideicomiso-mexico-explained',
+];
+const priority = guides.filter((g) => prioritySlugs.includes(g.id));
+---
+<BaseLayout
+  title="Mexico Property Investment Guides"
+  description="Independent guides on Mexico real estate — fideicomiso, foreign ownership, net yields, and due diligence."
+>
+  <section class="site-container py-14 md:py-20">
+    <header class="max-w-2xl mb-12">
+      <h1 class="text-3xl">Investment guides</h1>
+      <p class="text-lg text-[var(--color-muted)] mt-3">
+        Research-first articles for foreign buyers. Not developer brochures — verify all figures before you transact.
+      </p>
+    </header>
+
+    {priority.length > 0 && (
+      <section class="mb-14 surface-card p-6 md:p-8">
+        <h2 class="text-xl mb-5">Start here</h2>
+        <div class="grid md:grid-cols-3 gap-5">
+          {priority.map((guide) => (
+            <a href={`/guides/${guide.id}/`} class="block p-5 rounded-xl bg-[var(--color-page)] hover:bg-[var(--color-teal-light)] no-underline transition-colors">
+              <h3 class="text-base mb-1 font-semibold text-[var(--color-ink)]">{guide.data.title}</h3>
+              <p class="text-sm text-[var(--color-muted)]">{guide.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {guides.map((guide) => (
+        <article class="surface-card p-7">
+          <div class="flex flex-wrap gap-2 mb-3">
+            {guide.data.tags?.slice(0, 3).map((tag) => (
+              <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-teal-light)] text-[var(--color-teal)] font-medium">{tag}</span>
+            ))}
+          </div>
+          <h2 class="text-lg mb-2 font-semibold">
+            <a href={`/guides/${guide.id}/`} class="no-underline text-[var(--color-ink)] hover:text-[var(--color-teal)]">{guide.data.title}</a>
+          </h2>
+          <p class="text-sm text-[var(--color-muted)]">{guide.data.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

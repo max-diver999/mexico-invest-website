@@ -1,0 +1,393 @@
+---
+/** Mexico Invest — live site report. Update via GSC/GA4/Bing MCP on each session. */
+export const prerender = true;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>mexico-invest.com — Site Report</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f3ef; color: #1c1917; min-height: 100vh; }
+
+    .header { background: #1c1917; color: white; padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-logo { width: 36px; height: 36px; background: linear-gradient(135deg, #d4a853, #b45309); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: #1c1917; }
+    .header h1 { font-size: 22px; font-weight: 700; }
+    .header-sub { font-size: 13px; color: #a8a29e; margin-top: 2px; }
+    .header-meta { text-align: right; }
+    .header-meta .label { font-size: 12px; color: #a8a29e; }
+    .header-meta .value { font-size: 14px; font-weight: 600; margin-top: 2px; }
+    .live-badge { display: inline-flex; align-items: center; gap: 6px; background: #292524; border-radius: 20px; padding: 4px 12px; font-size: 12px; margin-top: 8px; }
+    .live-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+    .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #78716c; margin-bottom: 16px; margin-top: 40px; }
+    .section-title:first-child { margin-top: 0; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+    .stat-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e7e5e4; }
+    .stat-card .num { font-size: 40px; font-weight: 800; color: #1c1917; line-height: 1; }
+    .stat-card .num.gold { color: #b45309; }
+    .stat-card .num.green { color: #15803d; }
+    .stat-card .label { font-size: 13px; color: #78716c; margin-top: 6px; }
+    .stat-card .sublabel { font-size: 11px; color: #a8a29e; margin-top: 4px; line-height: 1.4; }
+
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e7e5e4; }
+    .info-card h3 { font-size: 14px; font-weight: 700; color: #1c1917; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #f5f5f4; }
+    .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #fafaf9; gap: 16px; }
+    .info-row:last-child { border-bottom: none; }
+    .info-row .key { font-size: 13px; color: #78716c; flex-shrink: 0; }
+    .info-row .val { font-size: 13px; font-weight: 600; color: #1c1917; text-align: right; }
+    .info-row .val a { color: #b45309; text-decoration: none; }
+    .info-row .val a:hover { text-decoration: underline; }
+
+    .content-card { background: white; border-radius: 12px; border: 1px solid #e7e5e4; overflow: hidden; }
+    .content-table { width: 100%; border-collapse: collapse; }
+    .content-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #78716c; font-weight: 700; padding: 12px 20px; text-align: left; background: #fafaf9; border-bottom: 1px solid #e7e5e4; }
+    .content-table td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid #f5f5f4; }
+    .content-table tr:last-child td { border-bottom: none; }
+    .content-table .count { font-weight: 800; color: #b45309; font-size: 18px; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+    .tag.green { background: #dcfce7; color: #166534; }
+    .tag.blue { background: #dbeafe; color: #1e40af; }
+    .tag.amber { background: #fef3c7; color: #92400e; }
+    .tag.gray { background: #f5f5f4; color: #57534e; }
+
+    .changelog-item { background: white; border: 1px solid #e7e5e4; border-bottom: none; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .changelog-item:first-child { border-radius: 12px 12px 0 0; }
+    .changelog-item:last-child { border-radius: 0 0 12px 12px; border-bottom: 1px solid #e7e5e4; }
+    .changelog-date { font-size: 11px; color: #a8a29e; min-width: 88px; padding-top: 2px; }
+    .changelog-title { font-size: 13px; font-weight: 600; color: #1c1917; }
+    .changelog-desc { font-size: 12px; color: #78716c; margin-top: 3px; line-height: 1.45; }
+    .changelog-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+
+    .next-item { background: white; border-radius: 10px; border: 1px solid #e7e5e4; padding: 14px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+    .priority.high { color: #dc2626; font-size: 11px; font-weight: 700; min-width: 50px; }
+    .priority.medium { color: #d97706; font-size: 11px; font-weight: 700; min-width: 50px; }
+    .priority.low { color: #059669; font-size: 11px; font-weight: 700; min-width: 50px; }
+    .next-item .text { font-size: 13px; color: #1c1917; }
+    .next-item .subtext { font-size: 12px; color: #a8a29e; margin-top: 2px; }
+
+    .pulse-wrap { background: white; border-radius: 16px; border: 1px solid #e7e5e4; padding: 24px 28px; }
+    .pulse-kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+    @media (max-width: 700px) { .pulse-kpi-row { grid-template-columns: repeat(2, 1fr); } }
+    .pulse-kpi { background: #fafaf9; border-radius: 12px; border: 1px solid #e7e5e4; padding: 18px 20px; }
+    .pulse-kpi .kpi-val { font-size: 36px; font-weight: 900; color: #1c1917; line-height: 1; margin-top: 4px; }
+    .pulse-kpi .kpi-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #78716c; }
+    .pulse-kpi .kpi-sub { font-size: 11px; color: #a8a29e; margin-top: 4px; line-height: 1.35; }
+
+    .baseline-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; font-size: 13px; color: #92400e; line-height: 1.5; }
+    .baseline-box strong { color: #78350f; }
+
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .link-card { background: white; border-radius: 10px; border: 1px solid #e7e5e4; padding: 16px; text-decoration: none; color: #1c1917; display: block; }
+    .link-card:hover { border-color: #b45309; }
+    .link-card .link-label { font-size: 11px; color: #a8a29e; text-transform: uppercase; letter-spacing: 0.06em; }
+    .link-card .link-url { font-size: 13px; font-weight: 600; color: #b45309; margin-top: 4px; word-break: break-all; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #a8a29e; font-size: 12px; }
+    .footer a { color: #b45309; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .header { padding: 22px 16px; }
+      .header-meta { text-align: left; margin-top: 12px; }
+      .container { padding: 20px 12px; }
+      .changelog-item { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">IG</div>
+    <div>
+      <div class="header-sub">Website Performance Report</div>
+      <h1>mexico-invest.com</h1>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="label">Last updated</div>
+    <div class="value">5 June 2026 · v1.0 (Launch Day)</div>
+    <div class="live-badge"><span class="live-dot"></span> 201 URLs live · indexing submitted</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section-title">At a glance</div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="num gold">201</div>
+      <div class="label">URLs in sitemap</div>
+      <div class="sublabel">182 guides · 9 comparisons · static pages · GSC + Bing sitemap submitted</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">528K</div>
+      <div class="label">Words of content</div>
+      <div class="sublabel">191 MDX articles · ~2 770 avg words/guide · lifestyle + RE clusters</div>
+    </div>
+    <div class="stat-card">
+      <div class="num green">200</div>
+      <div class="label">Google Indexing API</div>
+      <div class="sublabel">Submitted 5 Jun · 1 URL queued tomorrow (daily quota) · smoke-test OK</div>
+    </div>
+    <div class="stat-card">
+      <div class="num green">201</div>
+      <div class="label">Bing IndexNow</div>
+      <div class="sublabel">Submitted 5 Jun · HTTP 200 · bing.com/indexnow direct</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">14</div>
+      <div class="label">Git commits</div>
+      <div class="sublabel">4–5 Jun launch sprint · MVP → 200 URL prod in under 24h</div>
+    </div>
+    <div class="stat-card">
+      <div class="num gold">0</div>
+      <div class="label">GSC clicks (baseline)</div>
+      <div class="sublabel">Expected — site indexed today · first data ~7–14 days</div>
+    </div>
+  </div>
+
+  <div class="section-title">SEO Pulse — Google Search Console</div>
+  <div class="pulse-wrap">
+    <div class="baseline-box">
+      <strong>Day 0 baseline (5 Jun 2026).</strong> GSC MCP: 0 clicks, 0 impressions for 8 May–4 Jun — property verified but bulk content went live and indexing API ping sent today. Next report update: expect first impressions within 7–14 days after Google crawl. Period: <code>sc-domain:mexico-invest.com</code> · Updated via GSC API.
+    </div>
+    <div class="pulse-kpi-row">
+      <div class="pulse-kpi">
+        <div class="kpi-label">Total Clicks</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">Baseline · target: first clicks by ~15 Jun</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Impressions</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">Indexing submitted 5 Jun · sitemap 0 errors</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Avg. Position</div>
+        <div class="kpi-val">—</div>
+        <div class="kpi-sub">No query data yet</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Avg. CTR</div>
+        <div class="kpi-val">—</div>
+        <div class="kpi-sub">CTR sprint when 50+ impressions/query</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:#a8a29e;text-align:center;">Top queries &amp; pages will populate after first GSC data · refresh this report weekly</p>
+  </div>
+
+  <div class="section-title">Analytics — GA4 (G-H725E249H7)</div>
+  <div class="pulse-wrap">
+    <div class="baseline-box">
+      <strong>GA4 live since 5 Jun.</strong> MCP: 0 sessions in Jun 1–4 window (tracking added with launch). Monitor: organic sessions, <code>generate_lead</code> on /thanks/, landing pages from Gulf guides.
+    </div>
+    <div class="pulse-kpi-row">
+      <div class="pulse-kpi">
+        <div class="kpi-label">Sessions</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">Property ID 540367626</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Users</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">Baseline day 0</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Pageviews</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">Expect bot + first organic within 1–2 weeks</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Leads</div>
+        <div class="kpi-val">—</div>
+        <div class="kpi-sub">Lead API POST 200 OK · Telegram + Resend configured</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Bing Webmaster</div>
+  <div class="pulse-wrap">
+    <div class="pulse-kpi-row">
+      <div class="pulse-kpi">
+        <div class="kpi-label">Bing Clicks</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">MCP · Jun 2026 · weekly buckets</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Impressions</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">Sitemap Success · IndexNow 201 URLs</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">Site verified</div>
+        <div class="kpi-val" style="font-size:20px;">✓</div>
+        <div class="kpi-sub">Import from GSC · separate MS account</div>
+      </div>
+      <div class="pulse-kpi">
+        <div class="kpi-label">IndexNow key</div>
+        <div class="kpi-val" style="font-size:20px;">✓</div>
+        <div class="kpi-sub">e811b4… live 200 OK</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Content breakdown</div>
+  <div class="content-card">
+    <table class="content-table">
+      <thead>
+        <tr><th>Collection</th><th>Pages</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Guides</td><td class="count">182</td><td>Lifestyle GCC (114) + RE/investment (68+) · fideicomiso HUB 3 300+ words</td></tr>
+        <tr><td>Comparisons</td><td class="count">9</td><td>Dubai vs London, RAK vs Dubai, Emaar vs Damac, UAE vs Qatar…</td></tr>
+        <tr><td>Areas</td><td class="count">0</td><td>Planned in GULF_RE_CONTENT_MAP_100 — batch 3</td></tr>
+        <tr><td>Static</td><td class="count">10</td><td>Home, guides hub, compare, about, methodology, contact, shortlist, legal</td></tr>
+        <tr><td><strong>TOTAL sitemap</strong></td><td class="count">201</td><td><strong>~528 000 words</strong> · 14 git commits · build green</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">Infrastructure &amp; indexing</div>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Stack</h3>
+      <div class="info-row"><span class="key">Domain</span><span class="val"><a href="https://mexico-invest.com/">mexico-invest.com</a></span></div>
+      <div class="info-row"><span class="key">Hosting</span><span class="val">Vercel · Astro 6 static</span></div>
+      <div class="info-row"><span class="key">Repo</span><span class="val">max-diver999/invest-gulf-website</span></div>
+      <div class="info-row"><span class="key">GA4</span><span class="val">G-H725E249H7 · 540367626</span></div>
+      <div class="info-row"><span class="key">GSC</span><span class="val">sc-domain:mexico-invest.com</span></div>
+      <div class="info-row"><span class="key">Lead API</span><span class="val">POST /api/lead/ → 200</span></div>
+    </div>
+    <div class="info-card">
+      <h3>Indexing status (5 Jun)</h3>
+      <div class="info-row"><span class="key">GSC sitemap</span><span class="val">✓ 0 errors</span></div>
+      <div class="info-row"><span class="key">Bing sitemap</span><span class="val">✓ Success</span></div>
+      <div class="info-row"><span class="key">Google API</span><span class="val">200 / 201 URL</span></div>
+      <div class="info-row"><span class="key">IndexNow</span><span class="val">201 / 201 URL</span></div>
+      <div class="info-row"><span class="key">indexing-bot SA</span><span class="val">Owner in GSC</span></div>
+      <div class="info-row"><span class="key">MCP</span><span class="val">GSC + GA4 + Bing</span></div>
+    </div>
+  </div>
+
+  <div class="section-title">Launch timeline</div>
+  <div>
+    <div class="changelog-item">
+      <div class="changelog-date">5 Jun 2026</div>
+      <div>
+        <div class="changelog-title">🚀 Launch Day — 201 URLs live + full indexing push</div>
+        <div class="changelog-desc">Batch 2–5 RE guides + 9 comparisons deployed (commit a30b5e4). Google Indexing API 200 URL + Bing IndexNow 201 URL. GSC + Bing sitemap verified. Site-report v1.0 published. fideicomiso HUB 3 322 words. INDEXING_SETUP_CHECKLIST added to templates.</div>
+        <div class="changelog-tags"><span class="tag green">Launch</span><span class="tag blue">Indexing</span><span class="tag amber">Report v1.0</span></div>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">5 Jun 2026</div>
+      <div>
+        <div class="changelog-title">Content scale-up — lifestyle + RE clusters</div>
+        <div class="changelog-desc">114 lifestyle guides imported + 40+ investment guides (Riviera Maya, Los Cabos, RAK, Qatar, Oman, Saudi, Bahrain). Area guides: JVC, Marina, Business Bay, Downtown, Dubai Hills, Palm, JLT, Creek Harbour, MBR City…</div>
+        <div class="changelog-tags"><span class="tag green">Content</span></div>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">5 Jun 2026</div>
+      <div>
+        <div class="changelog-title">Google Indexing API + infra scripts</div>
+        <div class="changelog-desc">google-indexing-api.mjs, submit-google-explicit.mjs, indexnow-submit.mjs. indexing-bot Owner in GSC. Hook approval file for safe agent indexing.</div>
+        <div class="changelog-tags"><span class="tag blue">Infra</span></div>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">4–5 Jun 2026</div>
+      <div>
+        <div class="changelog-title">Batch 1 — Dubai investment HUB cluster (7 guides)</div>
+        <div class="changelog-desc">dubai-property-investment-guide, can-foreigners-buy-property-uae, off-plan, rental yield, golden visa, step-by-step, worth-it. Pleada-quality pillars.</div>
+        <div class="changelog-tags"><span class="tag green">Content</span></div>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">4 Jun 2026</div>
+      <div>
+        <div class="changelog-title">Analytics + IndexNow + MCP trio</div>
+        <div class="changelog-desc">GA4 G-H725E249H7 live. IndexNow key deployed. search-console-invest-gulf, ga4-analytics-invest-gulf, bing-webmaster-invest-gulf in Cursor.</div>
+        <div class="changelog-tags"><span class="tag blue">Analytics</span><span class="tag gray">MCP</span></div>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">4 Jun 2026</div>
+      <div>
+        <div class="changelog-title">Site MVP on Vercel</div>
+        <div class="changelog-desc">Astro + MDX + Tailwind. Lead form Telegram. info@mexico-invest.com. Favicon set. Cloudflare DNS → Vercel SSL.</div>
+        <div class="changelog-tags"><span class="tag green">Launch</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Next steps &amp; recommendations</div>
+  <div>
+    <div class="next-item">
+      <div class="priority high">HIGH</div>
+      <div>
+        <div class="text">Batch 2 content — next ~200 URLs from GULF_RE_CONTENT_MAP_100</div>
+        <div class="subtext">Areas collection, remaining spokes, developer reviews · 5–7 articles per batch · build between batches</div>
+      </div>
+    </div>
+    <div class="next-item">
+      <div class="priority high">HIGH</div>
+      <div>
+        <div class="text">Submit remaining 1 Google URL tomorrow (quota reset)</div>
+        <div class="subtext">node scripts/google-indexing-api.mjs --offset 200 --batch 1</div>
+      </div>
+    </div>
+    <div class="next-item">
+      <div class="priority medium">MED</div>
+      <div>
+        <div class="text">Update site-report ~12 Jun with first GSC impressions</div>
+        <div class="subtext">GSC MCP: queries, pages, daily chart · add quick-win insights when pos 8–15</div>
+      </div>
+    </div>
+    <div class="next-item">
+      <div class="priority medium">MED</div>
+      <div>
+        <div class="text">Internal linking pass on HUB → spoke clusters</div>
+        <div class="subtext">fideicomiso, Dubai investment, off-plan, rental yield — cross-link top 20 guides</div>
+      </div>
+    </div>
+    <div class="next-item">
+      <div class="priority low">LOW</div>
+      <div>
+        <div class="text">Commercial landing /get-shortlist/ CRO test</div>
+        <div class="subtext">After first 50 GSC impressions — title/description CTR sprint on top 5 URLs</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Quick links</div>
+  <div class="links-grid">
+    <a class="link-card" href="https://mexico-invest.com/" target="_blank" rel="noopener"><div class="link-label">Live site</div><div class="link-url">mexico-invest.com</div></a>
+    <a class="link-card" href="https://mexico-invest.com/sitemap-index.xml" target="_blank" rel="noopener"><div class="link-label">Sitemap</div><div class="link-url">sitemap-index.xml</div></a>
+    <a class="link-card" href="https://search.google.com/search-console?resource_id=sc-domain:mexico-invest.com" target="_blank" rel="noopener"><div class="link-label">Google Search Console</div><div class="link-url">sc-domain:mexico-invest.com</div></a>
+    <a class="link-card" href="https://analytics.google.com/" target="_blank" rel="noopener"><div class="link-label">GA4 Property</div><div class="link-url">540367626</div></a>
+    <a class="link-card" href="https://www.bing.com/webmasters/" target="_blank" rel="noopener"><div class="link-label">Bing Webmaster</div><div class="link-url">mexico-invest.com</div></a>
+    <a class="link-card" href="https://github.com/max-diver999/invest-gulf-website" target="_blank" rel="noopener"><div class="link-label">GitHub</div><div class="link-url">invest-gulf-website</div></a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <strong>Mexico Invest Site Report v1.0</strong> · Launch day 5 June 2026 ·
+  <a href="https://mexico-invest.com/site-report/">mexico-invest.com/site-report/</a><br />
+  Update weekly via GSC + GA4 + Bing MCP · Content map: GULF_RE_CONTENT_MAP_100.md
+</div>
+
+</body>
+</html>

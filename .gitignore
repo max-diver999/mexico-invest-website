@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.env
+.env.*
+!.env.example
+.DS_Store
+.vercel
+
+# Credentials (never commit)
+scripts/google-indexing-key.json
+scripts/indexing-progress.json
+scripts/indexing-log.txt
