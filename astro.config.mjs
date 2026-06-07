@@ -15,7 +15,13 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter(page) {
-        return !page.includes('/thanks/') && !page.includes('/site-report/');
+        const excluded = [
+          '/thanks/',
+          '/site-report/',
+          '/guides/mexico-property-closing-costs-breakdown/',
+          '/guides/invest-in-los-cabos/',
+        ];
+        return !excluded.some((path) => page.includes(path));
       },
       serialize(item) {
         if (item.url === 'https://mexico-invest.com/') {
