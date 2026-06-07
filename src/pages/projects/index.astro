@@ -1,0 +1,35 @@
+---
+export const prerender = true;
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('projects'))
+  .filter((p) => !p.data.noindex)
+  .sort((a, b) => (a.data.priceFromUsd ?? 0) - (b.data.priceFromUsd ?? 0));
+---
+<BaseLayout
+  title="Mexico Real Estate Projects"
+  description="Independent project reviews for foreign buyers — Riviera Maya, Los Cabos, and Puerto Vallarta developments with prices and due diligence notes."
+>
+  <section class="site-container py-14 md:py-20">
+    <header class="max-w-2xl mb-12">
+      <h1 class="text-3xl">Project reviews</h1>
+      <p class="text-lg text-[var(--color-muted)] mt-3">
+        Editorial reviews of select developments — not developer marketing. Verify pricing and permits before any deposit.
+      </p>
+    </header>
+    <div class="grid md:grid-cols-2 gap-5">
+      {projects.map((project) => (
+        <a href={`/projects/${project.id}/`} class="surface-card p-6 block no-underline hover:border-[var(--color-teal)] transition-colors">
+          <h2 class="text-lg font-semibold mb-2 text-[var(--color-ink)]">{project.data.title}</h2>
+          <p class="text-sm text-[var(--color-muted)]">{project.data.description}</p>
+          {project.data.priceFromUsd && (
+            <p class="text-sm font-medium mt-3 text-[var(--color-teal)]">
+              From ${project.data.priceFromUsd.toLocaleString('en-US')}
+            </p>
+          )}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

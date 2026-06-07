@@ -18,6 +18,15 @@ const articleSchema = z.object({
     .optional(),
 });
 
+const projectSchema = articleSchema.extend({
+  priceFromUsd: z.number().optional(),
+  priceToUsd: z.number().optional(),
+  area: z.string().optional(),
+  developer: z.string().optional(),
+  propertyType: z.string().optional(),
+  status: z.string().optional(),
+});
+
 export const collections = {
   guides: defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guides' }),
@@ -30,5 +39,9 @@ export const collections = {
   areas: defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/areas' }),
     schema: articleSchema,
+  }),
+  projects: defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
+    schema: projectSchema,
   }),
 };
