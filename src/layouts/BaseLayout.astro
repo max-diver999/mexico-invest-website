@@ -12,7 +12,7 @@ interface Props {
   ogImage?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
-  schema?: object;
+  schemas?: object[];
 }
 
 const {
@@ -22,7 +22,7 @@ const {
   ogImage = `${SITE.url}/favicon.svg`,
   type = 'website',
   noindex = false,
-  schema,
+  schemas = [],
 } = Astro.props;
 
 const fullTitle = title.includes('Mexico Invest') ? title : `${title} | Mexico Invest`;
@@ -34,10 +34,19 @@ const orgSchema = {
   url: SITE.url,
   description: SITE.description,
   email: SITE.email,
-  logo: `${SITE.url}/favicon.svg`,
+  logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: SITE.email,
+    contactType: 'customer service',
+    availableLanguage: ['English', 'Spanish'],
+  },
+  sameAs: [
+    SITE.url,
+  ],
 };
 
-const allSchemas = [orgSchema, ...(schema ? [schema] : [])];
+const allSchemas = [orgSchema, ...schemas];
 ---
 <!doctype html>
 <html lang="en" dir="ltr">
