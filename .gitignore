@@ -10,5 +10,6 @@ dist/
 
 # Credentials (never commit)
 scripts/google-indexing-key.json
+scripts/google-indexing-key-mexico.json
 scripts/indexing-progress.json
 scripts/indexing-log.txt
