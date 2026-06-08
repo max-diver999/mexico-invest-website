@@ -3,6 +3,7 @@
 import { GoogleAuth } from 'google-auth-library';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { recordSubmitted } from '../../scripts/lib/record-submitted.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const KEY_PATH = join(__dirname, 'google-indexing-key.json');
@@ -21,6 +22,7 @@ const auth = new GoogleAuth({
 const client = await auth.getClient();
 let ok = 0;
 let fail = 0;
+const okUrls = [];
 
 for (const url of urls) {
   try {
@@ -31,6 +33,7 @@ for (const url of urls) {
     });
     if (res.status === 200) {
       ok++;
+      okUrls.push(url);
       console.log(`OK ${url}`);
     } else {
       fail++;
@@ -42,6 +45,10 @@ for (const url of urls) {
     console.log(`FAIL ${url} — ${msg}`);
     if (e.response?.status === 429) break;
   }
+}
+if (okUrls.length) {
+  const r = recordSubmitted({ siteFolder: 'mexico-invest-website', urls: okUrls, channel: 'google' });
+  console.log(`Log: +${r.added} → submitted-urls.json (${r.total} total)`);
 }
 
 console.log(`Google: ${ok}/${urls.length} OK, ${fail} errors`);
