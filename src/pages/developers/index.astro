@@ -1,0 +1,30 @@
+---
+export const prerender = true;
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const developers = (await getCollection('developers'))
+  .filter((d) => !d.data.noindex)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<BaseLayout
+  title="Mexico Real Estate Developers"
+  description="Developer profiles for Riviera Maya, Los Cabos, and Puerto Vallarta — track record, project links, and due diligence notes for foreign buyers."
+>
+  <section class="site-container py-14 md:py-20">
+    <header class="max-w-2xl mb-12">
+      <h1 class="text-3xl">Developer profiles</h1>
+      <p class="text-lg text-[var(--color-muted)] mt-3">
+        Entity authority reviews — not sales brochures. Verify permits, delivery history, and escrow before any deposit.
+      </p>
+    </header>
+    <div class="grid md:grid-cols-2 gap-5">
+      {developers.map((dev) => (
+        <a href={`/developers/${dev.id}/`} class="surface-card p-6 block no-underline hover:border-[var(--color-teal)] transition-colors">
+          <h2 class="text-lg font-semibold mb-2 text-[var(--color-ink)]">{dev.data.title}</h2>
+          <p class="text-sm text-[var(--color-muted)]">{dev.data.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

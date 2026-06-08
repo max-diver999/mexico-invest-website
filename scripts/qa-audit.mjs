@@ -1,4 +1,4 @@
-// QA audit for invest-gulf content — hard gate before publish
+// QA audit for mexico-invest content — hard gate before publish
 // Usage:
 //   node scripts/qa-audit.mjs
 //   node scripts/qa-audit.mjs --changed
@@ -9,7 +9,7 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
 const ROOT = decodeURIComponent(new URL('../src/content/', import.meta.url).pathname);
-const COLLECTIONS = ['guides', 'compare', 'areas', 'projects'];
+const COLLECTIONS = ['guides', 'compare', 'areas', 'projects', 'developers', 'news'];
 
 const BANNED_PHRASES = [
   'Regional diversification',
@@ -137,16 +137,28 @@ function auditFile(c, slug) {
   const title = (fm.title || '').replace(/^["']|["']$/g, '');
   if (title && (title.length < 45 || title.length > 65)) prob.push(`titleLen:${title.length}`);
 
+  const minFaq = c === 'news' ? 3 : 5;
   if (!fm.__hasFaq) prob.push('no-faq-block');
-  else if (fm.__faqCount < 5) prob.push(`faq:${fm.__faqCount}<5`);
+  else if (fm.__faqCount < minFaq) prob.push(`faq:${fm.__faqCount}<${minFaq}`);
 
-  const minW = c === 'guides' ? 2000 : c === 'projects' ? 1200 : 1800;
+  const minW = {
+    guides: 2000,
+    projects: 1200,
+    compare: 1800,
+    areas: 1800,
+    developers: 1200,
+    news: 600,
+  }[c] ?? 1800;
   if (words < minW) prob.push(`words:${words}<${minW}`);
 
-  if (!/quick answer|tl;dr|\*\*quick answer|\*\*tl;dr/i.test(body)) prob.push('no-quick-answer');
+  if (c !== 'news' && !/quick answer|tl;dr|\*\*quick answer|\*\*tl;dr/i.test(body)) {
+    prob.push('no-quick-answer');
+  }
 
   const links = body.match(/\]\((\/[a-z0-9\-\/]*)\)/gi) || [];
-  const internal = links.filter((l) => /\]\(\/(guides|compare|areas|projects)\//i.test(l));
+  const internal = links.filter((l) =>
+    /\]\(\/(guides|compare|areas|projects|developers|news)\//i.test(l),
+  );
   if (internal.length < 5) prob.push(`intLinks:${internal.length}<5`);
   const noTrail = internal.filter((l) => !/\/\)$/.test(l));
   if (noTrail.length) prob.push(`noTrailingSlash:${noTrail.length}`);
@@ -190,7 +202,9 @@ function auditFile(c, slug) {
     if (bad.length) prob.push(`relatedSlugsBad:${bad.join('|')}`);
   }
 
-  const bodySlugs = [...body.matchAll(/\]\(\/(?:guides|compare|areas)\/([a-z0-9\-]+)\/?\)/gi)].map((m) => m[1]);
+  const bodySlugs = [
+    ...body.matchAll(/\]\(\/(?:guides|compare|areas|projects|developers|news)\/([a-z0-9\-]+)\/?\)/gi),
+  ].map((m) => m[1]);
   const badLinks = [...new Set(bodySlugs.filter((s) => !allSlugs.has(s)))];
   if (badLinks.length) prob.push(`brokenInternalLinks:${badLinks.join('|')}`);
 
@@ -220,7 +234,7 @@ for (const { coll, slug } of filesToAudit) {
   auditFile(coll, slug);
 }
 
-console.log('=== INVEST-GULF QA AUDIT ===');
+console.log('=== MEXICO-INVEST QA AUDIT ===');
 console.log(`Scope: ${changedOnly ? 'changed only' : singleFile ? singleFile : 'full corpus'}`);
 console.log(`Files audited: ${stats.total}`);
 if (stats.total) console.log(`Avg words: ${Math.round(stats.wordSum / stats.total)}`);

@@ -36,6 +36,12 @@ export default defineConfig({
         if (item.url.includes('/projects/')) {
           return { ...item, priority: 0.75, changefreq: 'weekly' };
         }
+        if (item.url.includes('/developers/')) {
+          return { ...item, priority: 0.72, changefreq: 'monthly' };
+        }
+        if (item.url.includes('/news/')) {
+          return { ...item, priority: 0.65, changefreq: 'weekly' };
+        }
         return { ...item, priority: 0.7, changefreq: 'monthly' };
       },
     }),
