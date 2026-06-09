@@ -1,5 +1,5 @@
 {
-  "rollout": "guide-images-all-86",
+  "rollout": "guide-images-all-86-thematic",
   "verified": "2026-06-08",
   "rule": "258 unique URLs — 3 per guide, zero overlap with 201 project+area URLs",
   "articles": [
@@ -908,22 +908,22 @@
     },
     {
       "slug": "mexico-branded-residences-investment",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/D1_Edition_Playa-636_11zon-scaled.jpg",
-          "alt": "Edition luxury residences at Playa del Carmen beach"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/26154209/IM-1-scaled.jpg",
+          "alt": "IM 1 scaled — Mexico Branded Residences Investment investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/D3_Secrets_Playa-51-1-1_11zon-scaled.jpg",
-          "alt": "Secrets branded beachfront resort Riviera Maya"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225954/cozumel-family-photo-color-wings-scaled.jpg",
+          "alt": "cozumel-family-photo-color-wings"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/RIVIERA-MAYA_PLAYA-MAROMA_11zon-scaled.jpg",
-          "alt": "Playa Maroma luxury branded coastline"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225936/cozumel-underwater-statues-snorkel-tour-scaled.jpg",
+          "alt": "cozumel-underwater-statues-snorkel-tour"
         }
       ]
     },
@@ -933,102 +933,102 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2020/03/Convento-de-valladolid-scaled-937x535-crop.jpg",
-          "alt": "Colonial Valladolid — Yucatan property context"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-ateneo-peninsular-museo-tren-maya.jpg",
+          "alt": "Ateneo Peninsular y Museo del Tren Maya"
         },
         {
           "role": "inline-1",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/07/Hacienda-Kaanac-1-703x535-crop.jpg",
-          "alt": "Historic hacienda in Yucatan countryside"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-palacio-de-la-musica.jpg",
+          "alt": "Mérida - Palacio de la Música"
         },
         {
           "role": "inline-2",
-          "url": "https://yucatan.travel/wp-content/uploads/2019/12/Mayas-937x535-crop.jpg",
-          "alt": "Yucatan cultural heritage and real estate region"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-museo-casa-montejo.jpg",
+          "alt": "Museo Casa Montejo — Mexico Capital Gains Tax Foreign Seller market context"
         }
       ]
     },
     {
       "slug": "mexico-condo-investment-foreigners",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/143886-646x436.jpg",
-          "alt": "High-rise condo tower along Playa del Carmen beach"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152801/Hotel-Nomade-7_-scaled.jpg",
+          "alt": "Hotel Nomade 7_ — Mexico Condo Investment Foreigners investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/226068-646x436.jpg",
-          "alt": "Beachfront condo hotel on Quinta Avenida corridor"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152751/Hotel-Punta-Caliza-2_-scaled.jpg",
+          "alt": "Hotel Punta Caliza 2_"
         },
         {
           "role": "inline-2",
-          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/310271-646x436.jpg",
-          "alt": "Resort-style condo development Riviera Maya"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17171529/Hotel-Nomade-Holbox-scaled.jpg",
+          "alt": "Hotel Nomade Holbox scaled"
         }
       ]
     },
     {
       "slug": "mexico-golf-course-property",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1736556680/clients/loscabosmx/Tourist_Corridor_Scenic_Route_Los_Cabos_5a39e687-fe7f-4df2-ae37-87aa4f45edae.jpg",
-          "alt": "Los Cabos tourist corridor near championship golf communities"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29010029/BPGC_MEX_RMGC_GOLFCOURSE_030_med.jpg",
+          "alt": "BPGC MEX RMGC GOLFCOURSE 030 med"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1753299401/clients/loscabosmx/Tourist_Corridor_Scenic_Route_Los_Cabos_2_0d5101e1-fb17-4736-b613-180ec5bd00c9.jpg",
-          "alt": "Scenic Cabo corridor linking golf and resort estates"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29005940/normal_GOLF_COURSE-1010-1.jpg",
+          "alt": "normal GOLF COURSE 1010 1"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_383,q_65,w_640/v1/cms_resources/clients/loscabosmx/montagepresidencial_d227250f-0635-4004-929a-f5533e9e380b.jpg",
-          "alt": "Montage Los Cabos luxury resort and golf community"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29005452/normal_GOLF_COURSE-1010.jpg",
+          "alt": "normal GOLF COURSE 1010"
         }
       ]
     },
     {
       "slug": "mexico-marina-property-investment",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "Wikimedia Commons",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/Marina_1_Cabo_San_Lucas_ef28ad0f-df33-4752-9cb4-780a9873a4a4.jpg",
-          "alt": "Cabo San Lucas marina and yacht harbor"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/El_Arco%2C_Cabo_San_Lucas%2C_Baja_California_Sur%2C_Mexico.jpg/1280px-El_Arco%2C_Cabo_San_Lucas%2C_Baja_California_Sur%2C_Mexico.jpg",
+          "alt": "El Arco rock formation at Land's End Cabo"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562988/cms_resources/clients/loscabosmx/the_arch3_124638e8-9864-4401-8169-132999bd75fb.jpg",
-          "alt": "Land's End arch — Cabo marina district backdrop"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Isla_Mujeres_beach.jpg/1280px-Isla_Mujeres_beach.jpg",
+          "alt": "Isla Mujeres beach north of Cancun"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563071/cms_resources/clients/loscabosmx/The_Arch_3_1__023724bc-80e1-482e-845e-2fe9a35431db.jpg",
-          "alt": "Cabo San Lucas waterfront near marina properties"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Holbox_Island_beach.jpg/1280px-Holbox_Island_beach.jpg",
+          "alt": "Holbox island beach — emerging value market"
         }
       ]
     },
     {
       "slug": "mexico-off-plan-investment",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/PARAISO-TULUM-_11zon-scaled.jpg",
-          "alt": "Pre-construction beachfront zone in Tulum"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163758/golf-riviera-24_11zon-scaled.jpg",
+          "alt": "golf riviera 24 11zon scaled"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/RivieraMaya-Tulum-2_43_11zon-scaled.jpg",
-          "alt": "Tulum off-plan corridor and jungle-beach interface"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163752/golf-riviera-26_11zon-scaled.jpg",
+          "alt": "golf riviera 26 11zon scaled"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/Tulum-Dron01_45_11zon.jpg",
-          "alt": "Aerial view of Tulum development coastline"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225857/xenses-park-kids-photo-optical-illusion.jpg",
+          "alt": "xenses-park-kids-photo-optical-illusion"
         }
       ]
     },
@@ -1038,123 +1038,123 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2020/03/Aventura-y-Naturaleza-710x400-crop.jpg",
-          "alt": "Yucatan lifestyle context for property buyers"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-paseo-de-montejo.jpg",
+          "alt": "Mérida - Paseo de Montejo"
         },
         {
           "role": "inline-1",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/12/Foto-2-Mirador-Ermita-de-Tekax-703x535-crop.jpg",
-          "alt": "Colonial architecture in southern Yucatan"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-palacio-de-gobierno.jpg",
+          "alt": "Mérida - Palacio de Gobierno"
         },
         {
           "role": "inline-2",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/04/Kite-El-Cuyo-c-937x535-crop.jpg",
-          "alt": "Coastal Yucatan town — secondary home market"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-catedral-de-san-ildefonso.jpg",
+          "alt": "Mérida - Catedral de San Ildefonso"
         }
       ]
     },
     {
       "slug": "mexico-property-for-americans",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467149995-646x436.jpg",
-          "alt": "Caribbean beach access popular with US buyers"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13204347/cancun-1-scaled.jpg",
+          "alt": "cancun (1) — Mexico Property For Americans investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467834160-646x436.jpg",
-          "alt": "Playa del Carmen shoreline and resort strip"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13203340/CANCUN-scaled.jpg",
+          "alt": "CANCUN scaled — Mexico Property For Americans market context"
         },
         {
           "role": "inline-2",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467906630-646x436.JPG",
-          "alt": "Quinta Avenida beach lifestyle Riviera Maya"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152822/DSC0323_-scaled.jpg",
+          "alt": "_DSC0323_ — Mexico Property For Americans market context"
         }
       ]
     },
     {
       "slug": "mexico-property-for-canadians",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563012/cms_resources/clients/loscabosmx/Migrino_Beach_1024x683_151f824b-40f5-4f62-9aec-07fde2b816d5.jpg",
-          "alt": "Migrino Beach — Pacific coast popular with Canadian buyers"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152812/DSC2474_-scaled.jpg",
+          "alt": "_DSC2474_ — Mexico Property For Canadians investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/Atitividade_Oceano_Parasailing_BAJA_SWATERSPORTS_parasailing1_9d89890d-59f3-4728-aec7-90d964bab2fa.jpg",
-          "alt": "Cabo San Lucas bay lifestyle for snowbird owners"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152740/Jaguar-1_-scaled.jpg",
+          "alt": "Jaguar-1_ — Mexico Property For Canadians market context"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/ElArcoJetSki_aa2e1a95-a0c1-43d0-b7fe-6732dbda9591.jpg",
-          "alt": "Land's End — Baja market alternative to Caribbean"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152727/La-Valise-1_-scaled.jpg",
+          "alt": "La Valise-1_ — Mexico Property For Canadians market context"
         }
       ]
     },
     {
       "slug": "mexico-property-insurance-foreigners",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/376166-646x436.jpg",
-          "alt": "Insured beachfront condo asset Playa del Carmen"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152716/Shibari-29_-scaled.jpg",
+          "alt": "Shibari-29_ — Mexico Property Insurance Foreigners investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/384514-646x436.jpg",
-          "alt": "Resort tower on hurricane-exposed Caribbean coast"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17171356/IMG_7732.jpg.jpeg",
+          "alt": "IMG 7732.jpg — Mexico Property Insurance Foreigners market context"
         },
         {
           "role": "inline-2",
-          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/604573-646x436.jpg",
-          "alt": "Coastal property requiring structural insurance review"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17162303/Charming-boutique-hotels-culture-scaled.jpg",
+          "alt": "Charming-boutique-hotels-culture"
         }
       ]
     },
     {
       "slug": "mexico-property-investment-guide",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/RivieraMaya-123_11zon-scaled.jpg",
-          "alt": "Riviera Maya investment corridor overview"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17162205/Charming-Boutique-Hotels_experiencias-scaled.jpg",
+          "alt": "Charming-Boutique-Hotels_experiencias"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/playa-del-carmen-4_11zon-scaled.jpg",
-          "alt": "Playa del Carmen core market for foreign investors"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17162134/Charming-Boutique-HotelsRomance.jpg",
+          "alt": "Charming-Boutique-HotelsRomance"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/playa-dl-carmen-3_11zon-scaled.jpg",
-          "alt": "Caribbean coast driving Mexico property demand"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17161515/Casa-Malca--scaled.jpg",
+          "alt": "Casa Malca — Mexico Property Investment Guide market context"
         }
       ]
     },
     {
       "slug": "mexico-property-market-buyer-friendly-2026",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/26154209/IM-1-scaled.jpg",
-          "alt": "Riviera Maya market snapshot 2026 buyer window"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160911/Xela-24_-scaled.jpg",
+          "alt": "Xela 24 scaled — Mexico Property Market Buyer Friendly 2026 investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/Tulum-2_48_11zon-scaled.jpg",
-          "alt": "Tulum buyer-friendly pre-construction pipeline"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160848/La-Valise_-scaled.jpg",
+          "alt": "La Valise_ — Mexico Property Market Buyer Friendly 2026 market context"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/playa-del-carmen-15_11zon-scaled.jpg",
-          "alt": "Playa del Carmen resale and new-build inventory"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160830/Redoo_11-scaled.jpg",
+          "alt": "Redoo 11 scaled — Mexico Property Market Buyer Friendly 2026 market context"
         }
       ]
     },
@@ -1164,39 +1164,39 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/07/Hacienda-Kaanac-2-703x535-crop.jpg",
-          "alt": "Yucatan hacienda — property tax jurisdiction example"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-que-hacer-plaza-grande.jpg",
+          "alt": "Mérida - Plaza Grande"
         },
         {
           "role": "inline-1",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/07/Hacienda-Kaanac-4-703x535-crop.jpg",
-          "alt": "Historic estate in Yucatan tax municipality"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/merida-que-hacer-01.jpg",
+          "alt": "merida-que-hacer-01 — Mexico Property Taxes Explained market context"
         },
         {
           "role": "inline-2",
-          "url": "https://yucatan.travel/wp-content/uploads/2020/10/Hanal-Pixan-1-937x535-crop.jpg",
-          "alt": "Merida-region cultural center and tax hub"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/11/04-9-rutas-aventuravalladolid.png",
+          "alt": "04-9-rutas-aventuravalladolid"
         }
       ]
     },
     {
       "slug": "mexico-real-estate-for-retirees",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://yucatan.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/12/Holbox-Grid-scaled.jpg",
-          "alt": "Holbox island — quiet retiree beach community"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/02/CarnavalMerida.jpg",
+          "alt": "CarnavalMerida — Mexico Real Estate For Retirees investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562988/cms_resources/clients/loscabosmx/San_Jose_del_Cabo_Plaza_0769e28b-61bc-4295-99a0-b40f0ae17d74.jpg",
-          "alt": "San Jose del Cabo plaza — walkable retiree town"
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Regiones-Cenotes-Haciendas-Folletos-Digitales-2023.jpg",
+          "alt": "Regiones-Cenotes-Haciendas-Folletos-Digitales-2023"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/La_Paz_1_434d4b2b-cc7d-407e-9c33-594a7445e7d5.jpg",
-          "alt": "La Paz waterfront — Baja retiree lifestyle"
+          "url": "https://yucatan.travel/wp-content/uploads/2026/04/EkBalam-Arco-de-entrada01.jpg",
+          "alt": "EkBalam Arco de entrada"
         }
       ]
     },
@@ -1206,186 +1206,186 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2019/11/rio-de-los-flamingos-celestun-yucatan-937x535-crop.jpg",
-          "alt": "Celestun biosphere — Yucatan geography term"
+          "url": "https://yucatan.travel/wp-content/uploads/2026/04/gastronomia-header.jpg",
+          "alt": "gastronomia — Mexico Real Estate Glossary investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/03/Salto-de-Nachi-Cocom--703x535-crop.jpg",
-          "alt": "Yucatan cenote and natural feature reference"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/riviera-yucatan-progreso-2.jpg",
+          "alt": "Puerto Progreso — Mexico Real Estate Glossary market context"
         },
         {
           "role": "inline-2",
-          "url": "https://www.playadelcarmen.com/front/img/header/header_image_5.jpg",
-          "alt": "Playa del Carmen beach — common buyer destination term"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/izamal.jpg",
+          "alt": "izamal — Mexico Real Estate Glossary market context"
         }
       ]
     },
     {
       "slug": "mexico-real-estate-market-forecast-2026",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18230019/caribbean-kids-family-tubing-activity-1536x1024.jpg",
-          "alt": "Family tourism demand driver for 2026 rentals"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160812/Jaguar-8-scaled.jpg",
+          "alt": "Jaguar 8 scaled — Mexico Real Estate Market Forecast 2026 investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/D1_Edition_Playa-788_11zon-scaled.jpg",
-          "alt": "Luxury segment pipeline Riviera Maya 2026"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160744/Hotel-Villa-Flamingo-Holbox-5-scaled.jpg",
+          "alt": "Hotel Villa Flamingo Holbox 5"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563057/cms_resources/clients/loscabosmx/DJI_0010_a957d464_145d_40d1_afda_1b8a2f05193c_8ccfbc20-0892-49de-a878-544b5c1cfc97.jpg",
-          "alt": "Aerial Los Cabos — Pacific coast forecast market"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160719/Hotel-Villa-Flamingo-Holbox-4-1-scaled.jpg",
+          "alt": "Hotel Villa Flamingo Holbox 4"
         }
       ]
     },
     {
       "slug": "mexico-real-estate-scams-avoid",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://yucatan.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1563563331-646x436.jpg",
-          "alt": "Busy Playa del Carmen beach — verify seller claims"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/06/06-ruta-valladolid-magico.png",
+          "alt": "06-ruta-valladolid-magico"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1547546364-646x436.jpg",
-          "alt": "Tourist corridor where off-plan scams surface"
+          "url": "https://yucatan.travel/wp-content/uploads/2023/06/365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-.jpg",
+          "alt": "365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562995/cms_resources/clients/loscabosmx/sanjosedelcabo_church_f5bc58b0-d9e7-4525-bb65-4e47c805ba19.jpg",
-          "alt": "San Jose del Cabo historic center — title verification point"
+          "url": "https://yucatan.travel/wp-content/uploads/2023/06/365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-1.jpg",
+          "alt": "365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-1"
         }
       ]
     },
     {
       "slug": "mexico-rental-yield-guide",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1504192006-646x436.jpg",
-          "alt": "Short-term rental demand beach Playa del Carmen"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160645/Hotel-Villa-Flamingo-Holbox-4-scaled.jpg",
+          "alt": "Hotel Villa Flamingo Holbox 4"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1504194396-646x436.jpg",
-          "alt": "High-occupancy tourist zone for rental yield"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160619/Hotel-Nomade-Holbox00002_-scaled.jpg",
+          "alt": "Hotel Nomade Holbox00002_"
         },
         {
           "role": "inline-2",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1507917087-646x436.jpg",
-          "alt": "Riviera Maya rental market beachfront context"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160552/Hotel-Naay-Holbox-00027_-scaled.jpg",
+          "alt": "Hotel Naay Holbox 00027_"
         }
       ]
     },
     {
       "slug": "mexico-restricted-zone-explained",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1736556679/clients/loscabosmx/Cabo_Adventures_Medano_Arch_Beach_40aad5aa-a5ec-4479-8551-c64fd7718f01.jpg",
-          "alt": "Restricted-zone beach within 50 km of coast — Los Cabos"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160524/hotel-Hayhu_-scaled.jpg",
+          "alt": "hotel Hayhu_ — Mexico Restricted Zone Explained investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_542,q_65,w_640/v1/cms_resources/clients/loscabosmx/Chileno_Beach_82695793-c348-41f0-a786-886e34b52060.jpg",
-          "alt": "Chileno Bay — fideicomiso-required coastal zone"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160449/HABITAS-BACALAR-scaled.jpg",
+          "alt": "HABITAS BACALAR — Mexico Restricted Zone Explained market context"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/playa-del-carmen-5.jpg",
-          "alt": "Caribbean restricted zone beach Playa del Carmen"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160421/D4_OomBubble_PuertoM--scaled.jpg",
+          "alt": "D4_OomBubble_PuertoM — Mexico Restricted Zone Explained market context"
         }
       ]
     },
     {
       "slug": "mexico-turnkey-rental-property",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/Hotel_1_The_Cape_couple_aa07ab14-191b-44b0-a48f-53b287afbfcb.jpg",
-          "alt": "Turnkey luxury rental villa Los Cabos"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160345/Hotel-Awa-Holbox-00006--scaled.jpg",
+          "alt": "Hotel Awa Holbox 00006"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1740002770/clients/loscabosmx/Lands_End_Medano_Family_lifestyle_8cf16928-2c23-4605-84b9-9bcd5de7dbbd.jpg",
-          "alt": "Family rental lifestyle Medano Beach Cabo"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160255/Casa-Tortugas-9_-scaled.jpg",
+          "alt": "Casa Tortugas-9_ — Mexico Turnkey Rental Property market context"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563090/cms_resources/clients/loscabosmx/Isla_Espiritu_Santo_1_1_2__e1b43cd6-066d-454d-9199-b437fe9f523e.jpg",
-          "alt": "Turnkey eco-lodge rental on Espiritu Santo island"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160228/Casa-Sandra-28_-scaled.jpg",
+          "alt": "Casa Sandra-28_ — Mexico Turnkey Rental Property market context"
         }
       ]
     },
     {
       "slug": "mexico-villa-investment",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1736556680/clients/loscabosmx/Farm_to_table_Floras_Farm_3_4f314cfd-c0da-492f-8117-eee16e12d7db.jpg",
-          "alt": "Flora's Farm Todos Santos — boutique villa lifestyle asset"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/15172034/Hotel-Villa-Flamingo-Holbox-00014_11zon-scaled.jpg",
+          "alt": "Hotel Villa Flamingo Holbox 00014_11zon"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562988/cms_resources/clients/loscabosmx/laventanasunrise_3431f426-decf-4574-a1ab-81b4804eced2.jpg",
-          "alt": "La Ventana sunrise — Baja villa coastline"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09145846/Hotel-Villa-Flamingo-Holbox-00002_11zon-scaled.jpg",
+          "alt": "Hotel Villa Flamingo Holbox 00002_11zon"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562994/cms_resources/clients/loscabosmx/cerritosbeach_efdd7485-eee8-48f9-8bf9-8caaf70a4410.jpg",
-          "alt": "Cerritos Beach Pacific villa market Todos Santos"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09145228/Hotel-Villa-Flamingo-Holbox-00012_11zon-scaled.jpg",
+          "alt": "Hotel Villa Flamingo Holbox 00012_11zon"
         }
       ]
     },
     {
       "slug": "mistakes-foreign-buyers-mexico",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1394222928-646x436.jpg",
-          "alt": "Due diligence starts at the beach listing site"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160153/Boca-de-Agua-scaled.jpg",
+          "alt": "Boca de Agua — Mistakes Foreign Buyers Mexico investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1395945292-646x436.jpg",
-          "alt": "Verify zoning before buying Riviera Maya property"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/26124133/CANCUN_BLANCO-scaled.png",
+          "alt": "Playa del Carmen buyer corridor — foreign buyer mistakes context"
         },
         {
           "role": "inline-2",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1415303368-646x436.jpg",
-          "alt": "Common buyer mistake — skipping independent survey"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160056/Azulik-28_-scaled.jpg",
+          "alt": "Azulik-28_ — Mistakes Foreign Buyers Mexico market context"
         }
       ]
     },
     {
       "slug": "nearshoring-mexico-industrial-real-estate",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://yucatan.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_702,q_65,w_1520/v1/clients/loscabosmx/Trade_1_3fc15aea-7675-4c1c-95d4-c9939e39ddbb.jpg",
-          "alt": "Los Cabos investment and trade forum — industrial demand proxy"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/riviera-yucatan-progreso.jpg",
+          "alt": "riviera yucatan progreso"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563031/cms_resources/clients/loscabosmx/Places_to_visit_Cabo_San_Lucas_af50c8dd-f76f-4b5f-a20f-c4332772ad6a.jpg",
-          "alt": "Cabo San Lucas logistics hub Baja California Sur"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/mani.jpg",
+          "alt": "mani — Nearshoring Mexico Industrial Real Estate market context"
         },
         {
           "role": "inline-2",
-          "url": "https://yucatan.travel/wp-content/uploads/2022/03/Foto-3-Conoce-el-skatepark-de-Progreso-703x535-crop.jpg",
-          "alt": "Progreso port city — Yucatan industrial corridor access"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/tekax-07.jpg",
+          "alt": "tekax 07 — Nearshoring Mexico Industrial Real Estate market context"
         }
       ]
     },
@@ -1395,18 +1395,18 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1478807756-646x436.jpg",
-          "alt": "Financeable condo tower Playa del Carmen"
+          "url": "https://www.playadelcarmen.com/front/img/header/header_image_5.jpg",
+          "alt": "header image 5 — Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1526397833-646x436.jpg",
-          "alt": "Bank-appraised beachfront collateral Riviera Maya"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17154853/Charming-boutique-hotels-La-Valise-1-scaled.jpg",
+          "alt": "Charming-boutique-hotels-La-Valise"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563061/cms_resources/clients/loscabosmx/DSC06276_Edit_f153b74c-b7e5-4c66-8de7-c18dd148de2a.jpg",
-          "alt": "Los Cabos luxury home eligible for non-resident financing"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/14185400/Charming-boutique-hotels-La-Valise-scaled.jpg",
+          "alt": "Charming-boutique-hotels-La-Valise"
         }
       ]
     },
@@ -1416,60 +1416,60 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/10/Spa-de-Cerveza-en-Uxmal-5-703x535-crop.jpg",
-          "alt": "Uxmal heritage zone — notario jurisdiction Yucatan"
+          "url": "https://yucatan.travel/wp-content/uploads/2023/06/365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-2.jpg",
+          "alt": "365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-2"
         },
         {
           "role": "inline-1",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/12/Foto-4-Mirador-Ermita-de-Tekax-703x535-crop.jpg",
-          "alt": "Colonial municipality where notario closes sales"
+          "url": "https://yucatan.travel/wp-content/uploads/2023/06/365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-3.jpg",
+          "alt": "365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-3"
         },
         {
           "role": "inline-2",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/03/Buceo-Sisal-4-703x535-crop.jpg",
-          "alt": "Sisal coastal town — state notario network"
+          "url": "https://yucatan.travel/wp-content/uploads/2023/06/365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-4.jpg",
+          "alt": "365-sabores-en-yucatán-Chilaquiles-a-la-yucateca-con-longaniza-de-Valladolid-4"
         }
       ]
     },
     {
       "slug": "off-plan-vs-ready-mexico",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/playa-del-carmen-9.jpg",
-          "alt": "Ready resale tower on finished Playa del Carmen beach"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/06161849/maya-kaan-7_5_11zon-scaled-1.jpg",
+          "alt": "maya-kaan-7_5_11zon-scaled.jpg"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/fotogaleria_1278527193-ot015_11zon-scaled.jpg",
-          "alt": "Off-plan marketing render Riviera Maya project"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/06161842/DJI_0720.jpg",
+          "alt": "DJI_0720.jpg — Off Plan Vs Ready Mexico market context"
         },
         {
           "role": "inline-2",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1416004502-646x436.jpg",
-          "alt": "Completed resort vs pre-construction buyer choice"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/05155417/Hotels-la-valise-scaled.jpg",
+          "alt": "Hotels-la-valise — Off Plan Vs Ready Mexico market context"
         }
       ]
     },
     {
       "slug": "portfolio-diversification-mexico-re",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/Todos_Santos_1_b77d93c1-3c8f-4f4e-8e9a-099f2ed15a2c.jpg",
-          "alt": "Todos Santos Pacific coast portfolio leg"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29163620/kids-isla-mujeres-scaled.jpg",
+          "alt": "kids-isla-mujeres — Portfolio Diversification Mexico Re investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563086/cms_resources/clients/loscabosmx/LOS_CABOS_TODO_SANTOS_00803_63e55e8e-ed54-4799-910a-84844686392e.jpg",
-          "alt": "Baja arts town diversifying beyond Caribbean"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29161206/kids-mexican-caribbean-Jungala-scaled.jpg",
+          "alt": "kids mexican caribbean Jungala scaled"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562988/cms_resources/clients/loscabosmx/Cabo_Pulmo_1_08a172a6-29fa-44c7-a750-bfa67df936bc.jpg",
-          "alt": "Cabo Pulmo eco-zone — alternative Baja asset"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29161135/kids-mexican-caribbbean-Lazy-River-scaled.jpg",
+          "alt": "kids mexican caribbbean Lazy River scaled"
         }
       ]
     },
@@ -1479,228 +1479,228 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/03/IMG_7752-scaled-703x535-crop.jpg",
-          "alt": "Yucatan colonial town hall legal jurisdiction"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/espita-07.jpg",
+          "alt": "espita-07 — Power Of Attorney Property Mexico investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/12/Foto-5-Mirador-Ermita-de-Tekax-703x535-crop.jpg",
-          "alt": "Remote closing context — power of attorney Yucatan"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/motul-010.jpg",
+          "alt": "motul-010 — Power Of Attorney Property Mexico market context"
         },
         {
           "role": "inline-2",
-          "url": "https://yucatan.travel/wp-content/uploads/2022/01/Foto-4-Practica-vela-en-Telchac-Puerto-703x535-crop.jpg",
-          "alt": "Telchac Puerto coast — absentee owner market"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/uxmal-grastronomia.jpg",
+          "alt": "Yucatan - Uxmal - Gastronomía"
         }
       ]
     },
     {
       "slug": "pre-construction-mexico-risks",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107411-646x436.jpg",
-          "alt": "Construction risk in high-demand Playa corridor"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29161057/kids-mexican-caribbean-nickelodeon_-scaled.jpg",
+          "alt": "kids mexican caribbean nickelodeon scaled"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107704-646x436.jpg",
-          "alt": "Verify build permits before pre-construction deposit"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29005911/Hoyo-Cenote-scaled.jpg",
+          "alt": "Hoyo Cenote scaled — Pre Construction Mexico Risks market context"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225931/dunas-waterpark-kids-slides-riviera-maya-1024x645.png",
-          "alt": "Infrastructure lag risk in fast-build Riviera corridors"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29005831/golf-Hoyo-amanecer-scaled.jpg",
+          "alt": "golf Hoyo amanecer scaled"
         }
       ]
     },
     {
       "slug": "property-management-riviera-maya-cost",
-      "source": "https://yucatan.travel/",
+      "source": "https://www.playadelcarmen.com/",
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/03/Buceo-Sisal-5-703x535-crop.jpg",
-          "alt": "Regional PM networks beyond Riviera Maya hub"
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/143886-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107730-646x436.jpg",
-          "alt": "Managed short-term rental zone Quinta Avenida"
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/226068-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562991/cms_resources/clients/loscabosmx/Caballos_81ac3fec-c7df-48f7-90b7-51e2f885a9be.jpg",
-          "alt": "Baja PM cost benchmark — equestrian resort community"
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/310271-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         }
       ]
     },
     {
       "slug": "puerto-vallarta-property-investment-guide",
-      "source": "https://visitpuertovallarta.com/",
+      "source": "https://www.playadelcarmen.com/",
       "images": [
         {
           "role": "hero",
-          "url": "https://visitpuertovallarta.com/uploads/static/offers_1.jpg",
-          "alt": "Puerto Vallarta malecon and bay investment overview"
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1394222928-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://visitpuertovallarta.com/uploads/static/offers_2.jpg",
-          "alt": "Zona Romantica condos and villas Vallarta"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29004738/IMG-20171226-WA0002.jpg",
+          "alt": "IMG WA0002 — Puerto Vallarta Property Investment Guide market context"
         },
         {
           "role": "inline-2",
-          "url": "https://visitpuertovallarta.com/uploads/static/offers_3.jpg",
-          "alt": "Marina Vallarta and Nuevo Vallarta property corridor"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29004720/Imagen1.jpg",
+          "alt": "Imagen1 — Puerto Vallarta Property Investment Guide market context"
         }
       ]
     },
     {
       "slug": "rental-contract-mexico-foreign-landlord",
-      "source": "https://www.playadelcarmen.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1538130412-646x436.png",
-          "alt": "Short-term rental unit subject to Mexican lease law"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29004655/IMG_9118-scaled.jpg",
+          "alt": "IMG 9118 scaled — Rental Contract Mexico Foreign Landlord investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_542,q_65,w_640/v1/cms_resources/clients/loscabosmx/Medano_Beach_2_267c7124-fab5-415e-8428-19bfa6e5def6.jpg",
-          "alt": "Medano Beach rental inventory foreign landlords"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29004625/mice-Royalton-scaled.jpg",
+          "alt": "mice Royalton scaled — Rental Contract Mexico Foreign Landlord market context"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_542,q_65,w_640/v1/cms_resources/clients/loscabosmx/Palmilla_Beach_a2b26c96-f163-46ed-b1a6-812a7b8461f2.jpg",
-          "alt": "Palmilla luxury rental contract jurisdiction BCS"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/29004406/mice-LINKERA-MONTAJE-ACDELCO--scaled.jpg",
+          "alt": "mice LINKERA MONTAJE ACDELCO scaled"
         }
       ]
     },
     {
       "slug": "riviera-maya-property-investment-guide",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18230019/caribbean-kids-family-tubing-activity-2048x1365.jpg",
-          "alt": "Family tourism anchor for Riviera Maya property demand"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163733/Mayakoba-Golf-Classic_11zon-scaled.jpg",
+          "alt": "Mayakoba Golf Classic 11zon scaled"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/playa-del-carmen-7.jpg",
-          "alt": "Playa del Carmen core of Riviera Maya investment market"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13211646/TREN-MAYA.jpg",
+          "alt": "TREN-MAYA — Riviera Maya Property Investment Guide market context"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225931/dunas-waterpark-kids-slides-riviera-maya-1536x967.png",
-          "alt": "New infrastructure driving Riviera Maya appreciation"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163845/golf-2019-3_11zon-scaled.jpg",
+          "alt": "golf 2019 3 11zon scaled"
         }
       ]
     },
     {
       "slug": "schedule-e-mexico-rental",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://yucatan.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1776727340/clients/loscabosmx/1_KAYAK_1_compressed_4eed5ea3-1803-4932-95b2-4f14502d4850.jpg",
-          "alt": "US Schedule E — Mexico rental activity income source"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/uxmal-bodas-romance.jpg",
+          "alt": "Segmento Bodas y Romance - Uxmal"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/Whale_watching_1_b8c000fe-1083-4f74-9b03-0326732ddb75.jpg",
-          "alt": "Seasonal rental income Los Cabos whale season"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/uxmal-wellness.jpg",
+          "alt": "uxmal wellness — Schedule E Mexico Rental market context"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562990/cms_resources/clients/loscabosmx/PaddleBoard_d87d2ccb-566c-498f-9988-eca51993cb6a.jpg",
-          "alt": "Vacation rental activity income Pacific coast"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/uxmal-video-mapping.jpg",
+          "alt": "Uxmal video mapping — Schedule E Mexico Rental market context"
         }
       ]
     },
     {
       "slug": "short-term-rental-rules-riviera-maya",
-      "source": "https://www.rivieramaya.com/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18230019/caribbean-kids-family-tubing-activity-1024x683.jpg",
-          "alt": "High STR demand zone subject to municipal permits"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163835/golf-2019-7_11zon-scaled.jpg",
+          "alt": "golf 2019 7 11zon scaled"
         },
         {
           "role": "inline-1",
-          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1538558735-646x436.jpg",
-          "alt": "Airbnb corridor Quinta Avenida enforcement area"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163824/golf-2019-9_11zon-scaled.jpg",
+          "alt": "golf 2019 9 11zon scaled"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563028/cms_resources/clients/loscabosmx/estuary_oscar_oritz_29ab0465-14df-4c9b-a818-89bbbf200c68.jpg",
-          "alt": "Estuary zone STR regulation comparison Baja Sur"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163814/golf-2019-14_11zon-scaled.jpg",
+          "alt": "golf 2019 14 11zon scaled"
         }
       ]
     },
     {
       "slug": "tier-entry",
-      "source": "https://yucatan.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2022/03/Foto-5-Conoce-el-skatepark-de-Progreso-703x535-crop.jpg",
-          "alt": "Entry-tier coastal town Progreso Yucatan"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/15172024/Hotel-Awa-Holbox-00007_11zon-scaled.jpg",
+          "alt": "Hotel Awa Holbox 00007_11zon"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563000/cms_resources/clients/loscabosmx/Balandra_089f741b-a384-4676-8e67-1cf7a799906f.jpg",
-          "alt": "La Paz Balandra — lower-cost Baja entry market"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13204359/COZUMEL.jpg",
+          "alt": "COZUMEL — Tier Entry market context"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563030/cms_resources/clients/loscabosmx/Choya_99b5a4c6-c93f-45c5-8fea-83043982f374.jpg",
-          "alt": "Choya Bay — affordable coastal Baja entry point"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09145025/Hotel-Nomade-Holbox00042_11zon-scaled.jpg",
+          "alt": "Hotel Nomade Holbox00042_11zon"
         }
       ]
     },
     {
       "slug": "tier-luxury",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1776812887/clients/loscabosmx/WhatsApp_Image_2026_04_07_at_11_06_10_a_m_1__7e74dd34-f4e8-48a3-b7ba-69492e41721c.jpg",
-          "alt": "Ultra-luxury Los Cabos estate tier benchmark 2026"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163725/Vidanta-Golf-Club_11zon-scaled.jpg",
+          "alt": "Vidanta Golf Club 11zon scaled"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,g_xy_center,h_383,q_65,w_640,x_516,y_684/v1/cms_resources/clients/loscabosmx/_viceroyloscabos_1024x1024_b3985cef-799c-42f8-a822-f2c51a2f611d.jpg",
-          "alt": "Viceroy Los Cabos ultra-luxury tier benchmark"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/17163719/golf-2019-1_11zon-scaled.jpg",
+          "alt": "golf 2019-1_11zon — Tier Luxury market context"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/El_Triunfo_1_99abf800-d526-4832-8271-9a4d2f4e9e2a.jpg",
-          "alt": "Historic luxury compound Baja California Sur"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/14152819/MAPA2.0_GOLF-scaled.jpg",
+          "alt": "MAPA2.0_GOLF — Tier Luxury market context"
         }
       ]
     },
     {
       "slug": "tier-mid",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://www.playadelcarmen.com/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1776727361/clients/loscabosmx/3_Loreto_Misio_n_de_San_Javier_compressed_bb91a504-ef92-4296-a04e-9fe68db9a08e.jpg",
-          "alt": "Mid-tier Baja secondary market — Loreto corridor"
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/376166-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563088/cms_resources/clients/loscabosmx/Cabo_Pulmo_3_7137f82c-1e41-4324-90bf-a08b6040120a.jpg",
-          "alt": "Mid-tier eco-property market Cabo Pulmo"
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/384514-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563038/cms_resources/clients/loscabosmx/El_triunfo_25ce4ab1-ef4f-4262-8493-493378e6ff79.jpg",
-          "alt": "El Triunfo historic town — mid-tier Baja asset"
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/604573-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         }
       ]
     },
@@ -1710,105 +1710,106 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/10/Spa-de-Cerveza-en-Uxmal-1-703x535-crop.jpg",
-          "alt": "Uxmal zone — title chain complexity in Yucatan"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/uxmal-gruta-chocante.jpg",
+          "alt": "Uxmal - Gruta Chocante o Gruta de Cristal"
         },
         {
           "role": "inline-1",
-          "url": "https://yucatan.travel/wp-content/uploads/2021/10/Spa-de-Cerveza-en-Uxmal-4-703x535-crop.jpg",
-          "alt": "Heritage municipality title insurance gap illustration"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/uxmal.jpg",
+          "alt": "uxmal — Title Insurance Mexico market context"
         },
         {
           "role": "inline-2",
-          "url": "https://yucatan.travel/wp-content/uploads/2022/03/Foto-2-Experiencia-Arrecife-Alacranes-703x535-crop.jpg",
-          "alt": "Coastal ejido-adjacent title risk Yucatan"
+          "url": "https://yucatan.travel/wp-content/uploads/2025/12/riviera-yucatan-sisal.jpg",
+          "alt": "riviera yucatan sisal"
         }
       ]
     },
     {
       "slug": "us-capital-gains-mexico-sale",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://www.playadelcarmen.com/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562989/cms_resources/clients/loscabosmx/Santiago2019_dc2649c1-2410-4311-be86-5ac7054eea1f.jpg",
-          "alt": "Los Cabos sale triggering US and Mexico capital gains"
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1395945292-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_720,q_65,w_1440/v1/clients/loscabosmx/Lovers_And_Divorce_Beach_Los_Cabos_5_6213d960-e644-4d38-b702-b8e4717260bc.jpg",
-          "alt": "High-appreciation Cabo beach exit comparable"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/15172049/Xela-26_11zon-scaled.jpg",
+          "alt": "Xela-26_11zon — Us Capital Gains Mexico Sale market context"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563031/cms_resources/clients/loscabosmx/todosantos_f627392a-431a-4cb1-942d-a8561375df65.jpg",
-          "alt": "Todos Santos appreciation market US seller profile"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/15172043/La-Valise-18_11zon-scaled.jpg",
+          "alt": "La Valise-18_11zon — Us Capital Gains Mexico Sale market context"
         }
       ]
     },
     {
       "slug": "us-taxes-mexico-rental-property",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563037/cms_resources/clients/loscabosmx/Diving_55c3f17b-9d7f-4c4d-9451-edd78382e6b8.jpg",
-          "alt": "US tax on Mexico rental — Los Cabos activity income"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/15171749/D4_OomBubble_PuertoM-234_11zon-scaled.jpg",
+          "alt": "D4_OomBubble_PuertoM (234)_11zon"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563056/cms_resources/clients/loscabosmx/Oasis_de_Santiago_a4d60150-c83d-4e0c-b0f8-4c1476a26e21.jpg",
-          "alt": "Rental property tax reporting Santiago Baja Sur"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/15171521/DSC3856_11zon-scaled.jpg",
+          "alt": "_DSC3856_11zon — Us Taxes Mexico Rental Property market context"
         },
         {
           "role": "inline-2",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563073/cms_resources/clients/loscabosmx/Cabo_Pulmo_8f4e73bb-6008-4541-ac95-5f23a86c5722.jpg",
-          "alt": "Eco-rental income Cabo Pulmo US tax exposure"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13214358/991ce823-f8cc-46a4-a06a-465392e0c557.png",
+          "alt": "991ce823-f8cc-46a4-a06a-465392e0c557"
         }
       ]
     },
     {
       "slug": "us-wire-transfer-mexico-property",
-      "source": "https://www.visitloscabos.travel/",
+      "source": "https://www.playadelcarmen.com/",
       "images": [
         {
           "role": "hero",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734562991/cms_resources/clients/loscabosmx/San_Jose_del_Cabo_fff9b3a8-a946-4cd7-9b13-28f27d7f7ec9.jpg",
-          "alt": "Escrow wire destination — San Jose del Cabo closing"
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1415303368-646x436.jpg",
+          "alt": "646x436 — Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://res.cloudinary.com/sv-loscabos/image/upload/v1734563032/cms_resources/clients/loscabosmx/Places_to_visit_Sourrouding_Miraflores_17b7998d-8268-4247-a611-1c90f22ace9e.png",
-          "alt": "Cross-border wire to Baja notario trust account"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13211948/RIO-SECRETO-_11zon-scaled.jpg",
+          "alt": "RIO-SECRETO-_11zon — Us Wire Transfer Mexico Property market context"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,g_xy_center,h_383,q_65,w_640,x_1598,y_1520/v1/cms_resources/clients/loscabosmx/Group_Tours_4affaa16-6de6-4882-8932-2ec211ebef58.jpg",
-          "alt": "International buyer wire transfer closing context"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13211818/Mice10-scaled.jpg",
+          "alt": "Mice10 scaled — Us Wire Transfer Mexico Property market context"
         }
       ]
     },
     {
       "slug": "world-cup-2026-mexico-property-impact",
-      "source": "https://www.loscabos.gob.mx/",
+      "source": "https://mexicancaribbean.travel/",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.loscabos.gob.mx/wp-content/uploads/2025/10/Banner-2026_Mesa-de-trabajo-1-2048x768.png",
-          "alt": "Los Cabos 2026 events banner — World Cup host market impact"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13204351/CHETUMAL-scaled.jpg",
+          "alt": "CHETUMAL scaled — World Cup 2026 Mexico Property Impact investment guide"
         },
         {
           "role": "inline-1",
-          "url": "https://www.loscabos.gob.mx/wp-content/uploads/2025/10/noticias-banner_Mesa-de-trabajo-1-2048x768.png",
-          "alt": "Baja 2026 tourism surge tied to World Cup fixtures"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13203625/MICE5-scaled.jpg",
+          "alt": "MICE5 scaled — World Cup 2026 Mexico Property Impact market context"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_180,q_65,w_140/v1/clients/loscabosmx/IMEX_2026_1_26609095-b7ef-49a5-83c2-e44938b95a4b.jpg",
-          "alt": "IMEX 2026 Los Cabos — major events driving rental demand"
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13203128/MICE3-scaled.jpeg",
+          "alt": "MICE3 scaled — World Cup 2026 Mexico Property Impact market context"
         }
       ]
     }
   ],
-  "batch_a": "thematic-2026-06-08"
+  "batch_a": "thematic-2026-06-08",
+  "batch_b_upgraded": "2026-06-09"
 }

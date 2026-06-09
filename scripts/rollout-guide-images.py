@@ -48,7 +48,13 @@ def verify_urls(articles: dict[str, dict], excluded: set[str]) -> None:
         if "upload.wikimedia.org" in url:
             time.sleep(0.15)
             continue
-        req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": ua})
+        from urllib.parse import quote, urlsplit, urlunsplit
+
+        parts = urlsplit(url)
+        safe_url = urlunsplit(
+            (parts.scheme, parts.netloc, quote(parts.path, safe="/:@!$&'()*+,;=-._~"), parts.query, parts.fragment)
+        )
+        req = urllib.request.Request(safe_url, method="HEAD", headers={"User-Agent": ua})
         try:
             with urllib.request.urlopen(req, timeout=20) as resp:
                 if resp.status != 200:

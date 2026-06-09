@@ -3,5 +3,9 @@
   "sitemapCount": 211,
   "submittedCount": 212,
   "gapCount": 0,
-  "urls": []
+  "urls": [],
+  "noindexExcluded": [
+    "invest-in-los-cabos",
+    "mexico-property-closing-costs-breakdown"
+  ]
 }
