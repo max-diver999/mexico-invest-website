@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply unique hero + 2 inline images to all area MDX files."""
+"""Apply unique hero + 2 inline images to all guide MDX files."""
 from __future__ import annotations
 
 import json
@@ -9,9 +9,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-AREAS = ROOT / "src/content/areas"
-MANIFEST_PATH = Path(__file__).resolve().parent / "mexico-area-images-all.json"
-PROJECT_MANIFEST = Path(__file__).resolve().parent / "mexico-project-images-all.json"
+GUIDES = ROOT / "src/content/guides"
+MANIFEST_PATH = Path(__file__).resolve().parent / "mexico-guide-images-all.json"
 
 IMG_LINE = re.compile(r"^!\[[^\]]*\]\([^)]+\)\s*$", re.M)
 
@@ -21,29 +20,33 @@ def load_articles() -> dict[str, dict]:
     return {entry["slug"]: entry for entry in data["articles"]}
 
 
-def verify_urls(articles: dict[str, dict]) -> None:
-    all_urls: list[str] = []
-    for entry in articles.values():
-        for img in entry["images"]:
-            all_urls.append(img["url"])
-    if len(all_urls) != len(set(all_urls)):
-        dupes = {u for u in all_urls if all_urls.count(u) > 1}
-        raise SystemExit(f"Duplicate area URLs: {len(dupes)}")
+def load_excluded() -> set[str]:
+    excluded: set[str] = set()
+    scripts = Path(__file__).resolve().parent
+    for name in ("mexico-project-images-all.json", "mexico-area-images-all.json"):
+        path = scripts / name
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for article in data["articles"]:
+            for img in article["images"]:
+                excluded.add(img["url"])
+    return excluded
 
-    if PROJECT_MANIFEST.exists():
-        proj = json.loads(PROJECT_MANIFEST.read_text(encoding="utf-8"))
-        proj_urls = {i["url"] for a in proj["articles"] for i in a["images"]}
-        overlap = set(all_urls) & proj_urls
-        if overlap:
-            raise SystemExit(f"Overlap with project manifest: {len(overlap)} URLs")
+
+def verify_urls(articles: dict[str, dict], excluded: set[str]) -> None:
+    all_urls = [i["url"] for a in articles.values() for i in a["images"]]
+    if len(all_urls) != len(set(all_urls)):
+        raise SystemExit("Duplicate URLs in guide manifest")
+    overlap = set(all_urls) & excluded
+    if overlap:
+        raise SystemExit(f"Overlap with project/area manifest: {len(overlap)}")
 
     ua = "Mozilla/5.0 MexicoInvest/1.0"
     bad: list[str] = []
-    skipped_wikimedia = 0
     for url in sorted(set(all_urls)):
         if "upload.wikimedia.org" in url:
-            skipped_wikimedia += 1
-            time.sleep(0.2)
+            time.sleep(0.15)
             continue
         req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": ua})
         try:
@@ -52,17 +55,14 @@ def verify_urls(articles: dict[str, dict]) -> None:
                     bad.append(f"{resp.status} {url}")
         except Exception as exc:
             bad.append(f"{exc} {url}")
-        time.sleep(0.6)
+        time.sleep(0.4)
     if bad:
-        raise SystemExit(f"URL check failed ({len(bad)}):\n" + "\n".join(bad[:10]))
-    print(
-        f"Verified {len(set(all_urls)) - skipped_wikimedia} CDN URLs (HTTP 200); "
-        f"skipped {skipped_wikimedia} pre-checked Wikimedia thumbs"
-    )
+        raise SystemExit(f"URL check failed ({len(bad)}):\n" + "\n".join(bad[:8]))
+    print(f"Verified guide manifest: {len(set(all_urls))} unique URLs")
 
 
 def apply_to_mdx(slug: str, entry: dict) -> bool:
-    path = AREAS / f"{slug}.mdx"
+    path = GUIDES / f"{slug}.mdx"
     if not path.exists():
         raise FileNotFoundError(path)
     text = path.read_text(encoding="utf-8")
@@ -76,7 +76,6 @@ def apply_to_mdx(slug: str, entry: dict) -> bool:
     frontmatter = text[4:fm_end]
     body = text[fm_end + 5 :]
 
-    frontmatter = frontmatter.replace('heroImage: \\"', 'heroImage: "').replace('\\"', '"')
     if "heroImage:" not in frontmatter:
         if re.search(r"^readingTime:\s*\d+\s*$", frontmatter, re.M):
             frontmatter = re.sub(
@@ -119,7 +118,7 @@ def apply_to_mdx(slug: str, entry: dict) -> bool:
 
 def main() -> None:
     articles = load_articles()
-    slugs_on_disk = sorted(p.stem for p in AREAS.glob("*.mdx"))
+    slugs_on_disk = sorted(p.stem for p in GUIDES.glob("*.mdx"))
     missing = set(slugs_on_disk) - set(articles)
     extra = set(articles) - set(slugs_on_disk)
     if missing:
@@ -127,16 +126,13 @@ def main() -> None:
     if extra:
         raise SystemExit(f"Extra manifest entries: {sorted(extra)}")
 
-    verify_urls(articles)
+    verify_urls(articles, load_excluded())
 
     changed = 0
     for slug in sorted(articles):
         if apply_to_mdx(slug, articles[slug]):
             changed += 1
-            print(f"  updated {slug}")
-        else:
-            print(f"  unchanged {slug}")
-    print(f"Done. Updated {changed}/{len(articles)} area files.")
+    print(f"Done. Updated {changed}/{len(articles)} guide files.")
 
 
 if __name__ == "__main__":
