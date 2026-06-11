@@ -10,6 +10,8 @@
  *   scripts/lib/more-content-gate.mjs
  *   scripts/fix-batch-queue.mjs
  *   scripts/refresh-protected-slugs.mjs
+ *   scripts/fix-content-card.mjs
+ *   scripts/lib/fix-batch-validate.mjs
  *   scripts/sync-content-gate.mjs   (self, so the command stays up to date)
  *
  * NOT synced (intentionally per-site, hand-tuned):
@@ -42,7 +44,9 @@ if (!TPL) {
 
 const jobs = [
   ['lib/more-content-gate.mjs', 'scripts/lib/more-content-gate.mjs'],
+  ['lib/fix-batch-validate.mjs', 'scripts/lib/fix-batch-validate.mjs'],
   ['fix-batch-queue.mjs', 'scripts/fix-batch-queue.mjs'],
+  ['fix-content-card.mjs', 'scripts/fix-content-card.mjs'],
   ['refresh-protected-slugs.mjs', 'scripts/refresh-protected-slugs.mjs'],
   ['sync-content-gate.mjs', 'scripts/sync-content-gate.mjs'],
 ];

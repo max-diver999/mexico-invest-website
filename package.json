@@ -16,6 +16,7 @@
     "prepush:gate": "node scripts/pre-push-gate.mjs",
     "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks → .githooks (pre-push runs validate:content + build on MDX changes)'",
     "fix:queue": "node scripts/fix-batch-queue.mjs",
+    "fix:card": "node scripts/fix-content-card.mjs",
     "refresh:protected": "node scripts/refresh-protected-slugs.mjs",
     "sync:content-gate": "node scripts/sync-content-gate.mjs",
     "validate:strict": "node scripts/qa-audit.mjs"

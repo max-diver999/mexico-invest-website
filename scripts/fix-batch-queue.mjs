@@ -14,10 +14,13 @@
  *   node scripts/fix-batch-queue.mjs --recover       # noindex recovery buckets
  *   node scripts/fix-batch-queue.mjs --json          # machine-readable
  *   node scripts/fix-batch-queue.mjs --ready         # zero strict blockers
+ *   node scripts/fix-batch-queue.mjs --verify --tier A --limit 5
+ *   node scripts/fix-batch-queue.mjs --slug proof-of-funds-thailand-property --json
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runStrictValidate, validatorOnlyHints } from './lib/fix-batch-validate.mjs';
 import {
   AI_FLUFF_RE,
   BANNED_PHRASES,
@@ -45,9 +48,11 @@ const limit = parseInt(opt('--limit', '15'), 10);
 const collectionFilter = opt('--collection', null);
 const jsonOut = flag('--json');
 const recoverMode = flag('--recover');
-const includeNoindex = recoverMode || flag('--include-noindex');
+const includeNoindexAlso = flag('--include-noindex');
 const readyOnly = flag('--ready');
 const notReadyOnly = flag('--not-ready');
+const verifyMode = flag('--verify');
+const slugFilter = opt('--slug', null);
 
 const isRu = existsSync(join(CONTENT, 'gajdy'));
 const COLLECTIONS = isRu
@@ -301,7 +306,15 @@ for (const coll of cols) {
 const index = buildContentIndex(rawRecords);
 const records = rawRecords.map((r) => analyze(r, index));
 
-let rows = records.filter((r) => (includeNoindex ? r.noindex : !r.noindex));
+let rows = records;
+if (slugFilter) {
+  rows = records.filter((r) => r.slug === slugFilter);
+  if (collectionFilter) rows = rows.filter((r) => r.coll === collectionFilter);
+} else if (recoverMode) {
+  rows = records.filter((r) => r.noindex);
+} else if (!includeNoindexAlso) {
+  rows = records.filter((r) => !r.noindex);
+}
 for (const r of rows) {
   const g = gsc[r.slug] || {};
   r.imp = g.impressions || 0;
@@ -315,6 +328,54 @@ if (notReadyOnly) rows = rows.filter((r) => !r.ready);
 
 const tierRank = { A: 0, B: 1, C: 2 };
 rows.sort((a, b) => tierRank[a.tier] - tierRank[b.tier] || b.imp - a.imp || a.score - b.score);
+
+if (verifyMode) {
+  const toVerify = rows.slice(0, limit);
+  const results = [];
+  let aligned = 0;
+  let falseReady = 0;
+  let falseBlock = 0;
+
+  console.log(`\n=== QUEUE vs VALIDATE:STRICT VERIFY — ${isRu ? 'RU' : 'EN'} ===`);
+  console.log(`Checking ${toVerify.length} URL(s)…\n`);
+
+  for (const r of toVerify) {
+    const fileRel = `src/content/${r.coll}/${r.slug}.mdx`;
+    const v = runStrictValidate(ROOT, fileRel);
+    const isAligned = (r.ready && v.pass) || (!r.ready && !v.pass);
+    if (isAligned) aligned += 1;
+    else if (r.ready && !v.pass) falseReady += 1;
+    else if (!r.ready && v.pass) falseBlock += 1;
+
+    const drift = v.pass ? [] : validatorOnlyHints(v.errors).filter((h) => !r.issues.includes(h));
+    results.push({ r, v, isAligned, drift });
+  }
+
+  console.log('ALN  QRD  VAL  SCORE  DRIFT  PAGE');
+  console.log('---  ---  ---  -----  -----  ----');
+  for (const { r, v, isAligned, drift } of results) {
+    console.log(
+      `${(isAligned ? 'ok' : '!!').padEnd(3)}  ${(r.ready ? 'yes' : 'no').padEnd(3)}  ` +
+        `${(v.pass ? 'pass' : 'fail').padEnd(4)}  ${String(r.score).padStart(5)}  ` +
+        `${(drift.length ? drift.join('+') : '–').padEnd(5)}  ${r.coll}/${r.slug}`,
+    );
+    if (!isAligned) {
+      if (r.ready && !v.pass) {
+        console.log(`        └ FALSE READY — validator: ${v.errors.slice(0, 2).join('; ')}`);
+      } else if (!r.ready && v.pass) {
+        console.log('        └ FALSE BLOCK — queue too strict or drift');
+      }
+    } else if (drift.length) {
+      console.log(`        └ validator-only: ${drift.join(', ')}`);
+    }
+  }
+
+  console.log(
+    `\nAligned: ${aligned}/${toVerify.length} | false ready: ${falseReady} | false block: ${falseBlock}`,
+  );
+  console.log('ALN=ok → queue ready matches validate pass/fail. DRIFT = validator catches extra (HTTP hero, duplicates, …).');
+  process.exit(falseReady > 0 ? 1 : 0);
+}
 
 if (jsonOut) {
   console.log(
