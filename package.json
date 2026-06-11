@@ -14,7 +14,11 @@
     "validate:content:changed": "node scripts/qa-audit.mjs --changed",
     "corpus:cleanup": "node scripts/corpus-cleanup.mjs",
     "prepush:gate": "node scripts/pre-push-gate.mjs",
-    "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks → .githooks (pre-push runs validate:content + build on MDX changes)'"
+    "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks → .githooks (pre-push runs validate:content + build on MDX changes)'",
+    "fix:queue": "node scripts/fix-batch-queue.mjs",
+    "refresh:protected": "node scripts/refresh-protected-slugs.mjs",
+    "sync:content-gate": "node scripts/sync-content-gate.mjs",
+    "validate:strict": "node scripts/qa-audit.mjs"
   },
   "dependencies": {
     "google-auth-library": "^10.6.2",
