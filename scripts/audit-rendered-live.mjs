@@ -96,8 +96,13 @@ const CHECKS = [
   {
     id: 'draft-marker',
     severity: 'P0',
-    test: (html) =>
-      /\[VERIFY\b|\*\*VERIFY:\*\*|KB §|source needed/i.test(html) ? 'draft/verify marker in HTML' : null,
+    test: (html) => {
+      if (/(\[VERIFY(?:\]|:)|\*\*VERIFY:\*\*|KB §)/.test(html)) {
+        return 'draft/verify marker in HTML';
+      }
+      if (/\bsource needed\b/i.test(html)) return 'draft/verify marker in HTML';
+      return null;
+    },
   },
   {
     id: 'duplicate-additional-notes',
