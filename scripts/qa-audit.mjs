@@ -7,6 +7,7 @@
 import { execSync } from 'node:child_process';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { runExtendedChecks } from './lib/more-content-gate.mjs';
 
 const ROOT = decodeURIComponent(new URL('../src/content/', import.meta.url).pathname);
 const COLLECTIONS = ['guides', 'compare', 'areas', 'projects', 'developers', 'news'];
@@ -175,6 +176,16 @@ function auditFile(c, slug) {
       prob.push(`banned:${phrase.slice(0, 24)}`);
     }
   }
+
+  const extErr = [];
+  runExtendedChecks({
+    prefix: `[${c}/${slug}]`,
+    body,
+    cfg: { minWords: minW, label: c },
+    legacyExempt: c === 'news',
+    errors: extErr,
+  });
+  for (const e of extErr) prob.push(e.replace(`[${c}/${slug}]: `, '').replace(`[${c}/${slug}] `, ''));
 
   const isRegulatory = /visa|golden visa|investor visa|dld|residency/i.test(
     `${fm.title} ${(fm.tags || '').toString()} ${slug}`,

@@ -215,7 +215,7 @@ function analyze(file, index) {
       if (!/(Короткий ответ|Quick answer|TL;DR|<TldrBlock)/i.test(body)) {
         issues.push('missing-answer-box');
       }
-      if (!/<TldrBlock\s*\/?>/.test(body)) issues.push('missing-tldr');
+      if (!/<TldrBlock\b/.test(body)) issues.push('missing-tldr');
       const h2 = (body.match(/^##\s+/gm) || []).length;
       if (h2 < 4) issues.push('few-h2');
       if (internalLinks(body).filter((l) => !l.startsWith('/api/')).length < 5) {

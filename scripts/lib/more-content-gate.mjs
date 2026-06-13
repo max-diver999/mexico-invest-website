@@ -4,6 +4,13 @@
  * Goal: cheap models fix everything scripts can catch; expensive model only polishes.
  */
 
+import {
+  EM_DASH_LIMIT,
+  SCENARIO_SPAM_MIN,
+  LIST_DASH_STEPS_MIN,
+  analyzeHumanSignals,
+} from './human-signals.mjs';
+
 export const BANNED_PHRASES = [
   'Regional diversification',
   'Advanced investment strategies',
@@ -20,6 +27,14 @@ export const AI_FLUFF_RE =
 
 export const DRAFT_MARKERS_RE =
   /\[VERIFY\b|\*\*VERIFY:\*\*|Knowledge base|KB §|\bTODO\b|source needed/i;
+
+/** Internal DB/filter syntax leaked into client-facing MDX */
+export const INTERNAL_CORPUS_RE =
+  /lotsof feed|lotsof project database|lotsof pricing|lotsof\.properties|location\.beach\s*=|location\.area\s*=|`location\.|pipeline median|Programmatic listing pages|commission disclosure|Curated from MORE Group project database/i;
+
+/** wave17 uniquify stamps — break MDX tables when glued to pipe rows */
+export const STAMP_PREFIX_RE =
+  /^(Studio Condos|1-Bedroom Condos|2-Bedroom Condos|3 Bedroom Apartments|Villas) [^\n]+ Phuket — /m;
 
 export function countMarkdownTableRows(body) {
   return (body.match(/^\|[^|\n]+\|/gm) || []).length;
@@ -88,6 +103,9 @@ export function runStructuralChecks(opts) {
   if (DRAFT_MARKERS_RE.test(text)) {
     errors.push(`${prefix} contains draft/source marker ([VERIFY], Knowledge base, TODO, etc.)`);
   }
+  if (INTERNAL_CORPUS_RE.test(body)) {
+    errors.push(`${prefix} internal corpus/DB filter syntax (lotsof feed, location.beach=) — not for clients`);
+  }
   for (const phrase of BANNED_PHRASES) {
     if (body.includes(phrase) || (raw && raw.includes(phrase))) {
       errors.push(`${prefix} banned AI phrase: "${phrase.slice(0, 40)}"`);
@@ -98,15 +116,48 @@ export function runStructuralChecks(opts) {
   if (/FaqBlock\s+faqs\s*=/.test(text)) errors.push(`${prefix} uses FaqBlock faqs prop; use items`);
   if (/<FaqBlock/.test(text) && !/items\s*=/.test(text)) errors.push(`${prefix} FaqBlock must use items prop`);
   if (/[<>][0-9]/.test(text)) errors.push(`${prefix} contains MDX-breaking angle-bracket number pattern`);
+  const boldMarkers = (body.match(/\*\*/g) || []).length;
+  if (boldMarkers % 2 !== 0) {
+    errors.push(`${prefix} unclosed ** bold — breaks MDX rendering below the typo`);
+  }
+  if (/☐/.test(body)) errors.push(`${prefix} empty checklist box ☐ — use ✓ in Verified/DD tables`);
+  if (/\{\/\* corpus:/.test(body)) errors.push(`${prefix} corpus uniquify stamp comment — remove`);
+  if (/^[^\n|]+ — \| /m.test(body)) {
+    errors.push(`${prefix} glued markdown table (text + pipes on one line) — breaks rendering`);
+  }
+  if (STAMP_PREFIX_RE.test(body)) {
+    errors.push(`${prefix} wave17 area stamp prefix on paragraph — remove`);
+  }
 
+  const humanCollections = ['guides', 'comparisons', 'areas', 'projects', 'news'];
+  if (!legacyExempt && humanCollections.includes(collection)) {
+    const emLimit = EM_DASH_LIMIT[collection] ?? EM_DASH_LIMIT.default;
+    const human = analyzeHumanSignals(body, { emLimit });
+    for (const issue of human.issues) {
+      if (['unclosed-bold', 'glued-table', 'corpus-stamp', 'em-dash-heavy', 'scenario-spam', 'list-dash-steps'].includes(issue.kind)) {
+        errors.push(`${prefix} human-signal ${issue.kind}: ${issue.detail}`);
+      }
+    }
+  }
+
+  if (/Related guide [1-9]/i.test(body)) {
+    errors.push(`${prefix} placeholder related-guide links (Related guide 1-6) — use RelatedGuides via relatedSlugs or real anchor text`);
+  }
+  if (/: holding and exit notes/i.test(body) || /: extra context \d+/i.test(body)) {
+    errors.push(`${prefix} SEO padding block (holding and exit notes / extra context N) — remove`);
+  }
   const leadForms = (body.match(/<LeadForm\b/g) || []).length;
-  if (leadForms > 1) errors.push(`${prefix} duplicate LeadForm (${leadForms}); use one`);
+  if (leadForms >= 1) {
+    errors.push(
+      `${prefix} inline LeadForm forbidden (${leadForms}) — ArticleLayout injects one bottom form; use InlineCta or sidebar CTA only`,
+    );
+  }
 
   if (!legacyExempt && !isNews && !isResale && isCommercial) {
     if (!/(Короткий ответ|Quick answer|TL;DR|<TldrBlock)/i.test(body)) {
       errors.push(`${prefix} missing answer-first block (Quick answer / TldrBlock)`);
     }
-    if (!/<TldrBlock\s*\/?>/.test(body)) errors.push(`${prefix} missing <TldrBlock /> component`);
+    if (!/<TldrBlock\b/.test(body)) errors.push(`${prefix} missing <TldrBlock /> component`);
     const h2 = (body.match(/^##\s+/gm) || []).length;
     if (h2 < 4) errors.push(`${prefix} has fewer than 4 H2 sections (${h2})`);
     const tableRows = countMarkdownTableRows(body);

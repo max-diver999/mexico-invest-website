@@ -8,6 +8,9 @@
  *
  * Synced files (template -> site):
  *   scripts/lib/more-content-gate.mjs
+ *   scripts/audit-rendered-live.mjs
+ *   scripts/fix-inline-leadforms.mjs
+ *   scripts/fix-placeholder-related-guides.mjs
  *   scripts/fix-batch-queue.mjs
  *   scripts/refresh-protected-slugs.mjs
  *   scripts/fix-content-card.mjs
@@ -45,6 +48,9 @@ if (!TPL) {
 const jobs = [
   ['lib/more-content-gate.mjs', 'scripts/lib/more-content-gate.mjs'],
   ['lib/fix-batch-validate.mjs', 'scripts/lib/fix-batch-validate.mjs'],
+  ['audit-rendered-live.mjs', 'scripts/audit-rendered-live.mjs'],
+  ['fix-inline-leadforms.mjs', 'scripts/fix-inline-leadforms.mjs'],
+  ['fix-placeholder-related-guides.mjs', 'scripts/fix-placeholder-related-guides.mjs'],
   ['fix-batch-queue.mjs', 'scripts/fix-batch-queue.mjs'],
   ['fix-content-card.mjs', 'scripts/fix-content-card.mjs'],
   ['refresh-protected-slugs.mjs', 'scripts/refresh-protected-slugs.mjs'],
