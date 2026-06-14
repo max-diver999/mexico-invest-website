@@ -1241,6 +1241,216 @@
       "source_url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/27606737-0448-4762-99a7-c691fa34c792.jpeg",
       "alt": "Hideaways Los Cabos three-tower development rendering",
       "public_id": "more-group/mexico/projects/hideaways-los-cabos/hero"
+    },
+    "costa-mujeres-cancun:hero": {
+      "kid": "costa-mujeres-cancun:hero",
+      "slug": "costa-mujeres-cancun",
+      "role": "hero",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462709/more-group/mexico/projects/costa-mujeres-cancun/hero.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24085554/ibis-cancun.jpg",
+      "alt": "Costa Mujeres Cancun hotel zone coastline",
+      "public_id": "more-group/mexico/projects/costa-mujeres-cancun/hero"
+    },
+    "costa-mujeres-cancun:inline-2": {
+      "kid": "costa-mujeres-cancun:inline-2",
+      "slug": "costa-mujeres-cancun",
+      "role": "inline-2",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462709/more-group/mexico/projects/costa-mujeres-cancun/inline_2.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/29111547/CasaBarbaraHolbox-811.jpg",
+      "alt": "Caribbean resort architecture near Cancun north zone",
+      "public_id": "more-group/mexico/projects/costa-mujeres-cancun/inline_2"
+    },
+    "puerto-cancun-marina:hero": {
+      "kid": "puerto-cancun-marina:hero",
+      "slug": "puerto-cancun-marina",
+      "role": "hero",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462709/more-group/mexico/projects/puerto-cancun-marina/hero.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24085928/grand-fiesta-coral-beach.jpg",
+      "alt": "Puerto Cancun marina luxury tower exterior",
+      "public_id": "more-group/mexico/projects/puerto-cancun-marina/hero"
+    },
+    "costa-mujeres-cancun:inline-1": {
+      "kid": "costa-mujeres-cancun:inline-1",
+      "slug": "costa-mujeres-cancun",
+      "role": "inline-1",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462709/more-group/mexico/projects/costa-mujeres-cancun/inline_1.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225948/cancun-playa-turquesa-familias-scaled.jpg",
+      "alt": "Turquoise beach Cancun Costa Mujeres corridor",
+      "public_id": "more-group/mexico/projects/costa-mujeres-cancun/inline_1"
+    },
+    "puerto-cancun-marina:inline-1": {
+      "kid": "puerto-cancun-marina:inline-1",
+      "slug": "puerto-cancun-marina",
+      "role": "inline-1",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462711/more-group/mexico/projects/puerto-cancun-marina/inline_1.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/05135021/hilton-6.jpg",
+      "alt": "Puerto Cancun resort marina waterfront",
+      "public_id": "more-group/mexico/projects/puerto-cancun-marina/inline_1"
+    },
+    "puerto-cancun-marina:inline-2": {
+      "kid": "puerto-cancun-marina:inline-2",
+      "slug": "puerto-cancun-marina",
+      "role": "inline-2",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462711/more-group/mexico/projects/puerto-cancun-marina/inline_2.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/05134932/hilton-4.jpg",
+      "alt": "Cancun marina district high-rise residences",
+      "public_id": "more-group/mexico/projects/puerto-cancun-marina/inline_2"
+    },
+    "olea-luxury-beach-campeche:hero": {
+      "kid": "olea-luxury-beach-campeche:hero",
+      "slug": "olea-luxury-beach-campeche",
+      "role": "hero",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462712/more-group/mexico/projects/olea-luxury-beach-campeche/hero.webp",
+      "source_url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/portada.webp",
+      "alt": "Olea Luxury Beach Condos Campeche rendering",
+      "public_id": "more-group/mexico/projects/olea-luxury-beach-campeche/hero"
+    },
+    "olea-luxury-beach-campeche:inline-1": {
+      "kid": "olea-luxury-beach-campeche:inline-1",
+      "slug": "olea-luxury-beach-campeche",
+      "role": "inline-1",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462712/more-group/mexico/projects/olea-luxury-beach-campeche/inline_1.webp",
+      "source_url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location1.webp",
+      "alt": "Olea beachfront location Campeche coast",
+      "public_id": "more-group/mexico/projects/olea-luxury-beach-campeche/inline_1"
+    },
+    "nara-condos-campeche:inline-1": {
+      "kid": "nara-condos-campeche:inline-1",
+      "slug": "nara-condos-campeche",
+      "role": "inline-1",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462714/more-group/mexico/projects/nara-condos-campeche/inline_1.jpg",
+      "source_url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966905ae4b3055d1628e1f7.jpg",
+      "alt": "Nara Campeche country club residential rendering",
+      "public_id": "more-group/mexico/projects/nara-condos-campeche/inline_1"
+    },
+    "olea-luxury-beach-campeche:inline-2": {
+      "kid": "olea-luxury-beach-campeche:inline-2",
+      "slug": "olea-luxury-beach-campeche",
+      "role": "inline-2",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462715/more-group/mexico/projects/olea-luxury-beach-campeche/inline_2.webp",
+      "source_url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades1.webp",
+      "alt": "Olea luxury beach condo amenities pool",
+      "public_id": "more-group/mexico/projects/olea-luxury-beach-campeche/inline_2"
+    },
+    "nara-condos-campeche:hero": {
+      "kid": "nara-condos-campeche:hero",
+      "slug": "nara-condos-campeche",
+      "role": "hero",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462715/more-group/mexico/projects/nara-condos-campeche/hero.jpg",
+      "source_url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/Nara_condos_campeche_1.jpg",
+      "alt": "Nara Condos Country Club Campeche exterior",
+      "public_id": "more-group/mexico/projects/nara-condos-campeche/hero"
+    },
+    "hard-rock-riviera-maya:inline-1": {
+      "kid": "hard-rock-riviera-maya:inline-1",
+      "slug": "hard-rock-riviera-maya",
+      "role": "inline-1",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462716/more-group/mexico/projects/hard-rock-riviera-maya/inline_1.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/22100602/st-regis-kanai-resort-riviera-maya.jpg",
+      "alt": "Riviera Maya branded resort coastline context",
+      "public_id": "more-group/mexico/projects/hard-rock-riviera-maya/inline_1"
+    },
+    "hard-rock-riviera-maya:hero": {
+      "kid": "hard-rock-riviera-maya:hero",
+      "slug": "hard-rock-riviera-maya",
+      "role": "hero",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462717/more-group/mexico/projects/hard-rock-riviera-maya/hero.jpg",
+      "source_url": "https://hotel.hardrock.com/riviera-maya/files/6135/HRH_Riviera_Maya_Pool.jpg",
+      "alt": "Hard Rock Hotel Riviera Maya pool and towers",
+      "public_id": "more-group/mexico/projects/hard-rock-riviera-maya/hero"
+    },
+    "hard-rock-riviera-maya:inline-2": {
+      "kid": "hard-rock-riviera-maya:inline-2",
+      "slug": "hard-rock-riviera-maya",
+      "role": "inline-2",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462717/more-group/mexico/projects/hard-rock-riviera-maya/inline_2.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/27125007/Generations-Riviera-Maya1.jpg",
+      "alt": "Riviera Maya luxury resort residences corridor",
+      "public_id": "more-group/mexico/projects/hard-rock-riviera-maya/inline_2"
+    },
+    "nara-condos-campeche:inline-2": {
+      "kid": "nara-condos-campeche:inline-2",
+      "slug": "nara-condos-campeche",
+      "role": "inline-2",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462717/more-group/mexico/projects/nara-condos-campeche/inline_2.jpg",
+      "source_url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966abd902f1be04362ea0b1.jpeg",
+      "alt": "Nara Condos Campeche golf community amenity",
+      "public_id": "more-group/mexico/projects/nara-condos-campeche/inline_2"
+    },
+    "holistika-tulum:inline-1": {
+      "kid": "holistika-tulum:inline-1",
+      "slug": "holistika-tulum",
+      "role": "inline-1",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462719/more-group/mexico/projects/holistika-tulum/inline_1.jpg",
+      "source_url": "https://static.wixstatic.com/media/a57285_fa55080fc3f747e18e3376962a915f70~mv2.jpg",
+      "alt": "Holistika Tulum jungle wellness architecture",
+      "public_id": "more-group/mexico/projects/holistika-tulum/inline_1"
+    },
+    "holistika-tulum:inline-2": {
+      "kid": "holistika-tulum:inline-2",
+      "slug": "holistika-tulum",
+      "role": "inline-2",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462719/more-group/mexico/projects/holistika-tulum/inline_2.webp",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22201451/AerialConradTulum-0410508A-2.webp",
+      "alt": "Tulum coastline context near Holistika",
+      "public_id": "more-group/mexico/projects/holistika-tulum/inline_2"
+    },
+    "holistika-tulum:hero": {
+      "kid": "holistika-tulum:hero",
+      "slug": "holistika-tulum",
+      "role": "hero",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462719/more-group/mexico/projects/holistika-tulum/hero.png",
+      "source_url": "https://static.wixstatic.com/media/a57285_4987a1148ade465f8e93498fd84a2e45~mv2.png/v1/fill/w_2500,h_1141,al_c/a57285_4987a1148ade465f8e93498fd84a2e45~mv2.png",
+      "alt": "Holistika Tulum wellness residences overview",
+      "public_id": "more-group/mexico/projects/holistika-tulum/hero"
+    },
+    "coralina-tulum:hero": {
+      "kid": "coralina-tulum:hero",
+      "slug": "coralina-tulum",
+      "role": "hero",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462719/more-group/mexico/projects/coralina-tulum/hero.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152827/AZULIK-TULUM4-scaled.jpg",
+      "alt": "Coralina Tulum eco-luxury beach architecture",
+      "public_id": "more-group/mexico/projects/coralina-tulum/hero"
+    },
+    "coralina-tulum:inline-1": {
+      "kid": "coralina-tulum:inline-1",
+      "slug": "coralina-tulum",
+      "role": "inline-1",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462721/more-group/mexico/projects/coralina-tulum/inline_1.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24101633/moxy-tulum-entrance.jpg",
+      "alt": "Tulum hotel zone entrance near Coralina corridor",
+      "public_id": "more-group/mexico/projects/coralina-tulum/inline_1"
+    },
+    "coralina-tulum:inline-2": {
+      "kid": "coralina-tulum:inline-2",
+      "slug": "coralina-tulum",
+      "role": "inline-2",
+      "ok": true,
+      "secure_url": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781462721/more-group/mexico/projects/coralina-tulum/inline_2.jpg",
+      "source_url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13204357/TULUM-scaled.jpg",
+      "alt": "Tulum destination overview Coralina buyer context",
+      "public_id": "more-group/mexico/projects/coralina-tulum/inline_2"
     }
   },
   "failed": [
@@ -1275,5 +1485,6 @@
   ],
   "cloud": "dphvjbqb4",
   "folder_base": "more-group/mexico/projects",
-  "generatedAt": "2026-06-14"
+  "generatedAt": "2026-06-14",
+  "collection": "projects"
 }

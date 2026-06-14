@@ -1,5 +1,5 @@
 {
-  "rollout": "project-images-all-46",
+  "rollout": "project-images-batch-7-cancun-campeche",
   "verified": "2026-06-08",
   "rule": "138 unique URLs — 3 per project, zero cross-article reuse",
   "articles": [
@@ -966,6 +966,153 @@
           "role": "inline-2",
           "url": "https://taomexico.com/wp-content/uploads/2025/12/Santamar-Prime-Pool.webp",
           "alt": "TAO Santamar Prime resort-style pool terrace"
+        }
+      ]
+    },
+    {
+      "slug": "costa-mujeres-cancun",
+      "source": "https://www.topmexicorealestate.com/cancun-real-estate/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24085554/ibis-cancun.jpg",
+          "alt": "Costa Mujeres Cancun hotel zone coastline"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225948/cancun-playa-turquesa-familias-scaled.jpg",
+          "alt": "Turquoise beach Cancun Costa Mujeres corridor"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/29111547/CasaBarbaraHolbox-811.jpg",
+          "alt": "Caribbean resort architecture near Cancun north zone"
+        }
+      ]
+    },
+    {
+      "slug": "puerto-cancun-marina",
+      "source": "https://www.topmexicorealestate.com/cancun-real-estate/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24085928/grand-fiesta-coral-beach.jpg",
+          "alt": "Puerto Cancun marina luxury tower exterior"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/05135021/hilton-6.jpg",
+          "alt": "Puerto Cancun resort marina waterfront"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/05134932/hilton-4.jpg",
+          "alt": "Cancun marina district high-rise residences"
+        }
+      ]
+    },
+    {
+      "slug": "olea-luxury-beach-campeche",
+      "source": "https://www.topmexicorealestate.com/LP-promotions/olea-luxury-beach-condos.php",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/portada.webp",
+          "alt": "Olea Luxury Beach Condos Campeche rendering"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location1.webp",
+          "alt": "Olea beachfront location Campeche coast"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades1.webp",
+          "alt": "Olea luxury beach condo amenities pool"
+        }
+      ]
+    },
+    {
+      "slug": "nara-condos-campeche",
+      "source": "https://www.topmexicorealestate.com/LP-promotions/nara-condos-country-club-campeche.php",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/Nara_condos_campeche_1.jpg",
+          "alt": "Nara Condos Country Club Campeche exterior"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966905ae4b3055d1628e1f7.jpg",
+          "alt": "Nara Campeche country club residential rendering"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966abd902f1be04362ea0b1.jpeg",
+          "alt": "Nara Condos Campeche golf community amenity"
+        }
+      ]
+    },
+    {
+      "slug": "hard-rock-riviera-maya",
+      "source": "https://hotel.hardrock.com/riviera-maya/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://hotel.hardrock.com/riviera-maya/files/6135/HRH_Riviera_Maya_Pool.jpg",
+          "alt": "Hard Rock Hotel Riviera Maya pool and towers"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/22100602/st-regis-kanai-resort-riviera-maya.jpg",
+          "alt": "Riviera Maya branded resort coastline context"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/27125007/Generations-Riviera-Maya1.jpg",
+          "alt": "Riviera Maya luxury resort residences corridor"
+        }
+      ]
+    },
+    {
+      "slug": "holistika-tulum",
+      "source": "https://holistikatulum.com/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://static.wixstatic.com/media/a57285_4987a1148ade465f8e93498fd84a2e45~mv2.png/v1/fill/w_2500,h_1141,al_c/a57285_4987a1148ade465f8e93498fd84a2e45~mv2.png",
+          "alt": "Holistika Tulum wellness residences overview"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://static.wixstatic.com/media/a57285_fa55080fc3f747e18e3376962a915f70~mv2.jpg",
+          "alt": "Holistika Tulum jungle wellness architecture"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22201451/AerialConradTulum-0410508A-2.webp",
+          "alt": "Tulum coastline context near Holistika"
+        }
+      ]
+    },
+    {
+      "slug": "coralina-tulum",
+      "source": "https://cdn.mexicancaribbean.travel/en/destinations/tulum/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18152827/AZULIK-TULUM4-scaled.jpg",
+          "alt": "Coralina Tulum eco-luxury beach architecture"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24101633/moxy-tulum-entrance.jpg",
+          "alt": "Tulum hotel zone entrance near Coralina corridor"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13204357/TULUM-scaled.jpg",
+          "alt": "Tulum destination overview Coralina buyer context"
         }
       ]
     }
