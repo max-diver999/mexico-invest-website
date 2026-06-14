@@ -125,6 +125,13 @@ def load_env() -> tuple[str, str, str]:
 
 
 def download_bytes(url: str) -> bytes | None:
+    from urllib.parse import quote, urlparse, urlunparse
+
+    parsed = urlparse(url)
+    if " " in parsed.path:
+        url = urlunparse(
+            (parsed.scheme, parsed.netloc, quote(parsed.path, safe="/"), parsed.params, parsed.query, parsed.fragment)
+        )
     for attempt in range(2):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (MORE Group)"})
@@ -242,7 +249,8 @@ def run_collection(name: str, cfg: dict, cloud: str, key: str, secret: str, slug
             role = img["role"]
             kid = cfg["key_id"](slug, role)
             if kid in uploaded and uploaded[kid].get("secure_url"):
-                continue
+                if uploaded[kid].get("source_url") == img["url"]:
+                    continue
             jobs.append(
                 {
                     "slug": slug,
