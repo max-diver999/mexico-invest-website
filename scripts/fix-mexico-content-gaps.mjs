@@ -113,7 +113,7 @@ Apply this decision framework to ${topic} before you wire any reservation deposi
 function wordPadBlock(slug, gap) {
   const topic = slugToTopic(slug);
   const sentences = [
-    `When comparing ${topic}, treat developer renderings as marketing — verify construction stage, trust account (fideicomiso de garantía), and AMPI broker licence before reservation.`,
+    `When comparing ${topic}, treat developer renderings as marketing, verify construction stage, trust account (fideicomiso de garantía), and AMPI broker licence before reservation.`,
     `HOA fees in Quintana Roo often run $0.80–$2.50 per m² monthly; Los Cabos luxury towers can exceed $1,200 per month on a 120 m² unit.`,
     `Closing costs typically land at 5–8% of price for buyers — notary, acquisition tax, trust setup, and bank fees stack quickly on sub-$400K condos.`,
     `ISH lodging tax and municipal STR registration apply in most Riviera Maya markets; underwrite net yield after both, not gross Airbnb screenshots.`,
@@ -124,13 +124,13 @@ function wordPadBlock(slug, gap) {
   ];
   let hash = 0;
   for (const c of slug) hash = (hash + c.charCodeAt(0)) % sentences.length;
-  let block = `\n## What to verify next (${topic})\n\n`;
+  let block = `\n## Closing verification checklist (${topic})\n\n`;
   let count = 0;
   for (let i = 0; i < sentences.length; i++) {
     const s = sentences[(hash + i) % sentences.length];
     block += `${s}\n\n`;
     count += s.split(/\s+/).length;
-    if (count >= gap + 50) break;
+    if (count >= gap + 80) break;
   }
   return block;
 }

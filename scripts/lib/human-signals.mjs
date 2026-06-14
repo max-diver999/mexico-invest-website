@@ -20,8 +20,8 @@ export const SCENARIO_SPAM_MIN = 4;
 export const LIST_DASH_STEPS_MIN = 6;
 
 export function parseMdx(raw) {
-  const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  return m ? { fm: m[1], body: m[2] } : { fm: '', body: raw };
+  const m = raw.match(/^---\n([\s\S]*?)\n---/);
+  return m ? { fm: m[1], body: raw.slice(m[0].length) } : { fm: '', body: raw };
 }
 
 export function wordCount(body) {
