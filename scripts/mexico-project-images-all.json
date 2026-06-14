@@ -173,7 +173,7 @@
     },
     {
       "slug": "copala-quivira",
-      "source": "manual-404-repair",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -257,11 +257,11 @@
     },
     {
       "slug": "el-lago-querencia",
-      "source": "dedup-fallback",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://selvazama.mx/wp-content/uploads/2024/10/charlesmiroux1982_Aerial_view_of_luxury_properties_in_Tulum._a52c78d9-2a63-4368-bf48-f5ab7abfbd1b-1024x574.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfe3af39a52ebbd591.png",
           "alt": "El Lago Querencia golf and lake villas hero"
         },
         {
@@ -518,12 +518,12 @@
         },
         {
           "role": "inline-1",
-          "url": "https://grantulum.mx/assets/images/home3.png",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/portada.webp",
           "alt": "Mavila at Quivira building and Pacific-side residences"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location1.webp",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades1.webp",
           "alt": "Mavila at Quivira lifestyle and amenity inset"
         }
       ]
@@ -614,7 +614,7 @@
     },
     {
       "slug": "oceana-residences",
-      "source": "manual-404-repair",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
@@ -623,12 +623,12 @@
         },
         {
           "role": "inline-1",
-          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Heroe_Eng_web-1-1536x865.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/charlesmiroux1982_Aerial_view_of_luxury_properties_in_Tulum._a52c78d9-2a63-4368-bf48-f5ab7abfbd1b-1024x574.jpg",
           "alt": "Oceana Residences tower and beachfront setting"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3-p-800.webp",
           "alt": "Oceana Residences interior living area render"
         }
       ]
@@ -896,7 +896,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas-p-500.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Heroe_Eng_web-1-1536x865.webp",
           "alt": "St. Regis Los Cabos hotel and branded residence setting"
         },
         {
@@ -929,7 +929,7 @@
     },
     {
       "slug": "tao-monte-rocella",
-      "source": "manual-404-repair",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -938,7 +938,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://taomexico.com/wp-content/uploads/2026/01/Aerial-view.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista.jpg",
           "alt": "TAO Monte Rocella dual infinity pools"
         },
         {
@@ -971,7 +971,7 @@
     },
     {
       "slug": "costa-mujeres-cancun",
-      "source": "manual-404-repair",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1013,7 +1013,7 @@
     },
     {
       "slug": "olea-luxury-beach-campeche",
-      "source": "manual-404-repair",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1022,12 +1022,12 @@
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/portada.webp",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location2.webp",
           "alt": "Olea beachfront location Campeche coast"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades1.webp",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades2.webp",
           "alt": "Olea luxury beach condo amenities pool"
         }
       ]
@@ -1139,7 +1139,7 @@
     },
     {
       "slug": "playacar-phase-ii",
-      "source": "manual-404-repair",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
@@ -1148,7 +1148,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6801710f78ae5da4b12d4760_56337c2735be7c2926259ce9d038308b_home-card-beach-p-500.jpg",
+          "url": "https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_0604_RGB.jpg",
           "alt": "Allegro Playacar beachfront zone"
         },
         {
@@ -1185,7 +1185,7 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-800.webp",
           "alt": "Garza Blanca Puerto Vallarta oceanfront resort"
         },
         {
@@ -1195,7 +1195,7 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa.webp",
           "alt": "Garza Blanca PV panoramic facilities"
         }
       ]
@@ -1244,7 +1244,7 @@
     },
     {
       "slug": "torremar-country-club-campeche",
-      "source": "manual-404-repair",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
@@ -1253,12 +1253,12 @@
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfe3af39a52ebbd591.png",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location1.webp",
           "alt": "Torremar Campeche golf community"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac284ad12caef698695765_4-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-500.webp",
           "alt": "Campeche golf residential corridor"
         }
       ]
@@ -1307,21 +1307,21 @@
     },
     {
       "slug": "hacienda-encantada",
-      "source": "manual-404-repair",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014.webp",
           "alt": "Hacienda Encantada Cabo corridor"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-500.webp",
           "alt": "Cabo corridor branded residences"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar.webp",
           "alt": "Los Cabos Pacific access"
         }
       ]
@@ -1349,11 +1349,11 @@
     },
     {
       "slug": "las-lupitas-campeche",
-      "source": "dedup-fallback",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca93305a2b21ec67ac_showroom_10.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-800.webp",
           "alt": "Las Lupitas Campeche development"
         },
         {
@@ -1379,7 +1379,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df1176890e94871f4f.png",
+          "url": "https://rlhproperties.com/wp-content/uploads/2021/12/mn0193RGB.jpg",
           "alt": "Bao Campeche amenities"
         },
         {
@@ -1594,7 +1594,7 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-500.webp",
           "alt": "inline2"
         }
       ]
@@ -1605,7 +1605,7 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas-p-500.jpg",
           "alt": "hero"
         },
         {
@@ -1622,7 +1622,7 @@
     },
     {
       "slug": "tres-patios-playa",
-      "source": "curated-override",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
@@ -1636,7 +1636,7 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac284ad12caef698695765_4-p-800.webp",
           "alt": "inline2"
         }
       ]
@@ -1895,7 +1895,7 @@
     },
     {
       "slug": "holbox-lagoon-homes",
-      "source": "manual-404-repair",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1909,7 +1909,7 @@
         },
         {
           "role": "inline-2",
-          "url": "https://taomexico.com/wp-content/uploads/2026/01/Edena-Tulum-1.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-600x400.jpg",
           "alt": "inline2"
         }
       ]
@@ -2009,7 +2009,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-500.webp",
           "alt": "i1"
         },
         {
@@ -2088,7 +2088,7 @@
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d4e087b392e3.png",
+          "url": "https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_35615_RGB.jpg",
           "alt": "hero"
         },
         {

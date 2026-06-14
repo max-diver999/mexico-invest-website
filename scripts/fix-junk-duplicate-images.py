@@ -86,8 +86,8 @@ OVERRIDES: dict[str, list[str]] = {
     ],
     "olea-luxury-beach-campeche": [
         "https://assets.cdn.filesafe.space/n4lLPqZ3Dv19TQTebcB6/media/66562fd41f92b2930595e2ea.png",
-        "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/portada.webp",
-        "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades1.webp",
+        "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location2.webp",
+        "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades2.webp",
     ],
     "el-lago-querencia": [
         "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfe3af39a52ebbd591.png",
@@ -116,7 +116,7 @@ OVERRIDES: dict[str, list[str]] = {
     ],
     "tao-monte-rocella": [
         "https://taomexico.com/wp-content/uploads/2026/01/Tao-Nautico-19.webp",
-        "https://taomexico.com/wp-content/uploads/2026/01/Aerial-view.webp",
+        "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista.jpg",
         "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-scaled-600x400.jpg",
     ],
     "tulum-country-club": [
@@ -136,13 +136,13 @@ OVERRIDES: dict[str, list[str]] = {
     ],
     "playacar-phase-ii": [
         "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67577e61a0782b9d90bb590d_three-up-sample-1.jpg",
-        "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b5bd36d9486feafd272_home-card-dining.jpg",
+        "https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_0604_RGB.jpg",
         "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1c3094bf341b2f5c524_home-card-bars-lounges.jpg",
     ],
     "holbox-lagoon-homes": [
         "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-1536x1024.jpg",
         "https://selvazama.mx/wp-content/uploads/2024/07/Aldea-Zama.png",
-        "https://taomexico.com/wp-content/uploads/2026/01/Edena-Tulum-1.webp",
+        "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-600x400.jpg",
     ],
     "palmilla-san-jose": [
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf5884377b69d1659ceee_constelada.webp",
@@ -160,13 +160,13 @@ OVERRIDES: dict[str, list[str]] = {
         "https://grantulum.mx/assets/images/home4.png",
     ],
     "las-lupitas-campeche": [
-        "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5bdfa8ca49f.png",
+        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-800.webp",
         "https://selvazama.mx/wp-content/uploads/2024/07/Dharma.png",
         "https://selvazama.mx/wp-content/uploads/2024/07/Ahimsa.png",
     ],
     "torremar-country-club-campeche": [
         "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/fdd76883-93bd-4810-8029-7c1c3f8c4580.png",
-        "https://assets.cdn.filesafe.space/n4lLPqZ3Dv19TQTebcB6/media/66562fd41f92b2930595e2ea.png",
+        "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location1.webp",
         "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d439beb392e4.png",
     ],
     "cozumel-beach-condos": [
@@ -186,7 +186,7 @@ OVERRIDES: dict[str, list[str]] = {
     ],
     "bao-luxury-condos-campeche": [
         "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d4e087b392e3.png",
-        "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfdbd0b55a3f8b06b6.png",
+        "https://rlhproperties.com/wp-content/uploads/2021/12/mn0193RGB.jpg",
         "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/11845c7b-aa24-4a50-a6bc-e342994b6e0a.png",
     ],
     "bardo-tulum": [
@@ -210,7 +210,7 @@ OVERRIDES: dict[str, list[str]] = {
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11.webp",
     ],
     "campeche-gulf-villas": [
-        "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfe3af39a52ebbd591.png",
+        "https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_35615_RGB.jpg",
         "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5bdfa8ca49f.png",
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1.webp",
     ],
@@ -257,8 +257,8 @@ OVERRIDES: dict[str, list[str]] = {
     ],
     "garza-blanca-pv": [
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-800.webp",
-        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-500.webp",
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-800.webp",
+        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa.webp",
     ],
     "chileno-bay-residences": [
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202-p-800.png",
@@ -292,7 +292,7 @@ OVERRIDES: dict[str, list[str]] = {
     ],
     "copala-quivira": [
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c1df741563d388fafd_Constelada%20Frente-p-500.png",
-        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c1df741563d388fafd_Constelada%20Frente-p-800.png",
+        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c183253211cf11b00a_Constelada%20Entrada-p-800.png",
         "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1ac63465bc9354c0070_home-card-signature-restaurant-p-500.jpg",
     ],
     "maresol-downtown-studios": [
@@ -307,8 +307,8 @@ OVERRIDES: dict[str, list[str]] = {
     ],
     "oceana-residences": [
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3.webp",
-        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7.webp",
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8.webp",
+        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3-p-800.webp",
     ],
     "tulum-jungle-lofts": [
         "https://grantulum.mx/assets/images/sandrect.png",
@@ -336,9 +336,9 @@ OVERRIDES: dict[str, list[str]] = {
         "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-300x200.jpg",
     ],
     "hacienda-encantada": [
-        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-800.webp",
+        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014.webp",
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-500.webp",
-        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-800.webp",
+        "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar.webp",
     ],
     "the-city-playa": [
         "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-1080.webp",
@@ -351,6 +351,20 @@ def is_junk(url: str) -> bool:
     if SVG_RE.search(url):
         return True
     return bool(JUNK_RE.search(url))
+
+
+# Known 404/403 — never assign as dedup fallback
+BAD_URLS: set[str] = {
+    "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69713123fc6c3225341f6f40.png",
+    "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/67997ae8bdfd71441fe5abc0_92a717e06e9c5a5147774dd0ee80300b_simca-riviera-maya-riviera-maya-real-estate-investment-p-800.webp",
+    "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/336bc0eb-8f0e-4c0a-9f0e-8f0e4c0a9f0e.png",
+    "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/f726f5dc-8f0e-4c0a-9f0e-8f0e4c0a9f0e.png",
+    "https://assets.cdn.filesafe.space/n4lLPqZ3Dv19TQTebcB6/media/6961153c-8f0e-4c0a-9f0e-8f0e4c0a9f0e.png",
+}
+
+
+def is_blocked(url: str) -> bool:
+    return is_junk(url) or url in BAD_URLS
 
 
 def is_bad_article(article: dict) -> bool:
@@ -372,7 +386,7 @@ def set_urls(article: dict, urls: list[str], source: str) -> None:
 
 def pick_fallback(used: set[str], prefer: list[str]) -> str | None:
     for u in prefer:
-        if u not in used and not is_junk(u):
+        if u not in used and not is_blocked(u):
             return u
     return None
 
@@ -423,8 +437,7 @@ https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df1176890e948
 https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5bdfa8ca49f.png
 https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d4e087b392e3.png
 https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/11845c7b-aa24-4a50-a6bc-e342994b6e0a.png
-https://assets.cdn.filesafe.space/n4lLPqZ3Dv19TQTebcB6/media/336bc0eb-c1c3-4606-a05e-9a3e2bfb802b.png
-https://assets.cdn.filesafe.space/n4lLPqZ3Dv19TQTebcB6/media/f726f5dc-20ee-444a-a798-499ec4bd2f72.png
+https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/11845c7b-aa24-4a50-a6bc-e342994b6e0a.png
 https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1.webp
 https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1-1024x419.webp
 https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-1024x683.jpg
@@ -438,16 +451,10 @@ https://selvazama.mx/wp-content/uploads/2024/07/Blog-1024x768.jpg
 https://selvazama.mx/wp-content/uploads/2024/07/Blog_2-1024x1024.jpg
 https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/87a54f28-7548-495e-a96e-8f083a842622/Imagen4.png?format=1500w
 https://framerusercontent.com/images/wL0Z8oUuR75JN1na7j60zBUr200.png?width=1536
-https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/6966a66a7fc4517cb6edd93e.jpg
-https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69690654eaddec15948173f1.png
-https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/6969065584e90b2a1239bf15.jpg
-https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69824493c05d6586ac429616.png
-https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/6961153c65a0d7c88678c9fc.png
-https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69713123fc6c3225341f6f40.png
+https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1-1024x419.webp
 https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc7386ae539c4ece74eb1b.png
 https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/d0e28852-3717-4660-824d-e5127881d02a.png
 https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/63ada845-909e-4d0d-be1b-4426e056b5e4.png
-https://cdn.prod.website-files.com/688478dccbeba13cdede033b/67997ae8bdfd71441fe5abc0_92a717e06e9c5a5147774dd0ee80300b_simca-riviera-maya-riviera-maya-real-estate-investment-p-800.webp
 https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-500.webp
 https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014.webp
 https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe65411b91238a156c6ad_tre%CC%81bola.webp
@@ -482,6 +489,12 @@ https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c65cb521
 https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-1600.jpg
 https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum-p-800.webp
 https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13-p-800.webp
+https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa.webp
+https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista.jpg
+https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-600x400.jpg
+https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_0604_RGB.jpg
+https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_35615_RGB.jpg
+https://rlhproperties.com/wp-content/uploads/2021/12/mn0193RGB.jpg
 """.strip().splitlines()
     if u.strip()
 ]
@@ -496,7 +509,7 @@ def build_dedup_candidates(articles: list[dict]) -> list[str]:
         [im["url"] for art in articles for im in art["images"]],
     ):
         for u in src:
-            if u in seen or is_junk(u):
+            if u in seen or is_blocked(u):
                 continue
             seen.add(u)
             out.append(u)
@@ -554,7 +567,7 @@ def main() -> None:
             set_urls(art, OVERRIDES[slug], "curated-override")
             changed_slugs.append(slug)
             continue
-        if any(is_junk(im["url"]) for im in art["images"]):
+        if any(is_blocked(im["url"]) for im in art["images"]):
             used = {im["url"] for a in articles for im in a["images"]}
             candidates = [u for u in build_dedup_candidates(articles) if u not in used]
             trio = []
@@ -576,7 +589,7 @@ def main() -> None:
             break
 
     urls = [im["url"] for art in articles for im in art["images"]]
-    junk_left = [(art["slug"], im["role"], im["url"]) for art in articles for im in art["images"] if is_junk(im["url"])]
+    junk_left = [(art["slug"], im["role"], im["url"]) for art in articles for im in art["images"] if is_blocked(im["url"])]
     dups_left = len(urls) - len(set(urls))
 
     data["rule"] = "300 unique URLs — no junk logos/SVG/dupes (2026-06-14)"
