@@ -8,8 +8,17 @@ import { execSync } from 'node:child_process';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { runExtendedChecks } from './lib/more-content-gate.mjs';
+import { blockedImageReason } from './lib/blocked-image-sources.mjs';
 
 const ROOT = decodeURIComponent(new URL('../src/content/', import.meta.url).pathname);
+const SCRIPTS = decodeURIComponent(new URL('./', import.meta.url).pathname);
+const PROJECT_IMAGE_MANIFEST = join(SCRIPTS, 'mexico-project-images-all.json');
+const projectImageManifest = existsSync(PROJECT_IMAGE_MANIFEST)
+  ? JSON.parse(readFileSync(PROJECT_IMAGE_MANIFEST, 'utf8'))
+  : null;
+const projectImagesBySlug = new Map(
+  (projectImageManifest?.articles || []).map((a) => [a.slug, a.images || []]),
+);
 const COLLECTIONS = ['guides', 'compare', 'areas', 'projects', 'developers', 'news'];
 
 const BANNED_PHRASES = [
@@ -201,6 +210,13 @@ function auditFile(c, slug) {
           prob.push(`regulatoryStale:${hint.slice(0, 40)}`);
         }
       }
+    }
+  }
+
+  if (c === 'projects') {
+    for (const img of projectImagesBySlug.get(slug) || []) {
+      const reason = blockedImageReason(img.url);
+      if (reason) prob.push(`blockedImageSource:${img.role}:${reason}`);
     }
   }
 

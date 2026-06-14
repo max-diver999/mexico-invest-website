@@ -1,1553 +1,1553 @@
 {
   "rollout": "project-images-batch-7-cancun-campeche",
-  "verified": "2026-06-14",
-  "rule": "300 unique URLs — 3 per project, zero cross-article reuse (dedup 2026-06-14)",
+  "verified": "2026-06-11",
+  "rule": "300 unique URLs — no broker watermarks (clean sources 2026-06-11)",
   "articles": [
     {
       "slug": "101-park-tulum",
-      "source": "https://grantulum.mx/galeria",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://grantulum.mx/uploads/gallery/1696545484_0304fa215e648fe9ccc2.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3-p-500.webp",
           "alt": "101 Park Tulum master plan exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://grantulum.mx/uploads/gallery/1696545484_b7220735bccf53556868.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3-p-800.webp",
           "alt": "101 Park Tulum gated community amenity view"
         },
         {
           "role": "inline-2",
-          "url": "https://grantulum.mx/uploads/gallery/1696545484_fb252879d80399bd9830.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7.webp",
           "alt": "101 Tulum SIMCA residential phase rendering"
         }
       ]
     },
     {
       "slug": "aldea-thai",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/bao-luxury-condos/BAOcondos2_2.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-500.webp",
           "alt": "Aldea Thai Playa del Carmen condo-hotel exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/bao-luxury-condos/BAOcondos2_3.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-800.webp",
           "alt": "Aldea Thai beach-proximate tower rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com//1-images/bao-luxury-condos/BAOcondos4_fondo.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8.webp",
           "alt": "Aldea Thai pool and rooftop amenity deck"
         }
       ]
     },
     {
       "slug": "alvar-quivira",
-      "source": "https://www.quiviraloscabos.com/residences/alvar/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/alvarrendering-5e4301b18c367.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8-p-500.webp",
           "alt": "Alvar at Quivira Los Cabos architectural rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/residences-alvar-5e3d8dcb1fa29.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8-p-800.webp",
           "alt": "Alvar at Quivira residences overview"
         },
         {
           "role": "inline-2",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/Quivira-Insets_0001_GettingHere-58a4789e1dd38.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11.webp",
           "alt": "Quivira Los Cabos access and master plan context for Alvar"
         }
       ]
     },
     {
       "slug": "amara-tulum",
-      "source": "https://owninmayanriviera.com/en/listings/amara-condos-tulum/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://owninmayanriviera.com/wp-content/uploads/2025/11/AMA_01_FACHADA_PRINCIPAL_DIA_240531.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11-p-500.webp",
           "alt": "Amara Tulum Region 8 main facade daytime render"
         },
         {
           "role": "inline-1",
-          "url": "https://owninmayanriviera.com/wp-content/uploads/2025/11/AMA_17_SWIMUP_240605.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11-p-800.webp",
           "alt": "Amara Tulum swim-up pool amenity render"
         },
         {
           "role": "inline-2",
-          "url": "https://owninmayanriviera.com/wp-content/uploads/2025/11/06-ROOF-TOP-POOL.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6.webp",
           "alt": "Amara Tulum rooftop pool and lounge amenity"
         }
       ]
     },
     {
       "slug": "amaru-inka",
-      "source": "https://rivieramayacozy.com/listings/amaru-inka-tulum/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://rivieramayacozy.com/wp-content/uploads/2023/03/Amaru-1.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6-p-500.webp",
           "alt": "Amaru Inka Aldea Zama boutique condo exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://rivieramayacozy.com/wp-content/uploads/2023/03/Amaru-2.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6-p-800.webp",
           "alt": "Amaru Inka rooftop pool and amenity deck"
         },
         {
           "role": "inline-2",
-          "url": "https://rivieramayacozy.com/wp-content/uploads/2023/03/Amaru-3.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688bccb01ebfad9c9127a6f7_GrupoEmerita_Isotipo_Color%201%20-p-500.png",
           "alt": "Amaru Inka unit interior living area render"
         }
       ]
     },
     {
       "slug": "ceiba-25-condo-paradise",
-      "source": "https://simca.mx/en/division/residential/development/ceiba-condos-en-playa-del-carmen",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://simca.mx/uploads/18/1618500451_951ad9e0ec6e58094702.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688bccb01ebfad9c9127a6f7_GrupoEmerita_Isotipo_Color%201%20-p-800.png",
           "alt": "Ceiba at 25 Condo Paradise exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://simca.mx/uploads/18/1618500459_962041102d02e49758a2.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688bccb01ebfad9c9127a6f7_GrupoEmerita_Isotipo_Color%201%20.png",
           "alt": "Ceiba at 25 pool and amenity deck"
         },
         {
           "role": "inline-2",
-          "url": "https://simca.mx/uploads/18/1618500465_c836b47ea03d0ac3e150.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69a73ea5fe0d7ecb81044eef_Paravian.png",
           "alt": "Ceiba at 25 Playa del Carmen condo tower view"
         }
       ]
     },
     {
       "slug": "chileno-bay-residences",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location2.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac283f331875d60740e8a6_paravian-pool.webp",
           "alt": "Chileno Bay Residences beachfront exterior Los Cabos"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com//1-images/olea-luxury-beach-condos/portada.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac284ad12caef698695765_4.webp",
           "alt": "Chileno Bay Residences wellness spa garden"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com//1-images/olea-luxury-beach-condos/mapacrater.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab265d87aa0a11399dc1af_Constelada.png",
           "alt": "Chileno Bay Residences resort amenities and coastline"
         }
       ]
     },
     {
       "slug": "constelada-tulum",
-      "source": "https://www.grupoemerita.com/en/desarrollos/constelada",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c1df741563d388fafd_Constelada%20Frente.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c5513826e2634fb5e7_Constelada%20Recepci%C3%B3n.png",
           "alt": "Constelada Tulum front elevation Aldea Zama"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0625cf56caeaf83bf_Constelada%20Roof.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c183253211cf11b00a_Constelada%20Entrada.png",
           "alt": "Constelada rooftop terrace and pool amenity"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c06f275e32bf8c0abf_Constelada%20Gimnasio.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caeb257d1a4230f0f9afdc_Logo-Constelada-negro.webp",
           "alt": "Constelada equipped gym interior render"
         }
       ]
     },
     {
       "slug": "copala-quivira",
-      "source": "https://www.quiviraloscabos.com/residences/copala/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/cache/Residences-Rotator_0001_Copala-589cc34062d27-930x550.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c1df741563d388fafd_Constelada%20Frente-p-500.png",
           "alt": "Copala at Quivira Los Cabos residences exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/Quivira-Inset-LargeInterior-Copala-58a46726aac5f.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c1df741563d388fafd_Constelada%20Frente-p-800.png",
           "alt": "Copala at Quivira Pacific-side condominium interior"
         },
         {
           "role": "inline-2",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/Quivira-Copala-Clubhouse-58f623071edd6.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538a270c47ed176feaa5_comida.svg",
           "alt": "Copala at Quivira clubhouse and golf community"
         }
       ]
     },
     {
       "slug": "coronado-quivira",
-      "source": "https://www.quiviraloscabos.com/residences/coronado/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/cache/Residences-Rotator_0003_Coronado-589cc7d986349-930x550.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b429fc4003e1d7a80_gimnasio.svg",
           "alt": "Coronado at Quivira Los Cabos residences hero"
         },
         {
           "role": "inline-1",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/Coronado_ListView_0000s_0001_EspejoModel-58acbd19a9bd2.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b59f36769740c65ad_yoga.svg",
           "alt": "Coronado at Quivira Espejo model home interior"
         },
         {
           "role": "inline-2",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/cornonadoroom-5dae3ed2914b5.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b723dbeee9dd02348_wifi.svg",
           "alt": "Coronado at Quivira luxury residence living room"
         }
       ]
     },
     {
       "slug": "diamante-ocean-club",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com//1-images/olea-luxury-beach-condos/dino1.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/68753e235016bd9d82ca3aa3.png",
           "alt": "Diamante Ocean Club Los Cabos hero aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/17717/17717-f6bd3e54486138d77ef503520bd2ea7e.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/8c30d902-810f-49eb-ae57-9b0cba7b7768.png",
           "alt": "Diamante Ocean Club residences and Pacific views"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/17717/17717-076ed62d768d91400cb4ea8d453ffb00.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/d33eac69-4f80-4815-a53d-a1a4d905f35a.png",
           "alt": "Diamante Ocean Club luxury amenity and architecture"
         }
       ]
     },
     {
       "slug": "distrito-xcalacoco-beach",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/Brokers/thomas-lloyd-topmexicorealestate.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfdbd0b55a3f8b06b6.png",
           "alt": "Distrito Xcalacoco Beach North Shore Playa aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/30147/30147-f3204a602a30a774e9d37ef3ae099c10.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df2f4795363835a17b.png",
           "alt": "Distrito Xcalacoco Beach tower and North Shore skyline"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/30147/30147-1fd81ad6bdc75903d0ba3cff19ec0834.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df1176890e94871f4f.png",
           "alt": "Distrito Xcalacoco Beach resort pool and amenity deck"
         }
       ]
     },
     {
       "slug": "el-lago-querencia",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/30147/30147-f9190c30471e193b30da74e6ceb67456.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfe3af39a52ebbd591.png",
           "alt": "El Lago Querencia golf and lake villas hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/30147/30147-1c89fc7b2a797c43f7ccdf3e504a806e.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df41fe1bdea7f73409.png",
           "alt": "El Lago Querencia villa exterior and lake views"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/30147/30147-9bec1e22762b130a6c86f70dfb88f33f.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69ea9354bd268b0120a8ab2a.png",
           "alt": "El Lago Querencia community amenity and architecture"
         }
       ]
     },
     {
       "slug": "four-seasons-costa-palmas",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-6915978ab5ed2d8eadb18102b88bef6e.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/4355095d-4554-4d77-89ed-5a7f72c625ea.png",
           "alt": "Four Seasons Private Residences Costa Palmas hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-4fe9b3633fb8e171ebcdbc21f6cc0427.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2b59a4a6739eef4b2.jpg",
           "alt": "Four Seasons Costa Palmas golf villa rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-8f2cceadc981f246d36697818c81ac6f.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f26ec6343c3624c34a.jpg",
           "alt": "Four Seasons Costa Palmas oceanview villa Sea of Cortez"
         }
       ]
     },
     {
       "slug": "four-seasons-punta-mita",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-4fe51ac81c747d237c70ab91270b15be.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f31aa994fafdb75b.jpg",
           "alt": "Four Seasons Private Residences Punta Mita hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-fa17ea067be2635c4864f2e99dc9fb1f.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f26ec634136124c348.jpg",
           "alt": "Four Seasons Punta Mita sunset villa Pacific view"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-4843d0c47a715666ef203e506378d3d2.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2ae539c473c75200b.jpg",
           "alt": "Four Seasons Punta Mita luxury villa interior and terrace"
         }
       ]
     },
     {
       "slug": "fundadores-puerto-los-cabos",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-90c90b1f4a1551819ff7215bdb12e127.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f31aa95951fdb75c.jpg",
           "alt": "Fundadores at Puerto Los Cabos luxury real estate"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/30151/30151-25b67f8b18557ac887aba1f71e7296b0.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c6520d8186cca.jpg",
           "alt": "Fundadores Puerto Los Cabos hillside and golf community"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/40973/40973-a3e35210717b2f4c6ab1025ea6b6ab0e.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f25fc51b233d38e21e.jpg",
           "alt": "Casa 55 Fundadores Puerto Los Cabos residence"
         }
       ]
     },
     {
       "slug": "gran-tulum",
-      "source": "https://grantulum.mx/galeria",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://grantulum.mx/uploads/gallery/1696545483_6471de92c550b67a580a.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b54f7bea0995d41a7_estacionamiento.svg",
           "alt": "Gran Tulum gated community exterior at 101 Tulum"
         },
         {
           "role": "inline-1",
-          "url": "https://grantulum.mx/uploads/gallery/1696545484_299289b4a34da7e10c85.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b369e5aad76110c75_lobby.svg",
           "alt": "Gran Tulum exterior rendering at 101 Tulum master plan"
         },
         {
           "role": "inline-2",
-          "url": "https://grantulum.mx/uploads/gallery/1696545484_ed6586e7ab4cc6ee24c7.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c5513826e2634fb5e7_Constelada%20Recepci%C3%B3n-p-500.png",
           "alt": "Gran Tulum pool and amenity deck at SIMCA 101 Tulum"
         }
       ]
     },
     {
       "slug": "hideaways-los-cabos",
-      "source": "https://hideaways-cabo.com/eng",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/27606737-0448-4762-99a7-c691fa34c792.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c5513826e2634fb5e7_Constelada%20Recepci%C3%B3n-p-800.png",
           "alt": "Hideaways Los Cabos three-tower development rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/67b370dcf7165730ef3c2e23.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c183253211cf11b00a_Constelada%20Entrada-p-500.png",
           "alt": "Hideaways Los Cabos San José del Cabo condo exterior"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/67b371ac2c2f04f45d0d142c.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c183253211cf11b00a_Constelada%20Entrada-p-800.png",
           "alt": "Hideaways Los Cabos amenity deck and Pacific views"
         }
       ]
     },
     {
       "slug": "inna-beach-condos",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/40973/40973-a4c41b156866131fa19b594ba2d2d6ea.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211a7c4529dcb7.jpg",
           "alt": "Inna Beach Condos Puerto Morelos seafront facade"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/40973/40973-5bc94c30c9f8598f95da18b3b99aa545.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c652ed9186cd0.jpg",
           "alt": "Inna Beach Condos aerial Puerto Morelos coastline"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/40973/40973-7f81cb8f356932656d1e236be95bdedc.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211aa73229dcb8.jpg",
           "alt": "Inna Beach Condos arrival lobby and amenity"
         }
       ]
     },
     {
       "slug": "junglar-kaybe",
-      "source": "https://www.grupoemerita.com/en/desarrollos/junglar",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca7808a0c3b6c074d2f68_Proyecto%20Junglar.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202.png",
           "alt": "Junglar at Kaybé townhouse community aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202-p-500.png",
           "alt": "Junglar Kaybé Altea phase exterior"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c1267feadab95abcd_junglar%2020.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202-p-800.png",
           "alt": "Junglar Kaybé jungle-integrated villa exterior"
         }
       ]
     },
     {
       "slug": "kabana-aldea-zama",
-      "source": "https://kabana.mx/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://kabana.mx/images/sliders/2/slide-1.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c02670b4f5e6e17d2b_Constelada%203.png",
           "alt": "Kabana Aldea Zama Premium condo exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://kabana.mx/images/sliders/2/slide-2.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c02670b4f5e6e17d2b_Constelada%203-p-500.png",
           "alt": "Kabana Tulum natural setting and architecture"
         },
         {
           "role": "inline-2",
-          "url": "https://kabana.mx/images/sliders/2/home2_slider3.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c02670b4f5e6e17d2b_Constelada%203-p-800.png",
           "alt": "Kabana pool and jungle-integrated amenity deck"
         }
       ]
     },
     {
       "slug": "la-reserva-querencia",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/42997/42997-cd5b0763c1030f25824f48c34c5585f6.jpeg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c65cb52186ccf.jpg",
           "alt": "La Reserva at Querencia boutique condo rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/47811/47811-02496e76d83c4c4a0bc590e558f68793.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2b59a4a0711eef4b1.jpg",
           "alt": "La Reserva at Querencia Horizontes subdivision exterior"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/46841/46841-76fd1266d34bbc5b2dc80e32871a0b5b.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f5f2698a4670c371.jpg",
           "alt": "La Reserva at Querencia pool and fitness amenity render"
         }
       ]
     },
     {
       "slug": "luum-zama",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/46841/46841-89d6de7c460fb4331c6581576179c1de.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/7ecfef1b-9a5b-4ffb-8a5a-a4e729bf1005.png",
           "alt": "Luum Zama Aldea Zama gated community master plan"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/CM/beachfront-lots-in-campeche/imagenfondo.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc7efef31aa9ee22fe6a4d.png",
           "alt": "Luum Zama jungle-integrated residential landscape"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/CM/beachfront-lots-in-campeche/galery1CPE.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2b59a4a6739eef4b2.jpg",
           "alt": "Luum Zama eco-luxury outdoor living concept"
         }
       ]
     },
     {
       "slug": "maresol-downtown-studios",
-      "source": "https://simca.mx/en/division/residential/development/maresol-estudios-en-playa-del-carmen",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://simca.mx/uploads/28/1704994376_5d20850165d74274b0c6.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c06f275e32bf8c0abf_Constelada%20Gimnasio-p-500.png",
           "alt": "Maresol Downtown Studios exterior Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://simca.mx/uploads/28/1704994377_e7b1e9a27e1216b02e53.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c06f275e32bf8c0abf_Constelada%20Gimnasio-p-800.png",
           "alt": "Maresol studio building facade near Fifth Avenue"
         },
         {
           "role": "inline-2",
-          "url": "https://simca.mx/uploads/28/1704995009_2835ec83529041cd4a13.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0df741563d388face_Constelada%202.png",
           "alt": "Maresol Downtown Studios pool and common areas"
         }
       ]
     },
     {
       "slug": "mavila-quivira",
-      "source": "https://www.quiviraloscabos.com/residences/mavila/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/49658277173_5b487b2579_c-5f46e95828ab0.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0df741563d388face_Constelada%202-p-500.png",
           "alt": "Mavila at Quivira Los Cabos condominium community exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/dsc_1106_web-5e33ba40a67b4-optimized.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0df741563d388face_Constelada%202-p-800.png",
           "alt": "Mavila at Quivira building and Pacific-side residences"
         },
         {
           "role": "inline-2",
-          "url": "https://symphony.cdn.tambourine.com/quivira-los-cabos-residence/media/intro-inset-1-58ed125b4d547-5dc99e6b8c6c3.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab1f0d0a1411e14bc815f7_Estudio.png",
           "alt": "Mavila at Quivira lifestyle and amenity inset"
         }
       ]
     },
     {
       "slug": "montage-punta-mita",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/CM/beachfront-lots-in-campeche/galery2CPE.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab1f0d0a1411e14bc815f7_Estudio-p-500.png",
           "alt": "Montage Residences Punta Mita peninsula hero"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/CM/beachfront-lots-in-campeche/galery3CPE.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab1f0d0a1411e14bc815f7_Estudio-p-800.png",
           "alt": "Montage Residences Punta Mita residential rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/CM/beachfront-lots-in-campeche/galery4CPE.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab1f19cef1646e8da2e41f_Departamento.png",
           "alt": "Aerial yacht arrival Montage Residences Punta Mita"
         }
       ]
     },
     {
       "slug": "mukta-369",
-      "source": "https://play-investments.com/propiedad/departamento-en-venta-en-puerto-morelos-mukta-369-ruta-de-los-cenotes/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://play-investments.com/wp-content/uploads/2025/01/departamento-en-venta-en-puerto-morelos-mukta-369-ruta-de-los-cenotes-01.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab1f19cef1646e8da2e41f_Departamento-p-500.png",
           "alt": "Mukta 369 Puerto Morelos jungle condo exterior render"
         },
         {
           "role": "inline-1",
-          "url": "https://play-investments.com/wp-content/uploads/2025/01/departamento-en-venta-en-puerto-morelos-mukta-369-ruta-de-los-cenotes-02.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab1f19cef1646e8da2e41f_Departamento-p-800.png",
           "alt": "Mukta 369 amenity pool and clubhouse area"
         },
         {
           "role": "inline-2",
-          "url": "https://play-investments.com/wp-content/uploads/2025/01/departamento-en-venta-en-puerto-morelos-mukta-369-ruta-de-los-cenotes-03.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acb9e649876cb0857f77c7_penthouse.webp",
           "alt": "Mukta 369 sustainable residential community aerial"
         }
       ]
     },
     {
       "slug": "nalu-sea-living",
-      "source": "https://nalu.mx/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://nalu.mx/wp-content/uploads/2024/04/1-Fachada-1-2-1.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acb9e649876cb0857f77c7_penthouse-p-500.webp",
           "alt": "NALU Sea Living Puerto Morelos building facade"
         },
         {
           "role": "inline-1",
-          "url": "https://nalu.mx/wp-content/uploads/2024/04/3-Rooftop-1-1.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acb9e649876cb0857f77c7_penthouse-p-800.webp",
           "alt": "NALU Sea Living rooftop pool and lounge"
         },
         {
           "role": "inline-2",
-          "url": "https://nalu.mx/wp-content/uploads/2024/04/7-Balcon-1-1.jpg",
+          "url": "https://cdn.prod.website-files.com/671749136488dfe1479c1b77/671749136488dfe1479c1ba9_Placeholder%20Image-1.svg",
           "alt": "NALU Sea Living balcony ocean-view unit"
         }
       ]
     },
     {
       "slug": "nhoa-aldea-zama",
-      "source": "https://www.grupoemerita.com/en/desarrollos/nhoa",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caeae6fd09ef3ac6110727_Logo-Junglar-negro.webp",
           "alt": "NHOA Aldea Zama condo exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac990ade6b044cbbd31eb1_alberca%20y%20soleadero.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar.webp",
           "alt": "NHOA pool and sun deck amenity"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac990a45487de936a2c369_gimnasio%20equipado.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-500.webp",
           "alt": "NHOA equipped gym and wellness area"
         }
       ]
     },
     {
       "slug": "oceana-residences",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/Campeche_Mexico_2.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca7808a0c3b6c074d2f68_Proyecto%20Junglar-p-500.webp",
           "alt": "Oceana Residences Playa del Carmen Mamitas Beach exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/Campeche_Mexico_3.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca7808a0c3b6c074d2f68_Proyecto%20Junglar-p-800.webp",
           "alt": "Oceana Residences tower and beachfront setting"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/short1.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca9bf92dd94b3edcfa4d1_eventos.svg",
           "alt": "Oceana Residences interior living area render"
         }
       ]
     },
     {
       "slug": "omara-tulum",
-      "source": "https://www.grupoemerita.com/desarrollos/omara",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce3083155ebbbd02a3b_omara-exterior_7.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca9b0ef2d45e7fc9f6320_terraza.svg",
           "alt": "Omara Tulum Aldea Zama exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b1de5915188761518_futbol.svg",
           "alt": "Omara showroom finished unit interior"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b55a6f1485347067d_tenis.svg",
           "alt": "Omara gated entry and arrival lobby"
         }
       ]
     },
     {
       "slug": "one-only-mandarina",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/torremar-country-club/img3.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b98a14dae2a3651d9_spa.svg",
           "alt": "One&Only Mandarina polo club and resort setting"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/torremar-country-club/img4.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014.webp",
           "alt": "One&Only Mandarina equestrian club aerial"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/torremar-country-club/img5.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014-p-500.webp",
           "alt": "One&Only Mandarina ultra-luxury villa coastline"
         }
       ]
     },
     {
       "slug": "paravian-playa",
-      "source": "https://www.grupoemerita.com/en/desarrollos/paravian",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10).jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c1267feadab95abcd_junglar%2020-p-500.webp",
           "alt": "Paravian Playa del Carmen amenity terrace render"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac284997ffe9bd8785499a_1.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c1267feadab95abcd_junglar%2020-p-800.webp",
           "alt": "Paravian tower exterior Playa corridor"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac283f331875d60740e8a6_paravian-pool.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77cdb5f2acefb5f2802_junglar%2017.webp",
           "alt": "Paravian resort-style pool deck"
         }
       ]
     },
     {
       "slug": "pendry-punta-mita",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/torremar-country-club/img6.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77cdb5f2acefb5f2802_junglar%2017-p-500.webp",
           "alt": "Pendry Residences Punta Mita development hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.photos.sparkplatform.com/cab/20170226030232226609000000.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77cdb5f2acefb5f2802_junglar%2017-p-800.webp",
           "alt": "Pendry Residences Punta Mita lobby interior"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/qNPUk8OxQPReakBDHfcl/media/683d4bbd93301c4b08506714.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c4bee834e3d131851_junglar%2028.webp",
           "alt": "Pendry Residences Punta Mita aerial night rendering"
         }
       ]
     },
     {
       "slug": "piedra-de-mar",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.photos.sparkplatform.com/cab/20170226030259104262000000.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c4bee834e3d131851_junglar%2028-p-500.webp",
           "alt": "Piedra de Mar Puerto Morelos condo exterior hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.photos.sparkplatform.com/cab/20170226030302714131000000.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c4bee834e3d131851_junglar%2028-p-800.webp",
           "alt": "Piedra de Mar Puerto Morelos building facade render"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.photos.sparkplatform.com/cab/20170226030305856288000000.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77cd1c18077a442b419_junglar%2016.webp",
           "alt": "Piedra de Mar pool and amenity deck Puerto Morelos"
         }
       ]
     },
     {
       "slug": "ritz-carlton-puerto-los-cabos",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.photos.sparkplatform.com/cab/20170226030310285727000000.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77cd1c18077a442b419_junglar%2016-p-500.webp",
           "alt": "Zadún Ritz-Carlton Reserve Residences Puerto Los Cabos"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.photos.sparkplatform.com/cab/20170226030314045194000000.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77cd1c18077a442b419_junglar%2016-p-800.webp",
           "alt": "Ritz-Carlton Reserve branded residences at Puerto Los Cabos"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.photos.sparkplatform.com/cab/20170226030317048804000000.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77d45487de936a6d119_junglar%2011.webp",
           "alt": "Zadún Reserve Residences luxury interiors Puerto Los Cabos"
         }
       ]
     },
     {
       "slug": "rosewood-mandarina",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260524185128116973000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f26ec6343c3624c34a.jpg",
           "alt": "Rosewood Mandarina ocean aerial destination view"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/69610db8cef1012bd1a4622e.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f31aa994fafdb75b.jpg",
           "alt": "Rosewood Mandarina beachfront aerial landscape"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260524190150579710000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f26ec634136124c348.jpg",
           "alt": "Rosewood Mandarina Canalan beachfront villa living room"
         }
       ]
     },
     {
       "slug": "saint-marine",
-      "source": "https://simca.mx/en/division/residential/development/saint-marine-unico-desarrollo-frente-al-mar-playa-del-carmen",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://simca.mx/uploads/29/1721853376_38d264cbb8e578187c25.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77d45487de936a6d119_junglar%2011-p-500.webp",
           "alt": "Saint Marine seafront condo exterior Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://simca.mx/uploads/29/1721853538_8afc296eb48c0f01c1a2.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77d45487de936a6d119_junglar%2011-p-800.webp",
           "alt": "Saint Marine beach-proximate tower rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://simca.mx/uploads/29/1721853566_3a737f49bbe63cd61973.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e0e920af4be0d1b7a_junglar%207.webp",
           "alt": "Saint Marine premium amenity deck and pool"
         }
       ]
     },
     {
       "slug": "selva-zama-mondo",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260524190146354554000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69ea9354bd268b0120a8ab2a.png",
           "alt": "Selva Zama Mondo multi-family development render"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260524190142876465000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2ae539c473c75200b.jpg",
           "alt": "Selvazama master plan aerial Tulum"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260524185150290386000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f31aa95951fdb75c.jpg",
           "alt": "Selvazama outdoor lifestyle and community amenity"
         }
       ]
     },
     {
       "slug": "siari-ritz-carlton-reserve",
-      "source": "https://siariresidences.com/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016e58b653c0aa71b9f52e_home-hero-bg.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e0e920af4be0d1b7a_junglar%207-p-500.webp",
           "alt": "Siari Ritz-Carlton Reserve Nayarit hero coastline"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67997ae8bdfd71441fe5abc0_92a717e06e9c5a5147774dd0ee80300b_siari-development-rendering.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e0e920af4be0d1b7a_junglar%207-p-800.webp",
           "alt": "Siari Ritz-Carlton Reserve development rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6801710f78ae5da4b12d4760_56337c2735be7c2926259ce9d038308b_home-card-beach.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e8e071e3045df10ec_junglar%206.webp",
           "alt": "Siari Ritz-Carlton Reserve beach and jungle setting"
         }
       ]
     },
     {
       "slug": "solar-midtown",
-      "source": "https://simca.mx/en/division/residential/development/invierte-con-solar-midtown",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://simca.mx/uploads/30/1747331036_58105500b7e5bc543be5.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e8e071e3045df10ec_junglar%206-p-500.webp",
           "alt": "SOLAR Midtown studio tower exterior Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://simca.mx/uploads/30/1747331036_6db5c3c675dac8e0c4a1.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e8e071e3045df10ec_junglar%206-p-800.webp",
           "alt": "SOLAR Midtown rooftop and amenity rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://simca.mx/uploads/30/1747331036_9db2a514516a0ff5c76d.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77f0f817e8258949312_junglar%201.webp",
           "alt": "SOLAR Midtown downtown Playa condo facade"
         }
       ]
     },
     {
       "slug": "sole-blu-ocean-living",
-      "source": "https://soleblu.mx/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://soleblu.mx/wp-content/uploads/2025/06/02_Fachada-Principal_Tarde-scaled-800x600-1.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77f0f817e8258949312_junglar%201-p-500.webp",
           "alt": "Sole Blu Ocean Living Puerto Morelos main facade"
         },
         {
           "role": "inline-1",
-          "url": "https://soleblu.mx/wp-content/uploads/2025/06/Aereo-Proyecto-800x600-1.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77f0f817e8258949312_junglar%201-p-800.webp",
           "alt": "Sole Blu Ocean Living aerial project view"
         },
         {
           "role": "inline-2",
-          "url": "https://soleblu.mx/wp-content/uploads/2025/06/EXTERIOR2-800x600-1.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e80e68220d9aa22f6_junglar%209.webp",
           "alt": "Sole Blu Ocean Living exterior amenity terrace"
         }
       ]
     },
     {
       "slug": "st-regis-residences-los-cabos",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260524185142591496000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c6520d8186cca.jpg",
           "alt": "The Residences at The St. Regis Los Cabos overview"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260524184942697608000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f25fc51b233d38e21e.jpg",
           "alt": "St. Regis Los Cabos hotel and branded residence setting"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260520212532922306000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211a7c4529dcb7.jpg",
           "alt": "St. Regis Los Cabos oceanfront villas at Quivira"
         }
       ]
     },
     {
       "slug": "tao-blue-gardens-pv",
-      "source": "https://taomexico.com/tao-blue-gardens-puerto-vallarta/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://taomexico.com/wp-content/uploads/2026/01/tao-blue-gardens-vallarta.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e80e68220d9aa22f6_junglar%209-p-500.webp",
           "alt": "TAO Blue Gardens Puerto Vallarta project hero"
         },
         {
           "role": "inline-1",
-          "url": "https://taomexico.com/wp-content/uploads/2026/01/04-PVALLARTA_CAM06.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77e80e68220d9aa22f6_junglar%209-p-800.webp",
           "alt": "TAO Blue Gardens building exterior Zona Romántica"
         },
         {
           "role": "inline-2",
-          "url": "https://taomexico.com/wp-content/uploads/2026/01/Infinity-pool.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77f9d389009930b514b_junglar%204.webp",
           "alt": "TAO Blue Gardens infinity pool Banderas Bay"
         }
       ]
     },
     {
       "slug": "tao-monte-rocella",
-      "source": "https://taomexico.com/monte-rocella/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://taomexico.com/wp-content/uploads/2025/12/monte-rocella-4.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA-p-500.webp",
           "alt": "TAO Monte Rocella Los Cabos building exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://taomexico.com/wp-content/uploads/2025/12/monte-rocella-two-infinity-pools.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA-p-800.webp",
           "alt": "TAO Monte Rocella dual infinity pools"
         },
         {
           "role": "inline-2",
-          "url": "https://taomexico.com/wp-content/uploads/2025/12/monte-rocella-coworking-area.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caea89119943d6bcb36c08_Logo-Nhoa-negro.webp",
           "alt": "TAO Monte Rocella coworking and amenity deck"
         }
       ]
     },
     {
       "slug": "tao-santamar-akumal",
-      "source": "https://taomexico.com/properties/santamar-santamar-prime/",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-fachada-scaled.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-500.webp",
           "alt": "TAO Santamar Prime Akumal building facade"
         },
         {
           "role": "inline-1",
-          "url": "https://taomexico.com/wp-content/uploads/2025/12/Santamar_Photos_HighRes_0032-scaled.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-800.webp",
           "alt": "TAO Santamar Akumal high-resolution property photo"
         },
         {
           "role": "inline-2",
-          "url": "https://taomexico.com/wp-content/uploads/2025/12/Santamar-Prime-Pool.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-1080.webp",
           "alt": "TAO Santamar Prime resort-style pool terrace"
         }
       ]
     },
     {
       "slug": "costa-mujeres-cancun",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/46569/46569-df8b7d8bcea093d9a36d253eab701f74.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c652ed9186cd0.jpg",
           "alt": "Costa Mujeres Cancun hotel zone coastline"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/46569/46569-1c7dea7b37cc510f16681571ef0e7e36.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211aa73229dcb8.jpg",
           "alt": "Turquoise beach Cancun Costa Mujeres corridor"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/40321/40321-8470b8215e78334bd299c8782113f539.jpeg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c65cb52186ccf.jpg",
           "alt": "Caribbean resort architecture near Cancun north zone"
         }
       ]
     },
     {
       "slug": "puerto-cancun-marina",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/27946/27946-b3b97a351da6eca38c7cd3ca7aea774b.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/69610db8cef1012bd1a4622e.png",
           "alt": "Puerto Cancun marina luxury tower exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/27946/27946-88eea9963d485c6b3a7a9b49d14115cb.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/69864f570708e483e927bc47.png",
           "alt": "Puerto Cancun resort marina waterfront"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/27946/27946-c82702d00b00d496d3237666df2107e4.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/69611384cc792f6bd51783f8.png",
           "alt": "Cancun marina district high-rise residences"
         }
       ]
     },
     {
       "slug": "olea-luxury-beach-campeche",
-      "source": "override-real-project",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/portada.webp",
+          "url": "https://assets.cdn.filesafe.space/n4lLPqZ3Dv19TQTebcB6/media/66562fd41f92b2930595e2ea.png",
           "alt": "Olea Luxury Beach Condos Campeche rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades1.webp",
+          "url": "https://assets.cdn.filesafe.space/Bto3AyCMwnay3QoIPDfP/media/6706e1d94f1479c8efd684f2.jpeg",
           "alt": "Olea beachfront location Campeche coast"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location1.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc7efef31aa9ee22fe6a4d.png",
           "alt": "Olea luxury beach condo amenities pool"
         }
       ]
     },
     {
       "slug": "nara-condos-campeche",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/Nara_condos_campeche_1.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/336bc0eb-c1c3-4606-a05e-9a3e2bfb802b.png",
           "alt": "Nara Condos Country Club Campeche exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/check.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/ea60cd33-d55e-4aee-bc10-c3b0117421d7.png",
           "alt": "Nara Campeche country club residential rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/nara-campeche-country-club/Campeche_Mexico_1.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/f726f5dc-20ee-444a-a798-499ec4bd2f72.png",
           "alt": "Nara Condos Campeche golf community amenity"
         }
       ]
     },
     {
       "slug": "hard-rock-riviera-maya",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://lloyd-team.com/0-images/images-tmre/c2a_request_info_v2.png",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/69824493c05d6586ac429616.png",
           "alt": "Hard Rock Hotel Riviera Maya pool and towers"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260521160619839384000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6961153c65a0d7c88678c9fc.png",
           "alt": "Riviera Maya branded resort coastline context"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260521160609084276000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/69713123fc6c3225341f6f40.png",
           "alt": "Riviera Maya luxury resort residences corridor"
         }
       ]
     },
     {
       "slug": "holistika-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260520212758917974000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966a66a7fc4517cb6edd93e.jpg",
           "alt": "Holistika Tulum wellness residences overview"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260520212720787712000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/69690654eaddec15948173f1.png",
           "alt": "Holistika Tulum jungle wellness architecture"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260520212659101003000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6969065584e90b2a1239bf15.jpg",
           "alt": "Tulum coastline context near Holistika"
         }
       ]
     },
     {
       "slug": "coralina-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260520212646148058000000-o.jpg",
+          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966a705e2d75b2c2728f2fb.jpeg",
           "alt": "Coralina Tulum eco-luxury beach architecture"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260605224745006570000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6a0b951b81aeff082f76f00a_Home.jpg",
           "alt": "Tulum hotel zone entrance near Coralina corridor"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260604014459622495000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caea3580a85dca164fd43f_Logo-Paravian-negro.webp",
           "alt": "Tulum destination overview Coralina buyer context"
         }
       ]
     },
     {
       "slug": "tulum-country-club",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260608190013705148000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6743c3e6ac714cfd67db134b_rcrr_favicon.png",
           "alt": "Tulum Country Club golf and coastline aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260608185951800142000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6743c3e6ac714cfd67db134f_rcrr_webclip.png",
           "alt": "Riviera Maya coastline near Tulum Country Club"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260608185923545384000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6743c3e6ac714cfd67db14ed_siari-residence-logo-wht.svg",
           "alt": "Tulum branded resort corridor context"
         }
       ]
     },
     {
       "slug": "playacar-phase-ii",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/59061/59061-3bd3cba9a005a07958eb8197a69293b3.png",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/675a1c273df5b17fde2cf85b_arrow-down-white.svg",
           "alt": "Playacar Phase II reef beach gated community"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/59061/59061-ae15f1ded882f3ffc82f48cceb12df3a.png",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67577e61a0782b9d90bb590d_three-up-sample-1.jpg",
           "alt": "Allegro Playacar beachfront zone"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/59061/59061-e9d50eec80eebb223ee56c2f9290d406.png",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6799720dca6561af0c5d2ec8_siari-mirador-picnic.jpg",
           "alt": "Sandos Playacar resort community"
         }
       ]
     },
     {
       "slug": "vidanta-nuevo-vallarta",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260608185858506351000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6799720dca6561af0c5d2ec8_siari-mirador-picnic-p-500.jpg",
           "alt": "Vidanta Nuevo Vallarta beach resort towers"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260608185837716681000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695878c5820979907c1add41_home-card-03.jpg",
           "alt": "Nuevo Vallarta Pacific beach Vidanta context"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260608185813682892000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695878c5820979907c1add41_home-card-03-p-500.jpg",
           "alt": "Nayarit luxury resort residences"
         }
       ]
     },
     {
       "slug": "garza-blanca-pv",
-      "source": "https://www.garzablancaresort.com/puerto-vallarta",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://a.storyblok.com/f/285826016720786/1920x1280/9073d8b778/garza-blanca-vallarta.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum.webp",
           "alt": "Garza Blanca Puerto Vallarta oceanfront resort"
         },
         {
           "role": "inline-1",
-          "url": "https://a.storyblok.com/f/285826016720786/5225x3483/0ebc2583c4/gbpv-suites-honeymoon-ocean-front-high_02.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum-p-500.webp",
           "alt": "Garza Blanca PV suite ocean front"
         },
         {
           "role": "inline-2",
-          "url": "https://a.storyblok.com/f/285826016720786/1024x683/ac035acfcf/gbpv-facilities-property-panoramic_08-hd.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum-p-800.webp",
           "alt": "Garza Blanca PV panoramic facilities"
         }
       ]
     },
     {
       "slug": "ikuku-condos-campeche",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/46839/46839-969d417bdd8389eb256b57bbc8fe7aa1.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695879592e9e533cdba0e711_91110b4991ae4b29044f8f69be771610_home-parallax-bg.jpg",
           "alt": "Ikuku Condos Campeche rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/44268/44268-a5c502479b3c80afb63b8d40377175f5.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695879592e9e533cdba0e711_91110b4991ae4b29044f8f69be771610_home-parallax-bg-p-500.jpg",
           "alt": "Ikuku Campeche residential amenity"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/53211/53211-ba53cac921720dbaf82632821f6f820e.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695879592e9e533cdba0e711_91110b4991ae4b29044f8f69be771610_home-parallax-bg-p-800.jpg",
           "alt": "Campeche Gulf coast development context"
         }
       ]
     },
     {
       "slug": "lerma-beach-condos-campeche",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966905ae4b3055d1628e1f7.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/f46aec55-334b-4553-8403-0beb408db792.jpeg",
           "alt": "Lerma Beach Condos Campeche exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/6966abd902f1be04362ea0b1.jpeg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/ce480e93-2f0c-421b-a324-414f9e426597.png",
           "alt": "Lerma Campeche beachfront location"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/QqkqdK0ZwL6ZtBEyZyYs/media/3fc44e45-cba5-4fe3-89c0-d041eef36a19.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69ea919ba48992f689039417.jpeg",
           "alt": "Campeche country club residential context"
         }
       ]
     },
     {
       "slug": "torremar-country-club-campeche",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/torremar-country-club/img1.jpeg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/fdd76883-93bd-4810-8029-7c1c3f8c4580.png",
           "alt": "Torremar Country Club Campeche rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/torremar-country-club/checkM.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5bdfa8ca49f.png",
           "alt": "Torremar Campeche golf community"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/torremar-country-club/img2.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5386e8ca49e.png",
           "alt": "Campeche golf residential corridor"
         }
       ]
     },
     {
       "slug": "tankah-bay",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260609184246350249000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695879592e9e533cdba0e711_91110b4991ae4b29044f8f69be771610_home-parallax-bg-p-1080.jpg",
           "alt": "Tankah Bay Tulum premium beach"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260604014457957599000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695879592e9e533cdba0e711_91110b4991ae4b29044f8f69be771610_home-parallax-bg-p-1600.jpg",
           "alt": "Tankah Bay eco-luxury coast"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260609194138204073000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695879592e9e533cdba0e711_91110b4991ae4b29044f8f69be771610_home-parallax-bg-p-2000.jpg",
           "alt": "Tulum Tankah corridor"
         }
       ]
     },
     {
       "slug": "corasol-playa",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/21615/21615-f276eeb940540e678764860357945e72.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6801710f78ae5da4b12d4760_56337c2735be7c2926259ce9d038308b_home-card-beach-p-500.jpg",
           "alt": "Corasol Mareazul Playa north aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/21615/21615-b725e13bfea873f0072b8715f7c70482.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016acd02007ec533071f9e_home-card-pools.jpg",
           "alt": "Corasol Playa del Carmen context"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/21615/21615-1413bf190a17985245d05f4a4357f455.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016acd02007ec533071f9e_home-card-pools-p-500.jpg",
           "alt": "North Playa luxury beach"
         }
       ]
     },
     {
       "slug": "hacienda-encantada",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260610181004593155000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas.jpg",
           "alt": "Hacienda Encantada Cabo corridor"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260609194140888571000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas-p-500.jpg",
           "alt": "Cabo corridor branded residences"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260609194136751268000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b5bd36d9486feafd272_home-card-dining.jpg",
           "alt": "Los Cabos Pacific access"
         }
       ]
     },
     {
       "slug": "puerto-los-cabos-marina",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260609194143279128000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b5bd36d9486feafd272_home-card-dining-p-500.jpg",
           "alt": "Puerto Los Cabos marina villas"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260610181005388759000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1ac63465bc9354c0070_home-card-signature-restaurant.jpg",
           "alt": "Puerto Los Cabos master plan"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260611200210005940000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1ac63465bc9354c0070_home-card-signature-restaurant-p-500.jpg",
           "alt": "Marina lifestyle Cabo context"
         }
       ]
     },
     {
       "slug": "las-lupitas-campeche",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-c805dc9d83d981902e7b41ea1e33062f.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1c3094bf341b2f5c524_home-card-bars-lounges.jpg",
           "alt": "Las Lupitas Campeche development"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-1d4a0a4fe1482b0af794a5a89bc0c999.png",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1c3094bf341b2f5c524_home-card-bars-lounges-p-500.jpg",
           "alt": "Campeche coastal residential"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-05d91cb752bc318b5ef2e78225e48b77.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016bc2e57ff51f0267cd87_75d19bcfa8694fd556282ddc6ebbbbc8_home-card-environment.jpg",
           "alt": "Campeche golf community"
         }
       ]
     },
     {
       "slug": "bao-luxury-condos-campeche",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.topmexicorealestate.com/1-images/bao-luxury-condos/PORTADA.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d4e087b392e3.png",
           "alt": "Bao Luxury Condos Campeche"
         },
         {
           "role": "inline-1",
-          "url": "https://www.topmexicorealestate.com/1-images/bao-luxury-condos/check.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d439beb392e4.png",
           "alt": "Bao Campeche amenities"
         },
         {
           "role": "inline-2",
-          "url": "https://www.topmexicorealestate.com/1-images/bao-luxury-condos/BAOcondos2_1.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/11845c7b-aa24-4a50-a6bc-e342994b6e0a.png",
           "alt": "Campeche country club condos"
         }
       ]
     },
     {
       "slug": "zen-tulum",
-      "source": "https://www.sustaitarealestate.com/zentulum",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/de23d154-2aee-4875-8c08-f2d7a356318e/Imagen1.png?format=2500w",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc7386ae539c4ece74eb1b.png",
           "alt": "Zen Tulum Habitat exterior bioarchitecture render Region 15"
         },
         {
           "role": "inline-1",
-          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/451d648a-9976-4359-997f-ddaa102a7542/5.+Studio+Tulum+46.jpg?format=2500w",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/d0e28852-3717-4660-824d-e5127881d02a.png",
           "alt": "Zen Tulum Habitat studio apartment interior render"
         },
         {
           "role": "inline-2",
-          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/87a54f28-7548-495e-a96e-8f083a842622/Imagen4.png?format=2500w",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/63ada845-909e-4d0d-be1b-4426e056b5e4.png",
           "alt": "Zen Tulum Habitat rooftop pool and lounge amenity"
         }
       ]
     },
     {
       "slug": "duna-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://lloyd-team.com/0-images/images-tmre/c2a_get_brochure_v2.png",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016bc2e57ff51f0267cd87_75d19bcfa8694fd556282ddc6ebbbbc8_home-card-environment-p-500.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260611200304604557000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/675773bc4ed26cbb1605939a_Icon%20Arrow%20Left.svg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260611200258206763000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/675773bc4ed26cbb1605939c_Icon%20Arrow%20Right.svg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "sak-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260611200250915795000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/69587d78a02043cece137b18_home-private-retreat.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260611200244666033000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/69587d78a02043cece137b18_home-private-retreat-p-500.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260611200237892187000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/69587d78a02043cece137b18_home-private-retreat-p-800.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "mistiq-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-25d96da53cb794a15cf9d0cd118f7ce9.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67997ae8bdfd71441fe5abc0_92a717e06e9c5a5147774dd0ee80300b_siari-development-rendering-p-500.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-fa6fdc5a9757fa8fcc0a3047da4559f1.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67997ae8bdfd71441fe5abc0_92a717e06e9c5a5147774dd0ee80300b_siari-development-rendering-p-800.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-c31cfb5b94d6e2972f7aa1ac10f032dd.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67997ae8bdfd71441fe5abc0_92a717e06e9c5a5147774dd0ee80300b_siari-development-rendering-p-1080.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "anah-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-2152722051a7fe3095f3e61a8e969c42.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680173742d4500cca788bde0_907ff855dab1bfc717ee8510c779cec2_home-golf-club.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-365c2c05a7a13b251448682b3c643538.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680173742d4500cca788bde0_907ff855dab1bfc717ee8510c779cec2_home-golf-club-p-500.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-2abeb6282b3ef0cb0316d88155763014.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680173742d4500cca788bde0_907ff855dab1bfc717ee8510c779cec2_home-golf-club-p-800.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "aldea-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-c1ddd8ecf6419079921d9cdefb710ec9.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680176dcb625f56a50bb11da_home-personal-service.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/42855/42855-788960c14ccee2544335968785bf71c4.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680176dcb625f56a50bb11da_home-personal-service-p-500.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-52d9212a63e8adf2d608ee51a2f07d06.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680176dcb625f56a50bb11da_home-personal-service-p-800.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "bardo-tulum",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-06c222f8c3ae904fa5231ca7856076a3.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680176dcb625f56a50bb11da_home-personal-service-p-1080.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-0c608dfb5f11ebe6f4ddaf6beb3f8434.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10).jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-39b31bdb769e2d57eb684cc9ec2c4410.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-500.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "essentials-tulum",
-      "source": "https://www.essencetulum.com.mx/",
+      "source": "override-clean",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.easybroker.com/property_images/4967119/84790647/EB-SB7119.jpg",
+          "url": "https://framerusercontent.com/images/wL0Z8oUuR75JN1na7j60zBUr200.png?lossless=1&width=2048",
           "alt": "Essence Tulum building exterior facade render La Veleta"
         },
         {
           "role": "inline-1",
-          "url": "https://framerusercontent.com/images/wL0Z8oUuR75JN1na7j60zBUr200.png?lossless=1&width=2048",
+          "url": "https://framerusercontent.com/images/0jCs9OLhxSP1xSRjP6S3GcFadDk.png?width=4096",
           "alt": "Essence Tulum tropical modern building facade and pool"
         },
         {
@@ -1559,546 +1559,546 @@
     },
     {
       "slug": "ocean-village-playa",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-77d8f7e083ec081efa267b2bb176c9c0.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-800.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-c93ad1a9ac748f7b2e42374ab6c635da.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-1080.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-873445982cbb09f6ad6228829f8226aa.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68c49be765ebcceeaeb95f96_emerita-favicon.png",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "the-city-playa",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-6738dc133e8402272796b3821866d1f9.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68c49baddeaa5d6346149e4e_grupo-emerita.png",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-4d775bfab3934fff9954f56c53a53fcb.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-1600.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-7e95918c49c6b989ac5006d783fbd205.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "it-building-playa",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-10755753d5a47f60f603d4750b407bf9.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-800.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-fb3c2389be02311f55a8f0f38f7833dc.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-1080.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/52470/52470-18842b98741ef724b75c27760adfc8cb.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-1600.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "tres-patios-playa",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-32c9733b2bbd8888e92e7621bd1e3e9f.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-2000.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-5ab6f84751cce9fc2e4efba51f28adc9.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-1b43d183822d3fa42232400f2a50d431.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "the-fives-playa",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-a2dcfe694af4f2dedc8e7c31ee5f87d8.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-800.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-75e78d46c0112ae5fc8baba09ff32555.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-1080.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-aea90ac29f0fcb877dbe6222d1efec82.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "pedregal-cabo",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260611200232374759000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf5884377b69d1659ceee_constelada-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260604014230008441000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf5884377b69d1659ceee_constelada-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260604014456305355000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf5884377b69d1659ceee_constelada-p-1080.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "palmilla-san-jose",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260604014505019984000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf5884377b69d1659ceee_constelada.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260604014503291416000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe65411b91238a156c6ad_tre%CC%81bola-p-500.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.resize.sparkplatform.com/cab/640x480/true/20260604014501524112000000-o.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe65411b91238a156c6ad_tre%CC%81bola-p-800.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "bacalar-lagoon-homes",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-2630fd2b987bde087f82f412b1d4d28b.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe65411b91238a156c6ad_tre%CC%81bola-p-1080.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/54108/54108-1ad1d19c04535deac8a055bdc67cbfff.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe65411b91238a156c6ad_tre%CC%81bola.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-5f334674864c5f3ef187cbb1addbb0b4.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeb24c0e27b7c4fdf772c_Paravian-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "sian-kaan-biosphere-homes",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-78f1cbfbfd37b976e1a4d3b2d1009298.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeb24c0e27b7c4fdf772c_Paravian-p-800.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-89790044c304c240ac383f6e369a91c7.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeb24c0e27b7c4fdf772c_Paravian-p-1080.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-e803a4d6dedb7256c82ae2b40e841661.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeb24c0e27b7c4fdf772c_Paravian.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "mayakoba-residences-playa",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/28463/28463-a987c3fab889d853b1dc573f68429037.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe3c9ada5061c1b0e3f6a_villa%20kaybe%CC%81-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/28463/28463-9a361f5edffa97492b61c2fa62f90805.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe3c9ada5061c1b0e3f6a_villa%20kaybe%CC%81-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/28463/28463-e8315e9795a8e985645eb273175d5291.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe3c9ada5061c1b0e3f6a_villa%20kaybe%CC%81-p-1080.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "cozumel-beach-condos",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/27751/27751-036f650619559c876cf4b0022263c019.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe3c9ada5061c1b0e3f6a_villa%20kaybe%CC%81.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/27751/27751-f2477382dc9aaa752815fee6f88e6f6c.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acae00b099d421f1c553a0_JUNGLAR_FOTO_BAKARI-p-500.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/27751/27751-fa18f67b78f055e14332a0d1804607d9.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acae00b099d421f1c553a0_JUNGLAR_FOTO_BAKARI-p-800.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "progreso-beach-campeche",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-b9aab114fe89a6e13b763eb9c2e97c69.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acae00b099d421f1c553a0_JUNGLAR_FOTO_BAKARI.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-732bb9a0ee2f5cab62404ee528ea7a5f.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caea5ccf4cf1e8169eafe1_Logo-Omara-negro.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-da05591447a57cb13323813563ff4539.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "puerto-aventuras-marina",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/56054/56054-48e74ac592dd0bc6eb70e556bda60e67.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-963accb04c380afda8de04eb8e0c9b93.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-53e820dfc831742fb6aa54c034825a31.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-1080.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "cancun-huayacan-condos",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/28217/28217-5a9586f25fb53bb4f9f5523c10bd275a.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/28217/28217-8645eea695def747bb8b52b43e0172bc.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/28217/28217-965be5b09c0ca738c3e5e7e0386b82af.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538a14bb946d0444dc8e_alberca.svg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "cancun-lagoon-lofts",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/28176/28176-3609140298fd12776b0e8b5440f3efc9.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538beb44a6fbe4830ae9_elevador.svg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/28176/28176-c3a2e681355a96eb0eb13de1f4965c9f.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538bd6d0dc1f91b52605_playa.svg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/28176/28176-1cb65dc63d78fd6558a83ecc90ca3432.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac58fca23ec66914e91295_llaves.svg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "east-cape-villa-cabo",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-c70b15b0a50da511f5564a757128992c.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b5ab12a0985960cde_asolearse.svg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-cfbe833c4f90bd181d69aee479e1e848.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac588d3dad8213ae07463a_regadera.svg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-331ee8fe6fb2072ed9bf6a027f8f7e8d.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac588d27df93f4a0d6af47_seguridad.svg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "holbox-lagoon-homes",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-e39cd5a3e4ab3883493dffc131269837.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688478ddcbeba13cdede039e_placeholder-image.svg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-0dd1115b9a9bf463d1467d62e70204e6.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/57741/57741-6e6da2754ebb9cc2d4f6111965b1d1e9.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "bacalar-mia-suites",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-a39bc19e27c98bdf4ab5e434136dd2fb.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13-p-800.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-5a885c78e3615550f2d699e11dbfc737.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-0e23a9a24169378848681539428f550c.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "campeche-city-lofts",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-f50c49edc9aa37821ec29aed11726c18.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12-p-800.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-d09583ea069e42e2ac8b6236020e501c.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-45d234819ff1b1ccebb99e88ca30e2de.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "riviera-maya-mayakoba-studio",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/28179/28179-07dda61774cdcd0bf03121b98addf073.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14-p-800.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/28179/28179-409b115ca77b3c259c3162e2ba93e59e.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4386a1f06045c7c87_omara-exterior_6.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/28179/28179-03cce5fcfa4245a0add495287dc794eb.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4386a1f06045c7c87_omara-exterior_6-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "cancun-downtown-lofts",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/28522/28522-085b196efe611d6f85a8ad0815cd1e3a.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce3083155ebbbd02a3b_omara-exterior_7-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/28522/28522-622d1a12dc69c03f24c030758a7bb853.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce3083155ebbbd02a3b_omara-exterior_7-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/28522/28522-04528d0d35f96c86b13f815277193aa2.jpeg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "playa-emerald-studio",
-      "source": "scraped-listing",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/21565/21565-f286a8b6a2b1bcd9aaf55129bff6ac6b.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/21565/21565-8213732dc3f12c430990ce91b78a3a57.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9-p-800.webp",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/21565/21565-fe67fa7211407c2aff21bcf9c99cbf94.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4.webp",
           "alt": "i2"
         }
       ]
     },
     {
       "slug": "tulum-jungle-lofts",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-4fb91b68bf16e433a65dc349788730fe.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-fb2aa1ce4d7d8502df20fb6f46b82d8e.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-800.webp",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-ec221717cdd6dd4e907e5658c9064278.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca933198126d6c4f8e_showroom_5.webp",
           "alt": "i2"
         }
       ]
     },
     {
       "slug": "cabo-corridor-vista",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-c1aa98fde8020f7a3a9800ac44b2c649.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca933198126d6c4f8e_showroom_5-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/29424/29424-6b790d14dd28b5e848860b9e5e396050.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca933198126d6c4f8e_showroom_5-p-800.webp",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/21543/21543-1fb140b3c8de898e163fbff021de5b21.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccafc47c7eb04af6c47_showroom_2.webp",
           "alt": "i2"
         }
       ]
     },
     {
       "slug": "nuevo-vallarta-bungalows",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/21543/21543-b23131886127175244de0d015cd42d05.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccafc47c7eb04af6c47_showroom_2-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/21543/21543-1d2ff3ca3eec9ba8bf2898c424fef268.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccafc47c7eb04af6c47_showroom_2-p-800.webp",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/21543/21543-e386a4114b74cb644f23b947463d970d.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca93305a2b21ec67ac_showroom_10.webp",
           "alt": "i2"
         }
       ]
     },
     {
       "slug": "campeche-gulf-villas",
-      "source": "dedup-pool",
+      "source": "clean-pool",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-6a67241a852ade24b5d4dc5ee3441e35.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/45888/45888-4825a6f13625f42b40c15d8f07142999.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-800.webp",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/46839/46839-155b049957cc9ddeecedcea4902479f0.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3.webp",
           "alt": "i2"
         }
       ]
