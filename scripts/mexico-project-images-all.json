@@ -1391,22 +1391,22 @@
     },
     {
       "slug": "zen-tulum",
-      "source": "override-real-project",
+      "source": "https://www.sustaitarealestate.com/zentulum",
       "images": [
         {
           "role": "hero",
-          "url": "https://www.proyectos-inmobiliarios.com/Admin_Inmobiliaria/Archivos/Propiedades/Propiedad_415/Titulo/Big_Proyecto-inmobiliario-zen-tulum-mexico.jpg",
-          "alt": "Zen Tulum wellness residences"
+          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/de23d154-2aee-4875-8c08-f2d7a356318e/Imagen1.png?format=2500w",
+          "alt": "Zen Tulum Habitat exterior bioarchitecture render Region 15"
         },
         {
           "role": "inline-1",
-          "url": "https://www.proyectos-inmobiliarios.com/Admin_Inmobiliaria/Archivos/Propiedades/Propiedad_415/Archivo_5207/Small_1.%20Fachada%20principal.jpg",
-          "alt": "Zen Tulum jungle pool"
+          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/451d648a-9976-4359-997f-ddaa102a7542/5.+Studio+Tulum+46.jpg?format=2500w",
+          "alt": "Zen Tulum Habitat studio apartment interior render"
         },
         {
           "role": "inline-2",
-          "url": "https://www.proyectos-inmobiliarios.com/Admin_Inmobiliaria/Archivos/Propiedades/Propiedad_415/Archivo_5209/Small_6.%20ZEN%20Tulum%20Habitat%20Rooftop.jpg",
-          "alt": "Tulum cenote corridor context"
+          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/87a54f28-7548-495e-a96e-8f083a842622/Imagen4.png?format=2500w",
+          "alt": "Zen Tulum Habitat rooftop pool and lounge amenity"
         }
       ]
     },
@@ -1538,22 +1538,22 @@
     },
     {
       "slug": "essentials-tulum",
-      "source": "dedup-pool",
+      "source": "https://www.essencetulum.com.mx/",
       "images": [
         {
           "role": "hero",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-edf8622c378b09d6f76d95970e5d2ea6.jpg",
-          "alt": "hero"
+          "url": "https://framerusercontent.com/images/uUUeT4JeU5vhcO5LPaVrp8bww0.png?width=4992",
+          "alt": "Essence Tulum aerial exterior render La Veleta"
         },
         {
           "role": "inline-1",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-cacc6cecca28f4a3ef33efe7d0aa63c8.jpg",
-          "alt": "inline1"
+          "url": "https://framerusercontent.com/images/wL0Z8oUuR75JN1na7j60zBUr200.png?lossless=1&width=2048",
+          "alt": "Essence Tulum tropical modern building facade and pool"
         },
         {
           "role": "inline-2",
-          "url": "https://photos.topmexicorealestate.com/Listings/45958/45958-910d021e55c33fb81bad602abfa0f4fe.jpg",
-          "alt": "inline2"
+          "url": "https://framerusercontent.com/images/AsVZ9JMSJPdZnsz9bCetJ49fVI.png?width=1536",
+          "alt": "Essence Tulum furnished apartment interior living area"
         }
       ]
     },
