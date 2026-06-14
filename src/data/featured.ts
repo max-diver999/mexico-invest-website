@@ -24,4 +24,4 @@ export const FEATURED_AREA_SLUGS = [
 
 /** Homepage hero — Tulum aerial (area guide hero). */
 export const HOMEPAGE_HERO_IMAGE =
-  'https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22201451/AerialConradTulum-0410508A-2.webp';
+  'https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460931/more-group/mexico/areas/tulum/hero.webp';
