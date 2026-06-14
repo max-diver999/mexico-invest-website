@@ -79,7 +79,9 @@ const COLLECTIONS = isRu
     };
 
 const LAYOUT_PROVIDES_LEAD_FORM = new Set(
-  isRu ? ['gajdy', 'rajony', 'sravneniya'] : ['guides', 'areas', 'comparisons'],
+  isRu
+    ? ['gajdy', 'rajony', 'sravneniya']
+    : ['guides', 'areas', 'comparisons', 'compare', 'projects', 'developers', 'markets', 'costs', 'finance', 'legal'],
 );
 
 const SEVERITY = {

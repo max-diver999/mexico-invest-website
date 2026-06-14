@@ -28,7 +28,7 @@ function mdxBeingPushed() {
   return files.split('\n').filter((f) => /^src\/content\/.*\.mdx$/.test(f));
 }
 
-console.log('=== invest-gulf pre-push gate ===');
+console.log('=== mexico-invest pre-push gate ===');
 
 const mdxFiles = mdxBeingPushed();
 if (mdxFiles.length) {

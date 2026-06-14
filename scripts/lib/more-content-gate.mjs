@@ -193,7 +193,7 @@ export function runExtendedChecks(opts) {
   if (isNews) return;
 
   if (AI_FLUFF_RE.test(body)) errors.push(`${prefix} AI fluff`);
-  if (!/<TldrBlock\s*\/?>/.test(body)) errors.push(`${prefix} missing TldrBlock`);
+  if (!/<TldrBlock\b/.test(body)) errors.push(`${prefix} missing TldrBlock`);
   if (!/<FaqBlock/.test(body)) errors.push(`${prefix} missing FaqBlock in body`);
   if (!/(pros|cons|плюс|минус|advantages|disadvantages)/i.test(body)) {
     errors.push(`${prefix} missing pros/cons`);
