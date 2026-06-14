@@ -1,5 +1,5 @@
 {
-  "rollout": "area-images-all-21",
+  "rollout": "area-images-all-21+phase-bc",
   "verified": "2026-06-08",
   "rule": "63 unique URLs — 3 per area, zero cross-article reuse, no overlap with project manifest",
   "articles": [
@@ -441,6 +441,237 @@
           "role": "inline-2",
           "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22142254/cenote-dos-ojos.webp",
           "alt": "Parroquia facade and Jardín Principal UNESCO centro"
+        }
+      ]
+    },
+    {
+      "slug": "region-15-tulum",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/front/img/header/header_arrow.jpg",
+          "alt": "Playa del Carmen Caribbean — Region 15 Tulum"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/front/img/header/header_close.jpg",
+          "alt": "Playa del Carmen Caribbean — Region 15 Tulum"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/front/img/header/header_phone.jpg",
+          "alt": "Playa del Carmen Caribbean — Region 15 Tulum"
+        }
+      ]
+    },
+    {
+      "slug": "region-8-tulum",
+      "source": "mexicancaribbean",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09144223/La-Valise-2_11zon-scaled.jpg",
+          "alt": "La Valise-2_11zon — Region 8 Tulum"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09144832/Hotel-Nomade-Holbox00055_11zon-scaled.jpg",
+          "alt": "Hotel Nomade Holbox00055_11zon — Region 8 Tulum"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09145543/DSC4885_11zon-scaled.jpg",
+          "alt": "_DSC4885_11zon — Region 8 Tulum"
+        }
+      ]
+    },
+    {
+      "slug": "holistika-tulum",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1394222928-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Holistika Tulum"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1395945292-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Holistika Tulum"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1415303368-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Holistika Tulum"
+        }
+      ]
+    },
+    {
+      "slug": "tulum-pueblo-east",
+      "source": "mexicancaribbean",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/10185024/Hotels-removebg-preview.png",
+          "alt": "Hotels-removebg-preview — Tulum Pueblo East"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13202559/MICE1-scaled.jpg",
+          "alt": "MICE1 — Tulum Pueblo East"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13202750/MICE2-scaled.jpg",
+          "alt": "MICE2 — Tulum Pueblo East"
+        }
+      ]
+    },
+    {
+      "slug": "tankah-bay",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1416004502-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Tankah Bay"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1416004502-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Tankah Bay"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467149995-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Tankah Bay"
+        }
+      ]
+    },
+    {
+      "slug": "tulum-beach-zone",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467149995-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Tulum Beach Zone"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467834160-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Tulum Beach Zone"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467834160-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Tulum Beach Zone"
+        }
+      ]
+    },
+    {
+      "slug": "tulum-country-club",
+      "source": "mexicancaribbean",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/17160122/40-can%CC%83ones-restaurant-y-hotel--scaled.jpg",
+          "alt": "40 cañones restaurant y hotel — Tulum Country Club"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22100251/MexicanCaribbean-Vertical-White-20260521-scaled.png",
+          "alt": "MexicanCaribbean-Vertical-White-20260521 — Tulum Country Club"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22101733/CaribeMexicano-Vertical-White-20260521-1.png",
+          "alt": "CaribeMexicano-Vertical-White-20260521 — Tulum Country Club"
+        }
+      ]
+    },
+    {
+      "slug": "puerto-aventuras",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467906630-323x218.JPG",
+          "alt": "Playa del Carmen Caribbean — Puerto Aventuras"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1467906630-646x436.JPG",
+          "alt": "Playa del Carmen Caribbean — Puerto Aventuras"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1478807756-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Puerto Aventuras"
+        }
+      ]
+    },
+    {
+      "slug": "cozumel-investment",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1478807756-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Cozumel Investment"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1504192006-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Cozumel Investment"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1504192006-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Cozumel Investment"
+        }
+      ]
+    },
+    {
+      "slug": "bacalar-investment",
+      "source": "mexicancaribbean",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/09145614/DSC6866.jpg",
+          "alt": "culinary — Bacalar Investment"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1504194396-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Bacalar Investment"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1504194396-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Bacalar Investment"
+        }
+      ]
+    },
+    {
+      "slug": "north-shore-xcalacoco",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1507917087-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — North Shore Xcalacoco"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1507917087-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — North Shore Xcalacoco"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107411-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — North Shore Xcalacoco"
         }
       ]
     }

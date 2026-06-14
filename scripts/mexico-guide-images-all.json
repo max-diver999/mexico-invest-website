@@ -1,5 +1,5 @@
 {
-  "rollout": "guide-images-all-86-thematic",
+  "rollout": "guide-images-all-86-thematic+phase-bc",
   "verified": "2026-06-08",
   "rule": "258 unique URLs — 3 per guide, zero overlap with 201 project+area URLs",
   "articles": [
@@ -1806,6 +1806,652 @@
           "role": "inline-2",
           "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/13203128/MICE3-scaled.jpeg",
           "alt": "MICE3 scaled — World Cup 2026 Mexico Property Impact market context"
+        }
+      ]
+    },
+    {
+      "slug": "developer-financing-mexico",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107411-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Developer Financing Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107704-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Developer Financing Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107704-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Developer Financing Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "cross-border-lender-list",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107730-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Cross Border Lender List"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1530107730-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Cross Border Lender List"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1538130412-323x218.png",
+          "alt": "Playa del Carmen Caribbean — Cross Border Lender List"
+        }
+      ]
+    },
+    {
+      "slug": "heloc-fund-mexico-purchase",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1538130412-646x436.png",
+          "alt": "Playa del Carmen Caribbean — Heloc Fund Mexico Purchase"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1538558735-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Heloc Fund Mexico Purchase"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1538558735-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Heloc Fund Mexico Purchase"
+        }
+      ]
+    },
+    {
+      "slug": "seller-financing-mexico",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1547546364-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Seller Financing Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1547546364-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Seller Financing Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1563563331-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Seller Financing Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "mexico-construction-loan-foreigner",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/activity-header-images/1563563331-646x436.jpg",
+          "alt": "Playa del Carmen Caribbean — Mexico Construction Loan Foreigner"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/143886-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Mexico Construction Loan Foreigner"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/226068-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Mexico Construction Loan Foreigner"
+        }
+      ]
+    },
+    {
+      "slug": "peso-mortgage-locals-only",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/310271-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Peso Mortgage Locals Only"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/376166-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Peso Mortgage Locals Only"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/384514-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Peso Mortgage Locals Only"
+        }
+      ]
+    },
+    {
+      "slug": "hurricane-insurance-bcs",
+      "source": "playadelcarmen",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://www.playadelcarmen.com/uploads/hotel-header-images/604573-323x218.jpg",
+          "alt": "Playa del Carmen Caribbean — Hurricane Insurance Bcs"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/03/Cerrada-ZA-Mayapan-CT.jpg",
+          "alt": "Cerrada-ZA-Mayapan-CT — Hurricane Insurance Bcs"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/03/Cerrada-ZA-Mayapan-sd4.jpg",
+          "alt": "Cerrada-ZA-Mayapan-sd4 — Hurricane Insurance Bcs"
+        }
+      ]
+    },
+    {
+      "slug": "flood-risk-riviera-maya",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Sol-y-Playa.png",
+          "alt": "Sol y Playa — Flood Risk Riviera Maya"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Sol-y-Playa.png",
+          "alt": "Sol y Playa — Flood Risk Riviera Maya"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/05/Oxkintok-1.jpg",
+          "alt": "Oxkintok (1) — Flood Risk Riviera Maya"
+        }
+      ]
+    },
+    {
+      "slug": "liability-insurance-str-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/05/Oxkintok-2.jpg",
+          "alt": "Oxkintok (2) — Liability Insurance Str Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/05/Oxkintok-3.jpg",
+          "alt": "Oxkintok (3) — Liability Insurance Str Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/05/Oxkintok-4.jpg",
+          "alt": "Oxkintok (4) — Liability Insurance Str Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "earthquake-risk-mexico-property",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/05/Oxkintok-5.jpg",
+          "alt": "Oxkintok (5) — Earthquake Risk Mexico Property"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/05/Oxkintok-6.jpg",
+          "alt": "Oxkintok (6) — Earthquake Risk Mexico Property"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2021/05/Oxkintok-7.jpg",
+          "alt": "Oxkintok (7) — Earthquake Risk Mexico Property"
+        }
+      ]
+    },
+    {
+      "slug": "wire-fraud-mexico-closing",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Arqueologia.png",
+          "alt": "Arqueologia — Wire Fraud Mexico Closing"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Aventura.png",
+          "alt": "Aventura — Wire Fraud Mexico Closing"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Cerveza.png",
+          "alt": "Cerveza — Wire Fraud Mexico Closing"
+        }
+      ]
+    },
+    {
+      "slug": "fake-escritura-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Deportes.png",
+          "alt": "Deportes — Fake Escritura Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Gastronomia.png",
+          "alt": "Gastronomia — Fake Escritura Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/IMG_1743-2-scaled.jpg",
+          "alt": "IMG_1743 2 — Fake Escritura Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "unregistered-broker-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/IMG_1744-2-scaled.jpg",
+          "alt": "IMG_1744 2 — Unregistered Broker Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/IMG_7137-scaled.jpg",
+          "alt": "IMG_7137 — Unregistered Broker Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Lujo.png",
+          "alt": "Lujo — Unregistered Broker Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "ampi-license-verify-guide",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Negocios.png",
+          "alt": "Negocios — Ampi License Verify Guide"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/22100604/the-riviera-maya-edition.jpg",
+          "alt": "Regiones-Mérida-.Folletos-Digitales — Ampi License Verify Guide",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/27125007/Generations-Riviera-Maya1.jpg",
+          "alt": "Regiones-Mérida-Folletos-Digitales-2023 — Ampi License Verify Guide",
+          "source": "mexicancaribbean"
+        }
+      ]
+    },
+    {
+      "slug": "isr-exemption-5-year-rule",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Regiones-Mundo-Maya-Folletos-Digitales-2023.jpg",
+          "alt": "Regiones-Mundo-Maya-Folletos-Digitales-2023 — Isr Exemption 5 Year Rule"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Regiones-Puerto-Maya-Folletos-Digitales-2023.jpg",
+          "alt": "Regiones-Puerto-Maya-Folletos-Digitales-2023 — Isr Exemption 5 Year Rule"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225909/jungle-cabanas-riviera-maya-poolside-family-scaled.jpg",
+          "alt": "Regiones-Riviera-Yucatán-Folletos-Digitales-2023 — Isr Exemption 5 Year Rule",
+          "source": "mexicancaribbean"
+        }
+      ]
+    },
+    {
+      "slug": "cfdi-cost-basis-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Regiones-Ruta-Puuc-Folletos-Digitales-2023.jpg",
+          "alt": "Regiones-Ruta-Puuc-Folletos-Digitales-2023 — Cfdi Cost Basis Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Romance.png",
+          "alt": "Romance — Cfdi Cost Basis Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Untitled.jpg",
+          "alt": "Untitled — Cfdi Cost Basis Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "predial-riviera-maya-rates",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/08/Wellness.png",
+          "alt": "Wellness — Predial Riviera Maya Rates"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Arqueologia.png",
+          "alt": "Arqueologia — Predial Riviera Maya Rates"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Aventura.png",
+          "alt": "Aventura — Predial Riviera Maya Rates"
+        }
+      ]
+    },
+    {
+      "slug": "vat-mexico-property-rental",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Capital-Mundo-Maya.png",
+          "alt": "Capital Mundo Maya — Vat Mexico Property Rental"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Deportes.png",
+          "alt": "Deportes — Vat Mexico Property Rental"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Gastronomia.png",
+          "alt": "Gastronomia — Vat Mexico Property Rental"
+        }
+      ]
+    },
+    {
+      "slug": "sat-rental-registration-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Lujo.png",
+          "alt": "Lujo — Sat Rental Registration Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18230010/playa-mexico-familias-kids-beach-day-scaled.jpg",
+          "alt": "Map-Regions-Yucatán-Map — Sat Rental Registration Mexico",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Mapa.png",
+          "alt": "Mapa — Sat Rental Registration Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "non-resident-tax-id-rfc-guide",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Mexico-evento-yucatan.jpg",
+          "alt": "Mexico-evento-yucatan — Non Resident Tax Id Rfc Guide"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/28115450/Gallery_bg_ocean_20260526-1.jpg",
+          "alt": "Mérida — Non Resident Tax Id Rfc Guide",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Negocios.png",
+          "alt": "Negocios — Non Resident Tax Id Rfc Guide"
+        }
+      ]
+    },
+    {
+      "slug": "closing-timeline-mexico-30-90-days",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Regiones.png",
+          "alt": "Regiones — Closing Timeline Mexico 30 90 Days"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24085554/ibis-cancun.jpg",
+          "alt": "Riviera Yucatán — Closing Timeline Mexico 30 90 Days",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Romance.png",
+          "alt": "Romance — Closing Timeline Mexico 30 90 Days"
+        }
+      ]
+    },
+    {
+      "slug": "remote-notarization-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Ruta-Puuc.png",
+          "alt": "Ruta Puuc — Remote Notarization Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/09/Wellness.png",
+          "alt": "Wellness — Remote Notarization Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225948/cancun-playa-turquesa-familias-scaled.jpg",
+          "alt": "Yucatán Cenotes — Remote Notarization Mexico",
+          "source": "mexicancaribbean"
+        }
+      ]
+    },
+    {
+      "slug": "apostille-documents-mexico-property",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Aldeas-Mayas-Co-PR-M.jpg",
+          "alt": "Aldeas-Mayas-Co-PR-M — Apostille Documents Mexico Property"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Aldeas-Mayas-Co-PR.jpg",
+          "alt": "Aldeas-Mayas-Co-PR — Apostille Documents Mexico Property"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Aldeas-Mayas-PRC.jpg",
+          "alt": "Aldeas-Mayas-PRC — Apostille Documents Mexico Property"
+        }
+      ]
+    },
+    {
+      "slug": "translation-requirements-mexico-deed",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Aldeas-V2.png",
+          "alt": "Aldeas-V2 — Translation Requirements Mexico Deed"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Aldeas-comunitarias.png",
+          "alt": "Aldeas comunitarias — Translation Requirements Mexico Deed"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/29111547/CasaBarbaraHolbox-811.jpg",
+          "alt": "Aldeas temáticas — Translation Requirements Mexico Deed",
+          "source": "mexicancaribbean"
+        }
+      ]
+    },
+    {
+      "slug": "currency-closing-usd-mxn",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Aldeas.png",
+          "alt": "Aldeas — Currency Closing Usd Mxn"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Aldeascomunitarias-D.jpg",
+          "alt": "Aldeascomunitarias-D — Currency Closing Usd Mxn"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Discover.jpg",
+          "alt": "Discover — Currency Closing Usd Mxn"
+        }
+      ]
+    },
+    {
+      "slug": "repatriate-sale-proceeds-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/DiscoverM.jpg",
+          "alt": "DiscoverM — Repatriate Sale Proceeds Mexico"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Experiencias-mayas-1.png",
+          "alt": "Experiencias mayas — Repatriate Sale Proceeds Mexico"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Experiencias-mayas-V2.png",
+          "alt": "Experiencias mayas-V2 — Repatriate Sale Proceeds Mexico"
+        }
+      ]
+    },
+    {
+      "slug": "land-for-sale-mexico-foreigner-risks",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Experiencias-mayas.png",
+          "alt": "Experiencias mayas — Land For Sale Mexico Foreigner Risks"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Mapa-AldeasMayas-PR.jpg",
+          "alt": "Mapa-AldeasMayas-PR — Land For Sale Mexico Foreigner Risks"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2023/10/Mapa-AldeasMayas-PR1.jpg",
+          "alt": "Mapa-AldeasMayas-PR1 — Land For Sale Mexico Foreigner Risks"
+        }
+      ]
+    },
+    {
+      "slug": "commercial-property-mexico-foreigner",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/22100602/st-regis-kanai-resort-riviera-maya.jpg",
+          "alt": "PasaporteYucatán-Cover-D — Commercial Property Mexico Foreigner",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/05135021/hilton-6.jpg",
+          "alt": "PasaporteYucatán-Cover-M — Commercial Property Mexico Foreigner",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22142254/cenote-dos-ojos.webp",
+          "alt": "PasaporteYucatán-Cover — Commercial Property Mexico Foreigner",
+          "source": "mexicancaribbean"
+        }
+      ]
+    },
+    {
+      "slug": "fractional-ownership-mexico-risks",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09144223/La-Valise-2_11zon-scaled.jpg",
+          "alt": "PasaporteYucatán-Yucatán — Fractional Ownership Mexico Risks",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09144832/Hotel-Nomade-Holbox00055_11zon-scaled.jpg",
+          "alt": "Temáticas-V2 — Fractional Ownership Mexico Risks",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09145543/DSC4885_11zon-scaled.jpg",
+          "alt": "Temáticas — Fractional Ownership Mexico Risks",
+          "source": "mexicancaribbean"
+        }
+      ]
+    },
+    {
+      "slug": "timeshare-vs-condo-mexico",
+      "source": "yucatan",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/22100602/st-regis-kanai-resort-riviera-maya.jpg",
+          "alt": "Yucatán-Aldeas-Mayas-Co-PR — Timeshare Vs Condo Mexico",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/05135021/hilton-6.jpg",
+          "alt": "Yucatán-PasaporteYucatán-Cover-M — Timeshare Vs Condo Mexico",
+          "source": "mexicancaribbean"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://yucatan.travel/wp-content/uploads/2025/02/AMOR-Y-AMISTAD_STORY-1-scaled.jpg",
+          "alt": "AMOR Y AMISTAD_STORY — Timeshare Vs Condo Mexico"
         }
       ]
     }
