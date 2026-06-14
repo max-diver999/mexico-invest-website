@@ -69,9 +69,22 @@ function loadMdxProjects() {
     });
 }
 
+function loadCloudinaryHero(slug) {
+  const cdnPath = path.join(SITE_ROOT, 'scripts/mexico-cloudinary-manifest.json');
+  if (!fs.existsSync(cdnPath)) return null;
+  try {
+    const cdn = JSON.parse(fs.readFileSync(cdnPath, 'utf8'));
+    const entry = cdn.uploaded?.[`${slug}:hero`];
+    return entry?.secure_url?.includes('dphvjbqb4') ? entry.secure_url : null;
+  } catch {
+    return null;
+  }
+}
+
 function buildIndexEntry({ slug, data }, manifestBySlug) {
   const manifest = manifestBySlug[slug];
   const heroFromManifest = manifest?.images?.find((img) => img.role === 'hero')?.url ?? null;
+  const heroCloudinary = loadCloudinaryHero(slug);
 
   return {
     slug,
@@ -80,7 +93,7 @@ function buildIndexEntry({ slug, data }, manifestBySlug) {
     developer: data.developer ?? null,
     priceFromUsd: data.priceFromUsd ?? null,
     status: data.status ?? null,
-    heroImage: heroFromManifest ?? data.heroImage ?? null,
+    heroImage: heroCloudinary ?? heroFromManifest ?? data.heroImage ?? null,
   };
 }
 

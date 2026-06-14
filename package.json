@@ -26,7 +26,10 @@
     "audit:rendered:fail": "node scripts/audit-rendered-live.mjs --fail",
     "fix:leadforms": "node scripts/fix-inline-leadforms.mjs",
     "sync:content-gate": "node scripts/sync-content-gate.mjs",
-    "validate:strict": "node scripts/qa-audit.mjs"
+    "validate:strict": "node scripts/qa-audit.mjs",
+    "images:upload": "python3 scripts/upload-mexico-cloudinary.py",
+    "images:upload:dry": "python3 scripts/upload-mexico-cloudinary.py --dry-run",
+    "images:rollout": "node scripts/rollout-mexico-cloudinary.mjs"
   },
   "dependencies": {
     "google-auth-library": "^10.6.2",

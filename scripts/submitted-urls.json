@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-09T12:00:00Z",
+  "updatedAt": "2026-06-14T17:09:16.266Z",
   "urls": [
     "https://mexico-invest.com",
     "https://mexico-invest.com/about",
@@ -215,7 +215,7 @@
     "https://mexico-invest.com/terms"
   ],
   "backfilledAt": "2026-06-08T11:06:29.410Z",
-  "backfillEvidence": "chat 4c8288b1 \u2014 batches 50/50 + 59/59 + 78/78 OK (2026-06-06..07)",
+  "backfillEvidence": "chat 4c8288b1 — batches 50/50 + 59/59 + 78/78 OK (2026-06-06..07)",
   "note": "Includes confirmed historical batches. Gap = live sitemap minus this file.",
   "entries": [
     {
@@ -477,6 +477,1011 @@
       "url": "https://mexico-invest.com/news/tulum-inventory-2026",
       "channel": "google",
       "at": "2026-06-08T17:39:02.134Z"
+    },
+    {
+      "url": "https://mexico-invest.com",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/about",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/akumal",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/aldea-zama-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/bucerias",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/cabo-corridor",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/cabo-san-lucas",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/cancun",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/east-cape-baja",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/gonzalo-guerrero-playa",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/la-veleta-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/merida",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/nuevo-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/playa-del-carmen",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/playacar",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/puerto-morelos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/puerto-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/punta-de-mita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/san-jose-del-cabo",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/san-miguel-de-allende-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/sayulita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/zazil-ha-playa",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/akumal-vs-tulum-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/aldea-zama-vs-region-15-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/amara-vs-nhoa-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/branded-residence-vs-standard-condo-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/cabo-san-lucas-vs-san-jose-del-cabo",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/cash-vs-mortgage-mexico-foreigner",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/centro-playa-vs-playacar",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/condo-vs-villa-mexico-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/copala-quivira-vs-mavila-quivira",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/distrito-xcalacoco-vs-paravian",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/gran-tulum-vs-101-park",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/los-cabos-vs-puerto-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/los-cabos-vs-riviera-maya",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/merida-vs-riviera-maya-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/mexico-vs-arizona-retirement",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/mexico-vs-colombia-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/mexico-vs-costa-rica-real-estate",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/mexico-vs-florida-property-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/mexico-vs-panama-real-estate",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/mexico-vs-texas-no-state-tax",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/mexico-vs-thailand-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/montage-vs-pendry-punta-mita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/nuevo-vallarta-vs-puerto-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/playa-del-carmen-vs-cancun-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/playa-del-carmen-vs-tulum-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/pre-construction-vs-resale-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/puerto-morelos-vs-playa-del-carmen",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/punta-mita-vs-los-cabos-luxury",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/riviera-maya-vs-puerto-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/short-term-vs-long-term-rental-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/st-regis-vs-chileno-bay-residences",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/tao-blue-gardens-vs-marina-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/tulum-vs-cancun-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/compare/vacation-home-vs-pure-rental-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/contact",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/dine-montage-punta-mita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/grupo-emerita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/querencia-los-cabos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/quivira-los-cabos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/simca-desarrollos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/tao-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/tm-real-estate-group",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/vidanta-nuevo-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/developers/zama-desarrollos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/get-shortlist",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/aggressive-investor-tulum-precon",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/airbnb-investment-mexico-guide",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/american-retiree-mexico-real-estate",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/bank-trust-renewal-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/banxico-rates-mexico-property-impact",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/best-areas-invest-mexico-2026",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/branded-residences-mexico-guide",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/budget-investor-mexico-under-200k",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/buy-property-mexico-foreigner",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/cash-buyer-mexico-advantages",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/co-ownership-mexico-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/conservative-investor-mexico-playa",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/cost-of-buying-property-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/currency-risk-mexico-property-usd",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/developer-due-diligence-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/digital-nomad-mexico-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/due-diligence-mexico-real-estate",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/ejido-land-risks-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/escrow-mexico-real-estate",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/fatca-mexico-property-owners",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/fbar-mexico-real-estate",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/fideicomiso-mexico-explained",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/fideicomiso-vs-mexican-corporation",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/first-time-foreign-buyer-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/gross-vs-net-yield-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/hoa-fees-mexico-condo",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/how-to-buy-mexico-property-remotely",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/how-to-buy-mexico-property-step-by-step",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/how-to-calculate-rental-yield-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/how-to-sell-mexico-property-from-abroad",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/inheritance-property-mexico-foreigner",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/invest-in-cancun",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/invest-in-playa-del-carmen",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/invest-in-puerto-vallarta",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/invest-in-riviera-maya",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/invest-in-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/is-mexico-real-estate-good-investment-2026",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/lake-chapala-real-estate-americans",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/los-cabos-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/luxury-investor-cabos-branded",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-beachfront-property-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-branded-residences-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-capital-gains-tax-foreign-seller",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-condo-investment-foreigners",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-golf-course-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-marina-property-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-off-plan-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-property-for-americans",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-property-for-canadians",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-property-insurance-foreigners",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-property-market-buyer-friendly-2026",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-property-taxes-explained",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-real-estate-for-retirees",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-real-estate-glossary",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-real-estate-market-forecast-2026",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-real-estate-scams-avoid",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-rental-yield-guide",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-restricted-zone-explained",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-turnkey-rental-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexico-villa-investment",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mistakes-foreign-buyers-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/nearshoring-mexico-industrial-real-estate",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/non-resident-mortgage-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/notario-publico-mexico-property-role",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/off-plan-vs-ready-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/portfolio-diversification-mexico-re",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/power-of-attorney-property-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/pre-construction-mexico-risks",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/property-management-riviera-maya-cost",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/puerto-vallarta-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/rental-contract-mexico-foreign-landlord",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/riviera-maya-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/schedule-e-mexico-rental",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/short-term-rental-rules-riviera-maya",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/tier-entry",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/tier-luxury",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/tier-mid",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/title-insurance-mexico",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/us-capital-gains-mexico-sale",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/us-taxes-mexico-rental-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/us-wire-transfer-mexico-property",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/world-cup-2026-mexico-property-impact",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/methodology",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/mexico-str-tax-reporting-2026",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/quintana-roo-price-growth-2026",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/tren-maya-property-impact",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/tulum-inventory-2026",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/privacy-policy",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/101-park-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/aldea-thai",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/alvar-quivira",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/amara-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/amaru-inka",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/ceiba-25-condo-paradise",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/chileno-bay-residences",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/constelada-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/copala-quivira",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/coronado-quivira",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/diamante-ocean-club",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/distrito-xcalacoco-beach",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/el-lago-querencia",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/four-seasons-costa-palmas",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/four-seasons-punta-mita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/fundadores-puerto-los-cabos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/gran-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/hideaways-los-cabos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/inna-beach-condos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/junglar-kaybe",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/kabana-aldea-zama",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/la-reserva-querencia",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/luum-zama",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/maresol-downtown-studios",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/mavila-quivira",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/montage-punta-mita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/mukta-369",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/nalu-sea-living",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/nhoa-aldea-zama",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/oceana-residences",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/omara-tulum",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/one-only-mandarina",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/paravian-playa",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/pendry-punta-mita",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/piedra-de-mar",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/ritz-carlton-puerto-los-cabos",
+      "channel": "google",
+      "at": "2026-06-14T13:28:46.754Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/akumal",
+      "channel": "google",
+      "at": "2026-06-14T17:09:16.266Z"
     }
   ],
   "submittedCount": 211,
