@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-14T17:09:16.266Z",
+  "updatedAt": "2026-06-14T18:51:58.308Z",
   "urls": [
     "https://mexico-invest.com",
     "https://mexico-invest.com/about",
@@ -176,6 +176,7 @@
     "https://mexico-invest.com/projects/constelada-tulum",
     "https://mexico-invest.com/projects/copala-quivira",
     "https://mexico-invest.com/projects/coronado-quivira",
+    "https://mexico-invest.com/projects/costa-mujeres-cancun",
     "https://mexico-invest.com/projects/diamante-ocean-club",
     "https://mexico-invest.com/projects/distrito-xcalacoco-beach",
     "https://mexico-invest.com/projects/el-lago-querencia",
@@ -1482,6 +1483,11 @@
       "url": "https://mexico-invest.com/areas/akumal",
       "channel": "google",
       "at": "2026-06-14T17:09:16.266Z"
+    },
+    {
+      "url": "https://mexico-invest.com/projects/costa-mujeres-cancun",
+      "channel": "google",
+      "at": "2026-06-14T18:51:58.308Z"
     }
   ],
   "submittedCount": 211,
