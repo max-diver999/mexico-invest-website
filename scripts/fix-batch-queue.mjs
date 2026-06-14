@@ -74,6 +74,7 @@ const COLLECTIONS = isRu
       legal: { minWords: 1800, minFaq: 4, commercial: true },
       compare: { minWords: 1800, minFaq: 4, commercial: true },
       projects: { minWords: 1000, minFaq: 3, commercial: false },
+      developers: { minWords: 1200, minFaq: 3, commercial: false },
       news: { minWords: 500, minFaq: 0, light: true },
       resales: { minWords: 500, minFaq: 0, light: true },
     };
@@ -122,10 +123,10 @@ function loadProtected() {
 }
 
 function parseFrontmatter(raw) {
-  const m = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  const m = raw.match(/^---\n([\s\S]*?)\n---/);
   if (!m) return { fm: {}, fmRaw: '', body: raw };
   const fmRaw = m[1];
-  const body = m[2];
+  const body = raw.slice(m[0].length);
   const fm = {};
   for (const line of fmRaw.split('\n')) {
     const kv = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
@@ -153,13 +154,12 @@ function parseRelatedSlugs(fmRaw) {
 }
 
 function bodyWordCount(body) {
-  return (
-    body
-      .replace(/^import\s.+$/gm, ' ')
-      .replace(/<[^>]+>/g, ' ')
-      .replace(/\{[\s\S]*?\}/g, ' ')
-      .match(/[A-Za-zА-Яа-яЁё0-9][A-Za-zА-Яа-яЁё0-9'-]*/g)?.length || 0
-  );
+  const stripped = body
+    .replace(/^import\s.+$/gm, ' ')
+    .replace(/<FaqBlock[\s\S]*?\/>/g, ' ')
+    .replace(/<TldrBlock[^/]*\/>/g, ' ')
+    .replace(/<[^>]+>/g, ' ');
+  return stripped.split(/\s+/).filter((w) => /[A-Za-zА-Яа-яЁё0-9]/.test(w)).length;
 }
 
 function countFaq(fmRaw, body) {

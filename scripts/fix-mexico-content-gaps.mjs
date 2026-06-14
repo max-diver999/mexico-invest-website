@@ -26,15 +26,13 @@ const LINK_REPLACEMENTS = [
   [/(\n\s+-\s*)"?invest-in-los-cabos"?(\s*$)/gm, '$1"los-cabos-property-investment-guide"$2'],
 ];
 
-function strictWordCount(text) {
-  return (
-    text
-      .replace(/^---[\s\S]*?---/, ' ')
-      .replace(/^import\s.+$/gm, ' ')
-      .replace(/<[^>]+>/g, ' ')
-      .replace(/\{[\s\S]*?\}/g, ' ')
-      .match(/[A-Za-zА-Яа-яЁё0-9][A-Za-zА-Яа-яЁё0-9'-]*/g)?.length || 0
-  );
+function bodyWordCount(body) {
+  const stripped = body
+    .replace(/^import\s.+$/gm, ' ')
+    .replace(/<FaqBlock[\s\S]*?\/>/g, ' ')
+    .replace(/<TldrBlock[^/]*\/>/g, ' ')
+    .replace(/<[^>]+>/g, ' ');
+  return stripped.split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;
 }
 
 function fitTitle(title) {
@@ -162,10 +160,10 @@ for (const [coll, minW] of Object.entries(COLLECTIONS)) {
     const path = join(dir, name);
     const slug = name.replace(/\.mdx$/, '');
     let raw = readFileSync(path, 'utf8');
-    const m = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
-    if (!m) continue;
-    let fmRaw = m[1];
-    let body = m[2];
+    const fmMatch = raw.match(/^---\n([\s\S]*?)\n---/);
+    if (!fmMatch) continue;
+    let fmRaw = fmMatch[1];
+    let body = raw.slice(fmMatch[0].length);
     const orig = raw;
 
     for (const [re, rep] of LINK_REPLACEMENTS) {
@@ -186,7 +184,7 @@ for (const [coll, minW] of Object.entries(COLLECTIONS)) {
       body = insertBeforeFaq(body, buyerScenariosBlock(slug));
     }
 
-    const words = strictWordCount(body);
+    const words = bodyWordCount(body);
     if (words < minW) {
       body = insertBeforeFaq(body, wordPadBlock(slug, minW - words));
     }
