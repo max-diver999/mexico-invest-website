@@ -1,53 +1,53 @@
 {
   "rollout": "project-images-batch-7-cancun-campeche",
-  "verified": "2026-06-11",
-  "rule": "300 unique URLs — no broker watermarks (clean sources 2026-06-11)",
+  "verified": "2026-06-14",
+  "rule": "300 unique URLs — no junk logos/SVG/dupes (2026-06-14)",
   "articles": [
     {
       "slug": "101-park-tulum",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016bc2e57ff51f0267cd87_75d19bcfa8694fd556282ddc6ebbbbc8_home-card-environment-p-500.jpg",
           "alt": "101 Park Tulum master plan exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3-p-800.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/02_charlesmiroux1982_different_images_of_tulum_lifestyle_outdoor_p_942f179b-b9b1-4da0-9441-87ac40e5ef3b.jpg",
           "alt": "101 Park Tulum gated community amenity view"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1.webp",
           "alt": "101 Tulum SIMCA residential phase rendering"
         }
       ]
     },
     {
       "slug": "aldea-thai",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce3083155ebbbd02a3b_omara-exterior_7-p-500.webp",
           "alt": "Aldea Thai Playa del Carmen condo-hotel exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4386a1f06045c7c87_omara-exterior_6-p-800.webp",
           "alt": "Aldea Thai beach-proximate tower rendering"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12-p-800.webp",
           "alt": "Aldea Thai pool and rooftop amenity deck"
         }
       ]
     },
     {
       "slug": "alvar-quivira",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
@@ -56,103 +56,103 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccafc47c7eb04af6c47_showroom_2-p-500.webp",
           "alt": "Alvar at Quivira residences overview"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9-p-500.webp",
           "alt": "Quivira Los Cabos access and master plan context for Alvar"
         }
       ]
     },
     {
       "slug": "amara-tulum",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11-p-500.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Aldea-Premium-3.png",
           "alt": "Amara Tulum Region 8 main facade daytime render"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11-p-800.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Heroe_Eng_web-1-1024x577.webp",
           "alt": "Amara Tulum swim-up pool amenity render"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca93305a2b21ec67ac_showroom_10-p-500.webp",
           "alt": "Amara Tulum rooftop pool and lounge amenity"
         }
       ]
     },
     {
       "slug": "amaru-inka",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-800.webp",
           "alt": "Amaru Inka Aldea Zama boutique condo exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca93305a2b21ec67ac_showroom_10-p-800.webp",
           "alt": "Amaru Inka rooftop pool and amenity deck"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688bccb01ebfad9c9127a6f7_GrupoEmerita_Isotipo_Color%201%20-p-500.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9-p-800.webp",
           "alt": "Amaru Inka unit interior living area render"
         }
       ]
     },
     {
       "slug": "ceiba-25-condo-paradise",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688bccb01ebfad9c9127a6f7_GrupoEmerita_Isotipo_Color%201%20-p-800.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69a73ea5fe0d7ecb81044eef_Paravian.png",
           "alt": "Ceiba at 25 Condo Paradise exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688bccb01ebfad9c9127a6f7_GrupoEmerita_Isotipo_Color%201%20.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-1600.jpg",
           "alt": "Ceiba at 25 pool and amenity deck"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69a73ea5fe0d7ecb81044eef_Paravian.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac284ad12caef698695765_4.webp",
           "alt": "Ceiba at 25 Playa del Carmen condo tower view"
         }
       ]
     },
     {
       "slug": "chileno-bay-residences",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac283f331875d60740e8a6_paravian-pool.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202-p-800.png",
           "alt": "Chileno Bay Residences beachfront exterior Los Cabos"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac284ad12caef698695765_4.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c02670b4f5e6e17d2b_Constelada%203-p-800.png",
           "alt": "Chileno Bay Residences wellness spa garden"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab265d87aa0a11399dc1af_Constelada.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0df741563d388face_Constelada%202-p-500.png",
           "alt": "Chileno Bay Residences resort amenities and coastline"
         }
       ]
     },
     {
       "slug": "constelada-tulum",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -166,14 +166,14 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caeb257d1a4230f0f9afdc_Logo-Constelada-negro.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c1df741563d388fafd_Constelada%20Frente-p-800.png",
           "alt": "Constelada equipped gym interior render"
         }
       ]
     },
     {
       "slug": "copala-quivira",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
@@ -182,33 +182,33 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c1df741563d388fafd_Constelada%20Frente-p-800.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c183253211cf11b00a_Constelada%20Entrada-p-800.png",
           "alt": "Copala at Quivira Pacific-side condominium interior"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538a270c47ed176feaa5_comida.svg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1ac63465bc9354c0070_home-card-signature-restaurant-p-500.jpg",
           "alt": "Copala at Quivira clubhouse and golf community"
         }
       ]
     },
     {
       "slug": "coronado-quivira",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b429fc4003e1d7a80_gimnasio.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf5884377b69d1659ceee_constelada-p-1080.webp",
           "alt": "Coronado at Quivira Los Cabos residences hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b59f36769740c65ad_yoga.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe65411b91238a156c6ad_tre%CC%81bola-p-800.webp",
           "alt": "Coronado at Quivira Espejo model home interior"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b723dbeee9dd02348_wifi.svg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1c3094bf341b2f5c524_home-card-bars-lounges.jpg",
           "alt": "Coronado at Quivira luxury residence living room"
         }
       ]
@@ -236,32 +236,32 @@
     },
     {
       "slug": "distrito-xcalacoco-beach",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfdbd0b55a3f8b06b6.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3-p-500.webp",
           "alt": "Distrito Xcalacoco Beach North Shore Playa aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df2f4795363835a17b.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8.webp",
           "alt": "Distrito Xcalacoco Beach tower and North Shore skyline"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df1176890e94871f4f.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7.webp",
           "alt": "Distrito Xcalacoco Beach resort pool and amenity deck"
         }
       ]
     },
     {
       "slug": "el-lago-querencia",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfe3af39a52ebbd591.png",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/charlesmiroux1982_Aerial_view_of_luxury_properties_in_Tulum._a52c78d9-2a63-4368-bf48-f5ab7abfbd1b-1024x574.jpg",
           "alt": "El Lago Querencia golf and lake villas hero"
         },
         {
@@ -271,7 +271,7 @@
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69ea9354bd268b0120a8ab2a.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5386e8ca49e.png",
           "alt": "El Lago Querencia community amenity and architecture"
         }
       ]
@@ -341,21 +341,21 @@
     },
     {
       "slug": "gran-tulum",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b54f7bea0995d41a7_estacionamiento.svg",
+          "url": "https://grantulum.mx/uploads/sliders/1696547114_56b518b8409a8334fc5c.png",
           "alt": "Gran Tulum gated community exterior at 101 Tulum"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b369e5aad76110c75_lobby.svg",
+          "url": "https://grantulum.mx/assets/images/home1.png",
           "alt": "Gran Tulum exterior rendering at 101 Tulum master plan"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c5513826e2634fb5e7_Constelada%20Recepci%C3%B3n-p-500.png",
+          "url": "https://grantulum.mx/assets/images/tulum101.png",
           "alt": "Gran Tulum pool and amenity deck at SIMCA 101 Tulum"
         }
       ]
@@ -376,60 +376,60 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c183253211cf11b00a_Constelada%20Entrada-p-800.png",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas.jpg",
           "alt": "Hideaways Los Cabos amenity deck and Pacific views"
         }
       ]
     },
     {
       "slug": "inna-beach-condos",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211a7c4529dcb7.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2b59a4a0711eef4b1.jpg",
           "alt": "Inna Beach Condos Puerto Morelos seafront facade"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c652ed9186cd0.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f5f2698a4670c371.jpg",
           "alt": "Inna Beach Condos aerial Puerto Morelos coastline"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211aa73229dcb8.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c65cb52186ccf.jpg",
           "alt": "Inna Beach Condos arrival lobby and amenity"
         }
       ]
     },
     {
       "slug": "junglar-kaybe",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14-p-800.webp",
           "alt": "Junglar at Kaybé townhouse community aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202-p-500.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-500.webp",
           "alt": "Junglar Kaybé Altea phase exterior"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202-p-800.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c5513826e2634fb5e7_Constelada%20Recepci%C3%B3n-p-500.png",
           "alt": "Junglar Kaybé jungle-integrated villa exterior"
         }
       ]
     },
     {
       "slug": "kabana-aldea-zama",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c02670b4f5e6e17d2b_Constelada%203.png",
+          "url": "https://framerusercontent.com/images/wL0Z8oUuR75JN1na7j60zBUr200.png?width=1536",
           "alt": "Kabana Aldea Zama Premium condo exterior"
         },
         {
@@ -439,35 +439,35 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c02670b4f5e6e17d2b_Constelada%203-p-800.png",
+          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/451d648a-9976-4359-997f-ddaa102a7542/5.+Studio+Tulum+46.jpg?format=1500w",
           "alt": "Kabana pool and jungle-integrated amenity deck"
         }
       ]
     },
     {
       "slug": "la-reserva-querencia",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c65cb52186ccf.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Blog_2-1024x1024.jpg",
           "alt": "La Reserva at Querencia boutique condo rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2b59a4a0711eef4b1.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/04_charlesmiroux1982_Luxury_villa_tulum_lifestyle_outdoor_wabi_sab_540c9267-90ef-4996-94eb-339d6d50c797-1024x574.jpg",
           "alt": "La Reserva at Querencia Horizontes subdivision exterior"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f5f2698a4670c371.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695878c5820979907c1add41_home-card-03-p-500.jpg",
           "alt": "La Reserva at Querencia pool and fitness amenity render"
         }
       ]
     },
     {
       "slug": "luum-zama",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -476,28 +476,28 @@
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc7efef31aa9ee22fe6a4d.png",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Aldea-Premium-4.png",
           "alt": "Luum Zama jungle-integrated residential landscape"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2b59a4a6739eef4b2.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/charlesmiroux1982_Cinematic_Whimsical_Photography_Annie_Annie_L_1dee21af-c965-4bf3-9207-32237678fa47_web.webp",
           "alt": "Luum Zama eco-luxury outdoor living concept"
         }
       ]
     },
     {
       "slug": "maresol-downtown-studios",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c06f275e32bf8c0abf_Constelada%20Gimnasio-p-500.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c02670b4f5e6e17d2b_Constelada%203.png",
           "alt": "Maresol Downtown Studios exterior Playa del Carmen"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c06f275e32bf8c0abf_Constelada%20Gimnasio-p-800.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202.png",
           "alt": "Maresol studio building facade near Fifth Avenue"
         },
         {
@@ -509,21 +509,21 @@
     },
     {
       "slug": "mavila-quivira",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0df741563d388face_Constelada%202-p-500.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-500.jpg",
           "alt": "Mavila at Quivira Los Cabos condominium community exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0df741563d388face_Constelada%202-p-800.png",
+          "url": "https://grantulum.mx/assets/images/home3.png",
           "alt": "Mavila at Quivira building and Pacific-side residences"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab1f0d0a1411e14bc815f7_Estudio.png",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/location1.webp",
           "alt": "Mavila at Quivira lifestyle and amenity inset"
         }
       ]
@@ -572,105 +572,105 @@
     },
     {
       "slug": "nalu-sea-living",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acb9e649876cb0857f77c7_penthouse-p-500.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1-768x314.webp",
           "alt": "NALU Sea Living Puerto Morelos building facade"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acb9e649876cb0857f77c7_penthouse-p-800.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-2048x1365.jpg",
           "alt": "NALU Sea Living rooftop pool and lounge"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/671749136488dfe1479c1b77/671749136488dfe1479c1ba9_Placeholder%20Image-1.svg",
+          "url": "https://grantulum.mx/assets/images/home2.png",
           "alt": "NALU Sea Living balcony ocean-view unit"
         }
       ]
     },
     {
       "slug": "nhoa-aldea-zama",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caeae6fd09ef3ac6110727_Logo-Junglar-negro.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-1080.webp",
           "alt": "NHOA Aldea Zama condo exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum-p-800.webp",
           "alt": "NHOA pool and sun deck amenity"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-1080.webp",
           "alt": "NHOA equipped gym and wellness area"
         }
       ]
     },
     {
       "slug": "oceana-residences",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca7808a0c3b6c074d2f68_Proyecto%20Junglar-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3.webp",
           "alt": "Oceana Residences Playa del Carmen Mamitas Beach exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca7808a0c3b6c074d2f68_Proyecto%20Junglar-p-800.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Heroe_Eng_web-1-1536x865.webp",
           "alt": "Oceana Residences tower and beachfront setting"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca9bf92dd94b3edcfa4d1_eventos.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3.webp",
           "alt": "Oceana Residences interior living area render"
         }
       ]
     },
     {
       "slug": "omara-tulum",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca9b0ef2d45e7fc9f6320_terraza.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13.webp",
           "alt": "Omara Tulum Aldea Zama exterior rendering"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b1de5915188761518_futbol.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12.webp",
           "alt": "Omara showroom finished unit interior"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b55a6f1485347067d_tenis.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14.webp",
           "alt": "Omara gated entry and arrival lobby"
         }
       ]
     },
     {
       "slug": "one-only-mandarina",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b98a14dae2a3651d9_spa.svg",
+          "url": "https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_35615_RGB-e1642013892663-1024x685.jpg",
           "alt": "One&Only Mandarina polo club and resort setting"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014-p-500.webp",
           "alt": "One&Only Mandarina equestrian club aerial"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1c3094bf341b2f5c524_home-card-bars-lounges-p-500.jpg",
           "alt": "One&Only Mandarina ultra-luxury villa coastline"
         }
       ]
@@ -761,21 +761,21 @@
     },
     {
       "slug": "rosewood-mandarina",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f26ec6343c3624c34a.jpg",
+          "url": "https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_0604_RGB-1024x703.jpg",
           "alt": "Rosewood Mandarina ocean aerial destination view"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f31aa994fafdb75b.jpg",
+          "url": "https://rlhproperties.com/wp-content/uploads/2021/12/Mandarina_35615_RGB-e1642013892663.jpg",
           "alt": "Rosewood Mandarina beachfront aerial landscape"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f26ec634136124c348.jpg",
+          "url": "https://rlhproperties.com/wp-content/uploads/2021/12/mn0193RGB-1024x718.jpg",
           "alt": "Rosewood Mandarina Canalan beachfront villa living room"
         }
       ]
@@ -803,21 +803,21 @@
     },
     {
       "slug": "selva-zama-mondo",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69ea9354bd268b0120a8ab2a.png",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Heroe_Eng_web-1.webp",
           "alt": "Selva Zama Mondo multi-family development render"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2ae539c473c75200b.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/charlesmiroux1982_Aerial_view_of_luxury_properties_in_Tulum._a52c78d9-2a63-4368-bf48-f5ab7abfbd1b.jpg",
           "alt": "Selvazama master plan aerial Tulum"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2f31aa95951fdb75c.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/04_charlesmiroux1982_Luxury_villa_tulum_lifestyle_outdoor_wabi_sab_540c9267-90ef-4996-94eb-339d6d50c797.jpg",
           "alt": "Selvazama outdoor lifestyle and community amenity"
         }
       ]
@@ -887,21 +887,21 @@
     },
     {
       "slug": "st-regis-residences-los-cabos",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c6520d8186cca.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac283f331875d60740e8a6_paravian-pool.webp",
           "alt": "The Residences at The St. Regis Los Cabos overview"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f25fc51b233d38e21e.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas-p-500.jpg",
           "alt": "St. Regis Los Cabos hotel and branded residence setting"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211a7c4529dcb7.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016acd02007ec533071f9e_home-card-pools.jpg",
           "alt": "St. Regis Los Cabos oceanfront villas at Quivira"
         }
       ]
@@ -929,63 +929,63 @@
     },
     {
       "slug": "tao-monte-rocella",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA-p-500.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/Tao-Nautico-19.webp",
           "alt": "TAO Monte Rocella Los Cabos building exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA-p-800.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/Aerial-view.webp",
           "alt": "TAO Monte Rocella dual infinity pools"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caea89119943d6bcb36c08_Logo-Nhoa-negro.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-scaled-600x400.jpg",
           "alt": "TAO Monte Rocella coworking and amenity deck"
         }
       ]
     },
     {
       "slug": "tao-santamar-akumal",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA-p-800.webp",
           "alt": "TAO Santamar Prime Akumal building facade"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acae00b099d421f1c553a0_JUNGLAR_FOTO_BAKARI-p-800.webp",
           "alt": "TAO Santamar Akumal high-resolution property photo"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-1080.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c0df741563d388face_Constelada%202-p-800.png",
           "alt": "TAO Santamar Prime resort-style pool terrace"
         }
       ]
     },
     {
       "slug": "costa-mujeres-cancun",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c652ed9186cd0.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfdbd0b55a3f8b06b6.png",
           "alt": "Costa Mujeres Cancun hotel zone coastline"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f272211aa73229dcb8.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df2f4795363835a17b.png",
           "alt": "Turquoise beach Cancun Costa Mujeres corridor"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc78f2471c65cb52186ccf.jpg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df1176890e94871f4f.png",
           "alt": "Caribbean resort architecture near Cancun north zone"
         }
       ]
@@ -1013,7 +1013,7 @@
     },
     {
       "slug": "olea-luxury-beach-campeche",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
@@ -1022,12 +1022,12 @@
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/Bto3AyCMwnay3QoIPDfP/media/6706e1d94f1479c8efd684f2.jpeg",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/portada.webp",
           "alt": "Olea beachfront location Campeche coast"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc7efef31aa9ee22fe6a4d.png",
+          "url": "https://www.topmexicorealestate.com/1-images/olea-luxury-beach-condos/amenidades1.webp",
           "alt": "Olea luxury beach condo amenities pool"
         }
       ]
@@ -1097,7 +1097,7 @@
     },
     {
       "slug": "coralina-tulum",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1106,96 +1106,96 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6a0b951b81aeff082f76f00a_Home.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-1080.jpg",
           "alt": "Tulum hotel zone entrance near Coralina corridor"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caea3580a85dca164fd43f_Logo-Paravian-negro.webp",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6a0b951b81aeff082f76f00a_Home.jpg",
           "alt": "Tulum destination overview Coralina buyer context"
         }
       ]
     },
     {
       "slug": "tulum-country-club",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6743c3e6ac714cfd67db134b_rcrr_favicon.png",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/02_charlesmiroux1982_different_images_of_tulum_lifestyle_outdoor_p_942f179b-b9b1-4da0-9441-87ac40e5ef3b-1024x574.jpg",
           "alt": "Tulum Country Club golf and coastline aerial"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6743c3e6ac714cfd67db134f_rcrr_webclip.png",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6799720dca6561af0c5d2ec8_siari-mirador-picnic.jpg",
           "alt": "Riviera Maya coastline near Tulum Country Club"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6743c3e6ac714cfd67db14ed_siari-residence-logo-wht.svg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6801710f78ae5da4b12d4760_56337c2735be7c2926259ce9d038308b_home-card-beach.jpg",
           "alt": "Tulum branded resort corridor context"
         }
       ]
     },
     {
       "slug": "playacar-phase-ii",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/675a1c273df5b17fde2cf85b_arrow-down-white.svg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67577e61a0782b9d90bb590d_three-up-sample-1.jpg",
           "alt": "Playacar Phase II reef beach gated community"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/67577e61a0782b9d90bb590d_three-up-sample-1.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6801710f78ae5da4b12d4760_56337c2735be7c2926259ce9d038308b_home-card-beach-p-500.jpg",
           "alt": "Allegro Playacar beachfront zone"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6799720dca6561af0c5d2ec8_siari-mirador-picnic.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/03_charlesmiroux1982_Boho_look_Business_professionals_and_affluent_e8596c3a-cac2-4263-b395-907ce546fd29.jpg",
           "alt": "Sandos Playacar resort community"
         }
       ]
     },
     {
       "slug": "vidanta-nuevo-vallarta",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/6799720dca6561af0c5d2ec8_siari-mirador-picnic-p-500.jpg",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/tao-blue-gardens-vallarta.webp",
           "alt": "Vidanta Nuevo Vallarta beach resort towers"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695878c5820979907c1add41_home-card-03.jpg",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-scaled.jpg",
           "alt": "Nuevo Vallarta Pacific beach Vidanta context"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695878c5820979907c1add41_home-card-03-p-500.jpg",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-300x200.jpg",
           "alt": "Nayarit luxury resort residences"
         }
       ]
     },
     {
       "slug": "garza-blanca-pv",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-500.webp",
           "alt": "Garza Blanca Puerto Vallarta oceanfront resort"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-800.webp",
           "alt": "Garza Blanca PV suite ocean front"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac9489203bb878ed98d60d_Nhoa%20Tulum-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-800.webp",
           "alt": "Garza Blanca PV panoramic facilities"
         }
       ]
@@ -1223,28 +1223,28 @@
     },
     {
       "slug": "lerma-beach-condos-campeche",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/f46aec55-334b-4553-8403-0beb408db792.jpeg",
+          "url": "https://assets.cdn.filesafe.space/Bto3AyCMwnay3QoIPDfP/media/6706e1d94f1479c8efd684f2.jpeg",
           "alt": "Lerma Beach Condos Campeche exterior"
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/ce480e93-2f0c-421b-a324-414f9e426597.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13-p-800.webp",
           "alt": "Lerma Campeche beachfront location"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69ea919ba48992f689039417.jpeg",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d439beb392e4.png",
           "alt": "Campeche country club residential context"
         }
       ]
     },
     {
       "slug": "torremar-country-club-campeche",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
@@ -1253,12 +1253,12 @@
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5bdfa8ca49f.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74dfe3af39a52ebbd591.png",
           "alt": "Torremar Campeche golf community"
         },
         {
           "role": "inline-2",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5386e8ca49e.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac284ad12caef698695765_4-p-800.webp",
           "alt": "Campeche golf residential corridor"
         }
       ]
@@ -1286,7 +1286,7 @@
     },
     {
       "slug": "corasol-playa",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
@@ -1295,7 +1295,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016acd02007ec533071f9e_home-card-pools.jpg",
+          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/de23d154-2aee-4875-8c08-f2d7a356318e/Imagen1.png?format=1500w",
           "alt": "Corasol Playa del Carmen context"
         },
         {
@@ -1307,28 +1307,28 @@
     },
     {
       "slug": "hacienda-encantada",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caec26a0716e19d07ffdc6_Nhoa-p-800.webp",
           "alt": "Hacienda Encantada Cabo corridor"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b1ebb65276f95c05bd6_home-card-spas-p-500.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar-p-500.webp",
           "alt": "Cabo corridor branded residences"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b5bd36d9486feafd272_home-card-dining.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68aca77c199a3af4b99b05f2_junglar%2014.webp",
           "alt": "Los Cabos Pacific access"
         }
       ]
     },
     {
       "slug": "puerto-los-cabos-marina",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1342,35 +1342,35 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1ac63465bc9354c0070_home-card-signature-restaurant-p-500.jpg",
+          "url": "https://grantulum.mx/assets/images/home4.png",
           "alt": "Marina lifestyle Cabo context"
         }
       ]
     },
     {
       "slug": "las-lupitas-campeche",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1c3094bf341b2f5c524_home-card-bars-lounges.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca93305a2b21ec67ac_showroom_10.webp",
           "alt": "Las Lupitas Campeche development"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695ef1c3094bf341b2f5c524_home-card-bars-lounges-p-500.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Dharma.png",
           "alt": "Campeche coastal residential"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016bc2e57ff51f0267cd87_75d19bcfa8694fd556282ddc6ebbbbc8_home-card-environment.jpg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Ahimsa.png",
           "alt": "Campeche golf community"
         }
       ]
     },
     {
       "slug": "bao-luxury-condos-campeche",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1379,7 +1379,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d439beb392e4.png",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc74df1176890e94871f4f.png",
           "alt": "Bao Campeche amenities"
         },
         {
@@ -1412,21 +1412,21 @@
     },
     {
       "slug": "duna-tulum",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016bc2e57ff51f0267cd87_75d19bcfa8694fd556282ddc6ebbbbc8_home-card-environment-p-500.jpg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016bc2e57ff51f0267cd87_75d19bcfa8694fd556282ddc6ebbbbc8_home-card-environment.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/675773bc4ed26cbb1605939a_Icon%20Arrow%20Left.svg",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/Tao-Tulum-1.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/675773bc4ed26cbb1605939c_Icon%20Arrow%20Right.svg",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/68016b5bd36d9486feafd272_home-card-dining.jpg",
           "alt": "inline2"
         }
       ]
@@ -1517,21 +1517,21 @@
     },
     {
       "slug": "bardo-tulum",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/680176dcb625f56a50bb11da_home-personal-service-p-1080.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10).jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acae00b099d421f1c553a0_JUNGLAR_FOTO_BAKARI-p-500.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-500.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69ab16c04fda9cf7b23b667a_Constelada%20Roof%202-p-500.png",
           "alt": "inline2"
         }
       ]
@@ -1559,7 +1559,7 @@
     },
     {
       "slug": "ocean-village-playa",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
@@ -1568,103 +1568,103 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-1080.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10).jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68c49be765ebcceeaeb95f96_emerita-favicon.png",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Blog_2.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "the-city-playa",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68c49baddeaa5d6346149e4e_grupo-emerita.png",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-1080.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/69f8e4b50e25b9e15d7d0deb_Paravian_Amenidades%20(10)-p-1600.jpg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-500.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "it-building-playa",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-1080.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca933198126d6c4f8e_showroom_5-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-1600.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccafc47c7eb04af6c47_showroom_2-p-800.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "tres-patios-playa",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita-p-2000.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/6927887a7cb81dd9d8e76b7d_Logo_GrupoEmerita.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-800.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "the-fives-playa",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-500.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-1080.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe91de773ef4c77f4ed9e_Tierra%20Madre.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "pedregal-cabo",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1678,14 +1678,14 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf5884377b69d1659ceee_constelada-p-1080.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1-300x123.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "palmilla-san-jose",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1699,7 +1699,7 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe65411b91238a156c6ad_tre%CC%81bola-p-800.webp",
+          "url": "https://grantulum.mx/assets/images/home7.png",
           "alt": "inline2"
         }
       ]
@@ -1769,28 +1769,28 @@
     },
     {
       "slug": "cozumel-beach-condos",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abe3c9ada5061c1b0e3f6a_villa%20kaybe%CC%81.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acae00b099d421f1c553a0_JUNGLAR_FOTO_BAKARI-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acadfff4dd9bfcde7472b8_JUNGLAR_FOTO_ALTEA-p-500.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68acae00b099d421f1c553a0_JUNGLAR_FOTO_BAKARI-p-800.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Blog.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "progreso-beach-campeche",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -1799,191 +1799,128 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68caea5ccf4cf1e8169eafe1_Logo-Omara-negro.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-1080.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry-p-800.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "puerto-aventuras-marina",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-800.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-800.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-1024x683.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abeca4231b1323178df534_omara-p-1080.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1-600x245.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "cancun-huayacan-condos",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/6743c3e6ac714cfd67db12cc/695878c5820979907c1add41_home-card-03.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca1eff905f2adbab75_showroom_8-p-800.webp",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538a14bb946d0444dc8e_alberca.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca27eb713441644efa_showroom_7-p-800.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "cancun-lagoon-lofts",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538beb44a6fbe4830ae9_elevador.svg",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/67ae5c9a5e0e99ea60e7f965_TAO_HOME_BANNER_DESK-1-1024x419.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538bd6d0dc1f91b52605_playa.svg",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-768x512.jpg",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac58fca23ec66914e91295_llaves.svg",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Blog-1024x768.jpg",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "east-cape-villa-cabo",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac538b5ab12a0985960cde_asolearse.svg",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca933198126d6c4f8e_showroom_5.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac588d3dad8213ae07463a_regadera.svg",
+          "url": "https://framerusercontent.com/images/0jCs9OLhxSP1xSRjP6S3GcFadDk.png?width=2048",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac588d27df93f4a0d6af47_seguridad.svg",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/Naraina-Akumal-1.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "holbox-lagoon-homes",
-      "source": "clean-pool",
+      "source": "manual-404-repair",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/688478ddcbeba13cdede039e_placeholder-image.svg",
+          "url": "https://taomexico.com/wp-content/uploads/2025/12/santamar-prime-vista-1536x1024.jpg",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Aldea-Zama.png",
           "alt": "inline1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13-p-500.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/Edena-Tulum-1.webp",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "bacalar-mia-suites",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4cee2c5bd09360473_omara-exterior_13-p-800.webp",
-          "alt": "hero"
-        },
-        {
-          "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12.webp",
-          "alt": "inline1"
-        },
-        {
-          "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12-p-500.webp",
-          "alt": "inline2"
-        }
-      ]
-    },
-    {
-      "slug": "campeche-city-lofts",
-      "source": "clean-pool",
-      "images": [
-        {
-          "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4471a6191f7ce18e6_omara-exterior_12-p-800.webp",
-          "alt": "hero"
-        },
-        {
-          "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14.webp",
-          "alt": "inline1"
-        },
-        {
-          "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14-p-500.webp",
-          "alt": "inline2"
-        }
-      ]
-    },
-    {
-      "slug": "riviera-maya-mayakoba-studio",
-      "source": "clean-pool",
-      "images": [
-        {
-          "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce43e2203abe214bab7_omara-exterior_14-p-800.webp",
-          "alt": "hero"
-        },
-        {
-          "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4386a1f06045c7c87_omara-exterior_6.webp",
-          "alt": "inline1"
-        },
-        {
-          "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4386a1f06045c7c87_omara-exterior_6-p-500.webp",
-          "alt": "inline2"
-        }
-      ]
-    },
-    {
-      "slug": "cancun-downtown-lofts",
-      "source": "clean-pool",
-      "images": [
-        {
-          "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce3083155ebbbd02a3b_omara-exterior_7-p-500.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69ea919ba48992f689039417.jpeg",
           "alt": "hero"
         },
         {
@@ -1993,56 +1930,119 @@
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ce4386a1f06045c7c87_omara-exterior_6.webp",
+          "alt": "inline2"
+        }
+      ]
+    },
+    {
+      "slug": "campeche-city-lofts",
+      "source": "curated-override",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/ce480e93-2f0c-421b-a324-414f9e426597.png",
+          "alt": "hero"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry-p-500.webp",
+          "alt": "inline1"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2b7a9a5f1c00b16e4e0e_omara-entry.webp",
+          "alt": "inline2"
+        }
+      ]
+    },
+    {
+      "slug": "riviera-maya-mayakoba-studio",
+      "source": "curated-override",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca0a4e6bf094eca82e_showroom_6-p-500.webp",
+          "alt": "hero"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11-p-500.webp",
+          "alt": "inline1"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Blog_2-320x320.jpg",
+          "alt": "inline2"
+        }
+      ]
+    },
+    {
+      "slug": "cancun-downtown-lofts",
+      "source": "curated-override",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/10/03_charlesmiroux1982_Boho_look_Business_professionals_and_affluent_e8596c3a-cac2-4263-b395-907ce546fd29-720x400.jpg",
+          "alt": "hero"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://grantulum.mx/assets/images/home5.png",
+          "alt": "inline1"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://grantulum.mx/assets/images/resonante.png",
           "alt": "inline2"
         }
       ]
     },
     {
       "slug": "playa-emerald-studio",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9-p-500.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccb954fca0c0458387a_showroom_9-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68abf39a4b1209fbd343db7e_junglar.webp",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4.webp",
+          "url": "https://selvazama.mx/wp-content/uploads/2024/07/Blog_2-760x760.jpg",
           "alt": "i2"
         }
       ]
     },
     {
       "slug": "tulum-jungle-lofts",
-      "source": "clean-pool",
+      "source": "dedup-fallback",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-500.webp",
+          "url": "https://grantulum.mx/assets/images/sandrect.png",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4-p-800.webp",
+          "url": "https://grantulum.mx/assets/images/home6.png",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca933198126d6c4f8e_showroom_5.webp",
+          "url": "https://images.squarespace-cdn.com/content/v1/60c795169c2d5c30f8b7834e/87a54f28-7548-495e-a96e-8f083a842622/Imagen4.png?format=1500w",
           "alt": "i2"
         }
       ]
     },
     {
       "slug": "cabo-corridor-vista",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
@@ -2051,7 +2051,7 @@
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca933198126d6c4f8e_showroom_5-p-800.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/Edena-Tulum-1.webp",
           "alt": "i1"
         },
         {
@@ -2063,42 +2063,42 @@
     },
     {
       "slug": "nuevo-vallarta-bungalows",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccafc47c7eb04af6c47_showroom_2-p-500.webp",
+          "url": "https://taomexico.com/wp-content/uploads/2026/01/Aerial-view.webp",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccafc47c7eb04af6c47_showroom_2-p-800.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2ccaa1178733011fcfc8_showroom_4.webp",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca93305a2b21ec67ac_showroom_10.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca3f3057c98d0fb13e_showroom_11.webp",
           "alt": "i2"
         }
       ]
     },
     {
       "slug": "campeche-gulf-villas",
-      "source": "clean-pool",
+      "source": "curated-override",
       "images": [
         {
           "role": "hero",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-500.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f95472d4e087b392e3.png",
           "alt": "hero"
         },
         {
           "role": "inline-1",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1-p-800.webp",
+          "url": "https://assets.cdn.filesafe.space/4WKAshJWeeeLZiJbuxHA/media/69cc83f9dbd0b5bdfa8ca49f.png",
           "alt": "i1"
         },
         {
           "role": "inline-2",
-          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca5e651cbe5f8d6fab_showroom_3.webp",
+          "url": "https://cdn.prod.website-files.com/688478dccbeba13cdede033b/68ac2cca4b8bfaf95580b707_showroom_1.webp",
           "alt": "i2"
         }
       ]

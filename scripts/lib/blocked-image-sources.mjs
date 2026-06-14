@@ -11,6 +11,26 @@ export const BLOCKED_IMAGE_PATTERNS = [
   { id: 'thomas-lloyd', test: (u) => u.includes('thomas-lloyd') },
 ];
 
+export const JUNK_IMAGE_PATTERNS = [
+  { id: 'svg-icon', test: (u) => /\.svg(?:\?|$)/i.test(u) },
+  { id: 'logo-asset', test: (u) => /logo|favicon|webclip|isotipo|grupoemerita|6927887a/i.test(u) },
+  { id: 'ui-icon', test: (u) => /icon%20arrow|placeholder-image|estacionamiento|futbol|tenis|elevador|llaves/i.test(u) },
+  { id: 'amenity-svg', test: (u) => /gimnasio|asolearse|regadera|seguridad|wifi\.svg|yoga\.svg|spa\.svg|playa\.svg|comida\.|eventos\./i.test(u) },
+];
+
+export function junkImageReason(url) {
+  if (!url) return null;
+  const u = url.toLowerCase();
+  for (const { id, test } of JUNK_IMAGE_PATTERNS) {
+    if (test(u)) return id;
+  }
+  return null;
+}
+
+export function isJunkImageSource(url) {
+  return Boolean(junkImageReason(url));
+}
+
 export function blockedImageReason(url) {
   if (!url) return null;
   const u = url.toLowerCase();
