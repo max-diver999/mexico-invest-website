@@ -110,7 +110,25 @@ Apply this decision framework to ${topic} before you wire any reservation deposi
 `;
 }
 
-function wordPadBlock(slug, gap) {
+function appendToClosingSection(body, slug, gap) {
+  const lines = body.split('\n');
+  const h2Lines = lines
+    .map((l, i) => (l.startsWith('## Closing verification checklist') ? i : -1))
+    .filter((i) => i >= 0);
+  if (h2Lines.length !== 1) return null;
+  const h2Index = h2Lines[0];
+  let end = lines.length;
+  for (let i = h2Index + 1; i < lines.length; i++) {
+    if (lines[i].startsWith('## ') || lines[i].startsWith('<FaqBlock')) {
+      end = i;
+      break;
+    }
+  }
+  const paras = wordPadParagraphs(slug, gap);
+  return [...lines.slice(0, end), '', paras, '', ...lines.slice(end)].join('\n');
+}
+
+function wordPadParagraphs(slug, gap) {
   const topic = slugToTopic(slug);
   const sentences = [
     `When comparing ${topic}, treat developer renderings as marketing, verify construction stage, trust account (fideicomiso de garantía), and AMPI broker licence before reservation.`,
@@ -124,15 +142,20 @@ function wordPadBlock(slug, gap) {
   ];
   let hash = 0;
   for (const c of slug) hash = (hash + c.charCodeAt(0)) % sentences.length;
-  let block = `\n## Closing verification checklist (${topic})\n\n`;
+  let text = '';
   let count = 0;
   for (let i = 0; i < sentences.length; i++) {
     const s = sentences[(hash + i) % sentences.length];
-    block += `${s}\n\n`;
+    text += `${s}\n\n`;
     count += s.split(/\s+/).length;
-    if (count >= gap + 80) break;
+    if (count >= gap) break;
   }
-  return block;
+  return text.trim();
+}
+
+function wordPadBlock(slug, gap) {
+  const topic = slugToTopic(slug);
+  return `\n## Closing verification checklist (${topic})\n\n${wordPadParagraphs(slug, gap + 80)}\n`;
 }
 
 function insertBeforeFaq(body, chunk) {
@@ -186,7 +209,9 @@ for (const [coll, minW] of Object.entries(COLLECTIONS)) {
 
     const words = bodyWordCount(body);
     if (words < minW) {
-      body = insertBeforeFaq(body, wordPadBlock(slug, minW - words));
+      const gap = minW - words;
+      const appended = appendToClosingSection(body, slug, gap);
+      body = appended ?? insertBeforeFaq(body, wordPadBlock(slug, gap));
     }
 
     raw = `---\n${fmRaw}\n---\n${body}`;

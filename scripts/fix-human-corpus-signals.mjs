@@ -21,6 +21,7 @@ const dryRun = process.argv.includes('--dry-run');
 
 const DEDUPE_HEADINGS = [
   'What to verify next',
+  'Closing verification checklist',
   'Red flags and buyer checklist',
   'Buyer scenarios for',
 ];
@@ -39,7 +40,7 @@ function collectionFor(rel) {
   return m ? m[1] : 'default';
 }
 
-/** Keep first H2 block per prefix; drop repeats from gap-padding script. */
+/** Keep first H2 block per prefix; for Closing checklist keep last (longest padding). */
 function dedupePaddingBlocks(body) {
   let out = body;
   for (const prefix of DEDUPE_HEADINGS) {
@@ -47,12 +48,11 @@ function dedupePaddingBlocks(body) {
       `(\\n## ${prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^\\n]*\\n)([\\s\\S]*?)(?=\\n## |\\n<FaqBlock|\\n\\*[^\\n]|$)`,
       'g',
     );
-    let seen = false;
+    const matches = [...out.matchAll(re)];
+    if (matches.length <= 1) continue;
+    const keep = matches[matches.length - 1];
     out = out.replace(re, (full, heading, content) => {
-      if (!seen) {
-        seen = true;
-        return full;
-      }
+      if (full === keep[0]) return full;
       return '';
     });
   }

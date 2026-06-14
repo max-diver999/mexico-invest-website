@@ -32,8 +32,8 @@ console.log('=== mexico-invest pre-push gate ===');
 
 const mdxFiles = mdxBeingPushed();
 if (mdxFiles.length) {
-  console.log(`MDX in push (${mdxFiles.length} files) → validate:content --changed`);
-  // Staged/unstaged diff for --changed; if clean tree, validate listed files directly
+  console.log(`MDX in push (${mdxFiles.length} files) → corpus signals + validate + build`);
+  run('node', ['scripts/qa-corpus-signals.mjs']);
   const changed = gitOut(['diff', '--name-only', 'HEAD']);
   const unstaged = gitOut(['diff', '--name-only']);
   const hasLocalDiff = [...changed.split('\n'), ...unstaged.split('\n')].some((f) =>
