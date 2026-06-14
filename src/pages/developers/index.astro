@@ -2,6 +2,7 @@
 export const prerender = true;
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentCard from '../../components/ContentCard.astro';
 
 const developers = (await getCollection('developers'))
   .filter((d) => !d.data.noindex)
@@ -18,12 +19,17 @@ const developers = (await getCollection('developers'))
         Entity authority reviews — not sales brochures. Verify permits, delivery history, and escrow before any deposit.
       </p>
     </header>
-    <div class="grid md:grid-cols-2 gap-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {developers.map((dev) => (
-        <a href={`/developers/${dev.id}/`} class="surface-card p-6 block no-underline hover:border-[var(--color-teal)] transition-colors">
-          <h2 class="text-lg font-semibold mb-2 text-[var(--color-ink)]">{dev.data.title}</h2>
-          <p class="text-sm text-[var(--color-muted)]">{dev.data.description}</p>
-        </a>
+        <ContentCard
+          href={`/developers/${dev.id}/`}
+          title={dev.data.title}
+          description={dev.data.description}
+          image={dev.data.heroImage}
+          badges={['Developer']}
+          meta={`${dev.data.readingTime ?? 8} min read`}
+          placeholder="🏗️"
+        />
       ))}
     </div>
   </section>

@@ -2,6 +2,8 @@
 export const prerender = true;
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import { formatAreaLabel } from '../../lib/cardImage';
 
 const areas = (await getCollection('areas'))
   .filter((a) => !a.data.noindex)
@@ -15,20 +17,22 @@ const areas = (await getCollection('areas'))
     <header class="max-w-2xl mb-12">
       <h1 class="text-3xl">Investment areas</h1>
       <p class="text-lg text-[var(--color-muted)] mt-3">
-        Micro-market research for foreign buyers — not generic beach marketing.
+        Micro-market research for foreign buyers — {areas.length} area guides with photos and yield data.
       </p>
     </header>
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {areas.map((area) => (
-        <article class="surface-card p-7">
-          <h2 class="text-lg mb-2 font-semibold">
-            <a href={`/areas/${area.id}/`} class="no-underline text-[var(--color-ink)] hover:text-[var(--color-teal)]">{area.data.title}</a>
-          </h2>
-          <p class="text-sm text-[var(--color-muted)]">{area.data.description}</p>
-        </article>
+        <ContentCard
+          href={`/areas/${area.id}/`}
+          title={area.data.title}
+          description={area.data.description}
+          image={area.data.heroImage}
+          badges={['Area', formatAreaLabel(area.id)]}
+          meta={`${area.data.readingTime ?? 10} min read`}
+        />
       ))}
       {areas.length === 0 && (
-        <p class="text-[var(--color-muted)]">Area guides publishing with Wave 1.</p>
+        <p class="text-[var(--color-muted)] col-span-full">Area guides publishing with Wave 1.</p>
       )}
     </div>
   </section>
