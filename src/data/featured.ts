@@ -6,7 +6,16 @@ export const FEATURED_PROJECT_SLUGS = [
   'four-seasons-punta-mita',
   'pendry-punta-mita',
   'tao-blue-gardens-pv',
+  'amara-tulum',
+  'kabana-aldea-zama',
+  'copala-quivira',
+  'chileno-bay-residences',
+  'montage-punta-mita',
+  'paravian-playa',
 ] as const;
+
+/** Hero spotlight — links to full project review from homepage banner. */
+export const HOMEPAGE_HERO_PROJECT_SLUG = 'gran-tulum' as const;
 
 export const FEATURED_GUIDE_SLUGS = [
   'mexico-property-investment-guide',

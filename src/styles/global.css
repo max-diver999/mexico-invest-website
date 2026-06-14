@@ -263,11 +263,73 @@ main {
   position: absolute;
   left: 1.25rem;
   right: 1.25rem;
-  bottom: 1.25rem;
+  bottom: 6.5rem;
   color: #fff;
   font-size: 0.85rem;
   font-weight: 600;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-project-card {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.hero-project-card__copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-project-card__eyebrow {
+  margin: 0 0 0.2rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.hero-project-card__title {
+  margin: 0 0 0.15rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-project-card__meta {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.hero-project-card__cta {
+  flex-shrink: 0;
+  background: var(--color-brand);
+  color: #fff !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .hero-visual__caption {
+    display: none;
+  }
 }
 
 .stat-pill {
