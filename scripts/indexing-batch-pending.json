@@ -1,8 +1,10 @@
 {
-  "generatedAt": "2026-06-15T10:51:57Z",
-  "sitemapCount": 306,
-  "submittedCount": 361,
-  "gapCount": 94,
+  "generatedAt": "2026-06-15T10:51:57.099110+00:00",
+  "site": "https://mexico-invest.com",
+  "batchId": "2026-06-16-batch-1",
+  "limit": 94,
+  "backlogTotal": 94,
+  "remainingAfterBatch": 0,
   "urls": [
     "https://mexico-invest.com/guides/luxury-investor-cabos-branded/",
     "https://mexico-invest.com/guides/mexico-beachfront-property-investment/",
@@ -98,5 +100,6 @@
     "https://mexico-invest.com/projects/saint-marine/",
     "https://mexico-invest.com/projects/selva-zama-mondo/",
     "https://mexico-invest.com/projects/siari-ritz-carlton-reserve/"
-  ]
+  ],
+  "note": "PRE-BUILT for tomorrow \u2014 final batch"
 }

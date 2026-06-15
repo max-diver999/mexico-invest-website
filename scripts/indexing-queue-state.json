@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "site": "https://mexico-invest.com",
+  "projectId": "mexico-invest-indexing",
+  "dailyQuota": 200,
+  "updatedAt": "2026-06-15T10:51:57Z",
+  "methodology": "Backlog = live sitemap + submitted-urls.json entries[] + git touch. Bing ONLY bing.com/indexnow.",
+  "channels": {
+    "google": "submit-google-explicit.mjs",
+    "indexnow": "indexnow-submit.mjs --explicit"
+  },
+  "scripts": {
+    "backlog": "node scripts/build-indexing-backlog.mjs",
+    "submit": "submit-google-explicit.mjs + indexnow-submit.mjs --explicit on indexing-batch-pending.json"
+  },
+  "summary": {
+    "backlogRemaining": 94,
+    "quotaUsedToday": 200,
+    "quotaRemainingToday": 0,
+    "estimatedDaysLeft": 1,
+    "byReason": {
+      "content_changed_after_api": 94
+    },
+    "nextBatch": {
+      "id": "2026-06-16-batch-1",
+      "when": "2026-06-16 UTC after quota reset",
+      "count": 94,
+      "remainingAfter": 0,
+      "file": "scripts/indexing-batch-pending.json",
+      "firstUrl": "https://mexico-invest.com/guides/luxury-investor-cabos-branded/",
+      "lastUrl": "https://mexico-invest.com/projects/siari-ritz-carlton-reserve/"
+    }
+  },
+  "batches": [
+    {
+      "id": "2026-06-15-batch-1",
+      "at": "2026-06-15T10:51:57Z",
+      "count": 200,
+      "google": "200/200 OK (+94 new in log)",
+      "indexnow": "200/200 OK",
+      "firstUrl": "https://mexico-invest.com/areas/bacalar-investment/",
+      "lastUrl": "https://mexico-invest.com/guides/los-cabos-property-investment-guide/",
+      "archive": "scripts/indexing-batch-2026-06-15-done.json"
+    }
+  ],
+  "tomorrow": {
+    "batchId": "2026-06-16-batch-1",
+    "backlogRemaining": 94
+  }
+}
