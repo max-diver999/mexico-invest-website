@@ -3,7 +3,7 @@
   "site": "https://mexico-invest.com",
   "projectId": "mexico-invest-indexing",
   "dailyQuota": 200,
-  "updatedAt": "2026-06-15T10:51:57Z",
+  "updatedAt": "2026-06-16T10:41:59Z",
   "methodology": "Backlog = live sitemap + submitted-urls.json entries[] + git touch. Bing ONLY bing.com/indexnow.",
   "channels": {
     "google": "submit-google-explicit.mjs",
@@ -14,24 +14,25 @@
     "submit": "submit-google-explicit.mjs + indexnow-submit.mjs --explicit on indexing-batch-pending.json"
   },
   "summary": {
-    "backlogRemaining": 94,
-    "quotaUsedToday": 200,
-    "quotaRemainingToday": 0,
-    "estimatedDaysLeft": 1,
-    "byReason": {
-      "content_changed_after_api": 94
-    },
-    "nextBatch": {
-      "id": "2026-06-16-batch-1",
-      "when": "2026-06-16 UTC after quota reset",
-      "count": 94,
-      "remainingAfter": 0,
-      "file": "scripts/indexing-batch-pending.json",
-      "firstUrl": "https://mexico-invest.com/guides/luxury-investor-cabos-branded/",
-      "lastUrl": "https://mexico-invest.com/projects/siari-ritz-carlton-reserve/"
-    }
+    "backlogRemaining": 0,
+    "quotaUsedToday": 94,
+    "quotaRemainingToday": 106,
+    "estimatedDaysLeft": 0,
+    "byReason": {},
+    "nextBatch": null,
+    "note": "Queue closed 2026-06-16. 94/94 final tail sent."
   },
   "batches": [
+    {
+      "id": "2026-06-16-batch-1",
+      "at": "2026-06-16T10:41:59Z",
+      "count": 94,
+      "google": "94/94 OK",
+      "indexnow": "94/94 OK",
+      "firstUrl": "https://mexico-invest.com/guides/luxury-investor-cabos-branded/",
+      "lastUrl": "https://mexico-invest.com/projects/siari-ritz-carlton-reserve/",
+      "archive": "scripts/indexing-batch-2026-06-16-done.json"
+    },
     {
       "id": "2026-06-15-batch-1",
       "at": "2026-06-15T10:51:57Z",
@@ -43,8 +44,5 @@
       "archive": "scripts/indexing-batch-2026-06-15-done.json"
     }
   ],
-  "tomorrow": {
-    "batchId": "2026-06-16-batch-1",
-    "backlogRemaining": 94
-  }
+  "tomorrow": null
 }
