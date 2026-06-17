@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T10:41:49.065Z",
+  "updatedAt": "2026-06-17T20:36:12.309Z",
   "urls": [
     "https://florida-estate.com/areas/brickell",
     "https://florida-estate.com/areas/edgewater",
@@ -256,7 +256,10 @@
     "https://mexico-invest.com/guides/world-cup-2026-mexico-property-impact",
     "https://mexico-invest.com/methodology",
     "https://mexico-invest.com/news",
+    "https://mexico-invest.com/news/banxico-june-2026-mexico-property-fx",
+    "https://mexico-invest.com/news/los-cabos-luxury-inventory-june-2026",
     "https://mexico-invest.com/news/mexico-str-tax-reporting-2026",
+    "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026",
     "https://mexico-invest.com/news/quintana-roo-price-growth-2026",
     "https://mexico-invest.com/news/tren-maya-property-impact",
     "https://mexico-invest.com/news/tulum-inventory-2026",
@@ -3382,6 +3385,31 @@
       "url": "https://mexico-invest.com/projects/siari-ritz-carlton-reserve",
       "channel": "google",
       "at": "2026-06-16T10:41:49.065Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/banxico-june-2026-mexico-property-fx",
+      "channel": "google",
+      "at": "2026-06-17T20:36:12.309Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/los-cabos-luxury-inventory-june-2026",
+      "channel": "google",
+      "at": "2026-06-17T20:36:12.309Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026",
+      "channel": "google",
+      "at": "2026-06-17T20:36:12.309Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/airbnb-investment-mexico-guide",
+      "channel": "google",
+      "at": "2026-06-17T20:36:12.309Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico",
+      "channel": "google",
+      "at": "2026-06-17T20:36:12.309Z"
     }
   ],
   "submittedCount": 211,
