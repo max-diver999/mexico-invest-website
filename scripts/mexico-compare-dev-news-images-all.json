@@ -989,6 +989,69 @@
           "alt": "Aerial Tulum jungle-beach development pipeline"
         }
       ]
+    },
+    {
+      "slug": "banxico-june-2026-mexico-property-fx",
+      "source": "https://mexicancaribbean.travel/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/22100602/st-regis-kanai-resort-riviera-maya.jpg",
+          "alt": "Riviera Maya resort corridor — Banxico FX and Mexico property"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/06/05135021/hilton-6.jpg",
+          "alt": "Coastal Mexico hotel market — peso rate context"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/05/22142254/cenote-dos-ojos.webp",
+          "alt": "Riviera Maya tourism demand — FX and buyer timing"
+        }
+      ]
+    },
+    {
+      "slug": "playa-del-carmen-resale-liquidity-june-2026",
+      "source": "https://mexicancaribbean.travel/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/29111547/CasaBarbaraHolbox-811.jpg",
+          "alt": "Caribbean coast — Playa del Carmen resale liquidity"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/11/18225948/cancun-playa-turquesa-familias-scaled.jpg",
+          "alt": "Quintana Roo beach tourism — STR demand Playa corridor"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2026/04/24085554/ibis-cancun.jpg",
+          "alt": "Riviera Maya hospitality corridor — resale velocity"
+        }
+      ]
+    },
+    {
+      "slug": "los-cabos-luxury-inventory-june-2026",
+      "source": "https://mexicancaribbean.travel/",
+      "images": [
+        {
+          "role": "hero",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09144223/La-Valise-2_11zon-scaled.jpg",
+          "alt": "Luxury coastal Mexico — Los Cabos inventory 2026"
+        },
+        {
+          "role": "inline-1",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09144832/Hotel-Nomade-Holbox00055_11zon-scaled.jpg",
+          "alt": "Branded resort corridor — BCS buyer market"
+        },
+        {
+          "role": "inline-2",
+          "url": "https://cdn.mexicancaribbean.travel/wp-content/uploads/2025/10/09145543/DSC4885_11zon-scaled.jpg",
+          "alt": "Pacific luxury tourism — Cabos pricing context"
+        }
+      ]
     }
   ]
 }
