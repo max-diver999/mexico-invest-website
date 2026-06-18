@@ -3,7 +3,7 @@
   "site": "https://mexico-invest.com",
   "projectId": "mexico-invest-indexing",
   "dailyQuota": 200,
-  "updatedAt": "2026-06-16T10:41:59Z",
+  "updatedAt": "2026-06-18T10:52:27Z",
   "methodology": "Backlog = live sitemap + submitted-urls.json entries[] + git touch. Bing ONLY bing.com/indexnow.",
   "channels": {
     "google": "submit-google-explicit.mjs",
@@ -14,13 +14,17 @@
     "submit": "submit-google-explicit.mjs + indexnow-submit.mjs --explicit on indexing-batch-pending.json"
   },
   "summary": {
-    "backlogRemaining": 0,
+    "backlogRemaining": 5,
     "quotaUsedToday": 94,
     "quotaRemainingToday": 106,
-    "estimatedDaysLeft": 0,
-    "byReason": {},
+    "estimatedDaysLeft": 1,
+    "byReason": {
+      "ledger_only_never_api": 3,
+      "content_changed_after_api": 2
+    },
     "nextBatch": null,
-    "note": "Queue closed 2026-06-16. 94/94 final tail sent."
+    "note": "Queue closed 2026-06-16. 94/94 final tail sent.",
+    "ledgerRepairNote": "entries[] restored 2026-06-18 via repair-submitted-urls-entries.mjs"
   },
   "batches": [
     {
@@ -44,5 +48,9 @@
       "archive": "scripts/indexing-batch-2026-06-15-done.json"
     }
   ],
-  "tomorrow": null
+  "tomorrow": {
+    "batchId": "2026-06-18-batch-repair",
+    "backlogRemaining": 5,
+    "pendingCount": 5
+  }
 }

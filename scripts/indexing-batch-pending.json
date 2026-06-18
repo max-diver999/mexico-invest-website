@@ -1,10 +1,20 @@
 {
-  "generatedAt": "2026-06-16T10:41:59.612089+00:00",
+  "generatedAt": "2026-06-18T10:52:27.307250+00:00",
   "site": "https://mexico-invest.com",
-  "batchId": null,
-  "limit": 0,
-  "backlogTotal": 0,
+  "batchId": "2026-06-18-batch-repair",
+  "limit": 5,
+  "backlogTotal": 5,
   "remainingAfterBatch": 0,
-  "urls": [],
-  "note": "Queue closed 2026-06-16 \u2014 no further batch until new content"
+  "byReason": {
+    "ledger_only_never_api": 3,
+    "content_changed_after_api": 2
+  },
+  "urls": [
+    "https://mexico-invest.com/news/banxico-june-2026-mexico-property-fx/",
+    "https://mexico-invest.com/news/los-cabos-luxury-inventory-june-2026/",
+    "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026/",
+    "https://mexico-invest.com/guides/airbnb-investment-mexico-guide/",
+    "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico/"
+  ],
+  "note": "Rebuilt after submitted-urls entries[] repair"
 }
