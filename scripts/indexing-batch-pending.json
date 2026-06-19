@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-18T10:52:27.307250+00:00",
+  "generatedAt": "2026-06-19T11:04:24.972673+00:00",
   "site": "https://mexico-invest.com",
-  "batchId": "2026-06-18-batch-repair",
+  "batchId": "2026-06-19-batch-final",
   "limit": 5,
   "backlogTotal": 5,
   "remainingAfterBatch": 0,
@@ -15,6 +15,5 @@
     "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026/",
     "https://mexico-invest.com/guides/airbnb-investment-mexico-guide/",
     "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico/"
-  ],
-  "note": "Rebuilt after submitted-urls entries[] repair"
+  ]
 }

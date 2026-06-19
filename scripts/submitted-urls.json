@@ -4851,6 +4851,31 @@
       "url": "https://mexico-invest.com/projects/siari-ritz-carlton-reserve",
       "channel": "google",
       "at": "2026-06-16T10:41:49.065Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/banxico-june-2026-mexico-property-fx",
+      "channel": "google",
+      "at": "2026-06-19T11:04:31.256Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/los-cabos-luxury-inventory-june-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:04:31.256Z"
+    },
+    {
+      "url": "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:04:31.256Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/airbnb-investment-mexico-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:04:31.256Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico",
+      "channel": "google",
+      "at": "2026-06-19T11:04:31.256Z"
     }
   ],
   "repairedAt": "2026-06-18T10:51:11.631Z",
@@ -4868,5 +4893,6 @@
       "entries": 897,
       "googleUnique": 361
     }
-  }
+  },
+  "updatedAt": "2026-06-19T11:04:31.256Z"
 }

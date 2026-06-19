@@ -1,71 +1,13 @@
 {
-  "generatedAt": "2026-06-18T10:51:59.117Z",
+  "generatedAt": "2026-06-19T11:09:22.333Z",
   "site": "https://mexico-invest.com",
   "projectId": "mexico-invest-indexing",
   "sitemapTotal": 309,
   "ledgerTotal": 364,
-  "apiLoggedUnique": 361,
-  "backlogTotal": 5,
-  "byReason": {
-    "ledger_only_never_api": 3,
-    "content_changed_after_api": 2
-  },
-  "byCollection": {
-    "news": 3,
-    "guides": 2
-  },
-  "urls": [
-    "https://mexico-invest.com/news/banxico-june-2026-mexico-property-fx/",
-    "https://mexico-invest.com/news/los-cabos-luxury-inventory-june-2026/",
-    "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026/",
-    "https://mexico-invest.com/guides/airbnb-investment-mexico-guide/",
-    "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico/"
-  ],
-  "items": [
-    {
-      "url": "https://mexico-invest.com/news/banxico-june-2026-mexico-property-fx/",
-      "norm": "https://mexico-invest.com/news/banxico-june-2026-mexico-property-fx",
-      "reason": "ledger_only_never_api",
-      "priority": 91200,
-      "gitAt": "2026-06-17T17:30:50-03:00",
-      "apiAt": null,
-      "collection": "news"
-    },
-    {
-      "url": "https://mexico-invest.com/news/los-cabos-luxury-inventory-june-2026/",
-      "norm": "https://mexico-invest.com/news/los-cabos-luxury-inventory-june-2026",
-      "reason": "ledger_only_never_api",
-      "priority": 91200,
-      "gitAt": "2026-06-17T17:30:50-03:00",
-      "apiAt": null,
-      "collection": "news"
-    },
-    {
-      "url": "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026/",
-      "norm": "https://mexico-invest.com/news/playa-del-carmen-resale-liquidity-june-2026",
-      "reason": "ledger_only_never_api",
-      "priority": 91200,
-      "gitAt": "2026-06-17T17:30:50-03:00",
-      "apiAt": null,
-      "collection": "news"
-    },
-    {
-      "url": "https://mexico-invest.com/guides/airbnb-investment-mexico-guide/",
-      "norm": "https://mexico-invest.com/guides/airbnb-investment-mexico-guide",
-      "reason": "content_changed_after_api",
-      "priority": 70800,
-      "gitAt": "2026-06-17T17:30:50-03:00",
-      "apiAt": "2026-06-15T10:51:39.902Z",
-      "collection": "guides"
-    },
-    {
-      "url": "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico/",
-      "norm": "https://mexico-invest.com/guides/can-foreigners-buy-property-mexico",
-      "reason": "content_changed_after_api",
-      "priority": 70800,
-      "gitAt": "2026-06-17T17:30:50-03:00",
-      "apiAt": "2026-06-15T10:51:39.902Z",
-      "collection": "guides"
-    }
-  ]
+  "apiLoggedUnique": 364,
+  "backlogTotal": 0,
+  "byReason": {},
+  "byCollection": {},
+  "urls": [],
+  "items": []
 }
