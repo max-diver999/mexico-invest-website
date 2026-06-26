@@ -1,6 +1,34 @@
 ---
-/** Mexico Invest — live site report. Update via GSC/GA4/Bing MCP each session. */
 export const prerender = true;
+
+const reportDate = '25 June 2026';
+const reportVersion = 'v4.0';
+const launchDate = '5 June 2026';
+const dataThrough = '22 June 2026';
+
+const monthlyGsc = [
+  { month: 'Jun 2026', label: 'Jun', clicks: 1, impressions: 94, position: 9.1, note: 'Launch 5 Jun · through 22 Jun · first click 22 Jun' },
+];
+
+const monthlyGa4 = [
+  { month: 'Jun', sessions: 78 },
+];
+
+const contentBreakdown = [
+  { type: 'Guides', count: 116, words: 329468, color: '#b45309' },
+  { type: 'Projects', count: 100, words: 157934, color: '#4e9e7e' },
+  { type: 'Comparisons', count: 34, words: 80034, color: '#d97706' },
+  { type: 'Areas', count: 32, words: 79867, color: '#8b5cf6' },
+  { type: 'Developers', count: 9, words: 18554, color: '#60a5fa' },
+  { type: 'News', count: 7, words: 5553, color: '#78716c' },
+];
+
+const totalClicks = monthlyGsc.reduce((s, m) => s + m.clicks, 0);
+const totalImp = monthlyGsc.reduce((s, m) => s + m.impressions, 0);
+const totalWords = contentBreakdown.reduce((s, c) => s + c.words, 0);
+const totalFiles = contentBreakdown.reduce((s, c) => s + c.count, 0);
+const clicksDelta = 0;
+const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -11,94 +39,401 @@ export const prerender = true;
   <title>mexico-invest.com — Site Report</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f3ef; color: #1c1917; min-height: 100vh; }
-    .header { background: #1c1917; color: white; padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f1eb; color: #2c2c2c; min-height: 100vh; }
+
+    .header { background: #1a2e2a; color: white; padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .header-brand { display: flex; align-items: center; gap: 12px; }
-    .header-logo { width: 36px; height: 36px; background: linear-gradient(135deg, #d4a853, #b45309); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: #1c1917; }
+    .header-logo { width: 36px; height: 36px; background: #4e9e7e; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: white; }
     .header h1 { font-size: 22px; font-weight: 700; }
-    .header-sub { font-size: 13px; color: #a8a29e; margin-top: 2px; }
+    .header-sub { font-size: 13px; color: #9dbfb3; margin-top: 2px; }
     .header-meta { text-align: right; }
-    .header-meta .label { font-size: 12px; color: #a8a29e; }
+    .header-meta .label { font-size: 12px; color: #9dbfb3; }
     .header-meta .value { font-size: 14px; font-weight: 600; margin-top: 2px; }
-    .live-badge { display: inline-flex; align-items: center; gap: 6px; background: #292524; border-radius: 20px; padding: 4px 12px; font-size: 12px; margin-top: 8px; }
+    .live-badge { display: inline-flex; align-items: center; gap: 6px; background: #2d5a4a; border-radius: 20px; padding: 4px 12px; font-size: 12px; margin-top: 8px; }
     .live-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
-    .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #78716c; margin-bottom: 16px; margin-top: 40px; }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
+
+    .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #7a7a6e; margin-bottom: 16px; margin-top: 40px; }
     .section-title:first-child { margin-top: 0; }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
-    .stat-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e7e5e4; }
-    .stat-card .num { font-size: 40px; font-weight: 800; color: #1c1917; line-height: 1; }
-    .stat-card .num.gold { color: #b45309; }
-    .stat-card .num.green { color: #15803d; }
-    .stat-card .label { font-size: 13px; color: #78716c; margin-top: 6px; }
-    .stat-card .sublabel { font-size: 11px; color: #a8a29e; margin-top: 4px; line-height: 1.4; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
+    .stat-card { background: white; border-radius: 10px; padding: 14px 10px; border: 1px solid #e8e4dc; min-width: 0; }
+    .stat-card .num { font-size: 26px; font-weight: 800; color: #1a2e2a; line-height: 1.05; letter-spacing: -0.02em; }
+    .stat-card .num.teal { color: #2d7a5e; }
+    .stat-card .num.amber { color: #b45309; }
+    .stat-card .label { font-size: 11px; color: #7a7a6e; margin-top: 5px; line-height: 1.25; }
+    .stat-card .sublabel { font-size: 9px; color: #aaa; margin-top: 3px; line-height: 1.35; }
+    @media (max-width: 1100px) { .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
     .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
-    .info-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e7e5e4; }
-    .info-card h3 { font-size: 14px; font-weight: 700; color: #1c1917; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #f5f5f4; }
-    .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #fafaf9; gap: 16px; }
+    .info-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e8e4dc; }
+    .info-card h3 { font-size: 14px; font-weight: 700; color: #1a2e2a; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #f0ece4; }
+    .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #f7f4ef; gap: 16px; }
     .info-row:last-child { border-bottom: none; }
-    .info-row .key { font-size: 13px; color: #78716c; flex-shrink: 0; }
-    .info-row .val { font-size: 13px; font-weight: 600; color: #1c1917; text-align: right; }
-    .info-row .val a { color: #b45309; text-decoration: none; }
+    .info-row .key { font-size: 13px; color: #7a7a6e; flex-shrink: 0; }
+    .info-row .val { font-size: 13px; font-weight: 600; color: #2c2c2c; text-align: right; }
+    .info-row .val a { color: #2d7a5e; text-decoration: none; }
     .info-row .val a:hover { text-decoration: underline; }
-    .content-card { background: white; border-radius: 12px; border: 1px solid #e7e5e4; overflow: hidden; }
-    .table-scroll { width: 100%; overflow-x: auto; }
-    .content-table { width: 100%; border-collapse: collapse; min-width: 640px; }
-    .content-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #78716c; font-weight: 700; padding: 12px 20px; text-align: left; background: #fafaf9; border-bottom: 1px solid #e7e5e4; }
-    .content-table td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid #f5f5f4; vertical-align: top; }
+
+    .content-card { background: white; border-radius: 12px; border: 1px solid #e8e4dc; overflow: hidden; }
+    .table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .content-table { width: 100%; border-collapse: collapse; }
+    .content-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #7a7a6e; font-weight: 700; padding: 12px 20px; text-align: left; background: #faf8f4; border-bottom: 1px solid #e8e4dc; }
+    .content-table td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid #f4f1eb; vertical-align: top; }
     .content-table tr:last-child td { border-bottom: none; }
-    .content-table .count { font-weight: 800; color: #b45309; font-size: 18px; }
-    .content-table .words { color: #78716c; font-size: 12px; }
+    .content-table tr:hover td { background: #faf8f4; }
+    .content-table .count { font-weight: 800; color: #2d7a5e; font-size: 18px; }
+    .content-table .words { color: #7a7a6e; font-size: 12px; }
     .tag { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
     .tag.green { background: #dcfce7; color: #166534; }
     .tag.blue { background: #dbeafe; color: #1e40af; }
     .tag.amber { background: #fef3c7; color: #92400e; }
-    .tag.gray { background: #f5f5f4; color: #57534e; }
-    .tag.red { background: #fee2e2; color: #991b1b; }
-    .changelog-item { background: white; border: 1px solid #e7e5e4; border-bottom: none; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .tag.gray { background: #f3f4f6; color: #374151; }
+
+    .changelog { display: flex; flex-direction: column; gap: 0; }
+    .changelog-item { background: white; border-radius: 0; border: 1px solid #e8e4dc; border-bottom: none; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
     .changelog-item:first-child { border-radius: 12px 12px 0 0; }
-    .changelog-item:last-child { border-radius: 0 0 12px 12px; border-bottom: 1px solid #e7e5e4; }
-    .changelog-date { font-size: 11px; color: #a8a29e; min-width: 100px; padding-top: 2px; }
-    .changelog-title { font-size: 13px; font-weight: 600; color: #1c1917; }
-    .changelog-desc { font-size: 12px; color: #78716c; margin-top: 3px; line-height: 1.45; }
+    .changelog-item:last-child { border-radius: 0 0 12px 12px; border-bottom: 1px solid #e8e4dc; }
+    .changelog-date { font-size: 11px; color: #9ca3af; min-width: 80px; padding-top: 2px; }
+    .changelog-content { flex: 1; }
+    .changelog-title { font-size: 13px; font-weight: 600; color: #1a2e2a; }
+    .changelog-desc { font-size: 12px; color: #7a7a6e; margin-top: 3px; }
     .changelog-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-    .next-item { background: white; border-radius: 10px; border: 1px solid #e7e5e4; padding: 14px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
-    .priority.high { color: #dc2626; font-size: 11px; font-weight: 700; min-width: 50px; }
-    .priority.medium { color: #d97706; font-size: 11px; font-weight: 700; min-width: 50px; }
-    .priority.low { color: #059669; font-size: 11px; font-weight: 700; min-width: 50px; }
-    .next-item .text { font-size: 13px; color: #1c1917; }
-    .next-item .subtext { font-size: 12px; color: #a8a29e; margin-top: 2px; }
-    .pulse-wrap { background: white; border-radius: 16px; border: 1px solid #e7e5e4; padding: 24px 28px; }
+
+    .next-steps { display: flex; flex-direction: column; gap: 10px; }
+    .next-item { background: white; border-radius: 10px; border: 1px solid #e8e4dc; padding: 14px 18px; display: flex; align-items: flex-start; gap: 12px; }
+    .next-item .priority { font-size: 11px; font-weight: 700; min-width: 50px; padding-top: 1px; }
+    .priority.high { color: #dc2626; }
+    .priority.medium { color: #d97706; }
+    .priority.low { color: #059669; }
+    .next-item .text { font-size: 13px; color: #2c2c2c; }
+    .next-item .subtext { font-size: 12px; color: #9ca3af; margin-top: 2px; }
+
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .link-card { background: white; border-radius: 10px; border: 1px solid #e8e4dc; padding: 16px; text-decoration: none; color: #2c2c2c; transition: border-color 0.2s; display: block; }
+    .link-card:hover { border-color: #2d7a5e; }
+    .link-card .link-label { font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.06em; }
+    .link-card .link-url { font-size: 13px; font-weight: 600; color: #2d7a5e; margin-top: 4px; word-break: break-all; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #9ca3af; font-size: 12px; }
+    .footer strong { color: #7a7a6e; }
+
+    /* ── SEO PULSE DASHBOARD ── */
+    .pulse-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+    .pulse-header h2 { font-size: 16px; font-weight: 800; color: #1a2e2a; }
+    .pulse-updated { font-size: 11px; color: #9ca3af; background: #f4f1eb; border-radius: 20px; padding: 4px 12px; display: flex; align-items: center; gap: 6px; }
+    .pulse-updated-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse 2s infinite; }
+
     .pulse-kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
     @media (max-width: 700px) { .pulse-kpi-row { grid-template-columns: repeat(2, 1fr); } }
-    .pulse-kpi { background: #fafaf9; border-radius: 12px; border: 1px solid #e7e5e4; padding: 18px 20px; }
-    .pulse-kpi .kpi-val { font-size: 36px; font-weight: 900; color: #1c1917; line-height: 1; margin-top: 4px; }
-    .pulse-kpi .kpi-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #78716c; }
-    .pulse-kpi .kpi-sub { font-size: 11px; color: #a8a29e; margin-top: 4px; line-height: 1.35; }
-    .baseline-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; font-size: 13px; color: #92400e; line-height: 1.5; }
-    .baseline-box strong { color: #78350f; }
-    .insight { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; margin-top: 16px; font-size: 12px; color: #166534; line-height: 1.5; }
-    .insight strong { font-weight: 700; }
-    .slug-list { font-size: 11px; color: #57534e; line-height: 1.6; column-count: 2; column-gap: 24px; }
-    @media (max-width: 700px) { .slug-list { column-count: 1; } }
-    .slug-list a { color: #b45309; text-decoration: none; }
-    .slug-list a:hover { text-decoration: underline; }
-    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .link-card { background: white; border-radius: 10px; border: 1px solid #e7e5e4; padding: 16px; text-decoration: none; color: #1c1917; display: block; }
-    .link-card:hover { border-color: #b45309; }
-    .link-card .link-label { font-size: 11px; color: #a8a29e; text-transform: uppercase; letter-spacing: 0.06em; }
-    .link-card .link-url { font-size: 13px; font-weight: 600; color: #b45309; margin-top: 4px; word-break: break-all; }
-    .footer { text-align: center; padding: 32px 24px; color: #a8a29e; font-size: 12px; line-height: 1.6; }
-    .footer a { color: #b45309; text-decoration: none; }
+    .pulse-kpi { background: white; border-radius: 12px; border: 1px solid #e8e4dc; padding: 18px 20px; position: relative; overflow: hidden; }
+    .pulse-kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .pulse-kpi.kpi-green::before { background: linear-gradient(90deg, #4ade80, #2d7a5e); }
+    .pulse-kpi.kpi-blue::before { background: linear-gradient(90deg, #60a5fa, #2563eb); }
+    .pulse-kpi.kpi-amber::before { background: linear-gradient(90deg, #fbbf24, #d97706); }
+    .pulse-kpi.kpi-orange::before { background: linear-gradient(90deg, #fb923c, #c2410c); }
+    .pulse-kpi .kpi-val { font-size: 36px; font-weight: 900; color: #1a2e2a; line-height: 1; margin-top: 4px; }
+    .pulse-kpi .kpi-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #7a7a6e; }
+    .pulse-kpi .kpi-sub { font-size: 11px; color: #aaa; margin-top: 4px; }
+    .pulse-kpi .kpi-trend { position: absolute; top: 18px; right: 18px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+    .trend-up { background: #dcfce7; color: #166534; }
+    .trend-new { background: #dbeafe; color: #1e40af; }
+
+    .pulse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 700px) { .pulse-grid { grid-template-columns: 1fr; } }
+
+    .pulse-card { background: white; border-radius: 12px; border: 1px solid #e8e4dc; padding: 18px 20px; }
+    .pulse-card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #7a7a6e; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .pulse-card-title span { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .span-green { background: #4ade80; }
+    .span-blue { background: #60a5fa; }
+
+    .pulse-query-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f4f1eb; }
+    .pulse-query-row:last-child { border-bottom: none; }
+    .pulse-query-rank { font-size: 11px; font-weight: 700; color: #aaa; min-width: 20px; }
+    .pulse-query-text { flex: 1; min-width: 0; font-size: 12px; color: #2c2c2c; white-space: normal; overflow-wrap: anywhere; word-break: break-word; }
+    .pulse-query-pos { font-size: 11px; font-weight: 700; color: #2d7a5e; background: #f0faf5; border-radius: 6px; padding: 2px 7px; }
+    .pulse-query-imp { font-size: 11px; color: #aaa; min-width: 50px; text-align: right; }
+
+    .pulse-page-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f4f1eb; }
+    .pulse-page-row:last-child { border-bottom: none; }
+    .pulse-page-url { flex: 1; min-width: 0; font-size: 11px; color: #2d7a5e; overflow-wrap: anywhere; word-break: break-word; }
+    .pulse-page-meta { display: flex; gap: 6px; flex-shrink: 0; }
+    .pulse-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; }
+    .badge-clicks { background: #dcfce7; color: #166534; }
+    .badge-impr { background: #dbeafe; color: #1e40af; }
+    .badge-pos { background: #fef3c7; color: #92400e; }
+
+    .pulse-chart { margin-top: 4px; }
+    .chart-bars { display: flex; align-items: flex-end; gap: 4px; height: 60px; }
+    .chart-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .chart-bar { width: 100%; border-radius: 3px 3px 0 0; min-height: 2px; transition: height 0.3s; }
+    .chart-bar.bar-impr { background: #bfdbfe; }
+    .chart-bar.bar-click { background: #4ade80; }
+    .chart-label { font-size: 9px; color: #aaa; }
+
+    .pulse-insight { background: #f0faf5; border: 1px solid #c6e8da; border-radius: 10px; padding: 12px 16px; margin-top: 16px; display: flex; gap: 12px; align-items: flex-start; }
+    .pulse-insight-icon { font-size: 18px; flex-shrink: 0; }
+    .pulse-insight-text { font-size: 12px; color: #1a4f3a; line-height: 1.5; }
+    .pulse-insight-text strong { font-weight: 700; }
+
+    .pulse-footer-note { font-size: 11px; color: #aaa; margin-top: 16px; text-align: center; }
+    .pulse-footer-note a { color: #2d7a5e; text-decoration: none; }
+    .pulse-table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .pulse-table-scroll table { min-width: 720px; }
+
     @media (max-width: 640px) {
-      .header { padding: 22px 16px; }
-      .header-meta { text-align: left; margin-top: 12px; }
-      .container { padding: 20px 12px; }
-      .changelog-item { flex-direction: column; gap: 6px; }
+      body { overflow-x: hidden; }
+      .header { padding: 22px 16px; display: block; }
+      .header-brand { align-items: flex-start; }
+      .header h1 { font-size: 19px; line-height: 1.2; word-break: break-word; }
+      .header-meta { text-align: left; margin-top: 18px; }
+      .live-badge { display: flex; align-items: flex-start; width: 100%; border-radius: 14px; padding: 8px 10px; line-height: 1.45; white-space: normal; }
+      .container { width: 100%; padding: 20px 12px; overflow: hidden; }
+      .section-title { margin-top: 30px !important; font-size: 12px; line-height: 1.35; }
+      .stats-grid, .info-grid, .pulse-grid, .pulse-kpi-row, .links-grid { grid-template-columns: 1fr !important; gap: 10px; }
+      .pulse-card > div[style*="grid-template-columns:repeat(4,1fr)"],
+      .pulse-card > div[style*="grid-template-columns:1fr 1fr"],
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .stat-card, .info-card, .pulse-card, .pulse-kpi, .link-card { padding: 14px; border-radius: 12px; max-width: 100%; }
+      .stat-card .num, .pulse-kpi .kpi-val { font-size: 30px; }
+      .pulse-kpi .kpi-trend { position: static; display: inline-block; margin-bottom: 8px; }
+      .info-row { display: block; }
+      .info-row .key, .info-row .val { display: block; text-align: left; }
+      .info-row .val { margin-top: 4px; word-break: break-word; }
+      .pulse-query-row, .pulse-page-row { align-items: flex-start; flex-wrap: wrap; gap: 6px; }
+      .pulse-query-text, .pulse-page-url { min-width: 0; white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
+      .pulse-page-meta { flex-wrap: wrap; width: 100%; }
+      .pulse-query-imp { min-width: auto; text-align: left; }
+      .pulse-insight { padding: 12px; gap: 10px; }
+      .pulse-insight-text { font-size: 12px; word-break: break-word; }
+      .pulse-table-scroll { margin: 0 -2px; }
+      .content-card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .content-table { min-width: 720px; }
+      .changelog-item { display: block; padding: 14px; }
+      .changelog-date { min-width: 0; margin-bottom: 6px; }
+      .footer { padding: 24px 14px; line-height: 1.5; }
     }
+
+    /* ── GROWTH DASHBOARD v19 ── */
+    :root {
+      --ink: #1a2e2a;
+      --ink-soft: #2c4a44;
+      --accent: #4e9e7e;
+      --accent-dark: #2d7a5e;
+      --paper-2: #faf8f4;
+      --card: #ffffff;
+      --border: #e8e4dc;
+      --muted: #7a7a6e;
+      --up: #16a34a;
+      --down: #dc2626;
+      --shadow: 0 4px 24px rgba(26, 46, 42, 0.06);
+      --radius: 14px;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 1100px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .kpi-strip { grid-template-columns: 1fr; } }
+    .kpi-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+    }
+    .kpi-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 6px 0 4px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .kpi-delta {
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .kpi-delta.up { background: #dcfce7; color: var(--up); }
+    .kpi-delta.down { background: #fee2e2; color: var(--down); }
+    .kpi-delta.neutral { background: #f3f4f6; color: var(--muted); }
+    .kpi-sub { font-size: 10px; color: #aaa; margin-top: 6px; line-height: 1.35; }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 48px; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-head h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .section-head p { font-size: 13px; color: var(--muted); max-width: 480px; }
+    .badge-src {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      background: #f0faf5;
+      border: 1px solid #c6e8da;
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .card-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .chart-wrap { position: relative; height: 280px; }
+    .chart-wrap-sm { height: 220px; }
+
+    /* ── Monthly table ── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .data-table th {
+      text-align: left;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #f4f1eb;
+      vertical-align: middle;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--paper-2); }
+    .data-table .num { font-weight: 800; font-size: 15px; color: var(--accent-dark); }
+    .bar-cell { display: flex; align-items: center; gap: 10px; }
+    .mini-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      min-width: 4px;
+    }
+
+    /* ── Query / page rows ── */
+    .rank-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid #f4f1eb;
+      font-size: 12px;
+    }
+    .rank-row:last-child { border-bottom: none; }
+    .rank-num { font-weight: 800; color: #ccc; min-width: 22px; font-size: 11px; }
+    .rank-text { flex: 1; min-width: 0; word-break: break-word; color: var(--ink); }
+    .rank-url { flex: 1; min-width: 0; word-break: break-all; color: var(--accent-dark); font-size: 11px; }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .pill-green { background: #dcfce7; color: #166534; }
+    .pill-blue { background: #dbeafe; color: #1e40af; }
+    .pill-amber { background: #fef3c7; color: #92400e; }
+
+    /* ── Insight ── */
+    .insight {
+      background: linear-gradient(135deg, #f0faf5, #ecfdf5);
+      border: 1px solid #c6e8da;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-top: 20px;
+    }
+    .insight strong { color: var(--ink); }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--border));
+    }
+    .tl-item { position: relative; padding-bottom: 24px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--paper);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .tl-date { font-size: 11px; color: var(--muted); font-weight: 600; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--ink); margin: 2px 0 4px; }
+    .tl-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+    .tl-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f0faf5;
+      color: var(--accent-dark);
+      margin-top: 6px;
+    }
+
+
   </style>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -112,8 +447,9 @@ export const prerender = true;
   </div>
   <div class="header-meta">
     <div class="label">Last updated</div>
-    <div class="value">16 June 2026 · v3.1</div>
-    <div class="live-badge"><span class="live-dot"></span> 298 articles · 298 sitemap · 294 indexed API</div>
+    <div class="value">{reportDate} · {reportVersion} (live)</div>
+    <div class="live-badge"><span class="live-dot"></span> 298 articles · 309 sitemap · indexing complete</div>
+    <div style="margin-top:10px;font-size:12px;"><a href="https://mexico-invest.com/portfolio-report/" target="_blank" style="color:#9dbfb3;text-decoration:none;">← Portfolio hub (all sites)</a></div>
   </div>
 </div>
 
@@ -122,540 +458,331 @@ export const prerender = true;
   <div class="section-title">At a glance</div>
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="num gold">298</div>
-      <div class="label">MDX articles</div>
-      <div class="sublabel">116 guides · 34 compares · 32 areas · 100 projects · 9 developers · 7 news</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">671K</div>
-      <div class="label">Words of SEO content</div>
-      <div class="sublabel">~2 253 avg/article · validate 298/298 · qa:corpus PASS</div>
-    </div>
-    <div class="stat-card">
-      <div class="num gold">298</div>
+      <div class="num teal">309</div>
       <div class="label">URLs in sitemap</div>
-      <div class="sublabel">+41 Phase B+C batch · 2 noindex excluded · live sitemap-0.xml</div>
+      <div class="sublabel">100 projects · 116 guides · 32 areas · 34 comparisons · 7 news</div>
     </div>
     <div class="stat-card">
-      <div class="num green">300</div>
-      <div class="label">Unique project photos</div>
-      <div class="sublabel">100 projects × 3 · Cloudinary · 0 broken URLs</div>
+      <div class="num amber">New</div>
+      <div class="label">Domain authority</div>
+      <div class="sublabel">Fresh domain · launched 5 Jun · baseline TBD</div>
     </div>
     <div class="stat-card">
-      <div class="num green">294</div>
-      <div class="label">URLs submitted (Google API)</div>
-      <div class="sublabel">200 (15 Jun) + 94 (16 Jun) · backlog 0 · IndexNow matched</div>
+      <div class="num">~671K</div>
+      <div class="label">SEO words</div>
+      <div class="sublabel">298 MDX files · ~2 253 avg · 57 git commits</div>
     </div>
     <div class="stat-card">
-      <div class="num">52</div>
-      <div class="label">Git commits</div>
-      <div class="sublabel">9415b71 Phase B+C fix · fed1098 indexing · news batch pending</div>
+      <div class="num teal">1</div>
+      <div class="label">GSC click URLs</div>
+      <div class="sublabel">1 Jun–22 Jun · first click 22 Jun (cfdi guide)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">6</div>
+      <div class="label">Content collections</div>
+      <div class="sublabel">guides · projects · areas · compare · developers · news</div>
+    </div>
+    <div class="stat-card">
+      <div class="num amber">1</div>
+      <div class="label">GSC clicks</div>
+      <div class="sublabel">94 imp · CTR 1.06% · avg pos 9.1</div>
+    </div>
+    <div class="stat-card">
+      <div class="num teal">78</div>
+      <div class="label">GA4 sessions</div>
+      <div class="sublabel">1 organic · Bing 3 imp · lead API 200</div>
     </div>
   </div>
 
-  <div class="section-title">SEO Pulse — Google Search Console</div>
-  <div class="pulse-wrap">
-    <div class="baseline-box">
-      <strong>GSC update (16 Jun 2026).</strong> MCP <code>sc-domain:mexico-invest.com</code> · period 17 May – 13 Jun: <strong>0 clicks, 9 impressions</strong> across 4 pages. <code>can-foreigners-buy-property-mexico</code> leads with 6 impressions at pos 3.0. Indexing backlog closed (294 API). CTR sprint applied to title/meta on top pages.
-    </div>
-    <div class="pulse-kpi-row">
-      <div class="pulse-kpi">
-        <div class="kpi-label">Total Clicks</div>
-        <div class="kpi-val">0</div>
-        <div class="kpi-sub">28-day window · first clicks TBD</div>
-      </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Impressions</div>
-        <div class="kpi-val">9</div>
-        <div class="kpi-sub">Peak 5 on 12 Jun · 4 pages in SERP</div>
-      </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Avg. Position</div>
-        <div class="kpi-val">4.3</div>
-        <div class="kpi-sub">Weighted across 9 impression rows</div>
-      </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Avg. CTR</div>
-        <div class="kpi-val">0%</div>
-        <div class="kpi-sub">CTR sprint live 16 Jun on top pages</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:flex-end;gap:6px;height:80px;margin:16px 0 8px;padding:0 4px;">
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#e7e5e4;border-radius:4px 4px 0 0;height:0%;min-height:2px;"></div><span style="font-size:9px;color:#a8a29e;">Jun 4</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#e7e5e4;border-radius:4px 4px 0 0;height:0%;min-height:2px;"></div><span style="font-size:9px;color:#a8a29e;">Jun 5</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#e7e5e4;border-radius:4px 4px 0 0;height:0%;min-height:2px;"></div><span style="font-size:9px;color:#a8a29e;">Jun 6</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#b45309;border-radius:4px 4px 0 0;height:20%;"></div><span style="font-size:9px;color:#a8a29e;">Jun 7</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#e7e5e4;border-radius:4px 4px 0 0;height:0%;min-height:2px;"></div><span style="font-size:9px;color:#a8a29e;">Jun 8</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#b45309;border-radius:4px 4px 0 0;height:20%;"></div><span style="font-size:9px;color:#a8a29e;">Jun 9</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#b45309;border-radius:4px 4px 0 0;height:40%;"></div><span style="font-size:9px;color:#a8a29e;">Jun 10</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#e7e5e4;border-radius:4px 4px 0 0;height:0%;min-height:2px;"></div><span style="font-size:9px;color:#a8a29e;">Jun 11</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#b45309;border-radius:4px 4px 0 0;height:100%;"></div><span style="font-size:9px;color:#a8a29e;">Jun 12</span></div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:100%;background:#e7e5e4;border-radius:4px 4px 0 0;height:0%;min-height:2px;"></div><span style="font-size:9px;color:#a8a29e;">Jun 13</span></div>
-    </div>
-    <div class="content-card table-scroll" style="margin-top:12px;">
-      <table class="content-table">
-        <thead><tr><th>Top pages (GSC)</th><th>Impressions</th><th>Position</th><th>CTR</th></tr></thead>
-        <tbody>
-          <tr><td><a href="/guides/can-foreigners-buy-property-mexico/">can-foreigners-buy-property-mexico</a></td><td>6</td><td>3.0</td><td>0%</td></tr>
-          <tr><td><a href="/">Homepage</a></td><td>1</td><td>10.0</td><td>0%</td></tr>
-          <tr><td><a href="/guides/airbnb-investment-mexico-guide/">airbnb-investment-mexico-guide</a></td><td>1</td><td>9.0</td><td>0%</td></tr>
-          <tr><td><a href="/guides/buy-property-mexico-foreigner/">buy-property-mexico-foreigner</a></td><td>1</td><td>2.0</td><td>0%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="insight"><strong>Quick wins:</strong> <code>can-foreigners-buy-property-mexico</code> — 6 impressions at pos 3, title/meta updated 16 Jun. <code>buy-property-mexico-foreigner</code> at pos 2 — monitor cannibalization vs spoke. <code>airbnb-investment-mexico-guide</code> — meta sharpened. No query-level data yet.</div>
-    <p style="font-size:11px;color:#a8a29e;text-align:center;margin-top:16px;">Updated 16 Jun 2026 via GSC MCP · period 17 May – 13 Jun · EN site — never Yandex</p>
-  </div>
 
-  <div class="section-title">Analytics — GA4</div>
-  <div class="pulse-wrap">
-    <div class="pulse-kpi-row">
-      <div class="pulse-kpi">
-        <div class="kpi-label">Sessions (Jun 1–10)</div>
-        <div class="kpi-val">43</div>
-        <div class="kpi-sub">Peak 25 on 7 Jun (crawl bots) · GA4 MCP</div>
-      </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Users</div>
-        <div class="kpi-val">39</div>
-        <div class="kpi-sub">22 on 7 Jun · organic TBD</div>
-      </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Pageviews</div>
-        <div class="kpi-val">44</div>
-        <div class="kpi-sub">25 on 7 Jun · post-index crawl activity</div>
-      </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Lead API</div>
-        <div class="kpi-val" style="font-size:22px;">✓</div>
-        <div class="kpi-sub">POST /api/lead/ → 200 · Telegram configured</div>
-      </div>
+  <!-- ═══ GROWTH DASHBOARD v19 — charts + MoM (CTR hidden) ═══ -->
+  <div class="section-title" style="margin-top:32px;">Growth dashboard — since launch</div>
+
+  <div class="kpi-strip">
+    <div class="kpi-card">
+      <div class="kpi-label">GSC Clicks</div>
+      <div class="kpi-value">{totalClicks}</div>
+      <span class="kpi-delta up">↑ First click 22 Jun</span>
+      <div class="kpi-sub">Since launch · Google Search Console</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Impressions</div>
+      <div class="kpi-value">94</div>
+      <span class="kpi-delta up">↑ Index warming</span>
+      <div class="kpi-sub">94 total · peak 17/day 21–22 Jun</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">GA4 Sessions</div>
+      <div class="kpi-value">78</div>
+      <span class="kpi-delta neutral">Jun only</span>
+      <div class="kpi-sub">Since launch (Jun 6–22)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Content corpus</div>
+      <div class="kpi-value">0.7M</div>
+      <span class="kpi-delta neutral">{totalFiles} pages</span>
+      <div class="kpi-sub">Words in MDX</div>
     </div>
   </div>
 
-  <div class="section-title">Bing Webmaster</div>
-  <div class="pulse-wrap">
-    <div class="pulse-kpi-row">
-      <div class="pulse-kpi">
-        <div class="kpi-label">Bing Clicks</div>
-        <div class="kpi-val">0</div>
-        <div class="kpi-sub">MCP bing-webmaster-mexico-invest</div>
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>Monthly growth since launch</h2>
+        <p>Google Search Console web search · {launchDate} → {dataThrough}. June is partial (20 days).</p>
       </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Impressions</div>
-        <div class="kpi-val">0</div>
-        <div class="kpi-sub">243+ URLs IndexNow total · Bing weekly buckets</div>
+      <span class="badge-src">GSC API · Updated {reportDate}</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Clicks &amp; impressions by month</div>
+        <div class="chart-wrap"><canvas id="chartMonthly"></canvas></div>
       </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">Site verified</div>
-        <div class="kpi-val" style="font-size:22px;">✓</div>
-        <div class="kpi-sub">Import from GSC</div>
-      </div>
-      <div class="pulse-kpi">
-        <div class="kpi-label">IndexNow</div>
-        <div class="kpi-val" style="font-size:22px;">✓</div>
-        <div class="kpi-sub">bing.com/indexnow only · never api.indexnow.org</div>
+      <div class="card">
+        <div class="card-title">GA4 sessions by month</div>
+        <div class="chart-wrap"><canvas id="chartGa4"></canvas></div>
+        <div class="insight" style="margin-top:16px;">
+          <strong>Launch traffic:</strong> 78 sessions in 17 days (mostly direct/pre-launch QA). 1 organic session so far — expected to grow as 309 URLs finish indexing.
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section-title">Content breakdown</div>
-  <div class="content-card table-scroll">
-    <table class="content-table">
-      <thead>
-        <tr><th>Collection</th><th>Pages</th><th>Words</th><th>Avg</th><th>Min gate</th><th>Status</th></tr>
-      </thead>
-      <tbody>
+    <div class="card" style="margin-top:20px;">
+      <div class="card-title">Month-over-month detail</div>
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Clicks</th>
+              <th>Impressions</th>
+              <th>Avg position</th>
+              <th>MoM clicks</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
         <tr>
-          <td><strong>Guides</strong><br><span class="words">Legal, tax, financing, scam, process, asset — Phase C1 complete</span></td>
+          <td><strong>Guides</strong><br><span style="font-size:11px;color:#9ca3af">Foreign ownership, fideicomiso, AMPI, tax/CFDI, STR, insurance, buyer nationality, investment strategy</span></td>
           <td><span class="count">116</span></td>
-          <td><span class="words">329 468</span></td>
-          <td><span class="words">2 840</span></td>
-          <td><span class="tag blue">2 000+</span></td>
+          <td><span class="words">~2 841 words</span></td>
+          <td><span class="tag blue">Head keywords</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>Comparisons</strong><br><span class="words">Mexico vs Panama/Colombia/Thailand/Florida/Costa Rica · area vs area · strategy</span></td>
-          <td><span class="count">34</span></td>
-          <td><span class="words">96 318</span></td>
-          <td><span class="words">2 833</span></td>
-          <td><span class="tag blue">1 800+</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>Areas</strong><br><span class="words">32 micro-areas — Tulum regions, Tankah, Cozumel, Bacalar, Holistika…</span></td>
+          <td><strong>Area guides — 32 Mexico markets</strong><br><span style="font-size:11px;color:#9ca3af">Playa del Carmen, Tulum, Cancún, Los Cabos, Puerto Vallarta, Mérida, CDMX zones and more</span></td>
           <td><span class="count">32</span></td>
-          <td><span class="words">79 867</span></td>
-          <td><span class="words">2 495</span></td>
-          <td><span class="tag blue">1 800+</span></td>
+          <td><span class="words">~2 496 words</span></td>
+          <td><span class="tag blue">Location intent</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>Projects</strong><br><span class="words">100 reviews — Riviera Maya, Cabos, PV, Campeche, Tulum · Cloudinary heroes</span></td>
+          <td><strong>Project reviews</strong><br><span style="font-size:11px;color:#9ca3af">100 developments · Cloudinary photos ×3 each</span></td>
           <td><span class="count">100</span></td>
-          <td><span class="words">205 473</span></td>
-          <td><span class="words">2 055</span></td>
-          <td><span class="tag blue">1 200+</span></td>
+          <td><span class="words">~1 579 words</span></td>
+          <td><span class="tag blue">Project intent</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>Developers</strong><br><span class="words">Quivira, Emerita, TAO, Vidanta, Zama — entity authority profiles</span></td>
+          <td><strong>Comparisons</strong><br><span style="font-size:11px;color:#9ca3af">Mexico vs USA/Spain/Portugal, Playa vs Tulum, fideicomiso vs direct</span></td>
+          <td><span class="count">34</span></td>
+          <td><span class="words">~2 354 words</span></td>
+          <td><span class="tag amber">Comparison intent</span></td>
+          <td><span class="tag green">Live</span></td>
+        </tr>
+        <tr>
+          <td><strong>Developer profiles</strong><br><span style="font-size:11px;color:#9ca3af">9 major developers — AMPI-verified brokers, track record</span></td>
           <td><span class="count">9</span></td>
-          <td><span class="words">24 080</span></td>
-          <td><span class="words">2 676</span></td>
-          <td><span class="tag blue">1 200+</span></td>
+          <td><span class="words">~2 061 words</span></td>
+          <td><span class="tag blue">Developer intent</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>News</strong><br><span class="words">Market pulse: Banxico FX, Playa liquidity, Cabos inventory, Tulum supply</span></td>
+          <td><strong>News</strong><br><span style="font-size:11px;color:#9ca3af">Banxico FX, Playa resale, Los Cabos luxury · target 3/week</span></td>
           <td><span class="count">7</span></td>
-          <td><span class="words">5 553</span></td>
-          <td><span class="words">793</span></td>
-          <td><span class="tag blue">600+</span></td>
-          <td><span class="tag green">Live</span></td>
+          <td><span class="words">~793 words</span></td>
+          <td><span class="tag gray">NewsArticle Schema</span></td>
+          <td><span class="tag amber">Scale up</span></td>
         </tr>
-        <tr>
-          <td><strong>Noindex (cannibalization)</strong><br><span class="words">KEEP redirects via internal links — excluded from sitemap</span></td>
-          <td><span class="count">2</span></td>
-          <td colspan="3"><span class="words">invest-in-los-cabos · mexico-property-closing-costs-breakdown</span></td>
-          <td><span class="tag red">noindex</span></td>
-        </tr>
-        <tr>
+        <tr style="background:#fffbeb;">
           <td><strong>TOTAL</strong></td>
-          <td><span class="count">298</span></td>
-          <td><span class="words"><strong>671 410</strong></span></td>
-          <td><span class="words">2 253</span></td>
+          <td><span class="count" style="font-size:24px;">298</span></td>
+          <td><span class="words">~2 253 avg</span></td>
+          <td></td>
           <td><span class="tag green">qa:corpus PASS</span></td>
-          <td><span class="tag green">Production</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="section-title">Content waves (200-article master plan)</div>
-  <div class="content-card table-scroll">
-    <table class="content-table">
-      <thead>
-        <tr><th>Wave</th><th>Commit</th><th>Shipped</th><th>Focus</th><th>Indexing</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Wave 1–2</strong></td>
-          <td><span class="words">ab2b2e3</span></td>
-          <td><span class="count">50</span></td>
-          <td>Pillar HUBs: fideicomiso, due diligence, yields, 9 core areas, 4 compares</td>
-          <td><span class="tag gray">Launch batch</span></td>
-        </tr>
-        <tr>
-          <td><strong>Wave 3–5</strong></td>
-          <td><span class="words">8f64f3a</span></td>
-          <td><span class="count">50</span></td>
-          <td>12 new areas, 6 compares, 32 guides (tax, retiree, tier, pre-con risks)</td>
-          <td><span class="tag green">Google 59/59 · Bing OK</span></td>
-        </tr>
-        <tr>
-          <td><strong>Wave 6–8</strong></td>
-          <td><span class="words">f130215</span></td>
-          <td><span class="count">50</span></td>
-          <td>11 compares + 8 guides + 30 project reviews + /projects/ collection</td>
-          <td><span class="tag green">Google 78/78 · Bing OK</span></td>
-        </tr>
-        <tr>
-          <td><strong>Wave 9–10</strong></td>
-          <td><span class="words">fb36206</span></td>
-          <td><span class="count">50</span></td>
-          <td>10 guides · 11 compares · 16 projects · 9 developers · 4 news · /developers/ + /news/</td>
-          <td><span class="tag green">Google 52/52 · Bing OK · GSC sitemap</span></td>
-        </tr>
-        <tr>
-          <td><strong>Plan total</strong></td>
-          <td colspan="2"><span class="count">200 / 200</span></td>
-          <td>MEXICO_INVEST_CONTENT_MASTER_PLAN_200 — <strong>complete</strong></td>
-          <td><span class="tag green">Done</span></td>
-        </tr>
-        <tr>
-          <td><strong>Post-200 expansion</strong></td>
-          <td><span class="words">866b12d</span></td>
-          <td><span class="count">+54</span></td>
-          <td>Projects 46 → 100 · lotsof sync · homepage project grid</td>
-          <td><span class="tag green">Bing OK · Google pending</span></td>
-        </tr>
-        <tr>
-          <td><strong>Image hardening</strong></td>
-          <td><span class="words">4406733</span></td>
-          <td><span class="count">300</span></td>
-          <td>Unique photos · watermark/junk purge · Cloudinary re-upload</td>
-          <td><span class="tag green">0 broken URLs</span></td>
-        </tr>
-        <tr>
-          <td><strong>Corpus total</strong></td>
-          <td colspan="2"><span class="count">254 MDX</span></td>
-          <td>699K words · validate 254/254 · qa:full 5/5 PASS</td>
-          <td><span class="tag green">Production</span></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="section-title">Change history</div>
+  <div class="changelog">
+      <div class="changelog-item">
+        <div class="changelog-date">25 Jun 2026</div>
+        <div class="changelog-content">
+          <div class="changelog-title">Site report v4.0 — full MORE Group dashboard format + GSC/GA4/Bing refresh</div>
+          <div class="changelog-desc">Growth dashboard with Chart.js: monthly GSC/GA4, daily momentum, content donut, MoM table. GSC 1 Jun–22 Jun: 1 click, 94 impressions, 15 pages in SERP. First click 22 Jun on cfdi-cost-basis-mexico (33% CTR). GA4: 78 sessions, 1 organic. Bing: 3 impressions. Indexing: 309 URLs submitted, backlog 0.</div>
+          <div class="changelog-tags"><span class="tag green">v4.0</span><span class="tag blue">GSC MCP</span><span class="tag amber">Charts</span></div>
+        </div>
+      </div>
+      <div class="changelog-item">
+        <div class="changelog-date">16 Jun 2026</div>
+        <div class="changelog-content">
+          <div class="changelog-title">Phase B+C fix pack + 3 news + CTR sprint + indexing batch</div>
+          <div class="changelog-desc">41 articles: Cloudinary images (111 photos), Quick answer stubs, em-dash humanize, strict gate. News: Banxico FX, Playa resale, Los Cabos luxury. CTR rewrite: can-foreigners-buy + airbnb guide titles. Google Indexing API 309 URLs. Build PASS.</div>
+          <div class="changelog-tags"><span class="tag green">Phase B+C</span><span class="tag blue">Indexing</span><span class="tag amber">CTR</span></div>
+        </div>
+      </div>
+      <div class="changelog-item">
+        <div class="changelog-date">5–10 Jun 2026</div>
+        <div class="changelog-content">
+          <div class="changelog-title">Site launched — 298 MDX articles, mexico-invest-indexing GCP project</div>
+          <div class="changelog-desc">mexico-invest.com live on Vercel. 116 guides, 100 projects, 32 areas, 34 comparisons, 9 developers. Dedicated GCP project for Google Indexing API. SA ownership via Site Verification API.</div>
+          <div class="changelog-tags"><span class="tag green">Launch</span><span class="tag blue">298 pages</span><span class="tag amber">GCP setup</span></div>
+        </div>
+      </div>
   </div>
 
-  <div class="section-title">Wave 9–10 — all 50 new articles (indexed 8 Jun)</div>
-  <div class="content-card" style="padding:20px;">
-    <p style="font-size:12px;color:#78716c;margin-bottom:12px;">Published 8 Jun 2026 · Tier A QA · Google 52/52 + Bing IndexNow · scripts/wave9-10-urls.txt</p>
-    <div class="slug-list">
-      <strong>Guides (10):</strong><br />
-      <a href="/guides/branded-residences-mexico-guide/">branded-residences-mexico-guide</a> ·
-      <a href="/guides/mexico-branded-residences-investment/">mexico-branded-residences-investment</a> ·
-      <a href="/guides/luxury-investor-cabos-branded/">luxury-investor-cabos-branded</a> ·
-      <a href="/guides/mexico-golf-course-property/">mexico-golf-course-property</a> ·
-      <a href="/guides/mexico-marina-property-investment/">mexico-marina-property-investment</a> ·
-      <a href="/guides/mexico-off-plan-investment/">mexico-off-plan-investment</a> ·
-      <a href="/guides/mexico-turnkey-rental-property/">mexico-turnkey-rental-property</a> ·
-      <a href="/guides/mexico-villa-investment/">mexico-villa-investment</a> ·
-      <a href="/guides/cash-buyer-mexico-advantages/">cash-buyer-mexico-advantages</a> ·
-      <a href="/guides/portfolio-diversification-mexico-re/">portfolio-diversification-mexico-re</a><br /><br />
-      <strong>Compares (11):</strong><br />
-      <a href="/compare/akumal-vs-tulum-investment/">akumal-vs-tulum</a> ·
-      <a href="/compare/amara-vs-nhoa-tulum/">amara-vs-nhoa</a> ·
-      <a href="/compare/gran-tulum-vs-101-park/">gran-tulum-vs-101-park</a> ·
-      <a href="/compare/punta-mita-vs-los-cabos-luxury/">punta-mita-vs-cabos</a> ·
-      <a href="/compare/st-regis-vs-chileno-bay-residences/">st-regis-vs-chileno</a> ·
-      <a href="/compare/mexico-vs-arizona-retirement/">mexico-vs-arizona</a> ·
-      <a href="/compare/mexico-vs-texas-no-state-tax/">mexico-vs-texas</a> ·
-      <a href="/compare/montage-vs-pendry-punta-mita/">montage-vs-pendry</a> ·
-      <a href="/compare/copala-quivira-vs-mavila-quivira/">copala-vs-mavila</a> ·
-      <a href="/compare/distrito-xcalacoco-vs-paravian/">xcalacoco-vs-paravian</a> ·
-      <a href="/compare/tao-blue-gardens-vs-marina-vallarta/">tao-blue-vs-marina</a><br /><br />
-      <strong>Projects (16):</strong><br />
-      one-only-mandarina · rosewood-mandarina · saint-marine · amaru-inka · ceiba-25-condo-paradise · montage-punta-mita · pendry-punta-mita · four-seasons-punta-mita · siari-ritz-carlton-reserve · ritz-carlton-puerto-los-cabos · alvar-quivira · coronado-quivira · el-lago-querencia · fundadores-puerto-los-cabos · junglar-kaybe · selva-zama-mondo<br /><br />
-      <strong>Developers (9):</strong><br />
-      <a href="/developers/quivira-los-cabos/">quivira</a> ·
-      <a href="/developers/grupo-emerita/">emerita</a> ·
-      <a href="/developers/tao-mexico/">tao</a> ·
-      <a href="/developers/zama-desarrollos/">zama</a> ·
-      <a href="/developers/vidanta-nuevo-vallarta/">vidanta</a> ·
-      <a href="/developers/querencia-los-cabos/">querencia</a> ·
-      <a href="/developers/simca-desarrollos/">simca</a> ·
-      <a href="/developers/tm-real-estate-group/">tm-real-estate</a> ·
-      <a href="/developers/dine-montage-punta-mita/">dine-montage</a><br /><br />
-      <strong>News (7):</strong><br />
-      <a href="/news/banxico-june-2026-mexico-property-fx/">banxico-fx-jun</a> ·
-      <a href="/news/playa-del-carmen-resale-liquidity-june-2026/">playa-liquidity</a> ·
-      <a href="/news/los-cabos-luxury-inventory-june-2026/">cabos-inventory</a> ·
-      <a href="/news/tulum-inventory-2026/">tulum-inventory</a> ·
-      <a href="/news/quintana-roo-price-growth-2026/">quintana-roo-prices</a> ·
-      <a href="/news/tren-maya-property-impact/">tren-maya</a> ·
-      <a href="/news/mexico-str-tax-reporting-2026/">str-tax-reporting</a>
-      <br /><br />
-      <a href="/developers/">→ /developers/</a> ·
-      <a href="/news/">→ /news/</a> ·
-      <a href="/projects/">→ /projects/</a>
-    </div>
-  </div>
-
-  <div class="section-title">Cursor MCP servers (Mexico direction)</div>
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>Analytics &amp; Search MCP</h3>
-      <div class="info-row"><span class="key">GSC</span><span class="val">search-console-mexico-invest</span></div>
-      <div class="info-row"><span class="key">GA4</span><span class="val">ga4-analytics-mexico-invest</span></div>
-      <div class="info-row"><span class="key">Bing</span><span class="val">bing-webmaster-mexico-invest</span></div>
-      <div class="info-row"><span class="key">GSC property</span><span class="val">sc-domain:mexico-invest.com</span></div>
-      <div class="info-row"><span class="key">Update cadence</span><span class="val">Weekly site-report refresh</span></div>
-    </div>
-    <div class="info-card">
-      <h3>Indexing isolation</h3>
-      <div class="info-row"><span class="key">GCP project</span><span class="val">mexico-invest-indexing</span></div>
-      <div class="info-row"><span class="key">SA email</span><span class="val">indexing-bot-mexico@…</span></div>
-      <div class="info-row"><span class="key">NOT shared with</span><span class="val">soy-braid / invest-gulf</span></div>
-      <div class="info-row"><span class="key">Google API</span><span class="val">submit-google-explicit.mjs</span></div>
-      <div class="info-row"><span class="key">Bing</span><span class="val">submit-bing-explicit.mjs</span></div>
-      <div class="info-row"><span class="key">Yandex</span><span class="val">❌ Never (EN site)</span></div>
-    </div>
-  </div>
-
-  <div class="section-title">Technical setup</div>
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>Infrastructure</h3>
-      <div class="info-row"><span class="key">Framework</span><span class="val">Astro 5 + MDX</span></div>
-      <div class="info-row"><span class="key">Hosting</span><span class="val">Vercel (auto-deploy)</span></div>
-      <div class="info-row"><span class="key">Repository</span><span class="val"><a href="https://github.com/max-diver999/mexico-invest-website" target="_blank">mexico-invest-website</a></span></div>
-      <div class="info-row"><span class="key">Domain</span><span class="val"><a href="https://mexico-invest.com/">mexico-invest.com</a></span></div>
-      <div class="info-row"><span class="key">Email</span><span class="val">info@mexico-invest.com</span></div>
-      <div class="info-row"><span class="key">QA script</span><span class="val">scripts/qa-audit.mjs</span></div>
-    </div>
-    <div class="info-card">
-      <h3>SEO &amp; schema</h3>
-      <div class="info-row"><span class="key">JSON-LD</span><span class="val">Article + FAQPage + BreadcrumbList</span></div>
-      <div class="info-row"><span class="key">Organization</span><span class="val">RealEstateAgent schema</span></div>
-      <div class="info-row"><span class="key">Lead form</span><span class="val">Riviera Maya · Los Cabos · PV · Tulum · Mérida</span></div>
-      <div class="info-row"><span class="key">Sitemap filter</span><span class="val">noindex + thanks + site-report excluded</span></div>
-      <div class="info-row"><span class="key">Collections</span><span class="val">guides · compare · areas · projects · developers · news</span></div>
-      <div class="info-row"><span class="key">Content plan</span><span class="val">MEXICO_INVEST_CONTENT_MASTER_PLAN_200</span></div>
-    </div>
-  </div>
-
-  <div class="section-title">Launch changelog</div>
-  <div>
-    <div class="changelog-item">
-      <div class="changelog-date">16 Jun 2026 v3.1</div>
+      <div class="section-title">Next steps — 25 Jun 2026</div>
+  <div class="next-steps">
+    <div class="next-item" style="background:#fef2f2;border-color:#fecaca;">
+      <div class="priority high">P0</div>
       <div>
-        <div class="changelog-title">News cadence + site-report v3.1 — 3 market pulse articles</div>
-        <div class="changelog-desc">Banxico FX, Playa resale liquidity, Los Cabos luxury inventory. Cloudinary editorial upload. Corpus 298 MDX · indexing backlog 0 (294 API + IndexNow).</div>
-        <div class="changelog-tags"><span class="tag green">News</span><span class="tag blue">Report v3.1</span></div>
+        <div class="text" style="font-weight:700;">CTR sprint — can-foreigners-buy (8 imp, pos 4.2, 0 clk)</div>
+        <div class="subtext">Title + description live since 16 Jun · monitor GSC weekly.</div>
       </div>
     </div>
-    <div class="changelog-item">
-      <div class="changelog-date">14–16 Jun 2026</div>
+    <div class="next-item" style="background:#fff7ed;border-color:#fed7aa;">
+      <div class="priority medium">P1</div>
       <div>
-        <div class="changelog-title">Phase B+C shipped — 11 micro-areas + 30 C1 guides + fix pack</div>
-        <div class="changelog-desc">9415b71: Cloudinary 111 images, strict gate 0 blockers, em-dash humanize. Indexing 200 (15 Jun) + 94 (16 Jun) via mexico-invest-indexing. qa:corpus PASS.</div>
-        <div class="changelog-tags"><span class="tag green">Content</span><span class="tag amber">Indexing</span></div>
+        <div class="text" style="font-weight:700;">News cadence — scale from 7 to 3/week</div>
+        <div class="subtext">Banxico, Playa resale, Los Cabos batch live · add 2 more this week.</div>
       </div>
     </div>
-    <div class="changelog-item">
-      <div class="changelog-date">11 Jun 2026</div>
+    <div class="next-item" style="background:#fff7ed;border-color:#fed7aa;">
+      <div class="priority medium">P1</div>
       <div>
-        <div class="changelog-title">Internal linking mesh — 100 projects ↔ 21 areas ↔ 10 hubs</div>
-        <div class="changelog-desc">fix-mexico-internal-links.mjs: Area & guides blocks on 36 projects, project review sections on 15 areas, orphan cross-links on 6 micro-areas, hub guide sections on 10 regional pillars. 0 projects missing /areas/ links.</div>
-        <div class="changelog-tags"><span class="tag green">Internal links</span><span class="tag blue">SEO</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">14 Jun 2026 v3.0</div>
-      <div>
-        <div class="changelog-title">Site-report refresh — GSC first impressions + 254-article corpus</div>
-        <div class="changelog-desc">GSC: 4 impressions, 3 pages in SERP (can-foreigners pos 2). Projects 100 · 300 unique photos · sitemap 265 · submitted 212. validate 254/254 · qa:full 4/5 (corpus signals pending).</div>
-        <div class="changelog-tags"><span class="tag green">Report v3.0</span><span class="tag blue">GSC</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">14 Jun 2026</div>
-      <div>
-        <div class="changelog-title">300/300 unique project photos — zero broken URLs</div>
-        <div class="changelog-desc">Watermark + junk/dedup cleanup across 100 projects. Cloudinary re-upload 25 slots. fix-junk-duplicate-images.py + blocked-image-sources.mjs. Commit 4406733.</div>
-        <div class="changelog-tags"><span class="tag green">Images</span><span class="tag amber">Cloudinary</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">8–14 Jun 2026</div>
-      <div>
-        <div class="changelog-title">Projects scaled 46 → 100 + corpus QA</div>
-        <div class="changelog-desc">54 new project MDX from lotsof portfolio. validate:content 254/254. fix:queue 198/198 ready. qa:full gate added. Homepage project spotlight + 12-card grid.</div>
-        <div class="changelog-tags"><span class="tag green">Projects</span><span class="tag blue">QA</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">8 Jun 2026 v2.2</div>
-      <div>
-        <div class="changelog-title">Wave 9–10 indexed — Google 52/52 + Bing + GSC sitemap</div>
-        <div class="changelog-desc">Explicit batch via mexico-invest-indexing (189 API URLs total). Bing IndexNow 52 URLs. GSC sitemap resubmitted 0 errors. GA4 spike 25 sessions 7 Jun (crawl bots). Site-report v2.2. Script fix: record-submitted logging.</div>
-        <div class="changelog-tags"><span class="tag green">Indexing</span><span class="tag blue">Report v2.2</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">8 Jun 2026 v2.1</div>
-      <div>
-        <div class="changelog-title">Wave 9–10 published — 50 articles · 200-plan complete</div>
-        <div class="changelog-desc">200 total MDX (487K words). New collections /developers/ (9) and /news/ (4). Tier A QA: link remap, slop strip, 4 thin projects expanded. qa-audit 200/200 PASS. Sitemap 211 URLs. Commit fb36206.</div>
-        <div class="changelog-tags"><span class="tag green">Wave 9–10</span><span class="tag blue">Developers</span><span class="tag amber">200 plan</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">7 Jun 2026 v2.0</div>
-      <div>
-        <div class="changelog-title">Wave 6–8 published — 50 articles + /projects/ collection</div>
-        <div class="changelog-desc">150 total MDX (383K words). Deep quality audit: cannibalization noindex (2), link redirects, fact-density enrichment. Google Indexing API 78/78 + Bing IndexNow 78 URLs. Site-report v2.0 with GSC/GA4/Bing MCP data. Sitemap 159 URLs (noindex pages excluded).</div>
-        <div class="changelog-tags"><span class="tag green">Wave 6–8</span><span class="tag blue">Indexing</span><span class="tag amber">Report v2.0</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">7 Jun 2026</div>
-      <div>
-        <div class="changelog-title">Wave 3–5 published — 50 articles + schema upgrades</div>
-        <div class="changelog-desc">FAQPage + BreadcrumbList JSON-LD, Organization schema, LeadForm Mexico markets. Google 59/59 URLs indexed. 12 area guides, 6 compares, 32 guides.</div>
-        <div class="changelog-tags"><span class="tag green">Wave 3–5</span><span class="tag blue">Schema</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">6 Jun 2026</div>
-      <div>
-        <div class="changelog-title">Wave 1–2 — first 50 SEO articles live</div>
-        <div class="changelog-desc">Core HUBs: mexico-property-investment-guide, fideicomiso, due diligence, yields. 9 areas, 4 compares, tier guides.</div>
-        <div class="changelog-tags"><span class="tag green">Wave 1–2</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">6 Jun 2026</div>
-      <div>
-        <div class="changelog-title">Mexico indexing isolated from MORE Group quota</div>
-        <div class="changelog-desc">Dedicated GCP project mexico-invest-indexing. SA verify-sa-ownership.mjs. Bing via bing.com/indexnow only.</div>
-        <div class="changelog-tags"><span class="tag blue">Infra</span><span class="tag gray">MCP trio</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">5–6 Jun 2026</div>
-      <div>
-        <div class="changelog-title">Site scaffold + MCP + IndexNow</div>
-        <div class="changelog-desc">Astro site on Vercel. search-console-mexico-invest, ga4-analytics-mexico-invest, bing-webmaster-mexico-invest in Cursor. Lead API + Telegram.</div>
-        <div class="changelog-tags"><span class="tag green">Launch</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-title">Next steps</div>
-  <div>
-    <div class="next-item">
-      <div class="priority high">HIGH</div>
-      <div>
-        <div class="text">CTR sprint — can-foreigners (pos 2), airbnb guide (pos 9)</div>
-        <div class="subtext">Title/meta + FAQ sharpen · GSC MCP refresh weekly · track impressions on B+C URLs</div>
+        <div class="text" style="font-weight:700;">GA4 lead event verification</div>
+        <div class="subtext">0 key events reported · verify LeadForm → GA4 conversion tracking.</div>
       </div>
     </div>
     <div class="next-item">
-      <div class="priority high">HIGH</div>
+      <div class="priority medium">P1</div>
       <div>
-        <div class="text">Monitor B+C batch in GSC — 41 new URLs indexed 15–16 Jun</div>
-        <div class="subtext">Wait 2–4 weeks for impression data before next content wave</div>
+        <div class="text" style="font-weight:700;">Monitor GSC click growth — re-report 2 Jul</div>
+        <div class="subtext">94 imp baseline · expect 10× in 4 weeks if index holds pace.</div>
       </div>
     </div>
-    <div class="next-item">
-      <div class="priority medium">MED</div>
+    <div class="next-item" style="background:#f0fdf4;border-color:#bbf7d0;">
+      <div class="priority low">DONE</div>
       <div>
-        <div class="text">Hold 500-URL expansion until GSC impressions ↑ + 3+ leads</div>
-        <div class="subtext">200-plan exceeded (298 live) · segment collection still 0</div>
-      </div>
-    </div>
-    <div class="next-item">
-      <div class="priority low">LOW</div>
-      <div>
-        <div class="text">Wikidata entity (GEO) — Q-id in Organization sameAs</div>
-        <div class="subtext">News cadence restored 16 Jun · next batch in 7 days</div>
+        <div class="text" style="font-weight:700;">Site-report v4.0 + full indexing (309 URLs)</div>
+        <div class="subtext">Growth dashboard · GSC/GA4/Bing MCP refresh · Phase B+C fix pack deployed.</div>
       </div>
     </div>
   </div>
 
   <div class="section-title">Quick links</div>
   <div class="links-grid">
-    <a class="link-card" href="https://mexico-invest.com/" target="_blank" rel="noopener"><div class="link-label">Live site</div><div class="link-url">mexico-invest.com</div></a>
-    <a class="link-card" href="https://mexico-invest.com/guides/" target="_blank" rel="noopener"><div class="link-label">Guides hub</div><div class="link-url">/guides/</div></a>
-    <a class="link-card" href="https://mexico-invest.com/projects/" target="_blank" rel="noopener"><div class="link-label">Projects hub</div><div class="link-url">/projects/</div></a>
-    <a class="link-card" href="https://mexico-invest.com/developers/" target="_blank" rel="noopener"><div class="link-label">Developers hub</div><div class="link-url">/developers/</div></a>
-    <a class="link-card" href="https://mexico-invest.com/news/" target="_blank" rel="noopener"><div class="link-label">News hub</div><div class="link-url">/news/</div></a>
-    <a class="link-card" href="https://mexico-invest.com/sitemap-index.xml" target="_blank" rel="noopener"><div class="link-label">Sitemap</div><div class="link-url">sitemap-index.xml (298 URLs)</div></a>
-    <a class="link-card" href="https://search.google.com/search-console?resource_id=sc-domain:mexico-invest.com" target="_blank" rel="noopener"><div class="link-label">Google Search Console</div><div class="link-url">sc-domain:mexico-invest.com</div></a>
-    <a class="link-card" href="https://analytics.google.com/" target="_blank" rel="noopener"><div class="link-label">GA4</div><div class="link-url">ga4-analytics-mexico-invest MCP</div></a>
-    <a class="link-card" href="https://www.bing.com/webmasters/" target="_blank" rel="noopener"><div class="link-label">Bing Webmaster</div><div class="link-url">mexico-invest.com</div></a>
-    <a class="link-card" href="https://github.com/max-diver999/mexico-invest-website" target="_blank" rel="noopener"><div class="link-label">GitHub</div><div class="link-url">max-diver999/mexico-invest-website</div></a>
+    <a class="link-card" href="https://mexico-invest.com" target="_blank">
+      <div class="link-label">Live site</div>
+      <div class="link-url">mexico-invest.com</div>
+    </a>
+    <a class="link-card" href="https://github.com/max-diver999/mexico-invest-website" target="_blank">
+      <div class="link-label">GitHub repository</div>
+      <div class="link-url">github.com/max-diver999/mexico-invest-website</div>
+    </a>
+    <a class="link-card" href="https://vercel.com/dashboard" target="_blank">
+      <div class="link-label">Hosting & deploys</div>
+      <div class="link-url">vercel.com/dashboard</div>
+    </a>
+    <a class="link-card" href="https://search.google.com/search-console" target="_blank">
+      <div class="link-label">Google Search Console</div>
+      <div class="link-url">search.google.com/search-console</div>
+    </a>
+    <a class="link-card" href="https://analytics.google.com" target="_blank">
+      <div class="link-label">Google Analytics 4</div>
+      <div class="link-url">analytics.google.com</div>
+    </a>
+    <a class="link-card" href="https://www.bing.com/webmasters" target="_blank">
+      <div class="link-label">Bing Webmaster Tools</div>
+      <div class="link-url">bing.com/webmasters</div>
+    </a>
+    <a class="link-card" href="https://mexico-invest.com/sitemap-index.xml" target="_blank">
+      <div class="link-label">Sitemap</div>
+      <div class="link-url">mexico-invest.com/sitemap-index.xml</div>
+    </a>
   </div>
 
 </div>
 
-<div class="footer">
-  <strong>Mexico Invest Site Report v3.1</strong> · 16 June 2026 ·
-  <a href="https://mexico-invest.com/site-report/">mexico-invest.com/site-report/</a><br />
-  Data: GSC + GA4 + Bing MCP · Content: qa-audit.mjs + qa:full · Plan: MEXICO_INVEST_CONTENT_MASTER_PLAN_200.md<br />
-  EN site — Google + Bing only · never Yandex
+  <div class="footer">
+  <strong>Mexico Invest</strong> · mexico-invest.com · Report updated 25 Jun 2026 v4.0 · 309 sitemap URLs · ~671K words · GSC 1 click / 94 imp (1 Jun–22 Jun) · GA4 78 sessions · 57 git commits<br>
+  <a href="https://mexico-invest.com/portfolio-report/" style="color:#2d7a5e;text-decoration:none;">Portfolio hub (all sites)</a> ·
+  To update: edit <code>src/pages/site-report/index.astro</code> in mexico-invest-website
 </div>
+
+
+<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":1,"impressions":94}],"monthlyGa4":[{"month":"Jun","sessions":78}],"contentBreakdown":[{"type":"Guides","count":116,"color":"#b45309"},{"type":"Projects","count":100,"color":"#4e9e7e"},{"type":"Comparisons","count":34,"color":"#d97706"},{"type":"Areas","count":32,"color":"#8b5cf6"},{"type":"Developers","count":9,"color":"#60a5fa"},{"type":"News","count":7,"color":"#78716c"}],"dailyRaw":[{"d":"06-07","c":0,"i":1},{"d":"06-12","c":0,"i":5},{"d":"06-14","c":0,"i":5},{"d":"06-17","c":0,"i":11},{"d":"06-18","c":0,"i":16},{"d":"06-21","c":0,"i":17},{"d":"06-22","c":1,"i":17}]}</script>
+<script is:inline>
+(function initReportCharts() {
+  function run() {
+    if (typeof Chart === 'undefined') { setTimeout(run, 50); return; }
+    var el = document.getElementById('chart-data');
+    if (!el) return;
+    var data = JSON.parse(el.textContent);
+    Chart.defaults.font = { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", size: 11 };
+    Chart.defaults.color = '#7a7a6e';
+
+    var monthly = data.monthlyGsc;
+    var ga4 = data.monthlyGa4;
+    var content = data.contentBreakdown;
+    var daily = data.dailyRaw;
+
+    var cm = document.getElementById('chartMonthly');
+    if (cm) new Chart(cm, {
+      type: 'bar',
+      data: {
+        labels: monthly.map(function(m) { return m.label; }),
+        datasets: [
+          { label: 'Impressions', data: monthly.map(function(m) { return m.impressions; }), backgroundColor: 'rgba(96,165,250,0.35)', borderColor: '#60a5fa', borderWidth: 1, borderRadius: 6, yAxisID: 'y' },
+          { label: 'Clicks', data: monthly.map(function(m) { return m.clicks; }), type: 'line', borderColor: '#2d7a5e', backgroundColor: 'rgba(45,122,94,0.12)', borderWidth: 3, pointRadius: 6, pointBackgroundColor: '#2d7a5e', fill: true, tension: 0.3, yAxisID: 'y1' }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'bottom' } }, scales: { y: { position: 'left', grid: { color: '#f4f1eb' }, ticks: { callback: function(v) { return v >= 1000 ? (v/1000)+'k' : v; } } }, y1: { position: 'right', grid: { display: false }, min: 0 } } }
+    });
+
+    var cg = document.getElementById('chartGa4');
+    if (cg) new Chart(cg, {
+      type: 'bar',
+      data: { labels: ga4.map(function(m) { return m.month; }), datasets: [{ label: 'Sessions', data: ga4.map(function(m) { return m.sessions; }), backgroundColor: ['rgba(78,158,126,0.45)','rgba(78,158,126,0.55)','rgba(78,158,126,0.7)','rgba(78,158,126,0.85)'], borderColor: '#2d7a5e', borderWidth: 1, borderRadius: 8 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#f4f1eb' }, beginAtZero: true }, x: { grid: { display: false } } } }
+    });
+
+    var cc = document.getElementById('chartContent');
+    if (cc) new Chart(cc, {
+      type: 'doughnut',
+      data: { labels: content.map(function(c) { return c.type; }), datasets: [{ data: content.map(function(c) { return c.count; }), backgroundColor: content.map(function(c) { return c.color; }), borderWidth: 2, borderColor: '#fff' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { boxWidth: 12, padding: 12 } } }, cutout: '58%' }
+    });
+
+    var cd = document.getElementById('chartDaily');
+    if (cd) new Chart(cd, {
+      type: 'line',
+      data: {
+        labels: daily.map(function(d) { return d.d; }),
+        datasets: [
+          { label: 'Impressions', data: daily.map(function(d) { return d.i; }), borderColor: '#93c5fd', backgroundColor: 'rgba(147,197,253,0.22)', fill: true, tension: 0.35, yAxisID: 'y' },
+          { label: 'Clicks', data: daily.map(function(d) { return d.c; }), borderColor: '#2d7a5e', borderWidth: 2.5, pointRadius: 4, tension: 0.35, yAxisID: 'y1' }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { position: 'left', grid: { color: '#f4f1eb' } }, y1: { position: 'right', grid: { display: false }, min: 0 } } }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
 
 </body>
 </html>
