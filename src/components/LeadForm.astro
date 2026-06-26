@@ -84,8 +84,40 @@ const {
 </section>
 
 <script>
+  function ga(eventName: string, params: Record<string, unknown> = {}) {
+    try {
+      // @ts-ignore
+      if (typeof window.investGulfTrack === 'function') {
+        // @ts-ignore
+        window.investGulfTrack(eventName, params);
+        return;
+      }
+      // @ts-ignore
+      if (typeof window.gtag === 'function') {
+        // @ts-ignore
+        window.gtag('event', eventName, params);
+      }
+      // @ts-ignore
+      window.dataLayer = window.dataLayer || [];
+      // @ts-ignore
+      window.dataLayer.push({ event: eventName, ...params });
+    } catch (_) {}
+  }
+
   document.querySelectorAll('form.ig-lead-form').forEach((formEl) => {
     const form = formEl as HTMLFormElement;
+    let started = false;
+
+    form.addEventListener('focusin', () => {
+      if (started) return;
+      started = true;
+      ga('form_start', {
+        form_id: form.id,
+        form_context: form.dataset.context || '',
+        page_path: window.location.pathname,
+      });
+    });
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form);
@@ -93,7 +125,10 @@ const {
       const email = String(data.get('email') || '').trim();
       if (phone.replace(/\D/g, '').length < 8) {
         const err = document.getElementById('lf-error');
-        if (err) { err.textContent = 'Please enter a valid phone or WhatsApp number.'; err.classList.remove('hidden'); }
+        if (err) {
+          err.textContent = 'Please enter a valid phone or WhatsApp number.';
+          err.classList.remove('hidden');
+        }
         return;
       }
       const payload = {
@@ -109,6 +144,16 @@ const {
         source: window.location.href,
         page: window.location.pathname,
       };
+
+      ga('form_submit_attempt', {
+        form_id: form.id,
+        form_context: payload.context,
+        budget: payload.budget || 'not_set',
+        goal: payload.goal || 'not_set',
+        market: payload.market || 'not_set',
+        page_path: window.location.pathname,
+      });
+
       try {
         const res = await fetch('/api/lead/', {
           method: 'POST',
@@ -117,11 +162,31 @@ const {
         });
         if (!res.ok) throw new Error('fail');
         document.getElementById('lf-success')?.classList.remove('hidden');
+        ga('generate_lead', {
+          form_id: form.id,
+          form_context: payload.context,
+          lead_type: 'shortlist_form',
+          budget: payload.budget || 'not_set',
+          goal: payload.goal || 'not_set',
+          market: payload.market || 'not_set',
+          page_path: window.location.pathname,
+          value: 1,
+          currency: 'USD',
+        });
+        const thanksUrl = new URL('/thanks/', window.location.origin);
+        thanksUrl.searchParams.set('lead', '1');
+        thanksUrl.searchParams.set('from', window.location.pathname);
+        if (payload.context) thanksUrl.searchParams.set('context', String(payload.context).slice(0, 80));
         setTimeout(() => {
-          window.location.assign('/thanks/?lead=1');
+          window.location.assign(thanksUrl.toString());
         }, 400);
       } catch {
         document.getElementById('lf-error')?.classList.remove('hidden');
+        ga('form_submit_error', {
+          form_id: form.id,
+          form_context: payload.context,
+          page_path: window.location.pathname,
+        });
       }
     });
   });
