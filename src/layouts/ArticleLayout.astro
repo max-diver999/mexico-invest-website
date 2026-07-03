@@ -34,6 +34,20 @@ const {
   contextLabel = title,
 } = Astro.props;
 
+// Optimize Cloudinary hero images for LCP
+function optimizeHeroImage(url?: string): string | undefined {
+  if (!url) return undefined;
+  
+  // If Cloudinary URL without transforms, add them
+  if (url.includes('res.cloudinary.com') && url.includes('/upload/') && !url.match(/\/upload\/[^\/]*w_/)) {
+    return url.replace('/upload/', '/upload/w_1200,h_675,c_fill,q_85,f_webp/');
+  }
+  
+  return url;
+}
+
+const optimizedHeroImage = optimizeHeroImage(heroImage);
+
 const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -55,7 +69,7 @@ const articleSchema = {
     logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` },
   },
   mainEntityOfPage: pageUrl,
-  ...(heroImage ? { image: heroImage } : {}),
+  ...(optimizedHeroImage ? { image: optimizedHeroImage } : {}),
 };
 
 const faqSchema = faq.length > 0 ? {
@@ -98,7 +112,7 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
   title={title}
   description={description}
   canonical={pageUrl}
-  ogImage={heroImage}
+  ogImage={optimizedHeroImage}
   type="article"
   {noindex}
   {schemas}
@@ -113,8 +127,8 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
       </p>
     </header>
 
-    {heroImage && (
-      <img src={heroImage} alt="" class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" />
+    {optimizedHeroImage && (
+      <img src={optimizedHeroImage} alt="" class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" fetchpriority="high" width="1200" height="675" />
     )}
 
     <div class="prose mx-auto">

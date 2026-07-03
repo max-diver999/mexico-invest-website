@@ -72,7 +72,7 @@ const heroProjectImage = heroProject ? getCardImageUrl(heroProject.data.heroImag
         </div>
       </div>
       <div class="hero-visual min-h-[280px] md:min-h-[380px] relative">
-        <img src={heroProjectImage} alt={heroProject ? `${heroProject.data.title} — featured Mexico project` : 'Aerial view of Tulum coastline, Riviera Maya'} loading="eager" width="1400" height="560" />
+        <img src={heroProjectImage} alt={heroProject ? `${heroProject.data.title} — featured Mexico project` : 'Aerial view of Tulum coastline, Riviera Maya'} loading="eager" fetchpriority="high" width="1400" height="560" />
         <div class="hero-visual__overlay" />
         <p class="hero-visual__caption">Riviera Maya · Tulum corridor</p>
         {heroProject && (
