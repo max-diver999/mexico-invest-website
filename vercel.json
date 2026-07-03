@@ -2,10 +2,10 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.mexico-invest.com" }],
-      "destination": "https://mexico-invest.com/:path*",
-      "permanent": true
+      "destination": "https://mexico-invest.com/$1",
+      "statusCode": 308
     }
   ],
   "headers": [
