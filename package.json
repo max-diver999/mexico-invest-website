@@ -12,6 +12,7 @@
     "preview": "astro preview",
     "healthcheck": "node scripts/post-deploy-smoke.mjs --http-only",
     "validate:content": "node scripts/qa-audit.mjs",
+    "geo:audit": "node scripts/geo-citability-audit.mjs",
     "validate:content:changed": "node scripts/qa-audit.mjs --changed",
     "qa:corpus": "node scripts/qa-corpus-signals.mjs",
     "qa:full": "node scripts/qa-full.mjs",
@@ -34,7 +35,8 @@
     "images:upload:content": "python3 scripts/upload-mexico-cloudinary.py --collection all",
     "images:upload:dry": "python3 scripts/upload-mexico-cloudinary.py --collection all --dry-run",
     "images:rollout": "node scripts/rollout-mexico-cloudinary.mjs",
-    "images:rollout:content": "node scripts/rollout-mexico-cloudinary-content.mjs"
+    "images:rollout:content": "node scripts/rollout-mexico-cloudinary-content.mjs",
+    "audit:images": "node scripts/audit-all-images.mjs --fail"
   },
   "dependencies": {
     "google-auth-library": "^10.6.2",

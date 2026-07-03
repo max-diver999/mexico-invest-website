@@ -32,12 +32,23 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT / "scripts/lib") not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT / "scripts/lib"))
+from cloudinary_routing import (
+    load_cloudinary_credentials,
+    delivery_url,
+    UPLOAD_ROLES,
+    UPLOAD_MAX_DIMENSION,
+    UPLOAD_JPEG_QUALITY,
+)
+
 ssl._create_default_https_context = ssl._create_unverified_context
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = Path(__file__).resolve().parent
 
-CLOUD = "dphvjbqb4"
+CLOUD = "dlrrtf6bq"
 UPLOAD_WORKERS = 3
 RATE_SLEEP = 0.15
 MAX_UPLOAD_BYTES = 9_500_000
@@ -92,7 +103,7 @@ def compress_image_bytes(data: bytes) -> bytes:
     tmp.write(data)
     tmp.close()
     try:
-        for max_dim in (2200, 1800, 1400, 1100):
+        for max_dim in (UPLOAD_MAX_DIMENSION, 1600, 1280, 1024):
             subprocess.run(["sips", "-Z", str(max_dim), path], check=False, capture_output=True)
             subprocess.run(
                 ["sips", "-s", "format", "jpeg", "-s", "formatOptions", "78", path],
@@ -109,19 +120,8 @@ def compress_image_bytes(data: bytes) -> bytes:
 
 
 def load_env() -> tuple[str, str, str]:
-    for env_path in (ROOT / ".env.local", ROOT.parent / "more-group-website" / ".env.local"):
-        if not env_path.exists():
-            continue
-        for line in env_path.read_text(encoding="utf-8").splitlines():
-            m = re.match(r"^([A-Z0-9_]+)=(.*)$", line.strip())
-            if m and not os.environ.get(m.group(1)):
-                os.environ[m.group(1)] = m.group(2).strip().strip('"')
-    cloud = os.environ.get("CLOUDINARY_CLOUD_NAME", CLOUD)
-    key = os.environ.get("CLOUDINARY_API_KEY", "")
-    secret = os.environ.get("CLOUDINARY_API_SECRET", "")
-    if not key or not secret:
-        sys.exit("Missing CLOUDINARY_API_KEY / CLOUDINARY_API_SECRET")
-    return cloud, key, secret
+    return load_cloudinary_credentials(ROOT)
+
 
 
 def download_bytes(url: str) -> bytes | None:
@@ -215,12 +215,13 @@ def upload_one(job: dict) -> dict:
     url = cloudinary_upload(img, full_folder, public_id, cloud, key, secret)
     time.sleep(RATE_SLEEP)
     if url:
+        role_key = "inline" if role.startswith("inline") else "hero"
         return {
             "kid": kid,
             "slug": slug,
             "role": role,
             "ok": True,
-            "secure_url": url,
+            "secure_url": delivery_url(url, role_key, cloud),
             "source_url": source_url,
             "alt": alt,
             "public_id": f"{full_folder}/{public_id}",
