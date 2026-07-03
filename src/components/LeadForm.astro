@@ -19,59 +19,34 @@ const {
   <p class="text-[var(--color-muted)] mb-5 text-sm">{subtitle}</p>
 
   <form class="grid gap-4 ig-lead-form" id="ig-lead-form" data-context={context} novalidate>
+    <div>
+      <label class="block text-xs font-medium mb-1" for="lf-name">Your name *</label>
+      <input type="text" id="lf-name" name="name" required placeholder="John Smith" autocomplete="name" class="w-full" />
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label class="block text-xs font-medium mb-1" for="lf-name">Your name *</label>
-        <input type="text" id="lf-name" name="name" required placeholder="John Smith" autocomplete="name" />
-      </div>
       <div>
         <label class="block text-xs font-medium mb-1" for="lf-phone">WhatsApp / Phone *</label>
-        <input type="tel" id="lf-phone" name="phone" required placeholder="+44 7700 900000" autocomplete="tel" />
+        <input type="tel" id="lf-phone" name="phone" required placeholder="+1 555 123 4567" autocomplete="tel" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium mb-1" for="lf-email">Email</label>
+        <input type="email" id="lf-email" name="email" placeholder="john@example.com" autocomplete="email" />
       </div>
     </div>
     <div>
-      <label class="block text-xs font-medium mb-1" for="lf-email">Email</label>
-      <input type="email" id="lf-email" name="email" placeholder="john@example.com" autocomplete="email" />
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label class="block text-xs font-medium mb-1" for="lf-market">Target market</label>
-        <select id="lf-market" name="market">
-          <option value="">— Select —</option>
-          <option value="riviera-maya">Riviera Maya</option>
-          <option value="los-cabos">Los Cabos</option>
-          <option value="puerto-vallarta">Puerto Vallarta / Nayarit</option>
-          <option value="tulum">Tulum</option>
-          <option value="merida">Mérida / Yucatán</option>
-          <option value="multi">Multiple / not sure</option>
-        </select>
-      </div>
-      <div>
-        <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (USD)</label>
-        <select id="lf-budget" name="budget">
-          <option value="">— Select —</option>
-          <option value="under-300k">Under $300k</option>
-          <option value="300-500k">$300k – $500k</option>
-          <option value="500k-1m">$500k – $1M</option>
-          <option value="1m-2m">$1M – $2M</option>
-          <option value="2m+">$2M+</option>
-        </select>
-      </div>
-    </div>
-    <div>
-      <label class="block text-xs font-medium mb-1" for="lf-goal">Your goal</label>
-      <select id="lf-goal" name="goal">
-        <option value="">— Select —</option>
-        <option value="investment">Rental yield / investment</option>
-        <option value="fideicomiso">Fideicomiso / residency</option>
-        <option value="relocation">Relocation / end-use</option>
-        <option value="off-plan">Off-plan / payment plan</option>
-        <option value="explore">Just researching</option>
+      <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (USD)</label>
+      <select id="lf-budget" name="budget" class="w-full">
+        <option value="">— Select budget —</option>
+        <option value="under-300k">Under $300k</option>
+        <option value="300-500k">$300k – $500k</option>
+        <option value="500k-1m">$500k – $1M</option>
+        <option value="1m-2m">$1M – $2M</option>
+        <option value="2m+">$2M+</option>
       </select>
     </div>
     <div>
-      <label class="block text-xs font-medium mb-1" for="lf-message">Message (optional)</label>
-      <textarea id="lf-message" name="message" rows="3" placeholder="E.g. 2BR condo in Playa del Carmen, STR income, $250K budget…"></textarea>
+      <label class="block text-xs font-medium mb-1" for="lf-message">Tell us about your requirements</label>
+      <textarea id="lf-message" name="message" rows="3" placeholder="E.g. 2BR condo in Riviera Maya, rental income focus, ready to close in 3 months…"></textarea>
     </div>
     <div class="lead-form-consent">
       <input type="checkbox" id="lf-consent" name="consent" required class="lead-form-consent__check" />
@@ -137,10 +112,8 @@ const {
         email,
         contact: email ? `${phone} / ${email}` : phone,
         budget: data.get('budget'),
-        goal: data.get('goal'),
         message: data.get('message'),
         context: form.dataset.context || '',
-        market: data.get('market'),
         source: window.location.href,
         page: window.location.pathname,
       };
@@ -149,8 +122,6 @@ const {
         form_id: form.id,
         form_context: payload.context,
         budget: payload.budget || 'not_set',
-        goal: payload.goal || 'not_set',
-        market: payload.market || 'not_set',
         page_path: window.location.pathname,
       });
 
@@ -167,8 +138,6 @@ const {
           form_context: payload.context,
           lead_type: 'shortlist_form',
           budget: payload.budget || 'not_set',
-          goal: payload.goal || 'not_set',
-          market: payload.market || 'not_set',
           page_path: window.location.pathname,
           value: 1,
           currency: 'USD',
