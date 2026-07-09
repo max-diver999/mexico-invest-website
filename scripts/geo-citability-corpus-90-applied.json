@@ -1,0 +1,66 @@
+{
+  "applied": "2026-07-09T20:01:10.308Z",
+  "target": 90,
+  "results": [
+    {
+      "file": "src/content/news/puerto-vallarta-resale-liquidity-july-2026.mdx",
+      "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/news/spain-golden-visa-end-mexico-alt-july-2026.mdx",
+      "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/guides/mexico-beachfront-property-investment.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/us-capital-gains-mexico-sale.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/news/airbnb-withholding-rates-july-2026-update.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/news/isla-mujeres-condo-prices-july-2026.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/news/los-cabos-luxury-inventory-june-2026.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/news/quintana-roo-price-growth-2026.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/news/solidaridad-ish-registration-september-2026.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/news/tulum-buyer-discounts-july-2026.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    }
+  ]
+}
