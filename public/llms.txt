@@ -4,6 +4,7 @@
 
 - Site: https://mexico-invest.com
 - Contact: info@mexico-invest.com
+- Wikidata: https://www.wikidata.org/wiki/Q140471749
 - Markets: Riviera Maya, Los Cabos, Puerto Vallarta / Riviera Nayarit
 - Focus: fideicomiso, net rental yields, due diligence, foreign buyer process
 - Not a developer, not a listing portal
