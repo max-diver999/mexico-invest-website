@@ -1,15 +1,15 @@
 {
-  "applied": "2026-07-09T20:01:10.308Z",
+  "applied": "2026-07-10T09:12:23.207Z",
   "target": 90,
   "results": [
     {
-      "file": "src/content/news/puerto-vallarta-resale-liquidity-july-2026.mdx",
+      "file": "src/content/compare/mexico-vs-colombia-investment.mdx",
       "changed": false,
       "before": 88,
       "after": 88
     },
     {
-      "file": "src/content/news/spain-golden-visa-end-mexico-alt-july-2026.mdx",
+      "file": "src/content/compare/mexico-vs-thailand-property.mdx",
       "changed": false,
       "before": 88,
       "after": 88
@@ -17,11 +17,233 @@
     {
       "file": "src/content/guides/mexico-beachfront-property-investment.mdx",
       "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/guides/mexico-condo-investment-foreigners.mdx",
+      "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/guides/mexico-real-estate-glossary.mdx",
+      "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/guides/us-capital-gains-mexico-sale.mdx",
+      "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/guides/world-cup-2026-mexico-property-impact.mdx",
+      "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/news/quintana-roo-price-growth-2026.mdx",
+      "changed": false,
+      "before": 88,
+      "after": 88
+    },
+    {
+      "file": "src/content/areas/bacalar-investment.mdx",
+      "changed": false,
       "before": 89,
       "after": 89
     },
     {
-      "file": "src/content/guides/us-capital-gains-mexico-sale.mdx",
+      "file": "src/content/areas/cabo-corridor.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/areas/cancun.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/areas/nuevo-vallarta.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/areas/puerto-vallarta.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/areas/san-miguel-de-allende-property.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/branded-residence-vs-standard-condo-mexico.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/cash-vs-mortgage-mexico-foreigner.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/centro-playa-vs-playacar.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/condo-vs-villa-mexico-investment.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/los-cabos-vs-puerto-vallarta.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/los-cabos-vs-riviera-maya.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/mexico-vs-panama-real-estate.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/pre-construction-vs-resale-tulum.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/compare/punta-mita-vs-los-cabos-luxury.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/1031-exchange-mexico-property-us-seller.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/banxico-rates-mexico-property-impact.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/earthquake-risk-mexico-property.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/fbar-mexico-real-estate.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/form-1116-foreign-tax-credit-mexico-rental.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/invest-in-cancun.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/invest-in-riviera-maya.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/invest-in-tulum.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/liability-insurance-str-mexico.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/mexico-property-taxes-explained.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/nearshoring-mexico-industrial-real-estate.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/non-resident-tax-id-rfc-guide.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/notario-publico-mexico-property-role.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/portfolio-diversification-mexico-re.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/schedule-e-mexico-rental.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/unregistered-broker-mexico.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/us-wire-transfer-mexico-property.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/guides/wire-fraud-mexico-closing.mdx",
       "changed": false,
       "before": 89,
       "after": 89
@@ -39,25 +261,67 @@
       "after": 89
     },
     {
-      "file": "src/content/news/los-cabos-luxury-inventory-june-2026.mdx",
+      "file": "src/content/news/sat-playa-enforcement-july-2026.mdx",
       "changed": false,
       "before": 89,
       "after": 89
     },
     {
-      "file": "src/content/news/quintana-roo-price-growth-2026.mdx",
-      "changed": false,
-      "before": 89,
-      "after": 89
-    },
-    {
-      "file": "src/content/news/solidaridad-ish-registration-september-2026.mdx",
+      "file": "src/content/news/spain-golden-visa-end-mexico-alt-july-2026.mdx",
       "changed": false,
       "before": 89,
       "after": 89
     },
     {
       "file": "src/content/news/tulum-buyer-discounts-july-2026.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/amara-tulum.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/ceiba-25-condo-paradise.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/copala-quivira.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/distrito-xcalacoco-beach.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/holbox-lagoon-homes.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/oceana-residences.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/puerto-cancun-marina.mdx",
+      "changed": false,
+      "before": 89,
+      "after": 89
+    },
+    {
+      "file": "src/content/projects/saint-marine.mdx",
       "changed": false,
       "before": 89,
       "after": 89

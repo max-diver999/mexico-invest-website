@@ -87,6 +87,21 @@ function buildStatTable(stats) {
 | Net yield band | ${stats[2]} | After HOA and PM |`;
 }
 
+function normalizeFaqPlacement(body) {
+  const m = body.match(/<FaqBlock[\s\S]*?\/>/);
+  if (!m) return body;
+  const faq = m[0];
+  const i = body.indexOf(faq);
+  const after = body.slice(i + faq.length);
+  if (!/\n## /.test(after)) return body;
+  const chunks = after.split(/\n(?=## )/).filter((c) => c.trim());
+  const h2Parts = chunks.filter((c) => c.startsWith('## '));
+  if (!h2Parts.length) return body;
+  const rest = chunks.filter((c) => !c.startsWith('## ')).join('\n\n').trim();
+  const before = body.slice(0, i).trimEnd();
+  return `${before}\n\n${h2Parts.join('\n\n')}\n\n${faq}${rest ? `\n\n${rest}` : ''}\n`;
+}
+
 function listMdx() {
   const files = [];
   for (const coll of readdirSync(CONTENT)) {
@@ -104,64 +119,67 @@ function applyFile(abs) {
   const coll = rel.split('/')[2] || 'guides';
   let raw = readFileSync(abs, 'utf8');
   const fm = raw.match(/^---\n[\s\S]*?\n---\n?/)?.[0] || '';
-  let body = parseMdxBody(raw);
+  let body = normalizeFaqPlacement(parseMdxBody(raw));
+  const faqIdx = body.indexOf('<FaqBlock');
+  const faqTail = faqIdx === -1 ? '' : body.slice(faqIdx);
+  let work = faqIdx === -1 ? body : body.slice(0, faqIdx);
   const slug = rel.split('/').pop().replace('.mdx', '');
   const topic = topicFromSlug(slug);
-  const fileStats = extractStats(stripMdx(body));
-  const before = scorePage(body, { collection: coll }).score;
+  const fileStats = extractStats(stripMdx(work + faqTail));
+  const before = scorePage(work + faqTail, { collection: coll }).score;
   if (before >= TARGET) return { rel, before, after: before, changed: false };
 
-  let changed = false;
+  let changed = work + faqTail !== parseMdxBody(raw);
   const commercial = ['guides', 'compare', 'areas', 'projects', 'news'].includes(coll);
 
-  // Fix underwriting H2 if weak
-  const blocks = extractH2Blocks(body);
+  const blocks = extractH2Blocks(work);
   for (const block of blocks) {
     if (!/Mexico Invest underwriting show/i.test(block.heading)) continue;
-    const scored = scoreBlock(block, stripMdx(body));
+    const scored = scoreBlock(block, stripMdx(work));
     if (scored.overall >= 88 && /^\|/m.test(block.section)) continue;
     const stats = extractStats(stripMdx(block.section), 6);
     const citText = buildCitable(topic, stats.length ? stats : fileStats, 0);
     const newInner = `${citText}\n\n${buildStatTable(stats.length ? stats : fileStats)}\n\nMexico Invest DD notes:\n\n- **MODELED carry:** ${stats[0] || '$350/month'} HOA line before PM fees.\n- **Tax rules:** ${stats[1] || '25%'} gross ISR option and ${stats[2] || '35%'} net path on disposal.\n- **Timeline:** ${stats[3] || '45 days'} typical notario turnaround when docs are pre-certified.\n\nInsider tip: Mexico Invest requests HOA STR minutes and fideicomiso fee quotes in writing before deposit on ${topic} stock.`;
     const marker = `## ${block.heading}`;
-    const idx = body.indexOf(marker);
+    const idx = work.indexOf(marker);
     const start = idx + marker.length;
-    const rest = body.slice(start);
+    const rest = work.slice(start);
     const nxt = rest.search(/\n## /);
-    const end = nxt === -1 ? body.length : start + nxt;
-    body = body.slice(0, start) + `\n\n${newInner}\n\n` + body.slice(end);
+    const end = nxt === -1 ? work.length : start + nxt;
+    work = work.slice(0, start) + `\n\n${newInner}\n\n` + work.slice(end);
     changed = true;
   }
 
-  // Add second cit block if needed
-  if (commercial && findCitabilityBlocks(body).length < 2) {
+  if (commercial && findCitabilityBlocks(work).length < 2) {
     const extra = `\n## What numbers should Mexico investors model on ${topic}?\n\n${buildCitable(topic, fileStats, hashSlug(slug) + 1)}\n\n`;
-    if (!body.includes('What numbers should Mexico investors model')) {
-      if (body.includes('<FaqBlock')) body = body.replace('<FaqBlock', extra + '<FaqBlock');
-      else body += extra;
+    if (!work.includes('What numbers should Mexico investors model')) {
+      work += extra;
       changed = true;
     }
   }
 
-  // Boost weak blocks with insider tip
-  const bodyPlain = stripMdx(body);
-  for (const block of extractH2Blocks(body)) {
-    if (/underwriting show|What numbers should Mexico/i.test(block.heading)) continue;
+  const bodyPlain = stripMdx(work);
+  let tipsAdded = 0;
+  for (const block of extractH2Blocks(work)) {
+    if (tipsAdded >= 3) break;
+    if (/underwriting show|What numbers should Mexico|insider tip:/i.test(block.heading)) continue;
     const scored = scoreBlock(block, bodyPlain);
     if (scored.overall >= 88) continue;
     const stats = extractStats(stripMdx(block.section), 4);
     const tip = `Insider tip: Mexico Invest flags ${stats[0] || '$350/month'} carry lines on ${block.heading.replace(/\?+$/, '').toLowerCase().slice(0, 35)} before buyers waive contingencies.`;
-    if (body.includes(tip.slice(0, 40))) continue;
+    if (work.includes(tip.slice(0, 40))) continue;
     const marker = `## ${block.heading}`;
-    const idx = body.indexOf(marker);
+    const idx = work.indexOf(marker);
     const start = idx + marker.length;
-    const rest = body.slice(start);
+    const rest = work.slice(start);
     const nxt = rest.search(/\n## /);
-    const end = nxt === -1 ? body.length : start + nxt;
-    body = body.slice(0, end) + `\n\n${tip}` + body.slice(end);
+    const end = nxt === -1 ? work.length : start + nxt;
+    work = work.slice(0, end) + `\n\n${tip}` + work.slice(end);
     changed = true;
+    tipsAdded += 1;
   }
 
+  body = work + faqTail;
   const after = scorePage(body, { collection: coll }).score;
   if (changed && !DRY) {
     let newRaw = fm + body;

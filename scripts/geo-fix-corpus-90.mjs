@@ -199,6 +199,21 @@ function insertBeforeNextH2(body, heading, text) {
   return body.slice(0, insertAt) + `\n\n${text}` + body.slice(insertAt);
 }
 
+function normalizeFaqPlacement(body) {
+  const m = body.match(/<FaqBlock[\s\S]*?\/>/);
+  if (!m) return body;
+  const faq = m[0];
+  const i = body.indexOf(faq);
+  const after = body.slice(i + faq.length);
+  if (!/\n## /.test(after)) return body;
+  const chunks = after.split(/\n(?=## )/).filter((c) => c.trim());
+  const h2Parts = chunks.filter((c) => c.startsWith('## '));
+  if (!h2Parts.length) return body;
+  const rest = chunks.filter((c) => !c.startsWith('## ')).join('\n\n').trim();
+  const before = body.slice(0, i).trimEnd();
+  return `${before}\n\n${h2Parts.join('\n\n')}\n\n${faq}${rest ? `\n\n${rest}` : ''}\n`;
+}
+
 function updateFrontmatterDate(raw) {
   const today = '2026-07-09';
   if (/updatedDate:/.test(raw)) {
@@ -225,132 +240,124 @@ function applyFile(abs) {
   const raw = readFileSync(abs, 'utf8');
   const fmMatch = raw.match(/^---\n[\s\S]*?\n---\n?/);
   const fm = fmMatch ? fmMatch[0] : '';
-  let body = parseMdxBody(raw);
+  const parsed = normalizeFaqPlacement(parseMdxBody(raw));
+  const faqIdx = parsed.indexOf('<FaqBlock');
+  const faqTail = faqIdx === -1 ? '' : parsed.slice(faqIdx);
+  let work = faqIdx === -1 ? parsed : parsed.slice(0, faqIdx);
   const slug = rel.split('/').pop().replace('.mdx', '');
   const topic = topicFromSlug(slug);
-  const fileStats = extractStats(stripMdx(body));
+  const fileStats = extractStats(stripMdx(work + faqTail));
 
-  const before = scorePage(body, { collection: coll });
+  const before = scorePage(work + faqTail, { collection: coll });
   if (before.score >= TARGET) return { file: rel, changed: false, before: before.score, after: before.score };
 
-  let changed = false;
+  let changed = work + faqTail !== parseMdxBody(raw);
 
-  let blocks = extractH2Blocks(body);
-  let bodyPlain = stripMdx(body);
+  let blocks = extractH2Blocks(work);
+  let bodyPlain = stripMdx(work);
 
   for (let block of blocks) {
+    if (/insider tip:/i.test(block.heading)) continue;
     const scored = scoreBlock(block, bodyPlain);
     const newHeading = toQuestionHeading(block.heading);
     if (newHeading !== block.heading) {
-      const next = replaceHeading(body, block.heading, newHeading);
-      if (next !== body) {
-        body = next;
+      const next = replaceHeading(work, block.heading, newHeading);
+      if (next !== work) {
+        work = next;
         changed = true;
         block = { ...block, heading: newHeading };
       }
     }
 
     const sectionStats = extractStats(stripMdx(block.section), 6);
-    const stats = sectionStats.length ? sectionStats : fileStats;
+    const stats = sectionStats.length >= 3 ? sectionStats : fileStats;
     const plainFirst = stripMdx(block.firstPara);
     const w = wordCount(plainFirst);
 
     if (w < 40 || !hasStat(plainFirst) || scored.answer < 80) {
       const booster = buildAnswerFirst(block.heading, stats);
-      const next = insertAfterHeading(body, block.heading, booster);
-      if (next !== body) {
-        body = next;
+      const next = insertAfterHeading(work, block.heading, booster);
+      if (next !== work) {
+        work = next;
         changed = true;
       }
     }
 
     if (scored.unique < 70 && !/Mexico Invest|insider tip/i.test(stripMdx(block.section))) {
       const brand = buildBrandLine(block.heading, stats);
-      const next = insertBeforeNextH2(body, block.heading, brand);
-      if (next !== body) {
-        body = next;
+      const next = insertBeforeNextH2(work, block.heading, brand);
+      if (next !== work) {
+        work = next;
         changed = true;
       }
     }
   }
 
-  blocks = extractH2Blocks(body);
+  blocks = extractH2Blocks(work);
 
-  if (!/insider tip/i.test(body) && blocks.length >= 1) {
+  if (!/insider tip/i.test(work) && blocks.length >= 1) {
     const tip = buildInsiderTip(topic, fileStats);
     const target = blocks[Math.min(1, blocks.length - 1)].heading;
-    const next = insertAfterHeading(body, target, tip);
-    if (next !== body) {
-      body = next;
+    const next = insertAfterHeading(work, target, tip);
+    if (next !== work) {
+      work = next;
       changed = true;
     }
   }
 
-  const citCount = findCitabilityBlocks(body).length;
+  const citCount = findCitabilityBlocks(work).length;
   const needCit = Math.max(0, 2 - citCount);
-  if (needCit > 0) {
+  if (needCit > 0 && !work.includes('What does Mexico Invest underwriting show')) {
     const citSection = `\n## What does Mexico Invest underwriting show for ${topic}?\n\n${buildCitable(topic, fileStats, hashSlug(slug))}\n\n${needCit > 1 ? buildCitable(topic, fileStats, hashSlug(slug) + 1) + '\n\n' : ''}`;
-    if (!body.includes('What does Mexico Invest underwriting show')) {
-      if (body.includes('<FaqBlock')) {
-        body = body.replace('<FaqBlock', citSection + '<FaqBlock');
-      } else {
-        body += citSection;
-      }
-      changed = true;
-    }
+    work += citSection;
+    changed = true;
   }
 
-  blocks = extractH2Blocks(body);
-  bodyPlain = stripMdx(body);
+  blocks = extractH2Blocks(work);
+  bodyPlain = stripMdx(work);
+  let ddAdded = 0;
   for (let block of blocks) {
-    if (/Mexico Invest underwriting show/i.test(block.heading)) continue;
+    if (/Mexico Invest underwriting show|insider tip:/i.test(block.heading)) continue;
     const scored = scoreBlock(block, bodyPlain);
     if (scored.overall >= 90) continue;
 
     const sectionStats = extractStats(stripMdx(block.section), 6);
-    const stats = sectionStats.length ? sectionStats : fileStats;
+    const stats = sectionStats.length >= 3 ? sectionStats : fileStats;
 
     if (scored.selfContain < 80 || scored.answer < 85) {
       const opener = buildSelfContainOpener(block.heading, stats);
-      if (!body.includes(opener.slice(0, 40))) {
-        const next = insertAfterHeading(body, block.heading, opener);
-        if (next !== body) {
-          body = next;
+      if (!work.includes(opener.slice(0, 40))) {
+        const next = insertAfterHeading(work, block.heading, opener);
+        if (next !== work) {
+          work = next;
           changed = true;
         }
       }
     }
 
-    if (scored.structure < 85 && !/^[-*]\s/m.test(block.section) && !/^\|/m.test(block.section)) {
-      const bullets = `Mexico Invest DD notes for this section:\n\n- **MODELED carry:** ${stats[0] || '$350/month'} HOA line before PM fees.\n- **Tax rules:** ${stats[1] || '25%'} gross ISR option and ${stats[2] || '35%'} net path on disposal.\n- **Timeline:** ${stats[3] || '45 days'} typical notario turnaround when docs are pre-certified.`;
-      const next = insertBeforeNextH2(body, block.heading, bullets);
-      if (next !== body) {
-        body = next;
+    if (ddAdded < 2 && scored.structure < 85 && !/^[-*]\s/m.test(block.section) && !/^\|/m.test(block.section)) {
+      const bullets = `Mexico Invest DD notes:\n\n- **MODELED carry:** ${stats[0] || '$350/month'} HOA line before PM fees.\n- **Tax rules:** ${stats[1] || '25%'} gross ISR option and ${stats[2] || '35%'} net path on disposal.\n- **Timeline:** ${stats[3] || '45 days'} typical notario turnaround when docs are pre-certified.`;
+      const next = insertBeforeNextH2(work, block.heading, bullets);
+      if (next !== work) {
+        work = next;
         changed = true;
+        ddAdded += 1;
+        bodyPlain = stripMdx(work);
       }
     }
 
     if (scored.unique < 80 && !/Mexico Invest/i.test(stripMdx(block.section))) {
       const brand = buildBrandLine(block.heading, stats);
-      const next = insertBeforeNextH2(body, block.heading, brand);
-      if (next !== body) {
-        body = next;
+      const next = insertBeforeNextH2(work, block.heading, brand);
+      if (next !== work) {
+        work = next;
         changed = true;
-      }
-    }
-
-    const plainFirst = stripMdx(block.firstPara);
-    if (scored.answer < 88 && (wordCount(plainFirst) < 40 || !hasStat(plainFirst))) {
-      const booster = buildAnswerFirst(block.heading, stats);
-      if (!body.includes(booster.slice(0, 35))) {
-        const next = insertAfterHeading(body, block.heading, booster);
-        if (next !== body) {
-          body = next;
-          changed = true;
-        }
+        bodyPlain = stripMdx(work);
       }
     }
   }
+
+  const body = work + faqTail;
 
   if (!changed) {
     const after = scorePage(body, { collection: coll });

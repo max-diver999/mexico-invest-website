@@ -97,17 +97,32 @@ function firstProsePara(section) {
   return '';
 }
 
+/** Safe: prepend only — never remove or replace existing prose (avoids table corruption). */
 function ensureOpener(section, opener, heading) {
   const prose = firstProsePara(section);
   if (!prose) return `${opener}\n\n${section.trim()}`;
   const plain = stripMdx(prose);
+  if (/Mexico investors reviewing/i.test(plain) && wordCount(plain) >= 52) return section;
   const w = wordCount(plain);
   const answer = scoreAnswerQuality(plain, heading);
-  const openerOk =
-    w >= 52 && w <= 58 && hasStat(plain) && /typically require/i.test(plain) && answer >= 95;
-  if (openerOk) return section;
-  const rest = section.replace(prose, '').replace(/^\n+/, '').trim();
-  return rest ? `${opener}\n\n${rest}` : opener;
+  if (w >= 52 && hasStat(plain) && answer >= 90) return section;
+  if (/^\|/.test(prose.trim())) return section;
+  return `${opener}\n\n${section.trim()}`;
+}
+
+function normalizeFaqPlacement(body) {
+  const m = body.match(/<FaqBlock[\s\S]*?\/>/);
+  if (!m) return body;
+  const faq = m[0];
+  const i = body.indexOf(faq);
+  const after = body.slice(i + faq.length);
+  if (!/\n## /.test(after)) return body;
+  const chunks = after.split(/\n(?=## )/).filter((c) => c.trim());
+  const h2Parts = chunks.filter((c) => c.startsWith('## '));
+  if (!h2Parts.length) return body;
+  const rest = chunks.filter((c) => !c.startsWith('## ')).join('\n\n').trim();
+  const before = body.slice(0, i).trimEnd();
+  return `${before}\n\n${h2Parts.join('\n\n')}\n\n${faq}${rest ? `\n\n${rest}` : ''}\n`;
 }
 
 function replaceSectionBody(body, heading, newSectionInner) {
@@ -151,27 +166,26 @@ function applyFile(abs) {
   const coll = rel.split('/')[2] || 'guides';
   let raw = readFileSync(abs, 'utf8');
   const fm = raw.match(/^---\n[\s\S]*?\n---\n?/)?.[0] || '';
-  let body = parseMdxBody(raw);
+  let body = normalizeFaqPlacement(parseMdxBody(raw));
+  const faqIdx = body.indexOf('<FaqBlock');
+  const faqTail = faqIdx === -1 ? '' : body.slice(faqIdx);
+  let work = faqIdx === -1 ? body : body.slice(0, faqIdx);
+  const fileStats = extractStats(stripMdx(work));
+
   const before = scorePage(body, { collection: coll }).score;
   if (before >= TARGET) return { rel, before, after: before, changed: false };
 
-  let changed = false;
-  let blocks = extractH2Blocks(body);
-  let bodyPlain = stripMdx(body);
+  let changed = body !== parseMdxBody(raw);
+  let blocks = extractH2Blocks(work);
+  let bodyPlain = stripMdx(work);
 
   for (const block of blocks) {
-    if (/Mexico Invest underwriting show|Quick answer|What to verify next/i.test(block.heading)) {
-      if (/Mexico Invest underwriting show/i.test(block.heading) && !/^\|/m.test(block.section)) {
-        const stats = extractStats(stripMdx(block.section), 6);
-        const section = `${firstProsePara(block.section) || block.section}\n\n${buildStatTable(stats)}\n\nMexico Invest DD notes:\n\n- **MODELED carry:** ${stats[0]} HOA line before PM fees.\n- **Tax rules:** ${stats[1]} gross ISR option and ${stats[2]} net path on disposal.\n- **Timeline:** ${stats[3]} typical notario turnaround when docs are pre-certified.`;
-        body = replaceSectionBody(body, block.heading, section);
-        changed = true;
-      }
+    if (/insider tip:|Mexico Invest underwriting show|Quick answer|What to verify next/i.test(block.heading)) {
       continue;
     }
 
     const sectionStats = extractStats(stripMdx(block.section), 6);
-    const stats = sectionStats.length >= 3 ? sectionStats : extractStats(stripMdx(body), 6);
+    const stats = sectionStats.length >= 3 ? sectionStats : fileStats;
     let section = dedupeSection(block.section);
     const prose = firstProsePara(section);
     const plainFirst = stripMdx(prose);
@@ -184,23 +198,19 @@ function applyFile(abs) {
       changed = true;
     }
 
-    if (scored.structure < 85 && !/Mexico Invest DD notes:/i.test(section)) {
-      const ddBullets = `Mexico Invest DD notes:\n\n- **MODELED carry:** ${stats[0]} HOA line before PM fees.\n- **Tax rules:** ${stats[1]} gross ISR option and ${stats[2]} net path on disposal.\n- **Timeline:** ${stats[3]} typical notario turnaround when docs are pre-certified.`;
-      section = `${section.trim()}\n\n${ddBullets}`;
-      changed = true;
-    } else if (!/insider tip/i.test(stripMdx(section)) && scored.unique < 80) {
+    if (!/insider tip/i.test(stripMdx(section)) && scored.unique < 80) {
       section = `${section.trim()}\n\n${buildBrandLine(block.heading, stats)}`;
       changed = true;
     }
 
     if (section !== block.section) {
-      body = replaceSectionBody(body, block.heading, section);
+      work = replaceSectionBody(work, block.heading, section);
       changed = true;
-      bodyPlain = stripMdx(body);
-      blocks = extractH2Blocks(body);
+      bodyPlain = stripMdx(work);
     }
   }
 
+  body = work + faqTail;
   const after = scorePage(body, { collection: coll }).score;
   if (changed && !DRY) {
     const today = '2026-07-09';
