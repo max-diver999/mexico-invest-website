@@ -38,15 +38,15 @@ const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE, 'hero');
 const heroProjectImage = heroProject ? getCardImageUrl(heroProject.data.heroImage, 'card') : heroImage;
 ---
 <BaseLayout
-  title="Mexico Property for Foreign Buyers — From $130K"
-  description="40,000+ foreign buyers close in Mexico yearly. Fideicomiso condos from $130K, 4–5% net STR in Playa. Independent research — not a developer portal."
+  title="Mexico Real Estate for Foreign Buyers: From $130K 2026"
+  description="Compare Mexico property from $130K, realistic 3-5% net yields, fideicomiso rules, and vetted projects. Request a free shortlist for your budget."
 >
   <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-surface)]">
     <div class="site-container py-14 md:py-20 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
       <div>
         <span class="badge-pill mb-5">Independent research</span>
         <h1 class="text-3xl md:text-[2.35rem] mb-5 leading-tight">
-          Understand Mexico property before you buy
+          Mexico real estate for foreign buyers from $130K
         </h1>
         <p class="text-base md:text-lg text-[var(--color-muted)] mb-8 max-w-xl">
           US and Canadian buyers closed 40,000+ Mexico property purchases last year — roughly 65% from the US. Riviera Maya condos start near $130,000 USD via fideicomiso; well-managed Airbnb units in Playa del Carmen often net 4–5% after fees. Independent guides on yields, due diligence, and foreign buyer rules — not developer sales decks.
@@ -86,6 +86,16 @@ const heroProjectImage = heroProject ? getCardImageUrl(heroProject.data.heroImag
           </div>
         )}
       </div>
+    </div>
+  </section>
+
+  <section class="section bg-[var(--color-surface)] border-b border-[var(--color-border-soft)]">
+    <div class="site-container max-w-xl">
+      <LeadForm
+        title="Get a Mexico property shortlist"
+        subtitle="Independent research, local due diligence, and no developer sales deck. Share your budget and target market; we reply within one business day."
+        context="Homepage shortlist"
+      />
     </div>
   </section>
 
@@ -188,11 +198,4 @@ const heroProjectImage = heroProject ? getCardImageUrl(heroProject.data.heroImag
     </div>
   </section>
 
-  <section class="section bg-[var(--color-surface)] border-t border-[var(--color-border-soft)]">
-    <div class="site-container max-w-xl">
-      <h2 class="text-2xl mb-3">Get a shortlist</h2>
-      <p class="text-[var(--color-muted)] mb-8">Tell us budget and market — we match you with vetted local partners. No obligation.</p>
-      <LeadForm context="Homepage shortlist" />
-    </div>
-  </section>
 </BaseLayout>

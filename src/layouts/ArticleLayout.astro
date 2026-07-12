@@ -131,6 +131,14 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
       <img src={optimizedHeroImage} alt="" class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" fetchpriority="high" width="1200" height="675" />
     )}
 
+    <div class="max-w-3xl mx-auto mb-10">
+      <LeadForm
+        title="Get a Mexico property shortlist"
+        subtitle="Independent research, local due diligence, and no developer sales deck. Share your budget and target market; we reply within one business day."
+        context={contextLabel}
+      />
+    </div>
+
     <div class="prose mx-auto">
       <slot />
     </div>
@@ -141,12 +149,10 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
       </div>
     )}
 
-    <div class="max-w-3xl mx-auto mt-12">
-      <LeadForm
-        title="Get a Mexico property shortlist"
-        subtitle="Tell us your budget and market (Riviera Maya, Los Cabos, Puerto Vallarta). We reply within one business day with options matched to your goals."
-        context={contextLabel}
-      />
+    <div class="max-w-3xl mx-auto mt-12 surface-card p-6 text-center">
+      <p class="font-semibold text-[var(--color-ink)]">Want options matched to your budget and risk profile?</p>
+      <p class="text-sm text-[var(--color-muted)] mt-1 mb-4">Return to the independent shortlist form. We reply within one business day.</p>
+      <a href="#lead-form" class="btn-primary inline-flex px-6 py-3">Request your shortlist</a>
     </div>
 
     <aside class="max-w-3xl mx-auto mt-10 surface-card p-5 text-sm text-[var(--color-muted)]">
