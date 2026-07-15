@@ -78,6 +78,28 @@ async function runHttpChecks(site) {
     failed++;
   }
 
+  const waIntent = await siteFetch(`${site}/api/wa-intent/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      intentId: 'wa_healthcheck00000001',
+      sessionId: 'session_healthcheck',
+      placement: 'inline_cta',
+      page: '/contact/',
+      currentPage: `${site}/contact/`,
+      landingPage: `${site}/contact/`,
+      ctaId: 'healthcheck',
+      ctaText: 'WhatsApp us',
+      destination: 'https://wa.me/66651195327',
+      message: 'healthcheck',
+    }),
+  });
+  log(waIntent.ok, 'POST /api/wa-intent/', String(waIntent.status));
+  if (waIntent.status === 405) {
+    log(false, 'wa-intent API prerender', '405 — add export const prerender = false');
+    failed++;
+  }
+
   return failed;
 }
 

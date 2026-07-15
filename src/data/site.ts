@@ -5,6 +5,8 @@ export const SITE = {
   description:
     'Independent research on Riviera Maya, Los Cabos, and Puerto Vallarta property — fideicomiso, net yields, due diligence, and foreign buyer rules. Not a developer. Not a portal.',
   email: 'info@mexico-invest.com',
+  whatsapp: 'https://wa.me/66651195327',
+  whatsappDisplay: '+66 65 119 5327',
   editorial: 'Mexico Invest Editorial',
   wikidataId: 'Q140471749' as string | null,
   sameAs: [
