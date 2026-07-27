@@ -40,13 +40,40 @@ for (const file of walk(SRC)) {
 const urls = [...map.keys()];
 const bad = [];
 
-await Promise.all(
-  urls.map(async (url) => {
+/**
+ * Firing every URL at once made the CDN drop connections, so the gate reported
+ * hundreds of healthy images as broken. Cap concurrency and retry once before
+ * calling an image bad.
+ */
+const CONCURRENCY = 12;
+const RETRIES = 2;
+
+async function checkUrl(url) {
+  for (let attempt = 1; attempt <= RETRIES; attempt += 1) {
     try {
-      const r = await fetch(url, { method: 'HEAD', redirect: 'follow' });
-      if (r.status !== 200) bad.push({ url, status: r.status, files: [...map.get(url)] });
+      const r = await fetch(url, {
+        method: 'HEAD',
+        redirect: 'follow',
+        signal: AbortSignal.timeout(15000),
+      });
+      if (r.status === 200) return null;
+      if (attempt === RETRIES) return { url, status: r.status, files: [...map.get(url)] };
     } catch {
-      bad.push({ url, status: 'ERR', files: [...map.get(url)] });
+      if (attempt === RETRIES) return { url, status: 'ERR', files: [...map.get(url)] };
+    }
+    await new Promise((resolve) => setTimeout(resolve, 400 * attempt));
+  }
+  return null;
+}
+
+let cursor = 0;
+await Promise.all(
+  Array.from({ length: Math.min(CONCURRENCY, urls.length) }, async () => {
+    while (cursor < urls.length) {
+      const url = urls[cursor];
+      cursor += 1;
+      const result = await checkUrl(url);
+      if (result) bad.push(result);
     }
   }),
 );

@@ -13119,6 +13119,46 @@
       "url": "https://mexico-invest.com/projects/four-seasons-costa-palmas",
       "channel": "bing",
       "at": "2026-07-10T09:54:58.033Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/earthquake-risk-mexico-property",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/branded-residences-mexico-guide",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
+    },
+    {
+      "url": "https://mexico-invest.com/areas/tulum",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
+    },
+    {
+      "url": "https://mexico-invest.com/get-shortlist",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
+    },
+    {
+      "url": "https://mexico-invest.com/guides/mexican-bank-account-foreign-property-owner",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
+    },
+    {
+      "url": "https://mexico-invest.com/about",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
+    },
+    {
+      "url": "https://mexico-invest.com/methodology",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
+    },
+    {
+      "url": "https://mexico-invest.com/privacy-policy",
+      "channel": "google",
+      "at": "2026-07-27T07:24:49.753Z"
     }
   ],
   "repairedAt": "2026-06-18T10:51:11.631Z",
@@ -13137,7 +13177,7 @@
       "googleUnique": 361
     }
   },
-  "updatedAt": "2026-07-10T09:54:58.033Z",
+  "updatedAt": "2026-07-27T07:24:49.753Z",
   "syncedAt": "2026-06-28T23:05:00.256Z",
   "syncNote": "dashboard-sync-all-channels"
 }
