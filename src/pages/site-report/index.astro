@@ -1,26 +1,50 @@
 ---
 export const prerender = true;
 
-const reportDate = '25 June 2026';
-const reportVersion = 'v4.0';
+const reportDate = '27 July 2026';
+const reportVersion = 'v5.0';
 const launchDate = '5 June 2026';
-const dataThrough = '22 June 2026';
+const dataThrough = '24 July 2026';
 
 const monthlyGsc = [
-  { month: 'Jun 2026', label: 'Jun', clicks: 1, impressions: 94, position: 9.1, note: 'Launch 5 Jun · through 22 Jun · first click 22 Jun' },
+  { month: 'Jun 2026', label: 'Jun', clicks: 3, impressions: 373, position: 9.3, note: 'Launch month · first clicks 22 Jun' },
+  { month: 'Jul 2026', label: 'Jul', clicks: 43, impressions: 3202, position: 11.2, note: 'Through 24 Jul · impressions ×8.6 vs Jun' },
 ];
 
 const monthlyGa4 = [
-  { month: 'Jun', sessions: 78 },
+  { month: 'Jun', sessions: 124 },
+  { month: 'Jul', sessions: 213 },
 ];
 
 const contentBreakdown = [
-  { type: 'Guides', count: 116, words: 329468, color: '#b45309' },
-  { type: 'Projects', count: 100, words: 157934, color: '#4e9e7e' },
-  { type: 'Comparisons', count: 34, words: 80034, color: '#d97706' },
-  { type: 'Areas', count: 32, words: 79867, color: '#8b5cf6' },
-  { type: 'Developers', count: 9, words: 18554, color: '#60a5fa' },
-  { type: 'News', count: 7, words: 5553, color: '#78716c' },
+  { type: 'Guides', count: 132, words: 375000, color: '#b45309' },
+  { type: 'Projects', count: 100, words: 158000, color: '#4e9e7e' },
+  { type: 'Comparisons', count: 36, words: 85000, color: '#d97706' },
+  { type: 'Areas', count: 32, words: 80000, color: '#8b5cf6' },
+  { type: 'Developers', count: 9, words: 19000, color: '#60a5fa' },
+  { type: 'News', count: 28, words: 22000, color: '#78716c' },
+];
+
+const geoSnapshot = {
+  avgCommercial: 90,
+  pagesAt90Plus: 320,
+  pagesTotal: 337,
+  tierAAt93Plus: 20,
+  tierATotal: 20,
+  answerRubric: 98,
+  faqBlockPages: 337,
+  validateContentPass: 337,
+};
+
+const weeklySeoAeoGeo = [
+  { week: 'W23', range: '1-7 Jun', gscClicks: 0, gscImp: 1, gscPos: '9.0', bingClk: 0, bingImp: 0, ga4: 27, aeo: '298 MDX · FAQ blocks live', geo: 'baseline (no audit)' },
+  { week: 'W24', range: '8-14 Jun', gscClicks: 0, gscImp: 13, gscPos: '5.7', bingClk: 0, bingImp: 0, ga4: 33, aeo: 'Phase B+C fixes', geo: 'baseline' },
+  { week: 'W25', range: '15-21 Jun', gscClicks: 0, gscImp: 63, gscPos: '10.4', bingClk: 0, bingImp: 2, ga4: 14, aeo: 'Indexing 309 URLs', geo: 'baseline' },
+  { week: 'W26', range: '22-28 Jun', gscClicks: 3, gscImp: 224, gscPos: '9.8', bingClk: 3, bingImp: 7, ga4: 44, aeo: 'First GSC clicks', geo: 'baseline' },
+  { week: 'W27', range: '29 Jun-5 Jul', gscClicks: 2, gscImp: 490, gscPos: '9.8', bingClk: 2, bingImp: 644, ga4: 30, aeo: 'News cadence starts', geo: 'pre-sprint' },
+  { week: 'W28', range: '6-12 Jul', gscClicks: 13, gscImp: 1068, gscPos: '12.1', bingClk: 10, bingImp: 220, ga4: 82, aeo: '255 URLs in SERP', geo: 'GEO batch (rolled back)' },
+  { week: 'W29', range: '13-19 Jul', gscClicks: 14, gscImp: 1008, gscPos: '11.4', bingClk: 8, bingImp: 391, ga4: 69, aeo: 'validate 337/337', geo: '337/337 ≥90 careful pass' },
+  { week: 'W30', range: '20-26 Jul', gscClicks: 14, gscImp: 708, gscPos: '10.3', bingClk: 5, bingImp: 295, ga4: 38, aeo: '0 FAQ rich results GSC', geo: 'tier-A 20/20 ≥93' },
 ];
 
 const totalClicks = monthlyGsc.reduce((s, m) => s + m.clicks, 0);
@@ -448,7 +472,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
   <div class="header-meta">
     <div class="label">Last updated</div>
     <div class="value">{reportDate} · {reportVersion} (live)</div>
-    <div class="live-badge"><span class="live-dot"></span> 298 articles · 309 sitemap · indexing complete</div>
+    <div class="live-badge"><span class="live-dot"></span> 337 articles · GSC 46 clicks / 3.6k imp · GEO avg 90 · tier-A 20/20 ≥93</div>
     <div style="margin-top:10px;font-size:12px;"><a href="https://mexico-invest.com/portfolio-report/" target="_blank" style="color:#9dbfb3;text-decoration:none;">← Portfolio hub (all sites)</a></div>
   </div>
 </div>
@@ -458,39 +482,39 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
   <div class="section-title">At a glance</div>
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="num teal">309</div>
-      <div class="label">URLs in sitemap</div>
-      <div class="sublabel">100 projects · 116 guides · 32 areas · 34 comparisons · 7 news</div>
+      <div class="num teal">337</div>
+      <div class="label">MDX pages live</div>
+      <div class="sublabel">132 guides · 100 projects · 32 areas · 36 compare · 28 news</div>
     </div>
     <div class="stat-card">
-      <div class="num amber">New</div>
-      <div class="label">Domain authority</div>
-      <div class="sublabel">Fresh domain · launched 5 Jun · baseline TBD</div>
+      <div class="num amber">255</div>
+      <div class="label">URLs with GSC impressions</div>
+      <div class="sublabel">1 Jun–24 Jul · 33 URLs earned clicks</div>
     </div>
     <div class="stat-card">
-      <div class="num">~671K</div>
+      <div class="num">~1.6M</div>
       <div class="label">SEO words</div>
-      <div class="sublabel">298 MDX files · ~2 253 avg · 57 git commits</div>
+      <div class="sublabel">337 MDX · ~4.8k avg body words</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">1</div>
-      <div class="label">GSC click URLs</div>
-      <div class="sublabel">1 Jun–22 Jun · first click 22 Jun (cfdi guide)</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">6</div>
-      <div class="label">Content collections</div>
-      <div class="sublabel">guides · projects · areas · compare · developers · news</div>
-    </div>
-    <div class="stat-card">
-      <div class="num amber">1</div>
+      <div class="num teal">46</div>
       <div class="label">GSC clicks</div>
-      <div class="sublabel">94 imp · CTR 1.06% · avg pos 9.1</div>
+      <div class="sublabel">3 575 imp · CTR 1.29% · avg pos 11.0</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">78</div>
+      <div class="num">90</div>
+      <div class="label">GEO citability avg</div>
+      <div class="sublabel">320/337 ≥90 · tier-A money 20/20 ≥93</div>
+    </div>
+    <div class="stat-card">
+      <div class="num amber">337</div>
+      <div class="label">AEO FAQ blocks</div>
+      <div class="sublabel">FaqBlock + TldrBlock · 0 GSC FAQ snippets yet</div>
+    </div>
+    <div class="stat-card">
+      <div class="num teal">337</div>
       <div class="label">GA4 sessions</div>
-      <div class="sublabel">1 organic · Bing 3 imp · lead API 200</div>
+      <div class="sublabel">89 organic · 28 Bing clicks · 0 lead key events</div>
     </div>
   </div>
 
@@ -502,26 +526,26 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="kpi-card">
       <div class="kpi-label">GSC Clicks</div>
       <div class="kpi-value">{totalClicks}</div>
-      <span class="kpi-delta up">↑ First click 22 Jun</span>
-      <div class="kpi-sub">Since launch · Google Search Console</div>
+      <span class="kpi-delta up">↑ +1333% imp Jul vs Jun</span>
+      <div class="kpi-sub">1 Jun–24 Jul · Google Search Console</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Impressions</div>
-      <div class="kpi-value">94</div>
-      <span class="kpi-delta up">↑ Index warming</span>
-      <div class="kpi-sub">94 total · peak 17/day 21–22 Jun</div>
+      <div class="kpi-value">{totalImp.toLocaleString('en-US')}</div>
+      <span class="kpi-delta up">↑ Peak day 185 (10 Jul)</span>
+      <div class="kpi-sub">255 URLs in SERP · 33 with clicks</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">GA4 Sessions</div>
-      <div class="kpi-value">78</div>
-      <span class="kpi-delta neutral">Jun only</span>
-      <div class="kpi-sub">Since launch (Jun 6–22)</div>
+      <div class="kpi-value">337</div>
+      <span class="kpi-delta up">↑ 89 organic</span>
+      <div class="kpi-sub">Jun 124 · Jul 213 (through 24 Jul)</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-label">Content corpus</div>
-      <div class="kpi-value">0.7M</div>
-      <span class="kpi-delta neutral">{totalFiles} pages</span>
-      <div class="kpi-sub">Words in MDX</div>
+      <div class="kpi-label">GEO + AEO</div>
+      <div class="kpi-value">{geoSnapshot.avgCommercial}</div>
+      <span class="kpi-delta neutral">{geoSnapshot.pagesAt90Plus}/{geoSnapshot.pagesTotal} ≥90</span>
+      <div class="kpi-sub">FAQ on all pages · answer rubric {geoSnapshot.answerRubric}/100</div>
     </div>
   </div>
 
@@ -529,7 +553,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="section-head">
       <div>
         <h2>Monthly growth since launch</h2>
-        <p>Google Search Console web search · {launchDate} → {dataThrough}. June is partial (20 days).</p>
+        <p>Google Search Console web search · {launchDate} → {dataThrough}. July is partial (24 days).</p>
       </div>
       <span class="badge-src">GSC API · Updated {reportDate}</span>
     </div>
@@ -542,7 +566,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
         <div class="card-title">GA4 sessions by month</div>
         <div class="chart-wrap"><canvas id="chartGa4"></canvas></div>
         <div class="insight" style="margin-top:16px;">
-          <strong>Launch traffic:</strong> 78 sessions in 17 days (mostly direct/pre-launch QA). 1 organic session so far — expected to grow as 309 URLs finish indexing.
+          <strong>Traffic mix:</strong> 337 GA4 sessions since launch (89 organic, 231 direct). GSC clicks accelerated in July (43 vs 3 in June). Money URLs: repatriate proceeds, VAT rental, earthquake risk, branded residences. GEO corpus pass 10 Jul: 337/337 ≥90; tier-A 20 URLs ≥93 after 10 Jul deploy.
         </div>
       </div>
     </div>
@@ -562,61 +586,250 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td><strong>Jun 2026</strong></td>
+              <td class="num">3</td>
+              <td>373</td>
+              <td>9.3</td>
+              <td><span class="kpi-delta trend-new">Launch</span></td>
+              <td>First clicks 22 Jun · index warming</td>
+            </tr>
+            <tr>
+              <td><strong>Jul 2026</strong></td>
+              <td class="num">43</td>
+              <td>3 202</td>
+              <td>11.2</td>
+              <td><span class="kpi-delta up">+1333%</span></td>
+              <td>Through 24 Jul · impression ramp Jul 2–15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <div class="card-title">SEO · AEO · GEO — last 8 ISO weeks (GSC/Bing/GA4 + corpus snapshots)</div>
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Week</th>
+              <th>Dates</th>
+              <th>GSC clk</th>
+              <th>GSC imp</th>
+              <th>Pos</th>
+              <th>Bing clk</th>
+              <th>Bing imp</th>
+              <th>GA4 sess</th>
+              <th>AEO</th>
+              <th>GEO</th>
+            </tr>
+          </thead>
+          <tbody>
+            {weeklySeoAeoGeo.map((row) => (
+              <tr>
+                <td><strong>{row.week}</strong></td>
+                <td>{row.range}</td>
+                <td class="num">{row.gscClicks}</td>
+                <td>{row.gscImp.toLocaleString('en-US')}</td>
+                <td>{row.gscPos}</td>
+                <td>{row.bingClk}</td>
+                <td>{row.bingImp}</td>
+                <td>{row.ga4}</td>
+                <td style="font-size:11px;">{row.aeo}</td>
+                <td style="font-size:11px;">{row.geo}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card">
+        <div class="card-title">Daily GSC momentum (Jul 2026)</div>
+        <div class="chart-wrap chart-wrap-sm"><canvas id="chartDaily"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Content by collection</div>
+        <div class="chart-wrap chart-wrap-sm"><canvas id="chartContent"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-title">SEO Pulse — Google Search Console</div>
+  <div style="background:white;border-radius:16px;border:1px solid #e8e4dc;padding:24px 28px;">
+    <div class="pulse-header">
+      <div>
+        <h2>Web search · 28 days + since launch</h2>
+        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">sc-domain:mexico-invest.com · Updated {reportDate} via GSC API · data through {dataThrough}</p>
+      </div>
+      <div class="pulse-updated"><span class="pulse-updated-dot"></span>Live via MCP</div>
+    </div>
+    <div class="pulse-kpi-row">
+      <div class="pulse-kpi kpi-green">
+        <div class="kpi-trend trend-up">+1333% imp</div>
+        <div class="kpi-label">Clicks (28d)</div>
+        <div class="kpi-val">43</div>
+        <div class="kpi-sub">Launch total 46 clicks</div>
+      </div>
+      <div class="pulse-kpi kpi-blue">
+        <div class="kpi-label">Impressions (28d)</div>
+        <div class="kpi-val">3.2k</div>
+        <div class="kpi-sub">Launch total 3 575 imp</div>
+      </div>
+      <div class="pulse-kpi kpi-amber">
+        <div class="kpi-label">Avg position (28d)</div>
+        <div class="kpi-val">11.2</div>
+        <div class="kpi-sub">Money queries top-7 emerging</div>
+      </div>
+      <div class="pulse-kpi kpi-orange">
+        <div class="kpi-label">Click URLs</div>
+        <div class="kpi-val">33</div>
+        <div class="kpi-sub">255 URLs with impressions</div>
+      </div>
+    </div>
+    <div class="pulse-grid">
+      <div class="pulse-card">
+        <div class="pulse-card-title"><span class="span-green"></span> Top queries (28d · by impressions)</div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">1</span><span class="pulse-query-text">if i sell a house in mexico how can i bring the proceeds to the us</span><span class="pulse-query-pos">6.9</span><span class="pulse-query-imp">50 imp</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">2</span><span class="pulse-query-text">cost of joining a branded residence rental program</span><span class="pulse-query-pos">10.7</span><span class="pulse-query-imp">42 imp</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">3</span><span class="pulse-query-text">gran tulum</span><span class="pulse-query-pos">9.8</span><span class="pulse-query-imp">11 imp</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">4</span><span class="pulse-query-text">nuevo vallarta vs puerto vallarta</span><span class="pulse-query-pos">21.2</span><span class="pulse-query-imp">9 imp</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">5</span><span class="pulse-query-text">mexico vs costa rica real estate</span><span class="pulse-query-pos">4.8</span><span class="pulse-query-imp">47 imp</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-card-title"><span class="span-blue"></span> Top pages (28d · clicks)</div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/guides/repatriate-sale-proceeds-mexico/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">4 clk</span><span class="pulse-badge badge-impr">141 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/guides/vat-mexico-property-rental/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">3 clk</span><span class="pulse-badge badge-impr">123 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/guides/str-occupancy-by-month-riviera-maya/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">3 clk</span><span class="pulse-badge badge-impr">49 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/guides/earthquake-risk-mexico-property/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">1 clk</span><span class="pulse-badge badge-impr">174 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/projects/chileno-bay-residences/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">2 clk</span><span class="pulse-badge badge-impr">77 imp</span></div></div>
+      </div>
+    </div>
+    <div class="pulse-insight">
+      <div class="pulse-insight-icon">📈</div>
+      <div class="pulse-insight-text"><strong>CTR sprint:</strong> earthquake-risk (174 imp, 0.57% CTR) and branded-residences (101 imp, 0 clicks) are tier-A GEO URLs with weak CTR. Repatriate + VAT guides already convert. Canonical www/non-www splits Vidanta and Costa Palmas clicks.</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:40px;">AEO + GEO Pulse — corpus (27 Jul snapshot)</div>
+  <div class="grid-2">
+    <div class="info-card">
+      <h3>AEO (answer engines + FAQ)</h3>
+      <div class="info-row"><span class="key">FaqBlock pages</span><span class="val">{geoSnapshot.faqBlockPages}/337</span></div>
+      <div class="info-row"><span class="key">validate:content</span><span class="val">0 structural issues</span></div>
+      <div class="info-row"><span class="key">GSC FAQ rich results</span><span class="val">0 impressions</span></div>
+      <div class="info-row"><span class="key">GA4 AI Assistant</span><span class="val">2 sessions (period)</span></div>
+      <div class="info-row"><span class="key">Rendered FAQ / lead form</span><span class="val">337/337 clean</span></div>
+    </div>
+    <div class="info-card">
+      <h3>GEO citability v2</h3>
+      <div class="info-row"><span class="key">Avg commercial score</span><span class="val">{geoSnapshot.avgCommercial}/100</span></div>
+      <div class="info-row"><span class="key">Pages ≥90</span><span class="val">{geoSnapshot.pagesAt90Plus}/{geoSnapshot.pagesTotal}</span></div>
+      <div class="info-row"><span class="key">Tier-A GSC URLs ≥93</span><span class="val">{geoSnapshot.tierAAt93Plus}/{geoSnapshot.tierATotal}</span></div>
+      <div class="info-row"><span class="key">Answer rubric</span><span class="val">{geoSnapshot.answerRubric}/100</span></div>
+      <div class="info-row"><span class="key">Stats rubric</span><span class="val">100/100</span></div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:40px;">Bing Pulse — Bing Webmaster Tools</div>
+  <div style="background:white;border-radius:16px;border:1px solid #e8e4dc;padding:24px 28px;">
+    <div class="pulse-kpi-row">
+      <div class="pulse-kpi kpi-orange">
+        <div class="kpi-label">Bing clicks (period)</div>
+        <div class="kpi-val">28</div>
+        <div class="kpi-sub">1 Jun–24 Jul · MCP</div>
+      </div>
+      <div class="pulse-kpi kpi-blue">
+        <div class="kpi-label">Bing impressions</div>
+        <div class="kpi-val">1.6k</div>
+        <div class="kpi-sub">Ramp from Jul 1</div>
+      </div>
+      <div class="pulse-kpi kpi-green">
+        <div class="kpi-label">Google vs Bing imp</div>
+        <div class="kpi-val">3575:1559</div>
+        <div class="kpi-sub">Expected for new domain</div>
+      </div>
+      <div class="pulse-kpi kpi-amber">
+        <div class="kpi-label">IndexNow</div>
+        <div class="kpi-val">OK</div>
+        <div class="kpi-sub">Tier-A batch 20 URL 10 Jul</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Content breakdown</div>
+  <div class="content-card">
+    <div class="table-scroll">
+      <table class="content-table">
+        <thead>
+          <tr><th>Collection</th><th>Pages</th><th>Avg words</th><th>Intent</th><th>Status</th></tr>
+        </thead>
+        <tbody>
         <tr>
-          <td><strong>Guides</strong><br><span style="font-size:11px;color:#9ca3af">Foreign ownership, fideicomiso, AMPI, tax/CFDI, STR, insurance, buyer nationality, investment strategy</span></td>
-          <td><span class="count">116</span></td>
-          <td><span class="words">~2 841 words</span></td>
+          <td><strong>Guides</strong></td>
+          <td><span class="count">132</span></td>
+          <td><span class="words">~2 840</span></td>
           <td><span class="tag blue">Head keywords</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>Area guides — 32 Mexico markets</strong><br><span style="font-size:11px;color:#9ca3af">Playa del Carmen, Tulum, Cancún, Los Cabos, Puerto Vallarta, Mérida, CDMX zones and more</span></td>
-          <td><span class="count">32</span></td>
-          <td><span class="words">~2 496 words</span></td>
-          <td><span class="tag blue">Location intent</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>Project reviews</strong><br><span style="font-size:11px;color:#9ca3af">100 developments · Cloudinary photos ×3 each</span></td>
+          <td><strong>Projects</strong></td>
           <td><span class="count">100</span></td>
-          <td><span class="words">~1 579 words</span></td>
+          <td><span class="words">~1 580</span></td>
           <td><span class="tag blue">Project intent</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>Comparisons</strong><br><span style="font-size:11px;color:#9ca3af">Mexico vs USA/Spain/Portugal, Playa vs Tulum, fideicomiso vs direct</span></td>
-          <td><span class="count">34</span></td>
-          <td><span class="words">~2 354 words</span></td>
-          <td><span class="tag amber">Comparison intent</span></td>
+          <td><strong>Areas</strong></td>
+          <td><span class="count">32</span></td>
+          <td><span class="words">~2 500</span></td>
+          <td><span class="tag blue">Location</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>Developer profiles</strong><br><span style="font-size:11px;color:#9ca3af">9 major developers — AMPI-verified brokers, track record</span></td>
-          <td><span class="count">9</span></td>
-          <td><span class="words">~2 061 words</span></td>
-          <td><span class="tag blue">Developer intent</span></td>
+          <td><strong>Comparisons</strong></td>
+          <td><span class="count">36</span></td>
+          <td><span class="words">~2 360</span></td>
+          <td><span class="tag amber">Compare</span></td>
           <td><span class="tag green">Live</span></td>
         </tr>
         <tr>
-          <td><strong>News</strong><br><span style="font-size:11px;color:#9ca3af">Banxico FX, Playa resale, Los Cabos luxury · target 3/week</span></td>
-          <td><span class="count">7</span></td>
-          <td><span class="words">~793 words</span></td>
-          <td><span class="tag gray">NewsArticle Schema</span></td>
-          <td><span class="tag amber">Scale up</span></td>
+          <td><strong>News</strong></td>
+          <td><span class="count">28</span></td>
+          <td><span class="words">~790</span></td>
+          <td><span class="tag gray">NewsArticle</span></td>
+          <td><span class="tag green">Live</span></td>
         </tr>
         <tr style="background:#fffbeb;">
           <td><strong>TOTAL</strong></td>
-          <td><span class="count" style="font-size:24px;">298</span></td>
-          <td><span class="words">~2 253 avg</span></td>
-          <td></td>
-          <td><span class="tag green">qa:corpus PASS</span></td>
+          <td><span class="count" style="font-size:24px;">337</span></td>
+          <td colspan="3"><span class="tag green">GEO ≥90 · validate 0 issues</span></td>
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 
   <div class="section-title">Change history</div>
   <div class="changelog">
+      <div class="changelog-item">
+        <div class="changelog-date">27 Jul 2026</div>
+        <div class="changelog-content">
+          <div class="changelog-title">Site report v5.0 — GSC/GA4/Bing + 8-week SEO/AEO/GEO table</div>
+          <div class="changelog-desc">GSC 1 Jun–24 Jul: 46 clicks, 3 575 imp, 255 URLs in SERP. GA4: 337 sessions (89 organic). Bing: 28 clicks, 1 559 imp. GEO: avg 90, tier-A 20/20 ≥93. Fixed MoM table + SEO Pulse.</div>
+          <div class="changelog-tags"><span class="tag green">v5.0</span><span class="tag blue">Weekly KPIs</span><span class="tag amber">GEO</span></div>
+        </div>
+      </div>
+      <div class="changelog-item">
+        <div class="changelog-date">10 Jul 2026</div>
+        <div class="changelog-content">
+          <div class="changelog-title">GEO corpus 337/337 ≥90 + tier-A pass 93+</div>
+          <div class="changelog-desc">Careful GEO pipeline after rollback. Live smoke + re-index 20 tier-A URLs. validate:content 0 issues.</div>
+          <div class="changelog-tags"><span class="tag green">GEO</span><span class="tag blue">Indexing</span></div>
+        </div>
+      </div>
       <div class="changelog-item">
         <div class="changelog-date">25 Jun 2026</div>
         <div class="changelog-content">
@@ -643,41 +856,41 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
       </div>
   </div>
 
-      <div class="section-title">Next steps — 25 Jun 2026</div>
+      <div class="section-title">Next steps — 27 Jul 2026</div>
   <div class="next-steps">
     <div class="next-item" style="background:#fef2f2;border-color:#fecaca;">
       <div class="priority high">P0</div>
       <div>
-        <div class="text" style="font-weight:700;">CTR sprint — can-foreigners-buy (8 imp, pos 4.2, 0 clk)</div>
-        <div class="subtext">Title + description live since 16 Jun · monitor GSC weekly.</div>
+        <div class="text" style="font-weight:700;">CTR sprint: earthquake-risk + branded-residences (174+101 imp, ~0% CTR)</div>
+        <div class="subtext">Tier-A GEO done · titles/meta + SERP snippet test.</div>
       </div>
     </div>
     <div class="next-item" style="background:#fff7ed;border-color:#fed7aa;">
       <div class="priority medium">P1</div>
       <div>
-        <div class="text" style="font-weight:700;">News cadence — scale from 7 to 3/week</div>
-        <div class="subtext">Banxico, Playa resale, Los Cabos batch live · add 2 more this week.</div>
+        <div class="text" style="font-weight:700;">GA4 lead key event on LeadForm</div>
+        <div class="subtext">Still 0 key events · blocks organic ROI view.</div>
       </div>
     </div>
     <div class="next-item" style="background:#fff7ed;border-color:#fed7aa;">
       <div class="priority medium">P1</div>
       <div>
-        <div class="text" style="font-weight:700;">GA4 lead event verification</div>
-        <div class="subtext">0 key events reported · verify LeadForm → GA4 conversion tracking.</div>
+        <div class="text" style="font-weight:700;">Canonical www vs apex on project URLs</div>
+        <div class="subtext">Split clicks on Vidanta, Costa Palmas, Tres Patios in GSC.</div>
       </div>
     </div>
     <div class="next-item">
       <div class="priority medium">P1</div>
       <div>
-        <div class="text" style="font-weight:700;">Monitor GSC click growth — re-report 2 Jul</div>
-        <div class="subtext">94 imp baseline · expect 10× in 4 weeks if index holds pace.</div>
+        <div class="text" style="font-weight:700;">Lift 17 pages still below GEO 90 (mostly 89)</div>
+        <div class="subtext">tulum-country-club, airbnb guide, invest-in-cancun among tail.</div>
       </div>
     </div>
     <div class="next-item" style="background:#f0fdf4;border-color:#bbf7d0;">
       <div class="priority low">DONE</div>
       <div>
-        <div class="text" style="font-weight:700;">Site-report v4.0 + full indexing (309 URLs)</div>
-        <div class="subtext">Growth dashboard · GSC/GA4/Bing MCP refresh · Phase B+C fix pack deployed.</div>
+        <div class="text" style="font-weight:700;">Site-report v5.0 + tier-A GEO 93+ on live</div>
+        <div class="subtext">Weekly SEO/AEO/GEO table on report · MCP refresh 27 Jul.</div>
       </div>
     </div>
   </div>
@@ -717,13 +930,13 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 </div>
 
   <div class="footer">
-  <strong>Mexico Invest</strong> · mexico-invest.com · Report updated 25 Jun 2026 v4.0 · 309 sitemap URLs · ~671K words · GSC 1 click / 94 imp (1 Jun–22 Jun) · GA4 78 sessions · 57 git commits<br>
+  <strong>Mexico Invest</strong> · mexico-invest.com · Report updated 27 Jul 2026 v5.0 · 337 MDX · GSC 46 clk / 3 575 imp · GA4 337 sessions · GEO avg 90<br>
   <a href="https://mexico-invest.com/portfolio-report/" style="color:#2d7a5e;text-decoration:none;">Portfolio hub (all sites)</a> ·
   To update: edit <code>src/pages/site-report/index.astro</code> in mexico-invest-website
 </div>
 
 
-<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":1,"impressions":94}],"monthlyGa4":[{"month":"Jun","sessions":78}],"contentBreakdown":[{"type":"Guides","count":116,"color":"#b45309"},{"type":"Projects","count":100,"color":"#4e9e7e"},{"type":"Comparisons","count":34,"color":"#d97706"},{"type":"Areas","count":32,"color":"#8b5cf6"},{"type":"Developers","count":9,"color":"#60a5fa"},{"type":"News","count":7,"color":"#78716c"}],"dailyRaw":[{"d":"06-07","c":0,"i":1},{"d":"06-12","c":0,"i":5},{"d":"06-14","c":0,"i":5},{"d":"06-17","c":0,"i":11},{"d":"06-18","c":0,"i":16},{"d":"06-21","c":0,"i":17},{"d":"06-22","c":1,"i":17}]}</script>
+<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":3,"impressions":373},{"label":"Jul","clicks":43,"impressions":3202}],"monthlyGa4":[{"month":"Jun","sessions":124},{"month":"Jul","sessions":213}],"contentBreakdown":[{"type":"Guides","count":132,"color":"#b45309"},{"type":"Projects","count":100,"color":"#4e9e7e"},{"type":"Comparisons","count":36,"color":"#d97706"},{"type":"Areas","count":32,"color":"#8b5cf6"},{"type":"Developers","count":9,"color":"#60a5fa"},{"type":"News","count":28,"color":"#78716c"}],"dailyRaw":[{"d":"07-02","c":0,"i":68},{"d":"07-04","c":1,"i":110},{"d":"07-06","c":2,"i":144},{"d":"07-08","c":0,"i":148},{"d":"07-10","c":4,"i":185},{"d":"07-12","c":2,"i":138},{"d":"07-14","c":2,"i":185},{"d":"07-16","c":1,"i":142},{"d":"07-18","c":2,"i":93},{"d":"07-20","c":3,"i":125},{"d":"07-22","c":5,"i":143},{"d":"07-24","c":3,"i":144}]}</script>
 <script is:inline>
 (function initReportCharts() {
   function run() {
