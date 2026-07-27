@@ -145,6 +145,77 @@ textarea:focus {
   text-underline-offset: 2px;
 }
 
+/* "What happens after you submit" reassurance list under the submit button. */
+.lead-form-next {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  list-style: none;
+  border-radius: 0.75rem;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  line-height: 1.5;
+}
+.lead-form-next li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+.lead-form-next li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-teal);
+  font-weight: 700;
+}
+
+.shortlist-form__more summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Mobile-only sticky shortlist bar on long article pages. */
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -6px 20px rgb(15 23 42 / 12%);
+}
+.sticky-cta[data-visible='true'] {
+  display: flex;
+}
+.sticky-cta__text {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--color-muted);
+}
+.sticky-cta__text strong {
+  display: block;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+}
+.sticky-cta__btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .sticky-cta[data-visible='true'] {
+    display: none;
+  }
+}
+
 .prose { max-width: 72ch; }
 .prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.35rem; }
 .prose h3 { margin-top: 1.75rem; margin-bottom: 0.75rem; font-size: 1.1rem; }

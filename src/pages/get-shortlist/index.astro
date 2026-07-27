@@ -1,31 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import LeadForm from '../../components/LeadForm.astro';
+import ShortlistForm from '../../components/ShortlistForm.astro';
+
+const from = Astro.url.searchParams.get('from') || '';
 ---
 <BaseLayout
   title="Get Your Mexico Property Shortlist"
-  description="Tell us your budget and target market (Riviera Maya, Los Cabos, RAK). Free independent shortlist within one business day."
+  description="Tell us your market, budget and timeline. We reply with 3 to 5 vetted Mexico options and the net yield maths behind each one, within one business day."
 >
-  <section class="site-container py-12 md:py-16 max-w-2xl">
-    <header class="mb-8">
-      <h1 class="mb-3">Get your shortlist</h1>
-      <p class="text-lg text-[var(--color-muted)] mb-4">
-        Share your budget and requirements. We match you with vetted off-plan and ready options.
+  <section class="site-container py-8 md:py-14 max-w-2xl">
+    <header class="mb-6">
+      <span class="badge-pill mb-3">Free · Independent · No developer pressure</span>
+      <h1 class="mb-3 text-3xl md:text-4xl">Get a vetted Mexico shortlist</h1>
+      <p class="text-lg text-[var(--color-muted)]">
+        Three questions. We come back with 3 to 5 options that fit, each with the net yield maths
+        and the fideicomiso and tax costs already subtracted.
       </p>
-      <ul class="text-sm text-[var(--color-muted)] space-y-2">
-        <li>✓ Independent advisory — no developer pressure</li>
-        <li>✓ Licensed partner review</li>
-        <li>✓ Response within one business day</li>
-      </ul>
     </header>
-    <LeadForm
-      title="Request your shortlist"
-      subtitle="Riviera Maya · Los Cabos · Puerto Vallarta"
-      context="Get shortlist page"
-    />
+
+    <ShortlistForm context={from ? `Get shortlist page (from: ${from})` : 'Get shortlist page'} />
+
+    <div class="surface-card p-6 mt-8">
+      <h2 class="text-lg mb-3 text-[var(--color-ink)]">Why buyers use this instead of a portal</h2>
+      <ul class="text-sm text-[var(--color-muted)] space-y-2">
+        <li>✓ We are not a developer, so nobody is paid to push one project at you.</li>
+        <li>✓ Every option is checked against AMPI licensing before it reaches your list. See our <a href="/methodology/" class="underline">methodology</a>.</li>
+        <li>✓ Yields are shown net of fideicomiso fees, predial, IVA and management, not gross.</li>
+        <li>✓ Purchases are referred to AMPI licensed partners. You are never obliged to use them.</li>
+      </ul>
+    </div>
+
     <p class="text-xs text-[var(--color-muted)] mt-6">
-      By submitting you agree to our <a href="/privacy-policy/">Privacy Policy</a>.
-      Not financial or legal advice.
+      By submitting you agree to our <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
+      Independent research. Not financial or legal advice.
     </p>
   </section>
 </BaseLayout>

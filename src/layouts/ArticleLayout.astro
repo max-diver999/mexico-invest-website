@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
+import StickyCta from '../components/StickyCta.astro';
 import { SITE } from '../data/site';
 
 interface Props {
@@ -86,6 +87,8 @@ const faqSchema = faq.length > 0 ? {
 } : null;
 
 const pathParts = Astro.url.pathname.split('/').filter(Boolean);
+const pageSlug = pathParts[pathParts.length - 1] || '';
+const shortlistHref = pageSlug ? `/get-shortlist/?from=${pageSlug}` : '/get-shortlist/';
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -133,9 +136,10 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
 
     <div class="max-w-3xl mx-auto mb-10">
       <LeadForm
-        title="Get a Mexico property shortlist"
-        subtitle="Independent research, local due diligence, and no developer sales deck. Share your budget and target market; we reply within one business day."
+        title="Get a vetted Mexico shortlist"
+        subtitle="US and Canadian buyers use this to skip the developer sales deck: tell us the budget and the market, and we come back with 3 to 5 options and the net yield maths behind each one."
         context={contextLabel}
+        formLocation="top"
       />
     </div>
 
@@ -151,13 +155,16 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
 
     <div class="max-w-3xl mx-auto mt-12 surface-card p-6 text-center">
       <p class="font-semibold text-[var(--color-ink)]">Want options matched to your budget and risk profile?</p>
-      <p class="text-sm text-[var(--color-muted)] mt-1 mb-4">Return to the independent shortlist form. We reply within one business day.</p>
-      <a href="#lead-form" class="btn-primary inline-flex px-6 py-3">Request your shortlist</a>
+      <p class="text-sm text-[var(--color-muted)] mt-1 mb-4">Three questions, one screen. We reply within one business day.</p>
+      <a href={shortlistHref} class="btn-primary inline-flex px-6 py-3" data-cta="article_footer_shortlist">
+        Get a vetted Mexico shortlist
+      </a>
     </div>
 
     <aside class="max-w-3xl mx-auto mt-10 surface-card p-5 text-sm text-[var(--color-muted)]">
       <strong>Disclaimer:</strong> Mexico Invest is an independent editorial resource. We are not a developer or licensed broker.
-      Enquiries may be referred to AMPI-licensed partners. Prices, yields, and visa rules change — verify before any transaction.
+      Enquiries may be referred to AMPI-licensed partners. Prices, yields, and visa rules change, so verify before any transaction.
     </aside>
   </article>
+  <StickyCta />
 </BaseLayout>

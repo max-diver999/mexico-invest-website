@@ -21,11 +21,21 @@ const isLead = Astro.url.searchParams.get('lead') === '1';
   </section>
   {isLead && (
     <script is:inline>
-      if (typeof window.investGulfTrack === 'function') {
-        window.investGulfTrack('generate_lead', { lead_type: 'shortlist_form', value: 1, currency: 'USD' });
-      } else if (typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', { lead_type: 'shortlist_form', value: 1, currency: 'USD' });
-      }
+      /* `generate_lead` is fired by the lead form on API success. This page only
+         confirms the visitor landed here, so it must not double count the conversion. */
+      (function trackThanksView() {
+        var params = new URLSearchParams(window.location.search);
+        var payload = {
+          lead_type: 'shortlist_form',
+          from_page: params.get('from') || '',
+          lead_context: params.get('context') || '',
+        };
+        if (typeof window.investGulfTrack === 'function') {
+          window.investGulfTrack('lead_thanks_view', payload);
+        } else if (typeof window.gtag === 'function') {
+          window.gtag('event', 'lead_thanks_view', payload);
+        }
+      })();
     </script>
   )}
 </BaseLayout>

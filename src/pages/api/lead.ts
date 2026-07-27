@@ -36,12 +36,18 @@ async function sendAutoReply(to: string, name: string, context: string) {
       from: LEAD_FROM_EMAIL,
       reply_to: SITE.email,
       to: [to],
-      subject: 'We received your request — Mexico Invest',
+      subject: 'Your Mexico shortlist request is in',
       html: `<p>${greeting}</p>
 <p>Thank you for contacting Mexico Invest. We received your request regarding <strong>${topic}</strong>.</p>
-<p>A licensed partner will review your enquiry and reply by email or WhatsApp, usually within one business day.</p>
-<p>— <strong>Mexico Invest Editorial</strong><br><a href="${SITE.url}">${SITE.url.replace('https://', '')}</a></p>
-<p style="font-size:12px;color:#666;">Independent research — not financial or legal advice.</p>`,
+<p>Here is what happens next:</p>
+<ol>
+<li>A researcher reads your request. During US morning hours that usually takes about 15 minutes.</li>
+<li>We come back with 3 to 5 matched options, each with the net yield maths behind it.</li>
+<li>If you want to go further, we introduce an AMPI licensed partner. There is no obligation.</li>
+</ol>
+<p>If anything changes, just reply to this email.</p>
+<p><strong>Mexico Invest Editorial</strong><br><a href="${SITE.url}">${SITE.url.replace('https://', '')}</a></p>
+<p style="font-size:12px;color:#666;">Independent research. Not financial or legal advice.</p>`,
     }),
   });
 }
@@ -51,6 +57,7 @@ export const POST: APIRoute = async ({ request }) => {
     const body = await request.json();
     const {
       name, phone, email, contact, budget, goal, message, context, source, page, market,
+      timeline, collection, slug, formLocation, landingPage, referrer, aiSource, utm, sessionId,
     } = body;
 
     const phoneText = String(phone || contact || '').trim();
@@ -59,27 +66,43 @@ export const POST: APIRoute = async ({ request }) => {
       String(source || '').toLowerCase().includes('healthcheck') ||
       phoneText === 'healthcheck@bot';
 
-    if (!isHealthcheck && phoneText.replace(/\D/g, '').length < 8) {
-      return new Response(JSON.stringify({ error: 'Valid phone required' }), { status: 400 });
+    const hasPhone = phoneText.replace(/\D/g, '').length >= 8;
+    const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailText);
+    if (!isHealthcheck && !hasPhone && !hasEmail) {
+      return new Response(JSON.stringify({ error: 'Email or phone required' }), { status: 400 });
     }
 
+    const utmText = utm && typeof utm === 'object'
+      ? Object.entries(utm as Record<string, string>)
+          .map(([key, value]) => `${key}=${value}`)
+          .join(' · ')
+      : '';
+
     const lines = [
-      isHealthcheck ? '🧪 <b>TEST mexico-invest.com</b>' : '🇲🇽 <b>New lead — Mexico Invest</b>',
+      isHealthcheck ? '🧪 <b>TEST mexico-invest.com</b>' : '🇲🇽 <b>New lead: Mexico Invest</b>',
       '',
       name ? `👤 <b>Name:</b> ${name}` : null,
       phoneText ? `📱 <b>Phone:</b> ${phoneText}` : null,
       emailText ? `✉️ <b>Email:</b> ${emailText}` : null,
       market ? `🌍 <b>Market:</b> ${market}` : null,
       budget ? `💰 <b>Budget:</b> ${budget}` : null,
+      timeline ? `⏱ <b>Timeline:</b> ${timeline}` : null,
       goal ? `🎯 <b>Goal:</b> ${goal}` : null,
       message ? `💬 <b>Message:</b> ${message}` : null,
       context ? `📄 <b>Context:</b> ${context}` : null,
-      source ? `🔗 <b>Source:</b> ${source}` : null,
       page ? `🌐 <b>Page:</b> ${page}` : null,
+      collection || slug ? `🗂 <b>Slug:</b> ${collection || '?'}/${slug || '?'}` : null,
+      formLocation ? `📍 <b>Form:</b> ${formLocation}` : null,
+      landingPage ? `🚪 <b>Landing:</b> ${landingPage}` : null,
+      referrer ? `↩️ <b>Referrer:</b> ${referrer}` : null,
+      aiSource ? `🤖 <b>AI source:</b> ${aiSource}` : null,
+      utmText ? `📈 <b>UTM:</b> ${utmText}` : null,
+      sessionId ? `🆔 <b>Session:</b> ${sessionId}` : null,
+      source ? `🔗 <b>Source URL:</b> ${source}` : null,
     ].filter(Boolean).join('\n');
 
     await sendTelegram(lines);
-    // Owner inbox email disabled — Telegram only (no Kommo email ingest).
+    // Owner inbox email disabled. Telegram only (no Kommo email ingest).
 
     if (!isHealthcheck && emailText) {
       try {

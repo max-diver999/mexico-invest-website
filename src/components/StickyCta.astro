@@ -1,0 +1,69 @@
+---
+/**
+ * Mobile-only sticky shortlist bar. Appears once the reader has scrolled past the
+ * top lead form, so the CTA stays reachable on long guides without adding a second
+ * `#lead-form` to the page.
+ */
+interface Props {
+  label?: string;
+  buttonText?: string;
+}
+
+const {
+  label = 'Want these numbers run for your budget?',
+  buttonText = 'Get shortlist',
+} = Astro.props;
+---
+<div class="sticky-cta" id="sticky-cta" data-visible="false" aria-hidden="true">
+  <p class="sticky-cta__text">
+    <strong>{label}</strong>
+    Free, independent, reply within one business day.
+  </p>
+  <a href="#lead-form" class="btn-primary sticky-cta__btn px-4 py-2 text-sm" data-cta="sticky_shortlist">
+    {buttonText}
+  </a>
+</div>
+
+<script>
+  const bar = document.getElementById('sticky-cta');
+  const anchor = document.getElementById('lead-form');
+  if (bar && anchor) {
+    let shown = false;
+
+    function setVisible(visible: boolean) {
+      bar!.dataset.visible = visible ? 'true' : 'false';
+      bar!.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      if (visible && !shown) {
+        shown = true;
+        try {
+          // @ts-ignore
+          if (typeof window.investGulfTrack === 'function') {
+            // @ts-ignore
+            window.investGulfTrack('sticky_cta_view', { page_path: window.location.pathname });
+          }
+        } catch {}
+      }
+    }
+
+    // Show the bar only while the top form is out of view.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+        }
+      },
+      { threshold: 0 },
+    );
+    observer.observe(anchor);
+
+    bar.querySelector('a')?.addEventListener('click', () => {
+      try {
+        // @ts-ignore
+        if (typeof window.investGulfTrack === 'function') {
+          // @ts-ignore
+          window.investGulfTrack('sticky_cta_click', { page_path: window.location.pathname });
+        }
+      } catch {}
+    });
+  }
+</script>

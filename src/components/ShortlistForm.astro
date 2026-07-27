@@ -1,0 +1,256 @@
+---
+import { SITE } from '../data/site';
+
+/**
+ * Dedicated shortlist funnel form. Deliberately shorter than the article LeadForm:
+ * market, budget, timeline and one contact field, so it fits a 390px screen without
+ * scrolling past the submit button.
+ */
+interface Props {
+  context?: string;
+}
+
+const { context = 'Get shortlist page' } = Astro.props;
+
+const waText = encodeURIComponent(
+  'Hi, I would like a Mexico property shortlist from Mexico Invest.',
+);
+const waHref = `${SITE.whatsapp}?text=${waText}`;
+---
+<section class="surface-card p-6 md:p-8" id="lead-form">
+  <form class="grid gap-4 shortlist-form" id="shortlist-form" data-context={context} novalidate>
+    <div>
+      <label class="block text-xs font-medium mb-1" for="sf-market">Where are you looking? *</label>
+      <select id="sf-market" name="market" class="w-full" required>
+        <option value="">Select a market</option>
+        <option value="riviera-maya">Riviera Maya (Playa, Tulum, Puerto Aventuras)</option>
+        <option value="cancun">Cancun and Puerto Morelos</option>
+        <option value="los-cabos">Los Cabos and Baja</option>
+        <option value="puerto-vallarta">Puerto Vallarta and Punta Mita</option>
+        <option value="merida-yucatan">Merida and Yucatan</option>
+        <option value="not-sure">Not sure yet, advise me</option>
+      </select>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-medium mb-1" for="sf-budget">Budget (USD) *</label>
+        <select id="sf-budget" name="budget" class="w-full" required>
+          <option value="">Select budget</option>
+          <option value="under-300k">Under $300k</option>
+          <option value="300-500k">$300k to $500k</option>
+          <option value="500k-1m">$500k to $1M</option>
+          <option value="1m-2m">$1M to $2M</option>
+          <option value="2m+">$2M+</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-medium mb-1" for="sf-timeline">Timeline *</label>
+        <select id="sf-timeline" name="timeline" class="w-full" required>
+          <option value="">Select timeline</option>
+          <option value="0-3-months">Ready in 0 to 3 months</option>
+          <option value="3-6-months">3 to 6 months</option>
+          <option value="6-12-months">6 to 12 months</option>
+          <option value="researching">Researching, no date yet</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-medium mb-1" for="sf-name">Your name *</label>
+        <input type="text" id="sf-name" name="name" required placeholder="John Smith" autocomplete="name" class="w-full" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium mb-1" for="sf-email">Email *</label>
+        <input type="email" id="sf-email" name="email" placeholder="john@example.com" autocomplete="email" class="w-full" />
+      </div>
+    </div>
+
+    <details class="shortlist-form__more">
+      <summary>Add a phone number or a note (optional)</summary>
+      <div class="grid gap-4 mt-3">
+        <input type="tel" id="sf-phone" name="phone" placeholder="+1 555 123 4567 for a WhatsApp reply" autocomplete="tel" class="w-full" aria-label="WhatsApp or phone number" />
+        <textarea id="sf-message" name="message" rows="2" placeholder="Anything specific? E.g. rental income focus, beachfront only, cash purchase." aria-label="Additional notes"></textarea>
+      </div>
+    </details>
+
+    <div class="lead-form-consent">
+      <input type="checkbox" id="sf-consent" name="consent" required class="lead-form-consent__check" />
+      <label class="lead-form-consent__label" for="sf-consent">I agree to be contacted about my enquiry. See our <a href="/privacy-policy/">Privacy Policy</a>.</label>
+    </div>
+
+    <button type="submit" class="btn-primary w-full py-3">Get my shortlist →</button>
+
+    <ul class="lead-form-next text-xs text-[var(--color-muted)]">
+      <li>A researcher reads your request, usually within 15 minutes during US morning hours.</li>
+      <li>You get 3 to 5 matched options with real net yield maths, not a developer brochure.</li>
+      <li>No cold calls. We reply on the channel you gave us, and you can stop at any point.</li>
+    </ul>
+
+    <p class="text-center text-sm text-[var(--color-muted)]">
+      Prefer WhatsApp?
+      <a
+        href={waHref}
+        class="font-medium text-[#128C7E] hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-placement="inline_cta"
+        data-cta="whatsapp_shortlist_form"
+      >
+        Message us instead
+      </a>
+      ({SITE.whatsappDisplay})
+    </p>
+
+    <p id="sf-success" class="hidden text-green-700 text-sm font-medium text-center">Thank you. Taking you to the next step…</p>
+    <p id="sf-error" class="hidden text-red-600 text-sm text-center">
+      Something went wrong. Email {SITE.email} or{' '}
+      <a
+        href={SITE.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-placement="inline_cta"
+        data-cta="whatsapp_shortlist_error"
+      >
+        WhatsApp us
+      </a>.
+    </p>
+  </form>
+</section>
+
+<script>
+  import { getLeadAttribution, initializeLeadAttribution } from '../lib/lead-attribution';
+
+  initializeLeadAttribution();
+
+  function ga(eventName: string, params: Record<string, unknown> = {}) {
+    try {
+      // @ts-ignore
+      if (typeof window.investGulfTrack === 'function') {
+        // @ts-ignore
+        window.investGulfTrack(eventName, params);
+        return;
+      }
+      // @ts-ignore
+      if (typeof window.gtag === 'function') {
+        // @ts-ignore
+        window.gtag('event', eventName, params);
+      }
+    } catch (_) {}
+  }
+
+  const form = document.getElementById('shortlist-form') as HTMLFormElement | null;
+  if (form) {
+    // `?from=slug` tells us which money page sent the visitor into the funnel.
+    const fromSlug = new URLSearchParams(window.location.search).get('from') || 'direct';
+    let started = false;
+
+    form.addEventListener('focusin', () => {
+      if (started) return;
+      started = true;
+      ga('form_start', {
+        form_id: form.id,
+        form_context: form.dataset.context || '',
+        form_location: 'shortlist_page',
+        page_path: window.location.pathname,
+        collection: 'get-shortlist',
+        slug: fromSlug,
+      });
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const email = String(data.get('email') || '').trim();
+      const phone = String(data.get('phone') || '').trim();
+      const error = document.getElementById('sf-error');
+      const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      const hasPhone = phone.replace(/\D/g, '').length >= 8;
+
+      if (!hasEmail && !hasPhone) {
+        if (error) {
+          error.textContent = 'Please leave an email address, or a phone number we can reach you on.';
+          error.classList.remove('hidden');
+        }
+        return;
+      }
+      if (!data.get('market') || !data.get('budget') || !data.get('timeline')) {
+        if (error) {
+          error.textContent = 'Please pick a market, a budget and a timeline so we can match real options.';
+          error.classList.remove('hidden');
+        }
+        return;
+      }
+      error?.classList.add('hidden');
+
+      const attribution = getLeadAttribution();
+      const payload = {
+        name: data.get('name'),
+        email,
+        phone,
+        contact: [phone, email].filter(Boolean).join(' / '),
+        market: data.get('market'),
+        budget: data.get('budget'),
+        timeline: data.get('timeline'),
+        message: data.get('message'),
+        context: `${form.dataset.context || 'Get shortlist page'} (from: ${fromSlug})`,
+        source: window.location.href,
+        page: window.location.pathname,
+        collection: 'get-shortlist',
+        slug: fromSlug,
+        formLocation: 'shortlist_page',
+        sessionId: attribution.sessionId,
+        landingPage: attribution.landingPage,
+        referrer: attribution.firstReferrer,
+        aiSource: attribution.externalAiSource,
+        utm: attribution.utm,
+      };
+
+      ga('form_submit_attempt', {
+        form_id: form.id,
+        form_location: 'shortlist_page',
+        budget: String(payload.budget || 'not_set'),
+        market: String(payload.market || 'not_set'),
+        timeline: String(payload.timeline || 'not_set'),
+        page_path: window.location.pathname,
+        collection: 'get-shortlist',
+        slug: fromSlug,
+      });
+
+      try {
+        const res = await fetch('/api/lead/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error('fail');
+        document.getElementById('sf-success')?.classList.remove('hidden');
+        ga('generate_lead', {
+          form_id: form.id,
+          form_location: 'shortlist_page',
+          lead_type: 'shortlist_page',
+          budget: String(payload.budget || 'not_set'),
+          market: String(payload.market || 'not_set'),
+          timeline: String(payload.timeline || 'not_set'),
+          page_path: window.location.pathname,
+          collection: 'get-shortlist',
+          slug: fromSlug,
+          value: 1,
+          currency: 'USD',
+        });
+        const thanksUrl = new URL('/thanks/', window.location.origin);
+        thanksUrl.searchParams.set('lead', '1');
+        thanksUrl.searchParams.set('from', fromSlug);
+        setTimeout(() => window.location.assign(thanksUrl.toString()), 400);
+      } catch {
+        document.getElementById('sf-error')?.classList.remove('hidden');
+        ga('form_submit_error', {
+          form_id: form.id,
+          form_location: 'shortlist_page',
+          page_path: window.location.pathname,
+        });
+      }
+    });
+  }
+</script>

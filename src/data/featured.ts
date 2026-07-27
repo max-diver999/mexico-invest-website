@@ -14,7 +14,7 @@ export const FEATURED_PROJECT_SLUGS = [
   'paravian-playa',
 ] as const;
 
-/** Hero spotlight — links to full project review from homepage banner. */
+/** Hero spotlight: links to full project review from homepage banner. */
 export const HOMEPAGE_HERO_PROJECT_SLUG = 'gran-tulum' as const;
 
 export const FEATURED_GUIDE_SLUGS = [
@@ -31,6 +31,6 @@ export const FEATURED_AREA_SLUGS = [
   'puerto-vallarta',
 ] as const;
 
-/** Homepage hero — Tulum aerial (area guide hero). */
+/** Homepage hero: Tulum aerial (area guide hero). */
 export const HOMEPAGE_HERO_IMAGE =
   'https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460931/more-group/mexico/areas/tulum/hero.webp';

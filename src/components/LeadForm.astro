@@ -5,12 +5,14 @@ interface Props {
   title?: string;
   subtitle?: string;
   context?: string;
+  formLocation?: 'top' | 'mid' | 'bottom';
 }
 
 const {
   title = 'Get your Mexico property shortlist',
-  subtitle = 'Share your budget and target market — we respond within one business day.',
+  subtitle = 'Share your budget and target market. We respond within one business day.',
   context = '',
+  formLocation = 'top',
 } = Astro.props;
 
 const waText = encodeURIComponent(
@@ -23,29 +25,30 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
   <h2 class="text-2xl mb-1 text-[var(--color-ink)]">{title}</h2>
   <p class="text-[var(--color-muted)] mb-5 text-sm">{subtitle}</p>
 
-  <form class="grid gap-4 ig-lead-form" id="ig-lead-form" data-context={context} novalidate>
+  <form class="grid gap-4 ig-lead-form" id="ig-lead-form" data-context={context} data-form-location={formLocation} novalidate>
     <div>
       <label class="block text-xs font-medium mb-1" for="lf-name">Your name *</label>
       <input type="text" id="lf-name" name="name" required placeholder="John Smith" autocomplete="name" class="w-full" />
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
-        <label class="block text-xs font-medium mb-1" for="lf-phone">WhatsApp / Phone *</label>
-        <input type="tel" id="lf-phone" name="phone" required placeholder="+1 555 123 4567" autocomplete="tel" />
-      </div>
-      <div>
-        <label class="block text-xs font-medium mb-1" for="lf-email">Email</label>
+        <label class="block text-xs font-medium mb-1" for="lf-email">Email *</label>
         <input type="email" id="lf-email" name="email" placeholder="john@example.com" autocomplete="email" />
       </div>
+      <div>
+        <label class="block text-xs font-medium mb-1" for="lf-phone">WhatsApp / Phone</label>
+        <input type="tel" id="lf-phone" name="phone" placeholder="+1 555 123 4567" autocomplete="tel" />
+      </div>
     </div>
+    <p class="-mt-2 text-xs text-[var(--color-muted)]">Email is enough. Add a number only if you want a WhatsApp reply.</p>
     <div>
       <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (USD)</label>
       <select id="lf-budget" name="budget" class="w-full">
-        <option value="">— Select budget —</option>
+        <option value="">Select budget</option>
         <option value="under-300k">Under $300k</option>
-        <option value="300-500k">$300k – $500k</option>
-        <option value="500k-1m">$500k – $1M</option>
-        <option value="1m-2m">$1M – $2M</option>
+        <option value="300-500k">$300k to $500k</option>
+        <option value="500k-1m">$500k to $1M</option>
+        <option value="1m-2m">$1M to $2M</option>
         <option value="2m+">$2M+</option>
       </select>
     </div>
@@ -57,7 +60,12 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       <input type="checkbox" id="lf-consent" name="consent" required class="lead-form-consent__check" />
       <label class="lead-form-consent__label" for="lf-consent">I agree to be contacted about my enquiry. See our <a href="/privacy-policy/">Privacy Policy</a>.</label>
     </div>
-    <button type="submit" class="btn-primary w-full py-3">Request shortlist →</button>
+    <button type="submit" class="btn-primary w-full py-3">Get my Mexico shortlist →</button>
+    <ul class="lead-form-next text-xs text-[var(--color-muted)]">
+      <li>A researcher reads your request, usually within 15 minutes during US morning hours.</li>
+      <li>You get 3 to 5 matched options with real net yield maths, not a developer brochure.</li>
+      <li>No cold calls. We reply on the channel you gave us, and you can stop at any point.</li>
+    </ul>
     <p class="text-center text-sm text-[var(--color-muted)]">
       Prefer WhatsApp?
       <a
@@ -72,7 +80,7 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       </a>
       ({SITE.whatsappDisplay})
     </p>
-    <p id="lf-success" class="hidden text-green-700 text-sm font-medium text-center">Thank you — redirecting…</p>
+    <p id="lf-success" class="hidden text-green-700 text-sm font-medium text-center">Thank you. Taking you to the next step…</p>
     <p id="lf-error" class="hidden text-red-600 text-sm text-center">
       Something went wrong. Email {SITE.email} or{' '}
       <a
@@ -89,6 +97,19 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
 </section>
 
 <script>
+  import { getLeadAttribution, initializeLeadAttribution } from '../lib/lead-attribution';
+
+  initializeLeadAttribution();
+
+  /** `/guides/fideicomiso-mexico-explained/` -> { collection: 'guides', slug: 'fideicomiso-mexico-explained' } */
+  function pageIdentity() {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    return {
+      collection: parts.length > 1 ? parts[0] : 'root',
+      slug: parts.length > 0 ? parts[parts.length - 1] : 'home',
+    };
+  }
+
   function ga(eventName: string, params: Record<string, unknown> = {}) {
     try {
       // @ts-ignore
@@ -116,10 +137,14 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
     form.addEventListener('focusin', () => {
       if (started) return;
       started = true;
+      const { collection, slug } = pageIdentity();
       ga('form_start', {
         form_id: form.id,
         form_context: form.dataset.context || '',
+        form_location: form.dataset.formLocation || 'top',
         page_path: window.location.pathname,
+        collection,
+        slug,
       });
     });
 
@@ -128,31 +153,47 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       const data = new FormData(form);
       const phone = String(data.get('phone') || '').trim();
       const email = String(data.get('email') || '').trim();
-      if (phone.replace(/\D/g, '').length < 8) {
+      const hasPhone = phone.replace(/\D/g, '').length >= 8;
+      const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      if (!hasPhone && !hasEmail) {
         const err = document.getElementById('lf-error');
         if (err) {
-          err.textContent = 'Please enter a valid phone or WhatsApp number.';
+          err.textContent = 'Please leave an email address, or a phone number we can reach you on.';
           err.classList.remove('hidden');
         }
         return;
       }
+      const { collection, slug } = pageIdentity();
+      const attribution = getLeadAttribution();
+      const formLocation = form.dataset.formLocation || 'top';
       const payload = {
         name: data.get('name'),
         phone,
         email,
-        contact: email ? `${phone} / ${email}` : phone,
+        contact: [phone, email].filter(Boolean).join(' / '),
         budget: data.get('budget'),
         message: data.get('message'),
         context: form.dataset.context || '',
         source: window.location.href,
         page: window.location.pathname,
+        collection,
+        slug,
+        formLocation,
+        sessionId: attribution.sessionId,
+        landingPage: attribution.landingPage,
+        referrer: attribution.firstReferrer,
+        aiSource: attribution.externalAiSource,
+        utm: attribution.utm,
       };
 
       ga('form_submit_attempt', {
         form_id: form.id,
         form_context: payload.context,
+        form_location: formLocation,
         budget: payload.budget || 'not_set',
         page_path: window.location.pathname,
+        collection,
+        slug,
       });
 
       try {
@@ -166,12 +207,16 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
         ga('generate_lead', {
           form_id: form.id,
           form_context: payload.context,
+          form_location: formLocation,
           lead_type: 'shortlist_form',
           budget: payload.budget || 'not_set',
           page_path: window.location.pathname,
+          collection,
+          slug,
           value: 1,
           currency: 'USD',
         });
+        // `generate_lead` is fired here only. /thanks/ must not fire it again.
         const thanksUrl = new URL('/thanks/', window.location.origin);
         thanksUrl.searchParams.set('lead', '1');
         thanksUrl.searchParams.set('from', window.location.pathname);
@@ -184,7 +229,10 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
         ga('form_submit_error', {
           form_id: form.id,
           form_context: payload.context,
+          form_location: formLocation,
           page_path: window.location.pathname,
+          collection,
+          slug,
         });
       }
     });
