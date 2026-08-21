@@ -144,8 +144,11 @@ function auditFile(c, slug) {
   if (desc && desc.length > 160) prob.push(`descLen:${desc.length}>160`);
   if (desc && desc.length < 120) prob.push(`descLen:${desc.length}<120`);
 
+  // BaseLayout appends " | Mexico Invest" (16 chars) only when the result still fits 60.
+  // Google truncates the SERP title around 60, so 60 is the hard ceiling either way.
   const title = (fm.title || '').replace(/^["']|["']$/g, '');
-  if (title && (title.length < 45 || title.length > 65)) prob.push(`titleLen:${title.length}`);
+  if (title && title.length < 30) prob.push(`titleLen:${title.length}<30`);
+  if (title && title.length > 60) prob.push(`titleLen:${title.length}>60-truncates-in-serp`);
 
   const minFaq = c === 'news' ? 3 : 5;
   if (!fm.__hasFaq) prob.push('no-faq-block');

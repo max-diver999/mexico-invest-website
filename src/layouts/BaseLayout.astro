@@ -26,7 +26,17 @@ const {
   schemas = [],
 } = Astro.props;
 
-const fullTitle = title.includes('Mexico Invest') ? title : `${title} | Mexico Invest`;
+/**
+ * Google truncates the SERP title around 60 characters. The brand suffix costs 16,
+ * so append it only when the result still fits; a truncated title loses the tail of
+ * the headline, which is where the keyword usually is.
+ */
+const TITLE_SUFFIX = ' | Mexico Invest';
+const TITLE_MAX = 60;
+const fullTitle =
+  title.includes('Mexico Invest') || title.length + TITLE_SUFFIX.length > TITLE_MAX
+    ? title
+    : `${title}${TITLE_SUFFIX}`;
 
 const orgSchema = {
   '@context': 'https://schema.org',

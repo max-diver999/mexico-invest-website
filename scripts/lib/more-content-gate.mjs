@@ -10,7 +10,7 @@ import {
   LIST_DASH_STEPS_MIN,
   analyzeHumanSignals,
 } from './human-signals.mjs';
-import { runCloudinaryDeliveryChecks } from '../../../scripts/lib/cloudinary-gate.mjs';
+import { runCloudinaryDeliveryChecks } from './cloudinary-gate.mjs';
 
 export const BANNED_PHRASES = [
   'Regional diversification',
@@ -94,8 +94,12 @@ export function runStructuralChecks(opts) {
     );
 
   if (!legacyExempt && data.title) {
+    // The rendered <title> is what ranks. BaseLayout appends " | Mexico Invest" (16)
+    // only when the total still fits 60; past that the bare title ships. Either way 60
+    // is the ceiling, and <=44 is what it takes to keep the brand in the SERP.
     const tlen = String(data.title).replace(/^["']|["']$/g, '').length;
-    if (tlen < 50 || tlen > 60) errors.push(`${prefix} title length ${tlen}; expected 50-60 chars`);
+    if (tlen > 60) errors.push(`${prefix} title length ${tlen}; >60 truncates in the SERP`);
+    else if (tlen < 30) errors.push(`${prefix} title length ${tlen}; too short to carry the query`);
   }
   if (!legacyExempt && data.description && String(data.description).length > 160) {
     errors.push(`${prefix} description length ${data.description.length}; expected <=160 chars`);
@@ -127,10 +131,10 @@ export function runStructuralChecks(opts) {
     errors.push(`${prefix} glued markdown table (text + pipes on one line) — breaks rendering`);
   }
   if (STAMP_PREFIX_RE.test(body)) {
-    errors.push(`${prefix} wave17 area stamp prefix on paragraph — remove`);
+    errors.push(`${prefix} area stamp prefix on paragraph — remove`);
+  }
 
   runCloudinaryDeliveryChecks({ prefix, text, errors, legacyExempt });
-  }
 
   const humanCollections = ['guides', 'comparisons', 'areas', 'projects', 'news'];
   if (!legacyExempt && humanCollections.includes(collection)) {
