@@ -21,9 +21,14 @@ const CONTENT = path.join(ROOT, 'src/content');
 const COLLECTIONS = ['guides', 'projects', 'compare', 'areas', 'news', 'developers'];
 const DRY = process.argv.includes('--dry');
 
-/** Headings whose section is a list of links to elsewhere on this site. */
+/**
+ * Headings whose section is a list of links to elsewhere on this site.
+ *
+ * H3 as well as H2: a first pass matched only H2 and left 24 files carrying the same
+ * duplicated navigation one level down.
+ */
 const RELATED_HEADING =
-  /^## (?:Related|Next reads?|What to read next|Further reading|Extended reading|More guides|Keep reading)\b[^\n]*$/im;
+  /^#{2,3} (?:Related|Next reads?|What to read next|Further reading|Extended reading|More guides|Keep reading)\b[^\n]*$/im;
 
 /** The relatedSlugs cap: more than this and the block stops being a curation. */
 const MAX_RELATED = 8;
@@ -65,12 +70,12 @@ for (const collection of COLLECTIONS) {
       // no substantive prose beyond them.
       const links = [...section.matchAll(/\]\((\/[a-z0-9-]+\/[a-z0-9-]+)\/?\)/g)].map((x) => x[1]);
       const prose = section
-        .replace(/^## .*$/m, '')
+        .replace(/^#{2,3} .*$/m, '')
         .replace(/^[-*]\s.*$/gm, '')
         .replace(/\[[^\]]*\]\([^)]*\)/g, '')
         .replace(/[\s·.,—-]/g, '');
       if (links.length < 2 || prose.length > 120) {
-        kept.push(`${collection}/${selfSlug}: "${hit[0].slice(3, 60)}" — has prose, left in place`);
+        kept.push(`${collection}/${selfSlug}: "${hit[0].replace(/^#+ /, '').slice(0, 60)}" — has prose, left in place`);
         break;
       }
 
