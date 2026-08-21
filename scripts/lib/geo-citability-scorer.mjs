@@ -11,7 +11,8 @@ export const RUBRIC_WEIGHTS = {
   unique: 0.1,
 };
 
-export const CITABILITY_BLOCK_MIN = 130;
+export const CITABILITY_BLOCK_MIN = 90;
+/** Retained for the reporting string; no longer an upper bound on citability. */
 export const CITABILITY_BLOCK_MAX = 170;
 export const ANSWER_FIRST_MIN = 40;
 export const ANSWER_FIRST_MAX = 60;
@@ -67,8 +68,32 @@ export function hasStat(text) {
 const VAGUE_RE = /\b(many|several|some|often|usually|a lot|significant|various)\b/i;
 const PRONOUN_START_RE = /^(it|this|they|these|those|however|but|and|also)\b/i;
 const QUESTION_H2_RE = /^(what|how|why|when|where|who|which|can|do|does|is|are|should|will)\b/i;
-const UNIQUE_RE =
-  /\b(MORE Group|our (analysis|data|clients|underwriting)|insider tip|underwriting snapshot|we (surveyed|analyzed|tracked))\b/i;
+/**
+ * WAS: a +45 bonus for the literal strings "insider tip", "underwriting snapshot",
+ * "our underwriting" and friends. That scored a page higher for carrying a
+ * first-party marketing marker, not for saying anything original — and the corpus
+ * generator obliged, pasting "Insider tip:" into 336 of 337 files and scoring
+ * uniqueness 81/100 while 39% of the prose was duplicated word for word.
+ *
+ * Uniqueness now means what the name says: specific, checkable, page-particular
+ * content. The padding penalty targets the generated form ("Insider tip: On how does
+ * the fideicomiso structure actua,") and leaves a hand-written insider tip alone.
+ * Named institutions and instruments, figures carrying real units, named
+ * places, and cited authorities. The old markers are penalised instead, because on
+ * this corpus their presence was a reliable indicator of generated padding.
+ */
+
+/** A named authority, instrument or institution — something a reader can verify. */
+const NAMED_AUTHORITY_RE =
+  /\b(SAT|SRE|SEDETUR|SATQ|RETUR-?Q|Banxico|CNSF|CFE|IMSS|INEGI|Diario Oficial|Profeco|AMPI|notario|escritura|fideicomiso|ISAI|ISR|IVA|RFC|CFDI|predial|ejido|r[eé]gimen de condominio|licencia de construcci[oó]n|Scotiabank|Banorte|HSBC|Santander|Intercam|Monex|BBVA)\b/i;
+
+/** A figure with a unit attached, rather than a bare number. */
+const UNITED_FIGURE_RE =
+  /(?:US\$|\$)\s?\d[\d,.]*(?:\s?(?:k|m|million))?\b|\b\d[\d,.]*\s?%|\b\d+\s?(?:days?|weeks?|months?|years?|m²|km|nights?|bps)\b/i;
+
+/** The generator's first-party markers. Presence is a padding signal, not a merit. */
+const PADDING_MARKER_RE =
+  /\b(underwriting snapshot|underwriting show|our underwriting|buyer desk|MODELED)\b|Insider tip: On [a-z]/;
 
 export function wordCount(text) {
   return (text.match(/\b[\w']+\b/g) || []).length;
@@ -157,8 +182,11 @@ export function scoreSelfContainment(plainFirst, sectionPlain) {
 }
 
 export function scoreStructure(section, heading) {
-  let score = 35;
-  if (QUESTION_H2_RE.test(heading) || /\?$/.test(heading.trim())) score += 20;
+  let score = 45;
+  // A question heading earns a little, not a lot: paying 20 points for a question
+  // mark is why 89% of this corpus's headings were questions, including
+  // "What should buyers verify on summary?".
+  if (QUESTION_H2_RE.test(heading) || /\?$/.test(heading.trim())) score += 8;
   if (/^\|.+\|/m.test(section)) score += 15;
   if (/^[-*]\s/m.test(section) || /^\d+\.\s/m.test(section)) score += 15;
   const paras = splitParagraphs(section);
@@ -188,10 +216,22 @@ export function scoreStatisticalDensity(sectionPlain) {
 
 export function scoreUniqueness(sectionPlain, bodyPlain) {
   let score = 25;
-  if (UNIQUE_RE.test(sectionPlain)) score += 45;
-  if (/\b(case study|methodology|checklist|red flag|buyer scenario)\b/i.test(sectionPlain)) score += 15;
-  if (UNIQUE_RE.test(bodyPlain)) score += 10;
-  if (/according to (the )?(world bank|oecd|statista|official)/i.test(sectionPlain)) score += 5;
+  // Something a reader can go and check.
+  if (NAMED_AUTHORITY_RE.test(sectionPlain)) score += 25;
+  const figures = (sectionPlain.match(new RegExp(UNITED_FIGURE_RE.source, 'gi')) || []).length;
+  if (figures >= 3) score += 25;
+  else if (figures >= 1) score += 15;
+  // Content shapes that carry judgement rather than description.
+  if (/\b(case study|methodology|checklist|red flag|walk-?away|worked example|buyer scenario)\b/i.test(sectionPlain)) {
+    score += 15;
+  }
+  // A real citation.
+  if (/\b(according to|per|published by|filed with|as of)\b[^.]{0,60}\b(SAT|SRE|SEDETUR|Banxico|INEGI|Diario Oficial|OECD|World Bank)\b/i.test(sectionPlain)) {
+    score += 10;
+  }
+  // Generated padding markers.
+  if (PADDING_MARKER_RE.test(sectionPlain)) score -= 30;
+  else if (PADDING_MARKER_RE.test(bodyPlain)) score -= 10;
   return Math.max(0, Math.min(100, score));
 }
 
@@ -222,7 +262,6 @@ export function findCitabilityBlocks(body) {
     .filter(
       (p) =>
         p.words >= CITABILITY_BLOCK_MIN &&
-        p.words <= CITABILITY_BLOCK_MAX &&
         hasStat(p.plain) &&
         !PRONOUN_START_RE.test(p.plain),
     );
@@ -256,8 +295,18 @@ export function scorePage(body, { collection } = {}) {
   );
 
   if (commercial && !/<TldrBlock/.test(body)) issues.push('missing-tldr');
-  if (commercial && !/insider tip/i.test(body)) issues.push('missing-insider-tip');
+  /**
+   * WAS: `missing-insider-tip` — a hard failure on any commercial page that did not
+   * contain the literal string "insider tip". The generator complied, producing 2,839
+   * identical "Insider tip:" lines across 336 of 337 files, and the corpus scored
+   * grade A. A gate that names the sentence it wants is not measuring quality.
+   *
+   * What that check was reaching for — does the page tell the reader something a
+   * brochure would not — is now measured by scoreUniqueness, which looks for named
+   * authorities, figures with units and walk-away conditions.
+   */
   if (/## Independent verification notes/.test(body)) issues.push('generic-verification-padding');
+  if (PADDING_MARKER_RE.test(body)) issues.push('generated-padding-marker');
 
   for (const block of blocks.slice(0, 6)) {
     const w = wordCount(block.plainFirst);
@@ -267,7 +316,7 @@ export function scorePage(body, { collection } = {}) {
   }
 
   if (commercial && citabilityBlocks.length < 2) {
-    issues.push(`citability-blocks:${citabilityBlocks.length}/2 (need ${CITABILITY_BLOCK_MIN}-${CITABILITY_BLOCK_MAX}w + stat)`);
+    issues.push(`citability-blocks:${citabilityBlocks.length}/2 (need a self-contained passage of ${CITABILITY_BLOCK_MIN}w+ carrying a figure)`);
   }
 
   const worst = [...blockScores].sort((a, b) => a.overall - b.overall).slice(0, 3);
