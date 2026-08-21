@@ -343,7 +343,7 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Rental Contract for Foreign Landlords: 2026 Guide](https://mexico-invest.com/guides/rental-contract-mexico-foreign-landlord/)
   Complete guide for foreign landlords in Mexico: rental contract requirements, RFC registration, tenant rights, ISR tax obligations, and enforcement mechanisms.
   updated 2026-07-09
-- [Selling Mexico Property: Send Proceeds to the US Guide](https://mexico-invest.com/guides/repatriate-sale-proceeds-mexico/)
+- [Repatriate Mexico Sale Proceeds to the US](https://mexico-invest.com/guides/repatriate-sale-proceeds-mexico/)
   Learn ISR withholding, fideicomiso release, bank wire timing, and US reporting when selling in Mexico. Request an exit-document review.
   updated 2026-07-12
 - [RFC Registration Playa del Carmen for Foreigners 2026](https://mexico-invest.com/guides/rfc-registration-playa-del-carmen-foreigner/)
