@@ -81,6 +81,15 @@ export function linksWithoutTrailingSlash(body) {
  * @param {string[]} opts.errors - mutates
  * @param {object} [opts.options]
  */
+/**
+ * NOTE: nothing in this repository calls this function — qa-audit.mjs runs
+ * runExtendedChecks below. Every floor in here (4+ H2s, 3+ tables, N numeric facts,
+ * a required "insider tip" block) is therefore inert on this site, which is part of
+ * why a corpus padded to satisfy exactly those floors validated 337/337 clean.
+ *
+ * Left in place because the file is shared across MORE Group sites, but do not
+ * assume a rule here is enforced here. New rules belong in runExtendedChecks.
+ */
 export function runStructuralChecks(opts) {
   const { prefix, data, body, raw, text, collection, cfg, legacyExempt, errors } = opts;
   const isNews = cfg.label === 'news';
@@ -181,21 +190,6 @@ export function runStructuralChecks(opts) {
     const nums = countNumericFacts(body);
     const minNums = Math.max(8, Math.floor((cfg.minWords || 2000) / 500) * 3);
     if (nums < minNums) errors.push(`${prefix} low fact density: ${nums} numeric facts, need >=${minNums} (GEO)`);
-    // Ceilings. Every minimum below is a target a generator can hit by padding;
-    // without an upper bound the cheapest way to pass this gate is to inject numbers,
-    // tables and question-H2s into every section, which is how the corpus got here.
-    if (nums > minNums * 6) {
-      errors.push(`${prefix} numeric-fact stuffing: ${nums} figures (soft cap ${minNums * 6}) — cite fewer, source them`);
-    }
-    if (h2 > 18) errors.push(`${prefix} ${h2} H2 sections — over 18 dilutes a single search intent`);
-    const wordCount = body.split(/\s+/).filter(Boolean).length;
-    if (wordCount > 6000) {
-      errors.push(`${prefix} ${wordCount} words — over 6000 is dilution, split the topic`);
-    }
-    const questionH2 = (body.match(/^## .*\?\s*$/gm) || []).length;
-    if (h2 >= 6 && questionH2 === h2) {
-      errors.push(`${prefix} all ${h2} H2s are questions — mix in declarative headings`);
-    }
     const bold = countBoldSpans(body);
     if (bold > 35) errors.push(`${prefix} over-bold: ${bold} ** spans (max 35)`);
     if (!/<FaqBlock/.test(body)) errors.push(`${prefix} missing <FaqBlock items={...} /> in body`);
@@ -225,6 +219,27 @@ export function runExtendedChecks(opts) {
   if (nums < minNums) errors.push(`${prefix} factDensity:${nums}<${minNums}`);
   const bold = countBoldSpans(body);
   if (bold > 35) errors.push(`${prefix} overBold:${bold}`);
+
+  // Ceilings. Every floor above is a target a generator can hit by padding, and
+  // without an upper bound the cheapest way to pass is to inject sections and
+  // question-H2s until the thresholds clear — which is how this corpus got here.
+  //
+  // Deliberately no cap on numeric density: a project review with real price bands
+  // and HOA tables carries 100+ figures legitimately. What went wrong here was the
+  // same numbers repeated across files with the units scrambled, which is what
+  // scripts/qa-corpus-originality.mjs checks.
+  const h2s = body.match(/^##\s+.*$/gm) || [];
+  if (h2s.length > 22) {
+    errors.push(`${prefix} h2Count:${h2s.length}>22 — dilutes a single search intent`);
+  }
+  const wordCount = body.split(/\s+/).filter(Boolean).length;
+  if (wordCount > 7000) {
+    errors.push(`${prefix} words:${wordCount}>7000 — split the topic`);
+  }
+  const questionH2 = h2s.filter((h) => /\?\s*$/.test(h)).length;
+  if (h2s.length >= 6 && questionH2 === h2s.length) {
+    errors.push(`${prefix} allH2sAreQuestions:${h2s.length} — mix in declarative headings`);
+  }
 }
 
 /** Convert errors array to qa-audit prob[] short codes */
