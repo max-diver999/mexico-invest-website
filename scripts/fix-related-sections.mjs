@@ -72,8 +72,11 @@ for (const collection of COLLECTIONS) {
       const prose = section
         .replace(/^#{2,3} .*$/m, '')
         .replace(/^[-*]\s.*$/gm, '')
+        .replace(/^\|.*$/gm, '')
         .replace(/\[[^\]]*\]\([^)]*\)/g, '')
-        .replace(/[\s·.,—-]/g, '');
+        // A sentence that is only connective tissue between links is navigation,
+        // not prose: "Retirees should review , , and ." must not save the section.
+        .replace(/[\s·.,;:—-]/g, '');
       if (links.length < 2 || prose.length > 120) {
         kept.push(`${collection}/${selfSlug}: "${hit[0].replace(/^#+ /, '').slice(0, 60)}" — has prose, left in place`);
         break;
