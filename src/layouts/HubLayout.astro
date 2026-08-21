@@ -1,0 +1,245 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../data/site';
+
+export interface HubCard {
+  url: string;
+  title: string;
+  description: string;
+  meta?: string;
+  badge?: string;
+}
+
+export interface HubGroup {
+  label: string;
+  /** One line saying what this group is for — the reason to have groups at all. */
+  note?: string;
+  cards: HubCard[];
+}
+
+interface Props {
+  /** <title> — carries the keyword */
+  title: string;
+  /** <h1> — matches the title's keyword rather than being a bare section noun */
+  heading: string;
+  description: string;
+  /** Two to four paragraphs of hub copy that exist nowhere else on the site */
+  intro: string[];
+  path: string;
+  groups: HubGroup[];
+  faq?: { question: string; answer: string }[];
+  /** Newest updatedDate in the collection, for schema freshness */
+  lastUpdated?: Date;
+  leadTitle?: string;
+  leadSubtitle?: string;
+}
+
+const {
+  title,
+  heading,
+  description,
+  intro,
+  path,
+  groups,
+  faq = [],
+  lastUpdated,
+  leadTitle = 'Get a vetted Mexico shortlist',
+  leadSubtitle = 'Tell us the budget and the market. We reply within one business day with three to five options and the net yield maths behind each one.',
+} = Astro.props;
+
+const pageUrl = `${SITE.url}${path}`;
+const allCards = groups.flatMap((g) => g.cards);
+
+const crumbs = [
+  { label: 'Home', href: `${SITE.url}/` },
+  { label: heading, href: pageUrl },
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: crumb.label,
+    item: crumb.href,
+  })),
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: heading,
+  description,
+  numberOfItems: allCards.length,
+  itemListElement: allCards.slice(0, 100).map((card, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${SITE.url}${card.url}`,
+    name: card.title,
+  })),
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description,
+  url: pageUrl,
+  inLanguage: 'en-US',
+  ...(lastUpdated ? { dateModified: lastUpdated.toISOString() } : {}),
+};
+
+const faqSchema = faq.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+} : null;
+
+const schemas = [
+  collectionSchema,
+  breadcrumbSchema,
+  itemListSchema,
+  ...(faqSchema ? [faqSchema] : []),
+];
+
+/** Anchor slug for the in-page group nav. */
+const anchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+---
+<BaseLayout title={title} description={description} canonical={pageUrl} {schemas}>
+  <section class="site-container py-10 md:py-14">
+    <header class="max-w-3xl mb-10">
+      <Breadcrumbs crumbs={crumbs.map((c, i) => ({
+        label: c.label,
+        href: i === crumbs.length - 1 ? undefined : c.href,
+      }))} />
+      <h1 class="text-3xl md:text-4xl mb-4">{heading}</h1>
+      {intro.map((paragraph) => (
+        <p class="text-base md:text-lg text-[var(--color-muted)] mb-4">{paragraph}</p>
+      ))}
+      <p class="text-sm text-[var(--color-muted)]">
+        {allCards.length} pages across {groups.length} sections.
+        {lastUpdated && ` Last updated ${lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}.`}
+      </p>
+    </header>
+
+    {groups.length > 1 && (
+      <nav class="hub-nav" aria-label="Sections on this page">
+        <ul>
+          {groups.map((group) => (
+            <li><a href={`#${anchor(group.label)}`}>{group.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    {groups.map((group) => (
+      <section class="mb-14" id={anchor(group.label)}>
+        <h2 class="text-xl md:text-2xl mb-1">{group.label}</h2>
+        {group.note && <p class="text-sm text-[var(--color-muted)] mb-5 max-w-2xl">{group.note}</p>}
+        <ul class="hub-grid">
+          {group.cards.map((card) => (
+            <li>
+              <a href={card.url} class="hub-card">
+                {card.badge && <span class="hub-card__badge">{card.badge}</span>}
+                <span class="hub-card__title">{card.title}</span>
+                <span class="hub-card__desc">{card.description}</span>
+                {card.meta && <span class="hub-card__meta">{card.meta}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <div class="max-w-3xl mx-auto mt-4">
+      <LeadForm title={leadTitle} subtitle={leadSubtitle} context={heading} formLocation="bottom" />
+    </div>
+
+    {faq.length > 0 && (
+      <div class="max-w-3xl mx-auto">
+        <FaqBlock items={faq} />
+      </div>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .hub-nav {
+    margin: 0 0 2.5rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-surface);
+  }
+  .hub-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    font-size: 0.85rem;
+  }
+  .hub-nav a { color: var(--color-muted); text-decoration: none; }
+  .hub-nav a:hover { color: var(--color-primary); text-decoration: underline; }
+
+  .hub-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) { .hub-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .hub-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .hub-card {
+    display: block;
+    height: 100%;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-surface);
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .hub-card:hover { border-color: var(--color-primary); transform: translateY(-1px); }
+  .hub-card__badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.35rem;
+  }
+  .hub-card__title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    color: var(--color-ink);
+    margin-bottom: 0.3rem;
+  }
+  .hub-card__desc {
+    display: block;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--color-muted);
+  }
+  .hub-card__meta {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.72rem;
+    color: var(--color-muted);
+  }
+</style>

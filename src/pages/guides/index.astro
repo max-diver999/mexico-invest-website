@@ -1,58 +1,81 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContentCard from '../../components/ContentCard.astro';
-import { FEATURED_GUIDE_SLUGS } from '../../data/featured';
+import HubLayout, { type HubGroup } from '../../layouts/HubLayout.astro';
+import { GUIDE_CLUSTERS, PILLAR_SLUGS } from '../../data/guide-clusters';
 
-const guides = (await getCollection('guides'))
-  .filter((g) => !g.data.noindex)
+const guides = (await getCollection('guides')).filter((g) => !g.data.noindex);
+const bySlug = new Map(guides.map((g) => [g.id, g]));
+
+const toCard = (entry: (typeof guides)[number]) => ({
+  url: `/guides/${entry.id}/`,
+  title: entry.data.title,
+  description: entry.data.description,
+  meta: `${entry.data.readingTime ?? 8} min read`,
+  badge: PILLAR_SLUGS.has(entry.id) ? 'Pillar' : undefined,
+});
+
+const filed = new Set<string>();
+const groups: HubGroup[] = GUIDE_CLUSTERS.map((cluster) => {
+  const cards = cluster.slugs
+    .map((slug) => {
+      const entry = bySlug.get(slug);
+      if (entry) filed.add(slug);
+      return entry;
+    })
+    .filter(Boolean)
+    .map((entry) => toCard(entry!));
+  return { label: cluster.label, note: cluster.note, cards };
+}).filter((group) => group.cards.length > 0);
+
+/** Anything not yet filed still shows, rather than silently dropping off the hub. */
+const unfiled = guides
+  .filter((g) => !filed.has(g.id))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+if (unfiled.length) {
+  groups.push({
+    label: 'More research',
+    note: 'Recently published and not yet filed into a section above.',
+    cards: unfiled.map(toCard),
+  });
+}
 
-const priority = FEATURED_GUIDE_SLUGS.map((slug) => guides.find((g) => g.id === slug)).filter(Boolean);
+const lastUpdated = guides
+  .map((g) => g.data.updatedDate ?? g.data.pubDate)
+  .sort((a, b) => b.valueOf() - a.valueOf())[0];
+
+const intro = [
+  'Every guide here is written for a foreign buyer working out whether a specific Mexican purchase makes sense, not for someone browsing. We are not a developer, not a brokerage, and not a listing portal, so nothing on this site needs you to buy anything for it to have been worth writing.',
+  'The sections below follow the order the questions actually arrive: can a foreigner own this at all, what does the purchase cost, what will Mexico tax, what will your own country tax, can it be rented nightly, and what does it take to get the money back out.',
+  'Figures are indicative and dated. Property law, ISR treatment and short-term rental permits vary by state and municipality and change more often than most sources admit, so every page carries the date it was last reviewed. Verify against a Mexican notario and a cross-border CPA before you commit.',
+];
+
+const faq = [
+  {
+    question: 'Can a foreigner legally own property in Mexico?',
+    answer: 'Yes. Outside the restricted zone — more than 50 km from a coastline and 100 km from a land border — a foreigner takes direct title in their own name. Inside it, which covers Cancún, Playa del Carmen, Tulum, Los Cabos and Puerto Vallarta, residential property is held through a fideicomiso: a 50-year renewable bank trust where the bank holds title and you hold the beneficial rights to use, rent, improve, sell and bequeath.',
+  },
+  {
+    question: 'What do the guides cover that a broker site does not?',
+    answer: 'The parts of a purchase that cost money rather than earn commission: ISAI by state, notario fees, the fideicomiso and SRE permit stack, ISR on exit and how the 25% gross versus 35% net election works, RFC and CFDI compliance for rental income, municipal short-term rental permits, and the title and hazard risks that end deals.',
+  },
+  {
+    question: 'How current are the figures?',
+    answer: 'Each guide shows the date it was last reviewed under the title. Tax rates, bank trust fees and rental permit rules change by state and municipality, so treat the date as part of the figure. Where a number matters to a decision, the guide says which authority to confirm it with.',
+  },
+  {
+    question: 'Where should a first-time buyer start?',
+    answer: 'Read the Mexico property investment guide for the framework, then the fideicomiso guide for the ownership structure, then the cost of buying guide for the real closing stack. Those three answer most of what a first purchase turns on. After that, the market guides narrow it down geographically.',
+  },
+];
 ---
-<BaseLayout
-  title="Mexico Property Investment Guides"
-  description="Independent guides on Mexico real estate: fideicomiso, foreign ownership, net yields, and due diligence."
->
-  <section class="site-container py-14 md:py-20">
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Investment guides</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
-        Research-first articles for foreign buyers. Not developer brochures: verify all figures before you transact.
-      </p>
-      <p class="text-sm text-[var(--color-muted)] mt-2">{guides.length} guides with photos and net-yield focus.</p>
-    </header>
-
-    {priority.length > 0 && (
-      <section class="mb-14">
-        <h2 class="text-xl mb-5">Start here</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {priority.map((guide) => (
-            <ContentCard
-              href={`/guides/${guide.id}/`}
-              title={guide.data.title}
-              description={guide.data.description}
-              image={guide.data.heroImage}
-              badges={['Pillar', ...(guide.data.tags?.slice(0, 1) ?? [])]}
-              meta={`${guide.data.readingTime ?? 8} min read`}
-            />
-          ))}
-        </div>
-      </section>
-    )}
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {guides.map((guide) => (
-        <ContentCard
-          href={`/guides/${guide.id}/`}
-          title={guide.data.title}
-          description={guide.data.description}
-          image={guide.data.heroImage}
-          badges={guide.data.tags?.slice(0, 2) ?? []}
-          meta={`${guide.data.readingTime ?? 8} min read`}
-        />
-      ))}
-    </div>
-  </section>
-</BaseLayout>
+<HubLayout
+  title="Mexico Property Guides for Foreign Buyers"
+  heading="Mexico property guides for foreign buyers"
+  description="Independent guides to buying property in Mexico: fideicomiso, closing costs, ISR and RFC, rental permits, financing, and realistic net yields by market."
+  path="/guides/"
+  {intro}
+  {groups}
+  {faq}
+  {lastUpdated}
+/>
