@@ -85,7 +85,14 @@ for (const p of pages) {
   if (p.h1.length !== 1) add('P0', 'h1-count', p.url, `${p.h1.length} <h1> elements (expected 1)`);
 
   if (p.title) {
-    const dup = p.title.match(/(\b20\d\d\b[^|]*)\|\s*\1/i) || /\|\s*20\d\d Guide/i.test(p.title);
+    // The title generator appended its own suffix on top of a title that already
+    // carried one: "… Cost Guide 2026 2026 Guide 2026". Catch the repeated word
+    // and the repeated year, not only the pipe-separated form.
+    const dup =
+      p.title.match(/(\b20\d\d\b[^|]*)\|\s*\1/i) ||
+      /\|\s*20\d\d Guide/i.test(p.title) ||
+      /\bGuide\b[^|]*\bGuide\b/i.test(p.title) ||
+      /\b(20\d\d)\b[^|]*\b\1\b/.test(p.title);
     if (dup) add('P0', 'title-duplicate-suffix', p.url, `duplicated suffix: "${p.title}"`);
     if (p.title.length > 60) add('P1', 'title-too-long', p.url, `${p.title.length} rendered chars: "${p.title}"`);
   } else {

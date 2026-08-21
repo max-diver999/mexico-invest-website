@@ -191,9 +191,9 @@ export const GUIDE_CLUSTERS = [
     label: 'Buyer profiles and budgets',
     note: 'The same market looks different depending on who is buying and with how much.',
     slugs: [
-      'tier-entry',
-      'tier-mid',
-      'tier-luxury',
+      'mexico-property-under-250k',
+      'mexico-property-300k-budget',
+      'luxury-mexico-property-500k-plus',
       'budget-investor-mexico-under-200k',
       'conservative-investor-mexico-playa',
       'aggressive-investor-tulum-precon',
