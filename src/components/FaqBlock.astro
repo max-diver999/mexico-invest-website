@@ -5,6 +5,8 @@ interface Props {
   title?: string;
   noSchema?: boolean;
 }
+import { mdInlineToHtml } from '../lib/md-inline';
+
 const { items, title = 'Frequently Asked Questions', noSchema = true } = Astro.props;
 ---
 <section class="my-12" aria-label="FAQ">
@@ -17,7 +19,7 @@ const { items, title = 'Frequently Asked Questions', noSchema = true } = Astro.p
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer" id={`faq-answer-${i}`} role="region">
-          <p set:html={item.answer} />
+          <p set:html={mdInlineToHtml(item.answer)} />
         </div>
       </div>
     ))}

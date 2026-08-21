@@ -41,6 +41,11 @@ const {
   {noindex}
   {hasInlineFaqBlock}
   contextLabel={title}
+  collection="compare"
+  slug={entry.id}
+  data={entry.data}
+  relatedSlugs={entry.data.relatedSlugs}
+  heroAlt={entry.data.heroAlt}
   canonical={`${SITE.url}/compare/${entry.id}/`}
 >
   <Content />

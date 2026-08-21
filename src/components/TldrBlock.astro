@@ -1,13 +1,17 @@
 ---
+import { mdInlineToHtml } from '../lib/md-inline';
+
 interface Props {
   text: string;
 }
 
 const { text } = Astro.props;
+/** `text` arrives as a prop, so MDX never renders the markdown inside it. */
+const html = mdInlineToHtml(text);
 ---
 <aside class="tldr-block" itemprop="abstract">
   <div class="tldr-label">Key Takeaway</div>
-  <p>{text}</p>
+  <p set:html={html} />
 </aside>
 
 <style>

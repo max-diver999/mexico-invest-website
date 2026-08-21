@@ -41,6 +41,11 @@ const {
   {noindex}
   {hasInlineFaqBlock}
   contextLabel={title}
+  collection="projects"
+  slug={entry.id}
+  data={entry.data}
+  relatedSlugs={entry.data.relatedSlugs}
+  heroAlt={entry.data.heroAlt}
   canonical={`${SITE.url}/projects/${entry.id}/`}
 >
   <Content />

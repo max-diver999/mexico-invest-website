@@ -104,7 +104,10 @@ for (const p of pages) {
 
   for (const attrs of p.imgs) {
     if (!/\balt\s*=/.test(attrs)) add('P1', 'img-alt-missing', p.url, 'img without alt attribute');
-    else if (/\balt\s*=\s*(["'])\s*\1/.test(attrs)) add('P1', 'img-alt-empty', p.url, 'img with empty alt');
+    // An empty alt is correct for a decorative image; the markup has to say so.
+    else if (/\balt\s*=\s*(["'])\s*\1/.test(attrs) && !/\bdata-decorative\b/.test(attrs)) {
+      add('P1', 'img-alt-empty', p.url, 'img with empty alt and no data-decorative');
+    }
   }
 
   const seen = new Set();

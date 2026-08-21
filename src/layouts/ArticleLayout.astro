@@ -3,7 +3,16 @@ import BaseLayout from './BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import StickyCta from '../components/StickyCta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 import { SITE } from '../data/site';
+import { AUTHOR, authorSchema } from '../data/author';
+import { mdInlineToText } from '../lib/md-inline';
+import {
+  resolveRelatedSlugs,
+  resolveRelatedEntities,
+  type CollectionName,
+} from '../lib/content-graph';
 
 interface Props {
   title: string;
@@ -13,11 +22,18 @@ interface Props {
   author?: string;
   readingTime?: number;
   heroImage?: string;
+  heroAlt?: string;
   faq?: { question: string; answer: string }[];
   canonical?: string;
   noindex?: boolean;
   hasInlineFaqBlock?: boolean;
   contextLabel?: string;
+  /** collection + slug drive breadcrumbs, the kicker and the related-link layers */
+  collection: CollectionName;
+  slug: string;
+  /** full frontmatter, used for cross-collection entity resolution */
+  data?: Record<string, any>;
+  relatedSlugs?: string[];
 }
 
 const {
@@ -25,25 +41,27 @@ const {
   description,
   pubDate,
   updatedDate,
-  author = SITE.editorial,
+  author = AUTHOR.name,
   readingTime = 8,
   heroImage,
+  heroAlt,
   faq = [],
   canonical,
   noindex = false,
   hasInlineFaqBlock = false,
   contextLabel = title,
+  collection,
+  slug,
+  data = {},
+  relatedSlugs = [],
 } = Astro.props;
 
 // Optimize Cloudinary hero images for LCP
 function optimizeHeroImage(url?: string): string | undefined {
   if (!url) return undefined;
-  
-  // If Cloudinary URL without transforms, add them
   if (url.includes('res.cloudinary.com') && url.includes('/upload/') && !url.match(/\/upload\/[^\/]*w_/)) {
     return url.replace('/upload/', '/upload/w_1200,h_675,c_fill,q_85,f_webp/');
   }
-  
   return url;
 }
 
@@ -56,20 +74,50 @@ const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
 });
 const pageUrl = canonical || Astro.url.href;
 
+/** Section label for the breadcrumb, the kicker badge and the schema trail. */
+const SECTION_LABEL: Record<CollectionName, string> = {
+  guides: 'Guides',
+  projects: 'Project reviews',
+  compare: 'Comparisons',
+  areas: 'Areas',
+  news: 'Market notes',
+  developers: 'Developers',
+};
+const sectionLabel = SECTION_LABEL[collection] ?? collection;
+
+/** Curated links first, then the links the geo taxonomy can prove. */
+const curated = await resolveRelatedSlugs(relatedSlugs, slug, collection);
+const entities = await resolveRelatedEntities(collection, slug, data, curated);
+
+/**
+ * Hero alt: explicit where the entry provides one, else a description built from the
+ * entry itself. An empty alt would declare the page's topical hero decorative.
+ */
+const shortTitle = title.split(':')[0].trim();
+const heroAltText =
+  heroAlt ||
+  (data.area
+    ? `${shortTitle}, ${String(data.area).replace(/-/g, ' ')}, Mexico`
+    : `${shortTitle} — Mexico property research`);
+
+const isNews = collection === 'news';
+
 const articleSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': isNews ? 'NewsArticle' : 'Article',
   headline: title,
   description,
   datePublished: pubDate.toISOString(),
   dateModified: (updatedDate || pubDate).toISOString(),
-  author: { '@type': 'Organization', name: author },
+  author: authorSchema(author),
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
     logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` },
   },
   mainEntityOfPage: pageUrl,
+  inLanguage: 'en-US',
+  isAccessibleForFree: true,
   ...(optimizedHeroImage ? { image: optimizedHeroImage } : {}),
 };
 
@@ -78,38 +126,91 @@ const faqSchema = faq.length > 0 ? {
   '@type': 'FAQPage',
   mainEntity: faq.map((item) => ({
     '@type': 'Question',
-    name: item.question,
+    name: mdInlineToText(item.question),
     acceptedAnswer: {
       '@type': 'Answer',
-      text: item.answer,
+      text: mdInlineToText(item.answer),
     },
   })),
 } : null;
 
-const pathParts = Astro.url.pathname.split('/').filter(Boolean);
-const pageSlug = pathParts[pathParts.length - 1] || '';
-const shortlistHref = pageSlug ? `/get-shortlist/?from=${pageSlug}` : '/get-shortlist/';
+/** Breadcrumb trail — the visible nav and the schema are built from one array. */
+const crumbs = [
+  { label: 'Home', href: `${SITE.url}/` },
+  { label: sectionLabel, href: `${SITE.url}/${collection}/` },
+  { label: title, href: pageUrl },
+];
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-    ...(pathParts.length > 1 ? [{
-      '@type': 'ListItem',
-      position: 2,
-      name: pathParts[0].charAt(0).toUpperCase() + pathParts[0].slice(1),
-      item: `${SITE.url}/${pathParts[0]}/`,
-    }] : []),
-    {
-      '@type': 'ListItem',
-      position: pathParts.length > 1 ? 3 : 2,
-      name: title,
-      item: pageUrl,
-    },
-  ],
+  itemListElement: crumbs.map((crumb, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: crumb.label,
+    item: crumb.href,
+  })),
 };
 
-const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+/**
+ * A project page carries enough frontmatter to describe the asset itself. Emitted
+ * only when the entry actually has the fields, so it never asserts a price it lacks.
+ */
+const projectSchema =
+  collection === 'projects' && (data.priceFromUsd || data.developer || data.area)
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'ApartmentComplex',
+        name: shortTitle,
+        description,
+        url: pageUrl,
+        ...(data.area
+          ? {
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: String(data.area).replace(/-/g, ' '),
+                addressCountry: 'MX',
+              },
+            }
+          : {}),
+        ...(data.priceFromUsd
+          ? {
+              numberOfAvailableAccommodationUnits: undefined,
+              offers: {
+                '@type': 'AggregateOffer',
+                priceCurrency: 'USD',
+                lowPrice: data.priceFromUsd,
+                ...(data.priceToUsd ? { highPrice: data.priceToUsd } : {}),
+                availability: 'https://schema.org/PreOrder',
+              },
+            }
+          : {}),
+        ...(optimizedHeroImage ? { image: optimizedHeroImage } : {}),
+      }
+    : null;
+
+const placeSchema =
+  collection === 'areas'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Place',
+        name: shortTitle,
+        description,
+        url: pageUrl,
+        address: { '@type': 'PostalAddress', addressCountry: 'MX' },
+        ...(optimizedHeroImage ? { image: optimizedHeroImage } : {}),
+      }
+    : null;
+
+const schemas = [
+  articleSchema,
+  breadcrumbSchema,
+  ...(projectSchema ? [projectSchema] : []),
+  ...(placeSchema ? [placeSchema] : []),
+  ...(faqSchema ? [faqSchema] : []),
+];
+
+const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
 ---
 <BaseLayout
   title={title}
@@ -117,12 +218,18 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
   canonical={pageUrl}
   ogImage={optimizedHeroImage}
   type="article"
+  publishedTime={pubDate.toISOString()}
+  modifiedTime={(updatedDate || pubDate).toISOString()}
   {noindex}
   {schemas}
 >
   <article class="site-container py-10 md:py-14">
     <header class="max-w-3xl mb-8">
-      <span class="badge-pill mb-4">Research guide</span>
+      <Breadcrumbs crumbs={crumbs.map((c, i) => ({
+        label: c.label,
+        href: i === crumbs.length - 1 ? undefined : c.href,
+      }))} />
+      <span class="badge-pill mb-4">{sectionLabel}</span>
       <h1 class="mb-4 text-3xl md:text-4xl">{title}</h1>
       <p class="text-lg text-[var(--color-muted)] mb-4">{description}</p>
       <p class="text-sm text-[var(--color-muted)]">
@@ -131,17 +238,8 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
     </header>
 
     {optimizedHeroImage && (
-      <img src={optimizedHeroImage} alt="" class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" fetchpriority="high" width="1200" height="675" />
+      <img src={optimizedHeroImage} alt={heroAltText} class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" fetchpriority="high" width="1200" height="675" />
     )}
-
-    <div class="max-w-3xl mx-auto mb-10">
-      <LeadForm
-        title="Get a vetted Mexico shortlist"
-        subtitle="US and Canadian buyers use this to skip the developer sales deck: tell us the budget and the market, and we come back with 3 to 5 options and the net yield maths behind each one."
-        context={contextLabel}
-        formLocation="top"
-      />
-    </div>
 
     <div class="prose mx-auto">
       <slot />
@@ -153,7 +251,32 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
       </div>
     )}
 
-    <div class="max-w-3xl mx-auto mt-12 surface-card p-6 text-center">
+    {curated.length > 0 && (
+      <div class="max-w-3xl mx-auto">
+        <RelatedLinks
+          heading="Related research"
+          note="Hand-picked next steps for this topic."
+          cards={curated}
+        />
+      </div>
+    )}
+
+    {entities.cards.length > 0 && (
+      <div class="max-w-3xl mx-auto">
+        <RelatedLinks heading={entities.heading} note={entities.note} cards={entities.cards} />
+      </div>
+    )}
+
+    <div class="max-w-3xl mx-auto mt-12">
+      <LeadForm
+        title="Get a vetted Mexico shortlist"
+        subtitle="US and Canadian buyers use this to skip the developer sales deck: tell us the budget and the market, and we come back with 3 to 5 options and the net yield maths behind each one."
+        context={contextLabel}
+        formLocation="bottom"
+      />
+    </div>
+
+    <div class="max-w-3xl mx-auto mt-8 surface-card p-6 text-center">
       <p class="font-semibold text-[var(--color-ink)]">Want options matched to your budget and risk profile?</p>
       <p class="text-sm text-[var(--color-muted)] mt-1 mb-4">Three questions, one screen. We reply within one business day.</p>
       <a href={shortlistHref} class="btn-primary inline-flex px-6 py-3" data-cta="article_footer_shortlist">
@@ -162,8 +285,14 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
     </div>
 
     <aside class="max-w-3xl mx-auto mt-10 surface-card p-5 text-sm text-[var(--color-muted)]">
-      <strong>Disclaimer:</strong> Mexico Invest is an independent editorial resource. We are not a developer or licensed broker.
-      Enquiries may be referred to AMPI-licensed partners. Prices, yields, and visa rules change, so verify before any transaction.
+      <p class="mb-2">
+        <strong>Disclaimer:</strong> Mexico Invest is an independent editorial resource. We are not a developer or licensed broker.
+        Enquiries may be referred to AMPI-licensed partners. Prices, yields, and visa rules change, so verify before any transaction.
+      </p>
+      <p>
+        How we research and source figures: <a href="/methodology/">our methodology</a>.
+        Ready to act on this? <a href="/get-shortlist/">Request a free shortlist</a>.
+      </p>
     </aside>
   </article>
   <StickyCta />
