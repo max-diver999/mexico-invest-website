@@ -1,7 +1,12 @@
 {
   "locked_by": "claude",
-  "phase": "audit_phase_0",
+  "phase": "phase_1_executed",
   "since": "2026-08-21",
-  "unlock_when": "Maxim approves audit roadmaps with ok",
-  "branch_prefix": "cc/mexico-"
+  "unlock_when": "Cursor reviews the branch; the 50-article content plan starts only after it merges",
+  "branch_prefix": "cc/mexico-",
+  "approved_by": "Maxim",
+  "approved": "2026-08-21",
+  "scope": "corpus waves 1-7 and code CR-1..CR-10, all executed",
+  "outcome_report": ".content-os/reports/CLEANUP-OUTCOME-2026-08-21.md",
+  "branch": "claude/mexico-invest-audit-uulcad"
 }
