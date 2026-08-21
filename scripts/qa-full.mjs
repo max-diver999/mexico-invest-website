@@ -66,6 +66,11 @@ const steps = [
     cmd: 'node',
     args: ['scripts/qa-audit.mjs'],
   },
+  {
+    name: 'Corpus originality + unit coherence (cross-file duplication)',
+    cmd: 'node',
+    args: ['scripts/qa-corpus-originality.mjs', '--fail', '--limit=6'],
+  },
   ...(existsSync(join(ROOT, 'scripts/audit-all-images.mjs'))
     ? [
         {
