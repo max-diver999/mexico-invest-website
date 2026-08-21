@@ -36,8 +36,12 @@ const limitArg = Number((argv.find((a) => a.startsWith('--limit=')) ?? '').split
 
 /** A shape appearing in this many *other* files is boilerplate, not a coincidence. */
 const DUP_FILE_LIMIT = 3;
-/** Sentences shorter than this are too generic to judge ("Verify before you sign."). */
-const MIN_WORDS = 8;
+/**
+ * Sentences shorter than this are furniture, not substance: a one-line disclaimer
+ * or a "verify with your notario" reminder is supposed to read the same everywhere.
+ * The generated padding this gate exists to catch ran 15-40 words.
+ */
+const MIN_WORDS = 12;
 
 /* ------------------------------------------------------------------ corpus */
 
@@ -70,7 +74,11 @@ function prose(body) {
     .replace(/^import .*$/gm, ' ')
     .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
     .replace(/<[^>]+>/g, ' ')
-    .replace(/^#{1,6} .*$/gm, ' ');
+    .replace(/^#{1,6} .*$/gm, ' ')
+    // Site furniture, not prose: italic disclaimers and link rails legitimately
+    // repeat across pages the way a footer does.
+    .replace(/^\s*\*[^*\n]{20,}\*\s*$/gm, ' ')
+    .replace(/^[^\n]*(?:\]\([^)]*\)[^\n]*){2,}$/gm, ' ');
 }
 
 function sentences(text) {
@@ -102,33 +110,39 @@ const PERCENT = String.raw`\d[\d,.]*\s*%`;
 const UNIT_RULES = [
   {
     id: 'money-as-duration',
-    why: 'a turnaround, timeline or window is a duration, not an amount',
-    bad: new RegExp(`${MONEY}\\s*(?:day|days|week|weeks|month|months)?\\s*(?:turnaround|timeline|window|lead time)\\b`, 'i'),
+    why: 'a turnaround is a duration; a currency amount cannot be one',
+    // "$326,000 turnaround". Adjacent only — "$22,000 in turnaround costs" is fine.
+    bad: new RegExp(`${MONEY}\\s+(?:typical\\s+|average\\s+|common\\s+)?(?:notario\\s+)?turnaround\\b`, 'i'),
+  },
+  {
+    id: 'percent-as-duration',
+    why: 'a turnaround is a duration; a percentage cannot be one',
+    bad: new RegExp(`${PERCENT}\\s+(?:typical\\s+|average\\s+|common\\s+)?(?:notario\\s+)?turnaround\\b`, 'i'),
   },
   {
     id: 'money-as-rate',
-    why: 'a withholding, tax or interest rate is a percentage, not an amount',
-    bad: new RegExp(`${MONEY}\\s*(?:isr|iva|vat)?\\s*(?:withholding|tax rate|interest rate)\\b`, 'i'),
+    why: 'a withholding rate is a percentage; this slot holds a currency amount',
+    // Anchored on the generator's phrasing. "$21,250 of ISR withholding" is a real
+    // amount and must not be flagged, so the noun that follows is required.
+    bad: new RegExp(`${MONEY}\\s+(?:isr\\s+|iva\\s+)?withholding\\s+awareness\\b`, 'i'),
   },
   {
     id: 'money-as-yield',
-    why: 'a yield is a percentage, not an amount',
-    bad: new RegExp(`${MONEY}\\s*(?:net|gross)?\\s*yield(?!\\s*(?:band\\s*of|band:))`, 'i'),
+    why: 'a yield is a percentage; this slot holds a currency amount',
+    // "$28,000 net yield modeling" / "$265,000 net yield band". Excludes the common
+    // and correct "condos from $400K yield 8-10% gross", where yield is a verb.
+    bad: new RegExp(`${MONEY}\\s+(?:net|gross)\\s+yield\\s+(?:modeling|modelling|band)\\b`, 'i'),
   },
   {
     id: 'yield-row-holds-price',
     why: 'a table row labelled as a yield band is holding a purchase price',
-    bad: new RegExp(`\\|\\s*(?:net |gross )?yield[^|]*\\|\\s*${MONEY}\\s*\\|`, 'i'),
+    bad: new RegExp(`\\|\\s*(?:net |gross )?yield band[^|]*\\|\\s*${MONEY}\\s*\\|`, 'i'),
   },
   {
     id: 'percent-as-price',
-    why: 'an entry ticket, purchase price or carry amount is money, not a percentage',
-    bad: new RegExp(`${PERCENT}\\s*(?:entry ticket|purchase price|entry price|carry proof)\\b`, 'i'),
-  },
-  {
-    id: 'percent-as-duration',
-    why: 'a turnaround is a duration, not a percentage',
-    bad: new RegExp(`${PERCENT}\\s*turnaround\\b`, 'i'),
+    why: 'an entry ticket or carry amount is money, not a percentage',
+    // "10% purchase price discount" is correct English and is not matched.
+    bad: new RegExp(`${PERCENT}\\s+(?:entry tickets?|carry proof)\\b`, 'i'),
   },
 ];
 
