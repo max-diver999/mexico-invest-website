@@ -1,0 +1,80 @@
+content_os_version: "2.5.0-pilot"
+site_id: mexico-invest-website
+domain: mexico-invest.com
+github: max-diver999/mexico-invest-website
+program: mexico-invest
+
+pilot_goal: "More qualified Mexico purchase-intent leads — full audit, hub UX, corpus polish, future topics"
+pilot_mode: full_audit_then_code_and_corpus
+pilot_started: "2026-08-21"
+
+reference_site: florida-estate-website
+reference_playbook: more-group-content-os/reference-sites/more-group-website/playbook.md
+note: "Florida post-audit UX (hubs, breadcrumbs, content-graph) as code reference — Mexico brand independent"
+
+full_audit:
+  mode: corpus_plus_rendered_plus_code
+  skill: more-group-content-os/policies/corpus-cleanup-mode.md
+  audit_report_output: .content-os/reports/AUDIT-REPORT-{date}.md
+  code_audit_output: .content-os/reports/CODE-AUDIT-{date}.md
+  roadmap_content: .content-os/batches/corpus-cleanup-roadmap-{date}.md
+  roadmap_code: .content-os/batches/code-improvements-roadmap-{date}.md
+  roadmap_topics: .content-os/batches/content-roadmap-{date}.md
+  batch_size_default: 25
+  section_priority:
+    - guides
+    - projects
+    - areas
+    - compare
+    - news
+    - developers
+  geo_baseline:
+    commercial_avg: 90
+    commercial_below_min: 17
+    grade: A
+    rubric_weak: [structure, self, unique]
+    known_pattern: "Boilerplate H2 'Mexico Invest underwriting show' scores ~71 in many files"
+    command: npm run geo:audit
+  forbid:
+    - mass regex delete across corpus
+    - Astro/layout changes without code roadmap ok
+    - new slugs until Maxim ok on audit roadmaps
+
+topic_discovery:
+  mode: after_audit_ok
+  proposal_output: .content-os/batches/topics-proposal.json
+  batch_size_default: 5
+
+analytics:
+  snapshot: more-group-content-os/analytics-snapshots/mexico-invest-website/2026-08-21.json
+  gsc_property: "sc-domain:mexico-invest.com"
+  gsc_mcp: user-search-console-mexico-invest
+  ga4_mcp: user-ga4-analytics-mexico-invest
+  bing_mcp: user-bing-webmaster-mexico-invest
+  refresh: manual_via_cursor
+
+content:
+  mdx_count_approx: 337
+  collections:
+    guides: src/content/guides
+    projects: src/content/projects
+    compare: src/content/compare
+    areas: src/content/areas
+    news: src/content/news
+    developers: src/content/developers
+  serp_briefs: content-engine/serp-briefs/mexico-invest-website
+  site_data: src/data/site.ts
+  live_report: src/pages/site-report/
+
+indexing:
+  policy: more-group-content-os/policies/cursor-rules/mexico-invest-indexing-isolation.mdc
+  gcp_project: mexico-invest-indexing
+  key_preflight: scripts/google-indexing-key.json
+  cursor_only_after: Maxim says отправляй or выложи with indexing
+
+lead_funnels:
+  - /get-shortlist/
+  - /contact/
+  - /thanks/
+
+branch_prefix: cc/mexico-
