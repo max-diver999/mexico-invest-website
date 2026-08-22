@@ -41,6 +41,11 @@
       "source": "/guides/tier-luxury",
       "destination": "/guides/luxury-mexico-property-500k-plus/",
       "permanent": true
+    },
+    {
+      "source": "/guides/isr-exemption-5-year-rule",
+      "destination": "/guides/isr-exemption-casa-habitacion/",
+      "permanent": true
     }
   ],
   "headers": [

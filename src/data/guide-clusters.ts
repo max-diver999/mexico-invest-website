@@ -72,7 +72,7 @@ export const GUIDE_CLUSTERS: GuideCluster[] = [
     slugs: [
       'mexico-property-taxes-explained',
       'mexico-capital-gains-tax-foreign-seller',
-      'isr-exemption-5-year-rule',
+      'isr-exemption-casa-habitacion',
       'vat-mexico-property-rental',
       'non-resident-tax-id-rfc-guide',
       'rfc-registration-playa-del-carmen-foreigner',
