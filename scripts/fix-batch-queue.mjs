@@ -237,7 +237,13 @@ function analyze(file, index) {
       if (!/(риск|red flag|checklist|чеклист|what to check|insider tip|risks?)/i.test(body)) {
         issues.push('missing-risks');
       }
-      if (!/(сценари|scenario|for investors|для инвестор|who this is for|buyer profile|decision framework)/i.test(body)) {
+      // The check is for a section that tells a reader whether the page applies to
+      // them. It was matching three phrasings and missing the same content written
+      // as "Who should buy in Cancún" or "Who is most vulnerable", so it flagged
+      // pages that already had it. Widened to the substance rather than one wording.
+      if (
+        !/(сценари|scenario|for investors|для инвестор|who this is for|buyer profile|decision framework|who should (?:buy|choose|skip|consider)|who is (?:most |the )?(?:right|vulnerable|wrong)|which (?:kind of |type of )?buyer|each kind of buyer|right buyer|fits? (?:a |the )?(?:specific |certain )?buyer|not for you if|skip (?:this|it) if)/i.test(body)
+      ) {
         issues.push('missing-scenarios');
       }
       const nums = countNumericFacts(body);
