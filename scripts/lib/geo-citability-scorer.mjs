@@ -120,7 +120,19 @@ export function splitParagraphs(text) {
   return text
     .split(/\n{2,}/)
     .map((p) => p.trim())
-    .filter((p) => p && !/^#{1,6}\s/.test(p) && !/^[-*]\s/.test(p) && !/^\d+\.\s/.test(p));
+    .filter(
+      (p) =>
+        p &&
+        !/^#{1,6}\s/.test(p) &&
+        !/^[-*]\s/.test(p) &&
+        !/^\d+\.\s/.test(p) &&
+        // A markdown table is not a paragraph. stripMdx() deletes the pipes,
+        // so without this a wide table flattens into a run of words that
+        // clears 90w and carries figures — and scores as a citable passage.
+        // The shared cost table on the diligence guides was doing exactly
+        // that on several pages, crediting a snippet nobody wrote as prose.
+        !/^\|/m.test(p),
+    );
 }
 
 const SKIP_H2 =
