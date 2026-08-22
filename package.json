@@ -43,7 +43,8 @@
     "images:upload:dry": "python3 scripts/upload-mexico-cloudinary.py --collection all --dry-run",
     "images:rollout": "node scripts/rollout-mexico-cloudinary.mjs",
     "images:rollout:content": "node scripts/rollout-mexico-cloudinary-content.mjs",
-    "audit:images": "node scripts/audit-all-images.mjs --fail"
+    "audit:images": "node scripts/audit-all-images.mjs --fail",
+    "qa:yields": "node scripts/qa-yield-sanity.mjs"
   },
   "dependencies": {
     "google-auth-library": "^10.6.2",

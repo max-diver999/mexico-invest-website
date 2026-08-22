@@ -205,7 +205,12 @@ function analyze(file, index) {
   if (!light && !noindex) {
     if (fm.title) {
       const tlen = String(fm.title).length;
-      if (tlen < 50 || tlen > 60) issues.push('bad-title-length');
+      // 45 rather than 50 at the floor. The real SEO risk is truncation in the
+      // SERP, which happens above ~60 characters; a 46-character title is not a
+      // defect, and padding one to clear an arbitrary floor is the kind of
+      // metric-serving edit this corpus already has too much of. The ceiling is
+      // the number that matters and it stays at 60, matching BaseLayout's cap.
+      if (tlen < 45 || tlen > 60) issues.push('bad-title-length');
     }
     if (fm.description && String(fm.description).length > 160) {
       issues.push('bad-description-length');
