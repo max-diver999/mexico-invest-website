@@ -1,42 +1,101 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
+import HubLayout, { type HubGroup } from '../../layouts/HubLayout.astro';
 import { formatUsd } from '../../lib/cardImage';
+import { MARKET_LABEL, marketForProject, type MarketSlug } from '../../data/geo';
 
 const projects = (await getCollection('projects'))
   .filter((p) => !p.data.noindex)
   .sort((a, b) => (a.data.priceFromUsd ?? 0) - (b.data.priceFromUsd ?? 0));
 
 const priced = projects.map((p) => p.data.priceFromUsd).filter((v): v is number => !!v && v > 0);
-const minPrice = priced.length ? Math.min(...priced) : 150000;
+const minPrice = priced.length ? Math.min(...priced) : 130000;
+
+const toCard = (entry: (typeof projects)[number]) => {
+  const facts = [
+    entry.data.priceFromUsd ? `from ${formatUsd(entry.data.priceFromUsd)}` : null,
+    entry.data.status ? String(entry.data.status).replace(/-/g, ' ') : null,
+    entry.data.developer,
+  ].filter(Boolean);
+  return {
+    url: `/projects/${entry.id}/`,
+    title: entry.data.title,
+    description: entry.data.description,
+    meta: facts.join(' · '),
+    badge: entry.data.area ? String(entry.data.area).replace(/-/g, ' ') : undefined,
+  };
+};
+
+/** Grouped by the market a buyer shops in, not by the state line. */
+const MARKET_ORDER: MarketSlug[] = [
+  'riviera-maya',
+  'los-cabos',
+  'vallarta-nayarit',
+  'yucatan-gulf',
+  'pacific',
+  'inland',
+];
+
+const MARKET_NOTE: Record<MarketSlug, string> = {
+  'riviera-maya': 'Quintana Roo: the deepest short-term rental market in the country, and the one with the most active permit enforcement.',
+  'los-cabos': 'Baja California Sur: dollarised pricing, the highest entry tickets on this list, and hurricane exposure to underwrite.',
+  'vallarta-nayarit': 'The Vallarta corridor straddles Jalisco and Nayarit, so two sets of rental rules apply along one stretch of coast.',
+  'yucatan-gulf': 'Lower entry prices and thinner rental demand. Mostly a lifestyle and appreciation play rather than a yield one.',
+  pacific: 'Emerging Pacific markets. Less liquidity on exit, and less competition on the way in.',
+  inland: 'Outside the restricted zone, so a foreigner takes direct title with no fideicomiso.',
+};
+
+const groups: HubGroup[] = MARKET_ORDER.map((market) => ({
+  label: MARKET_LABEL[market],
+  note: MARKET_NOTE[market],
+  cards: projects.filter((p) => marketForProject(p.data) === market).map(toCard),
+})).filter((group) => group.cards.length > 0);
+
+const grouped = new Set(groups.flatMap((g) => g.cards.map((c) => c.url)));
+const rest = projects.filter((p) => !grouped.has(`/projects/${p.id}/`));
+if (rest.length) {
+  groups.push({
+    label: 'Elsewhere in Mexico',
+    note: 'Projects outside the main foreign-buyer corridors.',
+    cards: rest.map(toCard),
+  });
+}
+
+const lastUpdated = projects
+  .map((p) => p.data.updatedDate ?? p.data.pubDate)
+  .sort((a, b) => b.valueOf() - a.valueOf())[0];
+
+const intro = [
+  `Independent reviews of ${projects.length} named Mexican developments, from ${formatUsd(minPrice)}. These are not listings and we do not take a commission on any of them, which is why several of the reviews below conclude that the project is priced for the developer rather than the buyer.`,
+  'Each review works the same way: what the asset actually is, who built it and what they have delivered before, the unit mix and real price band, and net yield rebuilt after HOA, management, lodging tax and vacancy rather than the gross number on the sales deck.',
+  'Prices and delivery dates move. Every page carries the date it was last reviewed, and every figure is worth confirming with the developer or an AMPI-licensed broker before you act on it.',
+];
+
+const faq = [
+  {
+    question: 'Are these listings?',
+    answer: 'No. Mexico Invest does not list, sell or broker property and takes no commission on any development reviewed here. Each page is editorial analysis of a named project, including the parts a sales deck leaves out.',
+  },
+  {
+    question: 'How are the yield figures calculated?',
+    answer: 'Net, not gross. A quoted gross yield is rebuilt after HOA fees, 25 to 35 per cent property management, municipal lodging tax, vacancy and the annual fideicomiso fee. That usually lands two to three percentage points below the number on the developer brochure.',
+  },
+  {
+    question: 'Can a foreigner buy any of these?',
+    answer: 'Yes, with the structure depending on location. Everything on the Riviera Maya, Los Cabos and Vallarta coasts sits inside the restricted zone and is bought through a fideicomiso bank trust. Inland projects can be taken in direct title.',
+  },
+];
 ---
-<BaseLayout
-  title="Mexico Real Estate Projects"
-  description="Independent project reviews for foreign buyers: Riviera Maya, Los Cabos, and Puerto Vallarta developments with prices and due diligence notes."
->
-  <section class="site-container py-14 md:py-20">
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Project reviews</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
-        <strong>{projects.length} projects</strong> with editorial analysis: from <strong>{formatUsd(minPrice) || '$150K'}</strong>, photos, and due diligence notes. Not developer marketing.
-      </p>
-    </header>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {projects.map((project) => (
-        <ProjectCard
-          href={`/projects/${project.id}/`}
-          title={project.data.title}
-          description={project.data.description}
-          image={project.data.heroImage}
-          area={project.data.area}
-          developer={project.data.developer}
-          propertyType={project.data.propertyType}
-          status={project.data.status}
-          priceFromUsd={project.data.priceFromUsd}
-        />
-      ))}
-    </div>
-  </section>
-</BaseLayout>
+<HubLayout
+  title="Mexico Project Reviews for Foreign Buyers"
+  heading="Independent Mexico project reviews"
+  description="Independent reviews of Mexican developments: real price bands, developer track record, HOA, and net yield after fees. Not listings, no commission."
+  path="/projects/"
+  {intro}
+  {groups}
+  {faq}
+  {lastUpdated}
+  leadTitle="Want three comparable projects with the numbers run?"
+  leadSubtitle="Tell us the budget and the market. We come back with three to five options and the net yield maths behind each one, including the ones we would not buy."
+/>

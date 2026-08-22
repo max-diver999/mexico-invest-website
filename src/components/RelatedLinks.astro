@@ -1,0 +1,90 @@
+---
+import type { LinkCard } from '../lib/content-graph';
+
+interface Props {
+  heading: string;
+  cards: LinkCard[];
+  /** One line under the heading explaining where these links come from. */
+  note?: string;
+}
+const { heading, cards, note } = Astro.props;
+---
+{cards.length > 0 && (
+  <section class="related-links" aria-label={heading}>
+    <h2 class="related-links__heading">{heading}</h2>
+    {note && <p class="related-links__note">{note}</p>}
+    <ul class="related-links__grid">
+      {cards.map((card) => (
+        <li class="related-links__item">
+          <a href={card.url} class="related-links__link">
+            <span class="related-links__badge">{card.label}</span>
+            <span class="related-links__title">{card.title}</span>
+            <span class="related-links__desc">{card.description}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<style>
+  .related-links { margin: 3rem 0 0; }
+  .related-links__heading {
+    font-size: 1.35rem;
+    margin: 0 0 0.35rem;
+    color: var(--color-ink, #1f2421);
+  }
+  .related-links__note {
+    margin: 0 0 1.25rem;
+    font-size: 0.9rem;
+    color: var(--color-muted, #6b7280);
+  }
+  .related-links__grid {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .related-links__grid { grid-template-columns: 1fr 1fr; }
+  }
+  .related-links__link {
+    display: block;
+    height: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--color-border, #e7e5e4);
+    border-radius: 10px;
+    background: var(--color-surface, #faf9f7);
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .related-links__link:hover {
+    border-color: var(--color-primary, #2c6b62);
+    transform: translateY(-1px);
+  }
+  .related-links__badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-primary, #2c6b62);
+    margin-bottom: 0.35rem;
+  }
+  .related-links__title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    color: var(--color-ink, #1f2421);
+    margin-bottom: 0.3rem;
+  }
+  .related-links__desc {
+    display: block;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--color-muted, #6b7280);
+  }
+</style>

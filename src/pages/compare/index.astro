@@ -1,35 +1,111 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContentCard from '../../components/ContentCard.astro';
+import HubLayout, { type HubGroup } from '../../layouts/HubLayout.astro';
 
 const comparisons = (await getCollection('compare'))
   .filter((c) => !c.data.noindex)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const toCard = (entry: (typeof comparisons)[number]) => ({
+  url: `/compare/${entry.id}/`,
+  title: entry.data.title,
+  description: entry.data.description,
+  meta: `${entry.data.readingTime ?? 9} min read`,
+});
+
+/**
+ * A comparison is only useful if you know which kind of decision it settles.
+ * Four kinds here: country, market, named project, and strategy.
+ */
+const COUNTRY = /^mexico-vs-/;
+const PROJECT_PAIRS = [
+  'amara-vs-nhoa-tulum',
+  'copala-quivira-vs-mavila-quivira',
+  'distrito-xcalacoco-vs-paravian',
+  'gran-tulum-vs-101-park',
+  'montage-vs-pendry-punta-mita',
+  'st-regis-vs-chileno-bay-residences',
+  'tao-blue-gardens-vs-marina-vallarta',
+];
+const STRATEGY = [
+  'branded-residence-vs-standard-condo-mexico',
+  'cash-vs-mortgage-mexico-foreigner',
+  'condo-vs-villa-mexico-investment',
+  'pre-construction-vs-resale-tulum',
+  'short-term-vs-long-term-rental-mexico',
+  'vacation-home-vs-pure-rental-mexico',
+];
+
+const bucket = (slug: string) => {
+  if (COUNTRY.test(slug)) return 'country';
+  if (PROJECT_PAIRS.includes(slug)) return 'project';
+  if (STRATEGY.includes(slug)) return 'strategy';
+  return 'market';
+};
+
+const DEFS: { key: string; label: string; note: string }[] = [
+  {
+    key: 'market',
+    label: 'Market against market',
+    note: 'Two Mexican markets that look interchangeable on a brochure and behave nothing alike on a spreadsheet.',
+  },
+  {
+    key: 'strategy',
+    label: 'Strategy against strategy',
+    note: 'Same budget, different decision: cash or mortgage, off-plan or delivered, nightly or annual let.',
+  },
+  {
+    key: 'project',
+    label: 'Project against project',
+    note: 'Named developments in the same corridor, side by side on price band, HOA and delivery risk.',
+  },
+  {
+    key: 'country',
+    label: 'Mexico against other countries',
+    note: 'For buyers still choosing a jurisdiction rather than a city.',
+  },
+];
+
+const groups: HubGroup[] = DEFS.map((def) => ({
+  label: def.label,
+  note: def.note,
+  cards: comparisons.filter((c) => bucket(c.id) === def.key).map(toCard),
+})).filter((group) => group.cards.length > 0);
+
+const lastUpdated = comparisons
+  .map((c) => c.data.updatedDate ?? c.data.pubDate)
+  .sort((a, b) => b.valueOf() - a.valueOf())[0];
+
+const intro = [
+  'Most Mexico property decisions are not "should I buy" but "which of these two". These pages settle that: the same figures for both sides, run the same way, with an explicit answer about who each option actually suits.',
+  'Every comparison rebuilds net yield after HOA, management, lodging tax and vacancy rather than repeating gross numbers, and each one ends with a recommendation rather than a shrug. Where the honest answer is that neither option works for a given buyer, the page says so.',
+];
+
+const faq = [
+  {
+    question: 'Tulum or Playa del Carmen for rental income?',
+    answer: 'Playa del Carmen, for most buyers. Rental demand there is year-round rather than seasonal, resale is more liquid, and HOA levels are more predictable. Tulum can outperform on peak-season rate but carries oversupply risk in newer inventory and a weaker off-season, which is exactly where a net yield calculation breaks.',
+  },
+  {
+    question: 'Riviera Maya or Los Cabos?',
+    answer: 'Different buyers. The Riviera Maya suits a yield-driven purchase at a lower entry ticket with deeper nightly rental demand. Los Cabos suits an owner-use purchase at a higher ticket with stronger dollar-denominated pricing and thinner but wealthier rental demand.',
+  },
+  {
+    question: 'Is pre-construction worth the discount?',
+    answer: 'Only if the payment schedule tracks construction milestones rather than marketing events, the developer has delivered comparable phases in the same municipality, and the escrow arrangement is independent. Where any of those three is missing, the discount is priced risk, not value.',
+  },
+];
 ---
-<BaseLayout
-  title="Mexico Property Market Comparisons"
-  description="Side-by-side comparisons of Riviera Maya, Los Cabos, and other Gulf markets for property investors."
->
-  <section class="site-container py-14 md:py-20">
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Market comparisons</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
-        When two markets look similar on a brochure, these breakdowns show fees, yields, and buyer fit.
-      </p>
-    </header>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {comparisons.map((item) => (
-        <ContentCard
-          href={`/compare/${item.id}/`}
-          title={item.data.title}
-          description={item.data.description}
-          image={item.data.heroImage}
-          badges={['Comparison', ...(item.data.tags?.slice(0, 1) ?? [])]}
-          meta={`${item.data.readingTime ?? 8} min read`}
-        />
-      ))}
-    </div>
-  </section>
-</BaseLayout>
+<HubLayout
+  title="Mexico Property Comparisons for Investors"
+  heading="Mexico property comparisons"
+  description="Side-by-side comparisons for Mexico buyers: Tulum vs Playa, Riviera Maya vs Los Cabos, cash vs mortgage, off-plan vs resale — net yields, fees and buyer fit."
+  path="/compare/"
+  {intro}
+  {groups}
+  {faq}
+  {lastUpdated}
+  leadTitle="Still torn between two markets?"
+  leadSubtitle="Tell us the budget and what the money is for. We come back with the side-by-side maths on both, and a straight answer about which one fits."
+/>

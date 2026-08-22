@@ -14,19 +14,33 @@ interface Props {
   type?: 'website' | 'article';
   noindex?: boolean;
   schemas?: object[];
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 const {
   title,
   description = SITE.description,
   canonical = Astro.url.href,
-  ogImage = `${SITE.url}/favicon.svg`,
+  ogImage = `${SITE.url}/og-default.png`,
   type = 'website',
   noindex = false,
   schemas = [],
+  publishedTime,
+  modifiedTime,
 } = Astro.props;
 
-const fullTitle = title.includes('Mexico Invest') ? title : `${title} | Mexico Invest`;
+/**
+ * Google truncates the SERP title around 60 characters. The brand suffix costs 16,
+ * so append it only when the result still fits; a truncated title loses the tail of
+ * the headline, which is where the keyword usually is.
+ */
+const TITLE_SUFFIX = ' | Mexico Invest';
+const TITLE_MAX = 60;
+const fullTitle =
+  title.includes('Mexico Invest') || title.length + TITLE_SUFFIX.length > TITLE_MAX
+    ? title
+    : `${title}${TITLE_SUFFIX}`;
 
 const orgSchema = {
   '@context': 'https://schema.org',
@@ -68,6 +82,8 @@ const allSchemas = [orgSchema, ...schemas];
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={ogImage} />
   <meta property="og:site_name" content={SITE.name} />
+  {type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+  {type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={description} />

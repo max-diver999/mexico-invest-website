@@ -1,19 +1,46 @@
 ---
 import { SITE } from '../data/site';
 const year = new Date().getFullYear();
+
+const research = [
+  { label: 'Investment guides', href: '/guides/' },
+  { label: 'Project reviews', href: '/projects/' },
+  { label: 'Areas and markets', href: '/areas/' },
+  { label: 'Comparisons', href: '/compare/' },
+  { label: 'Developers', href: '/developers/' },
+  { label: 'Market notes', href: '/news/' },
+];
+
+const about = [
+  { label: 'About Mexico Invest', href: '/about/' },
+  { label: 'How we research', href: '/methodology/' },
+  { label: 'Get a shortlist', href: '/get-shortlist/' },
+  { label: 'Contact', href: '/contact/' },
+];
 ---
 <footer class="mt-16 border-t border-[var(--color-border)] bg-[var(--color-ink)] text-[#d6d3d1]">
-  <div class="site-container py-12 grid gap-8 md:grid-cols-3 text-sm">
+  <div class="site-container py-12 grid gap-8 md:grid-cols-4 text-sm">
     <div>
       <p class="text-lg font-semibold text-white mb-2">{SITE.name}</p>
       <p class="leading-relaxed">{SITE.tagline}</p>
+      <p class="leading-relaxed mt-3 text-[#a8a29e]">
+        Independent research for US and Canadian buyers. Not a developer, not a listing portal.
+      </p>
     </div>
     <div>
-      <p class="font-semibold text-white mb-3">Explore</p>
+      <p class="font-semibold text-white mb-3">Research</p>
       <ul class="space-y-2">
-        <li><a href="/guides/" class="text-[#d6d3d1] hover:text-white no-underline">Guides</a></li>
-        <li><a href="/compare/" class="text-[#d6d3d1] hover:text-white no-underline">Market comparisons</a></li>
-        <li><a href="/methodology/" class="text-[#d6d3d1] hover:text-white no-underline">Methodology</a></li>
+        {research.map((item) => (
+          <li><a href={item.href} class="text-[#d6d3d1] hover:text-white no-underline">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-3">Mexico Invest</p>
+      <ul class="space-y-2">
+        {about.map((item) => (
+          <li><a href={item.href} class="text-[#d6d3d1] hover:text-white no-underline">{item.label}</a></li>
+        ))}
       </ul>
     </div>
     <div>

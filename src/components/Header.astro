@@ -6,21 +6,112 @@ const nav = [
   { label: 'Projects', href: '/projects/' },
   { label: 'Areas', href: '/areas/' },
   { label: 'Compare', href: '/compare/' },
+  { label: 'Developers', href: '/developers/' },
+  { label: 'Market notes', href: '/news/' },
   { label: 'About', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
 ];
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
 <header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[rgba(255,255,255,0.9)] backdrop-blur-md">
   <div class="site-container flex items-center justify-between gap-4 py-4">
     <a href="/" class="flex items-center gap-2 no-underline">
-      <img src="/favicon.svg?v=3" alt="" width="32" height="32" class="rounded-lg" />
+      <img src="/favicon.svg?v=3" alt="" data-decorative width="32" height="32" class="rounded-lg" />
       <span class="text-lg font-semibold text-[var(--color-ink)]">{SITE.name}</span>
     </a>
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+
+    <nav class="hidden lg:flex items-center gap-5 text-sm font-medium" aria-label="Main">
       {nav.map((item) => (
-        <a href={item.href} class="text-[var(--color-muted)] hover:text-[var(--color-ink)] no-underline">{item.label}</a>
+        <a
+          href={item.href}
+          aria-current={isCurrent(item.href) ? 'page' : undefined}
+          class:list={[
+            'no-underline hover:text-[var(--color-ink)]',
+            isCurrent(item.href) ? 'text-[var(--color-ink)]' : 'text-[var(--color-muted)]',
+          ]}
+        >{item.label}</a>
       ))}
     </nav>
-    <a href="/get-shortlist/" class="btn-primary text-sm px-4 py-2 shrink-0">Free shortlist</a>
+
+    <div class="flex items-center gap-2 shrink-0">
+      <a href="/get-shortlist/" class="btn-primary text-sm px-4 py-2">Free shortlist</a>
+      <button
+        type="button"
+        id="nav-toggle"
+        class="lg:hidden site-nav__toggle"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open menu"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
   </div>
+
+  <nav id="mobile-nav" class="site-nav__mobile lg:hidden" aria-label="Main" hidden>
+    <ul class="site-container py-3">
+      {nav.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            aria-current={isCurrent(item.href) ? 'page' : undefined}
+            class="site-nav__mobile-link no-underline"
+          >{item.label}</a>
+        </li>
+      ))}
+      <li>
+        <a href="/contact/" class="site-nav__mobile-link no-underline">Contact</a>
+      </li>
+    </ul>
+  </nav>
 </header>
+
+<style>
+  .site-nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: transparent;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--color-ink);
+    cursor: pointer;
+  }
+  .site-nav__mobile {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .site-nav__mobile ul {
+    list-style: none;
+    margin: 0;
+    padding-block: 0.75rem;
+    display: grid;
+    gap: 0.125rem;
+  }
+  .site-nav__mobile-link {
+    display: block;
+    padding: 0.6rem 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-muted);
+  }
+  .site-nav__mobile-link[aria-current='page'] {
+    color: var(--color-ink);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+    if (menu) menu.hidden = open;
+  });
+</script>

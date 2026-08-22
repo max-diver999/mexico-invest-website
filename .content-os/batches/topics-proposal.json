@@ -1,0 +1,1458 @@
+{
+  "site_id": "mexico-invest-website",
+  "domain": "mexico-invest.com",
+  "program": "mexico-invest",
+  "generated": "2026-08-21",
+  "generated_by": "claude-code phase-0 audit",
+  "status": "proposal_awaiting_approval",
+  "source_report": ".content-os/reports/AUDIT-REPORT-2026-08-21.md",
+  "roadmap": ".content-os/batches/content-roadmap-2026-08-21.md",
+  "precondition": "Do not start Wave 1 until corpus cleanup Waves 1-4 have landed. 39% of existing prose is duplicated template and 276/337 files carry a unit-incoherent numeric claim; new pages inherit the site-level quality signal.",
+  "publishing_rules": {
+    "frontmatter_title_max_chars": 46,
+    "rendered_title_max_chars": 60,
+    "words": [
+      1800,
+      2600
+    ],
+    "h2_range": [
+      6,
+      12
+    ],
+    "faq_items": [
+      5,
+      8
+    ],
+    "duplicate_sentence_tolerance": 0,
+    "unit_incoherent_claims": 0,
+    "lead_bridge_per_article": 1,
+    "named_negative_on_commercial": true,
+    "sources_required": "every figure in market-stats.json with owner_slug, source, as_of"
+  },
+  "batch_size_default": 5,
+  "waves": {
+    "1": [
+      "A1",
+      "A3",
+      "B1",
+      "D1",
+      "D2"
+    ],
+    "2": [
+      "A2",
+      "A4",
+      "C1",
+      "C2",
+      "C6"
+    ],
+    "3": [
+      "B3",
+      "B4",
+      "E1",
+      "E2",
+      "F4"
+    ],
+    "4": [
+      "D3",
+      "D6",
+      "D7",
+      "D8",
+      "F2"
+    ],
+    "5": [
+      "A5",
+      "A6",
+      "A7",
+      "A8",
+      "F5"
+    ],
+    "6": [
+      "C3",
+      "C4",
+      "C5",
+      "C7",
+      "C9"
+    ],
+    "7": [
+      "E3",
+      "E4",
+      "E5",
+      "F1",
+      "F3"
+    ],
+    "8": [
+      "B2",
+      "B5",
+      "B6",
+      "B7",
+      "C8"
+    ],
+    "9": [
+      "E6",
+      "E7",
+      "E8",
+      "E9",
+      "E10"
+    ],
+    "10": [
+      "A9",
+      "A10",
+      "D4",
+      "D5",
+      "F6"
+    ]
+  },
+  "clusters": {
+    "money": {
+      "label": "Money and decision pages",
+      "count": 10
+    },
+    "fideicomiso": {
+      "label": "Fideicomiso and ownership law",
+      "count": 7
+    },
+    "tax": {
+      "label": "Tax depth (Mexico + US/Canada)",
+      "count": 9
+    },
+    "str": {
+      "label": "STR compliance and operations",
+      "count": 8
+    },
+    "markets": {
+      "label": "New geographic markets",
+      "count": 10
+    },
+    "data": {
+      "label": "Data assets and trust",
+      "count": 6
+    }
+  },
+  "validation": {
+    "total": 50,
+    "slug_collisions_with_existing_corpus": [],
+    "related_slugs_not_resolvable": [],
+    "titles_over_60_rendered": []
+  },
+  "topics": [
+    {
+      "id": "A1",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "isai-transfer-tax-by-state-mexico",
+      "url": "/guides/isai-transfer-tax-by-state-mexico/",
+      "collection": "guides",
+      "title": "ISAI Transfer Tax by Mexican State",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "isai tax mexico by state",
+      "intent": "transactional",
+      "wave": 1,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "cost-of-buying-property-mexico",
+        "mexico-property-taxes-explained",
+        "mexico-property-closing-costs-breakdown",
+        "predial-riviera-maya-rates"
+      ],
+      "why": "No independent site publishes a clean ISAI-by-state table; the rate genuinely varies 2-5% and buyers are surprised at closing by five figures. Table page built to be cited and snippet-captured.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A2",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "notario-fees-mexico-what-you-pay",
+      "url": "/guides/notario-fees-mexico-what-you-pay/",
+      "collection": "guides",
+      "title": "Notario Fees in Mexico: What You Pay",
+      "title_chars": 36,
+      "rendered_title_chars": 52,
+      "primary_query": "notario fees mexico property",
+      "intent": "transactional",
+      "wave": 2,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "notario-publico-mexico-property-role",
+        "cost-of-buying-property-mexico",
+        "closing-timeline-mexico-30-90-days"
+      ],
+      "why": "Notario fees are quoted as a vague percentage everywhere. A fee schedule by state with what is and is not included is a differentiator.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A3",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "mexico-closing-costs-calculator-2026",
+      "url": "/guides/mexico-closing-costs-calculator-2026/",
+      "collection": "guides",
+      "title": "Mexico Closing Costs: Worked Examples 2026",
+      "title_chars": 42,
+      "rendered_title_chars": 58,
+      "primary_query": "mexico closing costs calculator",
+      "intent": "transactional",
+      "wave": 1,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "isai-transfer-tax-by-state-mexico",
+        "cost-of-buying-property-mexico",
+        "fideicomiso-mexico-explained",
+        "sre-permit-mexico-property-guide"
+      ],
+      "why": "Three worked examples ($150K Playa condo / $400K Cabo villa / $1.2M Punta Mita) summing every real line: ISAI, notario, registry, fideicomiso setup, SRE permit, appraisal, legal, escrow. Highest-converting format in the plan.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A4",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "title-insurance-mexico-providers-compared",
+      "url": "/guides/title-insurance-mexico-providers-compared/",
+      "collection": "guides",
+      "title": "Title Insurance Mexico: Providers Compared",
+      "title_chars": 42,
+      "rendered_title_chars": 58,
+      "primary_query": "title insurance mexico worth it",
+      "intent": "commercial",
+      "wave": 2,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "title-insurance-mexico",
+        "due-diligence-mexico-real-estate",
+        "fake-escritura-mexico",
+        "escrow-companies-mexico-compared"
+      ],
+      "why": "High-intent 'do I need this' query. Brokers cannot answer it honestly. Natural /contact/ bridge.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A5",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "escrow-companies-mexico-compared",
+      "url": "/guides/escrow-companies-mexico-compared/",
+      "collection": "guides",
+      "title": "Escrow Companies for Mexico Property",
+      "title_chars": 36,
+      "rendered_title_chars": 52,
+      "primary_query": "escrow mexico real estate companies",
+      "intent": "commercial",
+      "wave": 5,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "escrow-mexico-real-estate",
+        "wire-fraud-mexico-closing",
+        "us-wire-transfer-mexico-property"
+      ],
+      "why": "Pairs with the existing wire-fraud guide. Who to use is the question that follows why it matters.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A6",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "mexican-banks-foreign-buyers-2026",
+      "url": "/guides/mexican-banks-foreign-buyers-2026/",
+      "collection": "guides",
+      "title": "Mexican Banks for Foreign Buyers 2026",
+      "title_chars": 37,
+      "rendered_title_chars": 53,
+      "primary_query": "best mexican bank for foreigners",
+      "intent": "commercial",
+      "wave": 5,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexican-bank-account-foreign-property-owner",
+        "fideicomiso-bank-fees-comparison-2026",
+        "repatriate-sale-proceeds-mexico"
+      ],
+      "why": "Bridges the fideicomiso trustee choice and the operating-account choice, which the corpus treats separately.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A7",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "cross-border-cpa-mexico-checklist",
+      "url": "/guides/cross-border-cpa-mexico-checklist/",
+      "collection": "guides",
+      "title": "Choosing a Cross-Border CPA for Mexico",
+      "title_chars": 38,
+      "rendered_title_chars": 54,
+      "primary_query": "us cpa mexico rental property",
+      "intent": "commercial",
+      "wave": 5,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "us-taxes-mexico-rental-property",
+        "form-1116-foreign-tax-credit-mexico-rental",
+        "schedule-e-mexico-rental",
+        "fbar-mexico-real-estate"
+      ],
+      "why": "Terminal page for the entire US tax cluster. Highest-value /contact/ bridge on the site.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A8",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "mexico-property-lawyer-cost-choose",
+      "url": "/guides/mexico-property-lawyer-cost-choose/",
+      "collection": "guides",
+      "title": "Mexico Property Lawyer: Cost and Choice",
+      "title_chars": 39,
+      "rendered_title_chars": 55,
+      "primary_query": "do i need a lawyer to buy in mexico",
+      "intent": "commercial",
+      "wave": 5,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "notario-publico-mexico-property-role",
+        "due-diligence-mexico-real-estate",
+        "unregistered-broker-mexico",
+        "ampi-license-verify-guide"
+      ],
+      "why": "The notario is not your lawyer - a distinction most competitors blur and most buyers get wrong.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A9",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "negotiating-mexico-property-price-2026",
+      "url": "/guides/negotiating-mexico-property-price-2026/",
+      "collection": "guides",
+      "title": "Negotiating a Mexico Property Price 2026",
+      "title_chars": 40,
+      "rendered_title_chars": 56,
+      "primary_query": "how to negotiate mexico property",
+      "intent": "commercial",
+      "wave": 10,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-property-market-buyer-friendly-2026",
+        "cash-buyer-mexico-advantages",
+        "pre-construction-mexico-risks"
+      ],
+      "why": "2026 is a buyer's market in Riviera Maya. Timely, and the kind of page that gets shared.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "A10",
+      "cluster": "money",
+      "cluster_label": "Money and decision pages",
+      "slug": "preconstruction-payment-schedules-mexico",
+      "url": "/guides/preconstruction-payment-schedules-mexico/",
+      "collection": "guides",
+      "title": "Pre-Construction Payment Schedules Mexico",
+      "title_chars": 41,
+      "rendered_title_chars": 57,
+      "primary_query": "mexico preconstruction payment plan",
+      "intent": "commercial",
+      "wave": 10,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-off-plan-investment",
+        "pre-construction-mexico-risks",
+        "developer-financing-mexico",
+        "developer-due-diligence-mexico"
+      ],
+      "why": "Payment schedule structure is where pre-construction risk actually lives. Nobody publishes the comparison.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "B1",
+      "cluster": "fideicomiso",
+      "cluster_label": "Fideicomiso and ownership law",
+      "slug": "sre-permit-mexico-property-guide",
+      "url": "/guides/sre-permit-mexico-property-guide/",
+      "collection": "guides",
+      "title": "SRE Permit for Mexico Property: Cost & Time",
+      "title_chars": 43,
+      "rendered_title_chars": 59,
+      "primary_query": "sre permit mexico cost",
+      "intent": "informational",
+      "wave": 1,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "fideicomiso-mexico-explained",
+        "mexico-restricted-zone-explained",
+        "cost-of-buying-property-mexico",
+        "fideicomiso-bank-fees-comparison-2026"
+      ],
+      "why": "Every competitor mentions the SRE permit; almost none publish the fee, form or timeline. It is also the missing piece that reconciles the site's $2,500-4,000 setup figure with competitors' $500-1,000 bank fee.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "B2",
+      "cluster": "fideicomiso",
+      "cluster_label": "Fideicomiso and ownership law",
+      "slug": "fideicomiso-beneficiary-change-cost",
+      "url": "/guides/fideicomiso-beneficiary-change-cost/",
+      "collection": "guides",
+      "title": "Changing Fideicomiso Beneficiaries",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "change fideicomiso beneficiary",
+      "intent": "informational",
+      "wave": 8,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "fideicomiso-mexico-explained",
+        "bank-trust-renewal-mexico",
+        "inheritance-property-mexico-foreigner",
+        "estate-planning-will-mexico-property-us-citizen"
+      ],
+      "why": "Long-tail the hub currently absorbs. Owns a distinct query and relieves hub bloat.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "B3",
+      "cluster": "fideicomiso",
+      "cluster_label": "Fideicomiso and ownership law",
+      "slug": "restricted-zone-map-by-state-mexico",
+      "url": "/guides/restricted-zone-map-by-state-mexico/",
+      "collection": "guides",
+      "title": "Mexico Restricted Zone: Map and States",
+      "title_chars": 38,
+      "rendered_title_chars": 54,
+      "primary_query": "mexico restricted zone map",
+      "intent": "informational",
+      "wave": 3,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-restricted-zone-explained",
+        "fideicomiso-mexico-explained",
+        "direct-title-outside-restricted-zone"
+      ],
+      "why": "A visual/tabular answer to a question currently answered in prose. Snippet and AI-Overview target.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "B4",
+      "cluster": "fideicomiso",
+      "cluster_label": "Fideicomiso and ownership law",
+      "slug": "direct-title-outside-restricted-zone",
+      "url": "/guides/direct-title-outside-restricted-zone/",
+      "collection": "guides",
+      "title": "Direct Title Outside Mexico's Zone",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "buy property mexico without fideicomiso",
+      "intent": "informational",
+      "wave": 3,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-restricted-zone-explained",
+        "mexico-city-property-investment-guide",
+        "merida",
+        "san-miguel-de-allende-property"
+      ],
+      "why": "The inland buyer journey the site does not cover. Pairs with the CDMX launch in the same wave.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "B5",
+      "cluster": "fideicomiso",
+      "cluster_label": "Fideicomiso and ownership law",
+      "slug": "fideicomiso-inheritance-when-you-die",
+      "url": "/guides/fideicomiso-inheritance-when-you-die/",
+      "collection": "guides",
+      "title": "Fideicomiso Inheritance: When You Die",
+      "title_chars": 37,
+      "rendered_title_chars": 53,
+      "primary_query": "fideicomiso after death",
+      "intent": "informational",
+      "wave": 8,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "inheritance-property-mexico-foreigner",
+        "estate-planning-will-mexico-property-us-citizen",
+        "fideicomiso-mexico-explained"
+      ],
+      "why": "High-anxiety query with a genuinely reassuring answer (substitute beneficiary, no Mexican probate).",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "B6",
+      "cluster": "fideicomiso",
+      "cluster_label": "Fideicomiso and ownership law",
+      "slug": "mexican-corporation-property-setup",
+      "url": "/guides/mexican-corporation-property-setup/",
+      "collection": "guides",
+      "title": "Mexican Corporation for Property: Setup",
+      "title_chars": 39,
+      "rendered_title_chars": 55,
+      "primary_query": "sociedad anonima buy property mexico",
+      "intent": "informational",
+      "wave": 8,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "fideicomiso-vs-mexican-corporation",
+        "commercial-property-mexico-foreigner",
+        "mexico-turnkey-rental-property"
+      ],
+      "why": "The existing comparison page argues which; this one covers how, including annual compliance cost.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "B7",
+      "cluster": "fideicomiso",
+      "cluster_label": "Fideicomiso and ownership law",
+      "slug": "regimen-condominio-what-buyers-check",
+      "url": "/guides/regimen-condominio-what-buyers-check/",
+      "collection": "guides",
+      "title": "Regimen de Condominio: What to Check",
+      "title_chars": 36,
+      "rendered_title_chars": 52,
+      "primary_query": "regimen de condominio mexico",
+      "intent": "informational",
+      "wave": 8,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "hoa-fees-mexico-condo",
+        "reading-hoa-minutes-before-str-buy",
+        "short-term-rental-rules-riviera-maya",
+        "due-diligence-mexico-real-estate"
+      ],
+      "why": "The condominium regime is what actually bans or permits STR in a building. Real due-diligence differentiator.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C1",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "isr-700000-udi-exemption-explained",
+      "url": "/guides/isr-700000-udi-exemption-explained/",
+      "collection": "guides",
+      "title": "Mexico's 700,000 UDI Capital Gains Break",
+      "title_chars": 40,
+      "rendered_title_chars": 56,
+      "primary_query": "udi exemption mexico capital gains",
+      "intent": "informational",
+      "wave": 2,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-capital-gains-tax-foreign-seller",
+        "isr-exemption-5-year-rule",
+        "how-to-sell-mexico-property-from-abroad",
+        "mexico-property-sale-tax-checklist"
+      ],
+      "why": "Corrects a likely conflation on the existing isr-exemption-5-year-rule page. Getting this right publicly while competitors blur it is the E-E-A-T play.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C2",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "mexico-tax-residency-183-day-rule",
+      "url": "/guides/mexico-tax-residency-183-day-rule/",
+      "collection": "guides",
+      "title": "Mexico Tax Residency: The 183-Day Rule",
+      "title_chars": 38,
+      "rendered_title_chars": 54,
+      "primary_query": "183 days mexico tax resident",
+      "intent": "informational",
+      "wave": 2,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "digital-nomad-mexico-property",
+        "american-retiree-mexico-real-estate",
+        "temporary-resident-visa-buy-property-mexico",
+        "us-taxes-mexico-rental-property"
+      ],
+      "why": "Catches snowbirds before they create a worldwide-income problem. Strong /contact/ bridge.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C3",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "efirma-mexico-foreign-property-owner",
+      "url": "/guides/efirma-mexico-foreign-property-owner/",
+      "collection": "guides",
+      "title": "e.firma for Foreign Property Owners",
+      "title_chars": 35,
+      "rendered_title_chars": 51,
+      "primary_query": "efirma mexico foreigner",
+      "intent": "informational",
+      "wave": 6,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "non-resident-tax-id-rfc-guide",
+        "sat-rental-registration-mexico",
+        "cfdi-4-0-rental-invoicing-mexico"
+      ],
+      "why": "The practical blocker after RFC registration. Named-procedure page with no independent English coverage.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C4",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "cfdi-4-0-rental-invoicing-mexico",
+      "url": "/guides/cfdi-4-0-rental-invoicing-mexico/",
+      "collection": "guides",
+      "title": "CFDI 4.0 Rental Invoicing for Owners",
+      "title_chars": 36,
+      "rendered_title_chars": 52,
+      "primary_query": "cfdi 4.0 rental income mexico",
+      "intent": "informational",
+      "wave": 6,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "cfdi-cost-basis-mexico",
+        "sat-rental-registration-mexico",
+        "vat-mexico-property-rental",
+        "efirma-mexico-foreign-property-owner"
+      ],
+      "why": "CFDI 4.0 is the current standard and the corpus only covers CFDI as cost basis, not as rental invoicing.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C5",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "us-mexico-tax-treaty-property-owners",
+      "url": "/guides/us-mexico-tax-treaty-property-owners/",
+      "collection": "guides",
+      "title": "US-Mexico Tax Treaty for Owners",
+      "title_chars": 31,
+      "rendered_title_chars": 47,
+      "primary_query": "us mexico tax treaty real estate",
+      "intent": "informational",
+      "wave": 6,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "form-1116-foreign-tax-credit-mexico-rental",
+        "us-taxes-mexico-rental-property",
+        "us-capital-gains-mexico-sale",
+        "fatca-mexico-property-owners"
+      ],
+      "why": "The treaty is referenced across the US tax cluster and explained nowhere. Hub page for that cluster.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C6",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "canada-mexico-tax-treaty-property",
+      "url": "/guides/canada-mexico-tax-treaty-property/",
+      "collection": "guides",
+      "title": "Canada-Mexico Tax Treaty for Owners",
+      "title_chars": 35,
+      "rendered_title_chars": 51,
+      "primary_query": "canadian buying property in mexico tax",
+      "intent": "informational",
+      "wave": 2,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-property-for-canadians",
+        "mexico-capital-gains-tax-foreign-seller",
+        "repatriate-sale-proceeds-mexico"
+      ],
+      "why": "Canadians are roughly a third of foreign buyers and get one guide. No FBAR, different treaty articles, T1135. Under-served by every competitor.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C7",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "depreciating-mexico-rental-us-return",
+      "url": "/guides/depreciating-mexico-rental-us-return/",
+      "collection": "guides",
+      "title": "Depreciating a Mexico Rental (US Return)",
+      "title_chars": 40,
+      "rendered_title_chars": 56,
+      "primary_query": "depreciate foreign rental property",
+      "intent": "informational",
+      "wave": 6,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "schedule-e-mexico-rental",
+        "us-taxes-mexico-rental-property",
+        "form-1116-foreign-tax-credit-mexico-rental"
+      ],
+      "why": "40-year ADS life for foreign property is the detail US owners consistently get wrong.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C8",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "predial-property-tax-by-mexican-city",
+      "url": "/guides/predial-property-tax-by-mexican-city/",
+      "collection": "guides",
+      "title": "Predial Property Tax by Mexican City",
+      "title_chars": 36,
+      "rendered_title_chars": 52,
+      "primary_query": "predial tax mexico how much",
+      "intent": "informational",
+      "wave": 8,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "predial-riviera-maya-rates",
+        "mexico-property-taxes-explained",
+        "hoa-fees-mexico-condo"
+      ],
+      "why": "Extends the existing Riviera Maya predial page to a national table. Carrying-cost input for every yield model.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "C9",
+      "cluster": "tax",
+      "cluster_label": "Tax depth (Mexico + US/Canada)",
+      "slug": "mexico-property-sale-tax-checklist",
+      "url": "/guides/mexico-property-sale-tax-checklist/",
+      "collection": "guides",
+      "title": "Mexico Property Sale Tax Checklist",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "selling property in mexico taxes",
+      "intent": "transactional",
+      "wave": 6,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "how-to-sell-mexico-property-from-abroad",
+        "mexico-capital-gains-tax-foreign-seller",
+        "repatriate-sale-proceeds-mexico",
+        "isr-700000-udi-exemption-explained"
+      ],
+      "why": "Terminal page for the exit cluster, which contains the site's top-clicking page. Amplifies a proven winner.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D1",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "retur-q-registration-quintana-roo",
+      "url": "/guides/retur-q-registration-quintana-roo/",
+      "collection": "guides",
+      "title": "RETUR-Q Registration for Quintana Roo",
+      "title_chars": 37,
+      "rendered_title_chars": 53,
+      "primary_query": "retur-q registration tulum",
+      "intent": "transactional",
+      "wave": 1,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "short-term-rental-rules-riviera-maya",
+        "quintana-roo-lodging-tax-registration-guide",
+        "licencia-funcionamiento-str-mexico",
+        "airbnb-investment-mexico-guide"
+      ],
+      "why": "The named 2026 process (SEDETUR platform, annual renewal) that competitors rank for and this site does not mention. Highest-confidence ranking bet in the plan.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D2",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "licencia-funcionamiento-str-mexico",
+      "url": "/guides/licencia-funcionamiento-str-mexico/",
+      "collection": "guides",
+      "title": "Licencia de Funcionamiento for Rentals",
+      "title_chars": 38,
+      "rendered_title_chars": 54,
+      "primary_query": "licencia de funcionamiento airbnb mexico",
+      "intent": "transactional",
+      "wave": 1,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "retur-q-registration-quintana-roo",
+        "short-term-rental-rules-riviera-maya",
+        "liability-insurance-str-mexico"
+      ],
+      "why": "The municipal half of the STR permit stack, via SATQ. Pairs with D1.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D3",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "ish-lodging-tax-by-state-mexico",
+      "url": "/guides/ish-lodging-tax-by-state-mexico/",
+      "collection": "guides",
+      "title": "Lodging Tax (ISH) by Mexican State",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "ish tax mexico rate",
+      "intent": "informational",
+      "wave": 4,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "quintana-roo-lodging-tax-registration-guide",
+        "vat-mexico-property-rental",
+        "sat-airbnb-withholding-mexico-2026"
+      ],
+      "why": "National ISH table (Quintana Roo 4%, others differ). Yield-model input nobody publishes cleanly.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D4",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "reading-hoa-minutes-before-str-buy",
+      "url": "/guides/reading-hoa-minutes-before-str-buy/",
+      "collection": "guides",
+      "title": "Reading HOA Minutes Before an STR Buy",
+      "title_chars": 37,
+      "rendered_title_chars": 53,
+      "primary_query": "condo rules airbnb mexico",
+      "intent": "informational",
+      "wave": 10,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "hoa-fees-mexico-condo",
+        "regimen-condominio-what-buyers-check",
+        "due-diligence-mexico-real-estate"
+      ],
+      "why": "Turns the corpus's most-repeated assertion into an actual method with a document checklist.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D5",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "mexico-str-management-agreements",
+      "url": "/guides/mexico-str-management-agreements/",
+      "collection": "guides",
+      "title": "Mexico STR Management Agreements",
+      "title_chars": 32,
+      "rendered_title_chars": 48,
+      "primary_query": "property management contract mexico",
+      "intent": "commercial",
+      "wave": 10,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "property-management-riviera-maya-cost",
+        "property-managers-playa-del-carmen-compared",
+        "mexico-turnkey-rental-property"
+      ],
+      "why": "Contract terms are where the 25-35% PM fee actually gets decided. Clause-by-clause page.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D6",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "modelling-mexico-str-revenue",
+      "url": "/guides/modelling-mexico-str-revenue/",
+      "collection": "guides",
+      "title": "Modelling Mexico STR Revenue",
+      "title_chars": 28,
+      "rendered_title_chars": 44,
+      "primary_query": "airbnb income calculator mexico",
+      "intent": "commercial",
+      "wave": 4,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-rental-yield-guide",
+        "gross-vs-net-yield-mexico",
+        "str-occupancy-by-month-riviera-maya",
+        "how-to-calculate-rental-yield-mexico"
+      ],
+      "why": "Transparent model with exposed assumptions: ADR x occupancy x seasonality, minus PM, HOA, fideicomiso, ISH, ISR. The site's positioning in one artefact. Natural /get-shortlist/ bridge.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D7",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "los-cabos-str-rules-bcs-permits",
+      "url": "/guides/los-cabos-str-rules-bcs-permits/",
+      "collection": "guides",
+      "title": "Los Cabos STR Rules: BCS Permits",
+      "title_chars": 32,
+      "rendered_title_chars": 48,
+      "primary_query": "airbnb rules cabo san lucas",
+      "intent": "informational",
+      "wave": 4,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "los-cabos-property-investment-guide",
+        "cabo-corridor",
+        "hurricane-insurance-bcs",
+        "short-term-rental-rules-riviera-maya"
+      ],
+      "why": "STR rules covered for Riviera Maya only, while Los Cabos carries 26 project pages. Different state, different rules.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "D8",
+      "cluster": "str",
+      "cluster_label": "STR compliance and operations",
+      "slug": "puerto-vallarta-str-rules-jalisco",
+      "url": "/guides/puerto-vallarta-str-rules-jalisco/",
+      "collection": "guides",
+      "title": "Puerto Vallarta STR Rules Explained",
+      "title_chars": 35,
+      "rendered_title_chars": 51,
+      "primary_query": "airbnb rules puerto vallarta",
+      "intent": "informational",
+      "wave": 4,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "puerto-vallarta-property-investment-guide",
+        "nuevo-vallarta",
+        "puerto-vallarta",
+        "short-term-rental-rules-riviera-maya"
+      ],
+      "why": "Jalisco and Nayarit differ, and the PV/Riviera Nayarit corridor straddles both - a distinction no competitor handles well.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E1",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "mexico-city-property-investment-guide",
+      "url": "/guides/mexico-city-property-investment-guide/",
+      "collection": "guides",
+      "title": "Mexico City Property Investment 2026",
+      "title_chars": 36,
+      "rendered_title_chars": 52,
+      "primary_query": "invest in mexico city real estate",
+      "intent": "commercial",
+      "wave": 3,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "polanco-vs-condesa-vs-roma-norte",
+        "direct-title-outside-restricted-zone",
+        "mexico-property-investment-guide",
+        "best-areas-invest-mexico-2026"
+      ],
+      "why": "site-passport lists CDMX corridor as a target market and there are zero CDMX pages. Outside the restricted zone, so direct title - a genuinely different buyer journey.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E2",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "polanco-vs-condesa-vs-roma-norte",
+      "url": "/compare/polanco-vs-condesa-vs-roma-norte/",
+      "collection": "compare",
+      "title": "Polanco vs Condesa vs Roma Norte",
+      "title_chars": 32,
+      "rendered_title_chars": 48,
+      "primary_query": "best neighbourhood mexico city investment",
+      "intent": "commercial",
+      "wave": 3,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-city-property-investment-guide",
+        "direct-title-outside-restricted-zone"
+      ],
+      "why": "High-volume neighbourhood comparison. Include the newer gentrification fronts (Santa Maria la Ribera, San Rafael, Cuauhtemoc).",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E3",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "monterrey-property-nearshoring-2026",
+      "url": "/guides/monterrey-property-nearshoring-2026/",
+      "collection": "guides",
+      "title": "Monterrey Property and Nearshoring",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "monterrey real estate investment",
+      "intent": "commercial",
+      "wave": 7,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "nearshoring-mexico-industrial-real-estate",
+        "mexico-property-investment-guide",
+        "guadalajara-property-investment-guide"
+      ],
+      "why": "Nearshoring capital lands here and the corpus has one industrial guide and no residential coverage. Yield buyer, not lifestyle buyer.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E4",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "guadalajara-property-investment-guide",
+      "url": "/guides/guadalajara-property-investment-guide/",
+      "collection": "guides",
+      "title": "Guadalajara Property Investment Guide",
+      "title_chars": 37,
+      "rendered_title_chars": 53,
+      "primary_query": "guadalajara real estate investment",
+      "intent": "commercial",
+      "wave": 7,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "nearshoring-mexico-industrial-real-estate",
+        "lake-chapala-real-estate-americans",
+        "monterrey-property-nearshoring-2026"
+      ],
+      "why": "Adjacent to the existing Lake Chapala guide, which currently has no metro anchor to link to.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E5",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "queretaro-property-investment-guide",
+      "url": "/guides/queretaro-property-investment-guide/",
+      "collection": "guides",
+      "title": "Queretaro Property Investment Guide",
+      "title_chars": 35,
+      "rendered_title_chars": 51,
+      "primary_query": "queretaro real estate investment",
+      "intent": "commercial",
+      "wave": 7,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "nearshoring-mexico-industrial-real-estate",
+        "monterrey-property-nearshoring-2026",
+        "san-miguel-de-allende-property"
+      ],
+      "why": "Bajio corridor. Links naturally to the existing San Miguel page.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E6",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "la-paz-baja-property-investment",
+      "url": "/guides/la-paz-baja-property-investment/",
+      "collection": "guides",
+      "title": "La Paz Baja Property Investment",
+      "title_chars": 31,
+      "rendered_title_chars": 47,
+      "primary_query": "la paz mexico real estate",
+      "intent": "commercial",
+      "wave": 9,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "east-cape-baja",
+        "todos-santos-property-investment",
+        "los-cabos-property-investment-guide"
+      ],
+      "why": "Named in 2026 market commentary alongside Tulum and Holbox. Cheap to rank, becomes a hub for future Baja projects.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E7",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "todos-santos-property-investment",
+      "url": "/guides/todos-santos-property-investment/",
+      "collection": "guides",
+      "title": "Todos Santos Property Investment",
+      "title_chars": 32,
+      "rendered_title_chars": 48,
+      "primary_query": "todos santos real estate",
+      "intent": "commercial",
+      "wave": 9,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "la-paz-baja-property-investment",
+        "cabo-corridor",
+        "los-cabos-property-investment-guide"
+      ],
+      "why": "Pueblo Magico premium adjacent to a market the site already covers deeply.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E8",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "huatulco-property-investment-guide",
+      "url": "/guides/huatulco-property-investment-guide/",
+      "collection": "guides",
+      "title": "Huatulco Property Investment Guide",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "huatulco real estate investment",
+      "intent": "commercial",
+      "wave": 9,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "puerto-escondido-oaxaca-property-investment",
+        "mexico-beachfront-property-investment"
+      ],
+      "why": "Sustained federal tourism investment; pairs with the existing Puerto Escondido guide to build an Oaxaca coast cluster.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E9",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "zihuatanejo-ixtapa-property-guide",
+      "url": "/guides/zihuatanejo-ixtapa-property-guide/",
+      "collection": "guides",
+      "title": "Zihuatanejo and Ixtapa Property Guide",
+      "title_chars": 37,
+      "rendered_title_chars": 53,
+      "primary_query": "zihuatanejo real estate",
+      "intent": "commercial",
+      "wave": 9,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-beachfront-property-investment",
+        "huatulco-property-investment-guide"
+      ],
+      "why": "Guerrero coast - entirely uncovered, minimal English competition.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "E10",
+      "cluster": "markets",
+      "cluster_label": "New geographic markets",
+      "slug": "valle-de-bravo-property-investment",
+      "url": "/guides/valle-de-bravo-property-investment/",
+      "collection": "guides",
+      "title": "Valle de Bravo Property Investment",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "valle de bravo real estate",
+      "intent": "commercial",
+      "wave": 9,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-city-property-investment-guide",
+        "san-miguel-de-allende-property"
+      ],
+      "why": "CDMX weekend market. Only makes sense after E1 ships; sequenced accordingly.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "F1",
+      "cluster": "data",
+      "cluster_label": "Data assets and trust",
+      "slug": "mexico-price-per-sqm-by-market-2026",
+      "url": "/guides/mexico-price-per-sqm-by-market-2026/",
+      "collection": "guides",
+      "title": "Mexico Price per m2 by Market 2026",
+      "title_chars": 34,
+      "rendered_title_chars": 50,
+      "primary_query": "price per square meter mexico",
+      "intent": "informational",
+      "wave": 7,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-rental-yield-guide",
+        "best-areas-invest-mexico-2026",
+        "mexico-real-estate-market-forecast-2026"
+      ],
+      "why": "Citable data table with methodology and as_of per cell. Also gives 100 project pages and 32 area pages a shared factual spine.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "F2",
+      "cluster": "data",
+      "cluster_label": "Data assets and trust",
+      "slug": "mexico-str-occupancy-adr-by-market",
+      "url": "/guides/mexico-str-occupancy-adr-by-market/",
+      "collection": "guides",
+      "title": "Mexico STR Occupancy and ADR by Market",
+      "title_chars": 38,
+      "rendered_title_chars": 54,
+      "primary_query": "airbnb occupancy rate mexico",
+      "intent": "informational",
+      "wave": 4,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "str-occupancy-by-month-riviera-maya",
+        "modelling-mexico-str-revenue",
+        "airbnb-investment-mexico-guide"
+      ],
+      "why": "Extends the existing Riviera Maya occupancy page nationally. Input to D6.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "F3",
+      "cluster": "data",
+      "cluster_label": "Data assets and trust",
+      "slug": "mexico-net-yield-benchmarks-2026",
+      "url": "/guides/mexico-net-yield-benchmarks-2026/",
+      "collection": "guides",
+      "title": "Mexico Net Rental Yield Benchmarks 2026",
+      "title_chars": 39,
+      "rendered_title_chars": 55,
+      "primary_query": "rental yield mexico by city",
+      "intent": "informational",
+      "wave": 7,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "mexico-rental-yield-guide",
+        "gross-vs-net-yield-mexico",
+        "how-to-calculate-rental-yield-mexico",
+        "mexico-price-per-sqm-by-market-2026"
+      ],
+      "why": "The honest counterweight to developer gross-yield claims, stated once properly instead of 415 times as boilerplate.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "F4",
+      "cluster": "data",
+      "cluster_label": "Data assets and trust",
+      "slug": "mexico-purchase-timeline-week-by-week",
+      "url": "/guides/mexico-purchase-timeline-week-by-week/",
+      "collection": "guides",
+      "title": "Mexico Purchase Timeline, Week by Week",
+      "title_chars": 38,
+      "rendered_title_chars": 54,
+      "primary_query": "how long to buy property in mexico",
+      "intent": "informational",
+      "wave": 3,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "closing-timeline-mexico-30-90-days",
+        "mexico-closing-document-checklist",
+        "due-diligence-mexico-real-estate",
+        "escrow-mexico-real-estate"
+      ],
+      "why": "Calendar format for a query currently answered in prose. Strong AEO structure.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "F5",
+      "cluster": "data",
+      "cluster_label": "Data assets and trust",
+      "slug": "mexico-closing-document-checklist",
+      "url": "/guides/mexico-closing-document-checklist/",
+      "collection": "guides",
+      "title": "Mexico Closing Document Checklist",
+      "title_chars": 33,
+      "rendered_title_chars": 49,
+      "primary_query": "documents needed to buy property mexico",
+      "intent": "transactional",
+      "wave": 5,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "due-diligence-mexico-real-estate",
+        "apostille-documents-mexico-property",
+        "translation-requirements-mexico-deed",
+        "mexico-purchase-timeline-week-by-week"
+      ],
+      "why": "Downloadable checklist. Link bait and a natural lead capture point.",
+      "slug_collision": false,
+      "related_missing": []
+    },
+    {
+      "id": "F6",
+      "cluster": "data",
+      "cluster_label": "Data assets and trust",
+      "slug": "mexico-developer-delivery-records-2026",
+      "url": "/developers/mexico-developer-delivery-records-2026/",
+      "collection": "developers",
+      "title": "Mexico Developer Delivery Records 2026",
+      "title_chars": 38,
+      "rendered_title_chars": 54,
+      "primary_query": "mexico developer reliability",
+      "intent": "commercial",
+      "wave": 10,
+      "target_words": [
+        1800,
+        2600
+      ],
+      "related_slugs": [
+        "developer-due-diligence-mexico",
+        "pre-construction-mexico-risks",
+        "mexico-off-plan-investment"
+      ],
+      "why": "Promised vs actual handover, disputes, completions across the 9 covered developers plus majors. A broker cannot publish this. Makes 'independent' mean something and will draw links.",
+      "slug_collision": false,
+      "related_missing": []
+    }
+  ]
+}

@@ -45,7 +45,8 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (USD)</label>
       <select id="lf-budget" name="budget" class="w-full">
         <option value="">Select budget</option>
-        <option value="under-300k">Under $300k</option>
+        <option value="under-150k">Under $150k</option>
+        <option value="150-300k">$150k to $300k</option>
         <option value="300-500k">$300k to $500k</option>
         <option value="500k-1m">$500k to $1M</option>
         <option value="1m-2m">$1M to $2M</option>
@@ -55,6 +56,10 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
     <div>
       <label class="block text-xs font-medium mb-1" for="lf-message">Tell us about your requirements</label>
       <textarea id="lf-message" name="message" rows="3" placeholder="E.g. 2BR condo in Riviera Maya, rental income focus, ready to close in 3 months…"></textarea>
+    </div>
+    <div class="lead-form-hp" aria-hidden="true">
+      <label for="lf-company">Company (leave blank)</label>
+      <input type="text" id="lf-company" name="company" tabindex="-1" autocomplete="off" />
     </div>
     <div class="lead-form-consent">
       <input type="checkbox" id="lf-consent" name="consent" required class="lead-form-consent__check" />
@@ -133,6 +138,7 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
   document.querySelectorAll('form.ig-lead-form').forEach((formEl) => {
     const form = formEl as HTMLFormElement;
     let started = false;
+    const renderedAt = Date.now();
 
     form.addEventListener('focusin', () => {
       if (started) return;
@@ -184,6 +190,9 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
         referrer: attribution.firstReferrer,
         aiSource: attribution.externalAiSource,
         utm: attribution.utm,
+        // Anti-spam: a hidden field no human sees, and how long the form was open.
+        company: String(data.get('company') || ''),
+        formElapsedMs: Date.now() - renderedAt,
       };
 
       ga('form_submit_attempt', {

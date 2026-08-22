@@ -1,33 +1,92 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import HubLayout, { type HubGroup } from '../../layouts/HubLayout.astro';
 
 const articles = (await getCollection('news'))
   .filter((n) => !n.data.noindex)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const dateOf = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+const toCard = (entry: (typeof articles)[number]) => ({
+  url: `/news/${entry.id}/`,
+  title: entry.data.title,
+  description: entry.data.description,
+  meta: dateOf(entry.data.pubDate),
+});
+
+/** Grouped by what the note is about, because a date alone is not a filter. */
+const TOPICS: { label: string; note: string; match: RegExp }[] = [
+  {
+    label: 'Tax and rental compliance',
+    note: 'SAT enforcement, withholding rates, RFC processing and short-term rental registration.',
+    match: /sat|withholding|str|rfc|tax|registry|ish|registration/,
+  },
+  {
+    label: 'Prices, inventory and liquidity',
+    note: 'What is actually trading, at what price, and how long it takes to sell.',
+    match: /price|inventory|resale|liquidity|discount|growth|occupancy|demand/,
+  },
+  {
+    label: 'Infrastructure, insurance and demand drivers',
+    note: 'Airports, rail, hurricane season and the events that move nightly rates.',
+    match: /airport|tren|hurricane|insurance|world-cup|manager|fees/,
+  },
+  {
+    label: 'Visas and international alternatives',
+    note: 'Residency routes into Mexico, and how competing jurisdictions compare.',
+    match: /visa|golden|portugal|spain|banxico/,
+  },
+];
+
+const filed = new Set<string>();
+const groups: HubGroup[] = TOPICS.map((topic) => {
+  const cards = articles
+    .filter((a) => !filed.has(a.id) && topic.match.test(a.id))
+    .map((a) => {
+      filed.add(a.id);
+      return toCard(a);
+    });
+  return { label: topic.label, note: topic.note, cards };
+}).filter((group) => group.cards.length > 0);
+
+const rest = articles.filter((a) => !filed.has(a.id));
+if (rest.length) {
+  groups.push({ label: 'Other market notes', note: 'Everything else, newest first.', cards: rest.map(toCard) });
+}
+
+const newest = articles[0]?.pubDate;
+const lastUpdated = articles
+  .map((a) => a.data.updatedDate ?? a.data.pubDate)
+  .sort((a, b) => b.valueOf() - a.valueOf())[0];
+
+const intro = [
+  'Short, dated notes on the things that move a Mexican property decision: SAT enforcement, municipal rental registration, hurricane season pricing, inventory and resale liquidity by corridor.',
+  'A market note is only useful next to the rule it changes, so each one links back to the evergreen guide it updates. If you are working out how something works rather than what just changed, start with the guides.',
+  'These are not press releases and nothing here is a forecast dressed as a fact. Where a figure comes from a single source or a single quarter, the note says so.',
+];
+
+const faq = [
+  {
+    question: 'How often is this section updated?',
+    answer: 'In batches, when something changes that would alter a buying decision — a SAT enforcement shift, a municipal registration deadline, a hurricane-season insurance repricing. It is not a daily news feed, and a quiet month means nothing material changed rather than that nobody was watching.',
+  },
+  {
+    question: 'Should I act on a market note?',
+    answer: 'Not on its own. A note records what changed and when; the evergreen guide it links to explains how the underlying rule works. Decisions belong with the guide plus a Mexican notario or a cross-border CPA, not with a dated headline.',
+  },
+];
 ---
-<BaseLayout
-  title="Mexico Real Estate News"
-  description="Market updates for foreign buyers: Quintana Roo prices, Tulum inventory, Tren Maya impact, and STR tax reporting."
->
-  <section class="site-container py-14 md:py-20">
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Market news</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
-        Data-driven updates on Mexico property markets: verify figures with counsel before investment decisions.
-      </p>
-    </header>
-    <div class="grid gap-5 max-w-3xl">
-      {articles.map((article) => (
-        <a href={`/news/${article.id}/`} class="surface-card p-6 block no-underline hover:border-[var(--color-teal)] transition-colors">
-          <time class="text-xs text-[var(--color-muted)]" datetime={article.data.pubDate.toISOString()}>
-            {article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </time>
-          <h2 class="text-lg font-semibold mt-2 mb-2 text-[var(--color-ink)]">{article.data.title}</h2>
-          <p class="text-sm text-[var(--color-muted)]">{article.data.description}</p>
-        </a>
-      ))}
-    </div>
-  </section>
-</BaseLayout>
+<HubLayout
+  title="Mexico Property Market Notes and Updates"
+  heading="Mexico property market notes"
+  description="Dated updates for foreign buyers: SAT and STR enforcement, Quintana Roo registration, hurricane insurance pricing, inventory and resale liquidity by corridor."
+  path="/news/"
+  {intro}
+  {groups}
+  {lastUpdated}
+  {faq}
+  leadTitle="Want the version that applies to your purchase?"
+  leadSubtitle="Tell us the market and the budget. We come back with what has actually changed for a buyer in your position, and what it costs."
+/>

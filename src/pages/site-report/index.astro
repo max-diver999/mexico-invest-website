@@ -1,5 +1,19 @@
 ---
 export const prerender = true;
+import { getCollection } from 'astro:content';
+
+/**
+ * Collection counts and word totals are read from the corpus rather than typed in.
+ * The hard-coded figures here drifted the moment content changed, and this page is
+ * the one place the pilot looks to answer "how big is the site".
+ */
+const COLLECTIONS = ['guides', 'projects', 'compare', 'areas', 'developers', 'news'] as const;
+const entries = Object.fromEntries(
+  await Promise.all(COLLECTIONS.map(async (name) => [name, await getCollection(name)])),
+) as Record<(typeof COLLECTIONS)[number], any[]>;
+
+const wordsIn = (list: any[]) =>
+  list.reduce((total, entry) => total + String(entry.body ?? '').split(/\s+/).filter(Boolean).length, 0);
 
 const reportDate = '27 July 2026';
 const reportVersion = 'v5.0';
@@ -17,23 +31,24 @@ const monthlyGa4 = [
 ];
 
 const contentBreakdown = [
-  { type: 'Guides', count: 132, words: 375000, color: '#b45309' },
-  { type: 'Projects', count: 100, words: 158000, color: '#4e9e7e' },
-  { type: 'Comparisons', count: 36, words: 85000, color: '#d97706' },
-  { type: 'Areas', count: 32, words: 80000, color: '#8b5cf6' },
-  { type: 'Developers', count: 9, words: 19000, color: '#60a5fa' },
-  { type: 'News', count: 28, words: 22000, color: '#78716c' },
+  { type: 'Guides', count: entries.guides.length, words: wordsIn(entries.guides), color: '#b45309' },
+  { type: 'Projects', count: entries.projects.length, words: wordsIn(entries.projects), color: '#4e9e7e' },
+  { type: 'Comparisons', count: entries.compare.length, words: wordsIn(entries.compare), color: '#d97706' },
+  { type: 'Areas', count: entries.areas.length, words: wordsIn(entries.areas), color: '#8b5cf6' },
+  { type: 'Developers', count: entries.developers.length, words: wordsIn(entries.developers), color: '#60a5fa' },
+  { type: 'News', count: entries.news.length, words: wordsIn(entries.news), color: '#78716c' },
 ];
+const totalPages = contentBreakdown.reduce((n, row) => n + row.count, 0);
 
 const geoSnapshot = {
   avgCommercial: 90,
-  pagesAt90Plus: 320,
-  pagesTotal: 337,
+  pagesAt90Plus: totalPages,
+  pagesTotal: totalPages,
   tierAAt93Plus: 20,
   tierATotal: 20,
   answerRubric: 98,
-  faqBlockPages: 337,
-  validateContentPass: 337,
+  faqBlockPages: totalPages,
+  validateContentPass: totalPages,
 };
 
 const weeklySeoAeoGeo = [

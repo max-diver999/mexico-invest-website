@@ -1,39 +1,82 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContentCard from '../../components/ContentCard.astro';
-import { formatAreaLabel } from '../../lib/cardImage';
+import HubLayout, { type HubGroup } from '../../layouts/HubLayout.astro';
+import { AREA_MARKET, MARKET_LABEL, type MarketSlug } from '../../data/geo';
 
 const areas = (await getCollection('areas'))
   .filter((a) => !a.data.noindex)
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const toCard = (entry: (typeof areas)[number]) => ({
+  url: `/areas/${entry.id}/`,
+  title: entry.data.title,
+  description: entry.data.description,
+  meta: `${entry.data.readingTime ?? 10} min read`,
+});
+
+const MARKET_ORDER: MarketSlug[] = [
+  'riviera-maya',
+  'los-cabos',
+  'vallarta-nayarit',
+  'yucatan-gulf',
+  'pacific',
+  'inland',
+];
+
+const MARKET_NOTE: Record<MarketSlug, string> = {
+  'riviera-maya': 'One corridor, very different micro-markets. Playa trades on rental depth, Tulum on brand, and the colonias behind both trade on nothing at all if the permits are wrong.',
+  'los-cabos': 'Dollarised, thin at the bottom and deep at the top. Hurricane exposure and HOA reserves matter more here than anywhere else on this list.',
+  'vallarta-nayarit': 'Walkable old town at one end, master-planned resort at the other, and a state line in the middle that changes the rental rules.',
+  'yucatan-gulf': 'Colonial inventory and lagoon towns. Outside the restricted zone in places, which changes the ownership structure entirely.',
+  pacific: 'Surf towns and second-home markets. Earlier stage, thinner resale, and less foreign competition.',
+  inland: 'Direct title, no fideicomiso, and a buyer profile driven by lifestyle rather than nightly rate.',
+};
+
+const groups: HubGroup[] = MARKET_ORDER.map((market) => ({
+  label: MARKET_LABEL[market],
+  note: MARKET_NOTE[market],
+  cards: areas.filter((a) => AREA_MARKET[a.id] === market).map(toCard),
+})).filter((group) => group.cards.length > 0);
+
+const grouped = new Set(groups.flatMap((g) => g.cards.map((c) => c.url)));
+const rest = areas.filter((a) => !grouped.has(`/areas/${a.id}/`));
+if (rest.length) {
+  groups.push({ label: 'Other areas', note: 'Markets outside the main foreign-buyer corridors.', cards: rest.map(toCard) });
+}
+
+const lastUpdated = areas
+  .map((a) => a.data.updatedDate ?? a.data.pubDate)
+  .sort((a, b) => b.valueOf() - a.valueOf())[0];
+
+const intro = [
+  'Mexico is not one property market. A condo in Playa del Carmen and a villa in San José del Cabo answer different questions, carry different carrying costs, and are governed by different municipal rental rules — even though both are bought through the same bank trust.',
+  'These area pages work at the level where the decision is actually made: which colonia, which side of the highway, which building age. Entry prices, realistic net yields after HOA and management, the local short-term rental position, and what tends to go wrong.',
+  'Grouped by the market a buyer shops in rather than by state, because the Vallarta corridor spans two states and nobody shops it as two places.',
+];
+
+const faq = [
+  {
+    question: 'Which Mexican market has the best rental yields?',
+    answer: 'Playa del Carmen and the Riviera Maya corridor generally produce the strongest net short-term rental yields for foreign owners, because rental demand is deep and year-round rather than peak-only. Net figures after HOA, 25 to 35 per cent management, lodging tax and vacancy typically land in the 3 to 5 per cent range — well below the gross numbers on developer decks.',
+  },
+  {
+    question: 'Do short-term rental rules differ between these areas?',
+    answer: 'Substantially. Quintana Roo requires state tourism registration and a municipal operating licence, and charges a lodging tax on top of federal income tax. Baja California Sur and the Jalisco–Nayarit corridor each run their own regime. A permit position that is fine in Playa del Carmen means nothing in Cabo.',
+  },
+  {
+    question: 'Which areas sit outside the restricted zone?',
+    answer: 'Anywhere more than 50 km from a coastline and 100 km from a land border — which on this site means the inland markets. There a foreigner takes direct title in their own name with no fideicomiso, no bank trust fee, and no SRE permit.',
+  },
+];
 ---
-<BaseLayout
-  title="Mexico Investment Areas"
-  description="Area guides for Riviera Maya, Los Cabos, and Puerto Vallarta: yields, buyer profile, and micro-market risks."
->
-  <section class="site-container py-14 md:py-20">
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Investment areas</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
-        Micro-market research for foreign buyers: {areas.length} area guides with photos and yield data.
-      </p>
-    </header>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {areas.map((area) => (
-        <ContentCard
-          href={`/areas/${area.id}/`}
-          title={area.data.title}
-          description={area.data.description}
-          image={area.data.heroImage}
-          badges={['Area', formatAreaLabel(area.id)]}
-          meta={`${area.data.readingTime ?? 10} min read`}
-        />
-      ))}
-      {areas.length === 0 && (
-        <p class="text-[var(--color-muted)] col-span-full">Area guides publishing with Wave 1.</p>
-      )}
-    </div>
-  </section>
-</BaseLayout>
+<HubLayout
+  title="Mexico Property Markets and Area Guides"
+  heading="Mexico property markets, area by area"
+  description="Micro-market research across Riviera Maya, Los Cabos, Puerto Vallarta and the Yucatán: entry prices, net yields after fees, and local rental rules."
+  path="/areas/"
+  {intro}
+  {groups}
+  {faq}
+  {lastUpdated}
+/>

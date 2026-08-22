@@ -10,7 +10,7 @@ import {
   LIST_DASH_STEPS_MIN,
   analyzeHumanSignals,
 } from './human-signals.mjs';
-import { runCloudinaryDeliveryChecks } from '../../../scripts/lib/cloudinary-gate.mjs';
+import { runCloudinaryDeliveryChecks } from './cloudinary-gate.mjs';
 
 export const BANNED_PHRASES = [
   'Regional diversification',
@@ -81,6 +81,15 @@ export function linksWithoutTrailingSlash(body) {
  * @param {string[]} opts.errors - mutates
  * @param {object} [opts.options]
  */
+/**
+ * NOTE: nothing in this repository calls this function — qa-audit.mjs runs
+ * runExtendedChecks below. Every floor in here (4+ H2s, 3+ tables, N numeric facts,
+ * a required "insider tip" block) is therefore inert on this site, which is part of
+ * why a corpus padded to satisfy exactly those floors validated 337/337 clean.
+ *
+ * Left in place because the file is shared across MORE Group sites, but do not
+ * assume a rule here is enforced here. New rules belong in runExtendedChecks.
+ */
 export function runStructuralChecks(opts) {
   const { prefix, data, body, raw, text, collection, cfg, legacyExempt, errors } = opts;
   const isNews = cfg.label === 'news';
@@ -94,8 +103,12 @@ export function runStructuralChecks(opts) {
     );
 
   if (!legacyExempt && data.title) {
+    // The rendered <title> is what ranks. BaseLayout appends " | Mexico Invest" (16)
+    // only when the total still fits 60; past that the bare title ships. Either way 60
+    // is the ceiling, and <=44 is what it takes to keep the brand in the SERP.
     const tlen = String(data.title).replace(/^["']|["']$/g, '').length;
-    if (tlen < 50 || tlen > 60) errors.push(`${prefix} title length ${tlen}; expected 50-60 chars`);
+    if (tlen > 60) errors.push(`${prefix} title length ${tlen}; >60 truncates in the SERP`);
+    else if (tlen < 30) errors.push(`${prefix} title length ${tlen}; too short to carry the query`);
   }
   if (!legacyExempt && data.description && String(data.description).length > 160) {
     errors.push(`${prefix} description length ${data.description.length}; expected <=160 chars`);
@@ -127,10 +140,10 @@ export function runStructuralChecks(opts) {
     errors.push(`${prefix} glued markdown table (text + pipes on one line) — breaks rendering`);
   }
   if (STAMP_PREFIX_RE.test(body)) {
-    errors.push(`${prefix} wave17 area stamp prefix on paragraph — remove`);
+    errors.push(`${prefix} area stamp prefix on paragraph — remove`);
+  }
 
   runCloudinaryDeliveryChecks({ prefix, text, errors, legacyExempt });
-  }
 
   const humanCollections = ['guides', 'comparisons', 'areas', 'projects', 'news'];
   if (!legacyExempt && humanCollections.includes(collection)) {
@@ -206,6 +219,27 @@ export function runExtendedChecks(opts) {
   if (nums < minNums) errors.push(`${prefix} factDensity:${nums}<${minNums}`);
   const bold = countBoldSpans(body);
   if (bold > 35) errors.push(`${prefix} overBold:${bold}`);
+
+  // Ceilings. Every floor above is a target a generator can hit by padding, and
+  // without an upper bound the cheapest way to pass is to inject sections and
+  // question-H2s until the thresholds clear — which is how this corpus got here.
+  //
+  // Deliberately no cap on numeric density: a project review with real price bands
+  // and HOA tables carries 100+ figures legitimately. What went wrong here was the
+  // same numbers repeated across files with the units scrambled, which is what
+  // scripts/qa-corpus-originality.mjs checks.
+  const h2s = body.match(/^##\s+.*$/gm) || [];
+  if (h2s.length > 22) {
+    errors.push(`${prefix} h2Count:${h2s.length}>22 — dilutes a single search intent`);
+  }
+  const wordCount = body.split(/\s+/).filter(Boolean).length;
+  if (wordCount > 7000) {
+    errors.push(`${prefix} words:${wordCount}>7000 — split the topic`);
+  }
+  const questionH2 = h2s.filter((h) => /\?\s*$/.test(h)).length;
+  if (h2s.length >= 6 && questionH2 === h2s.length) {
+    errors.push(`${prefix} allH2sAreQuestions:${h2s.length} — mix in declarative headings`);
+  }
 }
 
 /** Convert errors array to qa-audit prob[] short codes */

@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SITE } from '../../data/site';
 import { sendLeadNotifyEmail } from '../../lib/lead-notify-email';
+import { checkLead } from '../../lib/lead-spam-gate';
 
 export const prerender = false;
 
@@ -66,6 +67,19 @@ export const POST: APIRoute = async ({ request }) => {
     const isHealthcheck =
       String(source || '').toLowerCase().includes('healthcheck') ||
       phoneText === 'healthcheck@bot';
+
+    // Spam gate runs before anything leaves the server. A rejected post gets the same
+    // 200 a real one does, so a bot cannot probe which rule it tripped.
+    if (!isHealthcheck) {
+      const verdict = checkLead(body, request);
+      if (!verdict.ok) {
+        console.warn(`lead rejected: ${verdict.reason}`);
+        return new Response(JSON.stringify({ ok: true }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+    }
 
     const hasPhone = phoneText.replace(/\D/g, '').length >= 8;
     const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailText);

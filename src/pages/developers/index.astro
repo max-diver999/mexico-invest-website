@@ -1,36 +1,72 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContentCard from '../../components/ContentCard.astro';
+import HubLayout, { type HubGroup } from '../../layouts/HubLayout.astro';
+import { developerPageFor } from '../../data/geo';
 
 const developers = (await getCollection('developers'))
   .filter((d) => !d.data.noindex)
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const projects = (await getCollection('projects')).filter((p) => !p.data.noindex);
+
+/** How many reviewed projects each developer actually has on this site. */
+const projectCount = new Map<string, number>();
+for (const project of projects) {
+  const page = developerPageFor(project.data);
+  if (page) projectCount.set(page, (projectCount.get(page) ?? 0) + 1);
+}
+
+const groups: HubGroup[] = [
+  {
+    label: 'Developer profiles',
+    note: 'Delivery record, project portfolio and the due-diligence questions worth asking before a deposit clears.',
+    cards: developers.map((entry) => {
+      const count = projectCount.get(entry.id) ?? 0;
+      return {
+        url: `/developers/${entry.id}/`,
+        title: entry.data.title,
+        description: entry.data.description,
+        meta: count ? `${count} project${count === 1 ? '' : 's'} reviewed` : undefined,
+      };
+    }),
+  },
+];
+
+const lastUpdated = developers
+  .map((d) => d.data.updatedDate ?? d.data.pubDate)
+  .sort((a, b) => b.valueOf() - a.valueOf())[0];
+
+const intro = [
+  'On an off-plan purchase you are not buying a building, you are buying a promise that one will exist. The developer behind that promise is the single largest risk in the transaction, and it is the one part of the deal that no amount of due diligence on the unit itself will tell you about.',
+  'These profiles cover what each developer has actually delivered, where, and on what timeline — plus the escrow and permit questions worth putting in writing before a deposit moves.',
+  'None of this is a recommendation. A strong delivery record reduces insolvency risk; it does not remove permit risk, HOA risk, or the risk of buying at the top of a corridor.',
+];
+
+const faq = [
+  {
+    question: 'How do I check a Mexican developer before paying a deposit?',
+    answer: 'Ask for escrituras or completion certificates from two prior delivered phases in the same municipality, confirm the licencia de construcción and environmental permits in writing through your own attorney, and map the payment schedule to construction milestones rather than sales events. A developer who will not produce prior-phase documentation is answering the question.',
+  },
+  {
+    question: 'Does a large developer mean a safe purchase?',
+    answer: 'It lowers one specific risk. Scale reduces the chance of single-project insolvency, because a large builder can absorb a slow phase. It does not reduce permit risk, delivery delay, HOA fee escalation at handover, or the risk that a corridor is oversupplied by the time your unit is finished.',
+  },
+  {
+    question: 'Is my deposit protected in Mexican pre-construction?',
+    answer: 'Only if it sits in genuine third-party escrow. A "trust account" administered by the developer is not the same thing. Require a written escrow agreement naming an independent agent before any money moves, and treat refusal as a walk-away signal.',
+  },
+];
 ---
-<BaseLayout
-  title="Mexico Real Estate Developers"
-  description="Developer profiles for Riviera Maya, Los Cabos, and Puerto Vallarta: track record, project links, and due diligence notes for foreign buyers."
->
-  <section class="site-container py-14 md:py-20">
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Developer profiles</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
-        Entity authority reviews: not sales brochures. Verify permits, delivery history, and escrow before any deposit.
-      </p>
-    </header>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {developers.map((dev) => (
-        <ContentCard
-          href={`/developers/${dev.id}/`}
-          title={dev.data.title}
-          description={dev.data.description}
-          image={dev.data.heroImage}
-          badges={['Developer']}
-          meta={`${dev.data.readingTime ?? 8} min read`}
-          placeholder="🏗️"
-        />
-      ))}
-    </div>
-  </section>
-</BaseLayout>
+<HubLayout
+  title="Mexico Property Developers: Track Record"
+  heading="Mexico developer profiles and delivery record"
+  description="Independent profiles of Mexican property developers: what they delivered, where, on what timeline, and what to settle in writing before a deposit."
+  path="/developers/"
+  {intro}
+  {groups}
+  {faq}
+  {lastUpdated}
+  leadTitle="Checking a developer before a deposit?"
+  leadSubtitle="Tell us the project and the payment schedule on the table. We come back with what we can verify about the developer's delivery record and what we would ask for in writing."
+/>
