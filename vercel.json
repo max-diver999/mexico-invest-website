@@ -13,37 +13,37 @@
       "statusCode": 308
     },
     {
-      "source": "/areas/holistika-tulum",
+      "source": "/areas/holistika-tulum/",
       "destination": "/projects/holistika-tulum/",
       "permanent": true
     },
     {
-      "source": "/areas/tankah-bay",
+      "source": "/areas/tankah-bay/",
       "destination": "/projects/tankah-bay/",
       "permanent": true
     },
     {
-      "source": "/areas/tulum-country-club",
+      "source": "/areas/tulum-country-club/",
       "destination": "/projects/tulum-country-club/",
       "permanent": true
     },
     {
-      "source": "/guides/tier-entry",
+      "source": "/guides/tier-entry/",
       "destination": "/guides/mexico-property-under-250k/",
       "permanent": true
     },
     {
-      "source": "/guides/tier-mid",
+      "source": "/guides/tier-mid/",
       "destination": "/guides/mexico-property-300k-budget/",
       "permanent": true
     },
     {
-      "source": "/guides/tier-luxury",
+      "source": "/guides/tier-luxury/",
       "destination": "/guides/luxury-mexico-property-500k-plus/",
       "permanent": true
     },
     {
-      "source": "/guides/isr-exemption-5-year-rule",
+      "source": "/guides/isr-exemption-5-year-rule/",
       "destination": "/guides/isr-exemption-casa-habitacion/",
       "permanent": true
     }
