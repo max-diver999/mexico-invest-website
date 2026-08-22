@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
@@ -11,7 +12,7 @@ import vercel from '@astrojs/vercel';
  * @astrojs/sitemap has no access to the content collections, so the dates are
  * collected here at config time — 348 URLs shipped without a lastmod before this.
  */
-const CONTENT_ROOT = new URL('./src/content/', import.meta.url).pathname;
+const CONTENT_ROOT = fileURLToPath(new URL('./src/content/', import.meta.url));
 const LASTMOD = new Map();
 for (const collection of fs.readdirSync(CONTENT_ROOT)) {
   const dir = path.join(CONTENT_ROOT, collection);
