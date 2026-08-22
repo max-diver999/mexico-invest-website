@@ -308,12 +308,32 @@
   "alt": "Torre BBVA on Paseo de la Reforma, Mexico City"
  },
  "news/quintana-roo-hurricane-insurance-season-2026": {
-  "ok": false,
-  "err": "download"
+  "ok": true,
+  "public_id": "more-group/mexico/news/quintana-roo-hurricane-insurance-season-2026/hero",
+  "secure_url": "https://res.cloudinary.com/dlrrtf6bq/image/upload/v1787431532/more-group/mexico/news/quintana-roo-hurricane-insurance-season-2026/hero.jpg",
+  "version": 1787431532,
+  "w": 1920,
+  "h": 1200,
+  "bytes": 431387,
+  "source": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Hurricane_Wilma_%28NESDIS_2005-10-19%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "commons": "File:Hurricane Wilma (NESDIS 2005-10-19).jpg",
+  "license": "Public domain",
+  "artist": "NOAA",
+  "alt": "Satellite view of Hurricane Wilma over the Yucatan Peninsula"
  },
  "news/riviera-maya-summer-occupancy-june-2026": {
-  "ok": false,
-  "err": "download"
+  "ok": true,
+  "public_id": "more-group/mexico/news/riviera-maya-summer-occupancy-june-2026/hero",
+  "secure_url": "https://res.cloudinary.com/dlrrtf6bq/image/upload/v1787431549/more-group/mexico/news/riviera-maya-summer-occupancy-june-2026/hero.jpg",
+  "version": 1787431549,
+  "w": 2400,
+  "h": 1597,
+  "bytes": 1136481,
+  "source": "https://upload.wikimedia.org/wikipedia/commons/0/06/Cenote_de_Aktun_Chen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "commons": "File:Cenote de Aktun Chen.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Fraguando\" title=\"User:Fraguando\">Fra",
+  "alt": "Cenote in the Riviera Maya, Quintana Roo"
  },
  "news/tulum-buyer-discounts-july-2026": {
   "ok": true,
