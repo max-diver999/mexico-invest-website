@@ -25,7 +25,7 @@ Legal, tax, financing and due-diligence research.
 - [1031 Exchange and Mexican Property: US Sellers](https://mexico-invest.com/guides/1031-exchange-mexico-property-us-seller/)
   US sellers usually cannot use 1031 deferral for Mexico property. Review cautious tax planning options, examples, and advisor questions.
   updated 2026-07-09
-- [Tulum Pre-Construction for Aggressive Buyers](https://mexico-invest.com/guides/aggressive-investor-tulum-precon/)
+- [Tulum Pre-Construction for Aggressive Buyers 2026](https://mexico-invest.com/guides/aggressive-investor-tulum-precon/)
   High-upside Tulum off-plan strategy, Aldea Zama vs Region 15, developer DD, escrow, oversupply warnings, and payoff math for experienced buyers.
   updated 2026-07-09
 - [Airbnb Mexico 2026: 3-5% Net Yield and STR Rules for Owners](https://mexico-invest.com/guides/airbnb-investment-mexico-guide/)
@@ -52,7 +52,7 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Branded Residences: Why Net Yields Drop to 2.5%](https://mexico-invest.com/guides/branded-residences-mexico-guide/)
   Four Seasons, St Regis and Montage homes cost $2,000 to $5,000 a month to hold, so net yields land near 2.5-4.5%. See the fee stack before you buy.
   updated 2026-07-27
-- [Mexico Property Under $200K in 2026](https://mexico-invest.com/guides/budget-investor-mexico-under-200k/)
+- [Mexico Property Under $200K: Where It Works 2026](https://mexico-invest.com/guides/budget-investor-mexico-under-200k/)
   Invest in Mexico with under $200K all-in, Puerto Morelos, Mérida, Tulum fringe tickets, 10% closing math, yield traps, and realistic entry paths.
   updated 2026-07-09
 - [Buy Property in Mexico as a Foreigner: Step-by-Step](https://mexico-invest.com/guides/buy-property-mexico-foreigner/)
@@ -70,7 +70,7 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Property Closing Timeline: 30 to 90 Day Guide](https://mexico-invest.com/guides/closing-timeline-mexico-30-90-days/)
   Week-by-week closing timeline for foreign buyers in Mexico. What happens between accepted offer and notarized deed, and what causes delays.
   updated 2026-07-09
-- [Co-Ownership of Mexican Property: the Rules](https://mexico-invest.com/guides/co-ownership-mexico-property/)
+- [Co-Ownership of Mexican Property: Rules and Risks](https://mexico-invest.com/guides/co-ownership-mexico-property/)
   Mexico property co-ownership, fideicomiso joint beneficiaries, corporate structures, partnership agreements, exit strategies for foreign investors.
   updated 2026-07-09
 - [Commercial Property Mexico: Guide for Foreign Buyers](https://mexico-invest.com/guides/commercial-property-mexico-foreigner/)
@@ -85,7 +85,7 @@ Legal, tax, financing and due-diligence research.
 - [Cross-Border Lenders for Mexico Property: Buyer List](https://mexico-invest.com/guides/cross-border-lender-list/)
   US and Canadian lenders who finance Mexico property purchases in 2026. Rates, LTV, documentation, and how cross-border mortgages interact with fideicomiso.
   updated 2026-07-10
-- [USD or MXN at a Mexican Closing](https://mexico-invest.com/guides/currency-closing-usd-mxn/)
+- [USD or MXN at a Mexican Closing: What It Costs](https://mexico-invest.com/guides/currency-closing-usd-mxn/)
   Which Mexico property closing costs are paid in USD vs MXN, how exchange rates affect your total cost, wire transfer mechanics, and when to convert currency.
   updated 2026-07-09
 - [Currency Risk in Mexico Property Investment: USD/MXN Guide](https://mexico-invest.com/guides/currency-risk-mexico-property-usd/)
@@ -127,7 +127,7 @@ Legal, tax, financing and due-diligence research.
 - [Fideicomiso Bank Fees Compared: Scotiabank, BBVA, Banorte](https://mexico-invest.com/guides/fideicomiso-bank-fees-comparison-2026/)
   Compare indicative fideicomiso setup, annual, renewal, and sale-transfer fees at Scotiabank, BBVA, and Banorte before closing.
   updated 2026-07-09
-- [Fideicomiso Mexico 2026: Real Costs & Rights](https://mexico-invest.com/guides/fideicomiso-mexico-explained/)
+- [Fideicomiso Mexico 2026: Real Costs and Your Rights](https://mexico-invest.com/guides/fideicomiso-mexico-explained/)
   What a Mexican bank trust really costs in 2026, itemised: SRE permit, bank setup, legal review, annual fee. Plus the rights you hold as beneficiary.
   updated 2026-07-12
 - [Fideicomiso vs Mexican Corporation: Which Structure?](https://mexico-invest.com/guides/fideicomiso-vs-mexican-corporation/)
@@ -151,7 +151,7 @@ Legal, tax, financing and due-diligence research.
 - [Use a HELOC to Fund a Mexico Property Purchase Guide](https://mexico-invest.com/guides/heloc-fund-mexico-purchase/)
   How to use a home equity line of credit to buy Mexico real estate in 2026. Tax treatment, risk trade-offs, timing strategy, and step-by-step execution guide.
   updated 2026-07-09
-- [HOA Fees on a Mexican Condo: What They Cost](https://mexico-invest.com/guides/hoa-fees-mexico-condo/)
+- [HOA Fees on a Mexican Condo: What They Really Cost](https://mexico-invest.com/guides/hoa-fees-mexico-condo/)
   Comprehensive guide to Mexico condo HOA fees, costs by region, what's included vs extra, financial health checks, and budgeting for investors and buyers.
   updated 2026-07-09
 - [Holbox Property Investment Guide: Island Market 2026](https://mexico-invest.com/guides/holbox-property-investment/)
@@ -214,7 +214,7 @@ Legal, tax, financing and due-diligence research.
 - [Los Cabos Property Investment Guide 2026: Yields, Areas](https://mexico-invest.com/guides/los-cabos-property-investment-guide/)
   Los Cabos real estate guide for US investors, Cabo San Lucas, San José del Cabo, Corridor prices, net yields, fideicomiso, and 2026 buyer scenarios.
   updated 2026-07-09
-- [Los Cabos Branded Residences for Investors](https://mexico-invest.com/guides/luxury-investor-cabos-branded/)
+- [Los Cabos Branded Residences: Investor Guide 2026](https://mexico-invest.com/guides/luxury-investor-cabos-branded/)
   Branded residences Los Cabos, St Regis, Quivira, Chileno Bay yields, program fees, HOA, fideicomiso, and ultra-HNW buyer checklist for 2026.
   updated 2026-07-09
 - [Luxury Mexico Real Estate Investment: $500K+ Guide](https://mexico-invest.com/guides/luxury-mexico-property-500k-plus/)
@@ -226,10 +226,10 @@ Legal, tax, financing and due-diligence research.
 - [Mexican Bank Account for Foreign Property Owners Guide](https://mexico-invest.com/guides/mexican-bank-account-foreign-property-owner/)
   When foreign Mexico property owners should open local bank accounts, what banks ask for, and how to avoid payment and wire fraud.
   updated 2026-07-09
-- [Mexico Beachfront Property Investment 2026](https://mexico-invest.com/guides/mexico-beachfront-property-investment/)
+- [Mexico Beachfront Property: Costs and Yields 2026](https://mexico-invest.com/guides/mexico-beachfront-property-investment/)
   Mexico beachfront property guide, coastal locations, fideicomiso rules, pricing trends, and rental yields for foreign buyers 2026.
   updated 2026-07-09
-- [Mexico Branded Residences Investment 2026](https://mexico-invest.com/guides/mexico-branded-residences-investment/)
+- [Mexico Branded Residences: Fees and Net Yield 2026](https://mexico-invest.com/guides/mexico-branded-residences-investment/)
   Branded residence investment in Mexico, net yield math, rental pool rules, guaranteed return traps, and Los Cabos vs Puerto Vallarta.
   updated 2026-07-09
 - [Mexico Capital Gains Tax for Foreign Sellers: ISR Guide](https://mexico-invest.com/guides/mexico-capital-gains-tax-foreign-seller/)
@@ -241,7 +241,7 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Construction Loans for Foreign Buyers Guide](https://mexico-invest.com/guides/mexico-construction-loan-foreigner/)
   Construction financing for foreign buyers building in Mexico in 2026. Who lends, land ownership structure, permit requirements, and alternatives to bank cons...
   updated 2026-07-09
-- [Mexico Golf Course Property Investment 2026](https://mexico-invest.com/guides/mexico-golf-course-property/)
+- [Mexico Golf Course Property: Fees and Yields 2026](https://mexico-invest.com/guides/mexico-golf-course-property/)
   Golf course property in Mexico, premiums, membership fees, net yields, HOA dynamics, seasonal demand, and Cabos vs PV vs Riviera Maya due diligence.
   updated 2026-07-09
 - [Mexico Marina Property Investment: Complete 2026 Guide](https://mexico-invest.com/guides/mexico-marina-property-investment/)
@@ -301,7 +301,7 @@ Legal, tax, financing and due-diligence research.
 - [Mistakes Foreign Buyers Make in Mexico: 2026 Guide](https://mexico-invest.com/guides/mistakes-foreign-buyers-mexico/)
   Top mistakes US and Canadian buyers make in Mexico, ejido traps, ISR basis gaps, HOA STR bans, wrong entity, pre-construction risk, and how to avoid them.
   updated 2026-07-09
-- [Nearshoring and Mexican Industrial Property](https://mexico-invest.com/guides/nearshoring-mexico-industrial-real-estate/)
+- [Nearshoring and Mexican Industrial Property in 2026](https://mexico-invest.com/guides/nearshoring-mexico-industrial-real-estate/)
   Nearshoring and Mexico industrial real estate, Monterrey, Bajío corridors, FDI flows, vacancy rates, and what it means for residential investors in 2026.
   updated 2026-07-09
 - [Non-Resident Mortgage Mexico: Financing Options for](https://mexico-invest.com/guides/non-resident-mortgage-mexico/)
@@ -340,7 +340,7 @@ Legal, tax, financing and due-diligence research.
 - [Puerto Escondido Property Investment: Oaxaca Coast 2026](https://mexico-invest.com/guides/puerto-escondido-oaxaca-property-investment/)
   Puerto Escondido real estate for US buyers: surf market entry $150K–280K, net STR 3.8–5%, La Punta and Zicatela yields, fideicomiso, 2026 risks.
   updated 2026-07-09
-- [Puerto Vallarta Property Investment 2026](https://mexico-invest.com/guides/puerto-vallarta-property-investment-guide/)
+- [Puerto Vallarta Property Investment: Yields 2026](https://mexico-invest.com/guides/puerto-vallarta-property-investment-guide/)
   Puerto Vallarta real estate for US buyers, Zona Romántica, Marina, Nuevo Vallarta yields, fideicomiso, STR rules, and 2026 investment scenarios.
   updated 2026-07-09
 - [Quintana Roo Lodging Tax Registration: ISH STR 2026](https://mexico-invest.com/guides/quintana-roo-lodging-tax-registration-guide/)
@@ -352,7 +352,7 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Rental Contract for Foreign Landlords: 2026 Guide](https://mexico-invest.com/guides/rental-contract-mexico-foreign-landlord/)
   Complete guide for foreign landlords in Mexico: rental contract requirements, RFC registration, tenant rights, ISR tax obligations, and enforcement mechanisms.
   updated 2026-07-09
-- [Repatriate Mexico Sale Proceeds to the US](https://mexico-invest.com/guides/repatriate-sale-proceeds-mexico/)
+- [Repatriate Mexico Sale Proceeds to the US in 2026](https://mexico-invest.com/guides/repatriate-sale-proceeds-mexico/)
   Learn ISR withholding, fideicomiso release, bank wire timing, and US reporting when selling in Mexico. Request an exit-document review.
   updated 2026-07-12
 - [RFC Registration Playa del Carmen for Foreigners 2026](https://mexico-invest.com/guides/rfc-registration-playa-del-carmen-foreigner/)
@@ -385,7 +385,7 @@ Legal, tax, financing and due-diligence research.
 - [Timeshare vs Condo Ownership in Mexico: Buyer Guide](https://mexico-invest.com/guides/timeshare-vs-condo-mexico/)
   Timeshare vs condo in Mexico: ownership rights, resale reality, STR income potential, and why escritura beats vacation club contracts.
   updated 2026-07-09
-- [Title Insurance Mexico: Foreign Buyer 2026](https://mexico-invest.com/guides/title-insurance-mexico/)
+- [Title Insurance in Mexico: Foreign Buyer Guide 2026](https://mexico-invest.com/guides/title-insurance-mexico/)
   Title insurance for Mexico real estate, coverage options, providers, costs, limitations, and protection strategies for foreign investors.
   updated 2026-07-09
 - [Deed Translation Requirements for Mexico Property Buyers](https://mexico-invest.com/guides/translation-requirements-mexico-deed/)
@@ -445,7 +445,7 @@ Market-level analysis: prices, yields, STR rules.
   East Cape Baja investment, Sea of Cortez access, $468K average, 255 DOM, 93% list-to-sale efficiency. Pre-development upside vs mature Los Cabos.
   updated 2026-07-09
 - [Gonzalo Guerrero Playa del Carmen Investment 2026](https://mexico-invest.com/areas/gonzalo-guerrero-playa/)
-  Gonzalo Guerrero investment, 4.5% net yields, 18-19% gross potential, 95%+ occupancy, walkable to 5th Avenue. Playa's reliable rental workhorse.
+  Gonzalo Guerrero investment, 4.3-5.2% net yields, 6.5-7.5% gross, 70-78% annual STR occupancy, walkable to 5th Avenue. Playa's reliable rental workhorse.
   updated 2026-07-09
 - [La Veleta Tulum Real Estate: Investment Analysis, Prices](https://mexico-invest.com/areas/la-veleta-tulum/)
   La Veleta property investment guide, 3.3% net yields, $200K–280K pricing, digital nomad demand, mixed residential analysis, HOA variance.
@@ -501,7 +501,7 @@ Market-level analysis: prices, yields, STR rules.
 - [Tulum Pueblo East Property: Investment Analysis 2026](https://mexico-invest.com/areas/tulum-pueblo-east/)
   Tulum Pueblo East real estate guide, authentic local town, $120K–220K pricing, monthly rental focus, lowest Tulum entry, walkable services, 2026.
   updated 2026-07-09
-- [Zazil Ha Playa del Carmen Investment 2026](https://mexico-invest.com/areas/zazil-ha-playa/)
+- [Zazil Ha Playa del Carmen: Investment Guide 2026](https://mexico-invest.com/areas/zazil-ha-playa/)
   Zazil Ha investment guide, 4.3% net yields, quieter bohemian vibe, newer condo stock, $200K-$500K range. Digital nomad and boutique tourism focus.
   updated 2026-07-09
 
@@ -530,7 +530,7 @@ Independent reviews of named developments. Not listings.
 - [Anah Tulum Review: Lock-Off Classic Condos From $195K 2026](https://mexico-invest.com/projects/anah-tulum/)
   Anah Tulum classic lock-off condos from $195K USD, dual-key STR strategy, Tulum off-plan, investor yields, fideicomiso, and 2026 buyer checklist.
   updated 2026-07-09; area: tulum; developer: Anah Developers; status: off-plan; price from USD 195,000 to 420,000
-- [Bacalar Lagoon Homes: Villas From $285K 2026](https://mexico-invest.com/projects/bacalar-lagoon-homes/)
+- [Bacalar Lagoon Homes Review: Villas From $285K 2026](https://mexico-invest.com/projects/bacalar-lagoon-homes/)
   Bacalar lagoon villas from $285K USD, Lake of Seven Colors frontage, eco-luxury, foreigners via fideicomiso, yields, risks, and due diligence.
   updated 2026-07-09; area: bacalar; developer: Various boutique developers; status: off-plan; price from USD 285,000
 - [Bacalar Mia Suites Review: Branded Lagoon From $340K 2026](https://mexico-invest.com/projects/bacalar-mia-suites/)
@@ -803,7 +803,7 @@ Independent reviews of named developments. Not listings.
 - [Tulum Jungle Lofts Review: Tulum Lofts From $165K 2026](https://mexico-invest.com/projects/tulum-jungle-lofts/)
   Tulum Jungle Lofts from $165K USD, biophilic loft design, jungle setting, Tulum wellness corridor, STR yields, fideicomiso, and investor due diligence 2026.
   updated 2026-07-09; area: tulum; developer: Jungle Lofts Development Group; status: off-plan; price from USD 165,000 to 320,000
-- [Vidanta Nuevo Vallarta: What Buyers Get](https://mexico-invest.com/projects/vidanta-nuevo-vallarta/)
+- [Vidanta Nuevo Vallarta: What Buyers Actually Get](https://mexico-invest.com/projects/vidanta-nuevo-vallarta/)
   Vidanta Nuevo Vallarta from $310K: membership and fractional model explained, NOT standard freehold condo, critical disclaimer for buyers 2026.
   updated 2026-07-09; area: nuevo vallarta; developer: Vidanta; status: completed; price from USD 310,000 to 1,200,000
 - [Zen Tulum Review: Wellness Residences From $198K 2026](https://mexico-invest.com/projects/zen-tulum/)
@@ -933,10 +933,10 @@ Developer profiles and delivery record.
 - [Grupo Emerita Developer: Tulum Portfolio Analysis 2026](https://mexico-invest.com/developers/grupo-emerita/)
   Grupo Emerita developer track record, NHOA, Amara, Constelada delivery timeline, financial stability, red flags, and investor due diligence checklist.
   updated 2026-07-09
-- [Querencia Los Cabos Developer Profile 2026](https://mexico-invest.com/developers/querencia-los-cabos/)
+- [Querencia Los Cabos: Developer Profile and Risk 2026](https://mexico-invest.com/developers/querencia-los-cabos/)
   Querencia Los Cabos developer profile, La Reserva condos, El Lago villas, master-planned community, Tom Fazio golf course, and luxury real estate delivery…
   updated 2026-07-09
-- [Quivira Los Cabos Developer Profile 2026](https://mexico-invest.com/developers/quivira-los-cabos/)
+- [Quivira Los Cabos: Master Developer Profile 2026](https://mexico-invest.com/developers/quivira-los-cabos/)
   Quivira Los Cabos developer profile, master-planned community delivery, St Regis Residences, Copala development, financial stability, and luxury buyer…
   updated 2026-07-09
 - [SIMCA Desarrollos: 101 Park Track Record Analysis 2026](https://mexico-invest.com/developers/simca-desarrollos/)
