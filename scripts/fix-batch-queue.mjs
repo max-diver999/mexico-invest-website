@@ -237,13 +237,16 @@ function analyze(file, index) {
       if (!/(риск|red flag|checklist|чеклист|what to check|insider tip|risks?)/i.test(body)) {
         issues.push('missing-risks');
       }
-      // The check is for a section that tells a reader whether the page applies to
-      // them. It was matching three phrasings and missing the same content written
-      // as "Who should buy in Cancún" or "Who is most vulnerable", so it flagged
-      // pages that already had it. Widened to the substance rather than one wording.
-      if (
-        !/(сценари|scenario|for investors|для инвестор|who this is for|buyer profile|decision framework|who should (?:buy|choose|skip|consider)|who is (?:most |the )?(?:right|vulnerable|wrong)|which (?:kind of |type of )?buyer|each kind of buyer|right buyer|fits? (?:a |the )?(?:specific |certain )?buyer|not for you if|skip (?:this|it) if)/i.test(body)
-      ) {
+      // A section that tells a reader whether the page applies to them. Detected
+      // structurally — a heading that asks who or which — rather than by scanning
+      // the body for one of three phrasings, which was flagging pages that already
+      // had the section under a different wording.
+      const audienceHeading = /^#{2,3}\s+(?:who|which|for whom)\b[^\n]*$/im.test(body);
+      const scenarioWords =
+        /(сценари|scenario|for investors|для инвестор|buyer profile|decision framework|not for you if|skip (?:this|it) if)/i.test(
+          body,
+        );
+      if (!audienceHeading && !scenarioWords) {
         issues.push('missing-scenarios');
       }
       const nums = countNumericFacts(body);
