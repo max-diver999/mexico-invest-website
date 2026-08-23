@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../data/site';
+import CurrencyToggle from './CurrencyToggle.astro';
 
 const nav = [
   { label: 'Guides', href: '/guides/' },
@@ -35,7 +36,8 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     </nav>
 
     <div class="flex items-center gap-2 shrink-0">
-      <a href="/get-shortlist/" class="btn-primary text-sm px-4 py-2">Free shortlist</a>
+      <CurrencyToggle variant="header" />
+      <a href="/get-shortlist/" class="btn-primary mobile-header-cta text-sm px-4 py-2">Free shortlist</a>
       <button
         type="button"
         id="nav-toggle"
@@ -51,6 +53,8 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
 
   <nav id="mobile-nav" class="site-nav__mobile lg:hidden" aria-label="Main" hidden>
     <ul class="site-container py-3">
+      <li><a href="/get-shortlist/" class="site-nav__cta">Get a free shortlist</a></li>
+      <li><CurrencyToggle variant="drawer" /></li>
       {nav.map((item) => (
         <li>
           <a
@@ -83,8 +87,12 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     cursor: pointer;
   }
   .site-nav__mobile {
-    border-top: 1px solid var(--color-border);
+    position: fixed;
+    inset: 73px 0 0;
+    z-index: 60;
     background: var(--color-surface);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   .site-nav__mobile ul {
     list-style: none;
@@ -92,6 +100,18 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     padding-block: 0.75rem;
     display: grid;
     gap: 0.125rem;
+  }
+  .site-nav__cta {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    border-radius: 999px;
+    background: var(--color-teal);
+    color: #fff !important;
+    font-weight: 600;
+    text-decoration: none;
   }
   .site-nav__mobile-link {
     display: block;
@@ -103,15 +123,28 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
   .site-nav__mobile-link[aria-current='page'] {
     color: var(--color-ink);
   }
+  @media (max-width: 767px) {
+    .mobile-header-cta { display: none; }
+  }
 </style>
 
 <script>
   const toggle = document.getElementById('nav-toggle');
   const menu = document.getElementById('mobile-nav');
-  toggle?.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
-    if (menu) menu.hidden = open;
-  });
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.hidden = !open;
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) setOpen(false);
+    });
+  }
 </script>

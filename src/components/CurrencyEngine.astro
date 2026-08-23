@@ -1,0 +1,181 @@
+<div id="site-fx-note" class="site-fx-note" hidden>
+  MXN equivalents use the latest daily USD rate available when you switch them on.
+  Original US dollar figures always remain visible. <span id="site-fx-date"></span>
+</div>
+
+<style>
+  .site-fx-note {
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+    z-index: 9995;
+    width: max-content;
+    max-width: min(34rem, calc(100vw - 2rem));
+    padding: 0.7rem 0.95rem;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: var(--color-ink);
+    color: #e7e5e4;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    box-shadow: 0 8px 28px rgba(31, 36, 33, 0.28);
+  }
+  :global(body:has(.sticky-cta[data-visible='true'])) .site-fx-note {
+    bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+  }
+  :global(.site-fx-value) { color: var(--color-muted); white-space: nowrap; }
+</style>
+
+<script>
+  (function () {
+    var RATE_KEY = 'mexico-invest-fx-usd-mxn-v1';
+    var PREF_KEY = 'mexico-invest-show-mxn';
+    var DAY = 24 * 60 * 60 * 1000;
+    var FALLBACK_RATE = 18;
+    var toggles = Array.prototype.slice.call(document.querySelectorAll('[data-site-fx-toggle]'));
+    if (!toggles.length) return;
+
+    var root = document.querySelector('.prose') || document.querySelector('main');
+    var note = document.getElementById('site-fx-note');
+    var dateNode = document.getElementById('site-fx-date');
+    if (!root) return;
+
+    var NUM = '(\\d[\\d,]*(?:\\.\\d+)?)';
+    var SCALE_W = '(\\s?(?:million|billion|M|K|k)\\b)?';
+    var RE = new RegExp(
+      '(?:US\\$\\s?|\\bUSD\\s?|(?<![A-Z])\\$\\s?)' + NUM + SCALE_W +
+      '(?:\\s*(?:to|\\u2013|-)\\s*(?:US\\$\\s?|USD\\s*|(?<![A-Z])\\$\\s*)?' + NUM + SCALE_W + ')?',
+      'g',
+    );
+    var PROBE = new RegExp(RE.source);
+    var SCALE = { million: 1e6, billion: 1e9, m: 1e6, k: 1e3 };
+    var wrapped = false;
+    var rate = FALLBACK_RATE;
+    var rateDate = '';
+
+    function amount(raw, scaleWord) {
+      var value = parseFloat(raw.replace(/,/g, ''));
+      if (!isFinite(value)) return null;
+      if (scaleWord) value *= SCALE[scaleWord.trim().toLowerCase()] || 1;
+      return value;
+    }
+
+    function mxn(value) {
+      if (!isFinite(value) || value <= 0) return null;
+      if (value >= 1e6) return 'MX$' + (value / 1e6).toFixed(value / 1e6 >= 10 ? 0 : 1).replace(/\.0$/, '') + 'M';
+      if (value >= 1e5) return 'MX$' + Math.round(value / 1e3) + 'K';
+      return 'MX$' + Math.round(value).toLocaleString('en-US');
+    }
+
+    function wrap() {
+      if (wrapped) return;
+      wrapped = true;
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (node) {
+          var parent = node.parentElement;
+          if (!parent || parent.closest('script, style, code, pre, .site-fx-value')) return NodeFilter.FILTER_REJECT;
+          return PROBE.test(node.nodeValue || '') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        },
+      });
+      var targets = [];
+      var current;
+      while ((current = walker.nextNode())) targets.push(current);
+
+      targets.forEach(function (node) {
+        var text = node.nodeValue || '';
+        RE.lastIndex = 0;
+        var fragment = document.createDocumentFragment();
+        var last = 0;
+        var match;
+        while ((match = RE.exec(text))) {
+          var low = amount(match[1], match[2]);
+          var high = match[3] != null ? amount(match[3], match[4] || match[2]) : null;
+          if (low == null) continue;
+          fragment.appendChild(document.createTextNode(text.slice(last, match.index + match[0].length)));
+          var span = document.createElement('span');
+          span.className = 'site-fx-value';
+          span.dataset.low = String(low);
+          if (high != null) span.dataset.high = String(high);
+          fragment.appendChild(span);
+          last = match.index + match[0].length;
+        }
+        if (last === 0) return;
+        fragment.appendChild(document.createTextNode(text.slice(last)));
+        node.parentNode.replaceChild(fragment, node);
+      });
+    }
+
+    function readCache() {
+      try {
+        var cached = JSON.parse(localStorage.getItem(RATE_KEY) || 'null');
+        if (cached && isFinite(cached.rate) && Date.now() - cached.savedAt < DAY) return cached;
+      } catch (error) {}
+      return null;
+    }
+
+    async function loadRate() {
+      var cached = readCache();
+      if (cached) return cached;
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, 3000);
+      try {
+        var response = await fetch('https://open.er-api.com/v6/latest/USD', { signal: controller.signal });
+        if (!response.ok) throw new Error('rate request failed');
+        var data = await response.json();
+        var next = Number(data && data.rates && data.rates.MXN);
+        if (!isFinite(next) || next <= 0) throw new Error('invalid rate');
+        var value = { rate: next, savedAt: Date.now(), date: String(data.time_last_update_utc || '').slice(0, 16) };
+        try { localStorage.setItem(RATE_KEY, JSON.stringify(value)); } catch (error) {}
+        return value;
+      } catch (error) {
+        return { rate: FALLBACK_RATE, savedAt: Date.now(), date: 'fallback rate' };
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    function paint(on) {
+      if (on) wrap();
+      root.querySelectorAll('.site-fx-value').forEach(function (span) {
+        if (!on) { span.textContent = ''; return; }
+        var low = mxn(Number(span.dataset.low) * rate);
+        var high = span.dataset.high ? mxn(Number(span.dataset.high) * rate) : null;
+        span.textContent = low ? ' (~' + (high ? low + ' to ' + high : low) + ')' : '';
+      });
+      toggles.forEach(function (toggle) {
+        toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+        var label = toggle.querySelector('.site-fx-toggle__label');
+        if (label) label.textContent = on ? 'MXN shown' : 'Show MXN';
+      });
+      if (dateNode) dateNode.textContent = rateDate ? 'Rate: ' + rateDate + '.' : '';
+      if (note) {
+        note.hidden = !on;
+        clearTimeout(note._timer);
+        if (on) note._timer = setTimeout(function () { note.hidden = true; }, 6500);
+      }
+    }
+
+    async function activate() {
+      toggles.forEach(function (toggle) {
+        var label = toggle.querySelector('.site-fx-toggle__label');
+        if (label) label.textContent = 'Loading…';
+      });
+      var latest = await loadRate();
+      rate = latest.rate;
+      rateDate = latest.date;
+      paint(true);
+    }
+
+    var on = false;
+    try { on = localStorage.getItem(PREF_KEY) === '1'; } catch (error) {}
+    if (on) activate();
+    toggles.forEach(function (toggle) {
+      toggle.addEventListener('click', async function () {
+        on = !on;
+        try { localStorage.setItem(PREF_KEY, on ? '1' : '0'); } catch (error) {}
+        if (on) await activate();
+        else paint(false);
+      });
+    });
+  })();
+</script>
