@@ -9,10 +9,16 @@
  * Phase 0 audit found: 39% of prose duplicated, 82% of files carrying a claim whose
  * units are impossible ("files average $326,000 turnaround", "$200K ISR withholding").
  *
- * Two checks, both of which would have caught that at generation time:
+ * Three checks, each of which would have caught that at generation time:
  *
  *   duplicate-sentence  a >=8-word sentence whose number-normalised shape also
  *                       appears in >= DUP_FILE_LIMIT other files
+ *   templated-sentence  the same sentence with the place name swapped. Normalising
+ *                       numbers alone does not catch "Eight checks settle a Loreto
+ *                       purchase" against "Eight checks settle a La Paz purchase";
+ *                       the Aug 2026 wave shipped 44 of these before a hand audit
+ *                       found them. This check masks proper nouns as well, and keys
+ *                       on content words so "a X purchase" and "an Y purchase" match.
  *   unit-coherence      a currency amount where a duration or a rate belongs, or a
  *                       percentage where a price belongs
  *
@@ -96,6 +102,60 @@ function shape(sentence) {
     .replace(/[^a-z# ]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/* ----------------------------------------------------- templated sentences */
+
+/**
+ * A shape appearing in this many files at all (not "other" files) is a template.
+ * Set above the duplicate-sentence limit because masking proper nouns is a blunter
+ * instrument: a legal fact restated in three market guides is fine, the same
+ * sentence across nine with only the town swapped is not.
+ */
+const TEMPLATE_FILE_LIMIT = 4;
+
+/**
+ * Site furniture that is supposed to read identically everywhere, the way a footer
+ * does. Matched against the masked skeleton, so add the sentence's own wording.
+ */
+const TEMPLATE_ALLOW = [
+  /^browse off plan resale listings we cover corridor$/,
+  /^when visiting before offer block two full days minimum$/,
+  /^pricing fees tax treatment move set per transaction/,
+];
+
+/**
+ * Collapse numbers AND proper nouns, then drop the proper-noun slots entirely, so
+ * two sentences differing only by place name reduce to the same skeleton.
+ */
+function skeleton(sentence) {
+  return sentence
+    .replace(/[\d][\d.,%$–—-]*/g, '#')
+    .replace(/\bMXN\b|\bUSD\b|\bUS\$/g, '$')
+    .split(/\s+/)
+    .map((w) => w.replace(/[^A-Za-z#$]/g, ''))
+    .filter(Boolean)
+    .map((w) => (/^[A-Z]/.test(w) ? '' : w.toLowerCase()))
+    .filter(Boolean)
+    .join(' ');
+}
+
+/** Stop words carry no signal; a skeleton needs real content words to be a template. */
+const STOP = new Set(
+  'the a an and or of to in on for at is are that which it this with as by from be not but'.split(' '),
+);
+
+/**
+ * The key is the content-word sequence, not the full skeleton. Keeping stop words
+ * lets "a La Paz purchase" and "an Oaxaca City purchase" hash differently, which is
+ * exactly the variation a place-name swap produces — the first version of this check
+ * missed a live 4-file template for that reason.
+ */
+function templateKey(sentence) {
+  const content = skeleton(sentence)
+    .split(' ')
+    .filter((w) => w && !STOP.has(w) && w !== '#' && w !== '$');
+  return content.length >= 5 ? content.join(' ') : null;
 }
 
 /* -------------------------------------------------------- unit coherence */
@@ -182,7 +242,19 @@ for (const f of files) {
   }
 }
 
+const templateFiles = new Map();
+for (const f of files) {
+  const id = `${f.collection}/${f.slug}`;
+  for (const s of sentences(prose(f.body))) {
+    const k = templateKey(s);
+    if (!k || TEMPLATE_ALLOW.some((re) => re.test(k))) continue;
+    if (!templateFiles.has(k)) templateFiles.set(k, new Map());
+    if (!templateFiles.get(k).has(id)) templateFiles.get(k).set(id, s);
+  }
+}
+
 const dupes = [];
+const templated = [];
 const units = [];
 
 for (const f of scope) {
@@ -196,6 +268,21 @@ for (const f of scope) {
       seenShape.add(k);
       dupes.push({ file: id, rel: f.rel, others, sample: s.replace(/\s+/g, ' ').slice(0, 150) });
     }
+  }
+  const seenTemplate = new Set();
+  for (const s of sentences(prose(f.body))) {
+    const k = templateKey(s);
+    if (!k || seenTemplate.has(k) || TEMPLATE_ALLOW.some((re) => re.test(k))) continue;
+    const hits = templateFiles.get(k);
+    if (!hits || hits.size < TEMPLATE_FILE_LIMIT) continue;
+    seenTemplate.add(k);
+    templated.push({
+      file: id,
+      rel: f.rel,
+      count: hits.size,
+      sample: s.replace(/\s+/g, ' ').slice(0, 130),
+      also: [...hits.keys()].filter((x) => x !== id).slice(0, 3),
+    });
   }
   for (const rule of UNIT_RULES) {
     const hit = f.body.match(rule.bad);
@@ -212,10 +299,11 @@ for (const f of scope) {
 }
 
 const dupFiles = new Set(dupes.map((d) => d.file)).size;
+const templateFileCount = new Set(templated.map((t) => t.file)).size;
 const unitFiles = new Set(units.map((u) => u.file)).size;
 
 if (asJson) {
-  console.log(JSON.stringify({ scanned: scope.length, dupes, units }, null, 2));
+  console.log(JSON.stringify({ scanned: scope.length, dupes, templated, units }, null, 2));
 } else {
   console.log('\n=== CORPUS ORIGINALITY + UNIT COHERENCE ===');
   console.log(`Scanned: ${scope.length} MDX${changedOnly ? ' (changed only)' : ''} | corpus index: ${files.length}\n`);
@@ -226,17 +314,24 @@ if (asJson) {
   }
   if (dupes.length > limitArg) console.log(`      ... and ${dupes.length - limitArg} more`);
 
+  console.log(`\n[P0] templated-sentence — ${templated.length} in ${templateFileCount} files`);
+  for (const t of templated.slice(0, limitArg)) {
+    console.log(`      ${t.file}  (same shape in ${t.count} files: ${t.also.join(', ')}…)\n        "${t.sample}"`);
+  }
+  if (templated.length > limitArg) console.log(`      ... and ${templated.length - limitArg} more`);
+
   console.log(`\n[P0] unit-coherence — ${units.length} in ${unitFiles} files`);
   for (const u of units.slice(0, limitArg)) {
     console.log(`      ${u.file}  ${u.rule}: "${u.sample}"\n        ${u.why}`);
   }
   if (units.length > limitArg) console.log(`      ... and ${units.length - limitArg} more`);
 
+  const total = dupes.length + templated.length + units.length;
   console.log(
-    dupes.length + units.length === 0
-      ? '\n✅ PASS — no duplicated boilerplate, no unit errors.\n'
-      : `\n❌ ${dupes.length + units.length} issues across ${new Set([...dupes, ...units].map((x) => x.file)).size} files.\n`,
+    total === 0
+      ? '\n✅ PASS — no duplicated boilerplate, no templated sentences, no unit errors.\n'
+      : `\n❌ ${total} issues across ${new Set([...dupes, ...templated, ...units].map((x) => x.file)).size} files.\n`,
   );
 }
 
-if (failOnIssues && dupes.length + units.length > 0) process.exit(1);
+if (failOnIssues && dupes.length + templated.length + units.length > 0) process.exit(1);
