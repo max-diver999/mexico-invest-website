@@ -62,5 +62,57 @@ for (const collection of COLLECTIONS) {
   }
 }
 
+// --- Arithmetic consistency -------------------------------------------------
+// A stated gross percentage that contradicts the dollar figure in the same table
+// row is not a judgement call, it is wrong. Holbox shipped "$56,210 | ~14% gross"
+// against a $295K basis (really 19.1%) and Palmilla shipped an "8-12% gross" row
+// whose own rate x nights produced 24%. Both survived every gate because each
+// number was individually plausible. These fail the build.
+const mismatches = [];
+const BASIS_RE = /(?:on|against)\s+\$?([\d.]+)\s*([KM])\b|\$?([\d,]{6,})\s+all-in/i;
+
+for (const collection of COLLECTIONS) {
+  const dir = path.join(CONTENT, collection);
+  if (!fs.existsSync(dir)) continue;
+  for (const file of fs.readdirSync(dir)) {
+    if (!/\.mdx?$/.test(file)) continue;
+    const raw = fs.readFileSync(path.join(dir, file), 'utf8');
+    const lines = raw.split('\n');
+    let basis = null;
+    lines.forEach((line, idx) => {
+      if (!line.trim().startsWith('|')) { if (!/^\s*$/.test(line)) basis = null; return; }
+      const head = BASIS_RE.exec(line);
+      if (head) {
+        const val = head[1] ? Number(head[1]) * (head[2].toUpperCase() === 'M' ? 1e6 : 1e3)
+                            : Number(head[3].replace(/,/g, ''));
+        if (val >= 50000) basis = val;
+      }
+      if (!basis) return;
+      const money = /\$([\d,]{5,})/.exec(line);
+      const pct = /~?\s*([\d.]+)\s*%\s*gross/i.exec(line);
+      if (!money || !pct) return;
+      const dollars = Number(money[1].replace(/,/g, ''));
+      const stated = Number(pct[1]);
+      const actual = (dollars / basis) * 100;
+      if (Math.abs(actual - stated) > Math.max(1.5, stated * 0.15)) {
+        mismatches.push(
+          `  ${collection}/${file.replace(/\.mdx?$/, '')}:${idx + 1} states ${stated}% gross, ` +
+          `but $${dollars.toLocaleString()} on a $${basis.toLocaleString()} basis is ${actual.toFixed(1)}%`
+        );
+      }
+    });
+  }
+}
+
+if (mismatches.length) {
+  console.log('\n=== ARITHMETIC MISMATCH (hard errors) ===');
+  mismatches.forEach((m) => console.log(m));
+}
+
 console.log(`\n=== YIELD AND OCCUPANCY SANITY ===`);
 console.log(flagged ? `${flagged} figures outside corpus-modelled bands — read each one` : 'No figures outside corpus-modelled bands.');
+
+if (mismatches.length) {
+  console.log(`\n❌ FAIL — ${mismatches.length} stated percentage(s) contradict their own figures.`);
+  process.exit(1);
+}

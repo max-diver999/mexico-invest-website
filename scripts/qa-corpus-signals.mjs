@@ -74,6 +74,26 @@ for (const { coll, path, slug } of listAllMdx()) {
     failures.push({ kind: issue.kind, file: rel, detail: issue.detail });
   }
 
+  // Fused list items: an explanatory paragraph welded onto a short checklist
+  // entry. Destroys the scannability a numbered list exists to provide, and is
+  // invisible to every other gate — twelve instances shipped before the Aug 2026
+  // audit caught them by hand. Ordered items run long more legitimately than
+  // bullets, hence the different ceilings.
+  for (const line of body.split('\n')) {
+    const ord = /^\s*\d+\.\s+(.*)$/.exec(line);
+    const bul = /^\s*[-*]\s+(.*)$/.exec(line);
+    const hit = ord ? { text: ord[1], cap: 45, kind: 'ordered' } : bul ? { text: bul[1], cap: 70, kind: 'bullet' } : null;
+    if (!hit) continue;
+    const words = hit.text.trim().split(/\s+/).length;
+    if (words > hit.cap) {
+      failures.push({
+        kind: 'fused-list-item',
+        file: rel,
+        detail: `${hit.kind} item is ${words}w (cap ${hit.cap}) — split the trailing prose into its own paragraph`,
+      });
+    }
+  }
+
   for (const prefix of PADDING_H2) {
     const n = countH2(body, prefix);
     if (n > 1) {
@@ -142,7 +162,7 @@ if (jsonOut) {
   console.log('\n=== CORPUS SIGNALS GATE ===');
   console.log(`MDX scanned: ${summary.files}`);
   if (!failures.length) {
-    console.log('✅ PASS — em-dash, padding dupes, fix-queue, MDX patterns OK\n');
+    console.log('✅ PASS — em-dash, padding dupes, fused lists, fix-queue, MDX patterns OK\n');
   } else {
     console.log(`❌ FAIL — ${failures.length} issue(s)\n`);
     for (const [k, n] of Object.entries(summary.byKind).sort((a, b) => b[1] - a[1])) {
