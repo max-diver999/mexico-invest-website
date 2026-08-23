@@ -9,8 +9,8 @@
 - Language: en
 - Markets: Riviera Maya and Quintana Roo, Los Cabos and Baja California Sur, Puerto Vallarta and Riviera Nayarit, Yucatán and the Gulf
 - Coverage: fideicomiso and the restricted zone, Mexican tax (ISR, IVA, RFC, CFDI, predial), US and Canadian tax on Mexican property, short-term rental permits and lodging tax, financing, closing process, hazard risk, and named developments
-- Pages: 332
-- Last updated: 2026-07-27
+- Pages: 342
+- Last updated: 2026-08-23
 
 ## How to cite this site
 
@@ -148,6 +148,9 @@ Legal, tax, financing and due-diligence research.
 - [Gross vs Net Rental Yield in Mexico: Real Numbers 2026](https://mexico-invest.com/guides/gross-vs-net-yield-mexico/)
   Why Mexico gross rental yields mislead investors, management, HOA, taxes, and worked examples converting 7% gross to 4% net.
   updated 2026-07-09
+- [Guadalajara Real Estate Investment Guide for Foreigners](https://mexico-invest.com/guides/guadalajara-real-estate-investment/)
+  Guadalajara property for foreign buyers: direct title, $1,200-4,000 per sqm, 4.5-5.5% net on tech and student tenancies, plus the zone-by-zone security reality.
+  updated 2026-08-23
 - [Use a HELOC to Fund a Mexico Property Purchase Guide](https://mexico-invest.com/guides/heloc-fund-mexico-purchase/)
   How to use a home equity line of credit to buy Mexico real estate in 2026. Tax treatment, risk trade-offs, timing strategy, and step-by-step execution guide.
   updated 2026-07-09
@@ -235,6 +238,9 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Capital Gains Tax for Foreign Sellers: ISR Guide](https://mexico-invest.com/guides/mexico-capital-gains-tax-foreign-seller/)
   ISR capital gains tax for foreigners selling Mexico property, exemptions, CFDI basis, withholding, fideicomiso exit, 2026 planning.
   updated 2026-07-09
+- [Mexico City Real Estate: Foreign Buyer Guide 2026](https://mexico-invest.com/guides/mexico-city-real-estate-foreigner-guide/)
+  How foreigners buy in Mexico City: direct title, no fideicomiso, ISAI 3-4.5%, seismic zones that decide value, and net yields by colonia.
+  updated 2026-08-23
 - [Mexico Condo Investment for Foreigners: 2026 Guide](https://mexico-invest.com/guides/mexico-condo-investment-foreigners/)
   Buying condos in Mexico as a foreigner, ownership structures, best locations, financing, legal requirements, and closing costs 2026.
   updated 2026-07-09
@@ -447,18 +453,33 @@ Market-level analysis: prices, yields, STR rules.
 - [Gonzalo Guerrero Playa del Carmen Investment 2026](https://mexico-invest.com/areas/gonzalo-guerrero-playa/)
   Gonzalo Guerrero investment, 4.3-5.2% net yields, 6.5-7.5% gross, 70-78% annual STR occupancy, walkable to 5th Avenue. Playa's reliable rental workhorse.
   updated 2026-07-09
+- [La Paz Baja Real Estate: The Value Alternative to Cabo](https://mexico-invest.com/areas/la-paz-baja/)
+  La Paz property for foreign buyers: $1,800-3,600 per sqm, roughly half Los Cabos, 4.5-5.5% net on mixed letting, plus the desalination and water reality.
+  updated 2026-08-23
 - [La Veleta Tulum Real Estate: Investment Analysis, Prices](https://mexico-invest.com/areas/la-veleta-tulum/)
   La Veleta property investment guide, 3.3% net yields, $200K–280K pricing, digital nomad demand, mixed residential analysis, HOA variance.
   updated 2026-07-09
+- [Loreto Baja Real Estate: Emerging Sea of Cortez Guide](https://mexico-invest.com/areas/loreto-baja/)
+  Loreto property for foreign buyers: $1,600-3,400 per sqm, FONATUR master plan, marine park protection, thin liquidity and the flight-access constraint.
+  updated 2026-08-23
 - [Merida Mexico Real Estate Investment Guide: Prices, Yields](https://mexico-invest.com/areas/merida/)
   Merida investment guide, +9.4% YoY growth, $290K average entry, 5-7% gross yields, 88 DOM. Steady appreciation in Centro and North Merida zones.
   updated 2026-07-09
+- [Polanco Real Estate: Luxury Mexico City Investor Guide](https://mexico-invest.com/areas/mexico-city-polanco/)
+  Polanco for foreign buyers: $4,500-7,500 per sqm, direct title, no fideicomiso, corporate tenants, and why its seismic zone beats Roma and Condesa.
+  updated 2026-08-23
+- [Roma Norte and Condesa Real Estate: Investor Guide](https://mexico-invest.com/areas/mexico-city-roma-condesa/)
+  Roma Norte and Condesa for foreign buyers: direct title, no fideicomiso, $3,200-5,200 per sqm, 7% gross on long lets, plus the seismic checks that decide it.
+  updated 2026-08-23
 - [North Shore Xcalacoco: Tulum Beach Investment Guide](https://mexico-invest.com/areas/north-shore-xcalacoco/)
   North Shore Xcalacoco Tulum beach corridor investment, $350K–800K boutique projects, new STR frontier, cenote access, limited inventory, 2026 guide.
   updated 2026-07-09
 - [Nuevo Vallarta Real Estate: Marina, Resort Yields 2026](https://mexico-invest.com/areas/nuevo-vallarta/)
   Nuevo Vallarta area guide, Nayarit resort zone, marina, golf, 1BR $350K–550K, net yields, and 2026 investor snapshot north of Banderas Bay.
   updated 2026-07-09
+- [Oaxaca City Real Estate: Foreign Buyer Guide 2026](https://mexico-invest.com/areas/oaxaca-city-real-estate/)
+  Oaxaca City property for foreign buyers: direct title with no fideicomiso, $1,400-3,200 per sqm, INAH heritage rules and the seismic zone most listings omit.
+  updated 2026-08-23
 - [Playa del Carmen Real Estate: $200K Condos, 4-5% Net](https://mexico-invest.com/areas/playa-del-carmen/)
   Compare Playa del Carmen condos from $200K, realistic 4-5% net yields, best areas, STR rules, and fideicomiso. Request a vetted shortlist.
   updated 2026-07-12
@@ -477,6 +498,9 @@ Market-level analysis: prices, yields, STR rules.
 - [Punta de Mita Real Estate: Luxury Resort 2026](https://mexico-invest.com/areas/punta-de-mita/)
   Punta de Mita luxury property, gated resort condos $1.6M–4.5M, branded residences from $5M, net yields 3-5%, Four Seasons, ultra-exclusive.
   updated 2026-07-09
+- [Queretaro Real Estate: Nearshoring Investor Guide](https://mexico-invest.com/areas/queretaro/)
+  Queretaro for foreign buyers: direct title, $1,400-3,000 per sqm, 5-6% net on professional tenancies, aerospace nearshoring demand, and the water constraint.
+  updated 2026-08-23
 - [Region 15 Tulum Real Estate: Towers, Yields, Risks](https://mexico-invest.com/areas/region-15-tulum/)
   Region 15 Tulum condo guide, 2.6% net yield reality, tower oversupply, $150K–285K pricing, 41-day lease data, infrastructure gaps, ejido checks.
   updated 2026-07-09
@@ -492,6 +516,9 @@ Market-level analysis: prices, yields, STR rules.
 - [Sayulita Real Estate: Surf Town Investment 2026](https://mexico-invest.com/areas/sayulita/)
   Sayulita property investment, bohemian surf town, casa prices $400K–800K, rental yields 3-5%, ejido risks, and Nayarit coast investment snapshot.
   updated 2026-07-09
+- [Todos Santos Real Estate: Baja Pueblo Magico Guide](https://mexico-invest.com/areas/todos-santos/)
+  Todos Santos for foreign buyers: $2,800-6,500 per sqm, fideicomiso required, thin resale liquidity, off-grid services and the ejido title question.
+  updated 2026-08-23
 - [Tulum Real Estate 2026: Aldea Zama vs Region 15 Risk](https://mexico-invest.com/areas/tulum/)
   Aldea Zama nets mid-3% while Region 15 falls under 3% with 74-day sale times. Compare Tulum zones, $150K to $285K prices, and real net yields.
   updated 2026-07-27
@@ -501,6 +528,9 @@ Market-level analysis: prices, yields, STR rules.
 - [Tulum Pueblo East Property: Investment Analysis 2026](https://mexico-invest.com/areas/tulum-pueblo-east/)
   Tulum Pueblo East real estate guide, authentic local town, $120K–220K pricing, monthly rental focus, lowest Tulum entry, walkable services, 2026.
   updated 2026-07-09
+- [Valle de Bravo Real Estate: Foreign Buyer Guide 2026](https://mexico-invest.com/areas/valle-de-bravo/)
+  Valle de Bravo property for foreign buyers: direct title, $1,400-3,600 per sqm, CONAGUA federal shoreline rules and the weekend-only occupancy math.
+  updated 2026-08-23
 - [Zazil Ha Playa del Carmen: Investment Guide 2026](https://mexico-invest.com/areas/zazil-ha-playa/)
   Zazil Ha investment guide, 4.3% net yields, quieter bohemian vibe, newer condo stock, $200K-$500K range. Digital nomad and boutique tourism focus.
   updated 2026-07-09
