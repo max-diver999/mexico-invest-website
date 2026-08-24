@@ -1,0 +1,36 @@
+{
+  "siteUrl": "https://mexico-invest.com",
+  "brand": "Mexico Invest",
+  "language": "en",
+  "trailingSlash": true,
+  "organization": {
+    "id": "https://mexico-invest.com/#organization",
+    "name": "Mexico Invest",
+    "url": "https://mexico-invest.com",
+    "sameAs": [
+      "https://mexico-invest.com/about/",
+      "https://moregroup.estate/about/",
+      "https://www.wikidata.org/wiki/Q140471749"
+    ]
+  },
+  "collections": [
+    { "dir": "src/content/areas", "urlPrefix": "/areas", "label": "Areas" },
+    { "dir": "src/content/compare", "urlPrefix": "/compare", "label": "Compare" },
+    { "dir": "src/content/developers", "urlPrefix": "/developers", "label": "Developers" },
+    { "dir": "src/content/guides", "urlPrefix": "/guides", "label": "Guides" },
+    { "dir": "src/content/news", "urlPrefix": "/news", "label": "News" },
+    { "dir": "src/content/projects", "urlPrefix": "/projects", "label": "Projects" }
+  ],
+  "robots": {
+    "disallow": ["/api/", "/thanks/", "/site-report/"],
+    "allowSearchCrawlers": true,
+    "allowTrainingCrawlers": false
+  },
+  "markdownStructure": { "prefixes": [] },
+  "llms": {
+    "enabled": false,
+    "path": "/llms.txt",
+    "title": "Mexico Invest reference content",
+    "description": "Machine-readable index is disabled."
+  }
+}
