@@ -15,10 +15,10 @@ const entries = Object.fromEntries(
 const wordsIn = (list: any[]) =>
   list.reduce((total, entry) => total + String(entry.body ?? '').split(/\s+/).filter(Boolean).length, 0);
 
-const reportDate = '27 July 2026';
-const reportVersion = 'v5.0';
+const reportDate = '23 August 2026';
+const reportVersion = 'v5.1';
 const launchDate = '5 June 2026';
-const dataThrough = '24 July 2026';
+const dataThrough = '20 August 2026';
 
 const monthlyGsc = [
   { month: 'Jun 2026', label: 'Jun', clicks: 3, impressions: 373, position: 9.3, note: 'Launch month · first clicks 22 Jun' },
@@ -834,6 +834,15 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 
   <div class="section-title">Change history</div>
   <div class="changelog">
+        <div class="changelog-item">
+      <div class="changelog-date">23 Aug 2026 (v5.1)</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site-report v5.1 · Wave 1 + mobile research flow</div>
+        <div class="changelog-desc">Report refreshed 23 Aug. Wave 1: 10 new area and guide articles (Valle de Bravo through Oaxaca). Mobile property research flow upgraded. De-template prose gate added to block templated sentences. GSC/GA4 window unchanged (MCP refresh pending).</div>
+        <div class="changelog-tags"><span class="tag green">Report v5.1</span><span class="tag blue">Wave 1</span><span class="tag amber">Mobile UX</span><span class="tag purple">Content gate</span></div>
+      </div>
+    </div>
+
           <div class="changelog-item">
       <div class="changelog-date">27 Jul 2026</div>
       <div class="changelog-content">
