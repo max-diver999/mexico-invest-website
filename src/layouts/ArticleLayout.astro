@@ -60,7 +60,7 @@ const {
 function optimizeHeroImage(url?: string): string | undefined {
   if (!url) return undefined;
   if (url.includes('res.cloudinary.com') && url.includes('/upload/') && !url.match(/\/upload\/[^\/]*w_/)) {
-    return url.replace('/upload/', '/upload/w_1200,h_675,c_fill,q_85,f_webp/');
+    return url.replace('/upload/', '/upload/w_1200,h_675,c_fill,q_85,f_auto/');
   }
   return url;
 }

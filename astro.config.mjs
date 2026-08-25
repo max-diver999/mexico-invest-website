@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
 import referenceConfig from './reference-infra.config.json' with { type: 'json' };
 import { collectContentLastmod } from './scripts/reference-infra/content-lastmod.mjs';
+import { rehypeResponsiveCloudinary } from './scripts/rehype-responsive-cloudinary.mjs';
 
 const contentLastmod = await collectContentLastmod(referenceConfig, { root: process.cwd() });
 const lastmodByUrl = new Map(contentLastmod.map((item) => [item.url, item.lastmod]));
@@ -54,6 +55,8 @@ export default defineConfig({
         return { ...item, priority: 0.7, changefreq: 'monthly' };
       },
     }),
-    mdx(),
+    mdx({
+      rehypePlugins: [rehypeResponsiveCloudinary],
+    }),
   ],
 });

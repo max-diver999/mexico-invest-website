@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/generate-llms.mjs",
-    "build": "astro build",
+    "build": "astro build && npm run speed:verify",
     "postbuild": "node scripts/audit-rendered-live.mjs --local --fail",
     "preview": "astro preview",
     "healthcheck": "node scripts/post-deploy-smoke.mjs --http-only",
@@ -44,6 +44,8 @@
     "images:rollout": "node scripts/rollout-mexico-cloudinary.mjs",
     "images:rollout:content": "node scripts/rollout-mexico-cloudinary-content.mjs",
     "audit:images": "node scripts/audit-all-images.mjs --fail",
+    "speed:dimensions": "node scripts/build-cloudinary-dims.mjs",
+    "speed:verify": "node scripts/verify-responsive-images.mjs",
     "qa:yields": "node scripts/qa-yield-sanity.mjs",
     "aeo:verify": "node scripts/reference-infra/verify-reference-infra.mjs --config reference-infra.config.json --robots public/robots.txt",
     "aeo:dates": "node scripts/reference-infra/restore-real-updated-dates.mjs --config reference-infra.config.json",
@@ -52,12 +54,13 @@
     "aeo:llms": "node scripts/reference-infra/generate-agent-markdown.mjs --config reference-infra.config.json --output-dir public"
   },
   "dependencies": {
-    "google-auth-library": "^10.6.2",
     "@astrojs/mdx": "5.0.2",
     "@astrojs/sitemap": "3.7.1",
     "@astrojs/vercel": "10.0.2",
     "@tailwindcss/vite": "4.2.2",
     "astro": "6.0.8",
-    "tailwindcss": "4.2.2"
+    "google-auth-library": "^10.6.2",
+    "tailwindcss": "4.2.2",
+    "unist-util-visit": "^5.1.0"
   }
 }
