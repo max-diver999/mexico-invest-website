@@ -8,6 +8,7 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 import { SITE } from '../data/site';
 import { AUTHOR, authorSchema } from '../data/author';
 import { mdInlineToText } from '../lib/md-inline';
+import { responsiveCloudinary } from '../lib/cloudinary';
 import {
   resolveRelatedSlugs,
   resolveRelatedEntities,
@@ -66,6 +67,7 @@ function optimizeHeroImage(url?: string): string | undefined {
 }
 
 const optimizedHeroImage = optimizeHeroImage(heroImage);
+const responsiveHero = heroImage ? responsiveCloudinary(heroImage) : null;
 
 const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -217,6 +219,9 @@ const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
   description={description}
   canonical={pageUrl}
   ogImage={optimizedHeroImage}
+  preloadImage={responsiveHero?.src}
+  preloadImageSrcset={responsiveHero?.srcset}
+  preloadImageSizes={responsiveHero?.sizes}
   type="article"
   publishedTime={pubDate.toISOString()}
   modifiedTime={(updatedDate || pubDate).toISOString()}
@@ -237,8 +242,18 @@ const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
       </p>
     </header>
 
-    {optimizedHeroImage && (
-      <img src={optimizedHeroImage} alt={heroAltText} class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" fetchpriority="high" width="1200" height="675" />
+    {responsiveHero && (
+      <img
+        src={responsiveHero.src}
+        srcset={responsiveHero.srcset}
+        sizes={responsiveHero.sizes}
+        alt={heroAltText}
+        class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]"
+        loading="eager"
+        fetchpriority="high"
+        width={responsiveHero.width || 1200}
+        height={responsiveHero.height || 675}
+      />
     )}
 
     <div class="prose mx-auto">
