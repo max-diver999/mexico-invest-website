@@ -9,8 +9,8 @@
 - Language: en
 - Markets: Riviera Maya and Quintana Roo, Los Cabos and Baja California Sur, Puerto Vallarta and Riviera Nayarit, Yucatán and the Gulf
 - Coverage: fideicomiso and the restricted zone, Mexican tax (ISR, IVA, RFC, CFDI, predial), US and Canadian tax on Mexican property, short-term rental permits and lodging tax, financing, closing process, hazard risk, and named developments
-- Pages: 342
-- Last updated: 2026-08-23
+- Pages: 352
+- Last updated: 2026-08-26
 
 ## How to cite this site
 
@@ -33,7 +33,7 @@ permits change by municipality, so cite the page, not the number alone.
 
 ## Sections
 
-- Guides (132): https://mexico-invest.com/guides/ — Legal, tax, financing and due-diligence research.
+- Guides (142): https://mexico-invest.com/guides/ — Legal, tax, financing and due-diligence research.
 - Areas and markets (37): https://mexico-invest.com/areas/ — Market-level analysis: prices, yields, STR rules.
 - Project reviews (100): https://mexico-invest.com/projects/ — Independent reviews of named developments. Not listings.
 - Comparisons (36): https://mexico-invest.com/compare/ — Head-to-head decision aids.

@@ -9,8 +9,8 @@
 - Language: en
 - Markets: Riviera Maya and Quintana Roo, Los Cabos and Baja California Sur, Puerto Vallarta and Riviera Nayarit, Yucatán and the Gulf
 - Coverage: fideicomiso and the restricted zone, Mexican tax (ISR, IVA, RFC, CFDI, predial), US and Canadian tax on Mexican property, short-term rental permits and lodging tax, financing, closing process, hazard risk, and named developments
-- Pages: 342
-- Last updated: 2026-08-23
+- Pages: 352
+- Last updated: 2026-08-26
 
 ## How to cite this site
 
@@ -58,6 +58,9 @@ Legal, tax, financing and due-diligence research.
 - [Buy Property in Mexico as a Foreigner: Step-by-Step](https://mexico-invest.com/guides/buy-property-mexico-foreigner/)
   How foreigners buy Mexican real estate in 2026, fideicomiso, restricted zone, closing steps, costs, and due diligence for US and Canadian buyers.
   updated 2026-07-09
+- [Buying Mexican Property Through an LLC: What Works](https://mexico-invest.com/guides/buying-mexico-property-through-llc/)
+  US LLC, Mexican corporation or plain fideicomiso: what each structure legally holds, what each costs over ten years, and who actually needs an entity.
+  updated 2026-08-26
 - [Can Foreigners Buy Mexico Property? Yes, From $130K](https://mexico-invest.com/guides/can-foreigners-buy-property-mexico/)
   Yes, 40,000+ foreign purchases close yearly in Mexico. Fideicomiso from ~$550/yr, condos from $130K. 2026 restricted-zone rules for US buyers.
   updated 2026-07-10
@@ -85,6 +88,9 @@ Legal, tax, financing and due-diligence research.
 - [Cross-Border Lenders for Mexico Property: Buyer List](https://mexico-invest.com/guides/cross-border-lender-list/)
   US and Canadian lenders who finance Mexico property purchases in 2026. Rates, LTV, documentation, and how cross-border mortgages interact with fideicomiso.
   updated 2026-07-10
+- [From Crypto to Mexican Real Estate: A Compliance Guide](https://mexico-invest.com/guides/crypto-to-mexico-real-estate/)
+  Buying Mexican property with crypto proceeds: the liquidation path notarios accept, LFPIORPI reporting, the tax event triggered first, and scam patterns.
+  updated 2026-08-26
 - [USD or MXN at a Mexican Closing: What It Costs](https://mexico-invest.com/guides/currency-closing-usd-mxn/)
   Which Mexico property closing costs are paid in USD vs MXN, how exchange rates affect your total cost, wire transfer mechanics, and when to convert currency.
   updated 2026-07-09
@@ -100,6 +106,9 @@ Legal, tax, financing and due-diligence research.
 - [Digital Nomad Property Investment in Mexico 2026](https://mexico-invest.com/guides/digital-nomad-mexico-property/)
   Digital nomads buying Mexico property, best locations, visa rules, remote work infrastructure, and investment strategies for 2026.
   updated 2026-07-09
+- [Dual Citizens Buying Property in Mexico: Full-Rights Guide](https://mexico-invest.com/guides/dual-citizen-mexico-property/)
+  How Mexican nationality removes the restricted zone and fideicomiso, the consular descent route millions qualify for, and what US tax still requires.
+  updated 2026-08-26
 - [Due Diligence Mexico Real Estate: Checklist for Buyers](https://mexico-invest.com/guides/due-diligence-mexico-real-estate/)
   Mexico property due diligence checklist, title, ejido risk, HOA, CFDI basis, STR permits, liens, and pre-closing steps for foreign buyers.
   updated 2026-07-09
@@ -115,6 +124,9 @@ Legal, tax, financing and due-diligence research.
 - [Estate Planning for Mexico Property: US Citizen Guide](https://mexico-invest.com/guides/estate-planning-will-mexico-property-us-citizen/)
   Estate planning guide for US citizens owning Mexico property: wills, fideicomiso beneficiaries, CFDI records, POA limits, and tax coordination.
   updated 2026-07-09
+- [European Buyers in Mexico: Property Guide 2026](https://mexico-invest.com/guides/european-buyers-mexico-property/)
+  Mexican property for EU buyers: the notario system you already know, the registry guarantee you don't have, home-country taxes from Modelo 720 to IVIE.
+  updated 2026-08-26
 - [Fake Escritura in Mexico: How to Detect and Verify Title](https://mexico-invest.com/guides/fake-escritura-mexico/)
   Counterfeit escrituras are used to defraud foreign buyers in Mexico. Verify authentic title deeds at the public registry before any deposit or closing.
   updated 2026-07-09
@@ -133,6 +145,9 @@ Legal, tax, financing and due-diligence research.
 - [Fideicomiso vs Mexican Corporation: Which Structure?](https://mexico-invest.com/guides/fideicomiso-vs-mexican-corporation/)
   Compare fideicomiso bank trust vs Mexican corporation for foreign property buyers, costs, taxes, STR use, liability, and when each structure makes sense.
   updated 2026-07-09
+- [Your First Million in Mexican Real Estate: The Playbook](https://mexico-invest.com/guides/first-million-mexico-real-estate/)
+  Deploying $1M into Mexican property without leverage: a four-market allocation, blended 4.4% net, buy sequencing, the management stack and the exit ladder.
+  updated 2026-08-26
 - [First-Time Foreign Buyer Mexico: Complete 2026 Playbook](https://mexico-invest.com/guides/first-time-foreign-buyer-mexico/)
   First Mexico purchase for US and Canadian buyers, fideicomiso, market choice, closing timeline, remote buying, and mistakes to avoid on ticket one.
   updated 2026-07-09
@@ -274,6 +289,9 @@ Legal, tax, financing and due-diligence research.
 - [Is Mexico's Property Market Buyer-Friendly in 2026?](https://mexico-invest.com/guides/mexico-property-market-buyer-friendly-2026/)
   Mexico 2026 property market analysis, timing, negotiation leverage, inventory levels, and strategic buying advice for investors.
   updated 2026-07-09
+- [Mexico Property in a Self-Directed IRA: Rules and Traps](https://mexico-invest.com/guides/mexico-property-self-directed-ira/)
+  Holding Mexican real estate in a self-directed IRA: the no-personal-use rule, the custodian-LLC-fideicomiso stack, and the Mexican tax credit an IRA wastes.
+  updated 2026-08-26
 - [Mexico Property Taxes Explained: Buy, Hold, Sell 2026](https://mexico-invest.com/guides/mexico-property-taxes-explained/)
   Mexico property taxes for foreign owners, ISAI, predial, rental income, ISR on sale, CFDI basis, and US reporting for American buyers.
   updated 2026-07-09
@@ -355,12 +373,18 @@ Legal, tax, financing and due-diligence research.
 - [Remote Notarization for Mexico Property Closings 2026](https://mexico-invest.com/guides/remote-notarization-mexico/)
   What foreign buyers can and cannot do remotely in Mexico. Power of attorney scope, apostille requirements, video limits, and what still requires presence.
   updated 2026-07-09
+- [Remote Workers Buying Property in Mexico: 2026 Guide](https://mexico-invest.com/guides/remote-worker-buy-mexico-property/)
+  Buying Mexican property on a remote salary: the 183-day tax line, employer permission, fibre and power diligence, and rent-vs-buy math for five markets.
+  updated 2026-08-26
 - [Mexico Rental Contract for Foreign Landlords: 2026 Guide](https://mexico-invest.com/guides/rental-contract-mexico-foreign-landlord/)
   Complete guide for foreign landlords in Mexico: rental contract requirements, RFC registration, tenant rights, ISR tax obligations, and enforcement mechanisms.
   updated 2026-07-09
 - [Repatriate Mexico Sale Proceeds to the US in 2026](https://mexico-invest.com/guides/repatriate-sale-proceeds-mexico/)
   Learn ISR withholding, fideicomiso release, bank wire timing, and US reporting when selling in Mexico. Request an exit-document review.
   updated 2026-07-12
+- [Retiring in Mexico on $2,000 a Month: Where It Works](https://mexico-invest.com/guides/retire-in-mexico-on-2000-month/)
+  A $2,000 monthly retirement budget in Mexico, line by line: the five cities where it holds, the ones where it doesn't, and what owning does to the math.
+  updated 2026-08-26
 - [RFC Registration Playa del Carmen for Foreigners 2026](https://mexico-invest.com/guides/rfc-registration-playa-del-carmen-foreigner/)
   RFC registration in Playa del Carmen for foreign STR owners: SAT office steps, documents, CURP, appointments, and links to platform withholding.
   updated 2026-07-09
@@ -382,6 +406,9 @@ Legal, tax, financing and due-diligence research.
 - [Short-Term Rental Rules Riviera Maya: Permits & HOA 2026](https://mexico-invest.com/guides/short-term-rental-rules-riviera-maya/)
   Riviera Maya STR rules for 2026, municipal permits, lodging tax, HOA bans, Playa vs Tulum compliance, and investor checklist for Quintana Roo condos.
   updated 2026-07-09
+- [Snowbird Property in Mexico: The Half-Year Owner's Guide](https://mexico-invest.com/guides/snowbird-mexico-property-guide/)
+  Owning a Mexican winter home half the year: the 180-day fit, Canadian day-count rules, why summer letting rarely pays for winter, and empty-season risk.
+  updated 2026-08-26
 - [Riviera Maya STR Occupancy by Month: 2026 Data Guide](https://mexico-invest.com/guides/str-occupancy-by-month-riviera-maya/)
   Monthly STR occupancy bands for Playa, Tulum, and Cancún in 2026. Seasonality calendar, ADR swings, World Cup effects, and underwriting checklist.
   updated 2026-07-09
@@ -397,6 +424,9 @@ Legal, tax, financing and due-diligence research.
 - [Deed Translation Requirements for Mexico Property Buyers](https://mexico-invest.com/guides/translation-requirements-mexico-deed/)
   Translation requirements for Mexico property deeds: certified Spanish, apostille chain, notario expectations, and foreign buyer checklist.
   updated 2026-07-09
+- [UK Buyers in Mexico: Property, Tax and Currency Guide](https://mexico-invest.com/guides/uk-buyers-mexico-property/)
+  Mexican property for UK buyers: why a fideicomiso is not a leasehold, the GBP-USD leg that moves prices 20%, HMRC treatment and the routes that matter.
+  updated 2026-08-26
 - [Unregistered Brokers in Mexico: Risks and How to Screen](https://mexico-invest.com/guides/unregistered-broker-mexico/)
   Mexico has no mandatory real estate broker licensing. Learn to screen agents using AMPI membership, track record checks, and contract review before signing.
   updated 2026-07-09
