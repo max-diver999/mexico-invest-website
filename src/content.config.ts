@@ -18,6 +18,13 @@ const articleSchema = z.object({
    * visible as work without failing the build.
    */
   heroPending: z.boolean().optional(),
+  /**
+   * Shown under the hero. Use it whenever the frame is not our own photograph:
+   * marketing art from a developer's brochure, an architectural render, or a
+   * picture of a different development. The reader should not have to guess
+   * whether a number baked into an image is ours or the seller's.
+   */
+  heroCredit: z.string().optional(),
   /** Descriptive alt for the hero. Falls back to a phrase built from title + area. */
   heroAlt: z.string().optional(),
   readingTime: z.number().optional(),

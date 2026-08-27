@@ -407,6 +407,28 @@ textarea:focus {
   color: var(--color-muted);
 }
 
+/* Image credits. A frame taken from a seller's brochure, a render of a building
+ * that does not exist yet, or a picture of a different development all carry a
+ * line under them saying so — the site's whole claim is that it is not the
+ * developer's voice. */
+.image-credit { margin: 0 0 1.75rem; }
+.prose .image-credit { margin: 1.75rem 0; }
+.image-credit > img { margin: 0; }
+.image-credit > figcaption,
+.prose .image-credit > figcaption {
+  margin-top: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  border-left: 2px solid var(--color-brass);
+  padding-left: 0.65rem;
+  max-width: 68ch;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
 .prose blockquote {
   border-left: 2px solid var(--color-brass);
   padding: 0.75rem 1.1rem;

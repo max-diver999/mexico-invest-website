@@ -7,6 +7,7 @@ import referenceConfig from './reference-infra.config.json' with { type: 'json' 
 import { collectContentLastmod } from './scripts/reference-infra/content-lastmod.mjs';
 import { rehypeResponsiveCloudinary } from './scripts/rehype-responsive-cloudinary.mjs';
 import { rehypeTableScroll } from './scripts/rehype-table-scroll.mjs';
+import { rehypeImageCredit } from './scripts/rehype-image-credit.mjs';
 
 const contentLastmod = await collectContentLastmod(referenceConfig, { root: process.cwd() });
 const lastmodByUrl = new Map(contentLastmod.map((item) => [item.url, item.lastmod]));
@@ -57,7 +58,7 @@ export default defineConfig({
       },
     }),
     mdx({
-      rehypePlugins: [rehypeResponsiveCloudinary, rehypeTableScroll],
+      rehypePlugins: [rehypeResponsiveCloudinary, rehypeTableScroll, rehypeImageCredit],
     }),
   ],
 });

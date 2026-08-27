@@ -237,17 +237,20 @@ const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
     </header>
 
     {responsiveHero && (
-      <img
-        src={responsiveHero.src}
-        srcset={responsiveHero.srcset}
-        sizes={responsiveHero.sizes}
-        alt={heroAltText}
-        class="w-full max-h-[420px] object-cover rounded-[2px] mb-10 border border-[var(--color-border)]"
-        loading="eager"
-        fetchpriority="high"
-        width={responsiveHero.width || 1200}
-        height={responsiveHero.height || 675}
-      />
+      <figure class="image-credit mb-10">
+        <img
+          src={responsiveHero.src}
+          srcset={responsiveHero.srcset}
+          sizes={responsiveHero.sizes}
+          alt={heroAltText}
+          class="w-full max-h-[420px] object-cover rounded-[2px] border border-[var(--color-border)]"
+          loading="eager"
+          fetchpriority="high"
+          width={responsiveHero.width || 1200}
+          height={responsiveHero.height || 675}
+        />
+        {data.heroCredit && <figcaption>{data.heroCredit}</figcaption>}
+      </figure>
     )}
 
     <div class="prose mx-auto">
