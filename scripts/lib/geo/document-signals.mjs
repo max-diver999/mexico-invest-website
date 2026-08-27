@@ -41,7 +41,13 @@ export function sections(raw) {
 }
 
 export function malformedTokens(raw) {
-  const found = plainText(raw).match(MALFORMED_RE) || [];
+  // plainText flattens the document, so a list item ending in "management"
+  // followed by a paragraph opening "Management requirement:" reads as a
+  // doubled word. That is a join artefact of the flattening, not a defect on
+  // the page: eight legitimate files in this corpus gated on it while the July
+  // garbage's real doubles ("r,", "undefined") all sit inside one line.
+  // Paragraph breaks therefore survive as a separator token before matching.
+  const found = plainText(raw.replace(/\n{2,}/g, ' \u00A6 ')).match(MALFORMED_RE) || [];
   return { count: found.length, samples: [...new Set(found)].slice(0, 5) };
 }
 

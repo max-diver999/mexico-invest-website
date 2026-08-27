@@ -292,3 +292,15 @@ survivors of the July garbage):
   62.0) because the mid set went through heavy manual cleanup and the good set
   was written under the old rubric's shape pressure. The garbage/honest boundary
   is wide; the good/mid boundary on this corpus is thin.
+
+### Rule fix, measured: word-doubling across block boundaries (2026-08-27, R0)
+
+`malformedTokens` ran over the flattened document, so a list item ending in
+"management" followed by a paragraph opening "Management requirement:" matched
+the doubled-word pattern. Eight legitimate files gated at 40 on this join
+artefact while every real July double ("r,", "undefined") sits inside one line.
+Paragraph breaks now survive as a separator token before the regex runs.
+Measured on the labelled sets: the machine corpus still trips the detector in
+75 of 132 files (132 tokens), the hand-written and middle sets drop to exactly
+zero. The fix removes false positives without weakening the signal, which is
+the bar every exemption has to clear.
