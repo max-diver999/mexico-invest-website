@@ -89,6 +89,7 @@ const SEVERITY = {
   'mdx-risk': 12,
   'thin-content': 8,
   'missing-hero': 6,
+  'hero-pending': 0,
   'bad-title-length': 6,
   'bad-description-length': 6,
   'missing-tldr': 6,
@@ -200,7 +201,11 @@ function analyze(file, index) {
     issues.push('mdx-risk');
   }
   if (DRAFT_MARKERS_RE.test(file.raw)) issues.push('draft-marker');
-  if (!fm.heroImage && !light) issues.push('missing-hero');
+  if (!fm.heroImage && !light) {
+    // heroPending marks a hero removed on purpose: the source art was broken
+    // and no honest replacement exists yet. Still reported, never blocking.
+    issues.push(fm.heroPending ? 'hero-pending' : 'missing-hero');
+  }
 
   if (!light && !noindex) {
     if (fm.title) {
@@ -283,8 +288,12 @@ function analyze(file, index) {
   for (const i of uniqueIssues) score -= SEVERITY[i] ?? 1;
   score = Math.max(0, score);
 
-  const ready = uniqueIssues.length === 0 && (light || words >= cfg.minWords);
-  return { ...file, noindex, words, issues: uniqueIssues, score, ready, blockers: uniqueIssues.length };
+  // A zero-weight issue is reported but does not hold the page back — it marks
+  // work that is known, deliberate and waiting on something outside the corpus
+  // (a photo shoot), rather than a defect to fix in the text.
+  const blocking = uniqueIssues.filter((i) => (SEVERITY[i] ?? 1) > 0);
+  const ready = blocking.length === 0 && (light || words >= cfg.minWords);
+  return { ...file, noindex, words, issues: uniqueIssues, score, ready, blockers: blocking.length };
 }
 
 function tierOf(rec, gsc) {

@@ -10,6 +10,14 @@ const articleSchema = z.object({
   category: z.string().default('guides'),
   tags: z.array(z.string()).default([]),
   heroImage: z.string().optional(),
+  /**
+   * Set when the page deliberately has no hero because the only art available
+   * was broken — an 11x629 sliver, a blank plate, or a frame of somewhere else.
+   * A page with no picture is honest; one with a broken picture is not. The
+   * corpus gate treats these as pending rather than as a lost hero, so they stay
+   * visible as work without failing the build.
+   */
+  heroPending: z.boolean().optional(),
   /** Descriptive alt for the hero. Falls back to a phrase built from title + area. */
   heroAlt: z.string().optional(),
   readingTime: z.number().optional(),
