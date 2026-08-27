@@ -18,41 +18,41 @@ const about = [
   { label: 'Contact', href: '/contact/' },
 ];
 ---
-<footer class="mt-16 border-t border-[var(--color-border)] bg-[var(--color-ink)] text-[#d6d3d1]">
+<footer class="mt-16 border-t border-[var(--color-deep-line)] bg-[var(--color-deep)] text-[var(--color-cream-dim)]">
   <div class="site-container py-12 grid gap-8 md:grid-cols-4 text-sm">
     <div>
-      <p class="text-lg font-semibold text-white mb-2">{SITE.name}</p>
+      <p class="text-lg font-normal font-[var(--font-serif)] text-[var(--color-cream)] mb-2">{SITE.name}</p>
       <p class="leading-relaxed">{SITE.tagline}</p>
-      <p class="leading-relaxed mt-3 text-[#a8a29e]">
+      <p class="leading-relaxed mt-3 text-[var(--color-cream-dim)]">
         Independent research for US and Canadian buyers. Not a developer, not a listing portal.
       </p>
     </div>
     <div>
-      <p class="font-semibold text-white mb-3">Research</p>
+      <p class="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-[var(--color-brass-light)] mb-3">Research</p>
       <ul class="space-y-2">
         {research.map((item) => (
-          <li><a href={item.href} class="text-[#d6d3d1] hover:text-white no-underline">{item.label}</a></li>
+          <li><a href={item.href} class="text-[var(--color-cream-dim)] hover:text-[var(--color-cream)] no-underline">{item.label}</a></li>
         ))}
       </ul>
     </div>
     <div>
-      <p class="font-semibold text-white mb-3">Mexico Invest</p>
+      <p class="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-[var(--color-brass-light)] mb-3">Mexico Invest</p>
       <ul class="space-y-2">
         {about.map((item) => (
-          <li><a href={item.href} class="text-[#d6d3d1] hover:text-white no-underline">{item.label}</a></li>
+          <li><a href={item.href} class="text-[var(--color-cream-dim)] hover:text-[var(--color-cream)] no-underline">{item.label}</a></li>
         ))}
       </ul>
     </div>
     <div>
-      <p class="font-semibold text-white mb-3">Legal</p>
+      <p class="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-[var(--color-brass-light)] mb-3">Legal</p>
       <ul class="space-y-2">
-        <li><a href="/privacy-policy/" class="text-[#d6d3d1] hover:text-white no-underline">Privacy</a></li>
-        <li><a href="/terms/" class="text-[#d6d3d1] hover:text-white no-underline">Terms</a></li>
-        <li><a href={`mailto:${SITE.email}`} class="text-[#d6d3d1] hover:text-white no-underline">{SITE.email}</a></li>
+        <li><a href="/privacy-policy/" class="text-[var(--color-cream-dim)] hover:text-[var(--color-cream)] no-underline">Privacy</a></li>
+        <li><a href="/terms/" class="text-[var(--color-cream-dim)] hover:text-[var(--color-cream)] no-underline">Terms</a></li>
+        <li><a href={`mailto:${SITE.email}`} class="text-[var(--color-cream-dim)] hover:text-[var(--color-cream)] no-underline">{SITE.email}</a></li>
       </ul>
     </div>
   </div>
-  <div class="site-container py-4 border-t border-white/10 text-xs text-[#a8a29e]">
+  <div class="site-container py-4 border-t border-[var(--color-deep-line)] text-xs text-[var(--color-cream-dim)]">
     © {year} {SITE.name}. Independent research. Not financial or legal advice. Verify all figures with licensed professionals.
   </div>
 </footer>

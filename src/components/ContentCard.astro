@@ -36,8 +36,8 @@ const photo = getCardImageUrl(image);
         alt={imageAlt || title}
         loading="lazy"
         decoding="async"
-        width="640"
-        height="360"
+        width="800"
+        height="450"
       />
     </div>
   ) : (
@@ -47,11 +47,7 @@ const photo = getCardImageUrl(image);
   )}
   <div class="content-card__body">
     {badges.length > 0 && (
-      <div class="content-card__badges">
-        {badges.slice(0, 3).map((badge) => (
-          <span class="badge-pill">{badge}</span>
-        ))}
-      </div>
+      <p class="content-card__badges">{badges.slice(0, 3).join(' · ')}</p>
     )}
     <h3 class="content-card__title">{title}</h3>
     {description && <p class="content-card__desc">{description}</p>}

@@ -8,7 +8,7 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 import { SITE } from '../data/site';
 import { AUTHOR, authorSchema } from '../data/author';
 import { mdInlineToText } from '../lib/md-inline';
-import { responsiveCloudinary } from '../lib/cloudinary';
+import { cloudinaryUrl, responsiveCloudinary } from '../lib/cloudinary';
 import {
   resolveRelatedSlugs,
   resolveRelatedEntities,
@@ -60,10 +60,7 @@ const {
 // Optimize Cloudinary hero images for LCP
 function optimizeHeroImage(url?: string): string | undefined {
   if (!url) return undefined;
-  if (url.includes('res.cloudinary.com') && url.includes('/upload/') && !url.match(/\/upload\/[^\/]*w_/)) {
-    return url.replace('/upload/', '/upload/w_1200,h_675,c_fill,q_85,f_auto/');
-  }
-  return url;
+  return cloudinaryUrl(url, 'w_1200,h_675,c_fill,q_85,f_auto');
 }
 
 const optimizedHeroImage = optimizeHeroImage(heroImage);

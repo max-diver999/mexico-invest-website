@@ -15,11 +15,11 @@ const nav = [
 const path = Astro.url.pathname;
 const isCurrent = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
-<header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[rgba(255,255,255,0.9)] backdrop-blur-md">
+<header class="sticky top-0 z-50 border-b border-[var(--color-deep-line)] bg-[rgb(7_38_42_/_0.92)] backdrop-blur-md">
   <div class="site-container flex items-center justify-between gap-4 py-4">
     <a href="/" class="flex items-center gap-2 no-underline">
-      <img src="/favicon.svg?v=3" alt="" data-decorative width="32" height="32" class="rounded-lg" />
-      <span class="text-lg font-semibold text-[var(--color-ink)]">{SITE.name}</span>
+      <img src="/favicon.svg?v=3" alt="" data-decorative width="32" height="32" class="rounded-[2px]" />
+      <span class="text-lg font-normal font-[var(--font-serif)] text-[var(--color-cream)]">{SITE.name}</span>
     </a>
 
     <nav class="hidden lg:flex items-center gap-5 text-sm font-medium" aria-label="Main">
@@ -28,8 +28,8 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
           href={item.href}
           aria-current={isCurrent(item.href) ? 'page' : undefined}
           class:list={[
-            'no-underline hover:text-[var(--color-ink)]',
-            isCurrent(item.href) ? 'text-[var(--color-ink)]' : 'text-[var(--color-muted)]',
+            'no-underline hover:text-[var(--color-cream)]',
+            isCurrent(item.href) ? 'text-[var(--color-cream)]' : 'text-[var(--color-cream-dim)]',
           ]}
         >{item.label}</a>
       ))}
@@ -37,7 +37,7 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
 
     <div class="flex items-center gap-2 shrink-0">
       <CurrencyToggle variant="header" />
-      <a href="/get-shortlist/" class="btn-primary mobile-header-cta text-sm px-4 py-2">Free shortlist</a>
+      <a href="/get-shortlist/" class="btn-primary btn-primary--brass mobile-header-cta text-sm px-4 py-2">Free shortlist</a>
       <button
         type="button"
         id="nav-toggle"
@@ -78,19 +78,19 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border: 1px solid var(--color-deep-line);
+    border-radius: 2px;
     background: transparent;
     font-size: 1.1rem;
     line-height: 1;
-    color: var(--color-ink);
+    color: var(--color-cream);
     cursor: pointer;
   }
   .site-nav__mobile {
     position: fixed;
     inset: 73px 0 0;
     z-index: 60;
-    background: var(--color-surface);
+    background: var(--color-deep);
     overflow-y: auto;
     overscroll-behavior: contain;
   }
@@ -107,9 +107,9 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     align-items: center;
     justify-content: center;
     margin-bottom: 0.75rem;
-    border-radius: 999px;
-    background: var(--color-teal);
-    color: #fff !important;
+    border-radius: 2px;
+    background: var(--color-brass-light);
+    color: var(--color-deep) !important;
     font-weight: 600;
     text-decoration: none;
   }
@@ -118,10 +118,10 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     padding: 0.6rem 0.25rem;
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--color-muted);
+    color: var(--color-cream-dim);
   }
   .site-nav__mobile-link[aria-current='page'] {
-    color: var(--color-ink);
+    color: var(--color-cream);
   }
   @media (max-width: 767px) {
     .mobile-header-cta { display: none; }

@@ -4,7 +4,6 @@ import LeadForm from '../components/LeadForm.astro';
 import ContentCard from '../components/ContentCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
-import { SITE } from '../data/site';
 import {
   FEATURED_PROJECT_SLUGS,
   FEATURED_GUIDE_SLUGS,
@@ -13,7 +12,7 @@ import {
   HOMEPAGE_HERO_PROJECT_SLUG,
 } from '../data/featured';
 import { getCardImageUrl, formatAreaLabel } from '../lib/cardImage';
-import { pickHomepageProjects, projectHeroLine, projectStatusLabel } from '../lib/homeProjects';
+import { pickHomepageProjects, projectHeroLine } from '../lib/homeProjects';
 
 const [guides, projects, areas] = await Promise.all([
   getCollection('guides'),
@@ -34,57 +33,93 @@ const homepageProjects = pickHomepageProjects(publishedProjects, FEATURED_PROJEC
 const heroProject = projectBySlug.get(HOMEPAGE_HERO_PROJECT_SLUG) ?? homepageProjects[0];
 const featuredAreas = FEATURED_AREA_SLUGS.map((slug) => areaBySlug.get(slug)).filter(Boolean);
 
-const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE, 'hero');
-const heroProjectImage = heroProject ? getCardImageUrl(heroProject.data.heroImage, 'card') : heroImage;
+// The hero photograph and the plate under it must name the same building.
+const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE ?? heroProject?.data.heroImage, 'panel');
+const heroProjectName = heroProject
+  ? heroProject.data.title.replace(/ Review:.*$/, '').replace(/ 2026.*$/, '').replace(/:.*$/, '')
+  : '';
+
+const rail = [
+  { n: publishedGuides.length, label: 'Guides', href: '/guides/' },
+  { n: publishedProjects.length, label: 'Projects', href: '/projects/' },
+  { n: publishedAreas.length, label: 'Areas', href: '/areas/' },
+];
 ---
 <BaseLayout
   title="Mexico Real Estate for Foreign Buyers: From $130K 2026"
   description="Compare Mexico property from $130K, realistic 3-5% net yields, fideicomiso rules, and vetted projects. Request a free shortlist for your budget."
 >
-  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-surface)]">
-    <div class="site-container py-14 md:py-20 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-      <div>
-        <span class="badge-pill mb-5">Independent research</span>
-        <h1 class="text-3xl md:text-[2.35rem] mb-5 leading-tight">
-          Mexico real estate for foreign buyers from $130K
-        </h1>
-        <p class="text-base md:text-lg text-[var(--color-muted)] mb-8 max-w-xl">
-          US and Canadian buyers closed 40,000+ Mexico property purchases last year, roughly 65% from the US. Riviera Maya condos start near $130,000 USD via fideicomiso; well-managed Airbnb units in Playa del Carmen often net 4-5% after fees. Independent guides on yields, due diligence, and foreign buyer rules, not developer sales decks.
+  <section class="hero-band on-deep">
+    <div class="site-container hero-band__inner">
+      <div class="hero-band__copy">
+        <p class="hero-band__eyebrow">Not a developer · Independent research</p>
+        <h1>Mexico property for foreign buyers, from $130K</h1>
+        <div class="hero-band__rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-band__aside">
+        <p class="hero-band__deck">
+          Riviera Maya condos start near $130,000 USD via fideicomiso. We publish the net yield after HOA,
+          management and IVA, the fideicomiso costs, and the closing timeline — the arithmetic a developer
+          deck leaves out.
         </p>
-        <div class="flex flex-wrap gap-3 mb-10">
-          <a href="/guides/" class="btn-primary px-6 py-3">Browse guides</a>
-          <a href="/projects/" class="btn-secondary px-6 py-3">Project reviews</a>
-          <a href="/get-shortlist/" class="btn-secondary px-6 py-3">Free shortlist →</a>
+        <div class="hero-band__acts">
+          <a href="/get-shortlist/" class="btn-primary">Get my shortlist</a>
+          <a href="/projects/" class="btn-secondary">Browse {publishedProjects.length} reviews</a>
         </div>
-        <div class="grid grid-cols-3 gap-3 max-w-md">
-          <div class="stat-pill">
-            <strong>{publishedGuides.length}</strong>
-            <span>Guides</span>
-          </div>
-          <div class="stat-pill">
-            <strong>{publishedProjects.length}</strong>
-            <span>Projects</span>
-          </div>
-          <div class="stat-pill">
-            <strong>{publishedAreas.length}</strong>
-            <span>Areas</span>
-          </div>
+        <div class="hero-band__rail">
+          {rail.map((r) => (
+            <a href={r.href} class="hero-band__chip"><b>{r.n}</b> {r.label.toUpperCase()}</a>
+          ))}
         </div>
       </div>
-      <div class="hero-visual min-h-[280px] md:min-h-[380px] relative">
-        <img src={heroProjectImage} alt={heroProject ? `${heroProject.data.title}, featured Mexico project` : 'Aerial view of Tulum coastline, Riviera Maya'} loading="eager" fetchpriority="high" width="1400" height="560" />
-        <div class="hero-visual__overlay" />
-        <p class="hero-visual__caption">Riviera Maya · Tulum corridor</p>
-        {heroProject && (
-          <div class="hero-project-card">
-            <div class="hero-project-card__copy">
-              <p class="hero-project-card__eyebrow">Featured · {formatAreaLabel(heroProject.data.area)}</p>
-              <p class="hero-project-card__title">{heroProject.data.title.replace(/ Review:.*$/, '').replace(/ 2026.*$/, '')}</p>
-              <p class="hero-project-card__meta">{projectHeroLine(heroProject)}</p>
-            </div>
-            <a href={`/projects/${heroProject.id}/`} class="hero-project-card__cta">View project →</a>
+    </div>
+
+    <figure class="hero-photo">
+      <img
+        src={heroImage}
+        alt={heroProject
+          ? `${heroProjectName}, ${formatAreaLabel(heroProject.data.area)} — featured Mexico project review`
+          : 'Featured Mexico project'}
+        loading="eager"
+        fetchpriority="high"
+        width="2000"
+        height="860"
+      />
+      <div class="hero-photo__fall" aria-hidden="true"></div>
+      {heroProject && (
+        <div class="hero-photo__plate-wrap">
+          <div class="site-container">
+            <a href={`/projects/${heroProject.id}/`} class="hero-plate">
+              <p class="hero-plate__eyebrow">In the photograph</p>
+              <p class="hero-plate__title">{heroProjectName}</p>
+              <p class="hero-plate__meta">{projectHeroLine(heroProject)}</p>
+            </a>
           </div>
-        )}
+        </div>
+      )}
+    </figure>
+  </section>
+
+  <section class="section-deep">
+    <div class="site-container">
+      <div class="stat-strip">
+        <div>
+          <strong>40,000+</strong>
+          <span>Foreign purchases last year</span>
+        </div>
+        <div>
+          <strong>~65%</strong>
+          <span>Of those buyers from the US</span>
+        </div>
+        <div>
+          <strong>4-5%</strong>
+          <span>Net on managed Playa STR</span>
+        </div>
+        <div>
+          <strong>$130K+</strong>
+          <span>Entry from (USD)</span>
+        </div>
       </div>
     </div>
   </section>
@@ -96,27 +131,6 @@ const heroProjectImage = heroProject ? getCardImageUrl(heroProject.data.heroImag
         subtitle="Independent research, local due diligence, and no developer sales deck. Share your budget and target market; we reply within one business day."
         context="Homepage shortlist"
       />
-    </div>
-  </section>
-
-  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-brand)] text-white py-8">
-    <div class="site-container grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div>
-        <p class="text-2xl md:text-3xl font-semibold">{publishedProjects.length}+</p>
-        <p class="text-sm opacity-85 mt-1">Projects reviewed</p>
-      </div>
-      <div>
-        <p class="text-2xl md:text-3xl font-semibold">{publishedGuides.length}</p>
-        <p class="text-sm opacity-85 mt-1">Buyer guides</p>
-      </div>
-      <div>
-        <p class="text-2xl md:text-3xl font-semibold">{publishedAreas.length}</p>
-        <p class="text-sm opacity-85 mt-1">Investment areas</p>
-      </div>
-      <div>
-        <p class="text-2xl md:text-3xl font-semibold">$130K+</p>
-        <p class="text-sm opacity-85 mt-1">Entry from (USD)</p>
-      </div>
     </div>
   </section>
 

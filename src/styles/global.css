@@ -1,94 +1,164 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────────────────────
+   Chukum & Brass — Riviera Maya limestone, cenote water, brass.
+   Two grounds, not one: pages are limestone; the hero, the CTA
+   blocks and the footer are cenote-deep. Every colour is declared
+   for the ground it sits on, and the pairs below are the only
+   combinations used.
+
+   Contrast against its own ground (WCAG):
+     ink       on page  12.9   muted     on page   6.5
+     accent    on page   6.4   brass     on page   4.7
+     cream     on deep  11.7   cream-dim on deep   7.3
+     brass-lt  on deep   6.3   deep on brass-lt    6.3
+   ────────────────────────────────────────────────────────────── */
 @theme {
-  --color-page: #f7f8f6;
-  --color-surface: #ffffff;
-  --color-surface-muted: #f4f5f3;
-  --color-ink: #1f2421;
-  --color-muted: #5d645f;
-  --color-teal: #2c6b62;
-  --color-teal-dark: #235851;
-  --color-teal-light: #e6f0ed;
-  --color-border: #e6e6e3;
-  --color-border-soft: #eeeeec;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  /* limestone ground */
+  --color-page: #f1ece3;
+  --color-surface: #faf7f1;
+  --color-surface-muted: #e7e0d3;
+  --color-ink: #12292b;
+  --color-muted: #4a5654;
+  --color-border: #d9d0bf;
+  --color-border-soft: #e5ddce;
+
+  /* cenote ground */
+  --color-deep: #07262a;
+  --color-deep-2: #0d3235;
+  --color-deep-line: #1b4247;
+  --color-cream: #f1ece3;
+  --color-cream-dim: #c3bcaf;
+
+  /* accents */
+  --color-accent: #175e5c;
+  --color-accent-strong: #0d4341;
+  --color-accent-soft: #dce5e0;
+  --color-brass: #8a6224;
+  --color-brass-light: #d6a75c;
+
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+/* Element defaults belong in @layer base. Written unlayered they outrank every
+ * Tailwind utility — `a { color: … }` was quietly beating `text-[var(--color-…)]`
+ * on every link in the site, which is why the nav ignored its own colour class. */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
-body {
-  background: var(--color-page);
-  color: var(--color-muted);
-  font-family: var(--font-sans);
-  line-height: 1.65;
-  font-size: 1rem;
+  body {
+    background: var(--color-page);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    font-size: 1rem;
+  }
+
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-accent-strong); }
+
+  h1, h2 {
+    font-family: var(--font-serif);
+    color: var(--color-ink);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  h3, h4 {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-sans);
-  color: var(--color-ink);
-  line-height: 1.25;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
+/* Numbers are data: line them up and keep them out of the prose face. */
+.tabular { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
-a { color: var(--color-teal); text-decoration: none; }
-a:hover { color: var(--color-teal-dark); }
-
+/* Buttons carry no radius: the direction is plaster and stone, not plastic. */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-teal);
-  color: #fff !important;
+  background: var(--color-accent);
+  color: var(--color-cream) !important;
   font-weight: 600;
-  border-radius: 999px;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 1px 2px rgba(31, 36, 33, 0.08);
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease;
 }
 .btn-primary:hover {
-  background: var(--color-teal-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(44, 107, 98, 0.18);
-  color: #fff !important;
+  background: var(--color-accent-strong);
+  color: var(--color-cream) !important;
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-surface);
+  background: transparent;
   color: var(--color-ink) !important;
   font-weight: 600;
-  border-radius: 999px;
+  border-radius: 2px;
   border: 1px solid var(--color-border);
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
 .btn-secondary:hover {
   background: var(--color-surface-muted);
-  border-color: #d6d3d1;
+  border-color: var(--color-ink);
   color: var(--color-ink) !important;
+}
+
+/* On the cenote ground the primary button is brass with deep text — the one
+ * place the palette raises its voice. 6.3:1 either way round. */
+.on-deep .btn-primary,
+.btn-primary--brass {
+  background: var(--color-brass-light);
+  color: var(--color-deep) !important;
+}
+.on-deep .btn-primary:hover,
+.btn-primary--brass:hover {
+  background: #e3b76c;
+  color: var(--color-deep) !important;
+}
+.on-deep .btn-secondary,
+.btn-secondary--onDeep {
+  color: var(--color-cream) !important;
+  border-color: var(--color-deep-line);
+  background: transparent;
+}
+.on-deep .btn-secondary:hover,
+.btn-secondary--onDeep:hover {
+  background: var(--color-deep-2);
+  border-color: var(--color-cream-dim);
+  color: var(--color-cream) !important;
 }
 
 .badge-pill {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-teal);
-  background: var(--color-teal-light);
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  padding: 0.28rem 0.55rem;
+  border-radius: 2px;
 }
 
 .card-icon {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 10px;
-  background: var(--color-teal-light);
-  color: var(--color-teal);
+  border-radius: 2px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,9 +170,9 @@ a:hover { color: var(--color-teal-dark); }
 input:not([type="checkbox"]):not([type="radio"]), select, textarea {
   width: 100%;
   border: 1px solid var(--color-border);
-  border-radius: 0.625rem;
-  padding: 0.65rem 0.85rem;
-  background: #fff;
+  border-radius: 2px;
+  padding: 0.7rem 0.85rem;
+  background: var(--color-surface);
   font-size: 0.95rem;
   font-family: var(--font-sans);
   color: var(--color-ink);
@@ -114,14 +184,14 @@ input[type="radio"] {
   min-width: 1.125rem;
   padding: 0;
   flex-shrink: 0;
-  accent-color: var(--color-teal);
+  accent-color: var(--color-accent);
   cursor: pointer;
 }
 input:not([type="checkbox"]):not([type="radio"]):focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid rgba(15, 118, 110, 0.25);
-  border-color: var(--color-teal);
+  outline: 2px solid rgb(23 94 92 / 35%);
+  border-color: var(--color-accent);
 }
 
 .lead-form-consent {
@@ -152,7 +222,7 @@ textarea:focus {
   margin: 0;
   padding: 0.75rem 0.9rem;
   list-style: none;
-  border-radius: 0.75rem;
+  border-radius: 2px;
   background: var(--color-surface-muted);
   border: 1px solid var(--color-border);
   line-height: 1.5;
@@ -165,7 +235,7 @@ textarea:focus {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-teal);
+  color: var(--color-brass);
   font-weight: 700;
 }
 
@@ -223,8 +293,8 @@ textarea:focus {
 }
 
 .prose { max-width: 72ch; }
-.prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.35rem; }
-.prose h3 { margin-top: 1.75rem; margin-bottom: 0.75rem; font-size: 1.1rem; }
+.prose h2 { margin-top: 2.75rem; margin-bottom: 1rem; font-size: 1.7rem; }
+.prose h3 { margin-top: 1.85rem; margin-bottom: 0.75rem; font-size: 1.08rem; }
 .prose p { margin-bottom: 1.1rem; }
 .prose ul, .prose ol { margin: 1rem 0 1.25rem 1.25rem; }
 .prose li { margin-bottom: 0.4rem; }
@@ -248,11 +318,11 @@ textarea:focus {
   .prose td:first-child { min-width: 7rem; }
 }
 .prose blockquote {
-  border-left: 3px solid var(--color-teal);
-  padding: 0.75rem 1rem;
+  border-left: 2px solid var(--color-brass);
+  padding: 0.75rem 1.1rem;
   margin: 1.5rem 0;
-  background: #fff;
-  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--color-surface);
+  border-radius: 0;
   font-size: 0.95rem;
 }
 
@@ -288,15 +358,13 @@ main {
 .surface-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 14px;
-  box-shadow: 0 1px 2px rgba(31, 36, 33, 0.03);
+  border-radius: 2px;
 }
 .surface-card.is-link {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .surface-card.is-link:hover {
-  border-color: var(--color-teal);
-  box-shadow: 0 8px 24px rgba(31, 36, 33, 0.07);
+  border-color: var(--color-brass);
   transform: translateY(-2px);
 }
 
@@ -336,13 +404,18 @@ main {
   flex: 1;
 }
 .content-card__badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-muted);
 }
 .content-card__title {
-  font-size: 1.05rem;
-  line-height: 1.35;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.18rem;
+  line-height: 1.25;
   color: var(--color-ink);
   margin: 0;
 }
@@ -361,120 +434,231 @@ main {
   margin: 0.25rem 0 0;
 }
 .content-card__meta--accent {
-  color: var(--color-teal);
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--color-brass);
+  font-variant-numeric: tabular-nums;
 }
 
-.hero-visual {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.25rem;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 12px 40px rgba(31, 36, 33, 0.1);
+/* ──────────────────────────────────────────────────────────────
+   Hero — a dark band of type, then the photograph full width beneath it.
+
+   The first shape of this hero put the picture in a column beside the
+   copy. Measured, that column came out 922x791 at 1440 and 655x740 at
+   1024: a square, then a portrait. Every 16:9 frame in the corpus lost
+   half its width to it, and the flat-colour curtain then covered most
+   of what was left — so whatever photograph went in, the visitor saw a
+   wall and some planting, never a building. The picture is the subject
+   here, so it gets a window shaped like the pictures we actually have.
+
+   The curtain survives as the direction intended it: flat cenote colour
+   falling from the band onto the top of the photograph, so the two read
+   as one surface. Type still never sits on the photograph — only the
+   plate that names the building in it.
+   ────────────────────────────────────────────────────────────── */
+.hero-band {
+  background: var(--color-deep);
+  color: var(--color-cream);
 }
-.hero-visual img {
+.hero-band__inner {
+  padding-block: clamp(3.25rem, 7vw, 5.5rem) clamp(2.75rem, 5vw, 4rem);
+}
+.hero-band__copy { max-width: 40rem; }
+.hero-band__aside { max-width: 34rem; }
+
+@media (min-width: 1000px) {
+  .hero-band__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+    column-gap: clamp(2.5rem, 5vw, 4.5rem);
+    align-items: end;
+  }
+  .hero-band__aside { padding-bottom: 0.4rem; }
+  .hero-band__rule { margin-bottom: 0; }
+}
+
+.hero-band__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brass-light);
+  margin: 0 0 1.35rem;
+}
+.hero-band h1 {
+  color: var(--color-cream);
+  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  line-height: 1.02;
+  margin: 0;
+  max-width: 15ch;
+}
+.hero-band__rule {
+  width: 4.5rem;
+  height: 1px;
+  background: var(--color-brass-light);
+  margin: 1.7rem 0 1.4rem;
+}
+.hero-band__deck {
+  color: var(--color-cream-dim);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.hero-band__acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.1rem;
+}
+.hero-band__acts .btn-primary,
+.hero-band__acts .btn-secondary { padding: 0.85rem 1.6rem; }
+
+/* Corpus counts, set as data rather than as decoration. */
+.hero-band__rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2.25rem;
+}
+.hero-band__chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--color-cream-dim);
+  border: 1px solid var(--color-deep-line);
+  padding: 0.45rem 0.72rem;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.hero-band__chip:hover { border-color: var(--color-brass-light); color: var(--color-cream); }
+.hero-band__chip b { color: var(--color-cream); font-weight: 500; }
+
+/* The photograph. Wide, because every usable frame in the corpus is wide. */
+.hero-photo {
+  position: relative;
+  margin: 0;
+  background: var(--color-deep-2);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+@media (min-width: 900px) { .hero-photo { aspect-ratio: 21 / 9; } }
+@media (min-width: 1600px) { .hero-photo { aspect-ratio: 24 / 9; } }
+.hero-photo > img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  min-height: 280px;
 }
-.hero-visual__overlay {
+/* The curtain falls from the band onto the picture; the foot darkens
+ * just enough to carry the plate. */
+.hero-photo__fall {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(31, 36, 33, 0.55) 100%);
   pointer-events: none;
+  background:
+    linear-gradient(180deg, rgb(7 38 42) 0%, rgb(7 38 42 / 34%) 12%, rgb(7 38 42 / 0%) 30%),
+    linear-gradient(0deg, rgb(7 38 42 / 74%) 0%, rgb(7 38 42 / 12%) 30%, rgb(7 38 42 / 0%) 48%);
 }
-.hero-visual__caption {
+.hero-photo__plate-wrap {
   position: absolute;
-  left: 1.25rem;
-  right: 1.25rem;
-  bottom: 6.5rem;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  inset: auto 0 0 0;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
 }
 
-.hero-project-card {
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: #fff;
-  border-radius: 12px;
-  padding: 0.9rem 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+/* The plate names the building in the photograph, so the picture is
+ * evidence rather than mood. */
+.hero-plate {
+  display: block;
+  width: fit-content;
+  max-width: min(26rem, 100%);
+  background: rgb(7 38 42 / 88%);
+  border: 1px solid var(--color-deep-line);
+  padding: 0.95rem 1.15rem;
+  backdrop-filter: blur(3px);
+  transition: border-color 0.2s ease;
 }
-
-.hero-project-card__copy {
-  flex: 1;
-  min-width: 0;
-}
-
-.hero-project-card__eyebrow {
-  margin: 0 0 0.2rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.hero-plate:hover { border-color: var(--color-brass-light); }
+.hero-plate__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--color-brass-light);
+  margin: 0 0 0.3rem;
 }
-
-.hero-project-card__title {
-  margin: 0 0 0.15rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hero-project-card__meta {
+.hero-plate__title {
   margin: 0;
-  font-size: 0.75rem;
-  color: var(--color-muted);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.22rem;
+  line-height: 1.2;
+  color: var(--color-cream);
+}
+.hero-plate__meta {
+  margin: 0.3rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-cream-dim);
+  font-variant-numeric: tabular-nums;
 }
 
-.hero-project-card__cta {
-  flex-shrink: 0;
-  background: var(--color-brand);
-  color: #fff !important;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.55rem 0.9rem;
-  border-radius: 8px;
-  text-decoration: none;
-  white-space: nowrap;
+/* Sections that run on the cenote ground rather than the limestone one. */
+.section-deep {
+  background: var(--color-deep);
+  color: var(--color-cream-dim);
 }
+.section-deep h2, .section-deep h3 { color: var(--color-cream); }
 
-@media (max-width: 640px) {
-  .hero-visual__caption {
-    display: none;
-  }
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--color-deep-line);
+}
+@media (min-width: 768px) { .stat-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.stat-strip > div {
+  padding: 1.6rem 1.25rem;
+  border-bottom: 1px solid var(--color-deep-line);
+  border-right: 1px solid var(--color-deep-line);
+}
+.stat-strip > div:last-child { border-right: 0; }
+@media (min-width: 768px) { .stat-strip > div { border-bottom: 0; } }
+.stat-strip strong {
+  display: block;
+  font-weight: 500;
+  font-size: 1.75rem;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--color-cream);
+  font-variant-numeric: tabular-nums;
+}
+.stat-strip span {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-cream-dim);
 }
 
 .stat-pill {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 2px;
   padding: 1rem 1.25rem;
-  text-align: center;
 }
 .stat-pill strong {
   display: block;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.4rem;
   color: var(--color-ink);
   line-height: 1.2;
+  font-variant-numeric: tabular-nums;
 }
-.stat-pill span {
-  font-size: 0.8rem;
-  color: var(--color-muted);
-}
+.stat-pill span { font-size: 0.8rem; color: var(--color-muted); }
+
+
 @media (min-width: 768px) {
   .section { padding-top: 5.5rem; padding-bottom: 5.5rem; }
 }
@@ -483,10 +667,13 @@ main {
 }
 
 .link-arrow {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-teal);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brass);
 }
+.link-arrow:hover { color: var(--color-accent-strong); }
 
 /* Honeypot: present in the DOM for bots, unreachable for people and screen readers. */
 .lead-form-hp {

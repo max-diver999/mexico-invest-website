@@ -47,7 +47,7 @@ function parseCloudinaryUrl(src: string) {
   };
 }
 
-function cloudinaryDeliveryUrl(src: string, transform: string): string {
+export function cloudinaryUrl(src: string, transform: string): string {
   const parsed = parseCloudinaryUrl(src);
   if (!parsed) return src;
   return `${CLOUDINARY_BASE}/${parsed.cloud}/image/upload/${transform}/${parsed.deliveryPath}`;
@@ -59,7 +59,7 @@ export function responsiveCloudinary(src: string) {
 
   const intrinsic = (dimensions as Record<string, ImageDimensions>)[parsed.publicId];
   const imageUrl = (width: number) =>
-    cloudinaryDeliveryUrl(src, `w_${width},q_auto:eco,f_auto`);
+    cloudinaryUrl(src, `w_${width},q_auto:eco,f_auto`);
 
   return {
     src: imageUrl(ARTICLE_WIDTHS[ARTICLE_WIDTHS.length - 1]),

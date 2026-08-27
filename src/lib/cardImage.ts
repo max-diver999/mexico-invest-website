@@ -1,17 +1,25 @@
 /**
- * Card thumbnail URLs — Cloudinary crop when available; external CDN as-is.
+ * Card and hero thumbnail URLs — Cloudinary crop when available; external CDN as-is.
+ *
+ * The URL surgery lives in `cloudinary.ts`, which knows how to drop a transformation
+ * segment the corpus already baked into a URL (`.../upload/w_1200,q_85,f_webp/v1/...`).
+ * Inserting a second transform in front of the first chains them: Cloudinary crops to
+ * our width and then upscales back to theirs, and the image arrives soft.
  */
-export function getCardImageUrl(src: string | undefined, size: 'card' | 'hero' = 'card'): string {
+import { cloudinaryUrl } from './cloudinary';
+
+const SIZES = {
+  card: 'w_800,h_450,c_fill,q_auto,f_auto',
+  hero: 'w_1600,h_640,c_fill,q_auto,f_auto',
+  /** Hero photograph: a wide band, matched to the ~16:9 frames the corpus holds. */
+  panel: 'w_1800,h_760,c_fill,q_auto,f_auto',
+} as const;
+
+export type CardImageSize = keyof typeof SIZES;
+
+export function getCardImageUrl(src: string | undefined, size: CardImageSize = 'card'): string {
   if (!src?.trim()) return '';
-
-  const trimmed = src.trim();
-
-  if (trimmed.includes('res.cloudinary.com') && trimmed.includes('/upload/')) {
-    const dims = size === 'hero' ? 'w_1400,h_560,c_fill,q_auto,f_auto' : 'w_640,h_360,c_fill,q_auto,f_auto';
-    return trimmed.replace(/\/upload\/(?:v\d+\/)?/, `/upload/${dims}/`);
-  }
-
-  return trimmed;
+  return cloudinaryUrl(src.trim(), SIZES[size]);
 }
 
 export function formatAreaLabel(area?: string): string {
