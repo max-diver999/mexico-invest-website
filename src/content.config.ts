@@ -25,6 +25,12 @@ const articleSchema = z.object({
    * whether a number baked into an image is ours or the seller's.
    */
   heroCredit: z.string().optional(),
+  /**
+   * Set when the page still shares its hero with another page because it owns
+   * no unique frame of its own. Reported by the corpus gate as a debt for the
+   * photo wave, not as a defect to paper over.
+   */
+  heroShared: z.boolean().optional(),
   /** Descriptive alt for the hero. Falls back to a phrase built from title + area. */
   heroAlt: z.string().optional(),
   readingTime: z.number().optional(),

@@ -90,6 +90,7 @@ const SEVERITY = {
   'thin-content': 8,
   'missing-hero': 6,
   'hero-pending': 0,
+  'hero-shared': 0,
   'bad-title-length': 6,
   'bad-description-length': 6,
   'missing-tldr': 6,
@@ -201,6 +202,7 @@ function analyze(file, index) {
     issues.push('mdx-risk');
   }
   if (DRAFT_MARKERS_RE.test(file.raw)) issues.push('draft-marker');
+  if (fm.heroShared) issues.push('hero-shared');
   if (!fm.heroImage && !light) {
     // heroPending marks a hero removed on purpose: the source art was broken
     // and no honest replacement exists yet. Still reported, never blocking.
