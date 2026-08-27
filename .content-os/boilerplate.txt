@@ -1,0 +1,13 @@
+# Text that is deliberately identical across articles.
+#
+# The duplication detector treats every repeated passage as evidence of
+# mechanical writing, which is what caught the July filler. Legal disclaimers
+# and standing method notes are legitimately repeated, so they are declared
+# here instead of being silently exempted. One line per sentence, matched after
+# normalisation. Keep this file short: every line you add is a passage the
+# duplication detector stops looking at, and a reviewer should be able to read
+# the whole list in under a minute.
+This guide is for information only and does not constitute investment, tax, or legal advice.
+Yields are MODELED and directional.
+Verify current transfer duty, costs, and rules with qualified South African professionals before purchase.
+All yields on this site are modelled and directional.

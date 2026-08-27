@@ -1,0 +1,5 @@
+{
+  "_readme": "Claims about jurisdictions outside Mexico that nobody on this project monitors: US tax practice (FBAR, FEIE, SDIRA rules), UK HMRC treatment, EU member-state regimes (Modelo 720, IFI, IVIE, box 3), Canadian T1135 and provincial health rules. These sit apart from facts.json because that registry is keyed by the bare figure and feeds GEO scoring, while numbers like 25% mean something different on unrelated pages. Each claim carries a reviewBy date; npm run facts:review fails once one is overdue and reports claims whose listed files no longer exist. Reviewing means re-reading the primary source and either moving asOf and reviewBy forward or correcting every file listed. Populated in wave R0.",
+  "reviewIntervalMonths": 6,
+  "claims": []
+}
