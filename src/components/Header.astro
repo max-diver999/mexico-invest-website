@@ -15,7 +15,7 @@ const nav = [
 const path = Astro.url.pathname;
 const isCurrent = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
-<header class="sticky top-0 z-50 border-b border-[var(--color-deep-line)] bg-[rgb(7_38_42_/_0.92)] backdrop-blur-md">
+<header class="sticky top-0 z-50 border-b border-[var(--color-deep-line)] bg-[var(--color-deep)]">
   <div class="site-container flex items-center justify-between gap-4 py-4">
     <a href="/" class="flex items-center gap-2 no-underline">
       <img src="/favicon.svg?v=3" alt="" data-decorative width="32" height="32" class="rounded-[2px]" />
@@ -88,11 +88,15 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
   }
   .site-nav__mobile {
     position: fixed;
-    inset: 73px 0 0;
+    top: 73px;
+    left: 0;
+    right: 0;
+    height: calc(100dvh - 73px);
     z-index: 60;
     background: var(--color-deep);
     overflow-y: auto;
     overscroll-behavior: contain;
+    padding-inline: 0;
   }
   .site-nav__mobile ul {
     list-style: none;
@@ -114,7 +118,9 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     text-decoration: none;
   }
   .site-nav__mobile-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
     padding: 0.6rem 0.25rem;
     font-size: 0.95rem;
     font-weight: 500;

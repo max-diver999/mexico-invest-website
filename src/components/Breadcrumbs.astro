@@ -31,15 +31,15 @@ const { crumbs } = Astro.props;
     font-size: 0.8rem;
   }
   .breadcrumbs__item { display: inline-flex; align-items: center; gap: 0.4rem; }
-  .breadcrumbs__link { color: var(--color-muted, #6b7280); text-decoration: none; }
-  .breadcrumbs__link:hover { color: var(--color-primary, #2c6b62); text-decoration: underline; }
+  .breadcrumbs__link { color: var(--color-muted); text-decoration: none; }
+  .breadcrumbs__link:hover { color: var(--color-accent); text-decoration: underline; }
   .breadcrumbs__current {
-    color: var(--color-muted, #6b7280);
+    color: var(--color-muted);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 22ch;
   }
   @media (min-width: 640px) { .breadcrumbs__current { max-width: 48ch; } }
-  .breadcrumbs__sep { color: var(--color-border, #d6d3d1); }
+  .breadcrumbs__sep { color: var(--color-border); }
 </style>

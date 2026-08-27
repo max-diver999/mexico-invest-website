@@ -32,12 +32,12 @@ const { heading, cards, note } = Astro.props;
   .related-links__heading {
     font-size: 1.35rem;
     margin: 0 0 0.35rem;
-    color: var(--color-ink, #1f2421);
+    color: var(--color-ink);
   }
   .related-links__note {
     margin: 0 0 1.25rem;
     font-size: 0.9rem;
-    color: var(--color-muted, #6b7280);
+    color: var(--color-muted);
   }
   .related-links__grid {
     list-style: none;
@@ -54,14 +54,14 @@ const { heading, cards, note } = Astro.props;
     display: block;
     height: 100%;
     padding: 0.9rem 1rem;
-    border: 1px solid var(--color-border, #e7e5e4);
+    border: 1px solid var(--color-border);
     border-radius: 10px;
-    background: var(--color-surface, #faf9f7);
+    background: var(--color-surface);
     text-decoration: none;
     transition: border-color 0.15s ease, transform 0.15s ease;
   }
   .related-links__link:hover {
-    border-color: var(--color-primary, #2c6b62);
+    border-color: var(--color-accent);
     transform: translateY(-1px);
   }
   .related-links__badge {
@@ -70,7 +70,7 @@ const { heading, cards, note } = Astro.props;
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: var(--color-primary, #2c6b62);
+    color: var(--color-accent);
     margin-bottom: 0.35rem;
   }
   .related-links__title {
@@ -78,13 +78,13 @@ const { heading, cards, note } = Astro.props;
     font-weight: 600;
     font-size: 0.95rem;
     line-height: 1.35;
-    color: var(--color-ink, #1f2421);
+    color: var(--color-ink);
     margin-bottom: 0.3rem;
   }
   .related-links__desc {
     display: block;
     font-size: 0.82rem;
     line-height: 1.45;
-    color: var(--color-muted, #6b7280);
+    color: var(--color-muted);
   }
 </style>

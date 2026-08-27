@@ -111,5 +111,32 @@ const allSchemas = [orgSchema, ...schemas];
   <WhatsAppFloat />
   <CurrencyEngine />
   <WhatsAppIntentTracker />
+  <script is:inline>
+    // Wide tables scroll. Tell the reader which way, and stop saying it once
+    // they get there. Runs once at load and on resize; cheap either way.
+    (function () {
+      var mark = function (el) {
+        var max = el.scrollWidth - el.clientWidth;
+        if (max <= 2) { el.removeAttribute('data-scrollable'); el.removeAttribute('data-at'); return; }
+        el.setAttribute('data-scrollable', 'true');
+        el.setAttribute('data-at', el.scrollLeft <= 1 ? 'start' : el.scrollLeft >= max - 1 ? 'end' : 'middle');
+      };
+      var init = function () {
+        var all = document.querySelectorAll('.table-scroll');
+        for (var i = 0; i < all.length; i++) {
+          var el = all[i];
+          mark(el);
+          if (!el.dataset.bound) {
+            el.dataset.bound = '1';
+            el.addEventListener('scroll', function () { mark(this); }, { passive: true });
+          }
+        }
+      };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+      addEventListener('resize', init, { passive: true });
+    })();
+  </script>
+
 </body>
 </html>

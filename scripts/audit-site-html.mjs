@@ -71,7 +71,7 @@ const pages = files.map((f) => {
 
 const routes = new Set(pages.map((p) => p.url));
 /** Non-page assets that are legitimate link targets. */
-const ASSETS = new Set(['/llms.txt', '/llms-full.txt', '/robots.txt', '/sitemap-index.xml', '/site.webmanifest', '/og-default.png', '/favicon.svg', '/design-preview.html']);
+const ASSETS = new Set(['/llms.txt', '/llms-full.txt', '/robots.txt', '/sitemap-index.xml', '/site.webmanifest', '/og-default.png', '/favicon.svg']);
 
 const indexable = (p) => !/noindex/.test(p.robots || '');
 

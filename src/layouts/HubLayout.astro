@@ -201,7 +201,7 @@ const anchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-'
     font-size: 0.85rem;
   }
   .hub-nav a { color: var(--color-muted); text-decoration: none; }
-  .hub-nav a:hover { color: var(--color-primary); text-decoration: underline; }
+  .hub-nav a:hover { color: var(--color-accent); text-decoration: underline; }
 
   .hub-search {
     max-width: 36rem;
@@ -251,14 +251,14 @@ const anchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-'
     text-decoration: none;
     transition: border-color 0.15s ease, transform 0.15s ease;
   }
-  .hub-card:hover { border-color: var(--color-primary); transform: translateY(-1px); }
+  .hub-card:hover { border-color: var(--color-accent); transform: translateY(-1px); }
   .hub-card__badge {
     display: inline-block;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: var(--color-primary);
+    color: var(--color-accent);
     margin-bottom: 0.35rem;
   }
   .hub-card__title {

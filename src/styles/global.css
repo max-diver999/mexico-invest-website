@@ -54,7 +54,11 @@
     font-family: var(--font-sans);
     line-height: 1.65;
     font-size: 1rem;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
   }
+  body > main { flex: 1 0 auto; }
 
   a { color: var(--color-accent); text-decoration: none; }
   a:hover { color: var(--color-accent-strong); }
@@ -74,6 +78,16 @@
     font-weight: 600;
     letter-spacing: -0.01em;
   }
+
+  /* Preflight resets every heading to inherit, so a heading with no size utility
+   * renders at body size. Seven utility pages shipped their <h1> that way — the
+   * page title was the same 16px as the paragraph under it. A base scale means a
+   * bare heading is never smaller than the text it introduces; any template that
+   * wants another size still wins with its own utility. */
+  h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+  h2 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+  h3 { font-size: 1.15rem; }
+  h4 { font-size: 1rem; }
 }
 
 /* Numbers are data: line them up and keep them out of the prose face. */
@@ -310,13 +324,89 @@ textarea:focus {
   font-size: 0.92rem;
 }
 .prose th, .prose td { border: 1px solid var(--color-border); padding: 0.55rem 0.75rem; text-align: left; }
+.prose td { background: var(--color-page); }
 .prose th { background: var(--color-surface-muted); font-weight: 600; color: var(--color-ink); }
+/* Tables scroll inside this wrapper (see scripts/rehype-table-scroll.mjs). A
+ * three-column comparison does not fit 390px, and a static view of
+ * "Factor | Akumal | Tul…" reads as data lost rather than data offscreen. The
+ * fades cannot be painted on the table itself — they would sit under the opaque
+ * cells — so they ride on the wrapper, and a few lines of script in BaseLayout
+ * flag which edge still has content behind it. */
+.table-scroll {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+.table-scroll[data-scrollable='true']::before,
+.table-scroll[data-scrollable='true']::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 26px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 1;
+}
+.table-scroll[data-scrollable='true']::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(18 41 43 / 20%), rgb(18 41 43 / 0%));
+}
+.table-scroll[data-scrollable='true']::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(18 41 43 / 20%), rgb(18 41 43 / 0%));
+}
+.table-scroll[data-at='start']::after,
+.table-scroll[data-at='middle']::after { opacity: 1; }
+.table-scroll[data-at='middle']::before,
+.table-scroll[data-at='end']::before { opacity: 1; }
+.table-scroll:focus-visible { outline: 2px solid var(--color-brass-light); outline-offset: 2px; }
+.prose .table-scroll > table { margin: 0; display: table; width: max-content; min-width: 100%; overflow: visible; }
 @media (max-width: 768px) {
   .prose th,
   .prose td { min-width: 8.5rem; }
   .prose th:first-child,
   .prose td:first-child { min-width: 7rem; }
 }
+.prose pre {
+  padding: 1rem 1.15rem;
+  margin: 1.5rem 0;
+  border-radius: 2px;
+  overflow-x: auto;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+.prose :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--color-surface-muted);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+/* Inline article images arrive as bare <img> in a paragraph, so they inherit the
+ * paragraph's bottom margin only. Two stacked photos ended up 9px apart and read
+ * as one joined block. */
+.prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.75rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+}
+.prose p > img { margin-block: 1.75rem; }
+.prose figure { margin: 1.75rem 0; }
+.prose figcaption {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+
 .prose blockquote {
   border-left: 2px solid var(--color-brass);
   padding: 0.75rem 1.1rem;
@@ -523,12 +613,15 @@ main {
   margin-top: 2.25rem;
 }
 .hero-band__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   color: var(--color-cream-dim);
   border: 1px solid var(--color-deep-line);
-  padding: 0.45rem 0.72rem;
+  padding: 0.45rem 0.85rem;
   font-variant-numeric: tabular-nums;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
@@ -674,6 +767,34 @@ main {
   color: var(--color-brass);
 }
 .link-arrow:hover { color: var(--color-accent-strong); }
+
+/* Keyboard focus. The UA default is a near-black 1px ring: fine on limestone,
+ * invisible on the cenote ground the header and hero now use. One ring for both,
+ * declared unlayered so no utility can drop it. */
+:focus-visible {
+  outline: 2px solid var(--color-brass-light);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+.on-deep :focus-visible,
+.hero-band :focus-visible,
+header :focus-visible,
+footer :focus-visible {
+  outline-color: var(--color-brass-light);
+}
+:where(input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 /* Honeypot: present in the DOM for bots, unreachable for people and screen readers. */
 .lead-form-hp {
