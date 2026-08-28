@@ -57,7 +57,7 @@ function rateLimited(key: string): boolean {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
 export function checkLead(body: Record<string, any>, request: Request): SpamVerdict {
-  // 1. Honeypot — a field hidden from humans, filled by anything that parses the form.
+  // 1. Honeypot: a field hidden from humans, filled by anything that parses the form.
   if (typeof body.company === 'string' && body.company.trim() !== '') {
     return { ok: false, reason: 'honeypot' };
   }

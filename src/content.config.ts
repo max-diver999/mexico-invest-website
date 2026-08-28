@@ -12,7 +12,7 @@ const articleSchema = z.object({
   heroImage: z.string().optional(),
   /**
    * Set when the page deliberately has no hero because the only art available
-   * was broken — an 11x629 sliver, a blank plate, or a frame of somewhere else.
+   * was broken: an 11x629 sliver, a blank plate, or a frame of somewhere else.
    * A page with no picture is honest; one with a broken picture is not. The
    * corpus gate treats these as pending rather than as a lost hero, so they stay
    * visible as work without failing the build.

@@ -2,8 +2,8 @@
  * Topical grouping for the /guides/ hub.
  *
  * 132 guides in one flat grid is 132 links diluting each other and no signal about
- * what the site actually covers. These clusters are how a buyer's questions arrive —
- * "can I even own this", "what will it cost me", "what do I owe, and to whom" — not
+ * what the site actually covers. These clusters are how a buyer's questions arrive:
+ * "can I even own this", "what will it cost me", "what do I owe, and to whom", not
  * how the files happen to be named.
  *
  * Any slug not listed here falls into `More research`, so a new guide never

@@ -2,10 +2,10 @@
  * Resolve the internal links a page should offer.
  *
  * Two independent layers:
- *  1. `resolveRelatedSlugs` — the hand-curated `relatedSlugs` frontmatter. All 337
+ *  1. `resolveRelatedSlugs`, the hand-curated `relatedSlugs` frontmatter. All 337
  *     files carry it, 1,746 entries in total, none of them broken, and until now
  *     nothing rendered it.
- *  2. `resolveRelatedEntities` — deterministic cross-collection siblings resolved
+ *  2. `resolveRelatedEntities`, deterministic cross-collection siblings resolved
  *     from the geo taxonomy (project <-> area <-> developer <-> market), which body
  *     copy never links because a writer only links what they happened to mention.
  */
@@ -84,7 +84,7 @@ function toCard(e: IndexedEntry): LinkCard {
 }
 
 /**
- * Layer 1 — the curated `relatedSlugs`. Slugs are unique corpus-wide with four
+ * Layer 1: the curated `relatedSlugs`. Slugs are unique corpus-wide with four
  * exceptions (holistika-tulum, tankah-bay, tulum-country-club, vidanta-nuevo-vallarta
  * exist in two collections each), so a same-collection match wins before a global one.
  */
@@ -124,7 +124,7 @@ function pick(
 }
 
 /**
- * Layer 2 — cross-collection siblings from the geo taxonomy. This is what closes the
+ * Layer 2: cross-collection siblings from the geo taxonomy. This is what closes the
  * project <-> area <-> developer gaps, and it is why the orphaned project and area
  * pages stop being orphans.
  */

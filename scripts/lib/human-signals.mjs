@@ -2,18 +2,24 @@
  * Shared human-readability metrics (audit + validate + fix).
  */
 
+/*
+ * The em dash is banned outright on this site, not rationed. It used to be a
+ * rate limit — eight per five hundred words — which is why the corpus kept
+ * drifting back: every writer stayed just under the ceiling and the total crept
+ * up again. Zero is the only threshold that does not need policing.
+ */
 export const EM_DASH_LIMIT = {
-  guides: 8,
-  gajdy: 8,
-  comparisons: 8,
-  sravneniya: 8,
-  areas: 8,
-  rajony: 8,
-  projects: 9,
-  proekty: 9,
-  news: 10,
-  novosti: 10,
-  default: 8,
+  guides: 0,
+  gajdy: 0,
+  comparisons: 0,
+  sravneniya: 0,
+  areas: 0,
+  rajony: 0,
+  projects: 0,
+  proekty: 0,
+  news: 0,
+  novosti: 0,
+  default: 0,
 };
 
 export const SCENARIO_SPAM_MIN = 4;
@@ -91,7 +97,38 @@ export function humanizeBodyLines(body, { includeTables = true } = {}) {
     s = s.replace(/^Scenario ([A-D]) — /, 'Scenario $1: ');
     s = s.replace(/^(\d+)\. ([^—\n]{1,120}) — /, '$1. $2: ');
 
+    // A lone dash in a table cell means "no value", so it becomes words.
+    s = s.replace(/\|\s*—\s*\|/g, '| n/a |');
+    s = s.replace(/\|\s*—\s*$/g, '| n/a');
+
     const subs = [
+      /*
+       * An independent clause after the dash needs a semicolon; a comma there
+       * is a splice, which is worse writing than the dash it replaced.
+       */
+      [/ — it /g, '; it '],
+      [/ — this /g, '; this '],
+      [/ — that is /g, '; that is '],
+      [/ — they /g, '; they '],
+      [/ — there /g, '; there '],
+      [/ — we /g, '; we '],
+      [/ — you /g, '; you '],
+      [/ — its /g, '; its '],
+      [/ — their /g, '; their '],
+      [/ — verify /g, '; verify '],
+      [/ — confirm /g, '; confirm '],
+      [/ — check /g, '; check '],
+      [/ — ask /g, '; ask '],
+      [/ — request /g, '; request '],
+      [/ — treat /g, '; treat '],
+      [/ — assume /g, '; assume '],
+      [/ — read /g, '; read '],
+      [/ — expect /g, '; expect '],
+      [/ — budget /g, '; budget '],
+      [/ — note /g, '; note '],
+      [/ — nothing /g, '; nothing '],
+      [/ — none /g, '; none '],
+      [/ — no one /g, '; no one '],
       [/ — not /g, ', not '],
       [/ — and /g, ', and '],
       [/ — or /g, ', or '],
@@ -157,8 +194,8 @@ export function humanizeBodyLines(body, { includeTables = true } = {}) {
       guard++;
     }
 
-    if ((s.match(/—/g) || []).length > 0 && !isTable) {
-      s = s.replace(/—/g, ', ');
+    if ((s.match(/—/g) || []).length > 0) {
+      s = s.replace(/\s*—\s*/g, ', ');
     }
 
     if (s !== before) changed++;

@@ -56,7 +56,7 @@ export function cloudinaryUrl(src: string, transform: string): string {
 /*
  * The article hero is a band: `w-full` against a capped height, which means the
  * browser crops it. Left to CSS the crop is centred, and on this corpus the
- * centre of a beach frame is sky — the reason heroes were arriving with the
+ * centre of a beach frame is sky, which is the reason heroes were arriving with the
  * horizon across the middle and the people cut off along the bottom edge.
  *
  * Two things fix that, and both are needed.
@@ -66,7 +66,7 @@ export function cloudinaryUrl(src: string, transform: string): string {
  * survives a crop that would otherwise keep the empty sky above them.
  *
  * The second is the band itself. A fifth of the hero assets in this corpus are
- * portrait or near-square — phone frames, 2422x2560 stills — and no gravity
+ * portrait or near-square (phone frames, 2422x2560 stills) and no gravity
  * rescues a 0.47 photograph forced into a 2.33 slot; it keeps a fifth of the
  * picture whichever fifth it picks. So the band is chosen per image from the
  * asset's own shape: cinematic where there is width to spend, progressively

@@ -15,15 +15,15 @@ export interface HubCard {
 
 export interface HubGroup {
   label: string;
-  /** One line saying what this group is for — the reason to have groups at all. */
+  /** One line saying what this group is for: the reason to have groups at all. */
   note?: string;
   cards: HubCard[];
 }
 
 interface Props {
-  /** <title> — carries the keyword */
+  /** <title>: carries the keyword */
   title: string;
-  /** <h1> — matches the title's keyword rather than being a bare section noun */
+  /** <h1>: matches the title's keyword rather than being a bare section noun */
   heading: string;
   description: string;
   /** Two to four paragraphs of hub copy that exist nowhere else on the site */

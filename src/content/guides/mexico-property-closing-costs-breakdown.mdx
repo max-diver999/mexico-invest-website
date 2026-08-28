@@ -36,6 +36,7 @@ faq:
   - question: "How do I get an accurate quote before offer?"
     answer: "Ask your attorney for a preliminary notario + ISAI estimate based on listing price and state. Final avalúo may shift ISAI slightly at closing."
 ---
+
 import TldrBlock from '../../components/TldrBlock.astro';
 import FaqBlock from '../../components/FaqBlock.astro';
 import CtaBox from '../../components/CtaBox.astro';
@@ -77,7 +78,7 @@ Reading this table by ticket size shows why closing costs are regressive at the 
 
 ## Scenario a: $200,000 Playa del Carmen 1br
 
-Playa's entry ticket makes the cleanest worked example. Closing on this unit costs about $15,000 — 7.5% on top — with the ISAI at $5,000 and the trust setup at $3,200 doing most of the damage, and the notario, attorney, registry and small items making up the rest. Every yield number you run afterwards should start from the $215,000 all-in figure, not the sticker.
+Playa's entry ticket makes the cleanest worked example. Closing on this unit costs about $15,000, 7.5% on top, with the ISAI at $5,000 and the trust setup at $3,200 doing most of the damage, and the notario, attorney, registry and small items making up the rest. Every yield number you run afterwards should start from the $215,000 all-in figure, not the sticker.
 
 | Line | Estimate USD |
 |---|---:|
@@ -157,7 +158,7 @@ Small tickets hit higher percentage, flat fees bite harder.
 
 ISAI (Impuesto Sobre Adquisición de Inmuebles) is the state acquisition tax calculated on declared purchase price or assessed value, whichever is higher, with rates varying by state schedule and potentially adjusted by notario appraisal results. Under-declaring purchase price to reduce ISAI creates expensive capital gains complications on future sale when ISR calculations use artificially low basis, proper CFDI documentation of full value prevents future tax problems.
 
-ISAI is the largest single closing line and the one most commonly misread. Rates run 2% to 4% depending on state, so on a $310,000 purchase the tax is $6,200 to $12,400, and the notario calculates it on the higher of the declared price, the cadastral value or an ordered appraisal — not simply on what you agreed to pay. Under-declaring to reduce it saves 2% to 4% of the hidden amount today and adds roughly ten times that to your ISR bill at sale, because the undeclared portion never enters your cost basis.
+ISAI is the largest single closing line and the one most commonly misread. Rates run 2% to 4% depending on state, so on a $310,000 purchase the tax is $6,200 to $12,400, and the notario calculates it on the higher of the declared price, the cadastral value or an ordered appraisal, not simply on what you agreed to pay. Under-declaring to reduce it saves 2% to 4% of the hidden amount today and adds roughly ten times that to your ISR bill at sale, because the undeclared portion never enters your cost basis.
 
 Impuesto Sobre Adquisición de Inmuebles, state transfer tax on property acquisitions.
 
@@ -239,7 +240,7 @@ Riviera Maya PM costs: [Property Management Costs](/guides/property-management-r
 
 ## Seller-side costs (for context)
 
-The seller pays the broker commission and their own ISR; you pay the acquisition tax, the notario, the registry and the trust. Knowing which is which matters because the commission is embedded in the asking price rather than added to your stack — which is part of why Mexican list prices carry negotiating room that US list prices do not.
+The seller pays the broker commission and their own ISR; you pay the acquisition tax, the notario, the registry and the trust. Knowing which is which matters because the commission is embedded in the asking price rather than added to your stack, which is part of why Mexican list prices carry negotiating room that US list prices do not.
 
 Sellers typically bear:
 
@@ -265,7 +266,7 @@ Whether financing any part of this stack is realistic for a non-resident is cove
 
 <CtaBox
   title="Want your closing stack priced before you offer?"
-  description="Send the target market, price band and whether the deal is coastal. We reply with the closing costs we would budget line by line for that specific purchase — ISAI at the right state rate, realistic trust and legal fees, and the all-in figure to underwrite from."
+  description="Send the target market, price band and whether the deal is coastal. We reply with the closing costs we would budget line by line for that specific purchase, ISAI at the right state rate, realistic trust and legal fees, and the all-in figure to underwrite from."
   buttonText="Price my closing costs →"
   href="/get-shortlist/"
 />
@@ -486,7 +487,7 @@ Small lines, but should appear on closing statement transparently.
 
 ## One-page buyer budget template
 
-The point of filling this in before the offer rather than after is that closing costs in Mexico are not a rounding error — they run 5% to 10% of the purchase price, and on a $300,000 property that is $15,000 to $30,000 that has to exist in cash on top of everything else. Buyers who discover that arithmetic at the notaría either delay the closing or empty the reserve they were going to furnish and operate the property with. Work through each line below with real numbers from your own quotes, not with the percentages, and the total is the figure your yield model should divide by:
+The point of filling this in before the offer rather than after is that closing costs in Mexico are not a rounding error; they run 5% to 10% of the purchase price, and on a $300,000 property that is $15,000 to $30,000 that has to exist in cash on top of everything else. Buyers who discover that arithmetic at the notaría either delay the closing or empty the reserve they were going to furnish and operate the property with. Work through each line below with real numbers from your own quotes, not with the percentages, and the total is the figure your yield model should divide by:
 
 | Bucket | Your deal USD |
 |---|---:|
@@ -514,10 +515,10 @@ Four checks sit adjacent to the closing stack itself: [USD/MXN exposure](/guides
 <FaqBlock items={[
   { question: "What percentage are closing costs in Mexico?", answer: "Foreign buyers should budget 5–10% above purchase price. A $300,000 condo typically requires $15,000–30,000 in combined taxes, notario, registry, fideicomiso, and legal fees. Sub-$200K purchases often land toward the top of the percentage range." },
   { question: "What is the biggest closing cost line?", answer: "ISAI state acquisition tax (often 2–4% of value) plus notario fees (about 1–1.5%) usually dominate. Fideicomiso setup ($2,500–4,000) is the largest flat fee in coastal restricted-zone purchases." },
-  { question: "Do sellers pay any closing costs in Mexico?", answer: "Sellers typically pay broker commission and their own capital gains (ISR) compliance. Buyers pay acquisition taxes, notario for buyer side, registry, trust setup, and their attorney. Confirm split in purchase contract — assumptions cause disputes." },
-  { question: "How much is ISAI in Quintana Roo?", answer: "Effective ISAI on mainstream Riviera Maya condos commonly falls in the 2–3% range on declared or assessed value — confirm at notario quote stage as state schedules update." },
-  { question: "Are closing costs tax-deductible?", answer: "US tax treatment varies — consult cross-border CPA. In Mexico, documented acquisition cost including certain fees affects ISR basis on future sale. CFDI invoices matter." },
-  { question: "Can I roll closing costs into the mortgage?", answer: "Rarely. Mexican loans if available usually finance purchase price only. Reserve closing cash separately — do not max purchase price with zero reserve." },
+  { question: "Do sellers pay any closing costs in Mexico?", answer: "Sellers typically pay broker commission and their own capital gains (ISR) compliance. Buyers pay acquisition taxes, notario for buyer side, registry, trust setup, and their attorney. Confirm split in purchase contract, assumptions cause disputes." },
+  { question: "How much is ISAI in Quintana Roo?", answer: "Effective ISAI on mainstream Riviera Maya condos commonly falls in the 2–3% range on declared or assessed value, confirm at notario quote stage as state schedules update." },
+  { question: "Are closing costs tax-deductible?", answer: "US tax treatment varies, consult cross-border CPA. In Mexico, documented acquisition cost including certain fees affects ISR basis on future sale. CFDI invoices matter." },
+  { question: "Can I roll closing costs into the mortgage?", answer: "Rarely. Mexican loans if available usually finance purchase price only. Reserve closing cash separately, do not max purchase price with zero reserve." },
   { question: "What surprises foreign buyers most?", answer: "Independent attorney fees, annual fideicomiso after setup, FX spread on peso fees, and ISR pain later if basis poorly documented at purchase." },
   { question: "How do I get an accurate quote before offer?", answer: "Ask your attorney for a preliminary notario + ISAI estimate based on listing price and state. Final avalúo may shift ISAI slightly at closing." }
 ]} />

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ──────────────────────────────────────────────────────────────
-   Chukum & Brass — Riviera Maya limestone, cenote water, brass.
+   Chukum & Brass: Riviera Maya limestone, cenote water, brass.
    Two grounds, not one: pages are limestone; the hero, the CTA
    blocks and the footer are cenote-deep. Every colour is declared
    for the ground it sits on, and the pairs below are the only
@@ -43,7 +43,7 @@
 }
 
 /* Element defaults belong in @layer base. Written unlayered they outrank every
- * Tailwind utility — `a { color: … }` was quietly beating `text-[var(--color-…)]`
+ * Tailwind utility: `a { color: … }` was quietly beating `text-[var(--color-…)]`
  * on every link in the site, which is why the nav ignored its own colour class. */
 @layer base {
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -80,7 +80,7 @@
   }
 
   /* Preflight resets every heading to inherit, so a heading with no size utility
-   * renders at body size. Seven utility pages shipped their <h1> that way — the
+   * renders at body size. Seven utility pages shipped their <h1> that way, and the
    * page title was the same 16px as the paragraph under it. A base scale means a
    * bare heading is never smaller than the text it introduces; any template that
    * wants another size still wins with its own utility. */
@@ -129,7 +129,7 @@
   color: var(--color-ink) !important;
 }
 
-/* On the cenote ground the primary button is brass with deep text — the one
+/* On the cenote ground the primary button is brass with deep text, the one
  * place the palette raises its voice. 6.3:1 either way round. */
 .on-deep .btn-primary,
 .btn-primary--brass {
@@ -329,8 +329,8 @@ textarea:focus {
 /* Tables scroll inside this wrapper (see scripts/rehype-table-scroll.mjs). A
  * three-column comparison does not fit 390px, and a static view of
  * "Factor | Akumal | Tul…" reads as data lost rather than data offscreen. The
- * fades cannot be painted on the table itself — they would sit under the opaque
- * cells — so they ride on the wrapper, and a few lines of script in BaseLayout
+ * fades cannot be painted on the table itself (they would sit under the opaque
+ * cells) so they ride on the wrapper, and a few lines of script in BaseLayout
  * flag which edge still has content behind it. */
 .table-scroll {
   position: relative;
@@ -409,7 +409,7 @@ textarea:focus {
 
 /* Image credits. A frame taken from a seller's brochure, a render of a building
  * that does not exist yet, or a picture of a different development all carry a
- * line under them saying so — the site's whole claim is that it is not the
+ * line under them saying so; the site's whole claim is that it is not the
  * developer's voice. */
 /* The article hero band. The ratio here must match the ratio Cloudinary was
  * asked to cut in `heroCloudinary`, or the browser crops the crop: 16:10 on
@@ -569,19 +569,19 @@ main {
 }
 
 /* ──────────────────────────────────────────────────────────────
-   Hero — a dark band of type, then the photograph full width beneath it.
+   Hero: a dark band of type, then the photograph full width beneath it.
 
    The first shape of this hero put the picture in a column beside the
    copy. Measured, that column came out 922x791 at 1440 and 655x740 at
    1024: a square, then a portrait. Every 16:9 frame in the corpus lost
    half its width to it, and the flat-colour curtain then covered most
-   of what was left — so whatever photograph went in, the visitor saw a
+   of what was left, so whatever photograph went in, the visitor saw a
    wall and some planting, never a building. The picture is the subject
    here, so it gets a window shaped like the pictures we actually have.
 
    The curtain survives as the direction intended it: flat cenote colour
    falling from the band onto the top of the photograph, so the two read
-   as one surface. Type still never sits on the photograph — only the
+   as one surface. Type still never sits on the photograph, only the
    plate that names the building in it.
    ────────────────────────────────────────────────────────────── */
 .hero-band {

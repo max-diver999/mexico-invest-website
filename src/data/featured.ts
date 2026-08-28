@@ -32,7 +32,7 @@ export const FEATURED_AREA_SLUGS = [
 ] as const;
 
 /**
- * Homepage hero photograph. It must show the building named on the hero plate —
+ * Homepage hero photograph. It must show the building named on the hero plate;
  * the picture is evidence for one project, not stock mood. The project's own
  * `heroImage` is not always the best frame in its gallery, so the pick is explicit.
  */

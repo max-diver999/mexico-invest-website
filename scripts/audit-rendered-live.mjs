@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Rendered-page audit — LIVE or local dist HTML (layout + MDX combined).
+ * Rendered-page audit: LIVE or local dist HTML (layout + MDX combined).
  * Auto-discovers collections from src/content/*.mdx
  *
  * Usage:
@@ -46,6 +46,23 @@ function discoverCollections() {
 
 /** @type {{ id: string, test: (html: string) => string | null, severity: 'P0' | 'P1' }[]} */
 const CHECKS = [
+  {
+    /*
+     * The em dash is banned outright on this site. The MDX gate in
+     * more-content-gate.mjs catches the body copy, but a dash can also arrive
+     * through a layout, a component, a data file or a hand-edited file in
+     * public/ - none of which that gate ever sees. This check reads the shipped
+     * HTML, so it catches every route the visitor can actually load.
+     */
+    id: 'em-dash',
+    severity: 'P0',
+    test: (html) => {
+      const n = (html.match(/\u2014/g) || []).length;
+      if (!n) return null;
+      const sample = (html.match(/.{0,40}\u2014.{0,40}/) || [''])[0].replace(/\s+/g, ' ').trim();
+      return `${n} em dash(es) in rendered HTML: "${sample}"`;
+    },
+  },
   {
     id: 'lead-form-top',
     severity: 'P0',
@@ -200,7 +217,7 @@ console.log(`Rendered audit: ${useLocal ? 'local dist' : SITE_URL}`);
 console.log(`Site: ${path.basename(ROOT)} | pages: ${tasks.length} | checks: ${CHECKS.length}\n`);
 
 if (!tasks.length) {
-  console.log('No MDX pages found — skip.');
+  console.log('No MDX pages found, skipping.');
   process.exit(0);
 }
 
@@ -241,7 +258,7 @@ if (byCheck.size === 0 && errors.length === 0) {
 } else {
   for (const [checkId, hits] of [...byCheck.entries()].sort((a, b) => b[1].length - a[1].length)) {
     const sev = hits[0]?.severity || 'P1';
-    console.log(`=== [${sev}] ${checkId} — ${hits.length} page(s) ===`);
+    console.log(`=== [${sev}] ${checkId}: ${hits.length} page(s) ===`);
     for (const h of hits.slice(0, 6)) {
       console.log(`  ${h.url}`);
       console.log(`    → ${h.detail}`);
