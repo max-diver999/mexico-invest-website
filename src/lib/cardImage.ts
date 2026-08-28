@@ -8,11 +8,20 @@
  */
 import { cloudinaryUrl } from './cloudinary';
 
+/*
+ * Every entry crops, and a crop without a gravity is a crop to the geometric
+ * centre. On a corpus of beach photographs that is the wrong half: the sky is
+ * in the middle of the frame and the people are along the bottom, so a centred
+ * band keeps the emptiest part of the picture and cuts the subject in half.
+ * `g_auto` asks Cloudinary which region actually carries the image and crops to
+ * that instead. It also ships fewer bytes, because the discarded sky was the
+ * cheapest part of the file to keep.
+ */
 const SIZES = {
-  card: 'w_800,h_450,c_fill,q_auto,f_auto',
-  hero: 'w_1600,h_640,c_fill,q_auto,f_auto',
+  card: 'w_800,h_450,c_fill,g_auto,q_auto,f_auto',
+  hero: 'w_1600,h_640,c_fill,g_auto,q_auto,f_auto',
   /** Hero photograph: a wide band, matched to the ~16:9 frames the corpus holds. */
-  panel: 'w_1800,h_760,c_fill,q_auto,f_auto',
+  panel: 'w_1800,h_760,c_fill,g_auto,q_auto,f_auto',
 } as const;
 
 export type CardImageSize = keyof typeof SIZES;

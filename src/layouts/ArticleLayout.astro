@@ -8,7 +8,7 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 import { SITE } from '../data/site';
 import { AUTHOR, authorSchema } from '../data/author';
 import { mdInlineToText } from '../lib/md-inline';
-import { cloudinaryUrl, responsiveCloudinary } from '../lib/cloudinary';
+import { cloudinaryUrl, heroCloudinary } from '../lib/cloudinary';
 import {
   resolveRelatedSlugs,
   resolveRelatedEntities,
@@ -58,7 +58,7 @@ const {
 } = Astro.props;
 
 /**
- * The og:image, not the on-page hero — the page itself uses responsiveCloudinary.
+ * The og:image, not the on-page hero — the page itself uses heroCloudinary.
  *
  * f_auto negotiates the format from the request's Accept header. Browsers send
  * one and get a 100-300KB WebP; the social crawlers send none, so Facebook,
@@ -67,14 +67,18 @@ const {
  * pages were the ones sharing without a picture. Pin the format instead: an
  * explicit JPEG at auto quality is 145KB for the same frame, and every platform
  * reads JPEG.
+ *
+ * The 1200x630 social card is a crop like any other, so it takes the same
+ * content-aware gravity as the page hero. Without it the preview that reaches
+ * Facebook or WhatsApp is the centre of the frame, which on this corpus is sky.
  */
 function optimizeHeroImage(url?: string): string | undefined {
   if (!url) return undefined;
-  return cloudinaryUrl(url, 'w_1200,h_630,c_fill,q_auto:good,f_jpg');
+  return cloudinaryUrl(url, 'w_1200,h_630,c_fill,g_auto,q_auto:good,f_jpg');
 }
 
 const optimizedHeroImage = optimizeHeroImage(heroImage);
-const responsiveHero = heroImage ? responsiveCloudinary(heroImage) : null;
+const responsiveHero = heroImage ? heroCloudinary(heroImage) : null;
 
 const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -248,17 +252,25 @@ const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
 
     {responsiveHero && (
       <figure class="image-credit mb-10">
-        <img
-          src={responsiveHero.src}
-          srcset={responsiveHero.srcset}
-          sizes={responsiveHero.sizes}
-          alt={heroAltText}
-          class="w-full max-h-[420px] object-cover rounded-[2px] border border-[var(--color-border)]"
-          loading="eager"
-          fetchpriority="high"
-          width={responsiveHero.width || 1200}
-          height={responsiveHero.height || 675}
-        />
+        <picture>
+          <source
+            media="(min-width: 900px)"
+            srcset={responsiveHero.wide.srcset}
+            sizes={responsiveHero.sizes}
+          />
+          <img
+            src={responsiveHero.narrow.src}
+            srcset={responsiveHero.narrow.srcset}
+            sizes={responsiveHero.sizes}
+            alt={heroAltText}
+            class="article-hero rounded-[2px] border border-[var(--color-border)]"
+            style={`--hero-ar-narrow:${responsiveHero.narrowRatio};--hero-ar-wide:${responsiveHero.wideRatio};`}
+            loading="eager"
+            fetchpriority="high"
+            width={responsiveHero.width}
+            height={responsiveHero.height}
+          />
+        </picture>
         {data.heroCredit && <figcaption>{data.heroCredit}</figcaption>}
       </figure>
     )}
