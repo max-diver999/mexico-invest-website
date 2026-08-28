@@ -411,6 +411,21 @@ textarea:focus {
  * that does not exist yet, or a picture of a different development all carry a
  * line under them saying so — the site's whole claim is that it is not the
  * developer's voice. */
+/* The article hero band. The ratio here must match the ratio Cloudinary was
+ * asked to cut in `heroCloudinary`, or the browser crops the crop: 16:10 on
+ * phones, and the wide band the desktop container makes at its old 420px cap.
+ * Delivered ratio == displayed ratio means no second crop and no layout shift. */
+.article-hero {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--hero-ar-narrow, 16 / 10);
+  object-fit: cover;
+  background: var(--color-surface-muted);
+}
+@media (min-width: 900px) {
+  .article-hero { aspect-ratio: var(--hero-ar-wide, 21 / 9); }
+}
+
 .image-credit { margin: 0 0 1.75rem; }
 .prose .image-credit { margin: 1.75rem 0; }
 .image-credit > img { margin: 0; }
