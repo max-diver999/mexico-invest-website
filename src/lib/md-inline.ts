@@ -1,9 +1,9 @@
 /**
  * Inline markdown for strings that reach the page as component props.
  *
- * MDX renders markdown in the document body, but a string passed as a prop —
+ * MDX renders markdown in the document body, but a string passed as a prop,
  * `<TldrBlock text="... [Playa del Carmen](/areas/playa-del-carmen/) ..." />`, or an
- * `answer` in a frontmatter FAQ item — is just a string. Rendered with `{text}` the
+ * `answer` in a frontmatter FAQ item, is just a string. Rendered with `{text}` the
  * link markup is printed to the reader verbatim and the link is not crawlable.
  *
  * This converts the inline subset that actually appears in the corpus. It is not a
@@ -36,7 +36,7 @@ export function mdInlineToHtml(input: string | undefined | null): string {
   if (!input) return '';
   let out = escapeHtml(String(input));
 
-  // [text](/url) — the href was escaped above, so match on the escaped form too.
+  // [text](/url): the href was escaped above, so match on the escaped form too.
   out = out.replace(/\[([^\]\n]+)\]\(([^)\s]+)\)/g, (whole, text, href) => {
     const url = safeHref(href.replace(/&amp;/g, '&'));
     if (!url) return text;
@@ -54,7 +54,7 @@ export function mdInlineToHtml(input: string | undefined | null): string {
   return out;
 }
 
-/** Same conversion, stripped back to text — for schema fields that take no markup. */
+/** Same conversion, stripped back to text, for schema fields that take no markup. */
 export function mdInlineToText(input: string | undefined | null): string {
   if (!input) return '';
   return String(input)

@@ -3,7 +3,7 @@
  * Generate public/llms.txt and public/llms-full.txt from the corpus.
  *
  * robots.txt explicitly invites GPTBot, OAI-SearchBot, ClaudeBot and PerplexityBot,
- * and both files were hand-written stubs — 617 and 386 bytes for a 337-page site,
+ * and both files were hand-written stubs, 617 and 386 bytes for a 337-page site,
  * listing three guides. An AI crawler that reads them learns almost nothing about
  * what this site actually covers.
  *
@@ -126,7 +126,7 @@ ${KEY_GUIDES.map((slug) => {
 
 ## Sections
 
-${COLLECTIONS.map((c) => `- ${c.label} (${byCollection[c.dir].length}): ${SITE}/${c.dir}/ — ${c.note}`).join('\n')}
+${COLLECTIONS.map((c) => `- ${c.label} (${byCollection[c.dir].length}): ${c.note} ${SITE}/${c.dir}/`).join('\n')}
 
 ## Full corpus
 
@@ -185,6 +185,6 @@ for (const [file, content] of outputs) {
 console.log(`${total} pages indexed across ${COLLECTIONS.length} collections.`);
 
 if (checkOnly && stale) {
-  console.error('\nllms files are out of date — run `npm run gen:llms`.');
+  console.error('\nllms files are out of date, run `npm run gen:llms`.');
   process.exit(1);
 }

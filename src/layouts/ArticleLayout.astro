@@ -58,11 +58,11 @@ const {
 } = Astro.props;
 
 /**
- * The og:image, not the on-page hero — the page itself uses heroCloudinary.
+ * The og:image, not the on-page hero: the page itself uses heroCloudinary.
  *
  * f_auto negotiates the format from the request's Accept header. Browsers send
  * one and get a 100-300KB WebP; the social crawlers send none, so Facebook,
- * Twitter, LinkedIn and WhatsApp were all being handed the untouched source —
+ * Twitter, LinkedIn and WhatsApp were all being handed the untouched source,
  * up to 4.7MB of PNG. WhatsApp drops previews over roughly 600KB, so the richest
  * pages were the ones sharing without a picture. Pin the format instead: an
  * explicit JPEG at auto quality is 145KB for the same frame, and every platform
@@ -111,7 +111,7 @@ const heroAltText =
   heroAlt ||
   (data.area
     ? `${shortTitle}, ${String(data.area).replace(/-/g, ' ')}, Mexico`
-    : `${shortTitle} — Mexico property research`);
+    : `${shortTitle}: Mexico property research`);
 
 const isNews = collection === 'news';
 
@@ -147,7 +147,7 @@ const faqSchema = faq.length > 0 ? {
   })),
 } : null;
 
-/** Breadcrumb trail — the visible nav and the schema are built from one array. */
+/** Breadcrumb trail: the visible nav and the schema are built from one array. */
 const crumbs = [
   { label: 'Home', href: `${SITE.url}/` },
   { label: sectionLabel, href: `${SITE.url}/${collection}/` },

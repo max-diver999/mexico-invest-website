@@ -204,6 +204,20 @@ export function runStructuralChecks(opts) {
 /** Checks not always present in qa-audit.mjs — avoid duplicate prob noise */
 export function runExtendedChecks(opts) {
   const { prefix, body, cfg, legacyExempt, errors } = opts;
+
+  /*
+   * The em dash is banned outright, and this check sits above every early
+   * return on purpose. The old rule was a rate limit inside a per-collection
+   * allow-list, behind the legacy exemption and a news bypass, so dashes kept
+   * re-entering through whichever door was not being watched. One dash
+   * anywhere is an error, in news and legacy files too.
+   */
+  const emDashes = (body.match(/\u2014/g) || []).length;
+  if (emDashes) {
+    const sample = (body.match(/.{0,32}\u2014.{0,32}/) || [''])[0].trim().replace(/\s+/g, ' ');
+    errors.push(`${prefix} em-dash forbidden (${emDashes}): "${sample}"`);
+  }
+
   if (legacyExempt) return;
   const isNews = cfg.label === 'news';
   if (isNews) return;

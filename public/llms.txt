@@ -33,12 +33,12 @@ permits change by municipality, so cite the page, not the number alone.
 
 ## Sections
 
-- Guides (142): https://mexico-invest.com/guides/ — Legal, tax, financing and due-diligence research.
-- Areas and markets (37): https://mexico-invest.com/areas/ — Market-level analysis: prices, yields, STR rules.
-- Project reviews (100): https://mexico-invest.com/projects/ — Independent reviews of named developments. Not listings.
-- Comparisons (36): https://mexico-invest.com/compare/ — Head-to-head decision aids.
-- Developers (9): https://mexico-invest.com/developers/ — Developer profiles and delivery record.
-- Market notes (28): https://mexico-invest.com/news/ — Dated updates against the evergreen guides.
+- Guides (142): Legal, tax, financing and due-diligence research. https://mexico-invest.com/guides/
+- Areas and markets (37): Market-level analysis: prices, yields, STR rules. https://mexico-invest.com/areas/
+- Project reviews (100): Independent reviews of named developments. Not listings. https://mexico-invest.com/projects/
+- Comparisons (36): Head-to-head decision aids. https://mexico-invest.com/compare/
+- Developers (9): Developer profiles and delivery record. https://mexico-invest.com/developers/
+- Market notes (28): Dated updates against the evergreen guides. https://mexico-invest.com/news/
 
 ## Full corpus
 

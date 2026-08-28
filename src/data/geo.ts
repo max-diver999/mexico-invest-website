@@ -2,8 +2,8 @@
  * Geographic taxonomy for the content graph.
  *
  * Body copy links a page to whatever the writer happened to mention. This maps the
- * relationships the copy never states — which market an area belongs to, which area a
- * project sits in, which developer built it — so `content-graph.ts` can resolve
+ * relationships the copy never states (which market an area belongs to, which area a
+ * project sits in, which developer built it) so `content-graph.ts` can resolve
  * project <-> area <-> developer <-> market links deterministically.
  *
  * `AREA_SLUGS` are entries in src/content/areas; `MARKET` groups them the way a buyer
@@ -135,7 +135,7 @@ export function developerPageFor(data: Record<string, any>): string | null {
   const raw = String(data?.developer ?? '').trim().toLowerCase();
   if (!raw) return null;
   if (DEVELOPER_PAGE[raw]) return DEVELOPER_PAGE[raw];
-  // "SIMCA Desarrollos", "Quivira (Los Cabos)" — match on the leading token set.
+  // "SIMCA Desarrollos", "Quivira (Los Cabos)": match on the leading token set.
   for (const [key, page] of Object.entries(DEVELOPER_PAGE)) {
     if (raw.startsWith(key)) return page;
   }

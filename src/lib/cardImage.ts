@@ -1,5 +1,5 @@
 /**
- * Card and hero thumbnail URLs — Cloudinary crop when available; external CDN as-is.
+ * Card and hero thumbnail URLs: Cloudinary crop when available; external CDN as-is.
  *
  * The URL surgery lives in `cloudinary.ts`, which knows how to drop a transformation
  * segment the corpus already baked into a URL (`.../upload/w_1200,q_85,f_webp/v1/...`).
