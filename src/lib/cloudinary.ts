@@ -94,12 +94,24 @@ export function heroCloudinary(src: string) {
   const ratio = intrinsic?.w && intrinsic?.h ? intrinsic.w / intrinsic.h : undefined;
   const band = heroBandFor(ratio);
 
+  /*
+   * Never ask for more pixels than the asset holds. Some legacy heroes are only
+   * 500px wide, and requesting 1600 of them buys an upscale: a soft picture at
+   * three times the bytes. Widths above the source are dropped, and the largest
+   * survivor becomes the default src.
+   */
+  const widths = intrinsic?.w
+    ? (HERO_WIDTHS.filter((w) => w <= intrinsic.w).length
+        ? HERO_WIDTHS.filter((w) => w <= intrinsic.w)
+        : [intrinsic.w])
+    : HERO_WIDTHS;
+
   const variants = (ar: string) => {
     const url = (width: number) =>
       cloudinaryUrl(src, `c_fill,g_auto,ar_${ar},w_${width},q_auto,f_auto`);
     return {
-      src: url(HERO_WIDTHS[HERO_WIDTHS.length - 1]),
-      srcset: HERO_WIDTHS.map((w) => `${url(w)} ${w}w`).join(', '),
+      src: url(widths[widths.length - 1]),
+      srcset: widths.map((w) => `${url(w)} ${w}w`).join(', '),
       ar,
     };
   };
