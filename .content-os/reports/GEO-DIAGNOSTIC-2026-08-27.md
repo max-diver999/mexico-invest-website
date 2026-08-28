@@ -1,0 +1,387 @@
+# GEO diagnostic — mexico-invest.com — 2026-08-27
+
+Скорер перенесён с capetown-invest-website (ветка `claude/capetown-content-audit-h6qbx7`,
+коммит `90dc5e1`) и адаптирован: валютные регулярки переведены с ранда на
+`MXN | US\$ | \$` (5 мест + orphanFigures), unit-правила пересобраны под мусор
+этого корпуса, CONTENT_ROOT совпал (`src/content`).
+
+## Размеченные наборы
+
+| Набор | Что это | n |
+|---|---|---|
+| bad | корпус на коммите `5a8d980` («careful mexico-invest corpus lift — 337/337 ≥90», 10.07.2026; поверх `190be90` c +53 336 строк). Позже вычищен `be71edd` (−51 500 строк) | 132 |
+| good | статьи, написанные вручную в августе 2026 (волны 1–2: areas + persona-guides) | 12 |
+| mid | честная проза, пережившая чистку июльского мусора и полуавтоматические починки | 7 |
+
+Сигнатура мусора этого сайта: «Insider tip:» ×2 791, «Mexico Invest requests
+$280,000 HOA proof in writing…» ×541, «Mexico Invest reviewed N% benchmarks on
+\<heading\> files in Q2 2026» ×100+, заголовки, вклеенные в собственные зачины.
+
+## Шаг 4: старый скоринг сломан — цифры по этому сайту
+
+Действующий скорер сайта (`scripts/lib/geo-citability-scorer.mjs`, сумма наград):
+
+| Набор | Старый скорер |
+|---|---|
+| bad (мусор июльского lift) | **mean 87.6** (min 87, max 89) |
+| good (ручной текст) | mean 90.5 |
+| mid (честная проза) | **mean 75.1 — ниже мусора на 12.5** |
+| Разделение good − bad | **2.9 балла** |
+
+Разделение < 20: рубрика неинформативна. Хуже: честная середина корпуса
+упорядочена НИЖЕ мусора — рубрика платит за шаблонные признаки, которые
+генератор ставит надёжнее человека. Один нюанс честности: 0/132 мусорных выше
+худшей ручной — потому что ручные волны 1–2 писались ПОД эту рубрику и выжали
+90+; сама шкала при этом различает классы на 2.9 балла.
+
+## Шаг 5: калибровка нового скорера — пройдена
+
+| Набор | mean | min | max |
+|---|---|---|---|
+| bad | **0.0** | 0 | **0** (порог ≤25 ✓) |
+| good | 63.2 | **58** (порог ≥55 ✓) | 67 |
+| mid | 62.0 | 59 | 63 |
+
+Разделение **63.2** (порог ≥35 ✓); 0/132 мусорных выше худшей ручной.
+Честная оговорка: good и mid стоят близко (63.2 против 62.0) — mid-статьи
+прошли большую ручную чистку и реально неплохи, а good-статьи несут артефакты
+старой рубрики, под которую писались. Мусор от честного текста шкала отделяет
+с запасом; тонкое различие good/mid на этом корпусе слабое, и это зафиксировано
+здесь, а не спрятано.
+
+Адаптация unit-правил (2.3): кейптаунский список (turnaround/awareness/LTV…)
+заменён на сигнатуру здешнего мусора — «$X benchmarks on», «$X / N% HOA proof».
+Проверено: в bad срабатывает массово, в good и в чистом корпусе — 0 ложных
+(«…SAT receipts, HOA proof» в description без цифры перед — не матчится).
+
+## Шаг 6: замер корпуса (354 MDX)
+
+**Среднее 16.8 / 75 · минимум 0 · страниц с нулём 54.**
+
+| Коллекция | n | mean | min | нулей |
+|---|---|---|---|---|
+| projects | 101 | 10.7 | 0 | 36 |
+| areas | 37 | 14.1 | 0 | 4 |
+| compare | 36 | 16.3 | 0 | 3 |
+| guides | 144 | 18.3 | 0 | 11 |
+| news | 28 | 30.1 | 25 | 0 |
+| developers | 8 | 33.9 | 25 | 0 |
+
+### Четыре системные причины (в порядке вклада)
+
+1. **Реестра фактов нет** → `provenance 0/10` у всего корпуса и `stamped-figure`
+   −4×до 6 почти на каждом файле: «10%» в 178 статьях, «5%» в 146, «$500» в 143,
+   «25%» в 130, «$2,500» в 112 — всё несущие цифры сайта (trust fee $500–800,
+   ISR 25% нерезидента, management 25%…) без единой записи с источником.
+   Это до −34 на файл, снимается заведением `.content-os/facts.json`.
+2. **Три штампованных CTA на ~230 страницах** → `template-family` на всех 101
+   projects и большинстве guides: «Want three options here with the numbers
+   run?» ×113, «Want three comparable buildings run the same way?» ×99,
+   «Need this run against your actual numbers?» ×17. Плюс хвост стандартных
+   CtaBox-фраз (по 4–7 файлов).
+3. **Конвейерные project-страницы** (101 файл, 36 нулей): один каркас, дубли
+   3–6% между соседями, худшая пара `tao-monte-rocella` ↔ `tao-santamar-akumal`
+   делит 97 девятисловных последовательностей.
+4. **Каннибализм новых волн**: FAQ-ответы и worked example продублированы между
+   гайдом и area-страницей — `mexico-city-roma-condesa` ↔
+   `mexico-city-real-estate-foreigner-guide` делят **247** последовательностей
+   (9% меньшей страницы); `queretaro` ↔ `guadalajara-real-estate-investment` — 126.
+
+### Худшие 15 файлов
+
+| Файл | Балл | База | Base parts | Штрафы | Гейты |
+|---|---|---|---|---|---|
+| areas/mexico-city-roma-condesa.mdx | 0 | 60 | op 18 · ev 15 · st 12 · rh 8 · prov 0 | −62 (stamped-figure×6, duplicated-text×1, duplicated-volume×1) | — |
+| areas/playa-del-carmen.mdx | 0 | 52 | op 19 · ev 13 · st 8 · rh 6 · prov 0 | −53 (stamped-figure×6, template-family×1, duplicated-text×1) | — |
+| areas/puerto-vallarta.mdx | 0 | 49 | op 16 · ev 11 · st 8 · rh 7 · prov 0 | −49 (stamped-figure×6, template-family×1, duplicated-text×1) | — |
+| areas/tulum-pueblo-east.mdx | 0 | 49 | op 16 · ev 12 · st 10 · rh 4 · prov 0 | −50 (stamped-figure×4, duplicated-text×1, template-family×1) | — |
+| compare/cabo-san-lucas-vs-san-jose-del-cabo.mdx | 0 | 52 | op 16 · ev 13 · st 9 · rh 6 · prov 0 | −52 (stamped-figure×6, template-family×1, hedging×1) | — |
+| compare/pre-construction-vs-resale-tulum.mdx | 0 | 51 | op 17 · ev 14 · st 7 · rh 5 · prov 0 | −51 (stamped-figure×6, template-family×1, duplicated-text×1) | — |
+| compare/punta-mita-vs-los-cabos-luxury.mdx | 0 | 47 | op 16 · ev 13 · st 8 · rh 4 · prov 0 | −52 (stamped-figure×6, template-family×1, duplicated-text×1) | — |
+| guides/ampi-license-verify-guide.mdx | 0 | 53 | op 20 · ev 10 · st 10 · rh 5 · prov 0 | −53 (stamped-figure×2, duplicated-text×1, duplicated-volume×1) | mass-duplication |
+| guides/apostille-documents-mexico-property.mdx | 0 | 51 | op 16 · ev 11 · st 9 · rh 7 · prov 0 | −56 (stamped-figure×2, duplicated-text×1, duplicated-volume×1) | mass-duplication |
+| guides/best-areas-invest-mexico-2026.mdx | 0 | 54 | op 17 · ev 12 · st 9 · rh 8 · prov 0 | −57 (stamped-figure×6, template-family×1) | — |
+| guides/cfdi-cost-basis-mexico.mdx | 0 | 55 | op 18 · ev 13 · st 9 · rh 7 · prov 0 | −71 (stamped-figure×5, duplicated-text×1, duplicated-volume×1) | mass-duplication |
+| guides/cross-border-lender-list.mdx | 0 | 54 | op 14 · ev 14 · st 12 · rh 7 · prov 0 | −62 (stamped-figure×6, duplicated-text×1, template-family×1) | — |
+| guides/first-time-foreign-buyer-mexico.mdx | 0 | 52 | op 17 · ev 12 · st 9 · rh 7 · prov 0 | −53 (stamped-figure×6, template-family×1, duplicated-text×1) | — |
+| guides/mexico-city-real-estate-foreigner-guide.mdx | 0 | 60 | op 18 · ev 15 · st 11 · rh 8 · prov 0 | −81 (stamped-figure×6, duplicated-text×1, duplicated-volume×1) | mass-duplication |
+| guides/mexico-property-closing-costs-breakdown.mdx | 0 | 46 | op 15 · ev 13 · st 8 · rh 3 · prov 0 | −49 (stamped-figure×6, template-family×1, duplicated-text×1) | — |
+
+### Каннибалы (порог ≥60 общих 9-грамм, ≤6 владельцев)
+
+| Общих 9-грамм | % меньшей | Пара |
+|---|---|---|
+| 247 | 9% | areas/mexico-city-roma-condesa ↔ guides/mexico-city-real-estate-foreigner-guide |
+| 126 | 6% | areas/queretaro ↔ guides/guadalajara-real-estate-investment |
+| 97 | 7% | projects/tao-monte-rocella ↔ projects/tao-santamar-akumal |
+| 70 | 3% | areas/queretaro ↔ guides/mexico-city-real-estate-foreigner-guide |
+| 62 | 3% | areas/oaxaca-city-real-estate ↔ guides/guadalajara-real-estate-investment |
+| 62 | 3% | areas/loreto-baja ↔ areas/todos-santos |
+
+### Прочие дефекты, найденные скорером
+
+- **3 мусорных обрывка июльского lift пережили чистку**: обрезанные предложения
+  «Mexico Invest reviewed 60% benchmarks on What should buyers verify on…» в
+  `projects/palmilla-san-jose` :192, `guides/mexico-condo-investment-foreigners` :90,
+  `guides/predial-riviera-maya-rates` :201.
+- **8 файлов с malformed-токенами** (удвоенное слово через регистр: «management
+  Management», «market Market»; « , »): playacar, mexico-vs-arizona-retirement,
+  puerto-morelos-vs-playa-del-carmen, how-to-buy-mexico-property-remotely,
+  invest-in-riviera-maya, mexico-restricted-zone-explained,
+  non-resident-tax-id-rfc-guide, property-managers-playa-del-carmen-compared.
+- **19 news-заметок короче 600 слов** (гейт too-short-to-score, cap 25) — размер
+  жанра, в волны переписывания не берём.
+- 10 файлов под гейтом mass-duplication (>10% дублей), 3 — unit-mismatch.
+
+## Замечание о сравнении со старой шкалой
+
+Старая шкала «90/100» и новая «16.8/75» не сравнимы: старая была суммой наград
+и оплачивалась шаблонами, новая — потолок, опускаемый уликами машинности, с
+абсолютным максимумом 75 у детерминированной части. Ручные статьи августа при
+requireRegistry=false дают 58–67; в полном корпусе их тянут вниз только
+пустой реестр и собственные каннибал-дубли.
+
+---
+
+## R0 выполнена (2026-08-27)
+
+| Метрика | До R0 | После R0 |
+|---|---|---|
+| Среднее по корпусу | 16.8 | **35.3** |
+| Страниц с нулём | 54 | **4** (все — конвейерные projects, работа R1/R3) |
+| Худшая коллекция | projects 10.7 | projects 24.9 |
+| Калибровка | 63.2 | **66.2** (мусор max 0, ручной min 58) |
+
+Что сделано: `.content-os/facts.json` — 40 записей (статутные цифры со
+ссылками на LISR/CFF/CPEUM/Ley de Migración/кодексы, модельные — с честной
+пометкой «site model/survey»); `.content-os/external-claims.json` — 15
+утверждений (US 6, GB 3, ES/FR/IT/NL по 1, CA 2), reviewBy 2027-02-27;
+удалены 3 обрывка июльского мусора («Mexico Invest reviewed N% benchmarks
+on…»); починены 2 реальных дефекта « , »; правило malformed починено с
+замером (см. docs/GEO-SCORING.md): 8 ложных срабатываний на границах блоков
+сняты, мусор по-прежнему ловится в 75/132 файлах.
+
+Реестр покрывает 33/364 несущих цифр (9%) — гейт unregistered-claims
+взводится на 80%, наполнение продолжается по мере волн.
+
+## R1 выполнена (2026-08-27) — каннибалы
+
+Корпус: mean 35.3 → **36.2**, нулей 4 → **1** (copala-quivira, материал R3).
+Все пары волны разведены до ≤5 общих 9-грамм, включая перекрёстную проверку
+девяти новых страниц между собой.
+
+| Файл | Было → стало | Что теперь держит только он |
+|---|---|---|
+| guides/mexico-city-real-estate-foreigner-guide | 6 → **63** | процесс покупки города; worked example переехал в Del Valle/Nápoles |
+| areas/mexico-city-roma-condesa | 26 → **63** | рынок двух колоний: эпохи застройки, ценовой спред 2017+, Roma-пример |
+| areas/queretaro | 33 → **56** | вода как гейт сделки; корпоративная аренда как индустриальный лизинг |
+| guides/guadalajara-real-estate-investment | 34 → **53** | colonia-механика (каноническая траст-таблица осталась здесь) |
+| areas/oaxaca-city-real-estate | 45 → **61** | один штат — два режима (Highway 175); INAH×сейсмика |
+| areas/loreto-baja | 49 → **60** | хрупкость маршрутов; FONATUR-наследство в трубах |
+| areas/todos-santos | 55 → **61** | аграрный файл из четырёх бумаг |
+| projects/tao-monte-rocella | 0 → **61** | вид как контрактный термин на фазируемом склоне El Tezal |
+| projects/tao-santamar-akumal | 0 → **61** | черепаший залив: спрос и регуляторная цена; enrolment clause |
+
+Худшая пара корпуса (247 общих 9-грамм) разведена до 0; внутри area-файла
+Roma-Condesa попутно удалена трижды повторённая сейсмическая механика —
+остаток старых патчей. TAO-пара переписана с разными каркасами (138 → 0).
+
+Гейты: validate 354/354, calibration passed, facts:review clean,
+build + rendered audit 0.
+
+## R2 выполнена (2026-08-28) — кластер «документы и риски»
+
+Корпус: mean 36.2 → **37.4**, нулей по-прежнему 1 (copala-quivira, R3).
+Все 45 пар волны разведены до ≤5 общих 9-грамм.
+
+Корень кластера — одна штампованная семья блоков: таблица «Line item /
+Typical range» (14 носителей), таблица «Profile / Typical budget» (20),
+таблица red flags (общая у трёх файлов волны дословно), CTA-семьи
+«Want three options here…» (113 файлов), «second pair of eyes» (10),
+«Want the financing options priced» (11), навигационные строки-штампы
+«Hub:/Area:/Detail:/Corridor: [ссылка]» (до 76 файлов на каркас) и
+курсивный дисклеймер «Indicative ranges from 2026 market observation…»
+(19 файлов).
+
+| Файл | Было → стало | Что теперь держит только он |
+|---|---|---|
+| guides/apostille-documents-mexico-property | 5 → **54** | цепочка легализации: какой документ, какой орган, какой срок |
+| guides/translation-requirements-mexico-deed | 9 → **54** | perito traductor: что переводится обязательно, что «для себя» |
+| guides/ampi-license-verify-guide | 15 → **60** | проверка агента как процесс из 5 звонков; AMPI ≠ лицензия |
+| guides/cfdi-cost-basis-mexico | 8 → **59** | фактура как налоговый актив; basis к ISR |
+| guides/predial-riviera-maya-rates | 24 → **53** | предиаль по муниципалитетам; кадастр vs цена сделки |
+| guides/cross-border-lender-list | 20 → **56** | реестр кредиторов: кто реально выдаёт, кому и почём |
+| guides/best-areas-invest-mexico-2026 | 23 → **57** | рэнкинг по назначению, а не по баллу; tier-логика |
+| guides/first-time-foreign-buyer-mexico | 26 → **55** | три архетипа первой покупки; кассовый запас |
+| guides/mexico-property-closing-costs-breakdown | 24 → **51** | сценарная математика закрытия A–D; регрессивность фикс-платежей |
+| guides/non-resident-mortgage-mexico | 26 → **55** | три маршрута денег: cash / HELOC / hipoteca на одних цифрах |
+
+Замены — рукописные и постраничные: каждая навигационная строка стала
+контекстным предложением со своей формулировкой; каждый CTA переписан под
+тему страницы (в mortgage и lender-list — разными словами); таблица red
+flags в трёх файлах переработана в тематические (агентские / переводческие
+/ налоговые флаги); дисклеймер переписан на каждой странице своими словами.
+Фейковая статистика генератора («in four of five successful wires» и
+аналоги) заменена честной прозой. noindex на closing-costs-breakdown не
+трогал — снятие только по решению Максима.
+
+Побочный эффект: шесть соседних файлов, деливших эти блоки, поднялись на
+3–4 балла без единой правки в них (invest-in-playa-del-carmen 28→32,
+cost-of-buying-property-mexico 30→33, mexico-property-for-americans 30→33,
+mexico-property-under-250k 32→35, puerto-vallarta-property-investment-guide
+28→31, is-mexico-real-estate-good-investment-2026 38→41) — семьи скелетов
+опустились ниже порога в 3 носителя.
+
+Гейты: validate 354/354 (ampi factDensity добит честной производной цифрой
+«70 years» от 1956), facts:review clean (15 claims, ближайший пересмотр
+2027-02-27), calibration passed (bad max 0, good min 58, separation 66.2),
+build — см. коммит.
+
+## R3a выполнена (2026-08-28) — конвейерные projects, первая дюжина
+
+Корпус: mean 37.4 → **39.3**, нулей **0** впервые с начала аудита.
+Коллекция projects: 26.3 → **33.0**. Все 78 пар волны ≤5 общих 9-грамм.
+
+Корень: общий CTA «Want three comparable buildings run the same way?» на
+**98 файлах**, навигационные штампы («Area:/Hub:/Checklist:/Legal:/Yields:»
+до 75 носителей на каркас), штамп «Foreigners buy via fideicomiso.» на 53
+файлах и одинаковые таблицы закрытия. Ни одна из страниц не держала темы,
+которой не было бы у соседей.
+
+| Файл | Было → стало | Механизм, который теперь держит только он |
+|---|---|---|
+| projects/copala-quivira | 0 → **56** | глубина сопоставимых сделок как актив; трансфер membership удлиняет выход |
+| projects/nuevo-vallarta-bungalows | 3 → **52** | граница участка горизонтальна: сад в трастовом акте; Наярит ≠ Халиско |
+| projects/playa-emerald-studio | 10 → **55** | на $98K фиксированные расходы и есть инвесткейс (8–12% против 5–7%) |
+| projects/ocean-village-playa | 12 → **56** | покупается график амаменитиз — вписывай его в régimen до value-engineering |
+| projects/constelada-tulum | 13 → **58** | один девелопер, четыре колонии: бренд — константа, адрес — переменная |
+| projects/piedra-de-mar | 13 → **56** | у застройщика нет имени, значит репутацию заменяет эскроу |
+| projects/tulum-jungle-lofts | 15 → **54** | ров — высота потолка (проверяемо в чертежах), риск — файл участка |
+| projects/tao-blue-gardens-pv | 16 → **54** | на склоне пешеходность вертикальна; снагинг — последний рычаг |
+| projects/it-building-playa | 18 → **53** | покупается сентябрь, а не февраль; полоса пропускания — пункт договора |
+| projects/cancun-lagoon-lofts | 20 → **59** | вид защищён федеральным природоохранным статусом, а не соседним лотом |
+| projects/puerto-cancun-marina | 20 → **57** | пункт CC&R о минимальном сроке решает: доходный актив или второй дом |
+| projects/zen-tulum | 23 → **51** | wellness — это фонд оплаты труда, а не палитра (комиссия 28–35%) |
+| projects/inna-beach-condos | 25 → **58** | юнит твой, бизнес — оператора; в Пуэрто-Морелосе заменить его некем |
+
+Отдельно стоит записать: на середине волны скорер поймал **мою собственную
+работу**. Переписав шесть файлов, я использовал одну и ту же форму
+итоговой таблицы («What it is | Builder | Where | Entry | Ceiling»), и
+template-family немедленно показал 4 носителя нового каркаса. Это ровно тот
+отказ, ради которого правило написано, и починка была правильной стороной:
+шесть таблиц переписаны по-разному под тезис каждой страницы, пороги не
+трогались. Аналогично на финальной сверке всплыли мои же повторяющиеся
+формулировки перелинковки и одинаковые строки таблиц закрытия — цифры
+($2,500–4,000 траст, $1,500–3,000 юрист) настоящие и остались, переписаны
+подписи строк и сопроводительный текст.
+
+Побочный эффект: **31 файл вне волны** поднялся на 3+ балла без единой
+правки в них (mavila-quivira 7→21, hideaways-los-cabos 2→12,
+costa-mujeres-cancun 22→30, la-reserva-querencia 17→25 и др.) — семьи
+скелетов упали ниже порога в 3 носителя. Под 20 баллами осталось 25 файлов
+(материал R3b/R3c).
+
+Гейты: validate 354/354, facts:review clean, calibration passed
+(bad max 0, good min 58, separation 66.2), build + rendered audit — см. коммит.
+
+## R3b выполнена (2026-08-28) — брендовые резиденции
+
+Корпус: mean 39.3 → **40.8**, коллекция projects 33.0 → **38.2**.
+Под 20 баллами осталось 13 файлов (было 25), под 10 — один.
+Все 66 пар волны ≤5 общих 9-грамм.
+
+Кластер выбран не по алфавиту, а по структуре: девять из тринадцати худших
+файлов корпуса — брендовые/люксовые резиденции, и их общие блоки ходят
+**внутри** кластера (pendry↔montage 79 общих 9-грамм, pendry↔rosewood 77,
+chileno↔costa-palmas 82). Общая ловушка: все двенадцать страниц говорили
+одно и то же — «net 2–3.5%, покупайте ради бренда и образа жизни».
+Это верно и потому бесполезно. Каждой странице дан свой механизм
+брендового владения:
+
+| Файл | Было → стало | Механизм, который держит только он |
+|---|---|---|
+| projects/pendry-punta-mita | 1 → **49** | 32 дома никогда не создадут рыночной цены: и вход, и выход — переговоры без доказательств |
+| projects/four-seasons-punta-mita | 2 → **50** | контрольная группа: единственный адрес полуострова, где прошлое можно проверить, а не моделировать |
+| projects/montage-punta-mita | 3 → **52** | бренд — это лицензионный договор со сроком; девелопер и оператор — разные компании |
+| projects/rosewood-mandarina | 5 → **50** | стоимость резиденции зависит от отеля, которым она не владеет |
+| projects/four-seasons-costa-palmas | 6 → **51** | андеррайтишь дорогу и взлётную полосу, а не виллу |
+| projects/chileno-bay-residences | 10 → **55** | решает годовая стоимость владения; доходность — погрешность против неё |
+| projects/ritz-carlton-puerto-los-cabos | 10 → **54** | причал — отдельный актив с отдельными правами, вне escritura |
+| projects/hideaways-los-cabos | 12 → **54** | контрольный случай без бренда: что экономишь и чего никто за тебя не делает |
+| projects/st-regis-residences-los-cabos | 15 → **55** | стандарты бренда ограничивают, что ты можешь делать со своим домом |
+| projects/alvar-quivira | 15 → **49** | семейная конфигурация сжимает календарь в те же девять недель |
+| projects/coronado-quivira | 16 → **47** | на масштабе поместья эксплуатация переходит от HOA к владельцу |
+| projects/mavila-quivira | 21 → **55** | самый дешёвый вход в структуру платежей, рассчитанную на покупателей за $4M |
+
+Скорер снова поймал мою работу, и трижды. Первое: короткая форма перелинковки
+«Method: [Ссылка].» / «Framework: [Ссылка].» — skeleton маскирует
+Capitalized-слова, поэтому любая конструкция «Слово: [Ссылка].» схлопывается
+в один каркас с корпусными штампами (65 и 60 носителей). Вывод: ссылка
+должна жить внутри предложения, а не после двоеточия. Второе: описание CTA
+«Tell us which residence you are considering and we will tell you what to
+request…» разошлось по трём файлам — переписаны все три. Третье: моя же
+трёхчастная концовка «A is on X, B in Y, and C in Z» дала 10–24 общих
+9-грамм на четырёх парах; исправлено не подбором синонимов, а сменой
+синтаксиса (три коротких предложения вместо одного перечисления).
+
+Побочно исправлен реальный дефект генератора в chileno-bay: строка
+«5 million to $4.5 million villa tickets» — бессмысленный обрывок в разделе
+о стоимости владения; раздел переписан на честной раскладке годовых
+расходов ($96K–$180K на виллу). В alvar-quivira база была самой слабой
+(44): 1 вопросительный заголовок из 16 — семь заголовков переписаны в
+вопросы, что подняло structure-компоненту.
+
+Статутные цифры (FBAR, Form 8938, ISR 25%/35%) при расхождении таблиц
+не трогались — переписаны подписи строк и рамка раздела под тезис страницы.
+
+Гейты: validate 354/354, facts:review clean, calibration passed
+(bad max 0, good min 58, separation 66.2), build + rendered audit — см. коммит.
+
+## R3c выполнена (2026-08-28) — Кампече, гайды о проверке, Pueblo East
+
+Корпус: mean 40.8 → **42.1** (projects 38.2 → 40.8, guides 43.4 → 44.6).
+Файлов ниже 20 баллов: 13 → **2**. Все 66 пар волны ≤5 общих 9-грамм.
+
+Волна собрана из трёх разных корней, а не по алфавиту.
+
+**Первый корень — три гайда-почти-клона.** fake-escritura ↔ unregistered-broker
+делили **283 общих 9-граммы**, remote-notarization с каждым — по 246. Это была
+самая высокая парная дупликация в корпусе. Тезисы у них при этом были разные
+и хорошие; клонированы были три приклеенных в конец блока: таблица «Line item /
+Typical range» (10 строк, одинаковых на 10 файлах), таблица «Profile / Typical
+budget» и таблица red flags. Каждая переписана под свою страницу: у
+fake-escritura — стоимость проверки реестра против стоимости дефекта титула;
+у unregistered-broker — что стоит скрининг агента и что стоит его отсутствие;
+у remote-notarization — маршрут доверенности по юрисдикциям. Пара 283 → **0**.
+
+**Второй корень — кампечинский кластер (7 файлов).** Кампече — не Карибы:
+Мексиканский залив, колониальный центр ЮНЕСКО, спрос внутренний. Каждому
+проекту дан свой механизм:
+
+| Файл | Было → стало | Механизм |
+|---|---|---|
+| projects/campeche-gulf-villas | 6 → **48** | верх тонкого рынка: выше тебя нет сопоставимых, следующий покупатель — тоже иностранец |
+| projects/bao-luxury-condos-campeche | 14 → **50** | помесячная аренда, а не посуточная: от 30 дней это наём, а не гостиничная услуга |
+| projects/lerma-beach-condos-campeche | 16 → **48** | вода Залива, а не Карибов: рифа нет, значит гость — семья из Мериды и CDMX |
+| projects/ikuku-condos-campeche | 18 → **54** | покупаешь в долларах, выходишь в песо |
+| projects/nara-condos-campeche | 19 → **55** | покупают, чтобы жить: резидентство, медицина, ёмкость города |
+| projects/torremar-country-club-campeche | 19 → **54** | полю для гольфа нужны вода и члены клуба |
+| projects/olea-luxury-beach-campeche | 23 → **60** | первые 20 м — федеральные: ZOFEMAT-концессия, а не собственность |
+
+**Третий корень — два одиночных файла.** tulum-pueblo-east делил 210 9-грамм
+с region-8-tulum (общая рамка «field notes» + сток-таблица профилей + CTA на
+112 носителей) — 17 → **47**. mexican-bank-account страдал не дупликацией, а
+хеджированием 11.1/1000 и тремя heading-echo — 17 → **55**.
+
+В реестр добавлена статутная цифра **20 m** (зона федеральной морской полосы,
+Ley General de Bienes Nacionales Art. 119) — она вводится страницей Olea и
+по правилу «цифра в двух и более статьях» должна быть зарегистрирована.
+
+Скорер снова поймал мою работу: сводные таблицы «| Attribute | Indicative
+detail |» я сначала оставил одинаковыми в четырёх кампечинских файлах, и
+после правки шапки они всплыли парами по 15–29 общих 9-грамм. Переписаны
+по-разному под тезис каждой страницы — как и в R3a, это тот же урок, и он
+повторился, потому что соблазн одинаковой таблицы возвращается на каждой волне.
+
+Гейты: validate 354/354, facts:review clean (41 запись), calibration passed
+(bad max 0, good min 58, separation 66.2), build + rendered audit — см. коммит.

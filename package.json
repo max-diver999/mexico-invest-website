@@ -24,7 +24,7 @@
     "qa:full:quick": "node scripts/qa-full.mjs --quick",
     "corpus:cleanup": "node scripts/corpus-cleanup.mjs",
     "prepush:gate": "node scripts/pre-push-gate.mjs",
-    "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks → .githooks (pre-push runs validate:content + build on MDX changes)'",
+    "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks \u2192 .githooks (pre-push runs validate:content + build on MDX changes)'",
     "fix:queue": "node scripts/fix-batch-queue.mjs",
     "fix:card": "node scripts/fix-content-card.mjs",
     "refresh:protected": "node scripts/refresh-protected-slugs.mjs",
@@ -51,7 +51,10 @@
     "aeo:dates": "node scripts/reference-infra/restore-real-updated-dates.mjs --config reference-infra.config.json",
     "aeo:markdown": "node scripts/reference-infra/fix-markdown-structure.mjs --config reference-infra.config.json",
     "aeo:robots": "node scripts/reference-infra/generate-robots.mjs --config reference-infra.config.json --output public/robots.txt",
-    "aeo:llms": "node scripts/reference-infra/generate-agent-markdown.mjs --config reference-infra.config.json --output-dir public"
+    "aeo:llms": "node scripts/reference-infra/generate-agent-markdown.mjs --config reference-infra.config.json --output-dir public",
+    "facts:review": "node scripts/facts-review.mjs",
+    "geo:score": "node scripts/geo-score.mjs",
+    "geo:calibrate": "node scripts/geo-calibrate.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "5.0.2",
