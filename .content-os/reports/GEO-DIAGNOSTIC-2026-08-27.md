@@ -188,3 +188,51 @@ Roma-Condesa попутно удалена трижды повторённая �
 
 Гейты: validate 354/354, calibration passed, facts:review clean,
 build + rendered audit 0.
+
+## R2 выполнена (2026-08-28) — кластер «документы и риски»
+
+Корпус: mean 36.2 → **37.4**, нулей по-прежнему 1 (copala-quivira, R3).
+Все 45 пар волны разведены до ≤5 общих 9-грамм.
+
+Корень кластера — одна штампованная семья блоков: таблица «Line item /
+Typical range» (14 носителей), таблица «Profile / Typical budget» (20),
+таблица red flags (общая у трёх файлов волны дословно), CTA-семьи
+«Want three options here…» (113 файлов), «second pair of eyes» (10),
+«Want the financing options priced» (11), навигационные строки-штампы
+«Hub:/Area:/Detail:/Corridor: [ссылка]» (до 76 файлов на каркас) и
+курсивный дисклеймер «Indicative ranges from 2026 market observation…»
+(19 файлов).
+
+| Файл | Было → стало | Что теперь держит только он |
+|---|---|---|
+| guides/apostille-documents-mexico-property | 5 → **54** | цепочка легализации: какой документ, какой орган, какой срок |
+| guides/translation-requirements-mexico-deed | 9 → **54** | perito traductor: что переводится обязательно, что «для себя» |
+| guides/ampi-license-verify-guide | 15 → **60** | проверка агента как процесс из 5 звонков; AMPI ≠ лицензия |
+| guides/cfdi-cost-basis-mexico | 8 → **59** | фактура как налоговый актив; basis к ISR |
+| guides/predial-riviera-maya-rates | 24 → **53** | предиаль по муниципалитетам; кадастр vs цена сделки |
+| guides/cross-border-lender-list | 20 → **56** | реестр кредиторов: кто реально выдаёт, кому и почём |
+| guides/best-areas-invest-mexico-2026 | 23 → **57** | рэнкинг по назначению, а не по баллу; tier-логика |
+| guides/first-time-foreign-buyer-mexico | 26 → **55** | три архетипа первой покупки; кассовый запас |
+| guides/mexico-property-closing-costs-breakdown | 24 → **51** | сценарная математика закрытия A–D; регрессивность фикс-платежей |
+| guides/non-resident-mortgage-mexico | 26 → **55** | три маршрута денег: cash / HELOC / hipoteca на одних цифрах |
+
+Замены — рукописные и постраничные: каждая навигационная строка стала
+контекстным предложением со своей формулировкой; каждый CTA переписан под
+тему страницы (в mortgage и lender-list — разными словами); таблица red
+flags в трёх файлах переработана в тематические (агентские / переводческие
+/ налоговые флаги); дисклеймер переписан на каждой странице своими словами.
+Фейковая статистика генератора («in four of five successful wires» и
+аналоги) заменена честной прозой. noindex на closing-costs-breakdown не
+трогал — снятие только по решению Максима.
+
+Побочный эффект: шесть соседних файлов, деливших эти блоки, поднялись на
+3–4 балла без единой правки в них (invest-in-playa-del-carmen 28→32,
+cost-of-buying-property-mexico 30→33, mexico-property-for-americans 30→33,
+mexico-property-under-250k 32→35, puerto-vallarta-property-investment-guide
+28→31, is-mexico-real-estate-good-investment-2026 38→41) — семьи скелетов
+опустились ниже порога в 3 носителя.
+
+Гейты: validate 354/354 (ampi factDensity добит честной производной цифрой
+«70 years» от 1956), facts:review clean (15 claims, ближайший пересмотр
+2027-02-27), calibration passed (bad max 0, good min 58, separation 66.2),
+build — см. коммит.
