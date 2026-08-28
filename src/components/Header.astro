@@ -16,10 +16,10 @@ const path = Astro.url.pathname;
 const isCurrent = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
 <header class="sticky top-0 z-50 border-b border-[var(--color-deep-line)] bg-[var(--color-deep)]">
-  <div class="site-container flex items-center justify-between gap-4 py-4">
-    <a href="/" class="flex items-center gap-2 no-underline">
-      <img src="/favicon.svg?v=3" alt="" data-decorative width="32" height="32" class="rounded-[2px]" />
-      <span class="text-lg font-normal font-[var(--font-serif)] text-[var(--color-cream)]">{SITE.name}</span>
+  <div class="site-container site-header__bar flex items-center justify-between gap-4">
+    <a href="/" class="site-brand no-underline">
+      <img src="/favicon.svg?v=3" alt="" data-decorative width="28" height="28" class="rounded-[2px]" />
+      <span class="site-brand__name">{SITE.name}</span>
     </a>
 
     <nav class="hidden lg:flex items-center gap-5 text-sm font-medium" aria-label="Main">
@@ -28,7 +28,7 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
           href={item.href}
           aria-current={isCurrent(item.href) ? 'page' : undefined}
           class:list={[
-            'no-underline hover:text-[var(--color-cream)]',
+            'site-nav__link no-underline hover:text-[var(--color-cream)]',
             isCurrent(item.href) ? 'text-[var(--color-cream)]' : 'text-[var(--color-cream-dim)]',
           ]}
         >{item.label}</a>
@@ -72,6 +72,22 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
 </header>
 
 <style>
+  /* The hero sizes itself against this, so the bar needs a height the CSS
+     can name rather than one that falls out of whatever wraps. */
+  .site-header__bar {
+    min-height: var(--site-header-h, 64px);
+    padding-block: 0.5rem;
+  }
+  .site-brand { display: flex; align-items: center; gap: 0.55rem; flex-shrink: 0; }
+  .site-brand__name {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    color: var(--color-cream);
+  }
+  .site-nav__link { white-space: nowrap; }
+
   .site-nav__toggle {
     display: inline-flex;
     align-items: center;

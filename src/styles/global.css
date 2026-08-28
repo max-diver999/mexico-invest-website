@@ -14,6 +14,11 @@
      brass-lt  on deep   6.3   deep on brass-lt    6.3
    ────────────────────────────────────────────────────────────── */
 @theme {
+  /* The hero subtracts this to fill exactly one screen. Declared here because
+     an undeclared token makes the calc() invalid at computed-value time and
+     the min-height is dropped without a warning — the hero then sizes itself
+     from its own content again, which is the bug this rebuild exists to fix. */
+  --site-header-h: 64px;
   /* limestone ground */
   --color-page: #f1ece3;
   --color-surface: #faf7f1;
@@ -259,6 +264,10 @@ textarea:focus {
   color: var(--color-muted);
   text-decoration: underline;
   text-underline-offset: 2px;
+  /* 21px tall is under the 24px minimum target size. */
+  min-height: 32px;
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile-only sticky shortlist bar on long article pages. */
@@ -584,12 +593,27 @@ main {
    as one surface. Type still never sits on the photograph, only the
    plate that names the building in it.
    ────────────────────────────────────────────────────────────── */
+/* The hero is one screen, not one aspect ratio.
+ *
+ * It used to be a text band whose height came from its own type scale,
+ * followed by a photograph with a fixed 21:9 crop. Neither knew how tall the
+ * window was, so on a 1440x900 laptop the text alone took 593px and the plate
+ * naming the building sat 300px below the fold — the photograph was a strip.
+ *
+ * Now the section is exactly the viewport minus the header: the copy takes the
+ * height its content needs, and the photograph takes everything that is left.
+ * The vertical type scale is driven by vh as well as vw, so on a short window
+ * the copy shrinks instead of pushing the picture off the screen. */
 .hero-band {
   background: var(--color-deep);
   color: var(--color-cream);
+  min-height: calc(100svh - var(--site-header-h));
+  display: flex;
+  flex-direction: column;
 }
 .hero-band__inner {
-  padding-block: clamp(3.25rem, 7vw, 5.5rem) clamp(2.75rem, 5vw, 4rem);
+  flex: 0 0 auto;
+  padding-block: clamp(1.5rem, 4.2vh, 3.5rem) clamp(1.25rem, 3vh, 2.5rem);
 }
 .hero-band__copy { max-width: 40rem; }
 .hero-band__aside { max-width: 34rem; }
@@ -612,11 +636,13 @@ main {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-brass-light);
-  margin: 0 0 1.35rem;
+  margin: 0 0 clamp(0.7rem, 1.6vh, 1.35rem);
 }
 .hero-band h1 {
   color: var(--color-cream);
-  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  /* min() of a width term and a height term: the headline is the largest
+     thing in the band, so it has to yield on a short window too. */
+  font-size: clamp(2rem, min(5.2vw, 6.4vh), 3.75rem);
   line-height: 1.02;
   margin: 0;
   max-width: 15ch;
@@ -625,7 +651,7 @@ main {
   width: 4.5rem;
   height: 1px;
   background: var(--color-brass-light);
-  margin: 1.7rem 0 1.4rem;
+  margin: clamp(0.9rem, 2vh, 1.7rem) 0 clamp(0.75rem, 1.6vh, 1.4rem);
 }
 .hero-band__deck {
   color: var(--color-cream-dim);
@@ -637,7 +663,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2.1rem;
+  margin-top: clamp(1.1rem, 2.6vh, 2.1rem);
 }
 .hero-band__acts .btn-primary,
 .hero-band__acts .btn-secondary { padding: 0.85rem 1.6rem; }
@@ -647,11 +673,14 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 2.25rem;
+  margin-top: clamp(1rem, 2.4vh, 2.25rem);
 }
 .hero-band__chip {
   display: inline-flex;
   align-items: center;
+  /* inline-flex swallows the whitespace between the count and its label,
+     so "142 GUIDES" was rendering as "142GUIDES" */
+  gap: 0.4em;
   min-height: 44px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -665,16 +694,51 @@ main {
 .hero-band__chip:hover { border-color: var(--color-brass-light); color: var(--color-cream); }
 .hero-band__chip b { color: var(--color-cream); font-weight: 500; }
 
+/* On a phone the copy ran to 610px of a 844px screen and pushed the plate off
+ * the bottom: the eyebrow wrapped to two lines, the deck to six, and the two
+ * buttons stacked. None of that is information — it is just loose setting. */
+@media (max-width: 640px) {
+  .hero-band__eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+  }
+  .hero-band h1 { font-size: clamp(1.75rem, 8.2vw, 2.25rem); }
+  .hero-band__deck {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+  .hero-band__acts { flex-wrap: nowrap; }
+  .hero-band__acts .btn-primary,
+  .hero-band__acts .btn-secondary {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 0.75rem 0.85rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  /* The counts stay on one line and scroll rather than wrapping to two rows. */
+  .hero-band__rail {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.15rem;
+  }
+  .hero-band__rail::-webkit-scrollbar { display: none; }
+  .hero-band__chip { flex: 0 0 auto; }
+}
+
 /* The photograph. Wide, because every usable frame in the corpus is wide. */
+/* The photograph takes the rest of the screen. min-height keeps it a picture
+ * rather than a letterbox on a very short window; the section is allowed to
+ * grow past one screen there rather than crush it. */
 .hero-photo {
   position: relative;
   margin: 0;
   background: var(--color-deep-2);
-  aspect-ratio: 16 / 10;
+  flex: 1 1 auto;
+  min-height: clamp(210px, 34vh, 620px);
   overflow: hidden;
 }
-@media (min-width: 900px) { .hero-photo { aspect-ratio: 21 / 9; } }
-@media (min-width: 1600px) { .hero-photo { aspect-ratio: 24 / 9; } }
 .hero-photo > img {
   position: absolute;
   inset: 0;
