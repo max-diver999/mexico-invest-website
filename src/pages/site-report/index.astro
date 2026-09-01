@@ -15,19 +15,22 @@ const entries = Object.fromEntries(
 const wordsIn = (list: any[]) =>
   list.reduce((total, entry) => total + String(entry.body ?? '').split(/\s+/).filter(Boolean).length, 0);
 
-const reportDate = '23 August 2026';
-const reportVersion = 'v5.1';
+const reportDate = '1 September 2026';
+const reportVersion = 'v5.2';
 const launchDate = '5 June 2026';
-const dataThrough = '20 August 2026';
+const dataThrough = '31 August 2026';
+const mdxArticleCount = 354;
 
 const monthlyGsc = [
   { month: 'Jun 2026', label: 'Jun', clicks: 3, impressions: 373, position: 9.3, note: 'Launch month · first clicks 22 Jun' },
-  { month: 'Jul 2026', label: 'Jul', clicks: 43, impressions: 3202, position: 11.2, note: 'Through 24 Jul · impressions ×8.6 vs Jun' },
+  { month: 'Jul 2026', label: 'Jul', clicks: 43, impressions: 3202, position: 11.2, note: 'Full month · impressions ×8.6 vs Jun' },
+  { month: 'Aug 2026', label: 'Aug', clicks: 61, impressions: 5603, position: 10.5, note: '28d window 4 Aug–31 Aug · earthquake-risk + Gran Tulum · MCP refresh 1 Sep' },
 ];
 
 const monthlyGa4 = [
   { month: 'Jun', sessions: 124 },
   { month: 'Jul', sessions: 213 },
+  { month: 'Aug', sessions: 1221 },
 ];
 
 const contentBreakdown = [
@@ -487,7 +490,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
   <div class="header-meta">
     <div class="label">Last updated</div>
     <div class="value">{reportDate} · {reportVersion} (live)</div>
-    <div class="live-badge"><span class="live-dot"></span> 337 articles · GSC 46 clicks / 3.6k imp · GEO avg 90 · tier-A 20/20 ≥93</div>
+    <div class="live-badge"><span class="live-dot"></span> {mdxArticleCount} articles · GSC 61 clk / 5.6k imp (28d) · GA4 1 221 Aug · GEO avg 90</div>
     <div style="margin-top:10px;font-size:12px;"><a href="https://mexico-invest.com/portfolio-report/" target="_blank" style="color:#9dbfb3;text-decoration:none;">← Portfolio hub (all sites)</a></div>
   </div>
 </div>
@@ -497,9 +500,9 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
   <div class="section-title">At a glance</div>
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="num teal">337</div>
+      <div class="num teal">{mdxArticleCount}</div>
       <div class="label">MDX pages live</div>
-      <div class="sublabel">132 guides · 100 projects · 32 areas · 36 compare · 28 news</div>
+      <div class="sublabel">Corpus count · auto from collections + {mdxArticleCount} total MDX</div>
     </div>
     <div class="stat-card">
       <div class="num amber">255</div>
@@ -512,9 +515,9 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
       <div class="sublabel">337 MDX · ~4.8k avg body words</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">46</div>
-      <div class="label">GSC clicks</div>
-      <div class="sublabel">3 575 imp · CTR 1.29% · avg pos 11.0</div>
+      <div class="num teal">61</div>
+      <div class="label">GSC clicks (28d)</div>
+      <div class="sublabel">5 603 imp · CTR 1.09% · 4 Aug–31 Aug</div>
     </div>
     <div class="stat-card">
       <div class="num">90</div>
@@ -527,9 +530,9 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
       <div class="sublabel">FaqBlock + TldrBlock · 0 GSC FAQ snippets yet</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">337</div>
-      <div class="label">GA4 sessions</div>
-      <div class="sublabel">89 organic · 28 Bing clicks · 0 lead key events</div>
+      <div class="num teal">1 221</div>
+      <div class="label">GA4 sessions (Aug)</div>
+      <div class="sublabel">Aug 2026 full month · MCP refresh 1 Sep</div>
     </div>
     <div class="stat-card" style="background:#fef2f2;border-color:#fecaca;">
       <div class="num" style="color:#b91c1c;">0</div>
@@ -557,9 +560,9 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     </div>
     <div class="kpi-card">
       <div class="kpi-label">GA4 Sessions</div>
-      <div class="kpi-value">337</div>
-      <span class="kpi-delta up">↑ 89 organic</span>
-      <div class="kpi-sub">Jun 124 · Jul 213 (through 24 Jul)</div>
+      <div class="kpi-value">1 558</div>
+      <span class="kpi-delta up">↑ Aug 1 221 sessions</span>
+      <div class="kpi-sub">Jun 124 · Jul 213 · Aug 1 221 · GA4 MCP</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">GEO + AEO</div>
@@ -573,7 +576,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="section-head">
       <div>
         <h2>Monthly growth since launch</h2>
-        <p>Google Search Console web search · {launchDate} → {dataThrough}. July is partial (24 days).</p>
+        <p>Google Search Console web search · {launchDate} → {dataThrough}. August full month via MCP.</p>
       </div>
       <span class="badge-src">GSC API · Updated {reportDate}</span>
     </div>
@@ -688,48 +691,48 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     </div>
     <div class="pulse-kpi-row">
       <div class="pulse-kpi kpi-green">
-        <div class="kpi-trend trend-up">+1333% imp</div>
+        <div class="kpi-trend trend-up">+42% vs Jul</div>
         <div class="kpi-label">Clicks (28d)</div>
-        <div class="kpi-val">43</div>
-        <div class="kpi-sub">Launch total 46 clicks</div>
+        <div class="kpi-val">61</div>
+        <div class="kpi-sub">4 Aug–31 Aug · lifetime 107 clicks</div>
       </div>
       <div class="pulse-kpi kpi-blue">
         <div class="kpi-label">Impressions (28d)</div>
-        <div class="kpi-val">3.2k</div>
-        <div class="kpi-sub">Launch total 3 575 imp</div>
+        <div class="kpi-val">5.6k</div>
+        <div class="kpi-sub">Lifetime 9 178 imp · Aug momentum</div>
       </div>
       <div class="pulse-kpi kpi-amber">
         <div class="kpi-label">Avg position (28d)</div>
-        <div class="kpi-val">11.2</div>
-        <div class="kpi-sub">Money queries top-7 emerging</div>
+        <div class="kpi-val">10.5</div>
+        <div class="kpi-sub">earthquake-risk pos 7.9 · fideicomiso pos 11.7</div>
       </div>
       <div class="pulse-kpi kpi-orange">
-        <div class="kpi-label">Click URLs</div>
-        <div class="kpi-val">33</div>
-        <div class="kpi-sub">255 URLs with impressions</div>
+        <div class="kpi-label">GA4 Aug sessions</div>
+        <div class="kpi-val">1 221</div>
+        <div class="kpi-sub">{mdxArticleCount} MDX · GEO avg 90</div>
       </div>
     </div>
     <div class="pulse-grid">
       <div class="pulse-card">
         <div class="pulse-card-title"><span class="span-green"></span> Top queries (28d · by impressions)</div>
-        <div class="pulse-query-row"><span class="pulse-query-rank">1</span><span class="pulse-query-text">if i sell a house in mexico how can i bring the proceeds to the us</span><span class="pulse-query-pos">6.9</span><span class="pulse-query-imp">50 imp</span></div>
-        <div class="pulse-query-row"><span class="pulse-query-rank">2</span><span class="pulse-query-text">cost of joining a branded residence rental program</span><span class="pulse-query-pos">10.7</span><span class="pulse-query-imp">42 imp</span></div>
-        <div class="pulse-query-row"><span class="pulse-query-rank">3</span><span class="pulse-query-text">gran tulum</span><span class="pulse-query-pos">9.8</span><span class="pulse-query-imp">11 imp</span></div>
-        <div class="pulse-query-row"><span class="pulse-query-rank">4</span><span class="pulse-query-text">nuevo vallarta vs puerto vallarta</span><span class="pulse-query-pos">21.2</span><span class="pulse-query-imp">9 imp</span></div>
-        <div class="pulse-query-row"><span class="pulse-query-rank">5</span><span class="pulse-query-text">mexico vs costa rica real estate</span><span class="pulse-query-pos">4.8</span><span class="pulse-query-imp">47 imp</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">1</span><span class="pulse-query-text">distrito xcalacoco</span><span class="pulse-query-pos">18.7</span><span class="pulse-query-imp">12 imp · 1 clk</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">2</span><span class="pulse-query-text">cancun condos for sale under $200k</span><span class="pulse-query-pos">45.0</span><span class="pulse-query-imp">1 imp · 1 clk</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">3</span><span class="pulse-query-text">destination soleil</span><span class="pulse-query-pos">12.0</span><span class="pulse-query-imp">1 imp · 1 clk</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">4</span><span class="pulse-query-text">aldea zama</span><span class="pulse-query-pos">6.0</span><span class="pulse-query-imp">1 imp · 0 clk</span></div>
+        <div class="pulse-query-row"><span class="pulse-query-rank">5</span><span class="pulse-query-text">fideicomiso / earthquake cluster (high imp)</span><span class="pulse-query-pos">7–12</span><span class="pulse-query-imp">684+ imp</span></div>
       </div>
       <div class="pulse-card">
         <div class="pulse-card-title"><span class="span-blue"></span> Top pages (28d · clicks)</div>
-        <div class="pulse-page-row"><span class="pulse-page-url">/guides/repatriate-sale-proceeds-mexico/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">4 clk</span><span class="pulse-badge badge-impr">141 imp</span></div></div>
-        <div class="pulse-page-row"><span class="pulse-page-url">/guides/vat-mexico-property-rental/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">3 clk</span><span class="pulse-badge badge-impr">123 imp</span></div></div>
-        <div class="pulse-page-row"><span class="pulse-page-url">/guides/str-occupancy-by-month-riviera-maya/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">3 clk</span><span class="pulse-badge badge-impr">49 imp</span></div></div>
-        <div class="pulse-page-row"><span class="pulse-page-url">/guides/earthquake-risk-mexico-property/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">1 clk</span><span class="pulse-badge badge-impr">174 imp</span></div></div>
-        <div class="pulse-page-row"><span class="pulse-page-url">/projects/chileno-bay-residences/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">2 clk</span><span class="pulse-badge badge-impr">77 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/guides/earthquake-risk-mexico-property/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">10 clk</span><span class="pulse-badge badge-impr">259 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/projects/gran-tulum/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">4 clk</span><span class="pulse-badge badge-impr">33 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/projects/four-seasons-punta-mita/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">3 clk</span><span class="pulse-badge badge-impr">51 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/projects/vidanta-nuevo-vallarta/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">3 clk</span><span class="pulse-badge badge-impr">91 imp</span></div></div>
+        <div class="pulse-page-row"><span class="pulse-page-url">/guides/fideicomiso-mexico-explained/</span><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">2 clk</span><span class="pulse-badge badge-impr">684 imp</span></div></div>
       </div>
     </div>
     <div class="pulse-insight">
       <div class="pulse-insight-icon">📈</div>
-      <div class="pulse-insight-text"><strong>CTR sprint:</strong> earthquake-risk (174 imp, 0.57% CTR) and branded-residences (101 imp, 0 clicks) are tier-A GEO URLs with weak CTR. Repatriate + VAT guides already convert. Canonical www/non-www splits Vidanta and Costa Palmas clicks.</div>
+      <div class="pulse-insight-text"><strong>Aug acceleration:</strong> 61 clicks / 5 603 imp in 28d (+42% clicks vs Jul full month). Earthquake-risk guide leads with 10 clk. Gran Tulum + Four Seasons project pages converting. Fideicomiso 684 imp at 0.29% CTR = tier-A CTR sprint.</div>
     </div>
   </div>
 
@@ -834,6 +837,14 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 
   <div class="section-title">Change history</div>
   <div class="changelog">
+        <div class="changelog-item">
+      <div class="changelog-date">1 Sep 2026 (v5.2)</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site-report v5.2 · MCP refresh (GSC + GA4)</div>
+        <div class="changelog-desc">GSC 28d 4 Aug–31 Aug: 61 clk / 5 603 imp. GA4 Aug 1 221 sessions. Corpus {mdxArticleCount} MDX. Top pages: earthquake-risk (10 clk), Gran Tulum (4 clk), fideicomiso (684 imp). Lifetime GSC 107 clicks / 9 178 imp.</div>
+        <div class="changelog-tags"><span class="tag green">GSC 61 / 5 603</span><span class="tag blue">GA4 1 221 Aug</span><span class="tag amber">{mdxArticleCount} MDX</span><span class="tag purple">MCP refresh</span></div>
+      </div>
+    </div>
         <div class="changelog-item">
       <div class="changelog-date">23 Aug 2026 (v5.1)</div>
       <div class="changelog-content">
@@ -967,7 +978,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 </div>
 
   <div class="footer">
-  <strong>Mexico Invest</strong> · mexico-invest.com · Report updated 27 Jul 2026 v5.0 · 337 MDX · GSC 46 clk / 3 575 imp · GA4 337 sessions · GEO avg 90<br>
+  <strong>Mexico Invest</strong> · mexico-invest.com · Report updated 1 Sep 2026 v5.2 · {mdxArticleCount} MDX · GSC 61 clk / 5 603 imp (28d) · GA4 1 221 sessions Aug · GEO avg 90<br>
   <a href="https://mexico-invest.com/portfolio-report/" style="color:#2d7a5e;text-decoration:none;">Portfolio hub (all sites)</a> ·
   To update: edit <code>src/pages/site-report/index.astro</code> in mexico-invest-website
 </div>
