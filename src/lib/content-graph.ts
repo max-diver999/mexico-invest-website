@@ -29,6 +29,8 @@ export interface LinkCard {
   description: string;
   collection: CollectionName;
   label: string;
+  /** The target page's own hero, shown as a thumbnail beside the link. */
+  image?: string;
 }
 
 const ROUTED: CollectionName[] = ['guides', 'projects', 'compare', 'areas', 'news', 'developers'];
@@ -80,6 +82,7 @@ function toCard(e: IndexedEntry): LinkCard {
     description: e.description,
     collection: e.collection,
     label: COLLECTION_LABEL[e.collection],
+    image: typeof e.data.heroImage === 'string' ? e.data.heroImage : undefined,
   };
 }
 

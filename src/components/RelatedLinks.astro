@@ -1,5 +1,6 @@
 ---
 import type { LinkCard } from '../lib/content-graph';
+import { getCardImageUrl } from '../lib/cardImage';
 
 interface Props {
   heading: string;
@@ -8,18 +9,32 @@ interface Props {
   note?: string;
 }
 const { heading, cards, note } = Astro.props;
+
+/*
+ * A square rather than a band. These sit at the foot of a long article, where
+ * the reader has already decided to leave; the thumbnail is there to say which
+ * place or building is behind the link, not to open a second article.
+ */
+const withPhoto = cards.map((card) => ({ card, photo: getCardImageUrl(card.image, 'thumb') }));
 ---
 {cards.length > 0 && (
   <section class="related-links" aria-label={heading}>
     <h2 class="related-links__heading">{heading}</h2>
     {note && <p class="related-links__note">{note}</p>}
     <ul class="related-links__grid">
-      {cards.map((card) => (
+      {withPhoto.map(({ card, photo }) => (
         <li class="related-links__item">
-          <a href={card.url} class="related-links__link">
-            <span class="related-links__badge">{card.label}</span>
-            <span class="related-links__title">{card.title}</span>
-            <span class="related-links__desc">{card.description}</span>
+          <a href={card.url} class:list={['related-links__link', photo && 'related-links__link--photo']}>
+            {photo && (
+              <span class="related-links__media">
+                <img src={photo} alt="" data-decorative loading="lazy" decoding="async" width="240" height="240" />
+              </span>
+            )}
+            <span class="related-links__body">
+              <span class="related-links__badge">{card.label}</span>
+              <span class="related-links__title">{card.title}</span>
+              <span class="related-links__desc">{card.description}</span>
+            </span>
           </a>
         </li>
       ))}
@@ -55,7 +70,7 @@ const { heading, cards, note } = Astro.props;
     height: 100%;
     padding: 0.9rem 1rem;
     border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border-radius: var(--radius-photo);
     background: var(--color-surface);
     text-decoration: none;
     transition: border-color 0.15s ease, transform 0.15s ease;
@@ -63,6 +78,32 @@ const { heading, cards, note } = Astro.props;
   .related-links__link:hover {
     border-color: var(--color-accent);
     transform: translateY(-1px);
+  }
+  .related-links__link--photo {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .related-links__media {
+    flex: 0 0 96px;
+    width: 96px;
+    min-height: 96px;
+    align-self: stretch;
+    overflow: hidden;
+    background: var(--color-surface-muted);
+    border-right: 1px solid var(--color-border-soft);
+  }
+  .related-links__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .related-links__body { display: block; padding: 0.85rem 1rem; }
+  @media (max-width: 400px) {
+    .related-links__media { flex-basis: 76px; width: 76px; min-height: 76px; }
   }
   .related-links__badge {
     display: inline-block;

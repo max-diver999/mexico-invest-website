@@ -263,7 +263,7 @@ const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
             srcset={responsiveHero.narrow.srcset}
             sizes={responsiveHero.sizes}
             alt={heroAltText}
-            class="article-hero rounded-[2px] border border-[var(--color-border)]"
+            class="article-hero rounded-[var(--radius-photo)] border border-[var(--color-border)]"
             style={`--hero-ar-narrow:${responsiveHero.narrowRatio};--hero-ar-wide:${responsiveHero.wideRatio};`}
             loading="eager"
             fetchpriority="high"

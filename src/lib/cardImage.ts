@@ -19,6 +19,11 @@ import { cloudinaryUrl } from './cloudinary';
  */
 const SIZES = {
   card: 'w_800,h_450,c_fill,g_auto,q_auto,f_auto',
+  /* A place reads by its verticals: water against a shoreline, a street, a
+   * facade, so the area cards take a taller frame than the project ones. */
+  cardTall: 'w_800,h_534,c_fill,g_auto,q_auto,f_auto',
+  /* The square beside a link in the related rail: small, so it can be dense. */
+  thumb: 'w_240,h_240,c_fill,g_auto,q_auto,f_auto',
   hero: 'w_1600,h_640,c_fill,g_auto,q_auto,f_auto',
   /** Hero photograph: a wide band, matched to the ~16:9 frames the corpus holds. */
   panel: 'w_1800,h_760,c_fill,g_auto,q_auto,f_auto',

@@ -8,10 +8,16 @@ const areas = (await getCollection('areas'))
   .filter((a) => !a.data.noindex)
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
 
+/*
+ * No price plaque here. An area has no single price, and inventing one to fill
+ * the corner of a photograph is exactly the kind of number this site exists to
+ * take apart rather than to publish.
+ */
 const toCard = (entry: (typeof areas)[number]) => ({
   url: `/areas/${entry.id}/`,
-  title: entry.data.title,
+  title: entry.data.cardTitle ?? entry.data.title,
   description: entry.data.description,
+  image: entry.data.heroImage,
   meta: `${entry.data.readingTime ?? 10} min read`,
 });
 
@@ -79,4 +85,5 @@ const faq = [
   {groups}
   {faq}
   {lastUpdated}
+  cardMedia="tall"
 />

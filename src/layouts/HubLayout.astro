@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getCardImageUrl } from '../lib/cardImage';
 import { SITE } from '../data/site';
 
 export interface HubCard {
@@ -11,6 +12,12 @@ export interface HubCard {
   description: string;
   meta?: string;
   badge?: string;
+  /** Cloudinary source. The card crops it; pass the page's own heroImage. */
+  image?: string;
+  /** Overlaid on the photograph: the one number a card is allowed to carry. */
+  price?: string;
+  /** Corner flag on the photograph: delivery status, and nothing else. */
+  flag?: string;
 }
 
 export interface HubGroup {
@@ -36,6 +43,12 @@ interface Props {
   leadTitle?: string;
   leadSubtitle?: string;
   searchable?: boolean;
+  /**
+   * 'wide' is a 16:9 band: a building, a pool, a coastline read across.
+   * 'tall' is 3:2, for the area pages, where a place is carried by its
+   * verticals rather than by a panorama.
+   */
+  cardMedia?: 'wide' | 'tall';
 }
 
 const {
@@ -50,6 +63,7 @@ const {
   leadTitle = 'Get a vetted Mexico shortlist',
   leadSubtitle = 'Tell us the budget and the market. We reply within one business day with three to five options and the net yield maths behind each one.',
   searchable = false,
+  cardMedia = 'wide',
 } = Astro.props;
 
 const pageUrl = `${SITE.url}${path}`;
@@ -114,6 +128,37 @@ const schemas = [
 
 /** Anchor slug for the in-page group nav. */
 const anchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+/*
+ * The photographs are the reason this layout changed, and the guides hub holds
+ * 144 of them. Everything below the first screen is lazy; the opening row is
+ * not, because a card that pops in after paint is the thing lazy loading is
+ * supposed to prevent. Six covers the widest grid's first row plus one.
+ *
+ * Numbering has to run across groups rather than restart inside each one, so
+ * the index is assigned here instead of inside the group loop.
+ */
+const EAGER_CARDS = 6;
+/*
+ * The card photograph carries alt="" on purpose. The link around it is already
+ * labelled by the title sitting under the picture, so a described thumbnail
+ * makes a screen reader announce the same page twice. The article hero is the
+ * opposite case and keeps its real alt: there the picture is the page's own
+ * topical image and nothing else names it.
+ */
+const mediaSize = cardMedia === 'tall' ? 'cardTall' : 'card';
+const mediaWidth = 800;
+const mediaHeight = cardMedia === 'tall' ? 534 : 450;
+
+let cardIndex = 0;
+const renderGroups = groups.map((group) => ({
+  ...group,
+  cards: group.cards.map((card) => ({
+    card,
+    index: cardIndex++,
+    photo: getCardImageUrl(card.image, mediaSize),
+  })),
+}));
 ---
 <BaseLayout title={title} description={description} canonical={pageUrl} {schemas}>
   <section class="site-container py-10 md:py-14">
@@ -150,18 +195,36 @@ const anchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-'
       </nav>
     )}
 
-    {groups.map((group) => (
+    {renderGroups.map((group) => (
       <section class="mb-14" id={anchor(group.label)} data-hub-group>
         <h2 class="text-xl md:text-2xl mb-1">{group.label}</h2>
         {group.note && <p class="text-sm text-[var(--color-muted)] mb-5 max-w-2xl">{group.note}</p>}
         <ul class="hub-grid">
-          {group.cards.map((card) => (
+          {group.cards.map(({ card, index, photo }) => (
             <li data-hub-card data-search={`${card.title} ${card.description} ${card.badge ?? ''}`.toLowerCase()}>
-              <a href={card.url} class="hub-card">
-                {card.badge && <span class="hub-card__badge">{card.badge}</span>}
-                <span class="hub-card__title">{card.title}</span>
-                <span class="hub-card__desc">{card.description}</span>
-                {card.meta && <span class="hub-card__meta">{card.meta}</span>}
+              <a href={card.url} class:list={['hub-card', photo && 'hub-card--photo', cardMedia === 'tall' && 'hub-card--tall']}>
+                {photo && (
+                  <span class="hub-card__media">
+                    <img
+                      src={photo}
+                      alt=""
+                      data-decorative
+                      loading={index < EAGER_CARDS ? 'eager' : 'lazy'}
+                      fetchpriority={index < EAGER_CARDS ? 'high' : 'auto'}
+                      decoding="async"
+                      width={mediaWidth}
+                      height={mediaHeight}
+                    />
+                    {card.price && <span class="hub-card__price">{card.price}</span>}
+                    {card.flag && <span class="hub-card__flag">{card.flag}</span>}
+                  </span>
+                )}
+                <span class="hub-card__body">
+                  {card.badge && <span class="hub-card__badge">{card.badge}</span>}
+                  <span class="hub-card__title">{card.title}</span>
+                  <span class="hub-card__desc">{card.description}</span>
+                  {card.meta && <span class="hub-card__meta">{card.meta}</span>}
+                </span>
               </a>
             </li>
           ))}
@@ -235,31 +298,110 @@ const anchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-'
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 0.75rem;
+    gap: 1.1rem;
     grid-template-columns: 1fr;
   }
   @media (min-width: 640px) { .hub-grid { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1024px) { .hub-grid { grid-template-columns: repeat(3, 1fr); } }
 
+  /*
+   * Every page in every collection already carried a heroImage; the hub just
+   * never asked for it, so 354 photographs sat behind a wall of grey text.
+   * The card is now the photograph first: it is the only part a reader looks
+   * at before deciding whether to open the page.
+   */
   .hub-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    padding: 1rem 1.1rem;
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: var(--radius-photo);
     background: var(--color-surface);
     text-decoration: none;
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .hub-card:hover { border-color: var(--color-accent); transform: translateY(-1px); }
+  .hub-card:hover {
+    border-color: var(--color-brass);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgb(18 41 43 / 10%);
+  }
+  /* A card with no photograph keeps its old padding, so a collection that has
+   * not been shot yet degrades to the previous card rather than to a gap. */
+  .hub-card:not(.hub-card--photo) { padding: 1rem 1.1rem; }
+
+  .hub-card__media {
+    display: block;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-surface-muted);
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+  .hub-card--tall .hub-card__media { aspect-ratio: 3 / 2; }
+  .hub-card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .hub-card:hover .hub-card__media img { transform: scale(1.04); }
+
+  /* Cenote ground under brass, the same pair the hero plate uses, because the
+   * plate has to hold its contrast over whatever the photograph puts behind
+   * it: sand, sky and white facades all defeat a light chip. */
+  .hub-card__price {
+    position: absolute;
+    left: 0.7rem;
+    bottom: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-cream);
+    background: rgb(7 38 42 / 88%);
+    border: 1px solid rgb(214 167 92 / 45%);
+    border-radius: calc(var(--radius-photo) * 0.6);
+    padding: 0.28rem 0.6rem;
+    backdrop-filter: blur(3px);
+  }
+  .hub-card__flag {
+    position: absolute;
+    right: 0.7rem;
+    top: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-deep);
+    background: var(--color-brass-light);
+    border-radius: calc(var(--radius-photo) * 0.6);
+    padding: 0.22rem 0.5rem;
+  }
+
+  .hub-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .hub-card--photo .hub-card__body { padding: 0.9rem 1.05rem 1.05rem; }
+
   .hub-card__badge {
     display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.07em;
+    font-family: var(--font-mono);
+    font-size: 0.63rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--color-muted);
     margin-bottom: 0.35rem;
+  }
+  .hub-card--photo .hub-card__title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.14rem;
+    line-height: 1.2;
   }
   .hub-card__title {
     display: block;
@@ -275,11 +417,26 @@ const anchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-'
     line-height: 1.45;
     color: var(--color-muted);
   }
+  /* Two lines, so a long SEO description cannot set the height of a whole row. */
+  .hub-card--photo .hub-card__desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   .hub-card__meta {
     display: block;
     margin-top: 0.5rem;
     font-size: 0.72rem;
     color: var(--color-muted);
+  }
+  .hub-card--photo .hub-card__meta {
+    margin-top: auto;
+    padding-top: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
   }
 </style>
 

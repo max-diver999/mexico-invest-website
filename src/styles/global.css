@@ -19,6 +19,12 @@
      the min-height is dropped without a warning — the hero then sizes itself
      from its own content again, which is the bug this rebuild exists to fix. */
   --site-header-h: 64px;
+  /* Photographs, and only photographs. Buttons, inputs and pills keep their
+     2px: the direction is plaster and stone, not plastic. A picture is a
+     different object: it has a visible edge, and a hard corner on a
+     photograph reads as a crop rather than as a frame. One token so the
+     whole corpus moves together. */
+  --radius-photo: 6px;
   /* limestone ground */
   --color-page: #f1ece3;
   --color-surface: #faf7f1;
@@ -404,7 +410,7 @@ textarea:focus {
   height: auto;
   margin: 1.75rem 0;
   border: 1px solid var(--color-border);
-  border-radius: 2px;
+  border-radius: var(--radius-photo);
 }
 .prose p > img { margin-block: 1.75rem; }
 .prose figure { margin: 1.75rem 0; }
@@ -509,6 +515,10 @@ main {
   padding-bottom: 4rem;
 }
 
+/* .surface-card keeps its 2px for the text panels that share the class
+ * (the lead form, the CTA box). A card that carries a photograph takes the
+ * photo radius instead, and its media is clipped by it. */
+.content-card { border-radius: var(--radius-photo); }
 .content-card__media {
   position: relative;
   aspect-ratio: 16 / 9;

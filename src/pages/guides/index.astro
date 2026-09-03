@@ -11,6 +11,7 @@ const toCard = (entry: (typeof guides)[number]) => ({
   url: `/guides/${entry.id}/`,
   title: entry.data.title,
   description: entry.data.description,
+  image: entry.data.heroImage,
   meta: `${entry.data.readingTime ?? 8} min read`,
   badge: PILLAR_SLUGS.has(entry.id) ? 'Pillar' : undefined,
 });

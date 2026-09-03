@@ -11,6 +11,7 @@ const toCard = (entry: (typeof comparisons)[number]) => ({
   url: `/compare/${entry.id}/`,
   title: entry.data.title,
   description: entry.data.description,
+  image: entry.data.heroImage,
   meta: `${entry.data.readingTime ?? 9} min read`,
 });
 

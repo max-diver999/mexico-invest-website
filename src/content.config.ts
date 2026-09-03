@@ -33,6 +33,13 @@ const articleSchema = z.object({
   heroShared: z.boolean().optional(),
   /** Descriptive alt for the hero. Falls back to a phrase built from title + area. */
   heroAlt: z.string().optional(),
+  /**
+   * What the page is called on a listing card, where the title sits under a
+   * photograph and has a line and a half to work in. The <title> and the <h1>
+   * still carry the keyword the page ranks on; this carries the name a reader
+   * recognises. Unset falls back to title, so a page without one is not broken.
+   */
+  cardTitle: z.string().optional(),
   readingTime: z.number().optional(),
   relatedSlugs: z.array(z.string()).default([]),
   noindex: z.boolean().default(false),

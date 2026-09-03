@@ -27,6 +27,7 @@ const groups: HubGroup[] = [
         url: `/developers/${entry.id}/`,
         title: entry.data.title,
         description: entry.data.description,
+        image: entry.data.heroImage,
         meta: count ? `${count} project${count === 1 ? '' : 's'} reviewed` : undefined,
       };
     }),

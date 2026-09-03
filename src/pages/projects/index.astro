@@ -2,7 +2,7 @@
 export const prerender = true;
 import { getCollection } from 'astro:content';
 import HubLayout, { type HubGroup } from '../../layouts/HubLayout.astro';
-import { formatUsd } from '../../lib/cardImage';
+import { formatAreaLabel, formatUsd } from '../../lib/cardImage';
 import { MARKET_LABEL, marketForProject, type MarketSlug } from '../../data/geo';
 
 const projects = (await getCollection('projects'))
@@ -12,18 +12,35 @@ const projects = (await getCollection('projects'))
 const priced = projects.map((p) => p.data.priceFromUsd).filter((v): v is number => !!v && v > 0);
 const minPrice = priced.length ? Math.min(...priced) : 130000;
 
+/*
+ * The three facts used to run together in one grey line under the title. On a
+ * card that carries the photograph they each have somewhere better to be: the
+ * price is the number a buyer scans for, so it goes on the picture; the status
+ * is a one-word state, so it goes in the corner; and only the developer, which
+ * is a name rather than a fact about the unit, stays as running text.
+ */
+const STATUS_LABEL: Record<string, string> = {
+  'off-plan': 'Off-plan',
+  delivering: 'Delivering',
+  completed: 'Completed',
+  resale: 'Resale',
+};
+
 const toCard = (entry: (typeof projects)[number]) => {
-  const facts = [
-    entry.data.priceFromUsd ? `from ${formatUsd(entry.data.priceFromUsd)}` : null,
-    entry.data.status ? String(entry.data.status).replace(/-/g, ' ') : null,
-    entry.data.developer,
+  const badges = [
+    entry.data.propertyType ? formatAreaLabel(entry.data.propertyType) : null,
+    entry.data.area ? formatAreaLabel(entry.data.area) : null,
   ].filter(Boolean);
+  const status = entry.data.status ? String(entry.data.status) : '';
   return {
     url: `/projects/${entry.id}/`,
-    title: entry.data.title,
+    title: entry.data.cardTitle ?? entry.data.title,
     description: entry.data.description,
-    meta: facts.join(' · '),
-    badge: entry.data.area ? String(entry.data.area).replace(/-/g, ' ') : undefined,
+    image: entry.data.heroImage,
+    price: entry.data.priceFromUsd ? `from ${formatUsd(entry.data.priceFromUsd)}` : undefined,
+    flag: STATUS_LABEL[status] ?? (status ? status.replace(/-/g, ' ') : undefined),
+    meta: entry.data.developer,
+    badge: badges.join(' · ') || undefined,
   };
 };
 
