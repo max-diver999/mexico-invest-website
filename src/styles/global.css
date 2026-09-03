@@ -202,11 +202,16 @@ input:not([type="checkbox"]):not([type="radio"]), select, textarea {
   font-family: var(--font-sans);
   color: var(--color-ink);
 }
+/* 24px, which is what WCAG 2.2 asks of a target. The site has exactly two of
+ * these and both are the consent box on a lead form: required, and the form
+ * will not submit without it, so it is the last thing that should be the
+ * smallest control on the screen. Set on the attribute selector rather than on
+ * a class because a class loses to this rule on specificity. */
 input[type="checkbox"],
 input[type="radio"] {
-  width: 1.125rem;
-  height: 1.125rem;
-  min-width: 1.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
   padding: 0;
   flex-shrink: 0;
   accent-color: var(--color-accent);
@@ -224,8 +229,15 @@ textarea:focus {
   align-items: flex-start;
   gap: 0.625rem;
 }
+/* The label wraps to two or three lines, so the row stays top-aligned; the
+ * padding lifts the text to sit against the middle of the 24px box rather
+ * than its top edge. */
+.lead-form-consent__label { padding-top: 0.15rem; }
+/* Size lives on the input[type=checkbox] rule above; this only stops the
+ * label from squeezing the box on a narrow column. */
 .lead-form-consent__check {
-  margin-top: 0.125rem;
+  flex: 0 0 auto;
+  margin: 0;
 }
 .lead-form-consent__label {
   flex: 1;
