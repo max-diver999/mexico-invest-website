@@ -40,6 +40,29 @@ if (!planPath) {
  * network; upload.wikimedia.org serves the identical bytes and does. */
 const commonsUrl = (u) => String(u).replace('://thumb.wikimedia.org/', '://upload.wikimedia.org/');
 
+/**
+ * Ask Commons for a thumbnail at a width we choose, rather than reusing the
+ * URL a search happened to return. Two reasons: the hero transform renders at
+ * 1600px and c_fill will upscale anything smaller, and a URL captured during
+ * review can be stale by the time the plan is applied.
+ */
+async function commonsThumb(fileTitle, width = 1800) {
+  const u = new URL('https://commons.wikimedia.org/w/api.php');
+  u.searchParams.set('action', 'query');
+  u.searchParams.set('titles', fileTitle.startsWith('File:') ? fileTitle : `File:${fileTitle}`);
+  u.searchParams.set('prop', 'imageinfo');
+  u.searchParams.set('iiprop', 'url|size');
+  u.searchParams.set('iiurlwidth', String(width));
+  u.searchParams.set('format', 'json');
+  const r = await fetch(u, { headers: { 'User-Agent': UA, 'Api-User-Agent': UA } });
+  if (!r.ok) throw new Error('commons api ' + r.status);
+  const j = await r.json();
+  const page = Object.values(j?.query?.pages || {})[0];
+  const ii = (page?.imageinfo || [])[0];
+  if (!ii?.thumburl) throw new Error('no thumbnail for ' + fileTitle);
+  return ii.thumburl;
+}
+
 async function fetchBytes(url) {
   const r = await fetch(commonsUrl(url), { headers: { 'User-Agent': UA, 'Api-User-Agent': UA } });
   if (!r.ok) throw new Error(`fetch ${r.status}`);
@@ -109,13 +132,35 @@ for (const item of plan) {
       if (!target) throw new Error(`no ${item.toTag} on the page (${urls.length} inline frames)`);
       let fm = setKey(entry.fm, 'heroImage', target);
       if (item.alt) fm = setKey(fm, 'heroAlt', item.alt);
-      if (!DRY) fs.writeFileSync(entry.file, entry.text.replace(entry.block, `---\n${fm}\n---`));
+      /*
+       * Promoting a frame out of the article leaves it on the page twice: once
+       * at the top as the hero and once again where it always sat. Take it out
+       * of the body. The frame it replaces is not demoted into that slot: it was
+       * rejected on the way out, and a rejected picture does not become
+       * acceptable by moving down the page.
+       */
+      let body = entry.text.slice(entry.block.length);
+      const before = body;
+      const esc = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      /* Take the blank line above the image with it, so the paragraphs on
+       * either side close up exactly as they were rather than leaving a gap
+       * that a later formatting pass would have to notice. */
+      body = body.replace(new RegExp(`\\n\\n!\\[[^\\]]*\\]\\(${esc}\\)[^\\n]*\\n`, 'g'), '\n');
+      if (before === body) {
+        body = body.replace(new RegExp(`!\\[[^\\]]*\\]\\(${esc}\\)[^\\n]*\\n?`, 'g'), '');
+      }
+      const removed = before !== body;
+      if (!removed) console.log(`  note  ${col}/${slug}: promoted frame was not found as markdown in the body`);
+      if (!DRY) fs.writeFileSync(entry.file, `---\n${fm}\n---` + body);
       done.swap++;
-      console.log(`swap    ${col}/${slug} -> ${item.toTag}`);
+      console.log(`swap    ${col}/${slug} -> ${item.toTag}${removed ? ' (body copy removed)' : ''}`);
     } else if (op === 'replace') {
       const publicId = `more-group/mexico/${col}/${slug}/hero`;
       let url = `https://res.cloudinary.com/${CLOUD}/image/upload/${publicId}.jpg`;
-      if (!DRY) url = await upload(await fetchBytes(item.thumbUrl), publicId);
+      if (!DRY) {
+        const source = await commonsThumb(item.commonsTitle).catch(() => item.thumbUrl);
+        url = await upload(await fetchBytes(source), publicId);
+      }
       let fm = setKey(entry.fm, 'heroImage', url);
       if (item.alt) fm = setKey(fm, 'heroAlt', item.alt);
       if (item.heroCredit) fm = setKey(fm, 'heroCredit', item.heroCredit);
