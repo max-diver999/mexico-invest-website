@@ -70,7 +70,7 @@ def entries(only=None):
 
 def ahash(data):
     im = Image.open(io.BytesIO(data)).convert("L").resize((GRID, GRID), Image.LANCZOS)
-    px = list(im.getdata())
+    px = list(im.getdata()) if not hasattr(im, "get_flattened_data") else list(im.get_flattened_data())
     avg = sum(px) / len(px)
     return "".join("1" if v > avg else "0" for v in px)
 

@@ -215,8 +215,22 @@ for (const item of plan) {
       const publicId = `more-group/mexico/${col}/${slug}/hero`;
       let url = `https://res.cloudinary.com/${CLOUD}/image/upload/${publicId}.jpg`;
       if (!DRY) {
-        const source = await commonsThumb(item.commonsTitle).catch(() => item.thumbUrl);
-        url = await upload(await fetchBytes(source), publicId);
+        /* Cloudinary refuses anything over 10 MB, and a Commons PNG at 1800px
+         * clears that on its own. Step the width down rather than fail: 1600
+         * is still wider than the hero renders at, so nothing is lost. */
+        let uploaded = null;
+        let lastErr = null;
+        for (const width of [1800, 1400, 1100]) {
+          try {
+            const source = await commonsThumb(item.commonsTitle, width).catch(() => item.thumbUrl);
+            const bytes = await fetchBytes(source);
+            if (bytes.length > 10 * 1024 * 1024) { lastErr = new Error(`${(bytes.length / 1048576).toFixed(1)}MB at ${width}px`); continue; }
+            uploaded = await upload(bytes, publicId);
+            break;
+          } catch (e) { lastErr = e; }
+        }
+        if (!uploaded) throw lastErr || new Error('upload failed');
+        url = uploaded;
       }
       let fm = setKey(entry.fm, 'heroImage', url);
       if (item.alt) fm = setKey(fm, 'heroAlt', item.alt);
