@@ -86,7 +86,15 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
     white-space: nowrap;
     color: var(--color-cream);
   }
-  .site-nav__link { white-space: nowrap; }
+  /* A 14px link is a 20px tall target, and WCAG 2.2 asks for 24. The nav sits
+   * on a 64px bar with room to spare, so the height comes from the link itself
+   * rather than from padding that would push the labels apart. */
+  .site-nav__link {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+  }
 
   .site-nav__toggle {
     display: inline-flex;

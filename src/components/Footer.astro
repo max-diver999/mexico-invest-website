@@ -56,3 +56,16 @@ const about = [
     © {year} {SITE.name}. Independent research. Not financial or legal advice. Verify all figures with licensed professionals.
   </div>
 </footer>
+
+<style>
+  /* The footer link columns were 16px tall targets: a 13px line with no box
+   * around it. Each one is a whole list item rather than a link inside a
+   * sentence, so the running-text exception in WCAG 2.2 does not apply and
+   * they have to reach 24px. Height on the link, not padding on the list, so
+   * the columns keep their alignment. */
+  footer ul a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+  }
+</style>
