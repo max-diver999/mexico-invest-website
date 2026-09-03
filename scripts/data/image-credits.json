@@ -416,11 +416,11 @@
   {
     "page": "/news/puerto-escondido-nomad-demand-july-2026/",
     "pageLabel": "news/puerto-escondido-nomad-demand-july-2026",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Surf_at_Sunset_-_Zicatela_Beach_-_Puerto_Escondido_-_Oaxaca_-_Mexico_%286533419239%29.jpg",
-    "fileTitle": "Surf at Sunset - Zicatela Beach - Puerto Escondido - Oaxaca - Mexico (6533419239).jpg",
-    "licence": "CC BY-SA 2.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-    "author": "Adam Jones from Kelowna, BC, Canada"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Punta_Zicatela,_Puerto_Escondido.jpg",
+    "fileTitle": "Punta Zicatela, Puerto Escondido.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Anna Bertho"
   },
   {
     "page": "/news/puerto-vallarta-resale-liquidity-july-2026/",
@@ -497,11 +497,11 @@
   {
     "page": "/news/temporary-resident-visa-property-july-2026/",
     "pageLabel": "news/temporary-resident-visa-property-july-2026",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Irish_passport_stamp_in_a_British_passport.jpg",
-    "fileTitle": "Irish passport stamp in a British passport.jpg",
-    "licence": "CC BY-SA 4.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "author": "Asheiou"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Instituto_Nacional_de_Migraci%C3%B3n_(4691868910).jpg",
+    "fileTitle": "Instituto Nacional de Migración (4691868910).jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "Carlos Manuel Citalán Marroquín"
   },
   {
     "page": "/news/tulum-buyer-discounts-july-2026/",
@@ -1480,6 +1480,105 @@
     "pageLabel": "developers/zama-desarrollos",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Avenida_Tulum.jpg",
     "fileTitle": "Avenida Tulum.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "edenpictures"
+  },
+  {
+    "page": "/areas/san-jose-del-cabo/",
+    "pageLabel": "areas/san-jose-del-cabo",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centro_del_San_Jos%C3%A9_del_Cabo_(4846531386).jpg",
+    "fileTitle": "Centro del San José del Cabo (4846531386).jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "PriceTravel pictures"
+  },
+  {
+    "page": "/areas/san-miguel-de-allende-property/",
+    "pageLabel": "areas/san-miguel-de-allende-property",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ciudad_de_San_Miguel_de_Allende.jpg",
+    "fileTitle": "Ciudad de San Miguel de Allende.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Anaramirezz"
+  },
+  {
+    "page": "/news/tren-maya-property-impact/",
+    "pageLabel": "news/tren-maya-property-impact",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tren_Maya_Estaci%C3%B3n_Canc%C3%BAn_Piso_Superior.jpg",
+    "fileTitle": "Tren Maya Estación Cancún Piso Superior.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Park1996"
+  },
+  {
+    "page": "/guides/world-cup-2026-mexico-property-impact/",
+    "pageLabel": "guides/world-cup-2026-mexico-property-impact",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Catedral_desde_Plaza_de_la_Liberaci%C3%B3n.jpg",
+    "fileTitle": "Catedral desde Plaza de la Liberación.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "SergioYalu"
+  },
+  {
+    "page": "/news/banxico-june-2026-mexico-property-fx/",
+    "pageLabel": "news/banxico-june-2026-mexico-property-fx",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banco_de_M%C3%A9xico_Bicentenario.jpg",
+    "fileTitle": "Banco de México Bicentenario.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Mauricio Campos Gallardo"
+  },
+  {
+    "page": "/news/los-cabos-luxury-inventory-june-2026/",
+    "pageLabel": "news/los-cabos-luxury-inventory-june-2026",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Medano_beach.jpg",
+    "fileTitle": "Medano beach.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Rafael Saldaña"
+  },
+  {
+    "page": "/developers/vidanta-nuevo-vallarta/",
+    "pageLabel": "developers/vidanta-nuevo-vallarta",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faro_de_la_Marina_de_Nvo_Vallarta_(1).jpg",
+    "fileTitle": "Faro de la Marina de Nvo Vallarta (1).jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "Ferfive"
+  },
+  {
+    "page": "/areas/bacalar-investment/",
+    "pageLabel": "areas/bacalar-investment",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bacalar_-_Lagoon_of_Colors.jpg",
+    "fileTitle": "Bacalar - Lagoon of Colors.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Roberto Bolaños"
+  },
+  {
+    "page": "/areas/east-cape-baja/",
+    "pageLabel": "areas/east-cape-baja",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Los_Barriles_Beach.jpg",
+    "fileTitle": "Los Barriles Beach.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Purecabo"
+  },
+  {
+    "page": "/areas/cozumel-investment/",
+    "pageLabel": "areas/cozumel-investment",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_3_de_Mayo,_San_Miguel_de_Cozumel,_Quintana_Roo,_Mexico.jpg",
+    "fileTitle": "Parque 3 de Mayo, San Miguel de Cozumel, Quintana Roo, Mexico.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Sharon Hahn Darlin"
+  },
+  {
+    "page": "/areas/gonzalo-guerrero-playa/",
+    "pageLabel": "areas/gonzalo-guerrero-playa",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calle_38,_Playa_del_Carmen_QR.jpg",
+    "fileTitle": "Calle 38, Playa del Carmen QR.jpg",
     "licence": "CC BY 2.0",
     "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
     "author": "edenpictures"
