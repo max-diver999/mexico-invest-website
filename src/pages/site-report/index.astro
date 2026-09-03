@@ -15,22 +15,22 @@ const entries = Object.fromEntries(
 const wordsIn = (list: any[]) =>
   list.reduce((total, entry) => total + String(entry.body ?? '').split(/\s+/).filter(Boolean).length, 0);
 
-const reportDate = '1 September 2026';
-const reportVersion = 'v5.3';
+const reportDate = '3 September 2026';
+const reportVersion = 'v5.4';
 const launchDate = '5 June 2026';
 const dataThrough = '31 August 2026';
 const mdxArticleCount = 354;
 
 const monthlyGsc = [
   { month: 'Jun 2026', label: 'Jun', clicks: 3, impressions: 373, position: 9.3, note: 'Launch month · first clicks 22 Jun' },
-  { month: 'Jul 2026', label: 'Jul', clicks: 43, impressions: 3202, position: 11.2, note: 'Full month · impressions ×8.6 vs Jun' },
-  { month: 'Aug 2026', label: 'Aug', clicks: 66, impressions: 6043, position: 13.3, note: 'Full month 1–31 Aug · 28d window 61 clk / 5 603 imp · earthquake-risk + Gran Tulum' },
+  { month: 'Jul 2026', label: 'Jul', clicks: 61, impressions: 4291, position: 11.4, note: 'Full month · impressions ×11.5 vs Jun' },
+  { month: 'Aug 2026', label: 'Aug', clicks: 71, impressions: 6254, position: 13.2, note: 'Full month 1–31 Aug · 28d 66 clk / 5 814 imp · MCP 3 Sep' },
 ];
 
 const monthlyGa4 = [
   { month: 'Jun', sessions: 124 },
-  { month: 'Jul', sessions: 213 },
-  { month: 'Aug', sessions: 1221 },
+  { month: 'Jul', sessions: 326 },
+  { month: 'Aug', sessions: 1256 },
 ];
 
 const contentBreakdown = [
@@ -100,8 +100,8 @@ function barPx(impressions) {
   return Math.max(20, Math.round((impressions / maxMonthlyImp) * 120));
 }
 
-const gscLifetime = { clicks: 130, impressions: 10707 };
-const gsc28d = { clicks: 61, impressions: 5603, from: '4 Aug', to: '31 Aug' };
+const gscLifetime = { clicks: 135, impressions: 10918 };
+const gsc28d = { clicks: 66, impressions: 5814, position: 13.3, from: '4 Aug', to: '31 Aug' };
 const totalClicks = monthlyGsc.reduce((s, m) => s + m.clicks, 0);
 const totalImp = monthlyGsc.reduce((s, m) => s + m.impressions, 0);
 const totalWords = contentBreakdown.reduce((s, c) => s + c.words, 0);
@@ -536,7 +536,7 @@ const chartPayload = JSON.stringify({
   <div class="header-meta">
     <div class="label">Last updated</div>
     <div class="value">{reportDate} · {reportVersion} (live)</div>
-    <div class="live-badge"><span class="live-dot"></span> {mdxArticleCount} articles · GSC 61 clk / 5.6k imp (28d) · GA4 1 221 Aug · GEO avg 90</div>
+    <div class="live-badge"><span class="live-dot"></span> {mdxArticleCount} articles · GSC {gsc28d.clicks} clk / 5.8k imp (28d) · GA4 {monthlyGa4[monthlyGa4.length-1].sessions.toLocaleString('en-GB')} Aug · GEO avg 90</div>
     <div style="margin-top:10px;font-size:12px;"><a href="https://mexico-invest.com/portfolio-report/" target="_blank" style="color:#9dbfb3;text-decoration:none;">← Portfolio hub (all sites)</a></div>
   </div>
 </div>
@@ -561,9 +561,9 @@ const chartPayload = JSON.stringify({
       <div class="sublabel">337 MDX · ~4.8k avg body words</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">61</div>
+      <div class="num teal">{gsc28d.clicks}</div>
       <div class="label">GSC clicks (28d)</div>
-      <div class="sublabel">5 603 imp · CTR 1.09% · 4 Aug–31 Aug</div>
+      <div class="sublabel">{gsc28d.impressions.toLocaleString('en-GB')} imp · pos {gsc28d.position} · {gsc28d.from}–{gsc28d.to}</div>
     </div>
     <div class="stat-card">
       <div class="num">90</div>
@@ -576,9 +576,9 @@ const chartPayload = JSON.stringify({
       <div class="sublabel">FaqBlock + TldrBlock · 0 GSC FAQ snippets yet</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">1 221</div>
+      <div class="num teal">{monthlyGa4[monthlyGa4.length-1].sessions.toLocaleString('en-GB')}</div>
       <div class="label">GA4 sessions (Aug)</div>
-      <div class="sublabel">Aug 2026 full month · MCP refresh 1 Sep</div>
+      <div class="sublabel">Aug 2026 full month · MCP refresh 3 Sep</div>
     </div>
     <div class="stat-card" style="background:#fef2f2;border-color:#fecaca;">
       <div class="num" style="color:#b91c1c;">0</div>
@@ -607,7 +607,7 @@ const chartPayload = JSON.stringify({
     <div class="kpi-card">
       <div class="kpi-label">GA4 Sessions</div>
       <div class="kpi-value">{totalGa4.toLocaleString('en-US')}</div>
-      <span class="kpi-delta up">↑ Aug 1 221 sessions</span>
+      <span class="kpi-delta up">↑ Aug {monthlyGa4[monthlyGa4.length-1].sessions.toLocaleString('en-GB')} sessions</span>
       <div class="kpi-sub">Jun {monthlyGa4[0].sessions} · Jul {monthlyGa4[1].sessions} · Aug {monthlyGa4[2].sessions.toLocaleString('en-US')} · GA4 MCP</div>
     </div>
     <div class="kpi-card">
@@ -635,7 +635,7 @@ const chartPayload = JSON.stringify({
         <div class="card-title">GA4 sessions by month</div>
         <div class="chart-wrap"><canvas id="chartGa4"></canvas></div>
         <div class="insight" style="margin-top:16px;">
-          <strong>Traffic mix:</strong> {totalGa4.toLocaleString('en-US')} GA4 sessions since launch (Jun–Aug). GSC clicks: Jun 3 → Jul 43 → Aug 61. Money URLs: earthquake risk, Gran Tulum, fideicomiso, repatriate proceeds. GEO corpus 354/354 ≥90; tier-A 20 URLs ≥93.
+          <strong>Traffic mix:</strong> {totalGa4.toLocaleString('en-US')} GA4 sessions since launch (Jun–Aug). GSC clicks: Jun 3 → Jul 61 → Aug 71. Money URLs: earthquake risk, Gran Tulum, fideicomiso, repatriate proceeds. GEO corpus 354/354 ≥90; tier-A 20 URLs ≥93.
         </div>
       </div>
     </div>
@@ -746,17 +746,17 @@ const chartPayload = JSON.stringify({
       </div>
       <div class="pulse-kpi kpi-blue">
         <div class="kpi-label">Impressions (28d)</div>
-        <div class="kpi-val">5.6k</div>
+        <div class="kpi-val">{(gsc28d.impressions/1000).toFixed(1)}k</div>
         <div class="kpi-sub">Lifetime {gscLifetime.impressions.toLocaleString('en-US')} imp · Aug momentum</div>
       </div>
       <div class="pulse-kpi kpi-amber">
         <div class="kpi-label">Avg position (28d)</div>
-        <div class="kpi-val">10.5</div>
+        <div class="kpi-val">{gsc28d.position}</div>
         <div class="kpi-sub">earthquake-risk pos 7.9 · fideicomiso pos 11.7</div>
       </div>
       <div class="pulse-kpi kpi-orange">
         <div class="kpi-label">GA4 Aug sessions</div>
-        <div class="kpi-val">1 221</div>
+        <div class="kpi-val">{monthlyGa4[monthlyGa4.length-1].sessions.toLocaleString('en-GB')}</div>
         <div class="kpi-sub">{mdxArticleCount} MDX · GEO avg 90</div>
       </div>
     </div>
@@ -780,11 +780,11 @@ const chartPayload = JSON.stringify({
     </div>
     <div class="pulse-insight">
       <div class="pulse-insight-icon">📈</div>
-      <div class="pulse-insight-text"><strong>Aug acceleration:</strong> 61 clicks / 5 603 imp in 28d (+42% clicks vs Jul full month). Earthquake-risk guide leads with 10 clk. Gran Tulum + Four Seasons project pages converting. Fideicomiso 684 imp at 0.29% CTR = tier-A CTR sprint.</div>
+      <div class="pulse-insight-text"><strong>Aug acceleration:</strong> {gsc28d.clicks} clicks / {gsc28d.impressions.toLocaleString('en-GB')} imp in 28d (+16% clicks vs Jul full month 61). Earthquake-risk guide leads with 10 clk. Gran Tulum + Four Seasons project pages converting. Fideicomiso 684 imp at 0.29% CTR = tier-A CTR sprint.</div>
     </div>
   </div>
 
-  <div class="section-title" style="margin-top:40px;">AEO + GEO Pulse: corpus (1 Sep snapshot)</div>
+  <div class="section-title" style="margin-top:40px;">AEO + GEO Pulse: corpus (3 Sep snapshot)</div>
   <div class="grid-2">
     <div class="info-card">
       <h3>AEO (answer engines + FAQ)</h3>
@@ -885,6 +885,14 @@ const chartPayload = JSON.stringify({
 
   <div class="section-title">Change history</div>
   <div class="changelog">
+        <div class="changelog-item">
+      <div class="changelog-date">3 Sep 2026 (v5.4)</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site-report v5.4 · MCP refresh (GSC + GA4, 3 Sep)</div>
+        <div class="changelog-desc">GSC Jul corrected to 61 clk / 4 291 imp. Aug full month 71 clk / 6 254 imp (pos 13.2). GSC 28d: {gsc28d.clicks} / {gsc28d.impressions.toLocaleString('en-GB')} (pos {gsc28d.position}). GA4 Aug 1 256 (Jul 326 · Jun 124). chartPayload + gsc28d synced.</div>
+        <div class="changelog-tags"><span class="tag green">Report v5.4</span><span class="tag blue">GSC 71 Aug</span><span class="tag amber">GA4 1 256 Aug</span></div>
+      </div>
+    </div>
         <div class="changelog-item">
       <div class="changelog-date">1 Sep 2026 (v5.3)</div>
       <div class="changelog-content">
@@ -1034,7 +1042,7 @@ const chartPayload = JSON.stringify({
 </div>
 
   <div class="footer">
-  <strong>Mexico Invest</strong> · mexico-invest.com · Report updated 1 Sep 2026 v5.3 · {mdxArticleCount} MDX · GSC 61 clk / 5 603 imp (28d) · GA4 1 221 sessions Aug · GEO avg 90<br>
+  <strong>Mexico Invest</strong> · mexico-invest.com · Report updated 3 Sep 2026 v5.4 · {mdxArticleCount} MDX · GSC {gsc28d.clicks} clk / {gsc28d.impressions.toLocaleString('en-GB')} imp (28d) · GA4 1 256 sessions Aug · GEO avg 90<br>
   <a href="https://mexico-invest.com/portfolio-report/" style="color:#2d7a5e;text-decoration:none;">Portfolio hub (all sites)</a> ·
   To update: edit <code>src/pages/site-report/index.astro</code> in mexico-invest-website
 </div>
