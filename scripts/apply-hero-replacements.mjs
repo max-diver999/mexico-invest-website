@@ -158,6 +158,20 @@ for (const item of plan) {
   const heroM = entry.fm.match(/^heroImage:\s*(.*)$/m);
   const hero = heroM ? heroM[1].trim().replace(/^["']/, '').replace(/["']$/, '') : '';
 
+  /*
+   * "in1" is positional: the first frame in the body that is not the hero. So
+   * the moment a page's hero changes, every tag in a plan built before that
+   * points somewhere else. A plan can carry expectHero, the hero the reviewer
+   * was actually looking at, and a page that has moved on since is skipped
+   * rather than swapped a second time. Caught in practice: one page was
+   * promoted twice and landed on the frame after the one it should have.
+   */
+  if (item.expectHero && item.expectHero !== hero) {
+    done.failed.push([col + '/' + slug, 'hero already changed since the plan was made']);
+    console.log(`SKIP    ${col}/${slug}: hero already changed since the plan was made`);
+    continue;
+  }
+
   try {
     if (op === 'swap') {
       const urls = inlineUrls(entry.text, hero);
@@ -176,12 +190,21 @@ for (const item of plan) {
       let body = entry.text.slice(entry.block.length);
       const before = body;
       const esc = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      /*
+       * A markdown image may carry a title after the URL, and on this corpus the
+       * title is doing real work: it is where a frame gets labelled as developer
+       * brochure art rather than a photograph. Promoting such a frame without
+       * carrying the label would quietly upgrade a sales render into what looks
+       * like our own picture, so the title moves into heroCredit.
+       */
+      const titled = new RegExp(`!\\[[^\\]]*\\]\\(${esc}\\s+["']([^"']+)["']\\)`).exec(body);
+      if (titled && !/^heroCredit:/m.test(fm)) fm = setKey(fm, 'heroCredit', titled[1].trim());
       /* Take the blank line above the image with it, so the paragraphs on
        * either side close up exactly as they were rather than leaving a gap
        * that a later formatting pass would have to notice. */
-      body = body.replace(new RegExp(`\\n\\n!\\[[^\\]]*\\]\\(${esc}\\)[^\\n]*\\n`, 'g'), '\n');
+      body = body.replace(new RegExp(`\\n\\n!\\[[^\\]]*\\]\\(${esc}(?:\\s+["'][^"']*["'])?\\)[^\\n]*\\n`, 'g'), '\n');
       if (before === body) {
-        body = body.replace(new RegExp(`!\\[[^\\]]*\\]\\(${esc}\\)[^\\n]*\\n?`, 'g'), '');
+        body = body.replace(new RegExp(`!\\[[^\\]]*\\]\\(${esc}(?:\\s+["'][^"']*["'])?\\)[^\\n]*\\n?`, 'g'), '');
       }
       const removed = before !== body;
       if (!removed) console.log(`  note  ${col}/${slug}: promoted frame was not found as markdown in the body`);
