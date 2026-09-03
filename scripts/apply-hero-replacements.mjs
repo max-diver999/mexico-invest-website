@@ -63,6 +63,40 @@ async function commonsThumb(fileTitle, width = 1800) {
   return ii.thumburl;
 }
 
+/**
+ * Who to credit. Commons' Artist field is written by uploaders and is often
+ * "Own work" or a bare profile URL, neither of which is a name a reader can
+ * use. Fall back through Attribution and Credit to the uploader, and reduce a
+ * URL to the account name it ends in.
+ */
+async function resolveAuthor(fileTitle, fallback) {
+  const strip = (v) => String(v || '').replace(/<[^>]*>/g, '').trim();
+  const fromUrl = (v) => {
+    const m = /^https?:\/\/[^\s]+?\/([^\/\s?#]+)\/?$/.exec(v);
+    return m ? `${m[1]} (via ${new URL(v).hostname.replace(/^www\./, '')})` : v;
+  };
+  try {
+    const u = new URL('https://commons.wikimedia.org/w/api.php');
+    u.searchParams.set('action', 'query');
+    u.searchParams.set('titles', fileTitle.startsWith('File:') ? fileTitle : `File:${fileTitle}`);
+    u.searchParams.set('prop', 'imageinfo');
+    u.searchParams.set('iiprop', 'extmetadata|user');
+    u.searchParams.set('format', 'json');
+    const j = await (await fetch(u, { headers: { 'User-Agent': UA, 'Api-User-Agent': UA } })).json();
+    const ii = (Object.values(j?.query?.pages || {})[0]?.imageinfo || [])[0] || {};
+    const md = ii.extmetadata || {};
+    const artist = strip(md.Artist?.value);
+    if (artist && !/^own work$/i.test(artist) && !/^https?:\/\//.test(artist)) return artist;
+    const attribution = strip(md.Attribution?.value).replace(/^©\s*/, '').replace(/\s*\/\s*Wikimedia Commons$/i, '');
+    if (attribution) return attribution;
+    if (/^https?:\/\//.test(artist)) return fromUrl(artist);
+    const credit = strip(md.Credit?.value);
+    if (credit && !/^https?:\/\//.test(credit)) return credit;
+    if (ii.user) return ii.user;
+  } catch { /* fall through to whatever the reviewer recorded */ }
+  return fallback || 'Unknown';
+}
+
 async function fetchBytes(url) {
   const r = await fetch(commonsUrl(url), { headers: { 'User-Agent': UA, 'Api-User-Agent': UA } });
   if (!r.ok) throw new Error(`fetch ${r.status}`);
@@ -173,7 +207,7 @@ for (const item of plan) {
         fileTitle: String(item.commonsTitle).replace(/^File:/, ''),
         licence: item.licence,
         licenceUrl: item.licenceUrl || '',
-        author: item.author || 'Unknown',
+        author: await resolveAuthor(item.commonsTitle, item.author),
       };
       /* One row per page, not per file: a page that gets a second replacement
        * later must not leave the first photograph credited as if still in use. */
