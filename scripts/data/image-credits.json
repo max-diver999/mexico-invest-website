@@ -105,7 +105,7 @@
     "fileTitle": "Paseo de la Reforma Skyline Mexico City.jpg",
     "licence": "CC BY-SA 2.0",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-    "author": "https://secure.flickr.com/photos/photos_clinker/"
+    "author": "photos_clinker (via flickr.com)"
   },
   {
     "page": "/guides/crypto-to-mexico-real-estate/",
@@ -137,11 +137,11 @@
   {
     "page": "/guides/european-buyers-mexico-property/",
     "pageLabel": "guides/european-buyers-mexico-property",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terminal_4_del_aeropuerto_de_Madrid-Barajas%2C_Espa%C3%B1a%2C_2013-01-09%2C_DD_01.jpg",
-    "fileTitle": "Terminal 4 del aeropuerto de Madrid-Barajas, España, 2013-01-09, DD 01.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Registro_P%C3%BAblico_de_la_Propiedad_en_M%C3%A9xico.JPG",
+    "fileTitle": "Registro Público de la Propiedad en México.JPG",
     "licence": "CC BY-SA 3.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-    "author": "Diego Delso"
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Miss Atomic Bomb"
   },
   {
     "page": "/guides/fideicomiso-bank-fees-comparison-2026/",
@@ -155,11 +155,11 @@
   {
     "page": "/guides/first-million-mexico-real-estate/",
     "pageLabel": "guides/first-million-mexico-real-estate",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santa_Fe_Skyline_2017_CDMX.jpg",
-    "fileTitle": "Santa Fe Skyline 2017 CDMX.jpg",
-    "licence": "CC0",
-    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "author": "Gobierno CDMX * https://www.flickr.com/photos/140660272@N07/"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puerta_de_Hierro_Gdl.jpg",
+    "fileTitle": "Puerta de Hierro Gdl.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "NanoSW"
   },
   {
     "page": "/guides/form-1116-foreign-tax-credit-mexico-rental/",
@@ -191,11 +191,11 @@
   {
     "page": "/guides/hurricane-flood-insurance-quintana-roo/",
     "pageLabel": "guides/hurricane-flood-insurance-quintana-roo",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hurricane_John_makes_landfall_in_Mexico_%28Copernicus_2024-09-26%29.webp",
-    "fileTitle": "Hurricane John makes landfall in Mexico (Copernicus 2024-09-26).webp",
-    "licence": "Attribution",
-    "licenceUrl": "",
-    "author": "European Union, Copernicus Sentinel-1 imagery"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hurricane_Wilma_damage_Cancun_(59103773).jpg",
+    "fileTitle": "Hurricane Wilma damage Cancun (59103773).jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "eheçåtzin ::  ::. from México, México City"
   },
   {
     "page": "/guides/isla-mujeres-real-estate-investment/",
@@ -519,7 +519,7 @@
     "fileTitle": "Estadio Azteca desde el aire 1.jpg",
     "licence": "CC BY-SA 4.0",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "author": "Own work"
+    "author": "ProtoplasmaKid"
   },
   {
     "page": "/guides/invest-in-tulum/",
@@ -646,5 +646,275 @@
     "licence": "CC BY-SA 4.0",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "ProtoplasmaKid"
+  },
+  {
+    "page": "/guides/can-foreigners-buy-property-mexico/",
+    "pageLabel": "guides/can-foreigners-buy-property-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Notaria_198.jpg",
+    "fileTitle": "Notaria 198.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "David Miranda Calixto"
+  },
+  {
+    "page": "/guides/commercial-property-mexico-foreigner/",
+    "pageLabel": "guides/commercial-property-mexico-foreigner",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Skyline_de_Monterrey.jpg",
+    "fileTitle": "Skyline de Monterrey.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Daniel Escobedo"
+  },
+  {
+    "page": "/guides/lake-chapala-real-estate-americans/",
+    "pageLabel": "guides/lake-chapala-real-estate-americans",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ajijic_Malecon_Sunset.jpg",
+    "fileTitle": "Ajijic Malecon Sunset.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "SimonVelazquez"
+  },
+  {
+    "page": "/guides/mexico-real-estate-for-retirees/",
+    "pageLabel": "guides/mexico-real-estate-for-retirees",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CalleSanFrancisco.jpg",
+    "fileTitle": "CalleSanFrancisco.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Cvmontuy"
+  },
+  {
+    "page": "/guides/notario-publico-mexico-property-role/",
+    "pageLabel": "guides/notario-publico-mexico-property-role",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NotariaDF.jpg",
+    "fileTitle": "NotariaDF.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Coolplur"
+  },
+  {
+    "page": "/guides/pre-construction-mexico-risks/",
+    "pageLabel": "guides/pre-construction-mexico-risks",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ciudad_de_M%C3%A9xico_0723.JPG",
+    "fileTitle": "Ciudad de México 0723.JPG",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Phyrexian"
+  },
+  {
+    "page": "/guides/remote-notarization-mexico/",
+    "pageLabel": "guides/remote-notarization-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Registro_P%C3%BAblico_de_la_Propiedad_en_Distrito_Federal.JPG",
+    "fileTitle": "Registro Público de la Propiedad en Distrito Federal.JPG",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Miss Atomic Bomb"
+  },
+  {
+    "page": "/guides/cfdi-cost-basis-mexico/",
+    "pageLabel": "guides/cfdi-cost-basis-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Notaria_de_avenida_miramontes_del_coyoacan.jpg",
+    "fileTitle": "Notaria de avenida miramontes del coyoacan.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "David Miranda Calixto"
+  },
+  {
+    "page": "/guides/isr-exemption-casa-habitacion/",
+    "pageLabel": "guides/isr-exemption-casa-habitacion",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suprema_Corte_de_Justicia_de_la_Naci%C3%B3n_2025_03.jpg",
+    "fileTitle": "Suprema Corte de Justicia de la Nación 2025 03.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "ProtoplasmaKid"
+  },
+  {
+    "page": "/guides/predial-riviera-maya-rates/",
+    "pageLabel": "guides/predial-riviera-maya-rates",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Municipal,_Cozumel_-_20140724.jpg",
+    "fileTitle": "Palacio Municipal, Cozumel - 20140724.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "PFHLai"
+  },
+  {
+    "page": "/guides/sat-rental-registration-mexico/",
+    "pageLabel": "guides/sat-rental-registration-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aduana_y_Cuartel_de_la_Constituci%C3%B3n,_Xalapa.jpg",
+    "fileTitle": "Aduana y Cuartel de la Constitución, Xalapa.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Pedro Landa García"
+  },
+  {
+    "page": "/guides/cross-border-lender-list/",
+    "pageLabel": "guides/cross-border-lender-list",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Skycrappers_reforma1612_1.jpg",
+    "fileTitle": "Skycrappers reforma1612 1.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Carlos Valenzuela"
+  },
+  {
+    "page": "/guides/currency-closing-usd-mxn/",
+    "pageLabel": "guides/currency-closing-usd-mxn",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pesos_mexicanos.jpg",
+    "fileTitle": "Pesos mexicanos.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Scott Robinson"
+  },
+  {
+    "page": "/guides/developer-financing-mexico/",
+    "pageLabel": "guides/developer-financing-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mexico_City_buildings_under_construction_2017-05-16.jpg",
+    "fileTitle": "Mexico City buildings under construction 2017-05-16.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Josh Baumgartner"
+  },
+  {
+    "page": "/guides/mexico-construction-loan-foreigner/",
+    "pageLabel": "guides/mexico-construction-loan-foreigner",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Construccion_cinderblock_house_Mexico_casa_tradicional_de_ladrillos_en_Veracruz_Mexico_2026_34.jpg",
+    "fileTitle": "Construccion cinderblock house Mexico casa tradicional de ladrillos en Veracruz Mexico 2026 34.jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "Gerardolagunes"
+  },
+  {
+    "page": "/guides/fbar-mexico-real-estate/",
+    "pageLabel": "guides/fbar-mexico-real-estate",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Treasury_Department_North_side_20240601.jpg",
+    "fileTitle": "The Treasury Department North side 20240601.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "颐园居"
+  },
+  {
+    "page": "/guides/how-to-buy-mexico-property-remotely/",
+    "pageLabel": "guides/how-to-buy-mexico-property-remotely",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mexican_Consulate_General_San_Antonio.jpg",
+    "fileTitle": "Mexican Consulate General San Antonio.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Jonathanmallard"
+  },
+  {
+    "page": "/guides/how-to-buy-mexico-property-step-by-step/",
+    "pageLabel": "guides/how-to-buy-mexico-property-step-by-step",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C3%A9rida_Yucat%C3%A1n_2022-03_-_Palacio_Municipal.jpg",
+    "fileTitle": "Mérida Yucatán 2022-03 - Palacio Municipal.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "Globetrotteur17... Ici, là-bas ou ailleurs..."
+  },
+  {
+    "page": "/guides/how-to-sell-mexico-property-from-abroad/",
+    "pageLabel": "guides/how-to-sell-mexico-property-from-abroad",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Old_Federal_District_Building_(Mexico_City).jpg",
+    "fileTitle": "Old Federal District Building (Mexico City).jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Cbl62"
+  },
+  {
+    "page": "/guides/hurricane-insurance-bcs/",
+    "pageLabel": "guides/hurricane-insurance-bcs",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_San_Lucas_overview.jpg",
+    "fileTitle": "Cabo San Lucas overview.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Stan Shebs"
+  },
+  {
+    "page": "/guides/luxury-mexico-property-500k-plus/",
+    "pageLabel": "guides/luxury-mexico-property-500k-plus",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_Tesoro_in_Punta_Mito_Mexico.jpg",
+    "fileTitle": "Casa Tesoro in Punta Mito Mexico.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "interentals.com"
+  },
+  {
+    "page": "/guides/mexico-branded-residences-investment/",
+    "pageLabel": "guides/mexico-branded-residences-investment",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zona_Hotelera.jpg",
+    "fileTitle": "Zona Hotelera.jpg",
+    "licence": "CC BY-SA 2.5 ca",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5/ca/deed.en",
+    "author": "The Cosmonaut"
+  },
+  {
+    "page": "/guides/mexico-marina-property-investment/",
+    "pageLabel": "guides/mexico-marina-property-investment",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marina_del_Rey_(Cabo_San_Lucas)_November_2024_(photo_2).jpg",
+    "fileTitle": "Marina del Rey (Cabo San Lucas) November 2024 (photo 2).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "Alexis Doine"
+  },
+  {
+    "page": "/guides/mexico-off-plan-investment/",
+    "pageLabel": "guides/mexico-off-plan-investment",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_ONE,_Grupo_VAZ.jpg",
+    "fileTitle": "Torre ONE, Grupo VAZ.jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "Orii chan"
+  },
+  {
+    "page": "/guides/mexico-property-under-250k/",
+    "pageLabel": "guides/mexico-property-under-250k",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puerto_Morelos,_QR_Mexico_-_New_build.jpg",
+    "fileTitle": "Puerto Morelos, QR Mexico - New build.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Edna Winti"
+  },
+  {
+    "page": "/guides/off-plan-vs-ready-mexico/",
+    "pageLabel": "guides/off-plan-vs-ready-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edificios_en_construcci%C3%B3n_y_complejo_Reforma_222,_Ciudad_de_M%C3%A9xico.JPG",
+    "fileTitle": "Edificios en construcción y complejo Reforma 222, Ciudad de México.JPG",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "author": "Felipe Alfonso Castillo Vázquez"
+  },
+  {
+    "page": "/guides/repatriate-sale-proceeds-mexico/",
+    "pageLabel": "guides/repatriate-sale-proceeds-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bolsa_Mexicana_de_Valores_y_Edificio_Reforma_265_-_Paseo_de_la_Reforma,_Ciudad_de_M%C3%A9xico.jpg",
+    "fileTitle": "Bolsa Mexicana de Valores y Edificio Reforma 265 - Paseo de la Reforma, Ciudad de México.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Juan Carlos Fonseca Mata"
+  },
+  {
+    "page": "/guides/riviera-maya-property-investment-guide/",
+    "pageLabel": "guides/riviera-maya-property-investment-guide",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canc%C3%BAn_-_Playa_Gaviota_Azul_-_03.jpg",
+    "fileTitle": "Cancún - Playa Gaviota Azul - 03.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "ProtoplasmaKid"
+  },
+  {
+    "page": "/guides/liability-insurance-str-mexico/",
+    "pageLabel": "guides/liability-insurance-str-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Las_Casas_B%2BB_Boutique_Hotel_pool_and_garden_at_dusk_Cuernavaca_Mexico.jpg",
+    "fileTitle": "Las Casas B+B Boutique Hotel pool and garden at dusk Cuernavaca Mexico.jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "Dago Gonzalez"
+  },
+  {
+    "page": "/guides/nearshoring-mexico-industrial-real-estate/",
+    "pageLabel": "guides/nearshoring-mexico-industrial-real-estate",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Industrial_Tecnol%C3%B3gico_Innovaci%C3%B3n.JPG",
+    "fileTitle": "Parque Industrial Tecnológico Innovación.JPG",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Omar David Sandoval Sida"
   }
 ]
