@@ -20,11 +20,11 @@
   {
     "page": "/areas/mexico-city-polanco/",
     "pageLabel": "areas/mexico-city-polanco",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Avenida_Presidente_Masaryk%2C_Polanco.jpg",
-    "fileTitle": "Avenida Presidente Masaryk, Polanco.jpg",
-    "licence": "CC BY 2.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by/2.0/",
-    "author": "ProtoplasmaKid"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plaza_Carso_%26_Museo_Soumaya_-_Mexico_2024_(2).jpg",
+    "fileTitle": "Plaza Carso & Museo Soumaya - Mexico 2024 (2).jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "José Luiz"
   },
   {
     "page": "/areas/mexico-city-roma-condesa/",
@@ -1582,5 +1582,95 @@
     "licence": "CC BY 2.0",
     "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
     "author": "edenpictures"
+  },
+  {
+    "page": "/areas/nuevo-vallarta/",
+    "pageLabel": "areas/nuevo-vallarta",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nuevo_Vallarta.jpg",
+    "fileTitle": "Nuevo Vallarta.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "Ruiz~commonswiki"
+  },
+  {
+    "page": "/areas/puerto-vallarta/",
+    "pageLabel": "areas/puerto-vallarta",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puerto_Vallarta,_Jalisco,_2025_-_192.jpg",
+    "fileTitle": "Puerto Vallarta, Jalisco, 2025 - 192.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Another Believer"
+  },
+  {
+    "page": "/areas/puerto-aventuras/",
+    "pageLabel": "areas/puerto-aventuras",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%AF%D1%85%D1%82%D1%8B_.jpg",
+    "fileTitle": "Яхты .jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Anthem2879"
+  },
+  {
+    "page": "/areas/region-15-tulum/",
+    "pageLabel": "areas/region-15-tulum",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooftop_Pool,_Tulum,_Quintana_Roo,_Mexico_June_2024.jpg",
+    "fileTitle": "Rooftop Pool, Tulum, Quintana Roo, Mexico June 2024.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Eden, Janine and Jim from New York City"
+  },
+  {
+    "page": "/areas/sayulita/",
+    "pageLabel": "areas/sayulita",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Town_of_Sayulita,_Mexico.jpg",
+    "fileTitle": "Town of Sayulita, Mexico.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "গীতাশ্ৰী গগৈ আপ্তে"
+  },
+  {
+    "page": "/areas/tulum-beach-zone/",
+    "pageLabel": "areas/tulum-beach-zone",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playa_Paraiso,_Tulum_QR_Oct_2023.jpg",
+    "fileTitle": "Playa Paraiso, Tulum QR Oct 2023.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Erik Cleves Kristensen"
+  },
+  {
+    "page": "/areas/tulum-pueblo-east/",
+    "pageLabel": "areas/tulum-pueblo-east",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulum_-_01.jpg",
+    "fileTitle": "Tulum - 01.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Carlos Delgado"
+  },
+  {
+    "page": "/areas/zazil-ha-playa/",
+    "pageLabel": "areas/zazil-ha-playa",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_of_Playa_del_Carmen_(43595694131).jpg",
+    "fileTitle": "Aerial of Playa del Carmen (43595694131).jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "dronepicr"
+  },
+  {
+    "page": "/developers/querencia-los-cabos/",
+    "pageLabel": "developers/querencia-los-cabos",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Jos%C3%A9_del_Cabo_002.jpg",
+    "fileTitle": "San José del Cabo 002.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "DestinationFearFan"
+  },
+  {
+    "page": "/compare/mexico-vs-costa-rica-real-estate/",
+    "pageLabel": "compare/mexico-vs-costa-rica-real-estate",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teatro_Nacional_CRI_07_2019_8963.jpg",
+    "fileTitle": "Teatro Nacional CRI 07 2019 8963.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Mariordo ((Mario Roberto Durán Ortiz)"
   }
 ]
