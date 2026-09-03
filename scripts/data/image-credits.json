@@ -515,11 +515,11 @@
   {
     "page": "/news/world-cup-2026-playa-rental-surge-july-2026/",
     "pageLabel": "news/world-cup-2026-playa-rental-surge-july-2026",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Estadio_Azteca_desde_el_aire_1.jpg",
-    "fileTitle": "Estadio Azteca desde el aire 1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playa-del-carmen-beach.jpg",
+    "fileTitle": "Playa-del-carmen-beach.jpg",
     "licence": "CC BY-SA 4.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "author": "ProtoplasmaKid"
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Scott S Bateman"
   },
   {
     "page": "/guides/invest-in-tulum/",
@@ -1105,5 +1105,59 @@
     "licence": "CC BY 4.0",
     "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
     "author": "Giorgio Galeotti"
+  },
+  {
+    "page": "/guides/closing-timeline-mexico-30-90-days/",
+    "pageLabel": "guides/closing-timeline-mexico-30-90-days",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_de_Gobierno_del_Estado_de_Quintana_Roo,_Chetumal._-_panoramio_(1).jpg",
+    "fileTitle": "Palacio de Gobierno del Estado de Quintana Roo, Chetumal. - panoramio (1).jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "author": "holachetumal"
+  },
+  {
+    "page": "/guides/heloc-fund-mexico-purchase/",
+    "pageLabel": "guides/heloc-fund-mexico-purchase",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suburbia_by_David_Shankbone.jpg",
+    "fileTitle": "Suburbia by David Shankbone.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "author": "David Shankbone"
+  },
+  {
+    "page": "/guides/seller-financing-mexico/",
+    "pageLabel": "guides/seller-financing-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_de_Justicia_-_panoramio_(1).jpg",
+    "fileTitle": "Palacio de Justicia - panoramio (1).jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Octavio Alonso Maya …"
+  },
+  {
+    "page": "/guides/us-wire-transfer-mexico-property/",
+    "pageLabel": "guides/us-wire-transfer-mexico-property",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Federal_Reserve_Bank_of_New_York_Building_003.jpg",
+    "fileTitle": "Federal Reserve Bank of New York Building 003.jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "Kidfly182"
+  },
+  {
+    "page": "/guides/rental-contract-mexico-foreign-landlord/",
+    "pageLabel": "guides/rental-contract-mexico-foreign-landlord",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tribunal_Superior_de_Justicia_del_Estado_de_Yucat%C3%A1n.jpg",
+    "fileTitle": "Tribunal Superior de Justicia del Estado de Yucatán.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "J. Magno"
+  },
+  {
+    "page": "/guides/wire-fraud-mexico-closing/",
+    "pageLabel": "guides/wire-fraud-mexico-closing",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edificio_Ciudad_Judicial_de_Puebla.jpg",
+    "fileTitle": "Edificio Ciudad Judicial de Puebla.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "ProtoplasmaKid"
   }
 ]
