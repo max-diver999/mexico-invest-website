@@ -72,8 +72,14 @@ async function commonsThumb(fileTitle, width = 1800) {
 async function resolveAuthor(fileTitle, fallback) {
   const strip = (v) => String(v || '').replace(/<[^>]*>/g, '').trim();
   const fromUrl = (v) => {
-    const m = /^https?:\/\/[^\s]+?\/([^\/\s?#]+)\/?$/.exec(v);
-    return m ? `${m[1]} (via ${new URL(v).hostname.replace(/^www\./, '')})` : v;
+    /* A Flickr credit URL ends in the photo id, not the account, so taking the
+     * last path segment credits a number. The account is the part after
+     * /photos/, and that is who the licence names. */
+    const via = (name) => `${name} (via ${new URL(v).hostname.replace(/^www\./, '')})`;
+    const photos = /\/photos\/([^\/\s?#]+)/.exec(v);
+    if (photos) return via(photos[1]);
+    const last = /^https?:\/\/[^\s]+?\/([^\/\s?#]+)\/?$/.exec(v);
+    return last ? via(last[1]) : v;
   };
   try {
     const u = new URL('https://commons.wikimedia.org/w/api.php');

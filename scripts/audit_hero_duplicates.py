@@ -22,8 +22,17 @@ from PIL import Image
 ROOT = os.getcwd()
 CONTENT = os.path.join(ROOT, "src/content")
 COLLECTIONS = ["guides", "projects", "areas", "compare", "news", "developers"]
-GRID = 12          # 144-bit hash
-THRESHOLD = 14     # bits of difference still counted as the same picture
+GRID = 16          # 256-bit hash
+THRESHOLD = 10     # bits of difference still counted as the same picture
+
+# The first threshold here was 14 bits out of 144, chosen from a run over the
+# 100 project heroes where it was right. Over all 354 it reported eight pages
+# as one picture that turned out to be a Mexico City skyline, a notary office,
+# Puerto Vallarta across the bay, a mangrove boardwalk, the Nayarit coast, the
+# Merida monument, Valle de Bravo rooftops and Los Cabos: eight different
+# photographs whose overall tone happens to match. A coarse hash on a corpus
+# this size finds coincidences, so the grid is finer and the tolerance tighter.
+# Anything this reports still has to be looked at before it is acted on.
 CACHE = "/tmp/mx-hero-phash-cache.json"
 
 CLOUD = re.compile(r"^https://res\.cloudinary\.com/([a-z0-9]+)/image/upload/(.+)$")
@@ -79,6 +88,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--collection")
     ap.add_argument("--fail", action="store_true")
+    ap.add_argument("--threshold", type=int, default=THRESHOLD)
     args = ap.parse_args()
 
     cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
@@ -113,7 +123,7 @@ def main():
         for b in hashed[i + 1:]:
             if b["slug"] in seen:
                 continue
-            if sum(1 for x, y in zip(a["hash"], b["hash"]) if x != y) <= THRESHOLD:
+            if sum(1 for x, y in zip(a["hash"], b["hash"]) if x != y) <= args.threshold:
                 grp.append(b); seen.add(b["slug"])
         if len(grp) > 1:
             clusters.append(grp); seen.add(a["slug"])

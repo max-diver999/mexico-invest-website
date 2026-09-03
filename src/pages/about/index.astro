@@ -1,6 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCardImageUrl } from '../../lib/cardImage';
 import { SITE } from '../../data/site';
+
+/* The page was a wall of short text ending in half a screen of nothing. A
+ * restored mansion on Paseo de Montejo says Mexican housing rather than
+ * Mexican holiday, which is the distinction this page exists to draw. */
+const heroSrc = getCardImageUrl(
+  'https://res.cloudinary.com/dlrrtf6bq/image/upload/v1788438365/more-group/mexico/pages/about/hero.jpg',
+  'hero',
+);
 ---
 <BaseLayout
   title="About Mexico Invest: Independent Property Research"
@@ -8,6 +17,19 @@ import { SITE } from '../../data/site';
 >
   <section class="site-container py-12 md:py-16 max-w-3xl">
     <h1 class="mb-6">About {SITE.name}</h1>
+    <figure class="page-hero">
+      <img
+        src={heroSrc}
+        alt="Restored mansion facade on Paseo de Montejo, Merida"
+        width="1600"
+        height="640"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <figcaption>A restored mansion on Paseo de Montejo, Merida. <a href="/image-credits/">Image credits</a>.</figcaption>
+    </figure>
+
     <div class="prose">
       <p>
         {SITE.name} publishes research-first guides for foreign buyers evaluating Riviera Maya, Los Cabos, and wider Gulf markets.

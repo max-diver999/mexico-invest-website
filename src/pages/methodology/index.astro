@@ -1,5 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCardImageUrl } from '../../lib/cardImage';
+
+/* The sources brief taken literally: the Archivo General de la Nacion, in the
+ * old Lecumberri building. Deliberately not the Registro Publico de la
+ * Propiedad in the Federal District, which the corpus already uses twice. */
+const heroSrc = getCardImageUrl(
+  'https://res.cloudinary.com/dlrrtf6bq/image/upload/v1788438366/more-group/mexico/pages/methodology/hero.jpg',
+  'hero',
+);
 ---
 <BaseLayout
   title="Research Methodology"
@@ -7,6 +16,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 >
   <section class="site-container py-12 md:py-16 max-w-3xl">
     <h1 class="mb-6">Methodology</h1>
+    <figure class="page-hero">
+      <img
+        src={heroSrc}
+        alt="Castellated stone wing of Mexico's national archive"
+        width="1600"
+        height="640"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <figcaption>The Archivo General de la Nacion, Mexico City. <a href="/image-credits/">Image credits</a>.</figcaption>
+    </figure>
+
     <div class="prose">
       <p>
         Our guides combine publicly available regulatory sources (SAT, SRE, RAN, state public registries, municipal
