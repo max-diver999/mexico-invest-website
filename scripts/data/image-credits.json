@@ -470,11 +470,11 @@
   {
     "page": "/news/sat-playa-rfc-appointment-backlog-june-2026/",
     "pageLabel": "news/sat-playa-rfc-appointment-backlog-june-2026",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ciudad_de_M%C3%A9xico_Centro_Historico.jpg",
-    "fileTitle": "Ciudad de México Centro Historico.jpg",
-    "licence": "CC BY-SA 4.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "author": "Travellete"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:00187_Aduana_de_Santo_Domingo_o_Casa_de_los_Marqueses_de_Villa_Mayor.JPG",
+    "fileTitle": "00187 Aduana de Santo Domingo o Casa de los Marqueses de Villa Mayor.JPG",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "fractales222"
   },
   {
     "page": "/news/solidaridad-ish-registration-september-2026/",
@@ -1208,11 +1208,11 @@
   {
     "page": "/compare/aldea-zama-vs-region-15-tulum/",
     "pageLabel": "compare/aldea-zama-vs-region-15-tulum",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulum_-_Route_15,_Road_to_Punta_Allen,_Quintana_Roo,_Mexico.jpg",
-    "fileTitle": "Tulum - Route 15, Road to Punta Allen, Quintana Roo, Mexico.jpg",
-    "licence": "CC BY 2.0",
-    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-    "author": "Sharon Hahn Darlin"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulum_International_Airport.jpg",
+    "fileTitle": "Tulum International Airport.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Oleg Yunakov"
   },
   {
     "page": "/compare/centro-playa-vs-playacar/",
@@ -1271,11 +1271,11 @@
   {
     "page": "/compare/branded-residence-vs-standard-condo-mexico/",
     "pageLabel": "compare/branded-residence-vs-standard-condo-mexico",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Jos%C3%A9_del_Cabo_001.jpg",
-    "fileTitle": "San José del Cabo 001.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zona_dorada_de_Mazatl%C3%A1n.jpg",
+    "fileTitle": "Zona dorada de Mazatlán.jpg",
     "licence": "CC BY-SA 4.0",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "DestinationFearFan"
+    "author": "Gzzz"
   },
   {
     "page": "/compare/cabo-san-lucas-vs-san-jose-del-cabo/",
@@ -1690,5 +1690,149 @@
     "licence": "CC BY-SA 4.0",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "author": "Jorge Szeto"
+  },
+  {
+    "page": "/guides/conservative-investor-mexico-playa/",
+    "pageLabel": "guides/conservative-investor-mexico-playa",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playacar_-_panoramio.jpg",
+    "fileTitle": "Playacar - panoramio.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "sergiosimon"
+  },
+  {
+    "page": "/guides/non-resident-mortgage-mexico/",
+    "pageLabel": "guides/non-resident-mortgage-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fachada_del_Banco_de_M%C3%A9xico.jpg",
+    "fileTitle": "Fachada del Banco de México.jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "ProtoplasmaKid"
+  },
+  {
+    "page": "/guides/property-management-riviera-maya-cost/",
+    "pageLabel": "guides/property-management-riviera-maya-cost",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puerto_Aventuras.jpg",
+    "fileTitle": "Puerto Aventuras.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Anthem2879"
+  },
+  {
+    "page": "/developers/tao-mexico/",
+    "pageLabel": "developers/tao-mexico",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akumal_Half-moon_Bay-27527-2.jpg",
+    "fileTitle": "Akumal Half-moon Bay-27527-2.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Ken Thomas"
+  },
+  {
+    "page": "/guides/non-resident-tax-id-rfc-guide/",
+    "pageLabel": "guides/non-resident-tax-id-rfc-guide",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_SAT,_Torre_Caballito_-_panoramio.jpg",
+    "fileTitle": "Torre SAT, Torre Caballito - panoramio.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "JavierDo"
+  },
+  {
+    "page": "/guides/currency-risk-mexico-property-usd/",
+    "pageLabel": "guides/currency-risk-mexico-property-usd",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edificio_Guardiola_11.jpg",
+    "fileTitle": "Edificio Guardiola 11.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "GAED"
+  },
+  {
+    "page": "/guides/fatca-mexico-property-owners/",
+    "pageLabel": "guides/fatca-mexico-property-owners",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Embassy_in_Mexico.jpg",
+    "fileTitle": "US Embassy in Mexico.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "USembassyMX"
+  },
+  {
+    "page": "/guides/mexico-real-estate-scams-avoid/",
+    "pageLabel": "guides/mexico-real-estate-scams-avoid",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Registro_Agrario_Nacional_(2026).jpg",
+    "fileTitle": "Registro Agrario Nacional (2026).jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Tbhotch"
+  },
+  {
+    "page": "/developers/dine-montage-punta-mita/",
+    "pageLabel": "developers/dine-montage-punta-mita",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Punta_Mita,_Nayarit_-_panoramio.jpg",
+    "fileTitle": "Punta Mita, Nayarit - panoramio.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Lynx Burgos"
+  },
+  {
+    "page": "/projects/luum-zama/",
+    "pageLabel": "projects/luum-zama",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulum,_Quintana_Roo,_Mexico_23_Mayo_2021.jpg",
+    "fileTitle": "Tulum, Quintana Roo, Mexico 23 Mayo 2021.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Sharon Hahn Darlin"
+  },
+  {
+    "page": "/compare/st-regis-vs-chileno-bay-residences/",
+    "pageLabel": "compare/st-regis-vs-chileno-bay-residences",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palmilla_Beaches_in_Cabo.jpg",
+    "fileTitle": "Palmilla Beaches in Cabo.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "https://www.suncabo.com/"
+  },
+  {
+    "page": "/news/tulum-inventory-2026/",
+    "pageLabel": "news/tulum-inventory-2026",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulum_International_Airport_-_03.jpg",
+    "fileTitle": "Tulum International Airport - 03.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Oleg Yunakov"
+  },
+  {
+    "page": "/areas/aldea-zama-tulum/",
+    "pageLabel": "areas/aldea-zama-tulum",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulum_Maya-14.jpg",
+    "fileTitle": "Tulum Maya-14.jpg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "author": "Dronepicr"
+  },
+  {
+    "page": "/areas/tulum/",
+    "pageLabel": "areas/tulum",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulum_maya_Ruinen_(34070995894).jpg",
+    "fileTitle": "Tulum maya Ruinen (34070995894).jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "dronepicr"
+  },
+  {
+    "page": "/areas/puerto-morelos/",
+    "pageLabel": "areas/puerto-morelos",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puerto_Morelos,_QR_Mexico_-_On_the_beach_May_2025.jpg",
+    "fileTitle": "Puerto Morelos, QR Mexico - On the beach May 2025.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Edna Winti"
+  },
+  {
+    "page": "/areas/region-8-tulum/",
+    "pageLabel": "areas/region-8-tulum",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fruit_Stand_-_Tulum_QR_2008.jpg",
+    "fileTitle": "Fruit Stand - Tulum QR 2008.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "Bernard DUPONT"
   }
 ]
