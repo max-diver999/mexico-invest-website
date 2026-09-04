@@ -263,7 +263,17 @@ const renderGroups = groups.map((group) => ({
     gap: 0.4rem 1.1rem;
     font-size: 0.85rem;
   }
-  .hub-nav a { color: var(--color-muted); text-decoration: none; }
+  /* WCAG 2.2 Target Size (Minimum) is 24x24. These sit in a nav list rather
+   * than inline in a sentence, so the inline exception does not cover them,
+   * and at the list's own 0.85rem they were 16px tall. The padding grows the
+   * hit area without moving the text off its line. */
+  .hub-nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+  }
   .hub-nav a:hover { color: var(--color-accent); text-decoration: underline; }
 
   .hub-search {

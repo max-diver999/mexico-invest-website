@@ -1788,7 +1788,7 @@
     "fileTitle": "Palmilla Beaches in Cabo.jpg",
     "licence": "CC BY-SA 4.0",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "author": "https://www.suncabo.com/"
+    "author": "suncabo.com"
   },
   {
     "page": "/news/tulum-inventory-2026/",
@@ -1852,5 +1852,14 @@
     "licence": "CC BY-SA 3.0",
     "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "author": "GAED"
+  },
+  {
+    "page": "/projects/zen-tulum/",
+    "pageLabel": "projects/zen-tulum",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gran_cenote_Tulum_(20767214144).jpg",
+    "fileTitle": "Gran cenote Tulum (20767214144).jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "dronepicr"
   }
 ]
