@@ -27,6 +27,19 @@
 </style>
 
 <script>
+  function runAfterPageLoad(fn) {
+    if (document.readyState === 'complete') {
+      if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 4000 });
+      else setTimeout(fn, 0);
+    } else {
+      window.addEventListener('load', function () {
+        if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 4000 });
+        else setTimeout(fn, 0);
+      }, { once: true });
+    }
+  }
+
+  runAfterPageLoad(function () {
   (function () {
     var RATE_KEY = 'mexico-invest-fx-usd-mxn-v1';
     var PREF_KEY = 'mexico-invest-show-mxn';
@@ -178,4 +191,5 @@
       });
     });
   })();
+  });
 </script>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import './fonts-woff2.css';
+
 /* ──────────────────────────────────────────────────────────────
    Chukum & Brass: Riviera Maya limestone, cenote water, brass.
    Two grounds, not one: pages are limestone; the hero, the CTA

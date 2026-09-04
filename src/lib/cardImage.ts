@@ -18,10 +18,10 @@ import { cloudinaryUrl } from './cloudinary';
  * cheapest part of the file to keep.
  */
 const SIZES = {
-  card: 'w_800,h_450,c_fill,g_auto,q_auto,f_auto',
+  card: 'w_640,h_360,c_fill,g_auto,q_auto,f_auto',
   /* A place reads by its verticals: water against a shoreline, a street, a
    * facade, so the area cards take a taller frame than the project ones. */
-  cardTall: 'w_800,h_534,c_fill,g_auto,q_auto,f_auto',
+  cardTall: 'w_640,h_427,c_fill,g_auto,q_auto,f_auto',
   /* The square beside a link in the related rail: small, so it can be dense. */
   thumb: 'w_240,h_240,c_fill,g_auto,q_auto,f_auto',
   hero: 'w_1600,h_640,c_fill,g_auto,q_auto,f_auto',

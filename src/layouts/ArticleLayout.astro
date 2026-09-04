@@ -233,6 +233,9 @@ const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
   type="article"
   publishedTime={pubDate.toISOString()}
   modifiedTime={(updatedDate || pubDate).toISOString()}
+  preloadImage={responsiveHero?.narrow.src}
+  preloadImageSrcset={responsiveHero?.narrow.srcset}
+  preloadImageSizes={responsiveHero?.sizes}
   {noindex}
   {schemas}
 >

@@ -12,6 +12,7 @@ import {
   HOMEPAGE_HERO_PROJECT_SLUG,
 } from '../data/featured';
 import { getCardImageUrl, formatAreaLabel } from '../lib/cardImage';
+import { heroCloudinary } from '../lib/cloudinary';
 import { pickHomepageProjects, projectHeroLine } from '../lib/homeProjects';
 
 const [guides, projects, areas] = await Promise.all([
@@ -34,7 +35,8 @@ const heroProject = projectBySlug.get(HOMEPAGE_HERO_PROJECT_SLUG) ?? homepagePro
 const featuredAreas = FEATURED_AREA_SLUGS.map((slug) => areaBySlug.get(slug)).filter(Boolean);
 
 // The hero photograph and the plate under it must name the same building.
-const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE ?? heroProject?.data.heroImage, 'panel');
+const heroImageSource = HOMEPAGE_HERO_IMAGE ?? heroProject?.data.heroImage ?? '';
+const responsiveHero = heroImageSource ? heroCloudinary(heroImageSource) : null;
 const heroProjectName = heroProject
   ? heroProject.data.title.replace(/ Review:.*$/, '').replace(/ 2026.*$/, '').replace(/:.*$/, '')
   : '';
@@ -48,6 +50,9 @@ const rail = [
 <BaseLayout
   title="Mexico Real Estate for Foreign Buyers: From $130K 2026"
   description="Compare Mexico property from $130K, realistic 3-5% net yields, fideicomiso rules, and vetted projects. Request a free shortlist for your budget."
+  preloadImage={responsiveHero?.narrow.src}
+  preloadImageSrcset={responsiveHero?.narrow.srcset}
+  preloadImageSizes={responsiveHero?.sizes}
 >
   <section class="hero-band on-deep">
     <div class="site-container hero-band__inner">
@@ -76,16 +81,28 @@ const rail = [
     </div>
 
     <figure class="hero-photo">
-      <img
-        src={heroImage}
-        alt={heroProject
-          ? `${heroProjectName}, ${formatAreaLabel(heroProject.data.area)}: featured Mexico project review`
-          : 'Featured Mexico project'}
-        loading="eager"
-        fetchpriority="high"
-        width="2000"
-        height="860"
-      />
+      {responsiveHero ? (
+        <picture>
+          <source
+            media="(min-width: 900px)"
+            srcset={responsiveHero.wide.srcset}
+            sizes={responsiveHero.sizes}
+          />
+          <img
+            src={responsiveHero.narrow.src}
+            srcset={responsiveHero.narrow.srcset}
+            sizes={responsiveHero.sizes}
+            alt={heroProject
+              ? `${heroProjectName}, ${formatAreaLabel(heroProject.data.area)}: featured Mexico project review`
+              : 'Featured Mexico project'}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width={responsiveHero.width}
+            height={responsiveHero.height}
+          />
+        </picture>
+      ) : null}
       <div class="hero-photo__fall" aria-hidden="true"></div>
       {heroProject && (
         <div class="hero-photo__plate-wrap">

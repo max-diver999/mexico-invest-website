@@ -1,11 +1,22 @@
 ---
-/** GA4: set PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX in Vercel / .env */
+/** GA4 — set PUBLIC_GA_MEASUREMENT_ID in Vercel / .env. Loads 3s after full page load (LCP-first). */
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID as string | undefined;
 ---
 {measurementId && (
-  <>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-    <script define:vars={{ measurementId }}>
+  <script define:vars={{ measurementId }}>
+    function scheduleAfterFullLoad(callback, delayMs) {
+      const ms = delayMs ?? 3000;
+      const run = () => setTimeout(callback, ms);
+      if (document.readyState === 'complete') run();
+      else window.addEventListener('load', run, { once: true });
+    }
+
+    function bootGoogleAnalytics() {
+      const loader = document.createElement('script');
+      loader.async = true;
+      loader.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      document.head.appendChild(loader);
+
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -28,6 +39,8 @@ const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID as string | undef
           window.gtag('event', eventName, payload);
         }
       };
-    </script>
-  </>
+    }
+
+    scheduleAfterFullLoad(bootGoogleAnalytics, 3000);
+  </script>
 )}
