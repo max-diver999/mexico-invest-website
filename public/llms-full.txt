@@ -9,8 +9,8 @@
 - Language: en
 - Markets: Riviera Maya and Quintana Roo, Los Cabos and Baja California Sur, Puerto Vallarta and Riviera Nayarit, Yucatán and the Gulf
 - Coverage: fideicomiso and the restricted zone, Mexican tax (ISR, IVA, RFC, CFDI, predial), US and Canadian tax on Mexican property, short-term rental permits and lodging tax, financing, closing process, hazard risk, and named developments
-- Pages: 352
-- Last updated: 2026-08-26
+- Pages: 354
+- Last updated: 2026-09-06
 
 ## How to cite this site
 
@@ -52,9 +52,9 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Branded Residences: Why Net Yields Drop to 2.5%](https://mexico-invest.com/guides/branded-residences-mexico-guide/)
   Four Seasons, St Regis and Montage homes cost $2,000 to $5,000 a month to hold, so net yields land near 2.5-4.5%. See the fee stack before you buy.
   updated 2026-07-27
-- [Mexico Property Under $200K: Where It Works 2026](https://mexico-invest.com/guides/budget-investor-mexico-under-200k/)
-  Invest in Mexico with under $200K all-in, Puerto Morelos, Mérida, Tulum fringe tickets, 10% closing math, yield traps, and realistic entry paths.
-  updated 2026-07-09
+- [Cheap Homes for Sale in Mexico Under $200,000](https://mexico-invest.com/guides/budget-investor-mexico-under-200k/)
+  Which Mexican cities still have homes under $200,000, what that budget actually buys, and why fixed closing costs bite hardest at this price.
+  updated 2026-09-06
 - [Buy Property in Mexico as a Foreigner: Step-by-Step](https://mexico-invest.com/guides/buy-property-mexico-foreigner/)
   How foreigners buy Mexican real estate in 2026, fideicomiso, restricted zone, closing steps, costs, and due diligence for US and Canadian buyers.
   updated 2026-07-09
@@ -175,6 +175,9 @@ Legal, tax, financing and due-diligence research.
 - [Holbox Property Investment Guide: Island Market 2026](https://mexico-invest.com/guides/holbox-property-investment/)
   Holbox real estate for US buyers: boutique island prices $250K–450K, net STR 3.5–4.5%, ferry access, ecotourism demand, fideicomiso, and 2026 risks.
   updated 2026-07-09
+- [Homes for Sale in Mexico: Houses and Condos by City](https://mexico-invest.com/guides/homes-for-sale-mexico/)
+  Indicative 2026 price bands for houses and condos across eleven Mexican markets, what a foreigner may own, and the closing costs that sit on top.
+  updated 2026-09-06
 - [How to Buy Mexico Property Remotely: Remote Closing Guide](https://mexico-invest.com/guides/how-to-buy-mexico-property-remotely/)
   Buy Mexico real estate without being present, POA, escrow, DD, video closings, wire safety, and step-by-step remote workflow for foreign buyers.
   updated 2026-07-09
@@ -244,9 +247,9 @@ Legal, tax, financing and due-diligence research.
 - [Mexican Bank Account for Foreign Property Owners Guide](https://mexico-invest.com/guides/mexican-bank-account-foreign-property-owner/)
   When foreign Mexico property owners should open local bank accounts, what banks ask for, and how to avoid payment and wire fraud.
   updated 2026-07-09
-- [Mexico Beachfront Property: Costs and Yields 2026](https://mexico-invest.com/guides/mexico-beachfront-property-investment/)
-  Mexico beachfront property guide, coastal locations, fideicomiso rules, pricing trends, and rental yields for foreign buyers 2026.
-  updated 2026-07-09
+- [Beachfront Property for Sale in Mexico: 2026 Guide](https://mexico-invest.com/guides/mexico-beachfront-property-investment/)
+  Beachfront and oceanfront homes in Mexico: the fideicomiso rule, the ZOFEMAT federal zone, insurance cost, and indicative prices on both coasts.
+  updated 2026-09-06
 - [Mexico Branded Residences: Fees and Net Yield 2026](https://mexico-invest.com/guides/mexico-branded-residences-investment/)
   Branded residence investment in Mexico, net yield math, rental pool rules, guaranteed return traps, and Los Cabos vs Puerto Vallarta.
   updated 2026-07-09
@@ -256,9 +259,9 @@ Legal, tax, financing and due-diligence research.
 - [Mexico City Real Estate: Foreign Buyer Guide 2026](https://mexico-invest.com/guides/mexico-city-real-estate-foreigner-guide/)
   How foreigners buy in Mexico City: direct title, no fideicomiso, ISAI 3-4.5%, seismic zones that decide value, and net yields by colonia.
   updated 2026-08-23
-- [Mexico Condo Investment for Foreigners: 2026 Guide](https://mexico-invest.com/guides/mexico-condo-investment-foreigners/)
-  Buying condos in Mexico as a foreigner, ownership structures, best locations, financing, legal requirements, and closing costs 2026.
-  updated 2026-07-09
+- [Condos for Sale in Mexico: Prices, HOA and Rules](https://mexico-invest.com/guides/mexico-condo-investment-foreigners/)
+  Condo prices by Mexican city, what the HOA fee really covers, short-term rental permission by state, and how foreigners take title on the coast.
+  updated 2026-09-06
 - [Mexico Construction Loans for Foreign Buyers Guide](https://mexico-invest.com/guides/mexico-construction-loan-foreigner/)
   Construction financing for foreign buyers building in Mexico in 2026. Who lends, land ownership structure, permit requirements, and alternatives to bank cons...
   updated 2026-07-09
@@ -283,9 +286,9 @@ Legal, tax, financing and due-diligence research.
 - [Mexico Property Insurance for Foreigners: Coverage Guide](https://mexico-invest.com/guides/mexico-property-insurance-foreigners/)
   Mexico property insurance for foreign owners, hurricane coverage, earthquake protection, liability insurance, fideicomiso requirements, claims process.
   updated 2026-07-09
-- [Mexico Property Investment Guide: Yields, Legal, 2026](https://mexico-invest.com/guides/mexico-property-investment-guide/)
-  Independent Mexico property investment guide for US buyers, fideicomiso, net yields by market, closing costs, due diligence, and 2026 buyer scenarios.
-  updated 2026-07-10
+- [Mexico Real Estate: Prices, Areas and How to Buy](https://mexico-invest.com/guides/mexico-property-investment-guide/)
+  How the Mexican property market is organised, who sells what, indicative price bands by region, and the ownership rules a foreign buyer has to clear.
+  updated 2026-09-06
 - [Is Mexico's Property Market Buyer-Friendly in 2026?](https://mexico-invest.com/guides/mexico-property-market-buyer-friendly-2026/)
   Mexico 2026 property market analysis, timing, negotiation leverage, inventory levels, and strategic buying advice for investors.
   updated 2026-07-09
@@ -355,6 +358,9 @@ Legal, tax, financing and due-diligence research.
 - [Predial Property Tax Rates in Riviera Maya: 2026 Guide](https://mexico-invest.com/guides/predial-riviera-maya-rates/)
   Riviera Maya predial rates for Tulum, Playa del Carmen, and Cancún. Assessed value, payment deadlines, discount windows, and compliance for foreign owners.
   updated 2026-07-09
+- [Property for Sale in Mexico: Types and Channels](https://mexico-invest.com/guides/property-for-sale-mexico/)
+  Condo, house, villa, land or commercial in Mexico: what each product costs to own, where the listings actually come from, and how to verify one.
+  updated 2026-09-06
 - [Property Management Riviera Maya: Costs and Fees 2026](https://mexico-invest.com/guides/property-management-riviera-maya-cost/)
   Riviera Maya property management costs, STR fees, HOA, cleaning, permits, net yield impact, and how to choose a manager in Playa and Tulum.
   updated 2026-07-09
