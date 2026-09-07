@@ -9,7 +9,7 @@
 - Language: en
 - Markets: Riviera Maya and Quintana Roo, Los Cabos and Baja California Sur, Puerto Vallarta and Riviera Nayarit, Yucatán and the Gulf
 - Coverage: fideicomiso and the restricted zone, Mexican tax (ISR, IVA, RFC, CFDI, predial), US and Canadian tax on Mexican property, short-term rental permits and lodging tax, financing, closing process, hazard risk, and named developments
-- Pages: 307
+- Pages: 312
 - Last updated: 2026-09-07
 
 ## How to cite this site
@@ -468,11 +468,17 @@ Market-level analysis: prices, yields, STR rules.
 - [Cozumel Real Estate: Homes and Condos for Sale](https://mexico-invest.com/areas/cozumel-investment/)
   Homes and condos for sale on Cozumel, indicative price bands by zone, and what island logistics do to building costs and to the rental calendar.
   updated 2026-09-07
+- [Cuernavaca Real Estate: Homes for Sale in Morelos](https://mexico-invest.com/areas/cuernavaca/)
+  Homes for sale in Cuernavaca by colonia, indicative price bands, direct title inland, and what a weekend-house market means for a foreign buyer.
+  updated 2026-09-07
 - [Ensenada Real Estate: Homes for Sale in Baja](https://mexico-invest.com/areas/ensenada/)
   Homes for sale in Ensenada and along Todos Santos Bay, indicative price bands, the wine country hinterland, and the title checks this coast demands.
   updated 2026-09-06
 - [Guanajuato Real Estate: Homes for Sale](https://mexico-invest.com/areas/guanajuato/)
   Homes for sale in Guanajuato city, indicative price bands by callejon and colonia, direct title outside the restricted zone, and the parking problem.
+  updated 2026-09-07
+- [Huatulco Real Estate: Homes and Condos for Sale](https://mexico-invest.com/areas/huatulco/)
+  Homes and condos for sale in Huatulco, Oaxaca, indicative price bands by bay, and what a planned low-rise resort town means for supply and resale.
   updated 2026-09-07
 - [La Paz Real Estate: Homes for Sale in Baja Sur](https://mexico-invest.com/areas/la-paz-baja/)
   Homes for sale in La Paz, Baja California Sur, indicative price bands by area, and why the state capital costs a fraction of Los Cabos two hours south.
@@ -486,6 +492,9 @@ Market-level analysis: prices, yields, STR rules.
 - [Los Cabos Real Estate: Homes and Condos for Sale](https://mexico-invest.com/areas/los-cabos/)
   Homes and condos for sale across Cabo San Lucas, San Jose del Cabo and the Corridor, with indicative price bands, water supply and hurricane cost.
   updated 2026-09-06
+- [Manzanillo Real Estate: Homes for Sale in Colima](https://mexico-invest.com/areas/manzanillo/)
+  Homes and condos for sale in Manzanillo, Colima, indicative price bands by bay, and what living beside Mexico's busiest container port actually means.
+  updated 2026-09-07
 - [Merida Real Estate: Homes for Sale in Yucatan](https://mexico-invest.com/areas/merida/)
   Homes for sale in Merida by neighbourhood, indicative price bands for Centro colonials and the northern corridors, and the Gulf coast alternative.
   updated 2026-09-06
@@ -509,6 +518,9 @@ Market-level analysis: prices, yields, STR rules.
   updated 2026-09-07
 - [Playa del Carmen Real Estate: Condos for Sale](https://mexico-invest.com/areas/playa-del-carmen/)
   Condos and homes for sale in Playa del Carmen by zone, indicative price bands from Centro to Playacar, and the short-term rental rules that decide yield.
+  updated 2026-09-07
+- [Puebla Real Estate: Homes for Sale](https://mexico-invest.com/areas/puebla/)
+  Homes for sale in Puebla by district, indicative price bands, direct title inland, and what the automotive economy and the 2017 quake mean for buyers.
   updated 2026-09-07
 - [Puerto Aventuras Real Estate: Marina Investment Guide](https://mexico-invest.com/areas/puerto-aventuras/)
   Puerto Aventuras marina condo and villa investment, $280K–700K, gated security, dolphin sanctuary, 3.8–4.6% net yields, family buyer profile, 2026.
@@ -561,6 +573,9 @@ Market-level analysis: prices, yields, STR rules.
 - [Valle de Bravo Real Estate: Foreign Buyer Guide 2026](https://mexico-invest.com/areas/valle-de-bravo/)
   Valle de Bravo property for foreign buyers: direct title, $1,400-3,600 per sqm, CONAGUA federal shoreline rules and the weekend-only occupancy math.
   updated 2026-08-23
+- [Zihuatanejo Real Estate: Homes for Sale](https://mexico-invest.com/areas/zihuatanejo/)
+  Homes for sale in Zihuatanejo and Ixtapa, indicative price bands by bay and neighbourhood, and how the fishing town differs from the planned resort strip.
+  updated 2026-09-07
 
 ## Project reviews
 
