@@ -31,19 +31,12 @@
     const delay = (milliseconds: number) =>
       new Promise<void>((resolve) => window.setTimeout(resolve, milliseconds));
 
+    // Queued rather than dropped: gtag only exists three seconds after load, and a
+    // click on a WhatsApp link before then used to report nothing.
+    const { track } = await import('../lib/track');
+
     function trackWhatsAppClick(placement: string, refCode: string) {
-      try {
-        // @ts-ignore
-        if (typeof window.investGulfTrack === 'function') {
-          // @ts-ignore
-          window.investGulfTrack('click_whatsapp', {
-            wa_placement: placement,
-            wa_ref: refCode,
-          });
-        }
-      } catch {
-        // Analytics must never block WhatsApp.
-      }
+      track('click_whatsapp', { wa_placement: placement, wa_ref: refCode });
     }
 
     document.addEventListener('click', async (event) => {

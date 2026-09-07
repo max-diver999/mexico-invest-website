@@ -65,6 +65,16 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       <input type="checkbox" id="lf-consent" name="consent" required class="lead-form-consent__check" />
       <label class="lead-form-consent__label" for="lf-consent">I agree to be contacted about my enquiry. See our <a href="/privacy-policy/">Privacy Policy</a>.</label>
     </div>
+    <p id="lf-error" class="hidden text-red-600 text-sm text-center" role="alert">
+      Something went wrong. Email {SITE.email} or{' '}
+      <a
+        href={SITE.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-placement="inline_cta"
+        data-cta="whatsapp_form_error"
+      >WhatsApp us</a>.
+    </p>
     <button type="submit" class="btn-primary w-full py-3">Get my Mexico shortlist →</button>
     <ul class="lead-form-next text-xs text-[var(--color-muted)]">
       <li>A researcher reads your request, usually within 15 minutes during US morning hours.</li>
@@ -85,21 +95,12 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       </a>
     </p>
     <p id="lf-success" class="hidden text-green-700 text-sm font-medium text-center">Thank you. Taking you to the next step…</p>
-    <p id="lf-error" class="hidden text-red-600 text-sm text-center">
-      Something went wrong. Email {SITE.email} or{' '}
-      <a
-        href={SITE.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-wa-placement="inline_cta"
-        data-cta="whatsapp_form_error"
-      >WhatsApp us</a>.
-    </p>
   </form>
 </section>
 
 <script>
   import { getLeadAttribution, initializeLeadAttribution } from '../lib/lead-attribution';
+  import { track as ga } from '../lib/track';
 
   initializeLeadAttribution();
 
@@ -112,43 +113,31 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
     };
   }
 
-  function ga(eventName: string, params: Record<string, unknown> = {}) {
-    try {
-      // @ts-ignore
-      if (typeof window.investGulfTrack === 'function') {
-        // @ts-ignore
-        window.investGulfTrack(eventName, params);
-        return;
-      }
-      // @ts-ignore
-      if (typeof window.gtag === 'function') {
-        // @ts-ignore
-        window.gtag('event', eventName, params);
-      }
-      // @ts-ignore
-      window.dataLayer = window.dataLayer || [];
-      // @ts-ignore
-      window.dataLayer.push({ event: eventName, ...params });
-    } catch (_) {}
-  }
-
   document.querySelectorAll('form.ig-lead-form').forEach((formEl) => {
     const form = formEl as HTMLFormElement;
     let started = false;
     const renderedAt = Date.now();
 
-    form.addEventListener('focusin', () => {
-      if (started) return;
-      started = true;
-      const { collection, slug } = pageIdentity();
-      ga('form_start', {
-        form_id: form.id,
-        form_context: form.dataset.context || '',
-        form_location: form.dataset.formLocation || 'top',
-        page_path: window.location.pathname,
-        collection,
-        slug,
-      });
+    // Only a real field counts. `focusin` on the form also fired for the privacy
+    // policy link and the two WhatsApp links inside it, which inflated form_start.
+    form.querySelectorAll('input:not([tabindex="-1"]), select, textarea').forEach((field) => {
+      field.addEventListener(
+        'focus',
+        () => {
+          if (started) return;
+          started = true;
+          const { collection, slug } = pageIdentity();
+          ga('form_start', {
+            form_id: form.id,
+            form_context: form.dataset.context || '',
+            form_location: form.dataset.formLocation || 'top',
+            page_path: window.location.pathname,
+            collection,
+            slug,
+          });
+        },
+        { once: true },
+      );
     });
 
     form.addEventListener('submit', async (e) => {
@@ -157,16 +146,44 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       const phone = String(data.get('phone') || '').trim();
       const email = String(data.get('email') || '').trim();
       const hasPhone = phone.replace(/\D/g, '').length >= 8;
-      const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-      if (!hasPhone && !hasEmail) {
+      // Matches the server rule in lead-spam-gate.ts, so a client pass is a server pass.
+      const hasEmail = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email);
+      const { collection, slug } = pageIdentity();
+
+      // A rejected submit used to return in silence: no event, and the message
+      // rendered below the button. Both halves of that are fixed here.
+      function reportInvalid(reason: string, message: string, focusId: string) {
         const err = document.getElementById('lf-error');
         if (err) {
-          err.textContent = 'Please leave an email address, or a phone number we can reach you on.';
+          err.textContent = message;
           err.classList.remove('hidden');
         }
+        (document.getElementById(focusId) as HTMLInputElement | null)?.focus();
+        ga('form_validation_error', {
+          form_id: form.id,
+          form_location: form.dataset.formLocation || 'top',
+          reason,
+          page_path: window.location.pathname,
+          collection,
+          slug,
+        });
+      }
+
+      if (!hasPhone && !hasEmail) {
+        reportInvalid(
+          'no-contact',
+          'Please leave an email address, or a phone number we can reach you on.',
+          'lf-email',
+        );
         return;
       }
-      const { collection, slug } = pageIdentity();
+      // `novalidate` turns off the browser check, so the required consent box was
+      // never enforced by anything.
+      if (!data.get('consent')) {
+        reportInvalid('no-consent', 'Please tick the box so we know we may reply to you.', 'lf-consent');
+        return;
+      }
+      document.getElementById('lf-error')?.classList.add('hidden');
       const attribution = getLeadAttribution();
       const formLocation = form.dataset.formLocation || 'top';
       const payload = {

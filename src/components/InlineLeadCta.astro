@@ -1,0 +1,226 @@
+---
+/**
+ * Compact lead capture placed inside the article body.
+ *
+ * The full LeadForm sits after the prose, the FAQ and two related-link blocks, which
+ * on a mobile screen puts it at roughly 91 % of page depth. GA4's 90 % scroll event
+ * says 5.8 % of mobile sessions ever get there. This band is rendered after the prose
+ * and relocated by the inline script below to sit between the first and second H2,
+ * so the offer reaches the reader while they are still reading.
+ *
+ * Two fields and a consent box. Everything else the desk needs (page, collection,
+ * slug, attribution) travels with the payload already.
+ */
+interface Props {
+  context?: string;
+}
+
+const { context = '' } = Astro.props;
+---
+<div class="inline-cta" data-inline-cta>
+  <form class="inline-cta__form" id="ig-inline-lead-form" data-context={context} novalidate>
+    <p class="inline-cta__lead">
+      <strong>Want this run for your budget?</strong>
+      Tell us where you are looking and we come back with 3 to 5 matched options and the net yield maths behind each one. Free, and no developer sales deck.
+    </p>
+
+    <div class="inline-cta__row">
+      <div class="inline-cta__field">
+        <label class="inline-cta__label" for="il-email">Email</label>
+        <input type="email" id="il-email" name="email" placeholder="john@example.com" autocomplete="email" />
+      </div>
+      <div class="inline-cta__field">
+        <label class="inline-cta__label" for="il-budget">Budget (USD)</label>
+        <select id="il-budget" name="budget">
+          <option value="">Select budget</option>
+          <option value="under-150k">Under $150k</option>
+          <option value="150-300k">$150k to $300k</option>
+          <option value="300-500k">$300k to $500k</option>
+          <option value="500k-1m">$500k to $1M</option>
+          <option value="1m-2m">$1M to $2M</option>
+          <option value="2m+">$2M+</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-primary inline-cta__btn">Get my shortlist →</button>
+    </div>
+
+    <div class="lead-form-hp" aria-hidden="true">
+      <label for="il-company">Company (leave blank)</label>
+      <input type="text" id="il-company" name="company" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <p id="il-error" class="inline-cta__error hidden" role="alert"></p>
+
+    <div class="lead-form-consent inline-cta__consent">
+      <input type="checkbox" id="il-consent" name="consent" class="lead-form-consent__check" />
+      <label class="lead-form-consent__label" for="il-consent">I agree to be contacted about my enquiry. See our <a href="/privacy-policy/">Privacy Policy</a>.</label>
+    </div>
+
+    <p id="il-success" class="inline-cta__success hidden">Thank you. Taking you to the next step…</p>
+  </form>
+</div>
+
+<script is:inline>
+  /*
+   * Runs during parsing, immediately after the prose has been read, so the band is
+   * in its final position before first paint. Without JS it stays where it is, which
+   * is where the old CTA lived anyway; the form needs fetch to submit regardless.
+   */
+  (function relocateInlineCta() {
+    var band = document.querySelector('[data-inline-cta]');
+    var prose = document.querySelector('.prose');
+    if (!band || !prose) return;
+    var headings = prose.querySelectorAll(':scope > h2');
+    if (headings.length < 3) return;
+    // Before the second H2: the reader has finished one section and is still early
+    // enough that the rest of the article is ahead of them.
+    var anchor = headings[1];
+    var separator = anchor.previousElementSibling;
+    prose.insertBefore(band, separator && separator.tagName === 'HR' ? separator : anchor);
+  })();
+</script>
+
+<script>
+  import { getLeadAttribution, initializeLeadAttribution } from '../lib/lead-attribution';
+  import { track } from '../lib/track';
+
+  initializeLeadAttribution();
+
+  const form = document.getElementById('ig-inline-lead-form') as HTMLFormElement | null;
+  if (form) {
+    const renderedAt = Date.now();
+    const errorEl = document.getElementById('il-error');
+    let started = false;
+
+    function pageIdentity() {
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      return {
+        collection: parts.length > 1 ? parts[0] : 'root',
+        slug: parts.length > 0 ? parts[parts.length - 1] : 'home',
+      };
+    }
+
+    function showError(message: string) {
+      if (!errorEl) return;
+      errorEl.textContent = message;
+      errorEl.classList.remove('hidden');
+    }
+
+    // Only a real field counts as starting the form. A focusin listener on the
+    // form element also fires for the links inside it, which inflated form_start.
+    form.querySelectorAll('input:not([tabindex="-1"]), select, textarea').forEach((field) => {
+      field.addEventListener(
+        'focus',
+        () => {
+          if (started) return;
+          started = true;
+          const { collection, slug } = pageIdentity();
+          track('form_start', {
+            form_id: form!.id,
+            form_context: form!.dataset.context || '',
+            form_location: 'inline',
+            page_path: window.location.pathname,
+            collection,
+            slug,
+          });
+        },
+        { once: true },
+      );
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const email = String(data.get('email') || '').trim();
+      const hasEmail = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email);
+      const { collection, slug } = pageIdentity();
+
+      function reportInvalid(reason: string, message: string) {
+        showError(message);
+        track('form_validation_error', {
+          form_id: form!.id,
+          form_location: 'inline',
+          reason,
+          page_path: window.location.pathname,
+          collection,
+          slug,
+        });
+      }
+
+      if (!hasEmail) {
+        reportInvalid('no-email', 'Please leave an email address we can send the shortlist to.');
+        (document.getElementById('il-email') as HTMLInputElement | null)?.focus();
+        return;
+      }
+      if (!(data.get('consent'))) {
+        reportInvalid('no-consent', 'Please tick the box so we know we may reply to you.');
+        (document.getElementById('il-consent') as HTMLInputElement | null)?.focus();
+        return;
+      }
+      errorEl?.classList.add('hidden');
+
+      const attribution = getLeadAttribution();
+      const payload = {
+        email,
+        contact: email,
+        budget: data.get('budget'),
+        context: form.dataset.context || '',
+        source: window.location.href,
+        page: window.location.pathname,
+        collection,
+        slug,
+        formLocation: 'inline',
+        sessionId: attribution.sessionId,
+        landingPage: attribution.landingPage,
+        referrer: attribution.firstReferrer,
+        aiSource: attribution.externalAiSource,
+        utm: attribution.utm,
+        company: String(data.get('company') || ''),
+        formElapsedMs: Date.now() - renderedAt,
+      };
+
+      track('form_submit_attempt', {
+        form_id: form.id,
+        form_location: 'inline',
+        budget: String(payload.budget || 'not_set'),
+        page_path: window.location.pathname,
+        collection,
+        slug,
+      });
+
+      try {
+        const res = await fetch('/api/lead/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error('fail');
+        document.getElementById('il-success')?.classList.remove('hidden');
+        track('generate_lead', {
+          form_id: form.id,
+          form_location: 'inline',
+          lead_type: 'inline_cta',
+          budget: String(payload.budget || 'not_set'),
+          page_path: window.location.pathname,
+          collection,
+          slug,
+          value: 1,
+          currency: 'USD',
+        });
+        const thanksUrl = new URL('/thanks/', window.location.origin);
+        thanksUrl.searchParams.set('lead', '1');
+        thanksUrl.searchParams.set('from', window.location.pathname);
+        setTimeout(() => window.location.assign(thanksUrl.toString()), 400);
+      } catch {
+        showError('Something went wrong. Please try the full form at the end of this page.');
+        track('form_submit_error', {
+          form_id: form.id,
+          form_location: 'inline',
+          page_path: window.location.pathname,
+          collection,
+          slug,
+        });
+      }
+    });
+  }
+</script>

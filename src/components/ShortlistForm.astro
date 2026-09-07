@@ -80,6 +80,17 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       <label class="lead-form-consent__label" for="sf-consent">I agree to be contacted about my enquiry. See our <a href="/privacy-policy/">Privacy Policy</a>.</label>
     </div>
 
+    <p id="sf-error" class="hidden text-red-600 text-sm text-center" role="alert">
+      Something went wrong. Email {SITE.email} or{' '}
+      <a
+        href={SITE.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-placement="inline_cta"
+        data-cta="whatsapp_shortlist_error"
+      >WhatsApp us</a>.
+    </p>
+
     <button type="submit" class="btn-primary w-full py-3">Get my shortlist →</button>
 
     <ul class="lead-form-next text-xs text-[var(--color-muted)]">
@@ -103,39 +114,14 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
     </p>
 
     <p id="sf-success" class="hidden text-green-700 text-sm font-medium text-center">Thank you. Taking you to the next step…</p>
-    <p id="sf-error" class="hidden text-red-600 text-sm text-center">
-      Something went wrong. Email {SITE.email} or{' '}
-      <a
-        href={SITE.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-wa-placement="inline_cta"
-        data-cta="whatsapp_shortlist_error"
-      >WhatsApp us</a>.
-    </p>
   </form>
 </section>
 
 <script>
   import { getLeadAttribution, initializeLeadAttribution } from '../lib/lead-attribution';
+  import { track as ga } from '../lib/track';
 
   initializeLeadAttribution();
-
-  function ga(eventName: string, params: Record<string, unknown> = {}) {
-    try {
-      // @ts-ignore
-      if (typeof window.investGulfTrack === 'function') {
-        // @ts-ignore
-        window.investGulfTrack(eventName, params);
-        return;
-      }
-      // @ts-ignore
-      if (typeof window.gtag === 'function') {
-        // @ts-ignore
-        window.gtag('event', eventName, params);
-      }
-    } catch (_) {}
-  }
 
   const form = document.getElementById('shortlist-form') as HTMLFormElement | null;
   if (form) {
@@ -143,17 +129,25 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
     const fromSlug = new URLSearchParams(window.location.search).get('from') || 'direct';
     let started = false;
 
-    form.addEventListener('focusin', () => {
-      if (started) return;
-      started = true;
-      ga('form_start', {
-        form_id: form.id,
-        form_context: form.dataset.context || '',
-        form_location: 'shortlist_page',
-        page_path: window.location.pathname,
-        collection: 'get-shortlist',
-        slug: fromSlug,
-      });
+    // A real field, not any focusin: the form contains the privacy policy link
+    // and a WhatsApp link, and tabbing to either counted as starting the form.
+    form.querySelectorAll('input:not([tabindex="-1"]), select, textarea').forEach((field) => {
+      field.addEventListener(
+        'focus',
+        () => {
+          if (started) return;
+          started = true;
+          ga('form_start', {
+            form_id: form.id,
+            form_context: form.dataset.context || '',
+            form_location: 'shortlist_page',
+            page_path: window.location.pathname,
+            collection: 'get-shortlist',
+            slug: fromSlug,
+          });
+        },
+        { once: true },
+      );
     });
 
     form.addEventListener('submit', async (e) => {
@@ -162,21 +156,48 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       const email = String(data.get('email') || '').trim();
       const phone = String(data.get('phone') || '').trim();
       const error = document.getElementById('sf-error');
-      const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      // Matches the server rule in lead-spam-gate.ts, so a client pass is a server pass.
+      const hasEmail = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email);
       const hasPhone = phone.replace(/\D/g, '').length >= 8;
 
-      if (!hasEmail && !hasPhone) {
+      // Every rejected submit reports, so the gap between form_start and
+      // form_submit_attempt can be read instead of guessed at.
+      function reportInvalid(reason: string, message: string, focusId: string) {
         if (error) {
-          error.textContent = 'Please leave an email address, or a phone number we can reach you on.';
+          error.textContent = message;
           error.classList.remove('hidden');
         }
+        (document.getElementById(focusId) as HTMLElement | null)?.focus();
+        ga('form_validation_error', {
+          form_id: form!.id,
+          form_location: 'shortlist_page',
+          reason,
+          page_path: window.location.pathname,
+          collection: 'get-shortlist',
+          slug: fromSlug,
+        });
+      }
+
+      if (!hasEmail && !hasPhone) {
+        reportInvalid(
+          'no-contact',
+          'Please leave an email address, or a phone number we can reach you on.',
+          'sf-email',
+        );
         return;
       }
       if (!data.get('market') || !data.get('budget') || !data.get('timeline')) {
-        if (error) {
-          error.textContent = 'Please pick a market, a budget and a timeline so we can match real options.';
-          error.classList.remove('hidden');
-        }
+        reportInvalid(
+          'missing-brief',
+          'Please pick a market, a budget and a timeline so we can match real options.',
+          !data.get('market') ? 'sf-market' : !data.get('budget') ? 'sf-budget' : 'sf-timeline',
+        );
+        return;
+      }
+      // `novalidate` turns off the browser check, so the required consent box was
+      // never enforced by anything.
+      if (!data.get('consent')) {
+        reportInvalid('no-consent', 'Please tick the box so we know we may reply to you.', 'sf-consent');
         return;
       }
       error?.classList.add('hidden');

@@ -1,8 +1,12 @@
 ---
 /**
- * Mobile-only sticky shortlist bar. Appears once the reader has scrolled past the
- * top lead form, so the CTA stays reachable on long guides without adding a second
- * `#lead-form` to the page.
+ * Mobile sticky shortlist bar. Shown once the reader is past the first quarter of
+ * the page and no lead form is on screen.
+ *
+ * It used to key off `#lead-form` going out of view upwards. On an article that
+ * form is the last thing on the page, so the bar could only appear in the final
+ * screen, after the reader had already scrolled past the form it points at. On the
+ * fideicomiso guide that was a 679px window out of 45,297px.
  */
 interface Props {
   label?: string;
@@ -25,45 +29,70 @@ const {
 </div>
 
 <script>
+  import { track } from '../lib/track';
+
   const bar = document.getElementById('sticky-cta');
-  const anchor = document.getElementById('lead-form');
-  if (bar && anchor) {
-    let shown = false;
+  // Any lead capture counts as "a form is on screen": the mid-article band and
+  // the full form at the end of the page.
+  const forms = Array.from(document.querySelectorAll('#lead-form, [data-inline-cta]'));
+
+  if (bar && forms.length > 0) {
+    /** Far enough in that the reader is committed, early enough to still be useful. */
+    const DEPTH_TRIGGER = 0.25;
+    const onScreen = new Set<Element>();
+    let pastTrigger = false;
+    let reported = false;
+    let queued = false;
 
     function setVisible(visible: boolean) {
       bar!.dataset.visible = visible ? 'true' : 'false';
       bar!.setAttribute('aria-hidden', visible ? 'false' : 'true');
-      if (visible && !shown) {
-        shown = true;
-        try {
-          // @ts-ignore
-          if (typeof window.investGulfTrack === 'function') {
-            // @ts-ignore
-            window.investGulfTrack('sticky_cta_view', { page_path: window.location.pathname });
-          }
-        } catch {}
-      }
+      // The bar is display:none from 768px up, but the view event used to fire on
+      // every device, so 70% of the impressions were for a bar nobody saw.
+      if (!visible || reported) return;
+      if (window.getComputedStyle(bar!).display === 'none') return;
+      reported = true;
+      track('sticky_cta_view', { page_path: window.location.pathname });
     }
 
-    // Show the bar only while the top form is out of view.
+    function update() {
+      setVisible(pastTrigger && onScreen.size === 0);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+          if (entry.isIntersecting) onScreen.add(entry.target);
+          else onScreen.delete(entry.target);
         }
+        update();
       },
       { threshold: 0 },
     );
-    observer.observe(anchor);
+    forms.forEach((form) => observer.observe(form));
+
+    function measureDepth() {
+      queued = false;
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const depth = scrollable > 0 ? window.scrollY / scrollable : 0;
+      pastTrigger = depth >= DEPTH_TRIGGER;
+      update();
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (queued) return;
+        queued = true;
+        window.requestAnimationFrame(measureDepth);
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', measureDepth, { passive: true });
+    measureDepth();
 
     bar.querySelector('a')?.addEventListener('click', () => {
-      try {
-        // @ts-ignore
-        if (typeof window.investGulfTrack === 'function') {
-          // @ts-ignore
-          window.investGulfTrack('sticky_cta_click', { page_path: window.location.pathname });
-        }
-      } catch {}
+      track('sticky_cta_click', { page_path: window.location.pathname });
     });
   }
 </script>
