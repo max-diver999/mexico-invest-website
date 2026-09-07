@@ -5,12 +5,14 @@ import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
 import referenceConfig from './reference-infra.config.json' with { type: 'json' };
 import { collectContentLastmod } from './scripts/reference-infra/content-lastmod.mjs';
+import { collectNoindexPaths } from './scripts/collect-noindex-paths.mjs';
 import { rehypeResponsiveCloudinary } from './scripts/rehype-responsive-cloudinary.mjs';
 import { rehypeTableScroll } from './scripts/rehype-table-scroll.mjs';
 import { rehypeImageCredit } from './scripts/rehype-image-credit.mjs';
 
 const contentLastmod = await collectContentLastmod(referenceConfig, { root: process.cwd() });
 const lastmodByUrl = new Map(contentLastmod.map((item) => [item.url, item.lastmod]));
+const noindexPaths = collectNoindexPaths(process.cwd());
 
 export default defineConfig({
   site: 'https://mexico-invest.com',
@@ -29,6 +31,8 @@ export default defineConfig({
           '/guides/mexico-property-closing-costs-breakdown/',
           '/guides/invest-in-los-cabos/',
         ];
+        // A page closed with `noindex: true` must not be submitted for indexing.
+        if (noindexPaths.some((closed) => page.endsWith(closed))) return false;
         return !excluded.some((path) => page.includes(path));
       },
       serialize(item) {
