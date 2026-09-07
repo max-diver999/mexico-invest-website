@@ -46,6 +46,101 @@
       "source": "/guides/isr-exemption-5-year-rule/",
       "destination": "/guides/isr-exemption-casa-habitacion/",
       "permanent": true
+    },
+    {
+      "source": "/areas/region-15-tulum/",
+      "destination": "/areas/tulum/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/region-8-tulum/",
+      "destination": "/areas/tulum/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/la-veleta-tulum/",
+      "destination": "/areas/tulum/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/aldea-zama-tulum/",
+      "destination": "/areas/tulum/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/tulum-beach-zone/",
+      "destination": "/areas/tulum/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/tulum-pueblo-east/",
+      "destination": "/areas/tulum/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/playacar/",
+      "destination": "/areas/playa-del-carmen/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/zazil-ha-playa/",
+      "destination": "/areas/playa-del-carmen/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/gonzalo-guerrero-playa/",
+      "destination": "/areas/playa-del-carmen/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/north-shore-xcalacoco/",
+      "destination": "/areas/playa-del-carmen/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/cabo-corridor/",
+      "destination": "/areas/los-cabos/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/east-cape-baja/",
+      "destination": "/areas/los-cabos/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/buy-property-mexico-foreigner/",
+      "destination": "/guides/can-foreigners-buy-property-mexico/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/invest-in-cancun/",
+      "destination": "/areas/cancun/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/invest-in-tulum/",
+      "destination": "/areas/tulum/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/invest-in-puerto-vallarta/",
+      "destination": "/areas/puerto-vallarta/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/invest-in-los-cabos/",
+      "destination": "/areas/los-cabos/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/invest-in-playa-del-carmen/",
+      "destination": "/areas/playa-del-carmen/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/invest-in-riviera-maya/",
+      "destination": "/guides/riviera-maya-property-investment-guide/",
+      "permanent": true
     }
   ],
   "headers": [

@@ -9,8 +9,8 @@
 - Language: en
 - Markets: Riviera Maya and Quintana Roo, Los Cabos and Baja California Sur, Puerto Vallarta and Riviera Nayarit, Yucatán and the Gulf
 - Coverage: fideicomiso and the restricted zone, Mexican tax (ISR, IVA, RFC, CFDI, predial), US and Canadian tax on Mexican property, short-term rental permits and lodging tax, financing, closing process, hazard risk, and named developments
-- Pages: 352
-- Last updated: 2026-08-26
+- Pages: 312
+- Last updated: 2026-09-07
 
 ## How to cite this site
 
@@ -20,9 +20,8 @@ permits change by municipality, so cite the page, not the number alone.
 
 ## Start here
 
-- [Mexico Property Investment Guide: Yields, Legal, 2026](https://mexico-invest.com/guides/mexico-property-investment-guide/): Independent Mexico property investment guide for US buyers, fideicomiso, net yields by market, closing costs, due diligence, and 2026 buyer scenarios.
-- [Buy Property in Mexico as a Foreigner: Step-by-Step](https://mexico-invest.com/guides/buy-property-mexico-foreigner/): How foreigners buy Mexican real estate in 2026, fideicomiso, restricted zone, closing steps, costs, and due diligence for US and Canadian buyers.
-- [Fideicomiso Mexico 2026: Real Costs and Your Rights](https://mexico-invest.com/guides/fideicomiso-mexico-explained/): What a Mexican bank trust really costs in 2026, itemised: SRE permit, bank setup, legal review, annual fee. Plus the rights you hold as beneficiary.
+- [Mexico Real Estate: Prices, Areas and How to Buy](https://mexico-invest.com/guides/mexico-property-investment-guide/): How the Mexican property market is organised, who sells what, indicative price bands by region, and the ownership rules a foreign buyer has to clear.
+- [What Is a Fideicomiso? Mexico Bank Trust Explained](https://mexico-invest.com/guides/fideicomiso-mexico-explained/): A fideicomiso is the bank trust that lets a foreigner own coastal property in Mexico. What it is, what it costs, what rights you hold, and how it ends.
 - [Mexico Restricted Zone Explained: Foreign Property Rules](https://mexico-invest.com/guides/mexico-restricted-zone-explained/): Mexico restricted zone rules for foreign buyers, 50 km coast, 100 km border, fideicomiso requirement, exceptions, and what it means for Riviera Maya.
 - [Cost of Buying Property in Mexico: Fees and Taxes 2026](https://mexico-invest.com/guides/cost-of-buying-property-mexico/): Full breakdown of Mexico property closing costs, ISAI, notario, fideicomiso, legal fees, and total buyer budget for foreign purchasers in 2026.
 - [Due Diligence Mexico Real Estate: Checklist for Buyers](https://mexico-invest.com/guides/due-diligence-mexico-real-estate/): Mexico property due diligence checklist, title, ejido risk, HOA, CFDI basis, STR permits, liens, and pre-closing steps for foreign buyers.
@@ -33,11 +32,11 @@ permits change by municipality, so cite the page, not the number alone.
 
 ## Sections
 
-- Guides (142): Legal, tax, financing and due-diligence research. https://mexico-invest.com/guides/
-- Areas and markets (37): Market-level analysis: prices, yields, STR rules. https://mexico-invest.com/areas/
-- Project reviews (100): Independent reviews of named developments. Not listings. https://mexico-invest.com/projects/
-- Comparisons (36): Head-to-head decision aids. https://mexico-invest.com/compare/
-- Developers (9): Developer profiles and delivery record. https://mexico-invest.com/developers/
+- Guides (140): Legal, tax, financing and due-diligence research. https://mexico-invest.com/guides/
+- Areas and markets (43): Market-level analysis: prices, yields, STR rules. https://mexico-invest.com/areas/
+- Project reviews (65): Independent reviews of named developments. Not listings. https://mexico-invest.com/projects/
+- Comparisons (28): Head-to-head decision aids. https://mexico-invest.com/compare/
+- Developers (8): Developer profiles and delivery record. https://mexico-invest.com/developers/
 - Market notes (28): Dated updates against the evergreen guides. https://mexico-invest.com/news/
 
 ## Full corpus
