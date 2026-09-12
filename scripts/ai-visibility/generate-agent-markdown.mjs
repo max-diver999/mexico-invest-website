@@ -141,6 +141,51 @@ async function writeHomepage(perCollection) {
   await fs.writeFile(path.join(PUBLIC_DIR, 'index.md'), lines.join('\n'), 'utf8');
 }
 
+/**
+ * llms.txt, the agent index. Written only where the config asks for it: several sites
+ * keep a hand-built one that already works, and this must never overwrite those.
+ * Where it is asked for, it replaces a curated stub that named a handful of pages on a
+ * site of several hundred, which is a map an answer engine cannot navigate.
+ */
+async function writeLlmsIndex(perCollection) {
+  const p = cfg.contentPolicy || {};
+  const lines = [];
+  lines.push(`# ${cfg.title}${cfg.tagline ? `: ${cfg.tagline}` : ''}`, '');
+  if (cfg.summary) lines.push(`> ${cfg.summary}`, '');
+  lines.push(`- ${L.homepage}: ${cfg.siteUrl}/`);
+  if (cfg.contact?.email) lines.push(`- ${L.email}: ${cfg.contact.email}`);
+  if (cfg.contact?.page) lines.push(`- ${L.contact}: ${cfg.siteUrl}${cfg.contact.page}`);
+  for (const f of cfg.facts || []) lines.push(`- ${f}`);
+  lines.push(`- ${L.sitemap}: ${cfg.siteUrl}/sitemap-index.xml`);
+  lines.push(`- ${L.fullCorpus}: ${cfg.siteUrl}/llms-full.txt`);
+  lines.push(`- ${L.agentCard}: ${cfg.siteUrl}/.well-known/agent.json`);
+  lines.push('');
+  if (cfg.entity) lines.push(`## ${L.entity}`, '', cfg.entity, '');
+
+  const total = perCollection.reduce((n, x) => n + x.entries.length, 0);
+  lines.push(`## ${L.keyPages}`, '');
+  for (const k of cfg.keyPages || []) lines.push(`- [${k.label}](${cfg.siteUrl}${k.url})`);
+  lines.push('');
+
+  for (const { col, entries } of perCollection) {
+    if (!entries.length) continue;
+    lines.push(`## ${col.label} (${entries.length})`, '');
+    for (const e of entries) {
+      const desc = e.description ? `: ${e.description}` : '';
+      lines.push(`- [${e.title}](${e.url})${desc}`);
+    }
+    lines.push('');
+  }
+
+  lines.push(`## ${L.policyHeading}`, '');
+  lines.push(`- ${L.policyCite} (Content-Signal: \`search=${p.search ?? 'yes'}, ai-input=${p.aiInput ?? 'yes'}\`).`);
+  lines.push(`- ${p.aiTrain === 'yes' ? L.policyTrainYes : L.policyTrainNo} (Content-Signal: \`ai-train=${p.aiTrain ?? 'no'}\`).`);
+  lines.push(`- ${L.policyMarkdown}`);
+  lines.push('');
+  await fs.writeFile(path.join(PUBLIC_DIR, 'llms.txt'), lines.join('\n'), 'utf8');
+  return total;
+}
+
 async function writeFullCorpus(perCollection) {
   const chunks = [
     `# ${cfg.title}: ${L.fullCorpusTitle}\n`,
@@ -178,6 +223,10 @@ async function main() {
   // Several sites build theirs from the same corpus already, and two files racing for
   // one path is how a corpus silently halves.
   let note = '';
+  if (cfg.writeLlms) {
+    const listed = await writeLlmsIndex(perCollection);
+    note += `, llms.txt lists ${listed} page(s)`;
+  }
   if (cfg.writeLlmsFull) {
     const fullBytes = await writeFullCorpus(perCollection);
     note = `, llms-full.txt ${(fullBytes / 1024).toFixed(0)} KB`;
