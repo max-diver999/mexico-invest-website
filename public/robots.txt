@@ -1,4 +1,8 @@
 User-agent: *
+# Content Signals (contentsignals.org / IETF draft-romm-aipref-contentsignals)
+# Citation in AI search and retrieval is allowed. Training on this content is not.
+# In the wildcard group, because the directive speaks only for the group it sits in.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Disallow: /api/
 Disallow: /thanks/
 Disallow: /site-report/
@@ -93,5 +97,11 @@ Disallow: /
 
 User-agent: Bytespider
 Disallow: /
+
+# Markdown renditions for agents: append .md to a content URL, or send
+# `Accept: text/markdown`. Start here:
+# https://mexico-invest.com/index.md
+# https://mexico-invest.com/llms.txt
+# https://mexico-invest.com/.well-known/agent.json
 
 Sitemap: https://mexico-invest.com/sitemap-index.xml

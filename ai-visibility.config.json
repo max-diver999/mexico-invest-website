@@ -1,0 +1,90 @@
+{
+  "siteUrl": "https://mexico-invest.com",
+  "host": "mexico-invest.com",
+  "brand": "Mexico Invest",
+  "language": "en",
+  "title": "Mexico Invest",
+  "tagline": "independent guides to Mexico property investment",
+  "summary": "Independent research on Riviera Maya, Los Cabos and Puerto Vallarta property for foreign buyers: fideicomiso and ownership structures, net rental yields, short-term rental rules, due diligence and developer delivery records. Not a developer, not a listings portal.",
+  "entity": "Mexico Invest is an independent research publisher on Mexican property for foreign buyers, part of the MORE Group network. It sells no listings and represents no developer. Wikidata: https://www.wikidata.org/wiki/Q140471749",
+  "contact": {
+    "email": "info@mexico-invest.com",
+    "page": "/contact/"
+  },
+  "collections": [
+    {
+      "dir": "guides",
+      "urlPrefix": "/guides",
+      "label": "Guides"
+    },
+    {
+      "dir": "areas",
+      "urlPrefix": "/areas",
+      "label": "Areas and markets"
+    },
+    {
+      "dir": "projects",
+      "urlPrefix": "/projects",
+      "label": "Project reviews"
+    },
+    {
+      "dir": "compare",
+      "urlPrefix": "/compare",
+      "label": "Comparisons"
+    },
+    {
+      "dir": "developers",
+      "urlPrefix": "/developers",
+      "label": "Developers"
+    },
+    {
+      "dir": "news",
+      "urlPrefix": "/news",
+      "label": "Market notes"
+    }
+  ],
+  "keyPages": [
+    {
+      "url": "/guides/",
+      "label": "Guides: legal, tax, financing, due diligence"
+    },
+    {
+      "url": "/areas/",
+      "label": "Areas and markets: prices, yields, rental rules"
+    },
+    {
+      "url": "/projects/",
+      "label": "Project reviews, independent, not listings"
+    },
+    {
+      "url": "/compare/",
+      "label": "Comparisons"
+    },
+    {
+      "url": "/developers/",
+      "label": "Developer profiles and delivery record"
+    },
+    {
+      "url": "/methodology/",
+      "label": "How the numbers are produced"
+    },
+    {
+      "url": "/about/",
+      "label": "About"
+    },
+    {
+      "url": "/contact/",
+      "label": "Contact"
+    }
+  ],
+  "contentPolicy": {
+    "search": "yes",
+    "aiInput": "yes",
+    "aiTrain": "no"
+  },
+  "writeLlmsFull": false,
+  "llms": {
+    "generated": true,
+    "note": "llms.txt and llms-full.txt are built by scripts/generate-llms.mjs, which predates this pack and is left alone. The pack adds the per-page markdown renditions, index.md, the agent card and the dates."
+  }
+}

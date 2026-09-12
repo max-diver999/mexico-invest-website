@@ -9,6 +9,7 @@ import WhatsAppIntentTracker from '../components/WhatsAppIntentTracker.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import CurrencyEngine from '../components/CurrencyEngine.astro';
 import { SITE } from '../data/site';
+import { lastmodFor } from '../lib/page-lastmod';
 
 interface Props {
   title: string;
@@ -74,7 +75,25 @@ const orgSchema = {
   ],
 };
 
-const allSchemas = [orgSchema, ...schemas];
+// Every page type carries a modification date, not only the articles. Articles ship
+// their own date inside their own schema, so the node is added only where nothing
+// else supplies one, and never on a page closed to indexing.
+const schemaCarriesDate = (schemas ?? []).some((s) => JSON.stringify(s).includes('"dateModified"'));
+const pageModified = noindex || schemaCarriesDate ? null : lastmodFor(canonical);
+const webPageSchema = pageModified
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${canonical.replace(/\/?$/, '/')}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      inLanguage: 'en',
+      dateModified: pageModified,
+    }
+  : null;
+
+const allSchemas = [orgSchema, ...schemas, ...(webPageSchema ? [webPageSchema] : [])];
 ---
 <!doctype html>
 <html lang="en" dir="ltr">
