@@ -58,13 +58,30 @@ function knownRoutes() {
 const { routes, noindex } = knownRoutes();
 const raw = fs.readFileSync(INDEX, 'utf8');
 const host = cfg.host.replace(/\./g, '\\.');
+// Trailing punctuation is not part of the URL: these files write both
+// `- [Title](https://host/x/): description` and `- https://host/x/: description`.
 const advertised = [
-  ...new Set([...raw.matchAll(new RegExp(`https?://${host}(/[^)\\s\\]]*)`, 'g'))].map((m) => m[1])),
+  ...new Set(
+    [...raw.matchAll(new RegExp(`https?://${host}(/[^)\\s\\]<>"']*)`, 'g'))]
+      .map((m) => m[1].replace(/[.,;:]+$/, '')),
+  ),
+];
+
+/** Built by the framework or by this pack, so they are never found under src/pages. */
+const GENERATED = [
+  /^\/sitemap[^/]*\.xml$/,
+  /^\/robots\.txt$/,
+  /^\/llms[^/]*\.txt$/,
+  /^\/index\.md$/,
+  /^\/\.well-known\//,
+  /^\/rss\.xml$/,
+  /^\/feed\.xml$/,
 ];
 
 const dead = [];
 const closed = [];
 for (const url of advertised) {
+  if (GENERATED.some((rx) => rx.test(url))) continue;
   const route = url.replace(/\.md$/, '/').replace(/\/+$/, '/');
   const normalised = route.startsWith('/') ? route : `/${route}`;
   if (noindex.has(normalised)) {

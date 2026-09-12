@@ -9,7 +9,11 @@ import lastmod from '../data/page-lastmod.json';
  */
 const map = lastmod as Record<string, string>;
 
-export function lastmodFor(pathnameOrUrl: string): string | null {
+export function lastmodFor(pathnameOrUrl: string | undefined | null): string | null {
+  // Layouts across this network resolve the canonical URL in different places, and on
+  // some of them the prop itself is optional. A missing value is a missing date, not a
+  // build failure.
+  if (typeof pathnameOrUrl !== 'string' || !pathnameOrUrl) return null;
   let pathname = pathnameOrUrl;
   try {
     if (/^https?:\/\//.test(pathnameOrUrl)) pathname = new URL(pathnameOrUrl).pathname;
