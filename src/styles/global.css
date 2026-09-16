@@ -194,18 +194,22 @@
   flex-shrink: 0;
 }
 
-input:not([type="checkbox"]):not([type="radio"]), select, textarea {
-  width: 100%;
-  border: 1px solid var(--color-border);
-  border-radius: 2px;
-  padding: 0.7rem 0.85rem;
-  background: var(--color-surface);
-  /* 16px exactly. Safari on iOS zooms the page when a focused field is smaller
-   * than this and never zooms back out, which put the submit button off screen
-   * on every mobile form fill. Do not drop this below 1rem. */
-  font-size: 1rem;
-  font-family: var(--font-sans);
-  color: var(--color-ink);
+/* В @layer base: правило вне слоя бьёт любую утилиту Tailwind независимо от веса селектора,
+   и класс цвета в разметке до экрана не доходит. Замер и разбор в scripts/test-css-layers.mjs. */
+@layer base {
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    padding: 0.7rem 0.85rem;
+    background: var(--color-surface);
+    /* 16px exactly. Safari on iOS zooms the page when a focused field is smaller
+     * than this and never zooms back out, which put the submit button off screen
+     * on every mobile form fill. Do not drop this below 1rem. */
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+  }
 }
 /* 24px, which is what WCAG 2.2 asks of a target. The site has exactly two of
  * these and both are the consent box on a lead form: required, and the form
