@@ -15,22 +15,23 @@ const entries = Object.fromEntries(
 const wordsIn = (list: any[]) =>
   list.reduce((total, entry) => total + String(entry.body ?? '').split(/\s+/).filter(Boolean).length, 0);
 
-const reportDate = '3 September 2026';
-const reportVersion = 'v5.4';
+const reportDate = '16 September 2026';
+const reportVersion = 'v5.5';
 const launchDate = '5 June 2026';
-const dataThrough = '31 August 2026';
+const dataThrough = '13 September 2026';
 const mdxArticleCount = 354;
 
 const monthlyGsc = [
   { month: 'Jun 2026', label: 'Jun', clicks: 3, impressions: 373, position: 9.3, note: 'Launch month · first clicks 22 Jun' },
   { month: 'Jul 2026', label: 'Jul', clicks: 61, impressions: 4291, position: 11.4, note: 'Full month · impressions ×11.5 vs Jun' },
-  { month: 'Aug 2026', label: 'Aug', clicks: 71, impressions: 6254, position: 13.2, note: 'Full month 1–31 Aug · 28d 66 clk / 5 814 imp · MCP 3 Sep' },
+  { month: 'Aug 2026', label: 'Aug', clicks: 71, impressions: 6254, position: 13.2, note: 'Full month 1–31 Aug · 28d 87 clk / 6 319 imp · MCP refresh 16 Sep' },
 ];
 
 const monthlyGa4 = [
   { month: 'Jun', sessions: 124 },
   { month: 'Jul', sessions: 326 },
   { month: 'Aug', sessions: 1256 },
+  { month: 'Sep', sessions: 243 },
 ];
 
 const contentBreakdown = [
@@ -101,7 +102,7 @@ function barPx(impressions) {
 }
 
 const gscLifetime = { clicks: 135, impressions: 10918 };
-const gsc28d = { clicks: 66, impressions: 5814, position: 13.3, from: '4 Aug', to: '31 Aug' };
+const gsc28d = { clicks: 87, impressions: 6319, position: 11.3, from: '17 Aug', to: '13 Sep' };
 const totalClicks = monthlyGsc.reduce((s, m) => s + m.clicks, 0);
 const totalImp = monthlyGsc.reduce((s, m) => s + m.impressions, 0);
 const totalWords = contentBreakdown.reduce((s, c) => s + c.words, 0);
@@ -885,6 +886,15 @@ const chartPayload = JSON.stringify({
 
   <div class="section-title">Change history</div>
   <div class="changelog">
+          <div class="changelog-item">
+      <div class="changelog-date">16 Sep 2026</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site report v5.5 · GSC/GA4 MCP refresh</div>
+        <div class="changelog-desc">GSC 28d: 87 clk / 6 319 imp (+32% vs prev 28d). GA4 Aug 1 255 · Sep 243.</div>
+        <div class="changelog-tags"><span class="tag green">Report v5.5</span><span class="tag blue">GSC MCP</span><span class="tag amber">GA4 MCP</span></div>
+      </div>
+    </div>
+
         <div class="changelog-item">
       <div class="changelog-date">3 Sep 2026 (v5.4)</div>
       <div class="changelog-content">
