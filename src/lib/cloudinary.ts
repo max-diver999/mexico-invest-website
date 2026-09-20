@@ -2,6 +2,7 @@ import dimensions from '../../scripts/data/cloudinary-image-dims.json';
 
 const CLOUDINARY_PATTERN =
   /^https:\/\/res\.cloudinary\.com\/([a-z0-9]+)\/image\/upload\/(.+)$/;
+const R2_PATTERN = /^https:\/\/pub-[a-f0-9]+\.r2\.dev\/(.+?)(?:[?#].*)?$/i;
 const CLOUDINARY_BASE = 'https://res.cloudinary.com';
 const ARTICLE_WIDTHS = [640, 960, 1200];
 const ARTICLE_SIZES = '(max-width: 768px) calc(100vw - 2rem), 72ch';
@@ -86,9 +87,54 @@ function heroBandFor(ratio: number | undefined): HeroBand {
 
 const HERO_WIDTHS = [640, 960, 1280, 1600];
 
+function publicIdFromR2(src: string): string | null {
+  const match = R2_PATTERN.exec(src.trim());
+  if (!match) return null;
+  return match[1].replace(/\.webp$/i, '');
+}
+
+function lookupIntrinsic(publicId: string): ImageDimensions | undefined {
+  const dims = dimensions as Record<string, ImageDimensions>;
+  return (
+    dims[publicId] ??
+    dims[publicId.replace(/\/hero$/, '')] ??
+    dims[`${publicId}/hero`]
+  );
+}
+
+function heroFromStaticUrl(src: string) {
+  const publicId = publicIdFromR2(src);
+  if (!publicId) return null;
+
+  const intrinsic = lookupIntrinsic(publicId);
+  const ratio = intrinsic?.w && intrinsic?.h ? intrinsic.w / intrinsic.h : undefined;
+  const band = heroBandFor(ratio);
+  const url = src.trim();
+
+  const variants = (ar: string) => ({
+    src: url,
+    srcset: `${url} 1280w`,
+    ar,
+  });
+
+  const narrow = variants(band.narrow);
+  const wide = variants(band.wide);
+  const [nw, nh] = band.narrow.split(':').map(Number);
+
+  return {
+    narrow,
+    wide,
+    sizes: '(max-width: 899px) 100vw, min(68rem, 100vw)',
+    narrowRatio: band.narrow.replace(':', ' / '),
+    wideRatio: band.wide.replace(':', ' / '),
+    width: intrinsic?.w ?? 1280,
+    height: intrinsic?.h ?? Math.round((1280 * nh) / nw),
+  };
+}
+
 export function heroCloudinary(src: string) {
   const parsed = parseCloudinaryUrl(src);
-  if (!parsed) return null;
+  if (!parsed) return heroFromStaticUrl(src);
 
   const intrinsic = (dimensions as Record<string, ImageDimensions>)[parsed.publicId];
   const ratio = intrinsic?.w && intrinsic?.h ? intrinsic.w / intrinsic.h : undefined;
