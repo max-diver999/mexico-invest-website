@@ -172,7 +172,8 @@ const allSchemas = [orgSchema, ...schemas, ...(webPageSchema ? [webPageSchema] :
     /* В @layer base: правило вне слоя бьёт любую утилиту Tailwind независимо от веса селектора,
        и класс цвета в разметке до экрана не доходит. Замер и разбор в scripts/test-css-layers.mjs. */
     @layer base {
-      header {
+      /* Only the site nav lives under body; article titles use <header> inside <main>. */
+      body > header {
         position: sticky;
         top: 0;
         z-index: 50;
