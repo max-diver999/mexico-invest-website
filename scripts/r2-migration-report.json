@@ -1,0 +1,20 @@
+{
+  "site": "mexico-invest-website",
+  "source_cloud": "dlrrtf6bq",
+  "r2_public_base": "https://pub-2855c73eea384110b510f25966292c37.r2.dev",
+  "changed": 2,
+  "errors": 0,
+  "items": [
+    {
+      "file": "mexico-invest-website/src/pages/about/index.astro",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/v1788438365/more-group/mexico/pages/about/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/pages/about/hero.webp"
+    },
+    {
+      "file": "mexico-invest-website/src/pages/methodology/index.astro",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/v1788438366/more-group/mexico/pages/methodology/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/pages/methodology/hero.webp"
+    }
+  ],
+  "failed": []
+}
