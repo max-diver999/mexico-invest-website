@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { getCardImageUrl } from '../lib/cardImage';
+import { getCardImage } from '../lib/cardImage';
 import { SITE } from '../data/site';
 
 export interface HubCard {
@@ -156,7 +156,12 @@ const renderGroups = groups.map((group) => ({
   cards: group.cards.map((card) => ({
     card,
     index: cardIndex++,
-    photo: getCardImageUrl(card.image, mediaSize),
+    /**
+     * Карточки списков рисует этот слой, а не ContentCard. Правка построителя обложек их не
+     * задевает: 22.09.2026 после первого захода на списке районов остался ноль картинок с
+     * выбором размера из 26. Поэтому здесь тот же getCardImage с лестницей ширин.
+     */
+    photo: getCardImage(card.image, mediaSize),
   })),
 }));
 ---
@@ -206,7 +211,9 @@ const renderGroups = groups.map((group) => ({
                 {photo && (
                   <span class="hub-card__media">
                     <img
-                      src={photo}
+                      src={photo.src}
+                      srcset={photo.srcset}
+                      sizes={photo.sizes}
                       alt=""
                       data-decorative
                       loading={index < EAGER_CARDS ? 'eager' : 'lazy'}

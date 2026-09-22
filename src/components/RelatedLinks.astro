@@ -1,6 +1,6 @@
 ---
 import type { LinkCard } from '../lib/content-graph';
-import { getCardImageUrl } from '../lib/cardImage';
+import { getCardImage } from '../lib/cardImage';
 
 interface Props {
   heading: string;
@@ -15,7 +15,7 @@ const { heading, cards, note } = Astro.props;
  * the reader has already decided to leave; the thumbnail is there to say which
  * place or building is behind the link, not to open a second article.
  */
-const withPhoto = cards.map((card) => ({ card, photo: getCardImageUrl(card.image, 'thumb') }));
+const withPhoto = cards.map((card) => ({ card, photo: getCardImage(card.image, 'thumb') }));
 ---
 {cards.length > 0 && (
   <section class="related-links" aria-label={heading}>
@@ -27,7 +27,7 @@ const withPhoto = cards.map((card) => ({ card, photo: getCardImageUrl(card.image
           <a href={card.url} class:list={['related-links__link', photo && 'related-links__link--photo']}>
             {photo && (
               <span class="related-links__media">
-                <img src={photo} alt="" data-decorative loading="lazy" decoding="async" width="240" height="240" />
+                <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes} alt="" data-decorative loading="lazy" decoding="async" width={photo.width ?? 240} height={photo.height ?? 240} />
               </span>
             )}
             <span class="related-links__body">

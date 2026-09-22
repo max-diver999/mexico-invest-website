@@ -36,7 +36,8 @@ const featuredAreas = FEATURED_AREA_SLUGS.map((slug) => areaBySlug.get(slug)).fi
 
 // The hero photograph and the plate under it must name the same building.
 const heroImageSource = HOMEPAGE_HERO_IMAGE ?? heroProject?.data.heroImage ?? '';
-const responsiveHero = heroImageSource ? heroCloudinary(heroImageSource) : null;
+/** Обложка главной идёт во всю ширину экрана: 375 при 375, 1440 при 1440, замерено 22.09.2026. */
+const responsiveHero = heroImageSource ? heroCloudinary(heroImageSource, '100vw') : null;
 const heroProjectName = heroProject
   ? heroProject.data.title.replace(/ Review:.*$/, '').replace(/ 2026.*$/, '').replace(/:.*$/, '')
   : '';

@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCardImageUrl } from '../../lib/cardImage';
+import { getCardImage } from '../../lib/cardImage';
 import { SITE } from '../../data/site';
 
 /* The page was a wall of short text ending in half a screen of nothing. A
  * restored mansion on Paseo de Montejo says Mexican housing rather than
  * Mexican holiday, which is the distinction this page exists to draw. */
-const heroSrc = getCardImageUrl(
+const hero = getCardImage(
   'https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/pages/about/hero.webp',
   'hero',
 );
@@ -19,10 +19,12 @@ const heroSrc = getCardImageUrl(
     <h1 class="mb-6">About {SITE.name}</h1>
     <figure class="page-hero">
       <img
-        src={heroSrc}
+        src={hero?.src}
+        srcset={hero?.srcset}
+        sizes={hero?.sizes}
         alt="Restored mansion facade on Paseo de Montejo, Merida"
-        width="1600"
-        height="640"
+        width={hero?.width ?? 1600}
+        height={hero?.height ?? 640}
         loading="eager"
         fetchpriority="high"
         decoding="async"

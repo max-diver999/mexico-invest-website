@@ -31,7 +31,39 @@ function parseCloudinaryUrl(src) {
   };
 }
 
+/** Картинки внутри текста, переехавшие на R2: раньше плагин оставлял их без ширин и размеров. */
+const R2_HOST = 'pub-2855c73eea384110b510f25966292c37.r2.dev';
+const r2Path = path.join(ROOT, 'src', 'data', 'r2-image-widths.json');
+const r2Widths = fs.existsSync(r2Path) ? JSON.parse(fs.readFileSync(r2Path, 'utf8')) : {};
+
+function r2Attributes(src) {
+  const i = String(src || '').indexOf(R2_HOST);
+  if (i < 0) return null;
+  const key = String(src).slice(i + R2_HOST.length).replace(/^\//, '').split('?')[0];
+  const entry = r2Widths[key];
+  if (!entry) return null;
+  const variants = (entry.variants || []).filter((w) => w < entry.w).sort((a, b) => a - b);
+  const base = `https://${R2_HOST}/${key}`;
+  return {
+    src: String(src),
+    srcset: variants.length
+      ? [...variants.map((w) => `${base.replace(/\.webp$/i, `-w${w}.webp`)} ${w}w`), `${base} ${entry.w}w`].join(', ')
+      : null,
+    sizes: config.sizes,
+    width: String(entry.w),
+    height: String(entry.h),
+    /**
+     * Колонка текста растягивает любую картинку на всю ширину. Снимок в 323 точки становился
+     * мылом на 767, так было на живом сайте до 22.09.2026. Мелкое фото держим в его размере.
+     */
+    style: variants.length ? null : `max-width:${entry.w}px;margin-inline:auto`,
+  };
+}
+
 function responsiveAttributes(src) {
+  const fromR2 = r2Attributes(src);
+  if (fromR2) return fromR2;
+
   const parsed = parseCloudinaryUrl(src);
   if (!parsed) return null;
   const preserveOptimizedOriginal = /\.(webp|avif)$/i.test(parsed.publicId);
@@ -67,6 +99,7 @@ export function rehypeResponsiveCloudinary() {
         node.properties.width = attrs.width;
         node.properties.height = attrs.height;
       }
+      if (attrs.style && !node.properties.style) node.properties.style = attrs.style;
     });
 
     visit(tree, ['mdxJsxFlowElement', 'mdxJsxTextElement'], (node) => {
