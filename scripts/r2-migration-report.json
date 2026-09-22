@@ -1,19 +1,2284 @@
 {
-  "site": "mexico-invest-website",
-  "source_cloud": "dlrrtf6bq",
+  "site": "_worktrees/mexico-migration",
+  "source_cloud": "dphvjbqb4",
   "r2_public_base": "https://pub-2855c73eea384110b510f25966292c37.r2.dev",
-  "changed": 2,
+  "changed": 455,
   "errors": 0,
   "items": [
     {
-      "file": "mexico-invest-website/src/pages/about/index.astro",
-      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/v1788438365/more-group/mexico/pages/about/hero.jpg",
-      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/pages/about/hero.webp"
+      "file": "_worktrees/mexico-migration/src/content/compare/akumal-vs-tulum-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460967/more-group/mexico/compare/akumal-vs-tulum-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/akumal-vs-tulum-investment/inline_1.webp"
     },
     {
-      "file": "mexico-invest-website/src/pages/methodology/index.astro",
-      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/v1788438366/more-group/mexico/pages/methodology/hero.jpg",
-      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/pages/methodology/hero.webp"
+      "file": "_worktrees/mexico-migration/src/content/compare/aldea-zama-vs-region-15-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460970/more-group/mexico/compare/aldea-zama-vs-region-15-tulum/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/aldea-zama-vs-region-15-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/aldea-zama-vs-region-15-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460970/more-group/mexico/compare/aldea-zama-vs-region-15-tulum/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/aldea-zama-vs-region-15-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/amara-vs-nhoa-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460971/more-group/mexico/compare/amara-vs-nhoa-tulum/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/amara-vs-nhoa-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/amara-vs-nhoa-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460972/more-group/mexico/compare/amara-vs-nhoa-tulum/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/amara-vs-nhoa-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/branded-residence-vs-standard-condo-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460974/more-group/mexico/compare/branded-residence-vs-standard-condo-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/branded-residence-vs-standard-condo-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/branded-residence-vs-standard-condo-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460975/more-group/mexico/compare/branded-residence-vs-standard-condo-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/branded-residence-vs-standard-condo-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/cabo-san-lucas-vs-san-jose-del-cabo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460977/more-group/mexico/compare/cabo-san-lucas-vs-san-jose-del-cabo/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/cabo-san-lucas-vs-san-jose-del-cabo/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/cash-vs-mortgage-mexico-foreigner.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460979/more-group/mexico/compare/cash-vs-mortgage-mexico-foreigner/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/cash-vs-mortgage-mexico-foreigner/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/cash-vs-mortgage-mexico-foreigner.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460980/more-group/mexico/compare/cash-vs-mortgage-mexico-foreigner/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/cash-vs-mortgage-mexico-foreigner/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/centro-playa-vs-playacar.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460982/more-group/mexico/compare/centro-playa-vs-playacar/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/centro-playa-vs-playacar/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/centro-playa-vs-playacar.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460982/more-group/mexico/compare/centro-playa-vs-playacar/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/centro-playa-vs-playacar/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/condo-vs-villa-mexico-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460983/more-group/mexico/compare/condo-vs-villa-mexico-investment/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/condo-vs-villa-mexico-investment/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/condo-vs-villa-mexico-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460989/more-group/mexico/compare/condo-vs-villa-mexico-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/condo-vs-villa-mexico-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/condo-vs-villa-mexico-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460985/more-group/mexico/compare/condo-vs-villa-mexico-investment/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/condo-vs-villa-mexico-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/copala-quivira-vs-mavila-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460986/more-group/mexico/compare/copala-quivira-vs-mavila-quivira/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/copala-quivira-vs-mavila-quivira/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/copala-quivira-vs-mavila-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460987/more-group/mexico/compare/copala-quivira-vs-mavila-quivira/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/copala-quivira-vs-mavila-quivira/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/distrito-xcalacoco-vs-paravian.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460992/more-group/mexico/compare/distrito-xcalacoco-vs-paravian/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/distrito-xcalacoco-vs-paravian/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/distrito-xcalacoco-vs-paravian.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460991/more-group/mexico/compare/distrito-xcalacoco-vs-paravian/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/distrito-xcalacoco-vs-paravian/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/gran-tulum-vs-101-park.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460993/more-group/mexico/compare/gran-tulum-vs-101-park/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/gran-tulum-vs-101-park/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/gran-tulum-vs-101-park.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460994/more-group/mexico/compare/gran-tulum-vs-101-park/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/gran-tulum-vs-101-park/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/los-cabos-vs-puerto-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460997/more-group/mexico/compare/los-cabos-vs-puerto-vallarta/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/los-cabos-vs-puerto-vallarta/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/los-cabos-vs-puerto-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460998/more-group/mexico/compare/los-cabos-vs-puerto-vallarta/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/los-cabos-vs-puerto-vallarta/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/los-cabos-vs-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460998/more-group/mexico/compare/los-cabos-vs-riviera-maya/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/los-cabos-vs-riviera-maya/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/los-cabos-vs-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461000/more-group/mexico/compare/los-cabos-vs-riviera-maya/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/los-cabos-vs-riviera-maya/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/los-cabos-vs-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461000/more-group/mexico/compare/los-cabos-vs-riviera-maya/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/los-cabos-vs-riviera-maya/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/merida-vs-riviera-maya-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461000/more-group/mexico/compare/merida-vs-riviera-maya-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/merida-vs-riviera-maya-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/merida-vs-riviera-maya-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461002/more-group/mexico/compare/merida-vs-riviera-maya-investment/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/merida-vs-riviera-maya-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-arizona-retirement.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461006/more-group/mexico/compare/mexico-vs-arizona-retirement/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-arizona-retirement/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-arizona-retirement.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461005/more-group/mexico/compare/mexico-vs-arizona-retirement/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-arizona-retirement/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-colombia-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461009/more-group/mexico/compare/mexico-vs-colombia-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-colombia-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-colombia-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461010/more-group/mexico/compare/mexico-vs-colombia-investment/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-colombia-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-costa-rica-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461013/more-group/mexico/compare/mexico-vs-costa-rica-real-estate/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-costa-rica-real-estate/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-costa-rica-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461013/more-group/mexico/compare/mexico-vs-costa-rica-real-estate/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-costa-rica-real-estate/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-florida-property-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461017/more-group/mexico/compare/mexico-vs-florida-property-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-florida-property-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-florida-property-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461016/more-group/mexico/compare/mexico-vs-florida-property-investment/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-florida-property-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-panama-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461016/more-group/mexico/compare/mexico-vs-panama-real-estate/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-panama-real-estate/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-panama-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461019/more-group/mexico/compare/mexico-vs-panama-real-estate/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-panama-real-estate/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-texas-no-state-tax.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461019/more-group/mexico/compare/mexico-vs-texas-no-state-tax/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-texas-no-state-tax/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-texas-no-state-tax.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461019/more-group/mexico/compare/mexico-vs-texas-no-state-tax/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-texas-no-state-tax/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-texas-no-state-tax.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461020/more-group/mexico/compare/mexico-vs-texas-no-state-tax/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-texas-no-state-tax/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-thailand-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461022/more-group/mexico/compare/mexico-vs-thailand-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-thailand-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/mexico-vs-thailand-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461022/more-group/mexico/compare/mexico-vs-thailand-property/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/mexico-vs-thailand-property/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/montage-vs-pendry-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461025/more-group/mexico/compare/montage-vs-pendry-punta-mita/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/montage-vs-pendry-punta-mita/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/montage-vs-pendry-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461025/more-group/mexico/compare/montage-vs-pendry-punta-mita/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/montage-vs-pendry-punta-mita/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/nuevo-vallarta-vs-puerto-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461027/more-group/mexico/compare/nuevo-vallarta-vs-puerto-vallarta/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/nuevo-vallarta-vs-puerto-vallarta/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/playa-del-carmen-vs-cancun-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461029/more-group/mexico/compare/playa-del-carmen-vs-cancun-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/playa-del-carmen-vs-cancun-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/playa-del-carmen-vs-tulum-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461032/more-group/mexico/compare/playa-del-carmen-vs-tulum-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/playa-del-carmen-vs-tulum-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/playa-del-carmen-vs-tulum-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461033/more-group/mexico/compare/playa-del-carmen-vs-tulum-investment/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/playa-del-carmen-vs-tulum-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/pre-construction-vs-resale-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461038/more-group/mexico/compare/pre-construction-vs-resale-tulum/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/pre-construction-vs-resale-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/puerto-morelos-vs-playa-del-carmen.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461037/more-group/mexico/compare/puerto-morelos-vs-playa-del-carmen/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/puerto-morelos-vs-playa-del-carmen/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/punta-mita-vs-los-cabos-luxury.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461040/more-group/mexico/compare/punta-mita-vs-los-cabos-luxury/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/punta-mita-vs-los-cabos-luxury/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/punta-mita-vs-los-cabos-luxury.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461041/more-group/mexico/compare/punta-mita-vs-los-cabos-luxury/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/punta-mita-vs-los-cabos-luxury/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/riviera-maya-vs-puerto-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461051/more-group/mexico/compare/riviera-maya-vs-puerto-vallarta/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/riviera-maya-vs-puerto-vallarta/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/riviera-maya-vs-puerto-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461050/more-group/mexico/compare/riviera-maya-vs-puerto-vallarta/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/riviera-maya-vs-puerto-vallarta/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/short-term-vs-long-term-rental-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461052/more-group/mexico/compare/short-term-vs-long-term-rental-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/short-term-vs-long-term-rental-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/short-term-vs-long-term-rental-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461054/more-group/mexico/compare/short-term-vs-long-term-rental-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/short-term-vs-long-term-rental-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/st-regis-vs-chileno-bay-residences.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461058/more-group/mexico/compare/st-regis-vs-chileno-bay-residences/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/st-regis-vs-chileno-bay-residences/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/st-regis-vs-chileno-bay-residences.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461057/more-group/mexico/compare/st-regis-vs-chileno-bay-residences/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/st-regis-vs-chileno-bay-residences/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/tao-blue-gardens-vs-marina-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461060/more-group/mexico/compare/tao-blue-gardens-vs-marina-vallarta/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/tao-blue-gardens-vs-marina-vallarta/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/tao-blue-gardens-vs-marina-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461061/more-group/mexico/compare/tao-blue-gardens-vs-marina-vallarta/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/tao-blue-gardens-vs-marina-vallarta/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/tulum-vs-cancun-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461071/more-group/mexico/compare/tulum-vs-cancun-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/tulum-vs-cancun-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/vacation-home-vs-pure-rental-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461073/more-group/mexico/compare/vacation-home-vs-pure-rental-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/vacation-home-vs-pure-rental-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/compare/vacation-home-vs-pure-rental-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461073/more-group/mexico/compare/vacation-home-vs-pure-rental-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/compare/vacation-home-vs-pure-rental-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/dine-montage-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460988/more-group/mexico/developers/dine-montage-punta-mita/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/dine-montage-punta-mita/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/dine-montage-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460990/more-group/mexico/developers/dine-montage-punta-mita/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/dine-montage-punta-mita/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/querencia-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461042/more-group/mexico/developers/querencia-los-cabos/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/querencia-los-cabos/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/querencia-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461043/more-group/mexico/developers/querencia-los-cabos/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/querencia-los-cabos/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/quivira-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461046/more-group/mexico/developers/quivira-los-cabos/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/quivira-los-cabos/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/quivira-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461046/more-group/mexico/developers/quivira-los-cabos/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/quivira-los-cabos/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/quivira-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461048/more-group/mexico/developers/quivira-los-cabos/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/quivira-los-cabos/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/tm-real-estate-group.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461065/more-group/mexico/developers/tm-real-estate-group/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/tm-real-estate-group/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/tm-real-estate-group.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461064/more-group/mexico/developers/tm-real-estate-group/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/tm-real-estate-group/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/vidanta-nuevo-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461077/more-group/mexico/developers/vidanta-nuevo-vallarta/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/vidanta-nuevo-vallarta/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/developers/zama-desarrollos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461079/more-group/mexico/developers/zama-desarrollos/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/developers/zama-desarrollos/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/aggressive-investor-tulum-precon.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460719/more-group/mexico/guides/aggressive-investor-tulum-precon/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/aggressive-investor-tulum-precon/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/aggressive-investor-tulum-precon.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460719/more-group/mexico/guides/aggressive-investor-tulum-precon/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/aggressive-investor-tulum-precon/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/airbnb-investment-mexico-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460721/more-group/mexico/guides/airbnb-investment-mexico-guide/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/airbnb-investment-mexico-guide/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/airbnb-investment-mexico-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460722/more-group/mexico/guides/airbnb-investment-mexico-guide/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/airbnb-investment-mexico-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/american-retiree-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460722/more-group/mexico/guides/american-retiree-mexico-real-estate/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/american-retiree-mexico-real-estate/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/american-retiree-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460721/more-group/mexico/guides/american-retiree-mexico-real-estate/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/american-retiree-mexico-real-estate/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/american-retiree-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460723/more-group/mexico/guides/american-retiree-mexico-real-estate/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/american-retiree-mexico-real-estate/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/ampi-license-verify-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478118/more-group/mexico/guides/ampi-license-verify-guide/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/ampi-license-verify-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/apostille-documents-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478072/more-group/mexico/guides/apostille-documents-mexico-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/apostille-documents-mexico-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/apostille-documents-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478074/more-group/mexico/guides/apostille-documents-mexico-property/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/apostille-documents-mexico-property/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/bank-trust-renewal-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460723/more-group/mexico/guides/bank-trust-renewal-mexico/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/bank-trust-renewal-mexico/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/bank-trust-renewal-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460724/more-group/mexico/guides/bank-trust-renewal-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/bank-trust-renewal-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/bank-trust-renewal-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460724/more-group/mexico/guides/bank-trust-renewal-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/bank-trust-renewal-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/banxico-rates-mexico-property-impact.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461158/more-group/mexico/guides/banxico-rates-mexico-property-impact/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/banxico-rates-mexico-property-impact/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/banxico-rates-mexico-property-impact.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461158/more-group/mexico/guides/banxico-rates-mexico-property-impact/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/banxico-rates-mexico-property-impact/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/best-areas-invest-mexico-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460727/more-group/mexico/guides/best-areas-invest-mexico-2026/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/best-areas-invest-mexico-2026/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/best-areas-invest-mexico-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460727/more-group/mexico/guides/best-areas-invest-mexico-2026/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/best-areas-invest-mexico-2026/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/branded-residences-mexico-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460730/more-group/mexico/guides/branded-residences-mexico-guide/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/branded-residences-mexico-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/branded-residences-mexico-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460729/more-group/mexico/guides/branded-residences-mexico-guide/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/branded-residences-mexico-guide/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/budget-investor-mexico-under-200k.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460731/more-group/mexico/guides/budget-investor-mexico-under-200k/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/budget-investor-mexico-under-200k/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/can-foreigners-buy-property-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460735/more-group/mexico/guides/can-foreigners-buy-property-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/can-foreigners-buy-property-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/can-foreigners-buy-property-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460735/more-group/mexico/guides/can-foreigners-buy-property-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/can-foreigners-buy-property-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cash-buyer-mexico-advantages.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460738/more-group/mexico/guides/cash-buyer-mexico-advantages/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cash-buyer-mexico-advantages/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cash-buyer-mexico-advantages.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460738/more-group/mexico/guides/cash-buyer-mexico-advantages/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cash-buyer-mexico-advantages/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cfdi-cost-basis-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478058/more-group/mexico/guides/cfdi-cost-basis-mexico/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cfdi-cost-basis-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cfdi-cost-basis-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478059/more-group/mexico/guides/cfdi-cost-basis-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cfdi-cost-basis-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/co-ownership-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460738/more-group/mexico/guides/co-ownership-mexico-property/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/co-ownership-mexico-property/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/co-ownership-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460739/more-group/mexico/guides/co-ownership-mexico-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/co-ownership-mexico-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/co-ownership-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460740/more-group/mexico/guides/co-ownership-mexico-property/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/co-ownership-mexico-property/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/conservative-investor-mexico-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461160/more-group/mexico/guides/conservative-investor-mexico-playa/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/conservative-investor-mexico-playa/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cost-of-buying-property-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460741/more-group/mexico/guides/cost-of-buying-property-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cost-of-buying-property-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cost-of-buying-property-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460742/more-group/mexico/guides/cost-of-buying-property-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cost-of-buying-property-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cross-border-lender-list.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478025/more-group/mexico/guides/cross-border-lender-list/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cross-border-lender-list/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/cross-border-lender-list.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478026/more-group/mexico/guides/cross-border-lender-list/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/cross-border-lender-list/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/currency-closing-usd-mxn.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478076/more-group/mexico/guides/currency-closing-usd-mxn/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/currency-closing-usd-mxn/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/currency-closing-usd-mxn.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478077/more-group/mexico/guides/currency-closing-usd-mxn/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/currency-closing-usd-mxn/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/developer-due-diligence-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460746/more-group/mexico/guides/developer-due-diligence-mexico/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/developer-due-diligence-mexico/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/developer-due-diligence-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460745/more-group/mexico/guides/developer-due-diligence-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/developer-due-diligence-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/developer-due-diligence-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460746/more-group/mexico/guides/developer-due-diligence-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/developer-due-diligence-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/developer-financing-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478024/more-group/mexico/guides/developer-financing-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/developer-financing-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/developer-financing-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478024/more-group/mexico/guides/developer-financing-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/developer-financing-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/digital-nomad-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460750/more-group/mexico/guides/digital-nomad-mexico-property/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/digital-nomad-mexico-property/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/digital-nomad-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460751/more-group/mexico/guides/digital-nomad-mexico-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/digital-nomad-mexico-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/due-diligence-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460748/more-group/mexico/guides/due-diligence-mexico-real-estate/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/due-diligence-mexico-real-estate/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/due-diligence-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460751/more-group/mexico/guides/due-diligence-mexico-real-estate/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/due-diligence-mexico-real-estate/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/earthquake-risk-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781478045/more-group/mexico/guides/earthquake-risk-mexico-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/earthquake-risk-mexico-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/earthquake-risk-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781478045/more-group/mexico/guides/earthquake-risk-mexico-property/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/earthquake-risk-mexico-property/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/ejido-land-risks-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460752/more-group/mexico/guides/ejido-land-risks-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/ejido-land-risks-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/ejido-land-risks-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460752/more-group/mexico/guides/ejido-land-risks-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/ejido-land-risks-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/escrow-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460753/more-group/mexico/guides/escrow-mexico-real-estate/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/escrow-mexico-real-estate/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/escrow-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460754/more-group/mexico/guides/escrow-mexico-real-estate/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/escrow-mexico-real-estate/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/escrow-mexico-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460754/more-group/mexico/guides/escrow-mexico-real-estate/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/escrow-mexico-real-estate/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/fake-escritura-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478049/more-group/mexico/guides/fake-escritura-mexico/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/fake-escritura-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/fake-escritura-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478050/more-group/mexico/guides/fake-escritura-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/fake-escritura-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/fideicomiso-mexico-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460756/more-group/mexico/guides/fideicomiso-mexico-explained/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/fideicomiso-mexico-explained/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/fideicomiso-mexico-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460756/more-group/mexico/guides/fideicomiso-mexico-explained/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/fideicomiso-mexico-explained/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/fideicomiso-vs-mexican-corporation.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460760/more-group/mexico/guides/fideicomiso-vs-mexican-corporation/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/fideicomiso-vs-mexican-corporation/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/fideicomiso-vs-mexican-corporation.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460758/more-group/mexico/guides/fideicomiso-vs-mexican-corporation/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/fideicomiso-vs-mexican-corporation/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/first-time-foreign-buyer-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460761/more-group/mexico/guides/first-time-foreign-buyer-mexico/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/first-time-foreign-buyer-mexico/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/first-time-foreign-buyer-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460761/more-group/mexico/guides/first-time-foreign-buyer-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/first-time-foreign-buyer-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/first-time-foreign-buyer-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460762/more-group/mexico/guides/first-time-foreign-buyer-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/first-time-foreign-buyer-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/flood-risk-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478039/more-group/mexico/guides/flood-risk-riviera-maya/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/flood-risk-riviera-maya/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/flood-risk-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478038/more-group/mexico/guides/flood-risk-riviera-maya/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/flood-risk-riviera-maya/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/form-1116-foreign-tax-credit-mexico-rental.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460887/more-group/mexico/guides/us-taxes-mexico-rental-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/us-taxes-mexico-rental-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/fractional-ownership-mexico-risks.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478129/more-group/mexico/guides/fractional-ownership-mexico-risks/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/fractional-ownership-mexico-risks/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/gross-vs-net-yield-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460762/more-group/mexico/guides/gross-vs-net-yield-mexico/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/gross-vs-net-yield-mexico/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/gross-vs-net-yield-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460764/more-group/mexico/guides/gross-vs-net-yield-mexico/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/gross-vs-net-yield-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/gross-vs-net-yield-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460764/more-group/mexico/guides/gross-vs-net-yield-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/gross-vs-net-yield-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/heloc-fund-mexico-purchase.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478027/more-group/mexico/guides/heloc-fund-mexico-purchase/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/heloc-fund-mexico-purchase/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/heloc-fund-mexico-purchase.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478028/more-group/mexico/guides/heloc-fund-mexico-purchase/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/heloc-fund-mexico-purchase/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/hoa-fees-mexico-condo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460764/more-group/mexico/guides/hoa-fees-mexico-condo/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/hoa-fees-mexico-condo/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/hoa-fees-mexico-condo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460765/more-group/mexico/guides/hoa-fees-mexico-condo/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/hoa-fees-mexico-condo/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/hoa-fees-mexico-condo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460767/more-group/mexico/guides/hoa-fees-mexico-condo/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/hoa-fees-mexico-condo/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/how-to-buy-mexico-property-remotely.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460767/more-group/mexico/guides/how-to-buy-mexico-property-remotely/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/how-to-buy-mexico-property-remotely/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/how-to-buy-mexico-property-step-by-step.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460770/more-group/mexico/guides/how-to-buy-mexico-property-step-by-step/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/how-to-buy-mexico-property-step-by-step/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/how-to-buy-mexico-property-step-by-step.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460771/more-group/mexico/guides/how-to-buy-mexico-property-step-by-step/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/how-to-buy-mexico-property-step-by-step/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/how-to-calculate-rental-yield-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460771/more-group/mexico/guides/how-to-calculate-rental-yield-mexico/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/how-to-calculate-rental-yield-mexico/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/how-to-calculate-rental-yield-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460773/more-group/mexico/guides/how-to-calculate-rental-yield-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/how-to-calculate-rental-yield-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/how-to-calculate-rental-yield-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460774/more-group/mexico/guides/how-to-calculate-rental-yield-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/how-to-calculate-rental-yield-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/how-to-sell-mexico-property-from-abroad.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460774/more-group/mexico/guides/how-to-sell-mexico-property-from-abroad/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/how-to-sell-mexico-property-from-abroad/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/hurricane-insurance-bcs.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478040/more-group/mexico/guides/hurricane-insurance-bcs/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/hurricane-insurance-bcs/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/hurricane-insurance-bcs.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478034/more-group/mexico/guides/hurricane-insurance-bcs/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/hurricane-insurance-bcs/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/inheritance-property-mexico-foreigner.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460775/more-group/mexico/guides/inheritance-property-mexico-foreigner/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/inheritance-property-mexico-foreigner/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/inheritance-property-mexico-foreigner.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460775/more-group/mexico/guides/inheritance-property-mexico-foreigner/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/inheritance-property-mexico-foreigner/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/inheritance-property-mexico-foreigner.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460776/more-group/mexico/guides/inheritance-property-mexico-foreigner/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/inheritance-property-mexico-foreigner/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/is-mexico-real-estate-good-investment-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460788/more-group/mexico/guides/is-mexico-real-estate-good-investment-2026/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/is-mexico-real-estate-good-investment-2026/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/is-mexico-real-estate-good-investment-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460786/more-group/mexico/guides/is-mexico-real-estate-good-investment-2026/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/is-mexico-real-estate-good-investment-2026/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/isr-exemption-casa-habitacion.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478057/more-group/mexico/guides/isr-exemption-5-year-rule/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/isr-exemption-5-year-rule/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/land-for-sale-mexico-foreigner-risks.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471783/more-group/mexico/projects/campeche-gulf-villas/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/campeche-gulf-villas/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/land-for-sale-mexico-foreigner-risks.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478080/more-group/mexico/guides/land-for-sale-mexico-foreigner-risks/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/land-for-sale-mexico-foreigner-risks/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/land-for-sale-mexico-foreigner-risks.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478080/more-group/mexico/guides/land-for-sale-mexico-foreigner-risks/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/land-for-sale-mexico-foreigner-risks/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/liability-insurance-str-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478042/more-group/mexico/guides/liability-insurance-str-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/liability-insurance-str-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/liability-insurance-str-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478042/more-group/mexico/guides/liability-insurance-str-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/liability-insurance-str-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/los-cabos-property-investment-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460789/more-group/mexico/guides/los-cabos-property-investment-guide/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/los-cabos-property-investment-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/los-cabos-property-investment-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460789/more-group/mexico/guides/los-cabos-property-investment-guide/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/los-cabos-property-investment-guide/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/luxury-investor-cabos-branded.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460791/more-group/mexico/guides/luxury-investor-cabos-branded/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/luxury-investor-cabos-branded/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/luxury-investor-cabos-branded.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460791/more-group/mexico/guides/luxury-investor-cabos-branded/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/luxury-investor-cabos-branded/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/luxury-mexico-property-500k-plus.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460877/more-group/mexico/guides/tier-luxury/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-luxury/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/luxury-mexico-property-500k-plus.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460877/more-group/mexico/guides/tier-luxury/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-luxury/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-beachfront-property-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460792/more-group/mexico/guides/mexico-beachfront-property-investment/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-beachfront-property-investment/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-beachfront-property-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460793/more-group/mexico/guides/mexico-beachfront-property-investment/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-beachfront-property-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-beachfront-property-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460794/more-group/mexico/guides/mexico-beachfront-property-investment/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-beachfront-property-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-branded-residences-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460796/more-group/mexico/guides/mexico-branded-residences-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-branded-residences-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-branded-residences-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460797/more-group/mexico/guides/mexico-branded-residences-investment/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-branded-residences-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-capital-gains-tax-foreign-seller.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460796/more-group/mexico/guides/mexico-capital-gains-tax-foreign-seller/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-capital-gains-tax-foreign-seller/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-capital-gains-tax-foreign-seller.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460796/more-group/mexico/guides/mexico-capital-gains-tax-foreign-seller/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-capital-gains-tax-foreign-seller/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-capital-gains-tax-foreign-seller.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460797/more-group/mexico/guides/mexico-capital-gains-tax-foreign-seller/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-capital-gains-tax-foreign-seller/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-condo-investment-foreigners.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460800/more-group/mexico/guides/mexico-condo-investment-foreigners/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-condo-investment-foreigners/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-condo-investment-foreigners.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460800/more-group/mexico/guides/mexico-condo-investment-foreigners/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-condo-investment-foreigners/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-construction-loan-foreigner.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478030/more-group/mexico/guides/mexico-construction-loan-foreigner/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-construction-loan-foreigner/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-construction-loan-foreigner.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478031/more-group/mexico/guides/mexico-construction-loan-foreigner/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-construction-loan-foreigner/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-golf-course-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460802/more-group/mexico/guides/mexico-golf-course-property/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-golf-course-property/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-golf-course-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460802/more-group/mexico/guides/mexico-golf-course-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-golf-course-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-off-plan-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460805/more-group/mexico/guides/mexico-off-plan-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-off-plan-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-off-plan-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460805/more-group/mexico/guides/mexico-off-plan-investment/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-off-plan-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-300k-budget.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460877/more-group/mexico/guides/tier-mid/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-mid/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-300k-budget.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460878/more-group/mexico/guides/tier-mid/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-mid/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-300k-budget.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460879/more-group/mexico/guides/tier-mid/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-mid/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-closing-costs-breakdown.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460817/more-group/mexico/guides/mexico-property-closing-costs-breakdown/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-closing-costs-breakdown/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-closing-costs-breakdown.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460807/more-group/mexico/guides/mexico-property-closing-costs-breakdown/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-closing-costs-breakdown/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-closing-costs-breakdown.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460807/more-group/mexico/guides/mexico-property-closing-costs-breakdown/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-closing-costs-breakdown/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-for-americans.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460809/more-group/mexico/guides/mexico-property-for-americans/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-for-americans/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-for-americans.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460810/more-group/mexico/guides/mexico-property-for-americans/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-for-americans/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-for-canadians.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460813/more-group/mexico/guides/mexico-property-for-canadians/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-for-canadians/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-for-canadians.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460813/more-group/mexico/guides/mexico-property-for-canadians/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-for-canadians/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-insurance-foreigners.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460817/more-group/mexico/guides/mexico-property-insurance-foreigners/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-insurance-foreigners/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-insurance-foreigners.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460817/more-group/mexico/guides/mexico-property-insurance-foreigners/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-insurance-foreigners/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-investment-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460820/more-group/mexico/guides/mexico-property-investment-guide/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-investment-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-investment-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460819/more-group/mexico/guides/mexico-property-investment-guide/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-investment-guide/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-market-buyer-friendly-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460820/more-group/mexico/guides/mexico-property-market-buyer-friendly-2026/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-market-buyer-friendly-2026/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-market-buyer-friendly-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460826/more-group/mexico/guides/mexico-property-market-buyer-friendly-2026/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-market-buyer-friendly-2026/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-taxes-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460822/more-group/mexico/guides/mexico-property-taxes-explained/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-taxes-explained/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-taxes-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460822/more-group/mexico/guides/mexico-property-taxes-explained/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-taxes-explained/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-taxes-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460824/more-group/mexico/guides/mexico-property-taxes-explained/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-taxes-explained/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-under-250k.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460874/more-group/mexico/guides/tier-entry/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-entry/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-property-under-250k.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460902/more-group/mexico/guides/tier-entry/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-entry/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-real-estate-for-retirees.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460824/more-group/mexico/guides/mexico-real-estate-for-retirees/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-real-estate-for-retirees/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-real-estate-glossary.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460828/more-group/mexico/guides/mexico-real-estate-glossary/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-real-estate-glossary/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-real-estate-glossary.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460826/more-group/mexico/guides/mexico-real-estate-glossary/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-real-estate-glossary/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-real-estate-market-forecast-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460830/more-group/mexico/guides/mexico-real-estate-market-forecast-2026/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-real-estate-market-forecast-2026/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-real-estate-market-forecast-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460830/more-group/mexico/guides/mexico-real-estate-market-forecast-2026/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-real-estate-market-forecast-2026/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-real-estate-market-forecast-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460831/more-group/mexico/guides/mexico-real-estate-market-forecast-2026/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-real-estate-market-forecast-2026/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-rental-yield-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_1200,q_85,f_webp/v1781460834/more-group/mexico/guides/mexico-rental-yield-guide/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-rental-yield-guide/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-rental-yield-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460834/more-group/mexico/guides/mexico-rental-yield-guide/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-rental-yield-guide/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-rental-yield-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460837/more-group/mexico/guides/mexico-rental-yield-guide/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-rental-yield-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-restricted-zone-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460834/more-group/mexico/guides/mexico-restricted-zone-explained/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-restricted-zone-explained/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-restricted-zone-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460837/more-group/mexico/guides/mexico-restricted-zone-explained/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-restricted-zone-explained/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-restricted-zone-explained.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460837/more-group/mexico/guides/mexico-restricted-zone-explained/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-restricted-zone-explained/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-turnkey-rental-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460840/more-group/mexico/guides/mexico-turnkey-rental-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-turnkey-rental-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-turnkey-rental-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460840/more-group/mexico/guides/mexico-turnkey-rental-property/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-turnkey-rental-property/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-villa-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460841/more-group/mexico/guides/mexico-villa-investment/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-villa-investment/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mexico-villa-investment.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460843/more-group/mexico/guides/mexico-villa-investment/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-villa-investment/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mistakes-foreign-buyers-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460843/more-group/mexico/guides/mistakes-foreign-buyers-mexico/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mistakes-foreign-buyers-mexico/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mistakes-foreign-buyers-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460842/more-group/mexico/guides/mistakes-foreign-buyers-mexico/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mistakes-foreign-buyers-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/mistakes-foreign-buyers-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460844/more-group/mexico/guides/mistakes-foreign-buyers-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mistakes-foreign-buyers-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/nearshoring-mexico-industrial-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460845/more-group/mexico/guides/nearshoring-mexico-industrial-real-estate/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/nearshoring-mexico-industrial-real-estate/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/nearshoring-mexico-industrial-real-estate.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460846/more-group/mexico/guides/nearshoring-mexico-industrial-real-estate/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/nearshoring-mexico-industrial-real-estate/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/non-resident-mortgage-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460848/more-group/mexico/guides/non-resident-mortgage-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/non-resident-mortgage-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/non-resident-tax-id-rfc-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478067/more-group/mexico/guides/non-resident-tax-id-rfc-guide/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/non-resident-tax-id-rfc-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/peso-mortgage-locals-only.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478031/more-group/mexico/guides/peso-mortgage-locals-only/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/peso-mortgage-locals-only/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/peso-mortgage-locals-only.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478032/more-group/mexico/guides/peso-mortgage-locals-only/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/peso-mortgage-locals-only/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/portfolio-diversification-mexico-re.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460852/more-group/mexico/guides/portfolio-diversification-mexico-re/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/portfolio-diversification-mexico-re/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/power-of-attorney-property-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460855/more-group/mexico/guides/power-of-attorney-property-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/power-of-attorney-property-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/power-of-attorney-property-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460856/more-group/mexico/guides/power-of-attorney-property-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/power-of-attorney-property-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/pre-construction-mexico-risks.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460858/more-group/mexico/guides/pre-construction-mexico-risks/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/pre-construction-mexico-risks/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/pre-construction-mexico-risks.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460860/more-group/mexico/guides/pre-construction-mexico-risks/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/pre-construction-mexico-risks/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/predial-riviera-maya-rates.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478060/more-group/mexico/guides/predial-riviera-maya-rates/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/predial-riviera-maya-rates/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/predial-riviera-maya-rates.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478061/more-group/mexico/guides/predial-riviera-maya-rates/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/predial-riviera-maya-rates/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/puerto-vallarta-property-investment-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460865/more-group/mexico/guides/puerto-vallarta-property-investment-guide/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/puerto-vallarta-property-investment-guide/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/remote-notarization-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478071/more-group/mexico/guides/remote-notarization-mexico/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/remote-notarization-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/rental-contract-mexico-foreign-landlord.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460864/more-group/mexico/guides/rental-contract-mexico-foreign-landlord/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/rental-contract-mexico-foreign-landlord/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/rental-contract-mexico-foreign-landlord.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460867/more-group/mexico/guides/rental-contract-mexico-foreign-landlord/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/rental-contract-mexico-foreign-landlord/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/repatriate-sale-proceeds-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781478078/more-group/mexico/guides/repatriate-sale-proceeds-mexico/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/repatriate-sale-proceeds-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/repatriate-sale-proceeds-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781478078/more-group/mexico/guides/repatriate-sale-proceeds-mexico/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/repatriate-sale-proceeds-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/riviera-maya-property-investment-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460868/more-group/mexico/guides/riviera-maya-property-investment-guide/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/riviera-maya-property-investment-guide/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/riviera-maya-property-investment-guide.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781460869/more-group/mexico/guides/riviera-maya-property-investment-guide/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/riviera-maya-property-investment-guide/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/sat-rental-registration-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781478066/more-group/mexico/guides/sat-rental-registration-mexico/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/sat-rental-registration-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/schedule-e-mexico-rental.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460870/more-group/mexico/guides/schedule-e-mexico-rental/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/schedule-e-mexico-rental/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/schedule-e-mexico-rental.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460870/more-group/mexico/guides/schedule-e-mexico-rental/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/schedule-e-mexico-rental/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/seller-financing-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478029/more-group/mexico/guides/seller-financing-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/seller-financing-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/seller-financing-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478029/more-group/mexico/guides/seller-financing-mexico/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/seller-financing-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/short-term-rental-rules-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460872/more-group/mexico/guides/short-term-rental-rules-riviera-maya/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/short-term-rental-rules-riviera-maya/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/short-term-rental-rules-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460872/more-group/mexico/guides/short-term-rental-rules-riviera-maya/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/short-term-rental-rules-riviera-maya/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/short-term-rental-rules-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460873/more-group/mexico/guides/short-term-rental-rules-riviera-maya/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/short-term-rental-rules-riviera-maya/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/temporary-resident-visa-buy-property-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1/more-group/mexico/guides/mexico-property-for-americans/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/mexico-property-for-americans/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/title-insurance-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460881/more-group/mexico/guides/title-insurance-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/title-insurance-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/unregistered-broker-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478052/more-group/mexico/guides/unregistered-broker-mexico/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/unregistered-broker-mexico/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/unregistered-broker-mexico.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478053/more-group/mexico/guides/unregistered-broker-mexico/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/unregistered-broker-mexico/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/us-capital-gains-mexico-sale.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460884/more-group/mexico/guides/us-capital-gains-mexico-sale/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/us-capital-gains-mexico-sale/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/us-capital-gains-mexico-sale.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460884/more-group/mexico/guides/us-capital-gains-mexico-sale/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/us-capital-gains-mexico-sale/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/us-taxes-mexico-rental-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460885/more-group/mexico/guides/us-taxes-mexico-rental-property/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/us-taxes-mexico-rental-property/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/us-taxes-mexico-rental-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460889/more-group/mexico/guides/us-taxes-mexico-rental-property/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/us-taxes-mexico-rental-property/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/us-wire-transfer-mexico-property.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460890/more-group/mexico/guides/us-wire-transfer-mexico-property/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/us-wire-transfer-mexico-property/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/vat-mexico-property-rental.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781478062/more-group/mexico/guides/vat-mexico-property-rental/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/vat-mexico-property-rental/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/vat-mexico-property-rental.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781478063/more-group/mexico/guides/vat-mexico-property-rental/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/vat-mexico-property-rental/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/wire-fraud-mexico-closing.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478047/more-group/mexico/guides/wire-fraud-mexico-closing/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/wire-fraud-mexico-closing/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/guides/wire-fraud-mexico-closing.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781478047/more-group/mexico/guides/wire-fraud-mexico-closing/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/wire-fraud-mexico-closing/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/mexico-str-tax-reporting-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461009/more-group/mexico/news/mexico-str-tax-reporting-2026/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/mexico-str-tax-reporting-2026/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/mexico-str-tax-reporting-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461003/more-group/mexico/news/mexico-str-tax-reporting-2026/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/mexico-str-tax-reporting-2026/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/playa-del-carmen-resale-liquidity-june-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781728158/more-group/mexico/news/playa-del-carmen-resale-liquidity-june-2026/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/playa-del-carmen-resale-liquidity-june-2026/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/quintana-roo-price-growth-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461043/more-group/mexico/news/quintana-roo-price-growth-2026/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/quintana-roo-price-growth-2026/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/quintana-roo-price-growth-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461045/more-group/mexico/news/quintana-roo-price-growth-2026/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/quintana-roo-price-growth-2026/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/quintana-roo-price-growth-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461045/more-group/mexico/news/quintana-roo-price-growth-2026/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/quintana-roo-price-growth-2026/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/tren-maya-property-impact.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461065/more-group/mexico/news/tren-maya-property-impact/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/tren-maya-property-impact/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/tren-maya-property-impact.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461066/more-group/mexico/news/tren-maya-property-impact/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/tren-maya-property-impact/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/tulum-inventory-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461067/more-group/mexico/news/tulum-inventory-2026/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/tulum-inventory-2026/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/news/tulum-inventory-2026.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781461068/more-group/mexico/news/tulum-inventory-2026/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/news/tulum-inventory-2026/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/101-park-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470215/more-group/mexico/projects/101-park-tulum/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/101-park-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/aldea-thai.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471099/more-group/mexico/projects/aldea-thai/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/aldea-thai/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/aldea-thai.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471099/more-group/mexico/projects/aldea-thai/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/aldea-thai/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/aldea-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469057/more-group/mexico/projects/aldea-tulum/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/aldea-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/aldea-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469054/more-group/mexico/projects/aldea-tulum/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/aldea-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/aldea-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469055/more-group/mexico/projects/aldea-tulum/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/aldea-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/alvar-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468928/more-group/mexico/projects/alvar-quivira/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/alvar-quivira/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/alvar-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470217/more-group/mexico/projects/alvar-quivira/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/alvar-quivira/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/alvar-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470218/more-group/mexico/projects/alvar-quivira/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/alvar-quivira/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/amara-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470221/more-group/mexico/projects/amara-tulum/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/amara-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/amara-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470221/more-group/mexico/projects/amara-tulum/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/amara-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/amaru-inka.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470221/more-group/mexico/projects/amaru-inka/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/amaru-inka/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/anah-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469053/more-group/mexico/projects/anah-tulum/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/anah-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/anah-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469053/more-group/mexico/projects/anah-tulum/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/anah-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/bacalar-lagoon-homes.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469076/more-group/mexico/projects/bacalar-lagoon-homes/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/bacalar-lagoon-homes/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/bacalar-lagoon-homes.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469076/more-group/mexico/projects/bacalar-lagoon-homes/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/bacalar-lagoon-homes/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/bacalar-lagoon-homes.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469076/more-group/mexico/projects/bacalar-lagoon-homes/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/bacalar-lagoon-homes/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/bacalar-mia-suites.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470331/more-group/mexico/projects/bacalar-mia-suites/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/bacalar-mia-suites/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/bao-luxury-condos-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471779/more-group/mexico/projects/bao-luxury-condos-campeche/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/bao-luxury-condos-campeche/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/bardo-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470305/more-group/mexico/projects/bardo-tulum/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/bardo-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cabo-corridor-vista.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469114/more-group/mexico/projects/cabo-corridor-vista/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cabo-corridor-vista/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cabo-corridor-vista.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470345/more-group/mexico/projects/cabo-corridor-vista/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cabo-corridor-vista/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/campeche-city-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470622/more-group/mexico/projects/campeche-city-lofts/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/campeche-city-lofts/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/campeche-city-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470624/more-group/mexico/projects/campeche-city-lofts/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/campeche-city-lofts/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/campeche-gulf-villas.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470628/more-group/mexico/projects/campeche-gulf-villas/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/campeche-gulf-villas/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/campeche-gulf-villas.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470627/more-group/mexico/projects/campeche-gulf-villas/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/campeche-gulf-villas/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cancun-downtown-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470338/more-group/mexico/projects/cancun-downtown-lofts/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cancun-downtown-lofts/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cancun-downtown-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470339/more-group/mexico/projects/cancun-downtown-lofts/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cancun-downtown-lofts/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cancun-huayacan-condos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470321/more-group/mexico/projects/cancun-huayacan-condos/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cancun-huayacan-condos/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cancun-lagoon-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470621/more-group/mexico/projects/cancun-lagoon-lofts/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cancun-lagoon-lofts/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cancun-lagoon-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470324/more-group/mexico/projects/cancun-lagoon-lofts/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cancun-lagoon-lofts/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/ceiba-25-condo-paradise.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470224/more-group/mexico/projects/ceiba-25-condo-paradise/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/ceiba-25-condo-paradise/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/ceiba-25-condo-paradise.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470224/more-group/mexico/projects/ceiba-25-condo-paradise/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/ceiba-25-condo-paradise/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/chileno-bay-residences.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781470226/more-group/mexico/projects/chileno-bay-residences/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/chileno-bay-residences/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/chileno-bay-residences.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781470226/more-group/mexico/projects/chileno-bay-residences/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/chileno-bay-residences/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/constelada-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470228/more-group/mexico/projects/constelada-tulum/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/constelada-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/constelada-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468938/more-group/mexico/projects/constelada-tulum/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/constelada-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/copala-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470231/more-group/mexico/projects/copala-quivira/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/copala-quivira/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/coralina-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469023/more-group/mexico/projects/coralina-tulum/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/coralina-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/coralina-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470283/more-group/mexico/projects/coralina-tulum/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/coralina-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/corasol-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469040/more-group/mexico/projects/corasol-playa/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/corasol-playa/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/corasol-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470296/more-group/mexico/projects/corasol-playa/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/corasol-playa/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/coronado-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470229/more-group/mexico/projects/coronado-quivira/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/coronado-quivira/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/coronado-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470231/more-group/mexico/projects/coronado-quivira/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/coronado-quivira/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/costa-mujeres-cancun.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470280/more-group/mexico/projects/costa-mujeres-cancun/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/costa-mujeres-cancun/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/costa-mujeres-cancun.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470279/more-group/mexico/projects/costa-mujeres-cancun/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/costa-mujeres-cancun/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cozumel-beach-condos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470618/more-group/mexico/projects/cozumel-beach-condos/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cozumel-beach-condos/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/cozumel-beach-condos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470619/more-group/mexico/projects/cozumel-beach-condos/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/cozumel-beach-condos/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/diamante-ocean-club.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781460874/more-group/mexico/guides/tier-entry/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/guides/tier-entry/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/distrito-xcalacoco-beach.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781470233/more-group/mexico/projects/distrito-xcalacoco-beach/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/distrito-xcalacoco-beach/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/duna-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470304/more-group/mexico/projects/duna-tulum/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/duna-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/duna-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470303/more-group/mexico/projects/duna-tulum/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/duna-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/east-cape-villa-cabo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470325/more-group/mexico/projects/east-cape-villa-cabo/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/east-cape-villa-cabo/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/east-cape-villa-cabo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471126/more-group/mexico/projects/east-cape-villa-cabo/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/east-cape-villa-cabo/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/east-cape-villa-cabo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470327/more-group/mexico/projects/east-cape-villa-cabo/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/east-cape-villa-cabo/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/el-lago-querencia.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468946/more-group/mexico/projects/el-lago-querencia/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/el-lago-querencia/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/essentials-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469057/more-group/mexico/projects/essentials-tulum/hero.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/essentials-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/essentials-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781467539/more-group/mexico/projects/essentials-tulum/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/essentials-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/four-seasons-costa-palmas.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468949/more-group/mexico/projects/four-seasons-costa-palmas/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/four-seasons-costa-palmas/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/four-seasons-costa-palmas.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781468950/more-group/mexico/projects/four-seasons-costa-palmas/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/four-seasons-costa-palmas/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/four-seasons-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468950/more-group/mexico/projects/four-seasons-punta-mita/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/four-seasons-punta-mita/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/four-seasons-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468951/more-group/mexico/projects/four-seasons-punta-mita/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/four-seasons-punta-mita/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/four-seasons-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468952/more-group/mexico/projects/four-seasons-punta-mita/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/four-seasons-punta-mita/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/fundadores-puerto-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468953/more-group/mexico/projects/fundadores-puerto-los-cabos/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/fundadores-puerto-los-cabos/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/fundadores-puerto-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468955/more-group/mexico/projects/fundadores-puerto-los-cabos/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/fundadores-puerto-los-cabos/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/fundadores-puerto-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468955/more-group/mexico/projects/fundadores-puerto-los-cabos/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/fundadores-puerto-los-cabos/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/garza-blanca-pv.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471774/more-group/mexico/projects/garza-blanca-pv/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/garza-blanca-pv/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/garza-blanca-pv.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471116/more-group/mexico/projects/garza-blanca-pv/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/garza-blanca-pv/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/garza-blanca-pv.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471775/more-group/mexico/projects/garza-blanca-pv/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/garza-blanca-pv/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/gran-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_1200,q_85,f_webp/v1781470237/more-group/mexico/projects/gran-tulum/hero.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/gran-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/gran-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781470236/more-group/mexico/projects/gran-tulum/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/gran-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/hacienda-encantada.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471776/more-group/mexico/projects/hacienda-encantada/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/hacienda-encantada/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/hard-rock-riviera-maya.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469019/more-group/mexico/projects/hard-rock-riviera-maya/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/hard-rock-riviera-maya/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/hideaways-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471101/more-group/mexico/projects/hideaways-los-cabos/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/hideaways-los-cabos/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/holbox-lagoon-homes.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471781/more-group/mexico/projects/holbox-lagoon-homes/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/holbox-lagoon-homes/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/holistika-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469020/more-group/mexico/projects/holistika-tulum/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/holistika-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/ikuku-condos-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469030/more-group/mexico/projects/ikuku-condos-campeche/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/ikuku-condos-campeche/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/ikuku-condos-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469030/more-group/mexico/projects/ikuku-condos-campeche/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/ikuku-condos-campeche/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/ikuku-condos-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469032/more-group/mexico/projects/ikuku-condos-campeche/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/ikuku-condos-campeche/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/inna-beach-condos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470237/more-group/mexico/projects/inna-beach-condos/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/inna-beach-condos/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/inna-beach-condos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470238/more-group/mexico/projects/inna-beach-condos/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/inna-beach-condos/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/inna-beach-condos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470239/more-group/mexico/projects/inna-beach-condos/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/inna-beach-condos/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/it-building-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470309/more-group/mexico/projects/it-building-playa/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/it-building-playa/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/junglar-kaybe.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471103/more-group/mexico/projects/junglar-kaybe/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/junglar-kaybe/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/junglar-kaybe.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471103/more-group/mexico/projects/junglar-kaybe/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/junglar-kaybe/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/junglar-kaybe.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471104/more-group/mexico/projects/junglar-kaybe/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/junglar-kaybe/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/kabana-aldea-zama.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470243/more-group/mexico/projects/kabana-aldea-zama/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/kabana-aldea-zama/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/la-reserva-querencia.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470244/more-group/mexico/projects/la-reserva-querencia/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/la-reserva-querencia/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/la-reserva-querencia.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470246/more-group/mexico/projects/la-reserva-querencia/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/la-reserva-querencia/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/la-reserva-querencia.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470245/more-group/mexico/projects/la-reserva-querencia/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/la-reserva-querencia/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/lerma-beach-condos-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471117/more-group/mexico/projects/lerma-beach-condos-campeche/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/lerma-beach-condos-campeche/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/lerma-beach-condos-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471117/more-group/mexico/projects/lerma-beach-condos-campeche/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/lerma-beach-condos-campeche/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/luum-zama.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470249/more-group/mexico/projects/luum-zama/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/luum-zama/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/maresol-downtown-studios.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470249/more-group/mexico/projects/maresol-downtown-studios/hero.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/maresol-downtown-studios/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mavila-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471766/more-group/mexico/projects/mavila-quivira/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mavila-quivira/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mavila-quivira.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471766/more-group/mexico/projects/mavila-quivira/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mavila-quivira/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mayakoba-residences-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469080/more-group/mexico/projects/mayakoba-residences-playa/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mayakoba-residences-playa/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mayakoba-residences-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469080/more-group/mexico/projects/mayakoba-residences-playa/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mayakoba-residences-playa/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mistiq-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469050/more-group/mexico/projects/mistiq-tulum/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mistiq-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mistiq-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469051/more-group/mexico/projects/mistiq-tulum/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mistiq-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/montage-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468975/more-group/mexico/projects/montage-punta-mita/hero.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/montage-punta-mita/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/montage-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468975/more-group/mexico/projects/montage-punta-mita/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/montage-punta-mita/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/montage-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468976/more-group/mexico/projects/montage-punta-mita/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/montage-punta-mita/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mukta-369.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468977/more-group/mexico/projects/mukta-369/hero.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mukta-369/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/mukta-369.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468978/more-group/mexico/projects/mukta-369/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/mukta-369/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/nara-condos-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469016/more-group/mexico/projects/nara-condos-campeche/hero.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/nara-condos-campeche/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/nhoa-aldea-zama.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470255/more-group/mexico/projects/nhoa-aldea-zama/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/nhoa-aldea-zama/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/nuevo-vallarta-bungalows.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470347/more-group/mexico/projects/nuevo-vallarta-bungalows/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/nuevo-vallarta-bungalows/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/nuevo-vallarta-bungalows.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470347/more-group/mexico/projects/nuevo-vallarta-bungalows/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/nuevo-vallarta-bungalows/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/ocean-village-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471123/more-group/mexico/projects/ocean-village-playa/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/ocean-village-playa/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/oceana-residences.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470257/more-group/mexico/projects/oceana-residences/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/oceana-residences/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/oceana-residences.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471767/more-group/mexico/projects/oceana-residences/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/oceana-residences/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/oceana-residences.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471768/more-group/mexico/projects/oceana-residences/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/oceana-residences/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/omara-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470259/more-group/mexico/projects/omara-tulum/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/omara-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/omara-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470259/more-group/mexico/projects/omara-tulum/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/omara-tulum/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/one-only-mandarina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470602/more-group/mexico/projects/one-only-mandarina/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/one-only-mandarina/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/one-only-mandarina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471110/more-group/mexico/projects/one-only-mandarina/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/one-only-mandarina/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/palmilla-san-jose.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470619/more-group/mexico/projects/palmilla-san-jose/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/palmilla-san-jose/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/paravian-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468990/more-group/mexico/projects/paravian-playa/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/paravian-playa/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/paravian-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468990/more-group/mexico/projects/paravian-playa/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/paravian-playa/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/pendry-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468992/more-group/mexico/projects/pendry-punta-mita/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/pendry-punta-mita/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/pendry-punta-mita.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468992/more-group/mexico/projects/pendry-punta-mita/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/pendry-punta-mita/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/piedra-de-mar.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468994/more-group/mexico/projects/piedra-de-mar/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/piedra-de-mar/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/playa-emerald-studio.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470340/more-group/mexico/projects/playa-emerald-studio/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/playa-emerald-studio/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/playacar-phase-ii.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470287/more-group/mexico/projects/playacar-phase-ii/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/playacar-phase-ii/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/playacar-phase-ii.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471773/more-group/mexico/projects/playacar-phase-ii/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/playacar-phase-ii/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/playacar-phase-ii.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471115/more-group/mexico/projects/playacar-phase-ii/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/playacar-phase-ii/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/progreso-beach-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469084/more-group/mexico/projects/progreso-beach-campeche/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/progreso-beach-campeche/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/progreso-beach-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470317/more-group/mexico/projects/progreso-beach-campeche/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/progreso-beach-campeche/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/puerto-aventuras-marina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470620/more-group/mexico/projects/puerto-aventuras-marina/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/puerto-aventuras-marina/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/puerto-cancun-marina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469015/more-group/mexico/projects/puerto-cancun-marina/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/puerto-cancun-marina/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/puerto-cancun-marina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469014/more-group/mexico/projects/puerto-cancun-marina/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/puerto-cancun-marina/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/puerto-los-cabos-marina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469041/more-group/mexico/projects/puerto-los-cabos-marina/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/puerto-los-cabos-marina/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/puerto-los-cabos-marina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470299/more-group/mexico/projects/puerto-los-cabos-marina/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/puerto-los-cabos-marina/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/ritz-carlton-puerto-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468997/more-group/mexico/projects/ritz-carlton-puerto-los-cabos/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/ritz-carlton-puerto-los-cabos/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/riviera-maya-mayakoba-studio.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470337/more-group/mexico/projects/riviera-maya-mayakoba-studio/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/riviera-maya-mayakoba-studio/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/rosewood-mandarina.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471112/more-group/mexico/projects/rosewood-mandarina/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/rosewood-mandarina/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/saint-marine.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468996/more-group/mexico/projects/saint-marine/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/saint-marine/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/saint-marine.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468996/more-group/mexico/projects/saint-marine/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/saint-marine/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/saint-marine.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469010/more-group/mexico/projects/saint-marine/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/saint-marine/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/sak-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469049/more-group/mexico/projects/sak-tulum/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/sak-tulum/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/sak-tulum.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469049/more-group/mexico/projects/sak-tulum/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/sak-tulum/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/selva-zama-mondo.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470268/more-group/mexico/projects/selva-zama-mondo/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/selva-zama-mondo/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/sian-kaan-biosphere-homes.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469078/more-group/mexico/projects/sian-kaan-biosphere-homes/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/sian-kaan-biosphere-homes/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/sian-kaan-biosphere-homes.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469078/more-group/mexico/projects/sian-kaan-biosphere-homes/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/sian-kaan-biosphere-homes/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/siari-ritz-carlton-reserve.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781468998/more-group/mexico/projects/siari-ritz-carlton-reserve/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/siari-ritz-carlton-reserve/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/siari-ritz-carlton-reserve.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469000/more-group/mexico/projects/siari-ritz-carlton-reserve/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/siari-ritz-carlton-reserve/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/solar-midtown.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469003/more-group/mexico/projects/solar-midtown/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/solar-midtown/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/solar-midtown.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469000/more-group/mexico/projects/solar-midtown/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/solar-midtown/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/solar-midtown.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469002/more-group/mexico/projects/solar-midtown/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/solar-midtown/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/sole-blu-ocean-living.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469002/more-group/mexico/projects/sole-blu-ocean-living/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/sole-blu-ocean-living/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/sole-blu-ocean-living.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469004/more-group/mexico/projects/sole-blu-ocean-living/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/sole-blu-ocean-living/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/st-regis-residences-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470269/more-group/mexico/projects/st-regis-residences-los-cabos/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/st-regis-residences-los-cabos/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/st-regis-residences-los-cabos.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471770/more-group/mexico/projects/st-regis-residences-los-cabos/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/st-regis-residences-los-cabos/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tankah-bay.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469037/more-group/mexico/projects/tankah-bay/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tankah-bay/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tao-blue-gardens-pv.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469006/more-group/mexico/projects/tao-blue-gardens-pv/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tao-blue-gardens-pv/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tao-blue-gardens-pv.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469006/more-group/mexico/projects/tao-blue-gardens-pv/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tao-blue-gardens-pv/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tao-blue-gardens-pv.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781469006/more-group/mexico/projects/tao-blue-gardens-pv/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tao-blue-gardens-pv/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tao-monte-rocella.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470273/more-group/mexico/projects/tao-monte-rocella/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tao-monte-rocella/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tao-santamar-akumal.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470275/more-group/mexico/projects/tao-santamar-akumal/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tao-santamar-akumal/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/the-city-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470307/more-group/mexico/projects/the-city-playa/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/the-city-playa/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/the-fives-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470313/more-group/mexico/projects/the-fives-playa/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/the-fives-playa/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/torremar-country-club-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471775/more-group/mexico/projects/torremar-country-club-campeche/inline_2.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/torremar-country-club-campeche/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/torremar-country-club-campeche.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471776/more-group/mexico/projects/torremar-country-club-campeche/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/torremar-country-club-campeche/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tres-patios-playa.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/w_960,q_85,f_webp/v1781470310/more-group/mexico/projects/tres-patios-playa/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tres-patios-playa/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tulum-country-club.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470284/more-group/mexico/projects/tulum-country-club/hero.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tulum-country-club/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tulum-country-club.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470284/more-group/mexico/projects/tulum-country-club/inline_1.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tulum-country-club/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tulum-country-club.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470286/more-group/mexico/projects/tulum-country-club/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tulum-country-club/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tulum-jungle-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471131/more-group/mexico/projects/tulum-jungle-lofts/inline_2.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tulum-jungle-lofts/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/tulum-jungle-lofts.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781471129/more-group/mexico/projects/tulum-jungle-lofts/inline_1.png",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/tulum-jungle-lofts/inline_1.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/vidanta-nuevo-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470289/more-group/mexico/projects/vidanta-nuevo-vallarta/hero.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/vidanta-nuevo-vallarta/hero.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/content/projects/vidanta-nuevo-vallarta.mdx",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470290/more-group/mexico/projects/vidanta-nuevo-vallarta/inline_2.jpg",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/vidanta-nuevo-vallarta/inline_2.webp"
+    },
+    {
+      "file": "_worktrees/mexico-migration/src/data/featured.ts",
+      "old": "https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470304/more-group/mexico/projects/duna-tulum/inline_1.webp",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/duna-tulum/inline_1.webp"
     }
   ],
   "failed": []

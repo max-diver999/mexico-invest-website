@@ -37,4 +37,4 @@ export const FEATURED_AREA_SLUGS = [
  * `heroImage` is not always the best frame in its gallery, so the pick is explicit.
  */
 export const HOMEPAGE_HERO_IMAGE =
-  'https://res.cloudinary.com/dphvjbqb4/image/upload/v1781470304/more-group/mexico/projects/duna-tulum/inline_1.webp';
+  'https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/mexico/projects/duna-tulum/inline_1.webp';

@@ -1,4 +1,5 @@
 import dimensions from '../../scripts/data/cloudinary-image-dims.json';
+import r2Widths from '../data/r2-image-widths.json';
 
 const CLOUDINARY_PATTERN =
   /^https:\/\/res\.cloudinary\.com\/([a-z0-9]+)\/image\/upload\/(.+)$/;
@@ -102,18 +103,26 @@ function lookupIntrinsic(publicId: string): ImageDimensions | undefined {
   );
 }
 
-function heroFromStaticUrl(src: string) {
+function heroFromStaticUrl(src: string, sizes: string) {
   const publicId = publicIdFromR2(src);
   if (!publicId) return null;
 
-  const intrinsic = lookupIntrinsic(publicId);
+  const url = src.trim();
+  const fromR2 = r2Responsive(url, sizes);
+  /** Размер кадра: старая таблица Cloudinary, а если там пусто, манифест R2. */
+  const intrinsic =
+    lookupIntrinsic(publicId) ??
+    (fromR2?.width && fromR2?.height ? { w: fromR2.width, h: fromR2.height } : undefined);
   const ratio = intrinsic?.w && intrinsic?.h ? intrinsic.w / intrinsic.h : undefined;
   const band = heroBandFor(ratio);
-  const url = src.trim();
 
+  /**
+   * Список ширин только из манифеста. До 22.09.2026 здесь стояло одно `1280w`, и телефон на
+   * любой странице статьи качал файл для компьютера.
+   */
   const variants = (ar: string) => ({
     src: url,
-    srcset: `${url} 1280w`,
+    srcset: fromR2?.srcset ?? `${url} ${intrinsic?.w ?? 1280}w`,
     ar,
   });
 
@@ -124,7 +133,7 @@ function heroFromStaticUrl(src: string) {
   return {
     narrow,
     wide,
-    sizes: '(max-width: 899px) 100vw, min(68rem, 100vw)',
+    sizes,
     narrowRatio: band.narrow.replace(':', ' / '),
     wideRatio: band.wide.replace(':', ' / '),
     width: intrinsic?.w ?? 1280,
@@ -132,9 +141,17 @@ function heroFromStaticUrl(src: string) {
   };
 }
 
-export function heroCloudinary(src: string) {
+/**
+ * Обложка статьи, померено на живом сайте 22.09.2026: при экране 375 она 327 точек, при 700
+ * ровно 644, при 900 ровно 828, шире 976 не бывает. Главная идёт во всю ширину экрана и передаёт
+ * свой sizes сама.
+ */
+export const ARTICLE_HERO_SIZES =
+  '(max-width: 767px) calc(100vw - 48px), (max-width: 1047px) calc(100vw - 72px), 976px';
+
+export function heroCloudinary(src: string, sizes: string = ARTICLE_HERO_SIZES) {
   const parsed = parseCloudinaryUrl(src);
-  if (!parsed) return heroFromStaticUrl(src);
+  if (!parsed) return heroFromStaticUrl(src, sizes);
 
   const intrinsic = (dimensions as Record<string, ImageDimensions>)[parsed.publicId];
   const ratio = intrinsic?.w && intrinsic?.h ? intrinsic.w / intrinsic.h : undefined;
@@ -179,7 +196,41 @@ export function heroCloudinary(src: string) {
   };
 }
 
+const R2_HOST = 'pub-2855c73eea384110b510f25966292c37.r2.dev';
+type R2Entry = { w: number; h: number; variants: number[] };
+
+/**
+ * Картинки, переехавшие на Cloudflare R2 с аккаунта Пхукета 22.09.2026.
+ *
+ * Раньше на любом не-Cloudinary адресе функция возвращала просто { src }: ни списка ширин, ни
+ * размеров кадра. Замер до переезда: список районов отдавал 4441 КБ и телефону, и компьютеру,
+ * и 963 КБ из них приходили сразу при открытии.
+ *
+ * Какие ширины реально залиты, знает манифест. Гадать нельзя: браузер попросит несуществующий
+ * файл и получит 404 вместо картинки.
+ */
+export function r2Responsive(src: string, sizes: string = ARTICLE_SIZES) {
+  const i = src.indexOf(R2_HOST);
+  if (i < 0) return null;
+  const key = src.slice(i + R2_HOST.length).replace(/^\//, '').split('?')[0];
+  const entry = (r2Widths as Record<string, R2Entry>)[key];
+  if (!entry) return null;
+  const variants = (entry.variants || []).filter((w) => w < entry.w).sort((a, b) => a - b);
+  const base = `https://${R2_HOST}/${key}`;
+  if (!variants.length) return { src, width: entry.w, height: entry.h };
+  return {
+    src,
+    srcset: [...variants.map((w) => `${base.replace(/\.webp$/i, `-w${w}.webp`)} ${w}w`), `${base} ${entry.w}w`].join(', '),
+    sizes,
+    width: entry.w,
+    height: entry.h,
+  };
+}
+
 export function responsiveCloudinary(src: string) {
+  const fromR2 = r2Responsive(src);
+  if (fromR2) return fromR2;
+
   const parsed = parseCloudinaryUrl(src);
   if (!parsed) return { src };
 

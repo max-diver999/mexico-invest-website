@@ -1,5 +1,5 @@
 ---
-import { getCardImageUrl } from '../lib/cardImage';
+import { getCardImage } from '../lib/cardImage';
 
 interface Props {
   href: string;
@@ -25,14 +25,16 @@ const {
   placeholder = '🏝️',
 } = Astro.props;
 
-const photo = getCardImageUrl(image);
+const photo = getCardImage(image, 'card');
 ---
 
 <a href={href} class="content-card surface-card is-link block no-underline overflow-hidden h-full">
   {photo ? (
     <div class="content-card__media">
       <img
-        src={photo}
+        src={photo.src}
+        srcset={photo.srcset}
+        sizes={photo.sizes}
         alt={imageAlt || title}
         loading="lazy"
         decoding="async"

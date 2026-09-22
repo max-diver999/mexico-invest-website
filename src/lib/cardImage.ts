@@ -1,3 +1,41 @@
+import { r2Responsive } from './cloudinary';
+
+/**
+ * Карточка списка. Ширина слота померена на живой странице 22.09.2026: при экране 375 карточка
+ * занимает 325 точек, при 900 ровно 403, при 1440 ровно 312.
+ */
+export const CARD_SIZES =
+  '(max-width: 599px) calc(100vw - 50px), (max-width: 1023px) calc(50vw - 47px), 312px';
+
+export type CardImage = { src: string; srcset?: string; sizes?: string; width?: number; height?: number };
+
+/**
+ * Квадратик у ссылки «читайте также»: 76 или 96 точек в ширину, около 197 в высоту, фото
+ * вписывается по высоте. Честная ширина кадра под такой блок 350 точек, и на плотном экране
+ * браузер брал файл 768 на каждый квадратик: шесть превью весили больше самой статьи (замер
+ * 22.09.2026). Это декоративная миниатюра в самом низу страницы, ей хватает файла 360: на
+ * обычном экране он точный, на плотном не хуже прежней обрезки Cloudinary 240 на 240.
+ */
+export const RELATED_SIZES = '176px';
+
+/** Обложка страниц «О нас» и «Методика»: колонка max-w-3xl, на телефоне поля по 24 точки. */
+export const PAGE_HERO_SIZES = '(max-width: 767px) calc(100vw - 48px), 720px';
+
+const R2_SIZES: Record<string, string> = {
+  card: CARD_SIZES,
+  cardTall: CARD_SIZES,
+  thumb: RELATED_SIZES,
+  hero: PAGE_HERO_SIZES,
+};
+
+export function getCardImage(src: string | undefined, size: string = 'card'): CardImage | null {
+  if (!src?.trim()) return null;
+  const fromR2 = r2Responsive(src.trim(), R2_SIZES[size] ?? CARD_SIZES);
+  if (fromR2) return fromR2;
+  const url = getCardImageUrl(src, size as 'card' | 'hero');
+  return url ? { src: url } : null;
+}
+
 /**
  * Card and hero thumbnail URLs: Cloudinary crop when available; external CDN as-is.
  *

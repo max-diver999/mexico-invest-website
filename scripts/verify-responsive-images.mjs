@@ -17,7 +17,7 @@ function walk(directory, files = []) {
 }
 
 const files = outputRoots.flatMap((directory) => walk(directory));
-let cloudinaryImages = 0;
+let hostedImages = 0;
 let responsiveImages = 0;
 let missingDimensions = 0;
 
@@ -25,19 +25,24 @@ for (const file of files) {
   const html = fs.readFileSync(file, 'utf8');
   for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
     const image = match[0];
-    if (!image.includes('res.cloudinary.com/')) continue;
-    cloudinaryImages++;
+    /**
+     * С 22.09.2026 картинки сайта живут на R2, а не на Cloudinary. Проверка считала только
+     * Cloudinary и после переезда падала на нуле, хотя с картинками всё было в порядке.
+     * Считаем оба хранилища: требование к каждой картинке прежнее.
+     */
+    if (!image.includes('res.cloudinary.com/') && !image.includes('.r2.dev/')) continue;
+    hostedImages++;
     if (/\ssrcset=/.test(image) && /\ssizes=/.test(image)) responsiveImages++;
     if (!/\swidth=/.test(image) || !/\sheight=/.test(image)) missingDimensions++;
   }
 }
 
 console.log(
-  `[speed-kit] HTML pages=${files.length}, Cloudinary images=${cloudinaryImages}, responsive=${responsiveImages}, missing dimensions=${missingDimensions}`,
+  `[speed-kit] HTML pages=${files.length}, hosted images (Cloudinary + R2)=${hostedImages}, responsive=${responsiveImages}, missing dimensions=${missingDimensions}`,
 );
 if (
   !files.length ||
-  !cloudinaryImages ||
+  !hostedImages ||
   !responsiveImages ||
   missingDimensions
 ) {
