@@ -24,7 +24,7 @@
   "robots": {
     "disallow": ["/api/", "/thanks/", "/site-report/"],
     "allowSearchCrawlers": true,
-    "allowTrainingCrawlers": false
+    "allowTrainingCrawlers": true
   },
   "markdownStructure": { "prefixes": [] },
   "llms": {
