@@ -30,7 +30,7 @@ for (const file of files) {
      * Cloudinary и после переезда падала на нуле, хотя с картинками всё было в порядке.
      * Считаем оба хранилища: требование к каждой картинке прежнее.
      */
-    if (!image.includes('res.cloudinary.com/') && !image.includes('.r2.dev/')) continue;
+    if (!image.includes('res.cloudinary.com/') && !(image.includes('.r2.dev/') || image.includes('//media.oper-stack.com/'))) continue;
     hostedImages++;
     if (/\ssrcset=/.test(image) && /\ssizes=/.test(image)) responsiveImages++;
     if (!/\swidth=/.test(image) || !/\sheight=/.test(image)) missingDimensions++;
