@@ -3,7 +3,7 @@ import r2Widths from '../data/r2-image-widths.json';
 
 const CLOUDINARY_PATTERN =
   /^https:\/\/res\.cloudinary\.com\/([a-z0-9]+)\/image\/upload\/(.+)$/;
-const R2_PATTERN = /^https:\/\/pub-[a-f0-9]+\.r2\.dev\/(.+?)(?:[?#].*)?$/i;
+const R2_PATTERN = /^https:\/\/(?:pub-[a-f0-9]+\.r2\.dev|media\.oper-stack\.com)\/(.+?)(?:[?#].*)?$/i;
 const CLOUDINARY_BASE = 'https://res.cloudinary.com';
 const ARTICLE_WIDTHS = [640, 960, 1200];
 const ARTICLE_SIZES = '(max-width: 768px) calc(100vw - 2rem), 72ch';
@@ -196,7 +196,14 @@ export function heroCloudinary(src: string, sizes: string = ARTICLE_HERO_SIZES) 
   };
 }
 
-const R2_HOST = 'pub-2855c73eea384110b510f25966292c37.r2.dev';
+/**
+ * Адрес хранилища картинок. С 24.09.2026 картинки отдаёт свой домен media.oper-stack.com: у старого
+ * адреса r2.dev лимит частоты запросов и нет кэша. Файлы те же, другое только начало адреса.
+ * Старый адрес код понимает, пока все статьи и загрузчик не переехали; размеры в srcset
+ * всегда строятся с нового.
+ */
+const R2_HOST = 'media.oper-stack.com';
+const R2_HOSTS = [R2_HOST, 'pub-2855c73eea384110b510f25966292c37.r2.dev'];
 type R2Entry = { w: number; h: number; variants: number[] };
 
 /**
@@ -210,9 +217,10 @@ type R2Entry = { w: number; h: number; variants: number[] };
  * файл и получит 404 вместо картинки.
  */
 export function r2Responsive(src: string, sizes: string = ARTICLE_SIZES) {
-  const i = src.indexOf(R2_HOST);
+  const iHost = R2_HOSTS.find((h) => src.includes(h)) ?? R2_HOST;
+  const i = src.indexOf(iHost);
   if (i < 0) return null;
-  const key = src.slice(i + R2_HOST.length).replace(/^\//, '').split('?')[0];
+  const key = src.slice(i + iHost.length).replace(/^\//, '').split('?')[0];
   const entry = (r2Widths as Record<string, R2Entry>)[key];
   if (!entry) return null;
   const variants = (entry.variants || []).filter((w) => w < entry.w).sort((a, b) => a - b);
