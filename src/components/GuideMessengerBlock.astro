@@ -71,6 +71,22 @@ const waHref = `${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
       }
     }
     if (!anchor) return;
+    // Another call to action right here (the guide's own form block): stand after it and
+    // the paragraph that follows, so two boxes never sit back to back. One with a WhatsApp
+    // link means the guide already offers it this early, so this block goes.
+    var isCta = function (node) {
+      return !!node && !/^(P|H[1-6]|UL|OL|TABLE|BLOCKQUOTE|HR|FIGURE|IMG|PRE)$/.test(node.tagName) &&
+        !!node.querySelector('form, input, button, a[data-cta], a[data-wa-placement]');
+    };
+    var idx = kids.indexOf(anchor);
+    if (isCta(kids[idx]) || isCta(kids[idx - 1])) {
+      var from = isCta(kids[idx]) ? idx : idx - 1;
+      if (kids[from].querySelector('a[href*="wa.me"]')) { block.remove(); return; }
+      var j = from + 1;
+      while (j < kids.length && kids[j].tagName !== 'P') j++;
+      if (j + 1 >= kids.length) return;
+      anchor = kids[j + 1];
+    }
     var separator = anchor.previousElementSibling;
     prose.insertBefore(block, separator && separator.tagName === 'HR' ? separator : anchor);
   })();
