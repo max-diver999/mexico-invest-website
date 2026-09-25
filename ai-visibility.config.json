@@ -86,5 +86,13 @@
   "llms": {
     "generated": true,
     "note": "llms.txt and llms-full.txt are built by scripts/generate-llms.mjs, which predates this pack and is left alone. The pack adds the per-page markdown renditions, index.md, the agent card and the dates."
+  },
+  "catalog": {
+    "collection": "projects",
+    "priceField": "priceFromUsd",
+    "currency": "USD",
+    "areaField": "area",
+    "typeField": "propertyType",
+    "statusField": "status"
   }
 }
