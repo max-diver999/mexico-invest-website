@@ -4,6 +4,7 @@ import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import StickyCta from '../components/StickyCta.astro';
 import InlineLeadCta from '../components/InlineLeadCta.astro';
+import GuideMessengerBlock from '../components/GuideMessengerBlock.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 import { SITE } from '../data/site';
@@ -281,6 +282,8 @@ const shortlistHref = slug ? `/get-shortlist/?from=${slug}` : '/get-shortlist/';
 
     <div class="prose mx-auto">
       <slot />
+      {/* Guides: WhatsApp in the first 10% of the text, the block's script moves it there. */}
+      {Astro.url.pathname.startsWith('/guides/') && <GuideMessengerBlock title={title} />}
     </div>
 
     {/* Rendered here, then relocated by its own inline script to sit between the

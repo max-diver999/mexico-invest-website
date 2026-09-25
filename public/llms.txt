@@ -39,6 +39,76 @@ permits change by municipality, so cite the page, not the number alone.
 - Developers (8): Developer profiles and delivery record. https://mexico-invest.com/developers/
 - Market notes (28): Dated updates against the evergreen guides. https://mexico-invest.com/news/
 
+## Project catalog with prices
+
+One line per project: name, area, property type, status, entry price, page. Append `.md` to any page URL for its full markdown review.
+
+- [TAO Santamar Akumal](https://mexico-invest.com/projects/tao-santamar-akumal/): Akumal, apartment, off-plan, from $300,000
+- [Amaru Inka](https://mexico-invest.com/projects/amaru-inka/): Aldea Zama Tulum, apartment, completed, from $140,000
+- [Luum Zama Tulum Aldea Zama Tulum](https://mexico-invest.com/projects/luum-zama/): Aldea Zama Tulum, apartment, off-plan, from $450,000
+- [Bacalar Lagoon Homes](https://mexico-invest.com/projects/bacalar-lagoon-homes/): Bacalar, villa, off-plan, from $285,000
+- [Mavila at Quivira](https://mexico-invest.com/projects/mavila-quivira/): Cabo Corridor, apartment, completed, from $329,000
+- [Hacienda Encantada](https://mexico-invest.com/projects/hacienda-encantada/): Cabo Corridor, apartment, completed, from $395,000
+- [Copala at Quivira](https://mexico-invest.com/projects/copala-quivira/): Cabo Corridor, apartment, completed, from $610,000
+- [St. Regis Residences Los Cabos](https://mexico-invest.com/projects/st-regis-residences-los-cabos/): Cabo Corridor, apartment, off-plan, from $4,500,000
+- [Chileno Bay Residences](https://mexico-invest.com/projects/chileno-bay-residences/): Cabo Corridor, apartment, completed, from $6,000,000
+- [TAO Monte Rocella](https://mexico-invest.com/projects/tao-monte-rocella/): Cabo San Lucas, apartment, off-plan, from $299,000
+- [Pedregal Cabo](https://mexico-invest.com/projects/pedregal-cabo/): Cabo San Lucas, villa, off-plan, from $890,000
+- [Diamante Ocean Club](https://mexico-invest.com/projects/diamante-ocean-club/): Cabo San Lucas, apartment, completed, from $1,350,000
+- [Nara Country Club Campeche](https://mexico-invest.com/projects/nara-condos-campeche/): Campeche, apartment, off-plan, from $155,000
+- [Torremar Country Club Campeche](https://mexico-invest.com/projects/torremar-country-club-campeche/): Campeche, apartment, off-plan, from $158,000
+- [Cancun Huayacan Condos](https://mexico-invest.com/projects/cancun-huayacan-condos/): Cancun, apartment, off-plan, from $206,000
+- [Costa Mujeres Cancun](https://mexico-invest.com/projects/costa-mujeres-cancun/): Cancun, apartment, off-plan, from $285,000
+- [Puerto Cancún Marina Cancun](https://mexico-invest.com/projects/puerto-cancun-marina/): Cancun, apartment, delivering, from $890,000
+- [Cozumel Beach Condos](https://mexico-invest.com/projects/cozumel-beach-condos/): Cozumel, apartment, off-plan, from $198,000
+- [Four Seasons Costa Palmas](https://mexico-invest.com/projects/four-seasons-costa-palmas/): East Cape Baja, villa, off-plan, from $4,000,000
+- [Paravian Playa](https://mexico-invest.com/projects/paravian-playa/): Gonzalo Guerrero Playa, apartment, off-plan, from $175,000
+- [Oceana Residences Playa](https://mexico-invest.com/projects/oceana-residences/): Gonzalo Guerrero Playa, apartment, completed, from $500,000
+- [Holbox Lagoon Homes](https://mexico-invest.com/projects/holbox-lagoon-homes/): Holbox, villa, off-plan, from $295,000
+- [Vidanta Nuevo Vallarta](https://mexico-invest.com/projects/vidanta-nuevo-vallarta/): Nuevo Vallarta, apartment, completed, from $310,000
+- [SOLAR Midtown Playa](https://mexico-invest.com/projects/solar-midtown/): Playa del Carmen, apartment, completed, from $130,000
+- [Distrito Xcalacoco](https://mexico-invest.com/projects/distrito-xcalacoco-beach/): Playa del Carmen, apartment, off-plan, from $179,000
+- [The City Playa](https://mexico-invest.com/projects/the-city-playa/): Playa del Carmen, apartment, off-plan, from $198,000
+- [Tres Patios Playa](https://mexico-invest.com/projects/tres-patios-playa/): Playa del Carmen, apartment, off-plan, from $225,000
+- [Ocean Village Playa](https://mexico-invest.com/projects/ocean-village-playa/): Playa del Carmen, apartment, off-plan, from $245,000
+- [Playacar Phase II](https://mexico-invest.com/projects/playacar-phase-ii/): Playa del Carmen, apartment, completed, from $265,000
+- [Ceiba at 25 Playa del Carmen](https://mexico-invest.com/projects/ceiba-25-condo-paradise/): Playa del Carmen, apartment, off-plan, from $280,000
+- [The Fives Playa](https://mexico-invest.com/projects/the-fives-playa/): Playa del Carmen, apartment, off-plan, from $310,000
+- [Saint Marine Playa del Carmen](https://mexico-invest.com/projects/saint-marine/): Playa del Carmen, apartment, off-plan, from $380,000
+- [Hard Rock Riviera Maya](https://mexico-invest.com/projects/hard-rock-riviera-maya/): Playa del Carmen, apartment, off-plan, from $385,000
+- [Aldea Thai Playa](https://mexico-invest.com/projects/aldea-thai/): Playa del Carmen, apartment, completed, from $400,000
+- [Corasol Playa](https://mexico-invest.com/projects/corasol-playa/): Playa del Carmen, apartment, off-plan, from $480,000
+- [Mayakoba Residences Playa del Carmen From $787K](https://mexico-invest.com/projects/mayakoba-residences-playa/): Playa del Carmen, apartment, off-plan, from $787,000
+- [Mukta 369](https://mexico-invest.com/projects/mukta-369/): Puerto Morelos, apartment, off-plan, from $130,000
+- [NALU Sea Living Puerto Morelos](https://mexico-invest.com/projects/nalu-sea-living/): Puerto Morelos, apartment, delivering, from $195,000
+- [Puerto Aventuras Marina Condos From $310K](https://mexico-invest.com/projects/puerto-aventuras-marina/): Puerto Morelos, apartment, off-plan, from $310,000
+- [Inna Beach Condos Puerto Morelos](https://mexico-invest.com/projects/inna-beach-condos/): Puerto Morelos, apartment, delivering, from $544,000
+- [TAO Blue Gardens Puerto Vallarta](https://mexico-invest.com/projects/tao-blue-gardens-pv/): Puerto Vallarta, apartment, delivering, from $183,000
+- [Garza Blanca Puerto Vallarta](https://mexico-invest.com/projects/garza-blanca-pv/): Puerto Vallarta, apartment, completed, from $520,000
+- [One&Only Mandarina Punta de Mita](https://mexico-invest.com/projects/one-only-mandarina/): Punta de Mita, villa, delivering, from $7,800,000
+- [Four Seasons Punta Mita Villas](https://mexico-invest.com/projects/four-seasons-punta-mita/): Punta Mita, villa, resale, from $4,000,000
+- [Pendry Residences Punta Mita](https://mexico-invest.com/projects/pendry-punta-mita/): Punta Mita, villa, off-plan, from $4,000,000
+- [Montage Residences Punta Mita](https://mexico-invest.com/projects/montage-punta-mita/): Punta Mita, villa, off-plan, from $5,000,000
+- [Rosewood Residences Mandarina](https://mexico-invest.com/projects/rosewood-mandarina/): Riviera Nayarit, villa, off-plan, from $4,950,000
+- [Siari Ritz-Carlton Reserve Nayarit](https://mexico-invest.com/projects/siari-ritz-carlton-reserve/): Riviera Nayarit, villa, off-plan, from $8,000,000
+- [Fundadores Legacy Puerto Los Cabos](https://mexico-invest.com/projects/fundadores-puerto-los-cabos/): San Jose del Cabo, land, completed, from $350,000
+- [Hideaways Los Cabos](https://mexico-invest.com/projects/hideaways-los-cabos/): San Jose del Cabo, apartment, off-plan, from $425,000
+- [Palmilla San José Luxury Residences Los Cabos $720K](https://mexico-invest.com/projects/palmilla-san-jose/): San Jose del Cabo, villa, off-plan, from $720,000
+- [Puerto Los Cabos Marina](https://mexico-invest.com/projects/puerto-los-cabos-marina/): San Jose del Cabo, apartment, off-plan, from $750,000
+- [La Reserva at Querencia](https://mexico-invest.com/projects/la-reserva-querencia/): San Jose del Cabo, apartment, off-plan, from $2,400,000
+- [Amara Tulum](https://mexico-invest.com/projects/amara-tulum/): Tulum, apartment, off-plan, from $147,000
+- [Mistiq Tulum](https://mexico-invest.com/projects/mistiq-tulum/): Tulum, apartment, off-plan, from $165,000
+- [Omara Tulum](https://mexico-invest.com/projects/omara-tulum/): Tulum, apartment, off-plan, from $175,000
+- [Anah Tulum](https://mexico-invest.com/projects/anah-tulum/): Tulum, apartment, off-plan, from $195,000
+- [Holistika Tulum](https://mexico-invest.com/projects/holistika-tulum/): Tulum, apartment, delivering, from $225,000
+- [101 Park Tulum](https://mexico-invest.com/projects/101-park-tulum/): Tulum, apartment, delivering, from $290,000
+- [Sian Ka'an Biosphere Homes](https://mexico-invest.com/projects/sian-kaan-biosphere-homes/): Tulum, villa, off-plan, from $350,000
+- [Gran Tulum Condos](https://mexico-invest.com/projects/gran-tulum/): Tulum, apartment, off-plan, from $395,000
+- [Tulum Country Club](https://mexico-invest.com/projects/tulum-country-club/): Tulum, apartment, off-plan, from $420,000
+- [Junglar @ Kaybé](https://mexico-invest.com/projects/junglar-kaybe/): Tulum, villa, delivering, from $440,000
+- [Tankah Bay Tulum](https://mexico-invest.com/projects/tankah-bay/): Tulum, apartment, off-plan, from $650,000
+- [Selva Zama Mondo](https://mexico-invest.com/projects/selva-zama-mondo/): Tulum, villa, pre-construction, from $1,160,000
+
 ## Full corpus
 
 https://mexico-invest.com/llms-full.txt
